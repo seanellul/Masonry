@@ -57,6 +57,11 @@ void AggregatorMilitary::sendSquadUpdate()
 			gsg.id = gnome->id();
 			gsg.name = gnome->name();
 			gsg.roleID = gnome->roleID();
+			gsg.meleeSkill = gnome->getSkillLevel( "Melee" );
+			gsg.dodgeSkill = gnome->getSkillLevel( "Dodge" );
+			gsg.armorSkill = gnome->getSkillLevel( "Armor" );
+			auto eq = gnome->equipment();
+			gsg.weapon = eq.rightHandHeld.itemID ? S::s( "$ItemName_" + eq.rightHandHeld.item ) : "Unarmed";
 			ngs.gnomes.append( gsg );
 		}
 	}
@@ -238,11 +243,11 @@ void AggregatorMilitary::onRemoveGnomeFromSquad( unsigned int gnomeID )
 void AggregatorMilitary::onAddGnomeToSquad( unsigned int gnomeID, unsigned int squadID )
 {
 	if( !g ) return;
-	// Remove from any current squad
+	// Remove from any current squad first
 	g->mil()->removeGnome( gnomeID );
-	// Add to target squad
+	// Add to target squad (prevent duplicates)
 	auto squad = g->mil()->squad( squadID );
-	if ( squad )
+	if ( squad && !squad->gnomes.contains( gnomeID ) )
 	{
 		squad->gnomes.append( gnomeID );
 		g->mil()->updateGnome( gnomeID );
