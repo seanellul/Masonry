@@ -212,6 +212,7 @@ signals:
 	void signalLoadGameDone( bool value );
 
 	void signalEvent( unsigned int id, QString title, QString msg, bool pause, bool yesno );
+	void signalOpenCreatureInfo( unsigned int creatureID );
 	
 	void signalHeartbeat( int value );
 	void signalPlayEffect( QVariantMap effect );

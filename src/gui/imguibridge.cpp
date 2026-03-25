@@ -20,6 +20,7 @@ ImGuiBridge::ImGuiBridge( QObject* parent )
 	connect( ec, &EventConnector::signalBuild, this, &ImGuiBridge::onBuild, Qt::QueuedConnection );
 	connect( ec, &EventConnector::signalKeyEsc, this, &ImGuiBridge::onKeyEsc, Qt::QueuedConnection );
 	connect( ec, &EventConnector::signalEvent, this, &ImGuiBridge::onEvent, Qt::QueuedConnection );
+	connect( ec, &EventConnector::signalOpenCreatureInfo, this, &ImGuiBridge::onOpenCreatureInfo, Qt::QueuedConnection );
 	connect( ec, &EventConnector::signalHeartbeat, this, &ImGuiBridge::onHeartbeat, Qt::QueuedConnection );
 	connect( ec, &EventConnector::signalResume, this, &ImGuiBridge::onResume, Qt::QueuedConnection );
 	connect( ec, &EventConnector::signalLoadGameDone, this, &ImGuiBridge::onLoadGameDone, Qt::QueuedConnection );
@@ -226,6 +227,12 @@ void ImGuiBridge::onKeyEsc()
 void ImGuiBridge::onEvent( unsigned int id, QString title, QString msg, bool pause, bool yesno )
 {
 	pendingEvents.append( { id, title, msg, pause, yesno } );
+}
+
+void ImGuiBridge::onOpenCreatureInfo( unsigned int creatureID )
+{
+	cmdRequestCreatureUpdate( creatureID );
+	activeSidePanel = SidePanel::CreatureInfo;
 }
 
 void ImGuiBridge::onHeartbeat( int value )

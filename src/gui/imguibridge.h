@@ -353,6 +353,7 @@ public slots:
 	void onWatchList( const QList<GuiWatchedItem>& items );
 	void onKeyEsc();
 	void onEvent( unsigned int id, QString title, QString msg, bool pause, bool yesno );
+	void onOpenCreatureInfo( unsigned int creatureID );
 	void onHeartbeat( int value );
 	void onResume();
 	void onLoadGameDone( bool value );

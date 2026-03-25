@@ -39,6 +39,8 @@
 #include "../base/selection.h"
 #include "../game/gamemanager.h"
 #include "../game/game.h"
+#include "../game/creaturemanager.h"
+#include "../game/gnomemanager.h"
 #include "../game/job.h"
 #include "../game/jobmanager.h"
 #include "../game/soundmanager.h"
@@ -218,9 +220,37 @@ void EventConnector::onTileClickAutoOpen( unsigned int tileID )
 {
 	if ( !gm || !gm->game() || !gm->game()->world() ) return;
 
-	Tile& tile = gm->game()->world()->getTile( tileID );
+	Position pos( tileID );
 
-	// Auto-open management panel for stockpiles, workshops, farms
+	// Priority 1: Creatures take precedence (they're standing on top)
+	// Check gnomes first
+	auto gnomes = gm->game()->gm()->gnomesAtPosition( pos );
+	if ( !gnomes.isEmpty() )
+	{
+		auto gnome = gnomes.first();
+		if ( !gnome->isDead() )
+		{
+			emit signalOpenCreatureInfo( gnome->id() );
+			return;
+		}
+	}
+
+	// Check animals and monsters
+	auto animals = gm->game()->cm()->animalsAtPosition( pos );
+	if ( !animals.isEmpty() )
+	{
+		emit signalOpenCreatureInfo( animals.first()->id() );
+		return;
+	}
+	auto monsters = gm->game()->cm()->monstersAtPosition( pos );
+	if ( !monsters.isEmpty() )
+	{
+		emit signalOpenCreatureInfo( monsters.first()->id() );
+		return;
+	}
+
+	// Priority 2: Stockpiles, workshops, farms
+	Tile& tile = gm->game()->world()->getTile( tileID );
 	if ( tile.flags & ( TileFlag::TF_STOCKPILE + TileFlag::TF_WORKSHOP + TileFlag::TF_GROVE + TileFlag::TF_FARM + TileFlag::TF_PASTURE ) )
 	{
 		onManageCommand( tileID );
