@@ -72,7 +72,64 @@ void AggregatorCreatureInfo::onRequestCreatureUpdate( unsigned int id )
 		m_info.sleep = gnome->need( "Sleep" );
 		m_info.happiness = gnome->need( "Happiness" );
 
-		m_info.activity = "Doing something. tbi";
+		m_info.activity = gnome->getActivity();
+
+		// Populate personality data (Milestone 2.0+)
+		m_info.mood = gnome->mood();
+		m_info.mentalBreak = ( gnome->mood() < 5 );
+
+		// Backstory
+		if ( !gnome->childhoodBackstory().isEmpty() )
+		{
+			auto row = DB::selectRow( "Backstories", gnome->childhoodBackstory() );
+			m_info.childhoodTitle = row.value( "Title" ).toString();
+			m_info.childhoodDesc = row.value( "Description" ).toString();
+		}
+		else
+		{
+			m_info.childhoodTitle.clear();
+		}
+		if ( !gnome->adulthoodBackstory().isEmpty() )
+		{
+			auto row = DB::selectRow( "Backstories", gnome->adulthoodBackstory() );
+			m_info.adulthoodTitle = row.value( "Title" ).toString();
+			m_info.adulthoodDesc = row.value( "Description" ).toString();
+		}
+		else
+		{
+			m_info.adulthoodTitle.clear();
+		}
+
+		// Traits
+		m_info.traits.clear();
+		for ( auto it = gnome->traits().constBegin(); it != gnome->traits().constEnd(); ++it )
+		{
+			GuiCreatureTraitInfo gti;
+			gti.id = it.key();
+			gti.value = it.value().toInt();
+			auto traitRow = DB::selectRow( "Traits", gti.id );
+			if ( gti.value < -25 )
+			{
+				gti.label = traitRow.value( "LowLabel" ).toString();
+				gti.description = traitRow.value( "LowDesc" ).toString();
+			}
+			else if ( gti.value > 25 )
+			{
+				gti.label = traitRow.value( "HighLabel" ).toString();
+				gti.description = traitRow.value( "HighDesc" ).toString();
+			}
+			m_info.traits.append( gti );
+		}
+
+		// Thoughts
+		m_info.thoughts.clear();
+		for ( const auto& t : gnome->thoughts() )
+		{
+			GuiCreatureThoughtInfo gti;
+			gti.text = t.text;
+			gti.moodValue = t.moodValue;
+			m_info.thoughts.append( gti );
+		}
 
 		if( gnome->roleID() )
 		{

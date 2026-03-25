@@ -26,6 +26,20 @@
 
 class Game;
 
+struct GuiCreatureTraitInfo
+{
+	QString id;
+	int value;
+	QString label;       // "Fearless", "Coward", or empty
+	QString description;
+};
+
+struct GuiCreatureThoughtInfo
+{
+	QString text;
+	int moodValue;
+};
+
 struct GuiCreatureInfo
 {
 	QString name;
@@ -48,6 +62,16 @@ struct GuiCreatureInfo
 	Equipment equipment;
 
 	QMap< QString, std::vector<unsigned char> > itemPics;
+
+	// Personality (Milestone 2.0+)
+	int mood = 50;
+	bool mentalBreak = false;
+	QString childhoodTitle;
+	QString childhoodDesc;
+	QString adulthoodTitle;
+	QString adulthoodDesc;
+	QList<GuiCreatureTraitInfo> traits;
+	QList<GuiCreatureThoughtInfo> thoughts;
 };
 Q_DECLARE_METATYPE( GuiCreatureInfo )
 

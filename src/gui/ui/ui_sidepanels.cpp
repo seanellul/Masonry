@@ -994,8 +994,8 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 		return;
 
 	ImGuiIO& io = ImGui::GetIO();
-	ImGui::SetNextWindowPos( ImVec2( io.DisplaySize.x - 310, 100 ) );
-	ImGui::SetNextWindowSize( ImVec2( 300, 400 ) );
+	ImGui::SetNextWindowPos( ImVec2( io.DisplaySize.x - 340, 60 ) );
+	ImGui::SetNextWindowSize( ImVec2( 330, io.DisplaySize.y - 130 ) );
 
 	bool open = true;
 	ImGui::Begin( "Creature Info", &open, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize );
@@ -1008,28 +1008,146 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 
 	auto& ci = bridge.creatureInfo;
 
-	ImGui::Text( "%s", ci.name.toStdString().c_str() );
-	ImGui::Text( "Profession: %s", ci.profession.toStdString().c_str() );
+	// Name and profession
+	ImGui::TextColored( ImVec4( 1.0f, 0.9f, 0.6f, 1.0f ), "%s", ci.name.toStdString().c_str() );
+	ImGui::Text( "%s", ci.profession.toStdString().c_str() );
+	if ( !ci.activity.isEmpty() )
+	{
+		ImGui::TextColored( ImVec4( 0.6f, 0.8f, 0.6f, 1.0f ), "%s", ci.activity.toStdString().c_str() );
+	}
 
 	ImGui::Separator();
 
-	// Needs bars (clamp to 0-1 range for display)
-	ImGui::Text( "Hunger" ); ImGui::SameLine( 100 ); ImGui::ProgressBar( qBound( 0.0f, ci.hunger / 100.0f, 1.0f ), ImVec2( -1, 0 ) );
-	ImGui::Text( "Thirst" ); ImGui::SameLine( 100 ); ImGui::ProgressBar( qBound( 0.0f, ci.thirst / 100.0f, 1.0f ), ImVec2( -1, 0 ) );
-	ImGui::Text( "Sleep" ); ImGui::SameLine( 100 ); ImGui::ProgressBar( qBound( 0.0f, ci.sleep / 100.0f, 1.0f ), ImVec2( -1, 0 ) );
-	ImGui::Text( "Happiness" ); ImGui::SameLine( 100 ); ImGui::ProgressBar( qBound( 0.0f, ci.happiness / 100.0f, 1.0f ), ImVec2( -1, 0 ) );
+	// Mood bar (prominent, at the top)
+	{
+		ImVec4 moodColor;
+		if ( ci.mood > 65 )
+			moodColor = ImVec4( 0.2f, 0.7f, 0.3f, 1.0f );
+		else if ( ci.mood > 35 )
+			moodColor = ImVec4( 0.7f, 0.7f, 0.2f, 1.0f );
+		else if ( ci.mood > 15 )
+			moodColor = ImVec4( 0.8f, 0.4f, 0.1f, 1.0f );
+		else
+			moodColor = ImVec4( 0.8f, 0.1f, 0.1f, 1.0f );
+
+		ImGui::Text( "Mood" );
+		ImGui::SameLine( 80 );
+		ImGui::PushStyleColor( ImGuiCol_PlotHistogram, moodColor );
+		ImGui::ProgressBar( ci.mood / 100.0f, ImVec2( -50, 0 ), "" );
+		ImGui::PopStyleColor();
+		ImGui::SameLine();
+		if ( ci.mentalBreak )
+			ImGui::TextColored( ImVec4( 1.0f, 0.2f, 0.2f, 1.0f ), "!!!" );
+		else
+			ImGui::Text( "%d%%", ci.mood );
+	}
+
+	// Needs bars
+	auto needBar = []( const char* label, int value ) {
+		ImVec4 col;
+		float v = qBound( 0.0f, value / 100.0f, 1.0f );
+		if ( value > 60 )
+			col = ImVec4( 0.2f, 0.6f, 0.3f, 1.0f );
+		else if ( value > 30 )
+			col = ImVec4( 0.7f, 0.6f, 0.1f, 1.0f );
+		else
+			col = ImVec4( 0.8f, 0.2f, 0.2f, 1.0f );
+		ImGui::Text( "%s", label );
+		ImGui::SameLine( 80 );
+		ImGui::PushStyleColor( ImGuiCol_PlotHistogram, col );
+		ImGui::ProgressBar( v, ImVec2( -50, 0 ), "" );
+		ImGui::PopStyleColor();
+		ImGui::SameLine();
+		ImGui::Text( "%d%%", qBound( 0, value, 100 ) );
+	};
+
+	needBar( "Hunger", ci.hunger );
+	needBar( "Thirst", ci.thirst );
+	needBar( "Sleep", ci.sleep );
 
 	ImGui::Separator();
 
+	// Backstory
+	if ( !ci.childhoodTitle.isEmpty() || !ci.adulthoodTitle.isEmpty() )
+	{
+		if ( ImGui::CollapsingHeader( "Backstory", ImGuiTreeNodeFlags_DefaultOpen ) )
+		{
+			ImGui::Indent( 8.0f );
+			if ( !ci.childhoodTitle.isEmpty() )
+			{
+				ImGui::TextColored( ImVec4( 0.6f, 0.7f, 0.9f, 1.0f ), "Youth:" );
+				ImGui::SameLine();
+				ImGui::Text( "%s", ci.childhoodTitle.toStdString().c_str() );
+				if ( ImGui::IsItemHovered() && !ci.childhoodDesc.isEmpty() )
+					ImGui::SetTooltip( "%s", ci.childhoodDesc.toStdString().c_str() );
+			}
+			if ( !ci.adulthoodTitle.isEmpty() )
+			{
+				ImGui::TextColored( ImVec4( 0.6f, 0.7f, 0.9f, 1.0f ), "Before:" );
+				ImGui::SameLine();
+				ImGui::Text( "%s", ci.adulthoodTitle.toStdString().c_str() );
+				if ( ImGui::IsItemHovered() && !ci.adulthoodDesc.isEmpty() )
+					ImGui::SetTooltip( "%s", ci.adulthoodDesc.toStdString().c_str() );
+			}
+			ImGui::Unindent( 8.0f );
+		}
+	}
+
+	// Personality Traits
+	if ( !ci.traits.isEmpty() )
+	{
+		if ( ImGui::CollapsingHeader( "Personality", ImGuiTreeNodeFlags_DefaultOpen ) )
+		{
+			ImGui::Indent( 8.0f );
+			bool hasNotable = false;
+			for ( const auto& trait : ci.traits )
+			{
+				if ( trait.label.isEmpty() ) continue;
+				hasNotable = true;
+
+				float barFrac = ( trait.value + 50.0f ) / 100.0f;
+				ImVec4 barColor = ( trait.value > 0 ) ?
+					ImVec4( 0.2f, 0.6f, 0.3f, 1.0f ) :
+					ImVec4( 0.7f, 0.3f, 0.2f, 1.0f );
+
+				ImGui::PushStyleColor( ImGuiCol_PlotHistogram, barColor );
+				ImGui::ProgressBar( barFrac, ImVec2( 100, 12 ), "" );
+				ImGui::PopStyleColor();
+				ImGui::SameLine();
+				ImGui::Text( "%s", trait.label.toStdString().c_str() );
+				if ( ImGui::IsItemHovered() && !trait.description.isEmpty() )
+					ImGui::SetTooltip( "[%s %+d] %s", trait.id.toStdString().c_str(), trait.value, trait.description.toStdString().c_str() );
+			}
+			if ( !hasNotable )
+				ImGui::TextDisabled( "Unremarkable" );
+			ImGui::Unindent( 8.0f );
+		}
+	}
+
+	// Active Thoughts
+	if ( !ci.thoughts.isEmpty() )
+	{
+		if ( ImGui::CollapsingHeader( "Thoughts" ) )
+		{
+			ImGui::Indent( 8.0f );
+			for ( const auto& thought : ci.thoughts )
+			{
+				ImVec4 tColor = thought.moodValue > 0 ?
+					ImVec4( 0.3f, 0.7f, 0.3f, 1.0f ) :
+					ImVec4( 0.7f, 0.3f, 0.3f, 1.0f );
+				ImGui::TextColored( tColor, "%+d", thought.moodValue );
+				ImGui::SameLine();
+				ImGui::Text( "%s", thought.text.toStdString().c_str() );
+			}
+			ImGui::Unindent( 8.0f );
+		}
+	}
+
+	// Stats (collapsed by default)
 	if ( ImGui::CollapsingHeader( "Stats" ) )
 	{
 		ImGui::Text( "STR: %d  DEX: %d  CON: %d", ci.str, ci.dex, ci.con );
 		ImGui::Text( "INT: %d  WIS: %d  CHA: %d", ci.intel, ci.wis, ci.cha );
-	}
-
-	if ( !ci.activity.isEmpty() )
-	{
-		ImGui::Text( "Activity: %s", ci.activity.toStdString().c_str() );
 	}
 
 	ImGui::End();
