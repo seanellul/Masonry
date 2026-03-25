@@ -1499,7 +1499,12 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 				ImGui::ProgressBar( qBound( 0.0f, val / 100.0f, 1.0f ), ImVec2( -50, 0 ), "" );
 				ImGui::PopStyleColor();
 				ImGui::SameLine();
-				ImGui::Text( "%d%%", qBound( 0, val, 100 ) );
+				if ( val <= 5 )
+					ImGui::TextColored( ImVec4( 0.9f, 0.2f, 0.2f, 1.0f ), "Starving!" );
+				else if ( val <= 20 )
+					ImGui::TextColored( ImVec4( 0.8f, 0.5f, 0.2f, 1.0f ), "%d%% Hungry", val );
+				else
+					ImGui::Text( "%d%%", qBound( 0, val, 100 ) );
 			}
 
 			ImGui::Separator();
