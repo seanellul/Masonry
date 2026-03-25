@@ -6,6 +6,31 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-25] Animal Desperation System — Staged Starvation Behavior
+
+**Files changed**: `src/game/animal.cpp`
+
+### Changes
+Completely rewrote starvation behavior to bypass the behavior tree and directly drive desperate survival actions from C++:
+
+**Stage 1 — Restless (hunger 10-20):** Animal shows "Hungry" thought bubble. Begins searching for food.
+
+**Stage 2 — Desperate (hunger 0-10):**
+- **Carnivores/omnivores**: pathfind toward nearest gnome (up to 60 tiles), set as attack target
+- **Herbivores/omnivores**: pathfind toward nearest stockpile to raid for food
+- Movement speed doubled (halved cooldown) — animals visibly rush
+
+**Stage 3 — Attacking (hunger < 0):**
+- Carnivores that reach a gnome (adjacent tile) attack with their Attack/Damage stats
+- Combat logged as COMBAT type with position
+- Re-paths if target moves away
+
+**Why BT bypass was needed**: The BT switch to AnimalHunter wasn't working because the standard Animal BT's registered nodes and the hunter BT's expected nodes didn't fully align. Direct C++ pathfinding + attack in onTick is reliable and visible.
+
+**Movement**: Desperate animals move on their computed path every tick (with halved move cooldown), returning before the BT executes. Normal BT only runs when the animal has no desperation path.
+
+---
+
 ## [2026-03-25] Starving Animals Attack + Position-Based Go To
 
 **Files changed**: `src/base/logger.h`, `src/base/logger.cpp`, `src/game/animal.cpp`, `src/gui/imguibridge.h`, `src/gui/imguibridge.cpp`, `src/gui/ui/ui_gamehud.cpp`

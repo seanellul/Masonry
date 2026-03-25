@@ -26,6 +26,8 @@
 #include "../game/farmingmanager.h"
 #include "../game/gnomemanager.h"
 #include "../game/inventory.h"
+#include "../game/stockpilemanager.h"
+#include "../game/stockpile.h"
 #include "../game/plant.h"
 #include "../gfx/sprite.h"
 #include "../gfx/spritefactory.h"
@@ -422,57 +424,22 @@ CreatureTickResult Animal::onTick( quint64 tickNumber, bool seasonChanged, bool 
 			return CreatureTickResult::DEAD;
 		}
 
-		// Hunger-driven aggression: carnivores/omnivores become dangerous when starving
+		// Log aggression onset
 		bool canEatMeat = m_diet.contains( "Meat" );
-		if ( m_hunger <= 10.0 && canEatMeat && !m_tame )
+		if ( m_hunger <= 10.0 && !m_tame && !m_starvingAggro && canEatMeat )
 		{
-			if ( !m_starvingAggro )
-			{
-				m_starvingAggro = true;
-				Global::logger().log( LogType::WILDLIFE, "A starving " + S::s( "$CreatureName_" + m_species ) + " has become aggressive!", m_id, m_position.x, m_position.y, m_position.z );
-
-				// Switch to hunter behavior tree so GetTarget/AttackTarget nodes are available
-				if ( m_btName != "AnimalHunter" )
-				{
-					m_btName = "AnimalHunter";
-					loadBehaviorTree( m_btName );
-				}
-			}
-
-			// Continuously refresh aggro list while starving — every minute
-			// (actionGetTarget consumes entries, so they need replenishing)
-			m_aggroList.clear();
-			for ( auto gn : g->gm()->gnomes() )
-			{
-				if ( gn->isDead() ) continue;
-				Position gnPos = gn->getPos();
-				int dist = abs( m_position.x - gnPos.x ) + abs( m_position.y - gnPos.y ) + abs( m_position.z - gnPos.z );
-				if ( dist < 40 )
-				{
-					addAggro( gn->id(), 100 );
-				}
-			}
+			m_starvingAggro = true;
+			Global::logger().log( LogType::WILDLIFE, "A starving " + S::s( "$CreatureName_" + m_species ) + " has become aggressive!", m_id, m_position.x, m_position.y, m_position.z );
 		}
 		else if ( m_hunger > 30.0 && m_starvingAggro )
 		{
 			m_starvingAggro = false;
 			m_aggroList.clear();
-			// Switch back to original behavior tree
-			QVariantMap avm = DB::selectRow( "Animals", m_species );
-			QString originalBT = avm.value( "BehaviorTree" ).toString();
-			if ( m_btName != originalBT )
-			{
-				m_btName = originalBT;
-				loadBehaviorTree( m_btName );
-			}
+			m_currentAttackTarget = 0;
 		}
-
-		// Visual feedback
-		if ( m_hunger <= 0.0 )
-			setThoughtBubble( "Hungry" );
 	}
 
-	if ( m_stateChangeTick != 0 && tickNumber >= m_stateChangeTick /* && m_currentAction == "idle" */ )
+	if ( m_stateChangeTick != 0 && tickNumber >= m_stateChangeTick )
 	{
 		++m_state;
 		setState( m_state );
@@ -480,6 +447,143 @@ CreatureTickResult Animal::onTick( quint64 tickNumber, bool seasonChanged, bool 
 
 	setThoughtBubble( "" );
 
+	// =====================================================================
+	// DESPERATION BEHAVIOR — overrides normal BT when starving
+	// Directly drives movement and attacks from C++ instead of relying on
+	// behavior tree nodes which weren't executing properly.
+	// =====================================================================
+	bool desperateMode = ( m_hunger < 20.0 && !m_tame && !isEgg() );
+
+	if ( desperateMode )
+	{
+		bool canEatMeat = m_diet.contains( "Meat" );
+
+		// Stage 1 (hunger 10-20): Restless — move faster, search for food
+		if ( m_hunger < 20.0 )
+		{
+			setThoughtBubble( "Hungry" );
+		}
+
+		// Stage 2 (hunger 0-10): Desperate — actively seek food sources
+		if ( m_hunger < 10.0 )
+		{
+			setThoughtBubble( "Hungry" );
+
+			// Carnivores/omnivores: find nearest gnome and path toward them
+			if ( canEatMeat && m_currentPath.empty() && m_currentAttackTarget == 0 )
+			{
+				Gnome* nearest = nullptr;
+				int nearestDist = 999999;
+				for ( auto gn : g->gm()->gnomes() )
+				{
+					if ( gn->isDead() ) continue;
+					Position gnPos = gn->getPos();
+					int dist = abs( m_position.x - gnPos.x ) + abs( m_position.y - gnPos.y ) + abs( m_position.z - gnPos.z );
+					if ( dist < nearestDist )
+					{
+						nearestDist = dist;
+						nearest = gn;
+					}
+				}
+				if ( nearest && nearestDist < 60 )
+				{
+					m_currentAttackTarget = nearest->id();
+					setCurrentTarget( nearest->getPos() );
+					g->pf()->getPath( m_id, m_position, nearest->getPos(), true, m_currentPath );
+				}
+			}
+
+			// Herbivores/omnivores: find nearest stockpile with food and path toward it
+			if ( !canEatMeat && m_currentPath.empty() )
+			{
+				int nearestDist = 999999;
+				Position nearestStockpilePos;
+				bool foundSP = false;
+				for ( auto spID : g->spm()->allStockpiles() )
+				{
+					Stockpile* sp = g->spm()->getStockpile( spID );
+					if ( sp && !sp->getFields().isEmpty() )
+					{
+						Position spPos( sp->getFields().firstKey() );
+						int dist = abs( m_position.x - spPos.x ) + abs( m_position.y - spPos.y ) + abs( m_position.z - spPos.z );
+						if ( dist < nearestDist )
+						{
+							nearestDist = dist;
+							nearestStockpilePos = spPos;
+							foundSP = true;
+						}
+					}
+				}
+				if ( foundSP && nearestDist < 60 )
+				{
+					setCurrentTarget( nearestStockpilePos );
+					g->pf()->getPath( m_id, m_position, nearestStockpilePos, true, m_currentPath );
+				}
+			}
+		}
+
+		// Stage 3 (hunger < 0): Attacking — carnivores attack adjacent creatures
+		if ( m_hunger < 0.0 && canEatMeat && m_currentAttackTarget )
+		{
+			Creature* target = g->gm()->gnome( m_currentAttackTarget );
+			if ( !target )
+				target = g->cm()->creature( m_currentAttackTarget );
+
+			if ( target && !target->isDead() )
+			{
+				Position tPos = target->getPos();
+				int dist = abs( m_position.x - tPos.x ) + abs( m_position.y - tPos.y ) + abs( m_position.z - tPos.z );
+
+				if ( dist <= 1 )
+				{
+					// Adjacent — attack!
+					m_facing = getFacing( m_position, tPos );
+					if ( m_globalCooldown <= 0 )
+					{
+						int attackSkill  = m_stateMap.value( "Attack" ).toInt();
+						int attackDamage = m_stateMap.value( "Damage" ).toInt();
+						Global::logger().log( LogType::COMBAT, S::s( "$CreatureName_" + m_species ) + " attacks " + target->name() + "!", m_id, m_position.x, m_position.y, m_position.z );
+						target->attack( DT_PIERCING, AH_LOW, attackSkill, attackDamage, m_position, m_id );
+						m_globalCooldown = 8;
+					}
+				}
+				else
+				{
+					// Re-path toward target
+					setCurrentTarget( tPos );
+					if ( m_currentPath.empty() )
+						g->pf()->getPath( m_id, m_position, tPos, true, m_currentPath );
+				}
+			}
+			else
+			{
+				m_currentAttackTarget = 0;
+			}
+		}
+
+		// Move on current path if we have one (regardless of BT)
+		if ( !m_currentPath.empty() )
+		{
+			if ( m_moveCooldown <= 0 )
+			{
+				Position next = m_currentPath.back();
+				m_currentPath.pop_back();
+				if ( g->w()->isWalkable( next ) )
+				{
+					m_facing = getFacing( m_position, next );
+					Position oldPos = m_position;
+					m_position = next;
+					move( oldPos );
+				}
+				// Starving animals move faster (halved cooldown)
+				m_moveCooldown = m_moveDelay * 0.5f;
+			}
+			m_lastOnTick = tickNumber;
+			return CreatureTickResult::OK;
+		}
+	}
+
+	// Normal BT execution (only runs if not in active desperation movement)
 	if ( m_behaviorTree )
 	{
 		m_behaviorTree->tick();
