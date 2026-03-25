@@ -1,13 +1,17 @@
 #include "ui_mainmenu.h"
 #include "../imguibridge.h"
+#include "../updatechecker.h"
 #include "../eventconnector.h"
 
 #include "../../base/config.h"
 #include "../../base/global.h"
 #include "../../base/db.h"
+#include "../../version.h"
 
 #include <imgui.h>
 #include <QRandomGenerator>
+#include <QDesktopServices>
+#include <QUrl>
 
 void drawMainMenu( ImGuiBridge& bridge )
 {
@@ -21,7 +25,32 @@ void drawMainMenu( ImGuiBridge& bridge )
 
 	ImGui::SetCursorPosX( ( 300 - ImGui::CalcTextSize( "INGNOMIA" ).x ) * 0.5f );
 	ImGui::TextUnformatted( "INGNOMIA" );
+
+	// Version string
+	const char* ver = PROJECT_VERSION;
+	ImGui::SetCursorPosX( ( 300 - ImGui::CalcTextSize( ver ).x ) * 0.5f );
+	ImGui::TextDisabled( "%s", ver );
+
 	ImGui::Separator();
+
+	// Update banner
+	if ( bridge.updateChecker && bridge.updateChecker->updateAvailable() )
+	{
+		ImGui::PushStyleColor( ImGuiCol_Text, ImVec4( 0.3f, 1.0f, 0.3f, 1.0f ) );
+		QString updateText = QString( "Update available: v%1" ).arg( bridge.updateChecker->latestVersion() );
+		QByteArray updateBytes = updateText.toUtf8();
+		ImGui::SetCursorPosX( ( 300 - ImGui::CalcTextSize( updateBytes.constData() ).x ) * 0.5f );
+		ImGui::TextUnformatted( updateBytes.constData() );
+		ImGui::PopStyleColor();
+
+		float dlBtnWidth = 160;
+		ImGui::SetCursorPosX( ( 300 - dlBtnWidth ) * 0.5f );
+		if ( ImGui::Button( "Download Update", ImVec2( dlBtnWidth, 28 ) ) )
+		{
+			QDesktopServices::openUrl( QUrl( bridge.updateChecker->downloadUrl() ) );
+		}
+	}
+
 	ImGui::Spacing();
 
 	float buttonWidth = 260;

@@ -1,0 +1,281 @@
+name: Build & Release
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+env:
+  BUILD_TYPE: RelWithDebInfo
+  QT_VERSION: '5.15.2'
+
+jobs:
+  # ── Extract version & generate release notes ──────────────────────────
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.meta.outputs.version }}
+      tag: ${{ steps.meta.outputs.tag }}
+      notes: ${{ steps.notes.outputs.notes }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract version and tag
+        id: meta
+        run: |
+          VERSION=$(grep -oP 'set\(DEFAULT_VERSION "\K[^"]+' CMakeLists.txt)
+          TAG="v${VERSION}+${GITHUB_RUN_NUMBER}"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Generate release notes from DEVLOG.md
+        id: notes
+        run: |
+          # Extract the latest entry (everything between the first two "## [" headers)
+          NOTES=$(awk '/^## \[/{if(n++) exit} n' DEVLOG.md)
+          # GitHub Actions multiline output
+          {
+            echo "notes<<RELEASE_NOTES_EOF"
+            echo "$NOTES"
+            echo "RELEASE_NOTES_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+  # ── Build matrix ──────────────────────────────────────────────────────
+  build:
+    needs: prepare
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            artifact: Ingnomia-Windows
+            platform: windows
+          - os: macos-13
+            artifact: Ingnomia-macOS
+            platform: macos
+          - os: ubuntu-22.04
+            artifact: Ingnomia-Linux
+            platform: linux
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # ── Install Qt ──────────────────────────────────────────────────
+      - name: Install Qt (Windows/macOS)
+        if: matrix.platform != 'linux'
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: ${{ env.QT_VERSION }}
+          modules: 'qtnetworkauth'
+          cache: true
+
+      - name: Install Qt and deps (Linux)
+        if: matrix.platform == 'linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -yq \
+            qtbase5-dev qt5-qmake libqt5opengl5-dev libqt5sql5-sqlite libqt5xml5 libqt5network5 \
+            libopenal-dev libgl1-mesa-dev libfuse2
+
+      # ── Install OpenAL ──────────────────────────────────────────────
+      - name: Install OpenAL (macOS)
+        if: matrix.platform == 'macos'
+        run: brew install openal-soft
+
+      - name: Download OpenAL (Windows)
+        if: matrix.platform == 'windows'
+        run: |
+          curl -L -o openal.zip "https://github.com/rschurade/IngnomiaBuildDeps/raw/master/openal.zip"
+          7z x openal.zip -oopenal_sdk
+
+      # ── Download content assets (tilesheets + audio) ────────────────
+      - name: Download tilesheets
+        run: |
+          curl -L -o tilesheet.zip "https://github.com/rschurade/IngnomiaBuildDeps/raw/master/tilesheet.zip"
+          7z x tilesheet.zip -ocontent
+
+      - name: Download audio
+        run: |
+          curl -L -o audio.zip "https://github.com/rschurade/IngnomiaBuildDeps/raw/master/audio.zip"
+          7z x audio.zip -ocontent
+
+      # ── Configure ──────────────────────────────────────────────────
+      - name: Configure (Windows)
+        if: matrix.platform == 'windows'
+        run: |
+          cmake -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} `
+            -DCMAKE_INSTALL_BINDIR="." `
+            -DOPENAL_ROOT=openal_sdk `
+            -DGIT_REPO="${{ github.repository }}" `
+            -DGIT_REF="${{ github.ref }}" `
+            -DGIT_SHA="${{ github.sha }}" `
+            -DBUILD_ID="${{ github.run_id }}"
+
+      - name: Configure (macOS)
+        if: matrix.platform == 'macos'
+        run: |
+          cmake -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
+            -DCMAKE_INSTALL_BINDIR="." \
+            -DCMAKE_PREFIX_PATH=$(brew --prefix qt@5) \
+            -DOPENAL_ROOT=$(brew --prefix openal-soft) \
+            -DCMAKE_FIND_FRAMEWORK=LAST \
+            -DGIT_REPO="${{ github.repository }}" \
+            -DGIT_REF="${{ github.ref }}" \
+            -DGIT_SHA="${{ github.sha }}" \
+            -DBUILD_ID="${{ github.run_id }}"
+
+      - name: Configure (Linux)
+        if: matrix.platform == 'linux'
+        run: |
+          cmake -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
+            -DCMAKE_INSTALL_BINDIR="." \
+            -DGIT_REPO="${{ github.repository }}" \
+            -DGIT_REF="${{ github.ref }}" \
+            -DGIT_SHA="${{ github.sha }}" \
+            -DBUILD_ID="${{ github.run_id }}"
+
+      # ── Build ──────────────────────────────────────────────────────
+      - name: Build
+        run: cmake --build build --config ${{ env.BUILD_TYPE }} --parallel
+
+      # ── Install / Package ──────────────────────────────────────────
+      - name: Install
+        run: cmake --install build --prefix install --config ${{ env.BUILD_TYPE }}
+
+      # Windows: windeployqt + zip
+      - name: Package (Windows)
+        if: matrix.platform == 'windows'
+        run: |
+          # windeployqt is run as a post-build step, files should already be in install/
+          # Copy content to install dir
+          Copy-Item -Recurse -Force content\tilesheet install\content\tilesheet
+          Copy-Item -Recurse -Force content\audio install\content\audio
+          Compress-Archive -Path install\* -DestinationPath Ingnomia-Windows.zip
+
+      # macOS: macdeployqt + codesign + zip
+      - name: Package (macOS)
+        if: matrix.platform == 'macos'
+        env:
+          MACOS_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE }}
+          MACOS_CERTIFICATE_PWD: ${{ secrets.MACOS_CERTIFICATE_PWD }}
+          MACOS_SIGNING_IDENTITY: ${{ secrets.MACOS_SIGNING_IDENTITY }}
+        run: |
+          # Create .app bundle structure
+          APP="install/Ingnomia.app"
+          mkdir -p "$APP/Contents/MacOS"
+          mkdir -p "$APP/Contents/Resources"
+          cp install/Ingnomia "$APP/Contents/MacOS/"
+          cp -R install/content "$APP/Contents/Resources/content"
+
+          # Copy tilesheets and audio into app bundle
+          cp -R content/tilesheet "$APP/Contents/Resources/content/tilesheet"
+          cp -R content/audio "$APP/Contents/Resources/content/audio"
+
+          # Create Info.plist
+          cat > "$APP/Contents/Info.plist" << 'PLIST'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>CFBundleExecutable</key>
+            <string>Ingnomia</string>
+            <key>CFBundleIdentifier</key>
+            <string>com.ingnomia.game</string>
+            <key>CFBundleName</key>
+            <string>Ingnomia</string>
+            <key>CFBundleVersion</key>
+            <string>${{ needs.prepare.outputs.version }}</string>
+            <key>CFBundleShortVersionString</key>
+            <string>${{ needs.prepare.outputs.version }}</string>
+            <key>NSHighResolutionCapable</key>
+            <true/>
+            <key>NSOpenGLProfileVersion</key>
+            <string>NSOpenGLProfileVersion4_1Core</string>
+          </dict>
+          </plist>
+          PLIST
+
+          # Run macdeployqt
+          $(brew --prefix qt@5)/bin/macdeployqt "$APP" || true
+
+          # Codesign if certificate is available
+          if [ -n "$MACOS_CERTIFICATE" ]; then
+            echo "$MACOS_CERTIFICATE" | base64 --decode > certificate.p12
+            security create-keychain -p actions build.keychain
+            security default-keychain -s build.keychain
+            security unlock-keychain -p actions build.keychain
+            security import certificate.p12 -k build.keychain -P "$MACOS_CERTIFICATE_PWD" -T /usr/bin/codesign
+            security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k actions build.keychain
+            /usr/bin/codesign --force --deep --sign "$MACOS_SIGNING_IDENTITY" "$APP"
+          fi
+
+          # Zip the app bundle
+          cd install && zip -r ../Ingnomia-macOS.zip Ingnomia.app
+
+      # Linux: tar.gz (AppImage can be added later)
+      - name: Package (Linux)
+        if: matrix.platform == 'linux'
+        run: |
+          # Copy content assets
+          cp -R content/tilesheet install/content/tilesheet
+          cp -R content/audio install/content/audio
+          # Create launch script
+          cat > install/ingnomia.sh << 'LAUNCH'
+          #!/bin/bash
+          SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+          export LD_LIBRARY_PATH="$SCRIPT_DIR:$LD_LIBRARY_PATH"
+          exec "$SCRIPT_DIR/Ingnomia" "$@"
+          LAUNCH
+          chmod +x install/ingnomia.sh install/Ingnomia
+          tar -czf Ingnomia-Linux.tar.gz -C install .
+
+      # ── Upload artifact ────────────────────────────────────────────
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: |
+            Ingnomia-Windows.zip
+            Ingnomia-macOS.zip
+            Ingnomia-Linux.tar.gz
+          if-no-files-found: error
+
+  # ── Create GitHub Release ─────────────────────────────────────────────
+  release:
+    needs: [prepare, build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Collect release files
+        run: |
+          mkdir release
+          find artifacts -type f \( -name '*.zip' -o -name '*.tar.gz' \) -exec cp {} release/ \;
+          ls -la release/
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ needs.prepare.outputs.tag }}
+          name: "Ingnomia ${{ needs.prepare.outputs.version }} (Build #${{ github.run_number }})"
+          body: |
+            ## What's New
+
+            ${{ needs.prepare.outputs.notes }}
+
+            ---
+            **Build**: #${{ github.run_number }} | **Commit**: ${{ github.sha }}
+
+            ### Downloads
+            - **Windows**: `Ingnomia-Windows.zip` — extract and run `Ingnomia.exe`
+            - **macOS**: `Ingnomia-macOS.zip` — extract, right-click Ingnomia.app → Open (first time)
+            - **Linux**: `Ingnomia-Linux.tar.gz` — extract and run `./ingnomia.sh`
+          files: release/*
+          draft: false
+          prerelease: true

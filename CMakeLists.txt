@@ -20,7 +20,7 @@ project(Ingnomia
 cmake_policy(SET CMP0144 NEW)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake/modules")
 
-find_package(Qt5 REQUIRED QUIET COMPONENTS Core Xml Sql OpenGL)
+find_package(Qt5 REQUIRED QUIET COMPONENTS Core Xml Sql OpenGL Network)
 
 find_package(Steam QUIET)
 find_package(OpenAL REQUIRED)
@@ -86,6 +86,7 @@ target_link_libraries(${PROJECT_NAME}
 		Qt5::Xml
 		Qt5::Sql
 		Qt5::OpenGL
+		Qt5::Network
 		$<$<BOOL:${Steam_FOUND}>:Steam>
 		imgui
 		fastnoise

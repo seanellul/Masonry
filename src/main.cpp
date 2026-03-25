@@ -24,6 +24,7 @@
 #include "game/gamemanager.h"
 
 #include "gui/mainwindow.h"
+#include "gui/imguibridge.h"
 #include "gui/strings.h"
 
 #include <QApplication>
@@ -46,6 +47,7 @@
 #endif
 #include "test/testcontroller.h"
 #include "test/testcommandserver.h"
+#include "gui/updatechecker.h"
 #include "version.h"
 
 QTextStream* out = 0;
@@ -279,6 +281,21 @@ int main( int argc, char* argv[] )
 	if( Global::cfg->get( "fullscreen" ).toBool() )
 	{
 		w.onFullScreen( true );
+	}
+
+	// Check for updates (non-blocking, fires after event loop starts)
+	if ( !Global::testMode )
+	{
+		QTimer::singleShot( 2000, [&w]()
+		{
+			auto* bridge = w.imguiBridge();
+			if ( bridge )
+			{
+				auto* checker = new UpdateChecker( bridge );
+				bridge->updateChecker = checker;
+				checker->checkForUpdates();
+			}
+		} );
 	}
 
 	// Create test controller if test flags were provided
