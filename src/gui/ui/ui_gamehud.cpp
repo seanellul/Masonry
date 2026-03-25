@@ -295,11 +295,11 @@ void drawGameHUD( ImGuiBridge& bridge )
 	// Top-right: Time, Z-level, speed controls (compact, 2 lines)
 	// =========================================================================
 	ImGui::SetNextWindowPos( ImVec2( io.DisplaySize.x - 260, 0 ) );
-	ImGui::SetNextWindowSize( ImVec2( 260, topBarHeight ) );
-	ImGui::PushStyleVar( ImGuiStyleVar_WindowPadding, ImVec2( 8, 2 ) );
+	ImGui::SetNextWindowSize( ImVec2( 260, 0 ) );
+	ImGui::PushStyleVar( ImGuiStyleVar_WindowPadding, ImVec2( 8, 4 ) );
 	ImGui::Begin( "##topright", nullptr,
 		ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
-		ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse );
+		ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoScrollbar );
 
 	// Line 1: Date + Z-level
 	ImGui::Text( "Day %d %s  Y%d", bridge.day, bridge.season.toStdString().c_str(), bridge.year );
@@ -326,56 +326,56 @@ void drawGameHUD( ImGuiBridge& bridge )
 	if ( isFast ) ImGui::PopStyleColor();
 	ImGui::SameLine( 0, 10 );
 
-	// Lockdown button (compact, next to speed)
+	// Lockdown button
 	if ( GameState::lockdown )
 	{
 		ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0.8f, 0.1f, 0.1f, 1.0f ) );
-		if ( ImGui::SmallButton( "!!!" ) )
-		{
-			GameState::lockdown = false;
-			Global::logger().log( LogType::INFO, "Lockdown lifted — civilians may move freely.", 0 );
-		}
+		if ( ImGui::SmallButton( "L" ) ) { GameState::lockdown = false; Global::logger().log( LogType::INFO, "Lockdown lifted.", 0 ); }
 		ImGui::PopStyleColor();
 		if ( ImGui::IsItemHovered() ) ImGui::SetTooltip( "LOCKDOWN ACTIVE\nClick to lift" );
 	}
 	else
 	{
-		if ( ImGui::SmallButton( "L" ) )
-		{
-			GameState::lockdown = true;
-			Global::logger().log( LogType::DANGER, "LOCKDOWN! Civilians confined to safe areas.", 0 );
-		}
+		if ( ImGui::SmallButton( "L" ) ) { GameState::lockdown = true; Global::logger().log( LogType::DANGER, "LOCKDOWN!", 0 ); }
 		if ( ImGui::IsItemHovered() ) ImGui::SetTooltip( "Lockdown\nConfine civilians to safe rooms" );
 	}
 
-	ImGui::End();
-	ImGui::PopStyleVar();
-
-	// =========================================================================
-	// Below top-right: DJWA overlay filter checkboxes
-	// =========================================================================
-	ImGui::SetNextWindowPos( ImVec2( io.DisplaySize.x - 260, topBarHeight + 2 ) );
-	ImGui::SetNextWindowSize( ImVec2( 0, 0 ) );
-	ImGui::Begin( "##overlays", nullptr,
-		ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
-		ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoBackground );
-
-	bool d = bridge.renderDesignations, j = bridge.renderJobs, w = bridge.renderWalls, a = bridge.renderAxles;
+	// Line 3: DJWA overlay toggles as small highlighted buttons
+	ImVec4 onColor  = ImVec4( 0.2f, 0.5f, 0.7f, 1.0f );
+	ImVec4 offColor = ImVec4( 0.3f, 0.3f, 0.3f, 1.0f );
 	bool changed = false;
-	if ( ImGui::Checkbox( "D", &d ) ) { bridge.renderDesignations = d; changed = true; }
-	if ( ImGui::IsItemHovered() ) ImGui::SetTooltip( "Show Designations" );
+
+	bool d = bridge.renderDesignations;
+	ImGui::PushStyleColor( ImGuiCol_Button, d ? onColor : offColor );
+	if ( ImGui::SmallButton( "D" ) ) { d = !d; bridge.renderDesignations = d; changed = true; }
+	ImGui::PopStyleColor();
+	if ( ImGui::IsItemHovered() ) ImGui::SetTooltip( "Designations" );
 	ImGui::SameLine();
-	if ( ImGui::Checkbox( "J", &j ) ) { bridge.renderJobs = j; changed = true; }
-	if ( ImGui::IsItemHovered() ) ImGui::SetTooltip( "Show Jobs" );
+
+	bool j = bridge.renderJobs;
+	ImGui::PushStyleColor( ImGuiCol_Button, j ? onColor : offColor );
+	if ( ImGui::SmallButton( "J" ) ) { j = !j; bridge.renderJobs = j; changed = true; }
+	ImGui::PopStyleColor();
+	if ( ImGui::IsItemHovered() ) ImGui::SetTooltip( "Jobs" );
 	ImGui::SameLine();
-	if ( ImGui::Checkbox( "W", &w ) ) { bridge.renderWalls = w; changed = true; }
+
+	bool w = bridge.renderWalls;
+	ImGui::PushStyleColor( ImGuiCol_Button, w ? onColor : offColor );
+	if ( ImGui::SmallButton( "W" ) ) { w = !w; bridge.renderWalls = w; changed = true; }
+	ImGui::PopStyleColor();
 	if ( ImGui::IsItemHovered() ) ImGui::SetTooltip( "Lower Walls" );
 	ImGui::SameLine();
-	if ( ImGui::Checkbox( "A", &a ) ) { bridge.renderAxles = a; changed = true; }
-	if ( ImGui::IsItemHovered() ) ImGui::SetTooltip( "Show Axles" );
+
+	bool a = bridge.renderAxles;
+	ImGui::PushStyleColor( ImGuiCol_Button, a ? onColor : offColor );
+	if ( ImGui::SmallButton( "A" ) ) { a = !a; bridge.renderAxles = a; changed = true; }
+	ImGui::PopStyleColor();
+	if ( ImGui::IsItemHovered() ) ImGui::SetTooltip( "Axles" );
+
 	if ( changed ) bridge.cmdSetRenderOptions( d, j, w, a );
 
 	ImGui::End();
+	ImGui::PopStyleVar();
 
 	// =========================================================================
 	// Bottom toolbar
