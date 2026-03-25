@@ -42,8 +42,12 @@ struct GuiItemInfo
 	unsigned int id = 0;
 	QString material;
 	unsigned int count = 0;
-	bool inStockpile = false;
-	bool inContainer = false;
+	bool inStockpile  = false;
+	bool inContainer  = false;
+	bool isContainer  = false;
+	int containerUsed = 0;
+	int containerCap  = 0;
+	QStringList containedItemNames;
 };
 
 struct GuiTileInfo

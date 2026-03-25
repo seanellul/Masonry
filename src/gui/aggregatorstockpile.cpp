@@ -86,15 +86,27 @@ bool AggregatorStockpile::aggregate( unsigned int stockpileID )
 
 		m_info.filter = sp->filter();
 
+		// Calculate total capacity, items, and reserved across all fields
+		int totalCap = 0, totalItems = 0, totalReserved = 0;
+		for ( auto field : sp->getFields() )
+		{
+			totalCap      += field->capacity;
+			totalItems    += field->items.size();
+			totalReserved += field->reservedItems.size();
+		}
+		m_info.capacity  = totalCap;
+		m_info.itemCount = totalItems;
+		m_info.reserved  = totalReserved;
+
+		// Build item summary — what's actually stored
 		m_info.summary.clear();
 
 		auto active = m_info.filter.getActive();
 		for ( auto entry : active )
 		{
 			int count = sp->count( entry.first, entry.second );
-			//if( count > 0 )
+			if ( count > 0 )
 			{
-				//QIcon icon( Global::util->smallPixmap( Global::sf().createSprite( entry.first, { entry.second } ), season, 0 ) );
 				ItemsSummary is;
 				is.itemName     = S::s( "$ItemName_" + entry.first );
 				is.materialName = S::s( "$MaterialName_" + entry.second );
@@ -152,12 +164,17 @@ void AggregatorStockpile::onSetBasicOptions( unsigned int stockpileID, QString n
 	auto sp = g->spm()->getStockpile( stockpileID );
 	if ( sp )
 	{
-		//qDebug() << stockpileID << name << priority << suspended << pull << allowPull;
 		sp->setName( name );
 		g->spm()->setPriority( stockpileID, priority );
 		sp->setActive( !suspended );
 		sp->setAllowPull( allowPull );
 		sp->setPullOthers( pull );
+
+		// Refresh UI immediately after changes
+		if ( aggregate( stockpileID ) )
+		{
+			emit signalUpdateInfo( m_info );
+		}
 	}
 }
 

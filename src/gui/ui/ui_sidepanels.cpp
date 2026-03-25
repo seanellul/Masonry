@@ -97,7 +97,56 @@ void drawStockpilePanel( ImGuiBridge& bridge )
 	ImGui::Separator();
 	ImGui::Text( "Capacity: %d / %d items (%d reserved)", sp.itemCount, sp.capacity, sp.reserved );
 
+	// Progress bar for capacity
+	float capRatio = sp.capacity > 0 ? (float)sp.itemCount / sp.capacity : 0.0f;
+	ImVec4 capColor = capRatio > 0.9f ? ImVec4( 0.9f, 0.2f, 0.2f, 1.0f ) :
+	                  capRatio > 0.7f ? ImVec4( 0.9f, 0.7f, 0.2f, 1.0f ) :
+	                                    ImVec4( 0.2f, 0.7f, 0.3f, 1.0f );
+	ImGui::PushStyleColor( ImGuiCol_PlotHistogram, capColor );
+	ImGui::ProgressBar( qBound( 0.0f, capRatio, 1.0f ), ImVec2( -1, 0 ) );
+	ImGui::PopStyleColor();
+
 	ImGui::Separator();
+
+	if ( ImGui::BeginTabBar( "StockpileTabs" ) )
+	{
+	// =========================================================================
+	// TAB 1: Ledger — what's stored in this stockpile
+	// =========================================================================
+	if ( ImGui::BeginTabItem( "Ledger" ) )
+	{
+		if ( sp.summary.isEmpty() )
+		{
+			ImGui::TextDisabled( "No items stored" );
+		}
+		else
+		{
+			ImGui::BeginChild( "LedgerScroll", ImVec2( 0, 0 ), false );
+			ImGui::Columns( 3, "ledgerCols" );
+			ImGui::SetColumnWidth( 0, 40 );
+			ImGui::Text( "Qty" ); ImGui::NextColumn();
+			ImGui::Text( "Item" ); ImGui::NextColumn();
+			ImGui::Text( "Material" ); ImGui::NextColumn();
+			ImGui::Separator();
+
+			for ( const auto& item : sp.summary )
+			{
+				ImGui::Text( "%d", item.count ); ImGui::NextColumn();
+				ImGui::Text( "%s", item.itemName.toStdString().c_str() ); ImGui::NextColumn();
+				ImGui::Text( "%s", item.materialName.toStdString().c_str() ); ImGui::NextColumn();
+			}
+
+			ImGui::Columns( 1 );
+			ImGui::EndChild();
+		}
+		ImGui::EndTabItem();
+	}
+
+	// =========================================================================
+	// TAB 2: Filters — what items this stockpile accepts
+	// =========================================================================
+	if ( ImGui::BeginTabItem( "Filters" ) )
+	{
 
 	// Search bar
 	static char searchBuf[128] = "";
@@ -291,6 +340,13 @@ void drawStockpilePanel( ImGuiBridge& bridge )
 	}
 
 	ImGui::EndChild();
+
+	ImGui::EndTabItem();
+	} // end Filters tab
+
+	ImGui::EndTabBar();
+	} // end TabBar
+
 	ImGui::End();
 }
 
@@ -1054,44 +1110,285 @@ void drawWorkshopPanel( ImGuiBridge& bridge )
 // =============================================================================
 // Agriculture panel
 // =============================================================================
+static void drawFarmView( ImGuiBridge& bridge )
+{
+	auto& farm = bridge.farmInfo;
+	if ( farm.name.isEmpty() ) return;
+
+	ImGui::TextColored( ImVec4( 0.6f, 0.85f, 0.45f, 1.0f ), "Farm" );
+	ImGui::SameLine( 60 );
+
+	static char farmName[128];
+	snprintf( farmName, sizeof( farmName ), "%s", farm.name.toStdString().c_str() );
+	ImGui::PushItemWidth( -1 );
+	if ( ImGui::InputText( "##FarmName", farmName, sizeof( farmName ), ImGuiInputTextFlags_EnterReturnsTrue ) )
+	{
+		bridge.cmdAgriSetOptions( bridge.activeAgriID, farmName, farm.priority, farm.suspended );
+	}
+	ImGui::PopItemWidth();
+
+	bool suspended = farm.suspended;
+	if ( ImGui::Checkbox( "Suspended", &suspended ) )
+	{
+		bridge.cmdAgriSetOptions( bridge.activeAgriID, farm.name, farm.priority, suspended );
+	}
+	ImGui::SameLine();
+	bool harvest = farm.harvest;
+	if ( ImGui::Checkbox( "Harvest", &harvest ) )
+	{
+		bridge.cmdAgriSetHarvestOptions( bridge.activeAgriID, harvest, false, false );
+	}
+
+	ImGui::Separator();
+
+	QString currentCropName = farm.plantType.isEmpty() ? "None" : farm.product.name;
+	if ( currentCropName.isEmpty() ) currentCropName = farm.plantType;
+
+	ImGui::Text( "Crop:" );
+	ImGui::PushItemWidth( -1 );
+	if ( ImGui::BeginCombo( "##CropSelect", currentCropName.toStdString().c_str() ) )
+	{
+		for ( const auto& plant : bridge.globalPlants )
+		{
+			bool selected = ( plant.plantID == farm.plantType );
+			QString label = plant.name;
+			if ( plant.seedCount > 0 )
+				label += QString( " (%1 seeds)" ).arg( plant.seedCount );
+			if ( ImGui::Selectable( label.toStdString().c_str(), selected ) )
+			{
+				bridge.cmdAgriSelectProduct( bridge.activeAgriID, plant.plantID );
+			}
+			if ( selected )
+				ImGui::SetItemDefaultFocus();
+		}
+		ImGui::EndCombo();
+	}
+	ImGui::PopItemWidth();
+
+	ImGui::Separator();
+
+	ImGui::Text( "Plots: %d", farm.numPlots );
+	ImGui::Text( "Tilled: %d  Planted: %d", farm.tilled, farm.planted );
+	ImGui::Text( "Ready to harvest: %d", farm.cropReady );
+}
+
+static void drawGroveView( ImGuiBridge& bridge )
+{
+	auto& grove = bridge.groveInfo;
+	if ( grove.name.isEmpty() ) return;
+
+	ImGui::TextColored( ImVec4( 0.45f, 0.75f, 0.35f, 1.0f ), "Grove" );
+	ImGui::SameLine( 60 );
+
+	static char groveName[128];
+	snprintf( groveName, sizeof( groveName ), "%s", grove.name.toStdString().c_str() );
+	ImGui::PushItemWidth( -1 );
+	if ( ImGui::InputText( "##GroveName", groveName, sizeof( groveName ), ImGuiInputTextFlags_EnterReturnsTrue ) )
+	{
+		bridge.cmdAgriSetOptions( bridge.activeAgriID, groveName, grove.priority, grove.suspended );
+	}
+	ImGui::PopItemWidth();
+
+	bool suspended = grove.suspended;
+	if ( ImGui::Checkbox( "Suspended", &suspended ) )
+	{
+		bridge.cmdAgriSetOptions( bridge.activeAgriID, grove.name, grove.priority, suspended );
+	}
+
+	ImGui::Separator();
+
+	QString currentTreeName = grove.treeType.isEmpty() ? "None" : grove.product.name;
+	if ( currentTreeName.isEmpty() ) currentTreeName = grove.treeType;
+
+	ImGui::Text( "Tree:" );
+	ImGui::PushItemWidth( -1 );
+	if ( ImGui::BeginCombo( "##TreeSelect", currentTreeName.toStdString().c_str() ) )
+	{
+		for ( const auto& tree : bridge.globalTrees )
+		{
+			bool selected = ( tree.plantID == grove.treeType );
+			if ( ImGui::Selectable( tree.name.toStdString().c_str(), selected ) )
+			{
+				bridge.cmdAgriSelectProduct( bridge.activeAgriID, tree.plantID );
+			}
+			if ( selected )
+				ImGui::SetItemDefaultFocus();
+		}
+		ImGui::EndCombo();
+	}
+	ImGui::PopItemWidth();
+
+	ImGui::Separator();
+
+	bool plantTrees = grove.plantTrees;
+	if ( ImGui::Checkbox( "Plant trees", &plantTrees ) )
+	{
+		bridge.cmdAgriSetGroveOptions( bridge.activeAgriID, grove.pickFruits, plantTrees, grove.fellTrees );
+	}
+	ImGui::SameLine();
+	bool pickFruits = grove.pickFruits;
+	if ( ImGui::Checkbox( "Pick fruit", &pickFruits ) )
+	{
+		bridge.cmdAgriSetGroveOptions( bridge.activeAgriID, pickFruits, grove.plantTrees, grove.fellTrees );
+	}
+
+	bool fellTrees = grove.fellTrees;
+	if ( ImGui::Checkbox( "Fell trees", &fellTrees ) )
+	{
+		bridge.cmdAgriSetGroveOptions( bridge.activeAgriID, grove.pickFruits, grove.plantTrees, fellTrees );
+	}
+
+	ImGui::Separator();
+
+	ImGui::Text( "Plots: %d  Trees: %d", grove.numPlots, grove.planted );
+}
+
+static void drawPastureView( ImGuiBridge& bridge )
+{
+	auto& pasture = bridge.pastureInfo;
+	if ( pasture.name.isEmpty() ) return;
+
+	ImGui::TextColored( ImVec4( 0.85f, 0.7f, 0.35f, 1.0f ), "Pasture" );
+	ImGui::SameLine( 70 );
+
+	static char pastureName[128];
+	snprintf( pastureName, sizeof( pastureName ), "%s", pasture.name.toStdString().c_str() );
+	ImGui::PushItemWidth( -1 );
+	if ( ImGui::InputText( "##PastureName", pastureName, sizeof( pastureName ), ImGuiInputTextFlags_EnterReturnsTrue ) )
+	{
+		bridge.cmdAgriSetOptions( bridge.activeAgriID, pastureName, pasture.priority, pasture.suspended );
+	}
+	ImGui::PopItemWidth();
+
+	bool suspended = pasture.suspended;
+	if ( ImGui::Checkbox( "Suspended", &suspended ) )
+	{
+		bridge.cmdAgriSetOptions( bridge.activeAgriID, pasture.name, pasture.priority, suspended );
+	}
+	ImGui::SameLine();
+	bool harvest = pasture.harvest;
+	if ( ImGui::Checkbox( "Harvest", &harvest ) )
+	{
+		bridge.cmdAgriSetHarvestOptions( bridge.activeAgriID, harvest, pasture.harvestHay, false );
+	}
+
+	ImGui::Separator();
+
+	QString currentAnimalName = pasture.animalType.isEmpty() ? "None" : pasture.product.name;
+	if ( currentAnimalName.isEmpty() ) currentAnimalName = pasture.animalType;
+
+	ImGui::Text( "Animal:" );
+	ImGui::PushItemWidth( -1 );
+	if ( ImGui::BeginCombo( "##AnimalSelect", currentAnimalName.toStdString().c_str() ) )
+	{
+		for ( const auto& animal : bridge.globalAnimals )
+		{
+			bool selected = ( animal.animalID == pasture.animalType );
+			if ( ImGui::Selectable( animal.name.toStdString().c_str(), selected ) )
+			{
+				bridge.cmdAgriSelectProduct( bridge.activeAgriID, animal.animalID );
+			}
+			if ( selected )
+				ImGui::SetItemDefaultFocus();
+		}
+		ImGui::EndCombo();
+	}
+	ImGui::PopItemWidth();
+
+	if ( !pasture.animalType.isEmpty() )
+	{
+		ImGui::Separator();
+
+		ImGui::Text( "Males: %d  Females: %d  Total: %d/%d", pasture.numMale, pasture.numFemale,
+			pasture.numMale + pasture.numFemale, pasture.maxNumber );
+
+		int maxMale = pasture.maxMale;
+		if ( ImGui::SliderInt( "Max Male", &maxMale, 0, qMax( 1, pasture.maxNumber ) ) )
+		{
+			bridge.cmdAgriSetMaxMale( bridge.activeAgriID, maxMale );
+		}
+		int maxFemale = pasture.maxFemale;
+		if ( ImGui::SliderInt( "Max Female", &maxFemale, 0, qMax( 1, pasture.maxNumber ) ) )
+		{
+			bridge.cmdAgriSetMaxFemale( bridge.activeAgriID, maxFemale );
+		}
+
+		ImGui::Separator();
+
+		bool harvestHay = pasture.harvestHay;
+		if ( ImGui::Checkbox( "Harvest Hay", &harvestHay ) )
+		{
+			bridge.cmdAgriSetHarvestOptions( bridge.activeAgriID, pasture.harvest, harvestHay, false );
+		}
+
+		if ( pasture.foodMax > 0 )
+		{
+			ImGui::Text( "Food: %d/%d", pasture.foodCurrent, pasture.foodMax );
+		}
+
+		if ( !pasture.food.isEmpty() )
+		{
+			if ( ImGui::TreeNode( "Food Settings" ) )
+			{
+				for ( auto& fi : pasture.food )
+				{
+					bool checked = fi.checked;
+					if ( ImGui::Checkbox( fi.name.toStdString().c_str(), &checked ) )
+					{
+						bridge.cmdAgriSetFoodItemChecked( fi.itemSID, fi.materialSID, checked );
+					}
+				}
+				ImGui::TreePop();
+			}
+		}
+
+		if ( !pasture.animals.isEmpty() )
+		{
+			ImGui::Separator();
+			if ( ImGui::TreeNode( "Animals" ) )
+			{
+				for ( auto& animal : pasture.animals )
+				{
+					QString genderStr = animal.gender == Gender::MALE ? "M" : "F";
+					QString label = QString( "%1 [%2]%3" ).arg( animal.name, genderStr, animal.isYoung ? " (young)" : "" );
+
+					bool butcher = animal.toButcher;
+					if ( ImGui::Checkbox( label.toStdString().c_str(), &butcher ) )
+					{
+						bridge.cmdAgriSetButchering( animal.id, butcher );
+					}
+				}
+				ImGui::TreePop();
+			}
+		}
+	}
+}
+
 void drawAgriculturePanel( ImGuiBridge& bridge )
 {
 	if ( !bridge.showAgriWindow )
 		return;
 
 	ImGuiIO& io = ImGui::GetIO();
-	ImGui::SetNextWindowPos( ImVec2( 5, 50 ), ImGuiCond_FirstUseEver );
-	ImGui::SetNextWindowSize( ImVec2( io.DisplaySize.x * 0.6f, io.DisplaySize.y * 0.7f ), ImGuiCond_FirstUseEver );
+	ImGui::SetNextWindowPos( ImVec2( 5, 130 ), ImGuiCond_FirstUseEver );
+	ImGui::SetNextWindowSize( ImVec2( 280, io.DisplaySize.y - 200 ), ImGuiCond_FirstUseEver );
 
 	bool open = true;
 	ImGui::Begin( "Agriculture", &open, 0 );
 
 	if ( !open ) bridge.cmdCloseAgriWindow();
 
-	auto& farm = bridge.farmInfo;
-
-	if ( !farm.name.isEmpty() )
+	switch ( bridge.currentAgriType )
 	{
-		static char farmName[128];
-		snprintf( farmName, sizeof( farmName ), "%s", farm.name.toStdString().c_str() );
-		if ( ImGui::InputText( "Name", farmName, sizeof( farmName ), ImGuiInputTextFlags_EnterReturnsTrue ) )
-		{
-			bridge.cmdAgriSetOptions( bridge.activeAgriID, farmName, farm.priority, farm.suspended );
-		}
-
-		bool suspended = farm.suspended;
-		if ( ImGui::Checkbox( "Suspended", &suspended ) )
-		{
-			bridge.cmdAgriSetOptions( bridge.activeAgriID, farm.name, farm.priority, suspended );
-		}
-
-		bool harvest = farm.harvest;
-		if ( ImGui::Checkbox( "Harvest", &harvest ) )
-		{
-			bridge.cmdAgriSetHarvestOptions( bridge.activeAgriID, harvest, false, false );
-		}
-
-		ImGui::Text( "Plots: %d  Tilled: %d  Planted: %d  Ready: %d", farm.numPlots, farm.tilled, farm.planted, farm.cropReady );
+		case AgriType::Farm:
+			drawFarmView( bridge );
+			break;
+		case AgriType::Grove:
+			drawGroveView( bridge );
+			break;
+		case AgriType::Pasture:
+			drawPastureView( bridge );
+			break;
 	}
 
 	ImGui::End();
