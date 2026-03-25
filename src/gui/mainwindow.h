@@ -133,6 +133,9 @@ private:
 	bool m_rightDown = false;
 	bool m_isMove    = false;
 
+	int m_wheelAccumZ = 0;   // accumulated wheel delta for Z-level changes
+	int m_wheelThreshold = 120; // delta needed per Z-level (one standard mouse notch)
+
 	bool m_pendingUpdate = false;
 
 	KeyboardMove m_keyboardMove = KeyboardMove::None;

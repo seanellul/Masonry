@@ -461,12 +461,17 @@ void MainWindow::wheelEvent( QWheelEvent* event )
 		}
 		else
 		{
-			if ( wEvent->delta() > 0 )
+			// Accumulate wheel delta and only change Z-level at threshold
+			// This prevents trackpads/smooth-scroll mice from jumping 3-5 levels
+			m_wheelAccumZ += wEvent->delta();
+			while ( m_wheelAccumZ >= m_wheelThreshold )
 			{
+				m_wheelAccumZ -= m_wheelThreshold;
 				keyboardZPlus( event->modifiers() & Qt::ShiftModifier );
 			}
-			else
+			while ( m_wheelAccumZ <= -m_wheelThreshold )
 			{
+				m_wheelAccumZ += m_wheelThreshold;
 				keyboardZMinus( event->modifiers() & Qt::ShiftModifier );
 			}
 		}
