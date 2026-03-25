@@ -30,6 +30,7 @@
 #include "../gfx/sprite.h"
 #include "../gfx/spritefactory.h"
 #include "../game/world.h"
+#include "../gui/strings.h"
 
 #include <QDebug>
 #include <QPainter>
@@ -45,6 +46,7 @@ Animal::Animal( QString species, Position& pos, Gender gender, bool adult, Game*
 	m_aquatic  = avm.value( "Aquatic" ).toBool();
 	m_btName   = avm.value( "BehaviorTree" ).toString();
 	m_preyList = avm.value( "Prey" ).toString().split( "|" );
+	m_diet     = avm.value( "Food" ).toString();
 
 	m_isMulti = avm.value( "IsMulti" ).toBool();
 
@@ -91,8 +93,9 @@ Animal::Animal( QVariantMap in, Game* game ) :
 
 	m_aquatic  = avm.value( "Aquatic" ).toBool();
 	m_preyList = avm.value( "Prey" ).toString().split( "|" );
+	m_diet     = avm.value( "Food" ).toString();
 
-	m_hunger = qMax( -10.f, in.value( "Hunger" ).toFloat() );
+	m_hunger = qMax( -20.f, in.value( "Hunger" ).toFloat() );
 
 	setState( m_state );
 	m_stateChangeTick = in.value( "sct" ).value<quint64>();
@@ -409,7 +412,31 @@ CreatureTickResult Animal::onTick( quint64 tickNumber, bool seasonChanged, bool 
 
 	if ( minuteChanged && !isEgg() )
 	{
-		m_hunger = qMax( -10., m_hunger - 0.075 );
+		m_hunger = m_hunger - 0.075;
+
+		// Starvation death
+		if ( m_hunger <= -20.0 )
+		{
+			Global::logger().log( LogType::INFO, "A " + S::s( "$CreatureName_" + m_species ) + " has starved to death.", m_id );
+			die();
+			return CreatureTickResult::DEAD;
+		}
+
+		// Hunger-driven aggression: carnivores/omnivores become dangerous when starving
+		bool canEatMeat = m_diet.contains( "Meat" );
+		if ( m_hunger <= 10.0 && canEatMeat && !m_tame && !m_starvingAggro )
+		{
+			m_starvingAggro = true;
+			Global::logger().log( LogType::DANGER, "A starving " + S::s( "$CreatureName_" + m_species ) + " has become aggressive!", m_id );
+		}
+		else if ( m_hunger > 30.0 && m_starvingAggro )
+		{
+			m_starvingAggro = false; // calms down once fed
+		}
+
+		// Visual feedback
+		if ( m_hunger <= 0.0 )
+			setThoughtBubble( "Hungry" );
 	}
 
 	if ( m_stateChangeTick != 0 && tickNumber >= m_stateChangeTick /* && m_currentAction == "idle" */ )
@@ -510,11 +537,15 @@ BT_RESULT Animal::conditionIsHungry( bool halt )
 
 BT_RESULT Animal::conditionIsCarnivore( bool halt )
 {
+	if ( m_diet.contains( "Meat" ) )
+		return BT_RESULT::SUCCESS;
 	return BT_RESULT::FAILURE;
 }
 
 BT_RESULT Animal::conditionIsHerbivore( bool halt )
 {
+	if ( m_diet.contains( "Vegetable" ) || m_diet.contains( "Hay" ) || m_diet.contains( "Grain" ) || m_diet.contains( "Fruit" ) )
+		return BT_RESULT::SUCCESS;
 	return BT_RESULT::FAILURE;
 }
 
@@ -749,7 +780,7 @@ bool Animal::isTame()
 
 bool Animal::isAggro()
 {
-	return m_stateMap.value( "IsAggro" ).toBool();
+	return m_stateMap.value( "IsAggro" ).toBool() || m_starvingAggro;
 }
 
 void Animal::setPastureID( unsigned int id )

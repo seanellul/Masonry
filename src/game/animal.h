@@ -144,6 +144,8 @@ private:
 	unsigned int m_inJob = 0;
 	float m_hunger       = 50;
 	int m_foodValue      = 1;
+	QString m_diet;              // "Meat", "Vegetable", "Fruit", etc. from DB
+	bool m_starvingAggro = false; // becomes aggro when starving + can eat meat
 
 	QVariantMap m_stateMap;
 

@@ -6,6 +6,60 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-25] Animal Hunger Behavior — Starvation, Aggression, Diet System
+
+**Files changed**: `src/game/animal.h`, `src/game/animal.cpp`
+
+### Changes
+- **Starvation death** — animals now die when hunger drops below -20. Death logged as INFO: "A Wolf has starved to death."
+- **Hunger-driven aggression** — carnivores/omnivores (diet contains "Meat") become aggressive when hunger drops below 10. Logged as DANGER: "A starving BlackBear has become aggressive!" Calms down once fed above 30.
+- **`m_starvingAggro` flag** — tracked per animal, feeds into `isAggro()` so the UI correctly shows "Aggressive" for starving meat-eaters.
+- **`m_diet` field** — loaded from DB `Animals.Food` column. Stored per animal for runtime diet checks.
+- **Carnivore/Herbivore conditions implemented** — `conditionIsCarnivore` and `conditionIsHerbivore` were stubs returning FAILURE. Now check `m_diet` for "Meat" or "Vegetable"/"Hay"/"Grain"/"Fruit" respectively.
+- **Thought bubble** — starving animals (hunger ≤ 0) show "Hungry" thought bubble.
+
+### Technical Details
+- Hunger decay: -0.075 per in-game minute. From 100→0 takes ~22 hours. From 0→-20 (death) takes ~4.4 more hours.
+- Starvation aggression only applies to wild animals (not tame/pastured).
+- `isAggro()` now returns true for either DB-defined aggro OR starvation aggro.
+
+---
+
+## [2026-03-25] Animal-Specific Creature Info — Diet, Combat Stats, Butcher Drops
+
+**Files changed**: `src/game/creature.h`, `src/gui/aggregatorcreatureinfo.h`, `src/gui/aggregatorcreatureinfo.cpp`, `src/gui/ui/ui_sidepanels.cpp`
+
+### Changes
+- **Diet display** — shows what the animal eats (Meat, Vegetable, Fruit, etc.)
+- **Temperament** — "Aggressive" (red) or "Passive" (green) from DB + starvation state
+- **Combat stats** — Attack and Damage values from the adult state in Animals_States DB
+- **Butcher yields** — lists what you get from butchering (e.g., "6x Meat, 1x Bone")
+- **Health bar** — blood level from anatomy system, color-coded with Wounded/Dead status
+- **Hunger status text** — "Starving!" in red at ≤5%, "N% Hungry" in orange at ≤20%
+- **Creature type routing** — panel shows completely different info for Gnomes vs Animals vs Monsters
+
+---
+
+## [2026-03-25] Fix Personality Data Showing on Animals
+
+**Files changed**: `src/gui/aggregatorcreatureinfo.cpp`
+
+### Changes
+- Animals and monsters no longer display a previous gnome's backstory, traits, and thoughts
+- Monster/animal branches now explicitly clear all gnome-only personality fields before emitting
+
+---
+
+## [2026-03-25] Mouse Wheel Z-Level Scroll Fix
+
+**Files changed**: `src/gui/mainwindow.h`, `src/gui/mainwindow.cpp`
+
+### Changes
+- Scroll wheel now changes exactly 1 Z-level per notch instead of jumping 3-5 levels
+- Wheel delta accumulation prevents trackpad smooth-scroll from over-scrolling
+
+---
+
 ## [2026-03-25] Agriculture Panel UI Overhaul
 
 **Milestone**: 1.4 — HUD & UI Improvements
