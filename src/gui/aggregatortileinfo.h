@@ -125,6 +125,7 @@ public slots:
 	void onUpdateTileInfo( unsigned int tileID );
 	void onRequestStockpileItems( unsigned int tileID );
 	void onSetTennant( unsigned int designationID, unsigned int gnomeID );
+	void onSetRoomType( unsigned int designationID, RoomType type );
 	void onSetAlarm( unsigned int designationID, bool value );
 	void onToggleMechActive( unsigned int id );
 	void onToggleMechInvert( unsigned int id );

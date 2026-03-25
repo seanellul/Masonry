@@ -404,6 +404,10 @@ void ImGuiBridge::cmdManageCommand( unsigned int tileID ) { emit signalManageCom
 void ImGuiBridge::cmdRequestStockpileItems( unsigned int tileID ) { emit signalRequestStockpileItems( tileID ); }
 void ImGuiBridge::cmdSetTennant( unsigned int did, unsigned int gid ) { emit signalSetTennant( did, gid ); }
 void ImGuiBridge::cmdSetAlarm( unsigned int did, bool value ) { emit signalSetAlarm( did, value ); }
+void ImGuiBridge::cmdSetRoomType( unsigned int designationID, RoomType type )
+{
+	Global::eventConnector->aggregatorTileInfo()->onSetRoomType( designationID, type );
+}
 void ImGuiBridge::cmdToggleMechActive( unsigned int id ) { emit signalToggleMechActive( id ); }
 void ImGuiBridge::cmdToggleMechInvert( unsigned int id ) { emit signalToggleMechInvert( id ); }
 void ImGuiBridge::cmdSetAutomatonRefuel( unsigned int id, bool refuel ) { emit signalSetAutomatonRefuel( id, refuel ); }

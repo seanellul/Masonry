@@ -241,6 +241,7 @@ public:
 	void cmdSetTennant( unsigned int designationID, unsigned int gnomeID );
 	void cmdSetAlarm( unsigned int designationID, bool value );
 	void cmdToggleMechActive( unsigned int id );
+	void cmdSetRoomType( unsigned int designationID, RoomType type );
 	void cmdToggleMechInvert( unsigned int id );
 	void cmdSetAutomatonRefuel( unsigned int id, bool refuel );
 	void cmdSetAutomatonCore( unsigned int id, const QString& core );

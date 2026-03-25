@@ -465,6 +465,20 @@ void AggregatorTileInfo::onSetTennant( unsigned int designationID, unsigned int 
 	}
 }
 
+void AggregatorTileInfo::onSetRoomType( unsigned int designationID, RoomType type )
+{
+	if( !g ) return;
+	auto room = g->rm()->getRoom( designationID );
+	if ( room )
+	{
+		room->setType( type );
+		if ( type == RoomType::SafeRoom )
+		{
+			Global::logger().log( LogType::INFO, room->name() + " designated as safe room.", 0 );
+		}
+	}
+}
+
 void AggregatorTileInfo::onSetAlarm( unsigned int designationID, bool value )
 {
 	if( !g ) return;

@@ -79,6 +79,42 @@ void drawTileInfo( ImGuiBridge& bridge )
 				{
 					bridge.cmdManageCommand( bridge.selectedTileID );
 				}
+
+				// Room type management
+				if ( ti.designationFlag == TileFlag::TF_ROOM && ti.designationID != 0 )
+				{
+					static const char* roomTypeNames[] = { "Not Set", "Personal", "Dorm", "Dining", "Hospital", "Safe Room" };
+					int currentType = (int)ti.roomType;
+					if ( currentType < 0 || currentType > 5 ) currentType = 0;
+
+					ImGui::Text( "Room Type:" );
+					ImGui::SameLine();
+					ImGui::PushItemWidth( 120 );
+					if ( ImGui::Combo( "##RoomType", &currentType, roomTypeNames, 6 ) )
+					{
+						bridge.cmdSetRoomType( ti.designationID, (RoomType)currentType );
+					}
+					ImGui::PopItemWidth();
+
+					if ( ti.roomType == RoomType::SafeRoom )
+					{
+						ImGui::TextColored( ImVec4( 0.4f, 0.9f, 0.4f, 1.0f ), "Gnomes retreat here during lockdown" );
+					}
+
+					if ( ti.isEnclosed )
+						ImGui::Text( "Enclosed: Yes" );
+					else
+						ImGui::TextColored( ImVec4( 1.0f, 0.6f, 0.2f, 1.0f ), "Enclosed: No" );
+
+					if ( ti.hasRoof )
+						ImGui::Text( "Roofed: Yes" );
+					else
+						ImGui::TextColored( ImVec4( 1.0f, 0.6f, 0.2f, 1.0f ), "Roofed: No" );
+
+					ImGui::Text( "Value: %d", ti.roomValue );
+					if ( !ti.beds.isEmpty() )
+						ImGui::Text( "Beds: %s", ti.beds.toStdString().c_str() );
+				}
 			}
 
 			if ( !ti.jobName.isEmpty() )

@@ -34,7 +34,8 @@ enum class RoomType : unsigned char
 	PersonalRoom,
 	Dorm,
 	Dining,
-	Hospital
+	Hospital,
+	SafeRoom
 };
 
 struct RoomTile

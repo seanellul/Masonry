@@ -1210,7 +1210,7 @@ QStringList Creature::availableSkillIDs() const
 
 BT_RESULT Creature::conditionAlarm( bool halt )
 {
-	if ( GameState::alarm == 2 )
+	if ( GameState::alarm == 2 || GameState::lockdown )
 	{
 		return BT_RESULT::SUCCESS;
 	}
@@ -1222,7 +1222,8 @@ BT_RESULT Creature::conditionIsInSafeRoom( bool halt )
 	auto room = g->rm()->getRoomAtPos( m_position );
 	if ( room )
 	{
-		if ( room->id() == GameState::alarmRoomID )
+		// Check legacy alarm room OR any SafeRoom type
+		if ( room->id() == GameState::alarmRoomID || room->type() == RoomType::SafeRoom )
 		{
 			return BT_RESULT::SUCCESS;
 		}
@@ -1232,15 +1233,37 @@ BT_RESULT Creature::conditionIsInSafeRoom( bool halt )
 
 BT_RESULT Creature::actionGetSafeRoomPosition( bool halt )
 {
-	auto room = g->rm()->getRoom( GameState::alarmRoomID );
-	if ( room )
+	// Find closest safe room to this creature
+	int bestDist = INT_MAX;
+	Room* bestRoom = nullptr;
+
+	for ( auto& room : g->rm()->allRooms() )
 	{
-		auto pos = room->randomTilePos();
-		if ( pos.isZero() )
+		if ( room->type() == RoomType::SafeRoom )
 		{
-			return BT_RESULT::FAILURE;
+			Position rPos = room->randomTilePos();
+			if ( !rPos.isZero() )
+			{
+				int dist = abs( m_position.x - rPos.x ) + abs( m_position.y - rPos.y ) + abs( m_position.z - rPos.z );
+				if ( dist < bestDist )
+				{
+					bestDist = dist;
+					bestRoom = room;
+				}
+			}
 		}
-		else
+	}
+
+	// Fall back to legacy alarm room if no SafeRoom designated
+	if ( !bestRoom && GameState::alarmRoomID != 0 )
+	{
+		bestRoom = g->rm()->getRoom( GameState::alarmRoomID );
+	}
+
+	if ( bestRoom )
+	{
+		auto pos = bestRoom->randomTilePos();
+		if ( !pos.isZero() )
 		{
 			m_currentTargetPosition = pos;
 			m_thoughtBubble         = "";
