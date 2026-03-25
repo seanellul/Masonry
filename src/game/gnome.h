@@ -123,6 +123,10 @@ public:
 
 	void setAllowedCarryItems( bool bandages, bool food, bool drinks );
 
+	// Food policy (Milestone 2.4)
+	void setFoodExclusions( const QStringList& exclusions ) { m_foodExclusions = exclusions; }
+	const QStringList& foodExclusions() const { return m_foodExclusions; }
+
 	bool equipItem();
 
 protected:
@@ -142,6 +146,9 @@ protected:
 	bool m_carryBandages            = false;
 	bool m_carryFood                = false;
 	bool m_carryDrinks              = false;
+
+	// Food policy (Milestone 2.4)
+	QStringList m_foodExclusions;  // item SIDs this gnome won't eat
 	unsigned char m_carriedBandages = 0;
 	unsigned char m_carriedFood     = 0;
 	unsigned char m_carriedDrinks   = 0;

@@ -49,6 +49,31 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-25] Milestone 2.3 — Medical System Data Layer
+
+**Milestone**: 2.3 — Gnome Depth
+**Files changed**: `content/db/ingnomia.db.sql`
+
+### Changes
+- **Diseases table** — 3 starter diseases: Infection (from untreated wounds, severity 0.84/day vs immunity 0.644/day), Plague (seasonal, severity 1.2/day), Food Poisoning (from bad food, severity 2.0/day, non-lethal at 50%). Each has treatment slowdown value.
+- **Triage priority table** — 3 tiers: Critical (bleeding out), Serious (breaks, infection), Minor (bruises). Defines the priority order for medic AI.
+- Data-only: medic behavior tree integration (actually routing medics to patients by priority) requires BT work.
+
+---
+
+## [2026-03-25] Milestone 2.4 — Food & Farming QoL
+
+**Milestone**: 2.4 — Gnome Depth
+**Files changed**: `src/game/gnome.h`, `src/game/gnome.cpp`, `src/game/grove.h`, `content/db/ingnomia.db.sql`
+
+### Changes
+- **Food exclusion list** — `m_foodExclusions` QStringList on Gnome. Gnomes can be assigned food policies preventing them from eating certain items. Serialized/deserialized.
+- **Food policies DB** — 3 policies: "Eat Anything" (default), "Cooked Only" (skip raw food), "Preserve Seeds" (skip plantable seeds).
+- **Groves include existing trees** — `includeExistingTrees` flag on GroveProperties (default: true). When set, existing trees in the grove area are treated as part of the grove.
+- Data-only: actual enforcement in behavior trees (checking food exclusions before eating, scanning existing trees when grove is created) requires BT/farming system integration.
+
+---
+
 ## [2026-03-25] Milestone 1.2 — Stockpile UX Overhaul
 
 **Milestone**: 1.2 — Stockpile UX Overhaul

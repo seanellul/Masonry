@@ -54,6 +54,7 @@ struct GroveProperties
 
 	bool autoPick = false;
 	bool autoFell = false;
+	bool includeExistingTrees = true;  // Milestone 2.4: existing trees in grove area are part of the grove
 
 	unsigned int autoPickMin = 0;
 	unsigned int autoPickMax = 0;

@@ -16765,5 +16765,52 @@ INSERT INTO "Backstories" VALUES ('AdultPotter','Adulthood','Traveling Potter','
 INSERT INTO "Backstories" VALUES ('AdultAnimalTrainer','Adulthood','Animal Trainer','Earned a living taming wild beasts and breeding livestock for settlements across the frontier.','AnimalHusbandry:3|Butchery:1','Empathy:10|Bravery:10','');
 INSERT INTO "Backstories" VALUES ('AdultConstructionForeman','Adulthood','Construction Foreman','Directed crews building walls, roads, and bridges across an expanding kingdom.','Construction:3|Masonry:1','Industriousness:15|Sociability:10|Stubbornness:10','');
 
+-- ============================================================================
+-- Diseases (Milestone 2.3)
+-- ============================================================================
+DROP TABLE IF EXISTS "Diseases";
+CREATE TABLE IF NOT EXISTS "Diseases" (
+	"ID"              VARCHAR(30),
+	"Name"            VARCHAR(50),
+	"Description"     VARCHAR(200),
+	"SeverityPerDay"  DOUBLE,
+	"ImmunityPerDay"  DOUBLE,
+	"TreatmentSlowdown" DOUBLE,
+	"LethalSeverity"  DOUBLE,
+	"Source"          VARCHAR(30)
+);
+
+INSERT INTO "Diseases" VALUES ('Infection','Wound Infection','An untreated wound has become infected and threatens to spread.',0.84,0.644,0.53,100.0,'Wound');
+INSERT INTO "Diseases" VALUES ('Plague','Seasonal Plague','A virulent illness sweeping through the colony.',1.2,0.8,0.6,100.0,'Seasonal');
+INSERT INTO "Diseases" VALUES ('FoodPoisoning','Food Poisoning','Contaminated food has caused severe stomach distress.',2.0,1.5,1.0,50.0,'Food');
+
+-- ============================================================================
+-- Triage Priority (Milestone 2.3)
+-- ============================================================================
+DROP TABLE IF EXISTS "TriagePriority";
+CREATE TABLE IF NOT EXISTS "TriagePriority" (
+	"ID"       VARCHAR(30),
+	"Priority" INTEGER,
+	"Label"    VARCHAR(30)
+);
+
+INSERT INTO "TriagePriority" VALUES ('Critical',1,'Bleeding out — treat immediately');
+INSERT INTO "TriagePriority" VALUES ('Serious',2,'Broken bones, infection — treat soon');
+INSERT INTO "TriagePriority" VALUES ('Minor',3,'Bruises, scrapes — treat when available');
+
+-- ============================================================================
+-- Food Policies (Milestone 2.4)
+-- ============================================================================
+DROP TABLE IF EXISTS "FoodPolicies";
+CREATE TABLE IF NOT EXISTS "FoodPolicies" (
+	"ID"          VARCHAR(30),
+	"Name"        VARCHAR(50),
+	"Description" VARCHAR(200)
+);
+
+INSERT INTO "FoodPolicies" VALUES ('All','Eat Anything','Gnome will eat any available food.');
+INSERT INTO "FoodPolicies" VALUES ('CookedOnly','Cooked Only','Gnome will only eat cooked meals, not raw food.');
+INSERT INTO "FoodPolicies" VALUES ('NoSeeds','Preserve Seeds','Gnome avoids eating plantable seeds.');
+
 
 COMMIT;

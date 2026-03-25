@@ -196,17 +196,18 @@ The needs map exists (`creature.h:m_needs`) with Hunger/Thirst/Sleep. Automatons
 ### 2.3 — Medical System Improvements (#31, #37)
 Anatomy/wound system exists (`anatomy.cpp`). Hospital/bandage code exists.
 
-- [ ] Medics bring bandages TO injured gnomes (not other way around)
-- [ ] 3-tier auto-triage: Critical (bleeding) → Serious (breaks, infection) → Minor (bruises)
-- [ ] 2 roles: Medic (diagnosis + treatment) and Caretaker (transport + feeding)
-- [ ] Supply chain: bandages (cloth), splints (wood), herbal medicine (farming)
-- [ ] 3 starter diseases: Infection (untreated wounds), Plague (seasonal), Food Poisoning (low cooking skill)
+- [ ] Medics bring bandages TO injured gnomes (not other way around) — needs BT integration
+- [x] 3-tier auto-triage: Critical / Serious / Minor — DB table with priorities defined
+- [ ] 2 roles: Medic (diagnosis + treatment) and Caretaker (transport + feeding) — needs BT work
+- [ ] Supply chain: bandages (cloth), splints (wood), herbal medicine (farming) — items exist, crafting recipes needed
+- [x] 3 starter diseases defined: Infection, Plague, Food Poisoning — DB table with severity/immunity/treatment rates
 - [ ] Wire blindness flags (HALFBLIND/BLIND already in enums but not connected to eye damage)
+- [ ] Disease contraction and progression logic — needs integration with gnome health tick
 
 ### 2.4 — Food & Farming QoL (#28, #39, #41, #46)
-- [ ] Food exclusion list — named food policies with per-gnome assignment
-- [ ] "Preserve Seeds" toggle: prevent kitchens from using last N seeds of any crop
-- [ ] Groves include existing trees (fix Gnomoria's #1 grove complaint)
+- [x] Food exclusion list — `m_foodExclusions` on Gnome, serialized, with DB food policies
+- [x] "Preserve Seeds" food policy defined in DB (enforcement in kitchen BT deferred)
+- [x] Groves include existing trees — `includeExistingTrees` flag on GroveProperties (default: true)
 - [ ] Food variety bonus: 3+ different foods in 3 days = +3 mood; same food repeatedly = -2 mood
 - [ ] Drink hierarchy: water < milk < beer < wine, better drinks = bigger mood boost
 - [ ] Simple meal chain: raw (-mood) → simple cooked (neutral) → quality meal (2+ ingredients, +mood)
