@@ -530,7 +530,16 @@ Uniform* MilitaryManager::getGnomeUniform( unsigned int gnomeID )
 
 void MilitaryManager::updateGnome( unsigned int gnomeID )
 {
-	
+	// Rebuild m_gnome2Squad entry for this gnome by scanning all squads
+	m_gnome2Squad.remove( gnomeID );
+	for ( int i = 0; i < m_squads.size(); ++i )
+	{
+		if ( m_squads[i].gnomes.contains( gnomeID ) )
+		{
+			m_gnome2Squad.insert( gnomeID, m_squads[i].id );
+			return;
+		}
+	}
 }
 
 void MilitaryManager::onGnomeDeath( unsigned int id )
