@@ -352,9 +352,9 @@ void drawGameHUD( ImGuiBridge& bridge )
 	ImGui::PopStyleVar();
 
 	// =========================================================================
-	// Below top-left: DJWA overlay filter checkboxes (single row)
+	// Below top-right: DJWA overlay filter checkboxes
 	// =========================================================================
-	ImGui::SetNextWindowPos( ImVec2( 0, topBarHeight ) );
+	ImGui::SetNextWindowPos( ImVec2( io.DisplaySize.x - 260, topBarHeight + 2 ) );
 	ImGui::SetNextWindowSize( ImVec2( 0, 0 ) );
 	ImGui::Begin( "##overlays", nullptr,
 		ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
