@@ -23,6 +23,7 @@ ImGuiBridge::ImGuiBridge( QObject* parent )
 	connect( ec, &EventConnector::signalHeartbeat, this, &ImGuiBridge::onHeartbeat, Qt::QueuedConnection );
 	connect( ec, &EventConnector::signalResume, this, &ImGuiBridge::onResume, Qt::QueuedConnection );
 	connect( ec, &EventConnector::signalLoadGameDone, this, &ImGuiBridge::onLoadGameDone, Qt::QueuedConnection );
+	connect( ec, &EventConnector::signalLoadStatus, this, &ImGuiBridge::onLoadStatus, Qt::QueuedConnection );
 	connect( ec, &EventConnector::signalWindowSize, this, &ImGuiBridge::onWindowSize, Qt::QueuedConnection );
 
 	// =========================================================================
@@ -215,12 +216,20 @@ void ImGuiBridge::onLoadGameDone( bool value )
 	if ( value )
 	{
 		appState = AppState::GameRunning;
+		rendererReady = false;
+		rendererWarmupFrames = 0;
+		loadingStatus = "Initializing renderer...";
 		cmdSetShowMainMenu( false );
 	}
 	else
 	{
 		appState = AppState::MainMenu;
 	}
+}
+
+void ImGuiBridge::onLoadStatus( QString status )
+{
+	loadingStatus = status;
 }
 
 void ImGuiBridge::onWindowSize( int w, int h )

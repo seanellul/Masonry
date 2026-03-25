@@ -216,4 +216,5 @@ signals:
 	void signalPlayEffect( QVariantMap effect );
 	
 	void signalCameraPosition( float x, float y, float z, int r, float scale );
+	void signalLoadStatus( QString message );
 };

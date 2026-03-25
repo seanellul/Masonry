@@ -20,8 +20,8 @@ const ToolbarButton toolbarButtons[] = {
 	{ "Agriculture", ButtonSelection::Agriculture },
 	{ "Designations", ButtonSelection::Designation },
 	{ "Job", ButtonSelection::Job },
-	{ "Magic", ButtonSelection::Magic },
 };
+const int toolbarButtonCount = 5;
 
 // Build subcategories
 struct BuildCategoryButton
@@ -303,17 +303,22 @@ void drawGameHUD( ImGuiBridge& bridge )
 	ImGui::SetNextWindowSize( ImVec2( io.DisplaySize.x, toolbarHeight ) );
 	ImGui::Begin( "##toolbar", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse );
 
-	float leftWidth = io.DisplaySize.x * 0.5f;
-	float buttonW = leftWidth / 6.0f - 5.0f;
+	float gap = 40.0f; // gap between left and right button groups
+	float padding = 10.0f;
+	float spacing = ImGui::GetStyle().ItemSpacing.x;
+	float availableW = io.DisplaySize.x - padding * 2 - gap;
+	float leftWidth = availableW * 0.5f;
+	float rightWidth = availableW * 0.5f;
+	// Account for (N-1) spacings between N buttons
+	float buttonW = ( leftWidth - spacing * ( toolbarButtonCount - 1 ) ) / toolbarButtonCount;
 
 	// Left side: action buttons
-	for ( int i = 0; i < 6; ++i )
+	ImGui::SetCursorPosX( padding );
+	for ( int i = 0; i < toolbarButtonCount; ++i )
 	{
 		if ( i > 0 ) ImGui::SameLine();
 		bool active = ( bridge.currentToolbar == toolbarButtons[i].selection );
-		bool isMagic = ( toolbarButtons[i].selection == ButtonSelection::Magic );
 		if ( active ) ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0.3f, 0.5f, 0.7f, 1.0f ) );
-		if ( isMagic ) ImGui::BeginDisabled();
 		if ( ImGui::Button( toolbarButtons[i].label, ImVec2( buttonW, 30 ) ) )
 		{
 			if ( active )
@@ -330,12 +335,11 @@ void drawGameHUD( ImGuiBridge& bridge )
 			}
 		}
 		if ( active ) ImGui::PopStyleColor();
-		if ( isMagic ) ImGui::EndDisabled();
 	}
 
 	// Right side: management panels
-	float rightStart = io.DisplaySize.x * 0.5f + 10;
-	float rightButtonW = ( io.DisplaySize.x - rightStart - 10 ) / 5.0f - 5.0f;
+	float rightStart = padding + leftWidth + gap;
+	float rightButtonW = ( rightWidth - spacing * 4 ) / 5.0f;
 	ImGui::SameLine( rightStart );
 	if ( ImGui::Button( "Kingdom", ImVec2( rightButtonW, 30 ) ) )
 	{

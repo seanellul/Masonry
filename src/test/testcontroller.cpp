@@ -3,10 +3,14 @@
 #include "../base/global.h"
 #include "../gui/eventconnector.h"
 #include "../gui/mainwindow.h"
+#include "../gui/mainwindowrenderer.h"
 
 #include <QApplication>
 #include <QDebug>
+#include <QDir>
 #include <QFile>
+#include <QFileInfo>
+#include <QImage>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QTimer>
@@ -76,19 +80,19 @@ void TestController::onLoadGameDone( bool success )
 
 void TestController::startFrameCountdown()
 {
-	m_framesRendered = 0;
-	QTimer* frameTimer = new QTimer( this );
-	connect( frameTimer, &QTimer::timeout, this, [this, frameTimer]()
+	qDebug() << "[TestController] Will force-render and take screenshot in 2 seconds";
+	// On macOS, paintGL may never fire if the window is minimized.
+	// Instead of waiting for frames, use a deferred call to force
+	// a render and capture the framebuffer directly.
+	// On macOS, paintGL doesn't run when the window is minimized.
+	// We use grabFramebuffer() which internally calls paintGL.
+	// The renderer needs several frames to warm up, so we call
+	// grabFramebuffer() in a burst. We use a single deferred call
+	// because short-interval timers get starved by the game loop.
+	QTimer::singleShot( 2000, this, [this]()
 	{
-		m_framesRendered++;
-		if ( m_framesRendered >= m_config.screenshotDelay )
-		{
-			frameTimer->stop();
-			frameTimer->deleteLater();
-			takeScreenshotAndMaybeExit();
-		}
+		doScreenshotFrame();
 	} );
-	frameTimer->start( 16 ); // ~60fps timing
 }
 
 void TestController::onHeartbeat( int value )
@@ -120,6 +124,30 @@ void TestController::onHeartbeat( int value )
 			writeMetricsAndExit();
 		}
 	}
+}
+
+void TestController::doScreenshotFrame()
+{
+	qDebug() << "[TestController] Running" << m_config.screenshotDelay << "warmup frames...";
+
+	// Call grabFramebuffer in a burst to warm up the renderer.
+	// Each call internally triggers paintGL, advancing the warmup counter.
+	QImage img;
+	for ( int i = 0; i < m_config.screenshotDelay; ++i )
+	{
+		img = m_window->grabFramebuffer();
+	}
+
+	qDebug() << "[TestController] Taking screenshot" << img.width() << "x" << img.height();
+	if ( !img.isNull() && img.width() > 0 )
+	{
+		QFileInfo fi( m_config.screenshotPath );
+		QDir().mkpath( fi.absolutePath() );
+		img.save( m_config.screenshotPath );
+		qDebug() << "[TestController] Screenshot saved:" << m_config.screenshotPath;
+	}
+	m_screenshotTaken = true;
+	writeMetricsAndExit();
 }
 
 void TestController::onTimeAndDate( int minute, int hour, int day, QString season, int year, QString sunStatus )

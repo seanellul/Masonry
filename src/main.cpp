@@ -287,9 +287,18 @@ int main( int argc, char* argv[] )
 	if ( testConfig.enabled )
 	{
 		qDebug() << "[Test] Test mode enabled";
-		if ( Global::testMode )
+		if ( Global::testMode && testConfig.screenshotPath.isEmpty() )
 		{
 			w.showMinimized();
+		}
+		else if ( Global::testMode )
+		{
+			// Keep window visible for screenshots — macOS won't run
+			// paintGL on minimized windows, resulting in blank captures.
+			// showNormal() re-exposes the surface if show() already ran.
+			w.showNormal();
+			w.raise();
+			w.requestActivate();
 		}
 
 		// If we have specific test actions (load-save, screenshot, run-ticks), use TestController

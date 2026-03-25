@@ -1,64 +1,71 @@
-2026.03.24 20:55:37:076 Ingnomia version 0.8.11.0
-2026.03.24 20:55:37:384 QIODevice::read (QFile, "/Users/seanellul/Library/Application Support/Roest/Ingnomia/Ingnomiasettings/config.json"): device not open
-2026.03.24 20:55:37:384 json parse error in "/Users/seanellul/Library/Application Support/Roest/Ingnomia/Ingnomiasettings/config.json" 0
-2026.03.24 20:55:37:384 load standard config
-2026.03.24 20:55:37:404 Memory DB: connection ok
-2026.03.24 20:55:37:442 QSqlError("", "Unable to fetch row", "No query")
-2026.03.24 20:55:37:503 Update config "CurrentVersion" = QVariant(QString, "0.8.11.0") (was QVariant(QString, "0.7.5.0") )
-2026.03.24 20:55:37:503 Warning: Setting a new default format with a different version or profile after the global shared context is created may cause issues with context sharing.
-2026.03.24 20:55:37:505 QObject::connect(EventConnector, AggregatorSound): invalid nullptr parameter
-2026.03.24 20:55:38:018 QIODevice::read (QFile, "/Users/seanellul/Library/Application Support/Roest/Ingnomia/Ingnomia/settings/userpresets.json"): device not open
-2026.03.24 20:55:38:018 json parse error in "/Users/seanellul/Library/Application Support/Roest/Ingnomia/Ingnomia/settings/userpresets.json" 0
-2026.03.24 20:55:38:021 Create main window.
-2026.03.24 20:55:38:195 Could not create NSOpenGLContext with shared context, falling back to unshared context.
-2026.03.24 20:55:38:276 initialize GL ...
-2026.03.24 20:55:38:313 [OpenGL] Apple
-2026.03.24 20:55:38:313 [OpenGL] 4.1 Metal - 90.5
-2026.03.24 20:55:38:313 [OpenGL] Apple M1 Pro
-2026.03.24 20:55:38:313 QSurfaceFormat(version 4.1, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize 32, redBufferSize 8, greenBufferSize 8, blueBufferSize 8, alphaBufferSize -1, stencilBufferSize 0, samples 0, swapBehavior QSurfaceFormat::DoubleBuffer, swapInterval 0, colorSpace QSurfaceFormat::sRGBColorSpace, profile  QSurfaceFormat::CoreProfile)
-2026.03.24 20:55:38:341 initialize GL - done
-2026.03.24 20:55:38:393 Update config "WindowWidth" = QVariant(int, 1920) (was QVariant(qlonglong, 3231) )
-2026.03.24 20:55:38:393 Update config "WindowHeight" = QVariant(int, 921) (was QVariant(qlonglong, 1631) )
-2026.03.24 20:55:38:406 [Test] Test mode enabled
-2026.03.24 20:55:39:506 [TestController] Loading save: "/Users/seanellul/Code/games/Ingnomia/content/test_saves/smoke_test"
-2026.03.24 20:55:39:510 *** Global reset
-2026.03.24 20:55:39:535 Memory DB: connection ok
-2026.03.24 20:55:39:759 init game...
-2026.03.24 20:55:41:618 init game done
-2026.03.24 20:55:42:186 Used 2 array textures
-2026.03.24 20:55:42:187 "Start loading world.."
-2026.03.24 20:55:42:448 World::afterLoad
-2026.03.24 20:55:42:547 initialized  37 " regions in 91 ms"
-2026.03.24 20:55:42:578 "Loading world done"
-2026.03.24 20:55:42:584 loaded 259 items
-2026.03.24 20:55:42:584 "Loading items done"
-2026.03.24 20:55:42:585 "Loading constructions done"
-2026.03.24 20:55:42:589 "Loading jobs done"
-2026.03.24 20:55:42:591 load  1 gnomes
-2026.03.24 20:55:42:595 QIODevice::read (QFile, "/Users/seanellul/Code/games/Ingnomia/content/test_saves/smoke_test/monsters.json"): device not open
-2026.03.24 20:55:42:595 json parse error in "/Users/seanellul/Code/games/Ingnomia/content/test_saves/smoke_test/monsters.json" 0
-2026.03.24 20:55:42:951 "Loading gnomes, plants and animals done"
-2026.03.24 20:55:42:952 "loading game took: 1333 ms"
-2026.03.24 20:55:42:963 loaded sound  "ButtonClick."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/wood1.wav"
-2026.03.24 20:55:42:965 loaded sound  "actionDrink."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/drink1.wav"
-2026.03.24 20:55:42:966 loaded sound  "actionEat."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/eat1.wav"
-2026.03.24 20:55:42:967 loaded sound  "DigStairsDown."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/pickaxe1.wav"
-2026.03.24 20:55:42:967 loaded sound  "BuildFloor."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/hammering3.wav"
-2026.03.24 20:55:42:968 loaded sound  "BuildItem."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/hammering1.wav"
-2026.03.24 20:55:42:968 loaded sound  "BuildWorkshop."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/hammering3.wav"
-2026.03.24 20:55:42:970 loaded sound  "CraftAtWorkshop."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/work1.wav"
-2026.03.24 20:55:42:970 loaded sound  "CraftAtWorkshop.Plank"   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/saw1.wav"
-2026.03.24 20:55:42:972 loaded sound  "CraftAtWorkshop.Wine"   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/pour1.wav"
-2026.03.24 20:55:42:972 loaded sound  "FellTree."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/wood2.wav"
-2026.03.24 20:55:42:973 loaded sound  "Harvest."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/prassel1.wav"
-2026.03.24 20:55:42:974 loaded sound  "HarvestHay."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/prassel1.wav"
-2026.03.24 20:55:42:974 loaded sound  "Mine."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/pickaxe1.wav"
-2026.03.24 20:55:42:974 loaded sound  "ExplorativeMine."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/pickaxe1.wav"
-2026.03.24 20:55:42:975 loaded sound  "PlantFarm."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/sand1.wav"
-2026.03.24 20:55:42:975 loaded sound  "PlantFarm.Plant"   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/sand1.wav"
-2026.03.24 20:55:42:976 loaded sound  "Till."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/sand2.wav"
-2026.03.24 20:55:42:983 Starting game
-2026.03.24 20:55:42:983 [TestController] Save loaded successfully
-2026.03.24 20:55:44:423 [TestController] Taking screenshot: "/tmp/ingnomia_ui_review.png"
-2026.03.24 20:55:44:690 Screenshot saved: "/tmp/ingnomia_ui_review.png"
-2026.03.24 20:55:44:691 [TestController] Test complete, exiting
+2026.03.24 21:35:42:548 Ingnomia version 0.8.11.0
+2026.03.24 21:35:42:815 QIODevice::read (QFile, "/Users/seanellul/Library/Application Support/Roest/Ingnomia/Ingnomiasettings/config.json"): device not open
+2026.03.24 21:35:42:815 json parse error in "/Users/seanellul/Library/Application Support/Roest/Ingnomia/Ingnomiasettings/config.json" 0
+2026.03.24 21:35:42:815 load standard config
+2026.03.24 21:35:42:826 Memory DB: connection ok
+2026.03.24 21:35:42:866 QSqlError("", "Unable to fetch row", "No query")
+2026.03.24 21:35:42:927 Update config "CurrentVersion" = QVariant(QString, "0.8.11.0") (was QVariant(QString, "0.7.5.0") )
+2026.03.24 21:35:42:927 Warning: Setting a new default format with a different version or profile after the global shared context is created may cause issues with context sharing.
+2026.03.24 21:35:42:928 QObject::connect(EventConnector, AggregatorSound): invalid nullptr parameter
+2026.03.24 21:35:43:093 QIODevice::read (QFile, "/Users/seanellul/Library/Application Support/Roest/Ingnomia/Ingnomia/settings/userpresets.json"): device not open
+2026.03.24 21:35:43:093 json parse error in "/Users/seanellul/Library/Application Support/Roest/Ingnomia/Ingnomia/settings/userpresets.json" 0
+2026.03.24 21:35:43:093 Create main window.
+2026.03.24 21:35:43:365 Could not create NSOpenGLContext with shared context, falling back to unshared context.
+2026.03.24 21:35:43:444 initialize GL ...
+2026.03.24 21:35:43:476 [OpenGL] Apple
+2026.03.24 21:35:43:476 [OpenGL] 4.1 Metal - 90.5
+2026.03.24 21:35:43:476 [OpenGL] Apple M1 Pro
+2026.03.24 21:35:43:476 QSurfaceFormat(version 4.1, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize 32, redBufferSize 8, greenBufferSize 8, blueBufferSize 8, alphaBufferSize -1, stencilBufferSize 0, samples 0, swapBehavior QSurfaceFormat::DoubleBuffer, swapInterval 0, colorSpace QSurfaceFormat::sRGBColorSpace, profile  QSurfaceFormat::CoreProfile)
+2026.03.24 21:35:43:491 initialize GL - done
+2026.03.24 21:35:43:504 Update config "WindowWidth" = QVariant(int, 1920) (was QVariant(qlonglong, 3231) )
+2026.03.24 21:35:43:504 Update config "WindowHeight" = QVariant(int, 1018) (was QVariant(qlonglong, 1631) )
+2026.03.24 21:35:43:512 [Test] Test mode enabled
+2026.03.24 21:35:43:565 Update config "WindowWidth" = QVariant(int, 1900) (was QVariant(int, 1920) )
+2026.03.24 21:35:43:565 Update config "WindowHeight" = QVariant(int, 998) (was QVariant(int, 1018) )
+2026.03.24 21:35:44:076 [TestController] Loading save: "/Users/seanellul/Code/games/Ingnomia/content/test_saves/smoke_test"
+2026.03.24 21:35:44:077 *** Global reset
+2026.03.24 21:35:44:078 Memory DB: connection ok
+2026.03.24 21:35:44:115 init game...
+2026.03.24 21:35:46:119 init game done
+2026.03.24 21:35:46:722 Used 2 array textures
+2026.03.24 21:35:46:722 "Start loading world.."
+2026.03.24 21:35:47:004 World::afterLoad
+2026.03.24 21:35:47:118 initialized  37 " regions in 107 ms"
+2026.03.24 21:35:47:152 "Loading world done"
+2026.03.24 21:35:47:158 loaded 259 items
+2026.03.24 21:35:47:158 "Loading items done"
+2026.03.24 21:35:47:159 "Loading constructions done"
+2026.03.24 21:35:47:163 "Loading jobs done"
+2026.03.24 21:35:47:165 load  1 gnomes
+2026.03.24 21:35:47:168 QIODevice::read (QFile, "/Users/seanellul/Code/games/Ingnomia/content/test_saves/smoke_test/monsters.json"): device not open
+2026.03.24 21:35:47:168 json parse error in "/Users/seanellul/Code/games/Ingnomia/content/test_saves/smoke_test/monsters.json" 0
+2026.03.24 21:35:47:552 "Loading gnomes, plants and animals done"
+2026.03.24 21:35:47:553 "loading game took: 1433 ms"
+2026.03.24 21:35:47:565 loaded sound  "ButtonClick."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/wood1.wav"
+2026.03.24 21:35:47:566 loaded sound  "actionDrink."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/drink1.wav"
+2026.03.24 21:35:47:568 loaded sound  "actionEat."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/eat1.wav"
+2026.03.24 21:35:47:569 loaded sound  "DigStairsDown."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/pickaxe1.wav"
+2026.03.24 21:35:47:569 loaded sound  "BuildFloor."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/hammering3.wav"
+2026.03.24 21:35:47:570 loaded sound  "BuildItem."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/hammering1.wav"
+2026.03.24 21:35:47:570 loaded sound  "BuildWorkshop."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/hammering3.wav"
+2026.03.24 21:35:47:571 loaded sound  "CraftAtWorkshop."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/work1.wav"
+2026.03.24 21:35:47:572 loaded sound  "CraftAtWorkshop.Plank"   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/saw1.wav"
+2026.03.24 21:35:47:573 loaded sound  "CraftAtWorkshop.Wine"   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/pour1.wav"
+2026.03.24 21:35:47:574 loaded sound  "FellTree."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/wood2.wav"
+2026.03.24 21:35:47:575 loaded sound  "Harvest."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/prassel1.wav"
+2026.03.24 21:35:47:575 loaded sound  "HarvestHay."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/prassel1.wav"
+2026.03.24 21:35:47:576 loaded sound  "Mine."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/pickaxe1.wav"
+2026.03.24 21:35:47:576 loaded sound  "ExplorativeMine."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/pickaxe1.wav"
+2026.03.24 21:35:47:576 loaded sound  "PlantFarm."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/sand1.wav"
+2026.03.24 21:35:47:577 loaded sound  "PlantFarm.Plant"   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/sand1.wav"
+2026.03.24 21:35:47:578 loaded sound  "Till."   "/Users/seanellul/Code/games/Ingnomia/build/content/audio/sand2.wav"
+2026.03.24 21:35:47:584 Starting game
+2026.03.24 21:35:47:584 [TestController] Save loaded successfully
+2026.03.24 21:35:47:584 [TestController] Will force-render and take screenshot in 2 seconds
+2026.03.24 21:35:47:593 max array size:  2048
+2026.03.24 21:35:47:594 used  516  sprites
+2026.03.24 21:35:53:092 [TestController] Running 15 warmup frames...
+2026.03.24 21:35:53:219 [TestController] Taking screenshot 3800 x 1996
+2026.03.24 21:35:53:431 [TestController] Screenshot saved: "/tmp/ingnomia_test_fix.png"
+2026.03.24 21:35:53:431 [TestController] Metrics written to: "/tmp/ingnomia_test_metrics.json"
+2026.03.24 21:35:53:431 [TestController] Test complete, exiting

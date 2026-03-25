@@ -300,6 +300,7 @@ void GameManager::postCreationInit()
 void GameManager::onGeneratorMessage( QString message )
 {
 	qDebug() << message;
+	emit signalLoadStatus( message );
 }
 
 void GameManager::saveGame()

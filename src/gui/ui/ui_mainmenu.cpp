@@ -350,13 +350,33 @@ void drawSettings( ImGuiBridge& bridge )
 void drawWaitScreen( ImGuiBridge& bridge )
 {
 	ImGuiIO& io = ImGui::GetIO();
+	float panelW = 400;
+	float panelH = 120;
 	ImGui::SetNextWindowPos( ImVec2( io.DisplaySize.x * 0.5f, io.DisplaySize.y * 0.5f ), ImGuiCond_Always, ImVec2( 0.5f, 0.5f ) );
-	ImGui::SetNextWindowSize( ImVec2( 300, 100 ) );
+	ImGui::SetNextWindowSize( ImVec2( panelW, panelH ) );
 
 	ImGui::Begin( "Loading", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoTitleBar );
 
-	ImGui::SetCursorPosX( ( 300 - ImGui::CalcTextSize( "Loading world..." ).x ) * 0.5f );
-	ImGui::TextUnformatted( "Loading world..." );
+	// Title
+	const char* title = "Loading...";
+	ImGui::SetCursorPosX( ( panelW - ImGui::CalcTextSize( title ).x ) * 0.5f );
+	ImGui::TextUnformatted( title );
+	ImGui::Spacing();
+	ImGui::Separator();
+	ImGui::Spacing();
+
+	// Status text from game thread
+	if ( !bridge.loadingStatus.isEmpty() )
+	{
+		std::string status = bridge.loadingStatus.toStdString();
+		ImGui::SetCursorPosX( ( panelW - ImGui::CalcTextSize( status.c_str() ).x ) * 0.5f );
+		ImGui::TextUnformatted( status.c_str() );
+	}
+	else
+	{
+		ImGui::SetCursorPosX( ( panelW - ImGui::CalcTextSize( "Preparing..." ).x ) * 0.5f );
+		ImGui::TextDisabled( "Preparing..." );
+	}
 
 	ImGui::End();
 }

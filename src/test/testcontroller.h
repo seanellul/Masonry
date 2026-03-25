@@ -5,6 +5,7 @@
 #include <QString>
 
 class MainWindow;
+class QTimer;
 
 struct TestConfig
 {
@@ -32,6 +33,7 @@ private:
 	void onKingdomInfo( QString name, QString info1, QString info2, QString info3 );
 
 	void startFrameCountdown();
+	void doScreenshotFrame();
 	void takeScreenshotAndMaybeExit();
 	void writeMetricsAndExit();
 	void writeMetrics();
@@ -52,4 +54,6 @@ private:
 	QString m_kingdomName;
 	QString m_kingdomInfo1, m_kingdomInfo2, m_kingdomInfo3;
 	bool m_screenshotTaken = false;
+	int m_screenshotFrames = 0;
+	QTimer* m_screenshotTimer = nullptr;
 };

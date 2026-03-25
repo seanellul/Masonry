@@ -69,7 +69,13 @@ TestCommandServer::TestCommandServer( ImGuiBridge* bridge, MainWindow* window, Q
 TestCommandServer::~TestCommandServer()
 {
 	m_readerThread.quit();
-	m_readerThread.wait();
+	// Don't wait — the reader thread may be blocked on std::getline(stdin)
+	// which can't be interrupted on macOS. Just terminate it.
+	if ( !m_readerThread.wait( 500 ) )
+	{
+		m_readerThread.terminate();
+		m_readerThread.wait( 500 );
+	}
 }
 
 void TestCommandServer::start()

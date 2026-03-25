@@ -547,6 +547,22 @@ void MainWindow::drawImGui()
 				drawInGameMenu( *m_bridge );
 				break;
 			case ImGuiBridge::AppState::GameRunning:
+				if ( !m_bridge->rendererReady )
+				{
+					// Show loading overlay while renderer warms up.
+					// GL textures + tile data init happens on the first paint frames.
+					m_bridge->rendererWarmupFrames++;
+					if ( m_bridge->rendererWarmupFrames > 10 )
+					{
+						m_bridge->rendererReady = true;
+						m_bridge->loadingStatus.clear();
+					}
+					else
+					{
+						drawWaitScreen( *m_bridge );
+						break;
+					}
+				}
 				drawGameHUD( *m_bridge );
 				drawTileInfo( *m_bridge );
 
@@ -622,8 +638,56 @@ void MainWindow::paintGL()
 	// Render ImGui UI on top
 	drawImGui();
 
+	// Test screenshot countdown
+	if ( m_testScreenshotCountdown >= 0 )
+	{
+		if ( m_testScreenshotCountdown == 0 )
+		{
+			qDebug() << "[TestController] Taking scheduled screenshot:" << m_testScreenshotPath;
+			takeScreenshot( m_testScreenshotPath );
+			m_testScreenshotCountdown = -1;
+			m_testScreenshotPath.clear();
+			emit testScreenshotDone();
+		}
+		else
+		{
+			m_testScreenshotCountdown--;
+		}
+	}
+
 	m_timer->start( 0 );
 	m_pendingUpdate = false;
+}
+
+void MainWindow::scheduleTestScreenshot( const QString& outputPath, int framesToWait )
+{
+	m_testScreenshotPath = outputPath;
+	m_testScreenshotCountdown = framesToWait;
+	qDebug() << "[TestController] Screenshot scheduled, waiting" << framesToWait << "frames";
+
+	// On macOS, paintGL may not run if the window surface isn't exposed
+	// (e.g. minimized, headless). Force-render by manually calling
+	// makeCurrent + render + grabFramebuffer via a timer.
+	if ( !isExposed() )
+	{
+		qDebug() << "[TestController] Window not exposed, using forced render for screenshot";
+		QTimer::singleShot( 500, this, [this]()
+		{
+			makeCurrent();
+			if ( m_renderer )
+			{
+				m_renderer->paintWorld();
+				drawImGui();
+			}
+
+			qDebug() << "[TestController] Force-rendered, taking screenshot:" << m_testScreenshotPath;
+			takeScreenshot( m_testScreenshotPath );
+			m_testScreenshotCountdown = -1;
+			m_testScreenshotPath.clear();
+			doneCurrent();
+			emit testScreenshotDone();
+		} );
+	}
 }
 
 void MainWindow::resizeGL( int w, int h )

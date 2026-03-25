@@ -40,6 +40,11 @@ public:
 	};
 	AppState appState = AppState::MainMenu;
 
+	// Loading screen status
+	QString loadingStatus;
+	bool rendererReady = false;
+	int rendererWarmupFrames = 0; // counts up each frame in GameRunning until ready
+
 	// Which sidebar panel is open (only one at a time)
 	enum class SidePanel
 	{
@@ -331,6 +336,7 @@ public slots:
 	void onHeartbeat( int value );
 	void onResume();
 	void onLoadGameDone( bool value );
+	void onLoadStatus( QString status );
 	void onWindowSize( int w, int h );
 
 	// Tile info

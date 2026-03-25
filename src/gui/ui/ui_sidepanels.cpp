@@ -94,7 +94,89 @@ void drawStockpilePanel( ImGuiBridge& bridge )
 
 	ImGui::Separator();
 	ImGui::Text( "Capacity: %d / %d items (%d reserved)", sp.itemCount, sp.capacity, sp.reserved );
-	ImGui::TextDisabled( "Filter editing: use Manage from tile info for now" );
+
+	ImGui::Separator();
+	ImGui::Text( "Filters:" );
+	ImGui::SameLine();
+	if ( ImGui::SmallButton( "Select All" ) )
+	{
+		auto& filter = bridge.stockpileInfo.filter;
+		for ( const auto& cat : filter.categories() )
+			bridge.cmdStockpileSetActive( bridge.activeStockpileID, true, cat, "", "", "" );
+	}
+	ImGui::SameLine();
+	if ( ImGui::SmallButton( "Unselect All" ) )
+	{
+		auto& filter = bridge.stockpileInfo.filter;
+		for ( const auto& cat : filter.categories() )
+			bridge.cmdStockpileSetActive( bridge.activeStockpileID, false, cat, "", "", "" );
+	}
+
+	// Render filter tree: Category → Group → Item → Material
+	auto& filter = bridge.stockpileInfo.filter;
+	for ( const auto& cat : filter.categories() )
+	{
+		ImGui::PushID( cat.toStdString().c_str() );
+
+		// Category-level toggle
+		ImGui::AlignTextToFramePadding();
+		bool catOpen = ImGui::TreeNode( "##cat", "%s", "" );
+		ImGui::SameLine();
+		if ( ImGui::SmallButton( ("+ " + cat).toStdString().c_str() ) )
+		{
+			bridge.cmdStockpileSetActive( bridge.activeStockpileID, true, cat, "", "", "" );
+		}
+		ImGui::SameLine();
+		if ( ImGui::SmallButton( ("- ##cat" + cat).toStdString().c_str() ) )
+		{
+			bridge.cmdStockpileSetActive( bridge.activeStockpileID, false, cat, "", "", "" );
+		}
+
+		if ( catOpen )
+		{
+			for ( const auto& group : filter.groups( cat ) )
+			{
+				ImGui::PushID( group.toStdString().c_str() );
+
+				// Group-level toggle
+				bool groupOpen = ImGui::TreeNode( "##grp", "%s", "" );
+				ImGui::SameLine();
+				if ( ImGui::SmallButton( ("+ " + group).toStdString().c_str() ) )
+				{
+					bridge.cmdStockpileSetActive( bridge.activeStockpileID, true, cat, group, "", "" );
+				}
+				ImGui::SameLine();
+				if ( ImGui::SmallButton( ("- ##grp" + group).toStdString().c_str() ) )
+				{
+					bridge.cmdStockpileSetActive( bridge.activeStockpileID, false, cat, group, "", "" );
+				}
+
+				if ( groupOpen )
+				{
+					for ( const auto& item : filter.items( cat, group ) )
+					{
+						ImGui::PushID( item.toStdString().c_str() );
+						for ( const auto& mat : filter.materials( cat, group, item ) )
+						{
+							bool checked = filter.getCheckState( cat, group, item, mat );
+							QString label = item + " (" + mat + ")";
+							if ( ImGui::Checkbox( label.toStdString().c_str(), &checked ) )
+							{
+								bridge.cmdStockpileSetActive( bridge.activeStockpileID, checked, cat, group, item, mat );
+							}
+						}
+						ImGui::PopID();
+					}
+					ImGui::TreePop();
+				}
+
+				ImGui::PopID();
+			}
+			ImGui::TreePop();
+		}
+
+		ImGui::PopID();
+	}
 
 	ImGui::End();
 }
@@ -473,14 +555,21 @@ void drawNeighborsPanel( ImGuiBridge& bridge )
 // =============================================================================
 // Workshop panel
 // =============================================================================
+// Track selected material index per craft component
+static QMap<QString, QMap<int, int>> s_craftSelectedMats;
+static int s_craftMode = 0;      // 0=CraftNumber, 1=CraftTo, 2=Repeat
+static int s_craftAmount = 1;
+
 void drawWorkshopPanel( ImGuiBridge& bridge )
 {
 	if ( !bridge.showWorkshopWindow )
 		return;
 
 	ImGuiIO& io = ImGui::GetIO();
-	ImGui::SetNextWindowPos( ImVec2( 5, 50 ) );
-	ImGui::SetNextWindowSize( ImVec2( io.DisplaySize.x - 10, io.DisplaySize.y - 110 ) );
+	float panelW = 500;
+	float panelH = io.DisplaySize.y - 110;
+	ImGui::SetNextWindowPos( ImVec2( io.DisplaySize.x - panelW - 5, 50 ) );
+	ImGui::SetNextWindowSize( ImVec2( panelW, panelH ) );
 
 	bool open = true;
 	ImGui::Begin( "Workshop", &open, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize );
@@ -489,39 +578,210 @@ void drawWorkshopPanel( ImGuiBridge& bridge )
 
 	auto& ws = bridge.workshopInfo;
 
+	// Header: name + priority
 	static char wsName[128];
 	snprintf( wsName, sizeof( wsName ), "%s", ws.name.toStdString().c_str() );
+	ImGui::SetNextItemWidth( 200 );
 	if ( ImGui::InputText( "Name", wsName, sizeof( wsName ), ImGuiInputTextFlags_EnterReturnsTrue ) )
 	{
 		bridge.cmdWorkshopSetOptions( bridge.activeWorkshopID, wsName, ws.priority, ws.suspended, ws.acceptGenerated, ws.autoCraftMissing, ws.linkStockpile );
 	}
 
 	int prio = ws.priority;
+	ImGui::SetNextItemWidth( 150 );
 	if ( ImGui::SliderInt( "Priority", &prio, 0, 9 ) )
 	{
 		bridge.cmdWorkshopSetOptions( bridge.activeWorkshopID, ws.name, prio, ws.suspended, ws.acceptGenerated, ws.autoCraftMissing, ws.linkStockpile );
 	}
 
+	// Toggles row
 	bool suspended = ws.suspended;
 	if ( ImGui::Checkbox( "Suspended", &suspended ) )
 	{
 		bridge.cmdWorkshopSetOptions( bridge.activeWorkshopID, ws.name, ws.priority, suspended, ws.acceptGenerated, ws.autoCraftMissing, ws.linkStockpile );
 	}
+	ImGui::SameLine();
+	bool acceptGen = ws.acceptGenerated;
+	if ( ImGui::Checkbox( "Accept generated", &acceptGen ) )
+	{
+		bridge.cmdWorkshopSetOptions( bridge.activeWorkshopID, ws.name, ws.priority, ws.suspended, acceptGen, ws.autoCraftMissing, ws.linkStockpile );
+	}
+	ImGui::SameLine();
+	bool autoCraft = ws.autoCraftMissing;
+	if ( ImGui::Checkbox( "Auto-craft", &autoCraft ) )
+	{
+		bridge.cmdWorkshopSetOptions( bridge.activeWorkshopID, ws.name, ws.priority, ws.suspended, ws.acceptGenerated, autoCraft, ws.linkStockpile );
+	}
+
+	// Special options: Butcher
+	if ( ws.gui == "Butcher" )
+	{
+		ImGui::Separator();
+		bool corpses = ws.butcherCorpses;
+		bool excess = ws.butcherExcess;
+		if ( ImGui::Checkbox( "Butcher corpses", &corpses ) )
+			bridge.cmdWorkshopSetButcherOptions( bridge.activeWorkshopID, corpses, ws.butcherExcess );
+		ImGui::SameLine();
+		if ( ImGui::Checkbox( "Butcher excess", &excess ) )
+			bridge.cmdWorkshopSetButcherOptions( bridge.activeWorkshopID, ws.butcherCorpses, excess );
+	}
+
+	// Special options: Fishery
+	if ( ws.gui == "Fishery" )
+	{
+		ImGui::Separator();
+		bool catchF = ws.catchFish;
+		bool processF = ws.processFish;
+		if ( ImGui::Checkbox( "Catch fish", &catchF ) )
+			bridge.cmdWorkshopSetFisherOptions( bridge.activeWorkshopID, catchF, ws.processFish );
+		ImGui::SameLine();
+		if ( ImGui::Checkbox( "Process fish", &processF ) )
+			bridge.cmdWorkshopSetFisherOptions( bridge.activeWorkshopID, ws.catchFish, processF );
+	}
 
 	ImGui::Separator();
-	ImGui::Text( "Craft Queue:" );
 
-	for ( const auto& job : ws.jobList )
+	if ( ImGui::BeginTabBar( "WorkshopTabs" ) )
 	{
-		ImGui::PushID( (int)job.id );
-		ImGui::Text( "%s x%d", job.itemSID.toStdString().c_str(), job.numItemsToCraft );
-		ImGui::SameLine();
-		if ( ImGui::SmallButton( "Up" ) ) bridge.cmdWorkshopCraftJobCommand( job.id, "Up" );
-		ImGui::SameLine();
-		if ( ImGui::SmallButton( "Down" ) ) bridge.cmdWorkshopCraftJobCommand( job.id, "Down" );
-		ImGui::SameLine();
-		if ( ImGui::SmallButton( "X" ) ) bridge.cmdWorkshopCraftJobCommand( job.id, "Delete" );
-		ImGui::PopID();
+		// =====================================================================
+		// Craft Queue tab
+		// =====================================================================
+		if ( ImGui::BeginTabItem( "Queue" ) )
+		{
+			if ( ws.jobList.isEmpty() )
+			{
+				ImGui::TextDisabled( "No craft jobs queued" );
+			}
+			else
+			{
+				for ( const auto& job : ws.jobList )
+				{
+					ImGui::PushID( (int)job.id );
+
+					// Job status line
+					const char* modeLabel = "?";
+					switch ( job.mode )
+					{
+						case CraftMode::CraftNumber: modeLabel = "Craft"; break;
+						case CraftMode::CraftTo:     modeLabel = "Until"; break;
+						case CraftMode::Repeat:       modeLabel = "Repeat"; break;
+					}
+
+					if ( job.mode == CraftMode::Repeat )
+						ImGui::Text( "%s %s", modeLabel, job.itemSID.toStdString().c_str() );
+					else
+						ImGui::Text( "%s %d x %s (%d done)", modeLabel, job.numItemsToCraft, job.itemSID.toStdString().c_str(), job.alreadyCrafted );
+
+					// Controls
+					ImGui::SameLine();
+					if ( ImGui::SmallButton( "^" ) ) bridge.cmdWorkshopCraftJobCommand( job.id, "Up" );
+					ImGui::SameLine();
+					if ( ImGui::SmallButton( "v" ) ) bridge.cmdWorkshopCraftJobCommand( job.id, "Down" );
+					ImGui::SameLine();
+					if ( ImGui::SmallButton( "X" ) ) bridge.cmdWorkshopCraftJobCommand( job.id, "Delete" );
+
+					ImGui::PopID();
+				}
+			}
+
+			ImGui::EndTabItem();
+		}
+
+		// =====================================================================
+		// Craft Recipes tab
+		// =====================================================================
+		if ( ImGui::BeginTabItem( "Recipes" ) )
+		{
+			if ( ws.products.isEmpty() )
+			{
+				ImGui::TextDisabled( "No recipes available" );
+			}
+			else
+			{
+				// Craft mode + amount selector
+				ImGui::Text( "Mode:" );
+				ImGui::SameLine();
+				ImGui::RadioButton( "Craft N", &s_craftMode, 0 );
+				ImGui::SameLine();
+				ImGui::RadioButton( "Until N", &s_craftMode, 1 );
+				ImGui::SameLine();
+				ImGui::RadioButton( "Repeat", &s_craftMode, 2 );
+
+				if ( s_craftMode != 2 )
+				{
+					ImGui::SameLine();
+					ImGui::SetNextItemWidth( 80 );
+					ImGui::InputInt( "##amount", &s_craftAmount );
+					if ( s_craftAmount < 1 ) s_craftAmount = 1;
+				}
+
+				ImGui::Separator();
+
+				for ( const auto& product : ws.products )
+				{
+					ImGui::PushID( product.sid.toStdString().c_str() );
+
+					ImGui::Text( "%s", product.sid.toStdString().c_str() );
+
+					// Material dropdowns per component
+					QStringList mats;
+					bool canCraft = true;
+
+					for ( int c = 0; c < product.components.size(); ++c )
+					{
+						const auto& comp = product.components[c];
+						if ( comp.materials.isEmpty() )
+						{
+							canCraft = false;
+							ImGui::TextDisabled( "  %d x %s (unavailable)", comp.amount, comp.sid.toStdString().c_str() );
+							mats.append( "any" );
+							continue;
+						}
+
+						int& selIdx = s_craftSelectedMats[product.sid][c];
+						if ( selIdx >= comp.materials.size() ) selIdx = 0;
+
+						ImGui::Text( "  %d", comp.amount );
+						ImGui::SameLine();
+
+						QString comboLabel = "##comp" + QString::number( c );
+						QString preview = comp.materials[selIdx].sid + " (" + QString::number( comp.materials[selIdx].amount ) + ")";
+
+						ImGui::SetNextItemWidth( 180 );
+						if ( ImGui::BeginCombo( comboLabel.toStdString().c_str(), preview.toStdString().c_str() ) )
+						{
+							for ( int m = 0; m < comp.materials.size(); ++m )
+							{
+								QString label = comp.materials[m].sid + " (" + QString::number( comp.materials[m].amount ) + ")";
+								if ( ImGui::Selectable( label.toStdString().c_str(), m == selIdx ) )
+								{
+									selIdx = m;
+								}
+							}
+							ImGui::EndCombo();
+						}
+
+						mats.append( comp.materials[selIdx].sid );
+					}
+
+					// Craft button
+					ImGui::SameLine();
+					if ( !canCraft ) ImGui::BeginDisabled();
+					if ( ImGui::Button( "Craft" ) )
+					{
+						bridge.cmdWorkshopCraftItem( product.sid, s_craftMode, QString::number( s_craftAmount ), mats );
+					}
+					if ( !canCraft ) ImGui::EndDisabled();
+
+					ImGui::Separator();
+					ImGui::PopID();
+				}
+			}
+
+			ImGui::EndTabItem();
+		}
+
+		ImGui::EndTabBar();
 	}
 
 	ImGui::End();

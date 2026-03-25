@@ -68,6 +68,7 @@ EventConnector::EventConnector( GameManager* parent ) :
 	m_soundAggregator	 = new AggregatorSound( this );
 
 	connect( m_selectionAggregator, &AggregatorSelection::signalSelectTile, m_tiAggregator, &AggregatorTileInfo::onShowTileInfo );
+	connect( gm, &GameManager::signalLoadStatus, this, &EventConnector::signalLoadStatus );
 }
 
 void EventConnector::setGamePtr( Game* game )
