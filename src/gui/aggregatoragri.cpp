@@ -188,6 +188,13 @@ void AggregatorAgri::onOpen( TileFlag designation, unsigned int tileID )
 
 void AggregatorAgri::onRequestGlobalPlantInfo()
 {
+	if ( g )
+	{
+		for ( auto& gp : m_globalPlantInfo )
+		{
+			gp.seedCount = g->inv()->itemCount( gp.seedID, gp.materialID );
+		}
+	}
 	emit signalGlobalPlantInfo( m_globalPlantInfo );
 }
 
@@ -228,18 +235,18 @@ void AggregatorAgri::onUpdateFarm( unsigned int id )
 		if ( farm )
 		{
 			farm->getInfo( m_farmInfo.numPlots, m_farmInfo.tilled, m_farmInfo.planted, m_farmInfo.cropReady );
-			/*
 			for( auto& gp : m_globalPlantInfo )
 			{
-				gp.seedCount = m_inv->itemCount( gp.seedID, gp.materialID );
+				gp.seedCount = g->inv()->itemCount( gp.seedID, gp.materialID );
 			}
-			*/
 			m_farmInfo.suspended   = farm->suspended();
 			m_farmInfo.name        = farm->name();
 			m_farmInfo.priority    = g->fm()->farmPriority( id );
 			m_farmInfo.maxPriority = g->fm()->countFarms();
 			m_farmInfo.harvest     = farm->harvest();
 			m_farmInfo.plantType   = farm->plantType();
+
+			emit signalGlobalPlantInfo( m_globalPlantInfo );
 
 			if ( m_farmInfo.product.plantID != m_farmInfo.plantType )
 			{

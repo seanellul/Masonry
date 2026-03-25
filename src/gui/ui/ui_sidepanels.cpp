@@ -1161,12 +1161,12 @@ static void drawFarmView( ImGuiBridge& bridge )
 	{
 		for ( const auto& plant : bridge.globalPlants )
 		{
+			// Only show crops where we have seeds available
+			if ( plant.seedCount <= 0 && plant.plantID != farm.plantType )
+				continue;
+
 			bool selected = ( plant.plantID == farm.plantType );
-			QString label = plant.name;
-			if ( plant.seedCount > 0 )
-				label += QString( " (%1 seeds)" ).arg( plant.seedCount );
-			else
-				label += " (no seeds)";
+			QString label = QString( "%1 (%2 seeds)" ).arg( plant.name ).arg( plant.seedCount );
 			if ( ImGui::Selectable( label.toStdString().c_str(), selected ) )
 			{
 				bridge.cmdAgriSelectProduct( farmID, plant.plantID );
@@ -1179,7 +1179,7 @@ static void drawFarmView( ImGuiBridge& bridge )
 	ImGui::PopItemWidth();
 
 	// Show seed info for selected crop
-	if ( !farm.plantType.isEmpty() && farm.product.seedCount >= 0 )
+	if ( !farm.plantType.isEmpty() )
 	{
 		ImGui::Text( "Seeds available: %d", farm.product.seedCount );
 	}
@@ -1196,6 +1196,8 @@ static void drawGroveView( ImGuiBridge& bridge )
 	auto& grove = bridge.groveInfo;
 	if ( grove.name.isEmpty() ) return;
 
+	unsigned int groveID = grove.ID;
+
 	ImGui::TextColored( ImVec4( 0.45f, 0.75f, 0.35f, 1.0f ), "Grove" );
 	ImGui::SameLine( 60 );
 
@@ -1204,20 +1206,20 @@ static void drawGroveView( ImGuiBridge& bridge )
 	ImGui::PushItemWidth( -1 );
 	if ( ImGui::InputText( "##GroveName", groveName, sizeof( groveName ), ImGuiInputTextFlags_EnterReturnsTrue ) )
 	{
-		bridge.cmdAgriSetOptions( bridge.activeAgriID, groveName, grove.priority, grove.suspended );
+		bridge.cmdAgriSetOptions( groveID, groveName, grove.priority, grove.suspended );
 	}
 	ImGui::PopItemWidth();
 
 	bool suspended = grove.suspended;
 	if ( ImGui::Checkbox( "Suspended", &suspended ) )
 	{
-		bridge.cmdAgriSetOptions( bridge.activeAgriID, grove.name, grove.priority, suspended );
+		bridge.cmdAgriSetOptions( groveID, grove.name, grove.priority, suspended );
 	}
 
 	ImGui::Separator();
 
 	QString currentTreeName = grove.treeType.isEmpty() ? "None" : grove.product.name;
-	if ( currentTreeName.isEmpty() ) currentTreeName = grove.treeType;
+	if ( currentTreeName.isEmpty() && !grove.treeType.isEmpty() ) currentTreeName = grove.treeType;
 
 	ImGui::Text( "Tree:" );
 	ImGui::PushItemWidth( -1 );
@@ -1228,7 +1230,7 @@ static void drawGroveView( ImGuiBridge& bridge )
 			bool selected = ( tree.plantID == grove.treeType );
 			if ( ImGui::Selectable( tree.name.toStdString().c_str(), selected ) )
 			{
-				bridge.cmdAgriSelectProduct( bridge.activeAgriID, tree.plantID );
+				bridge.cmdAgriSelectProduct( groveID, tree.plantID );
 			}
 			if ( selected )
 				ImGui::SetItemDefaultFocus();
@@ -1242,19 +1244,19 @@ static void drawGroveView( ImGuiBridge& bridge )
 	bool plantTrees = grove.plantTrees;
 	if ( ImGui::Checkbox( "Plant trees", &plantTrees ) )
 	{
-		bridge.cmdAgriSetGroveOptions( bridge.activeAgriID, grove.pickFruits, plantTrees, grove.fellTrees );
+		bridge.cmdAgriSetGroveOptions( groveID, grove.pickFruits, plantTrees, grove.fellTrees );
 	}
 	ImGui::SameLine();
 	bool pickFruits = grove.pickFruits;
 	if ( ImGui::Checkbox( "Pick fruit", &pickFruits ) )
 	{
-		bridge.cmdAgriSetGroveOptions( bridge.activeAgriID, pickFruits, grove.plantTrees, grove.fellTrees );
+		bridge.cmdAgriSetGroveOptions( groveID, pickFruits, grove.plantTrees, grove.fellTrees );
 	}
 
 	bool fellTrees = grove.fellTrees;
 	if ( ImGui::Checkbox( "Fell trees", &fellTrees ) )
 	{
-		bridge.cmdAgriSetGroveOptions( bridge.activeAgriID, grove.pickFruits, grove.plantTrees, fellTrees );
+		bridge.cmdAgriSetGroveOptions( groveID, grove.pickFruits, grove.plantTrees, fellTrees );
 	}
 
 	ImGui::Separator();
@@ -1275,20 +1277,20 @@ static void drawPastureView( ImGuiBridge& bridge )
 	ImGui::PushItemWidth( -1 );
 	if ( ImGui::InputText( "##PastureName", pastureName, sizeof( pastureName ), ImGuiInputTextFlags_EnterReturnsTrue ) )
 	{
-		bridge.cmdAgriSetOptions( bridge.activeAgriID, pastureName, pasture.priority, pasture.suspended );
+		bridge.cmdAgriSetOptions( pasture.ID, pastureName, pasture.priority, pasture.suspended );
 	}
 	ImGui::PopItemWidth();
 
 	bool suspended = pasture.suspended;
 	if ( ImGui::Checkbox( "Suspended", &suspended ) )
 	{
-		bridge.cmdAgriSetOptions( bridge.activeAgriID, pasture.name, pasture.priority, suspended );
+		bridge.cmdAgriSetOptions( pasture.ID, pasture.name, pasture.priority, suspended );
 	}
 	ImGui::SameLine();
 	bool harvest = pasture.harvest;
 	if ( ImGui::Checkbox( "Harvest", &harvest ) )
 	{
-		bridge.cmdAgriSetHarvestOptions( bridge.activeAgriID, harvest, pasture.harvestHay, false );
+		bridge.cmdAgriSetHarvestOptions( pasture.ID, harvest, pasture.harvestHay, false );
 	}
 
 	ImGui::Separator();
@@ -1305,7 +1307,7 @@ static void drawPastureView( ImGuiBridge& bridge )
 			bool selected = ( animal.animalID == pasture.animalType );
 			if ( ImGui::Selectable( animal.name.toStdString().c_str(), selected ) )
 			{
-				bridge.cmdAgriSelectProduct( bridge.activeAgriID, animal.animalID );
+				bridge.cmdAgriSelectProduct( pasture.ID, animal.animalID );
 			}
 			if ( selected )
 				ImGui::SetItemDefaultFocus();
@@ -1324,12 +1326,12 @@ static void drawPastureView( ImGuiBridge& bridge )
 		int maxMale = pasture.maxMale;
 		if ( ImGui::SliderInt( "Max Male", &maxMale, 0, qMax( 1, pasture.maxNumber ) ) )
 		{
-			bridge.cmdAgriSetMaxMale( bridge.activeAgriID, maxMale );
+			bridge.cmdAgriSetMaxMale( pasture.ID, maxMale );
 		}
 		int maxFemale = pasture.maxFemale;
 		if ( ImGui::SliderInt( "Max Female", &maxFemale, 0, qMax( 1, pasture.maxNumber ) ) )
 		{
-			bridge.cmdAgriSetMaxFemale( bridge.activeAgriID, maxFemale );
+			bridge.cmdAgriSetMaxFemale( pasture.ID, maxFemale );
 		}
 
 		ImGui::Separator();
@@ -1337,7 +1339,7 @@ static void drawPastureView( ImGuiBridge& bridge )
 		bool harvestHay = pasture.harvestHay;
 		if ( ImGui::Checkbox( "Harvest Hay", &harvestHay ) )
 		{
-			bridge.cmdAgriSetHarvestOptions( bridge.activeAgriID, pasture.harvest, harvestHay, false );
+			bridge.cmdAgriSetHarvestOptions( pasture.ID, pasture.harvest, harvestHay, false );
 		}
 
 		if ( pasture.foodMax > 0 )
