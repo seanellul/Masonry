@@ -43,6 +43,7 @@ struct LogMessage
 	LogType type;
 	QString message;
 	unsigned int source;
+	int posX = 0, posY = 0, posZ = 0; // event location for "Go To" navigation
 };
 
 class Logger
@@ -54,6 +55,7 @@ public:
 	void reset();
 
 	void log( LogType lt, QString msg, unsigned int sourceEntity );
+	void log( LogType lt, QString msg, unsigned int sourceEntity, int posX, int posY, int posZ );
 
 	std::vector<LogMessage>& messages()
 	{

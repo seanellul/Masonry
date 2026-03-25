@@ -53,7 +53,11 @@ void AggregatorMilitary::sendSquadUpdate()
 	{
 		if( !g->mil()->getSquadForGnome( gnome->id() ) )
 		{
-			ngs.gnomes.append( { gnome->id(), gnome->name(), gnome->roleID() } );
+			GuiSquadGnome gsg;
+			gsg.id = gnome->id();
+			gsg.name = gnome->name();
+			gsg.roleID = gnome->roleID();
+			ngs.gnomes.append( gsg );
 		}
 	}
 	m_squads.append( ngs );

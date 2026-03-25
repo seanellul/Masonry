@@ -417,7 +417,7 @@ CreatureTickResult Animal::onTick( quint64 tickNumber, bool seasonChanged, bool 
 		// Starvation death
 		if ( m_hunger <= -20.0 )
 		{
-			Global::logger().log( LogType::WILDLIFE, "A " + S::s( "$CreatureName_" + m_species ) + " has starved to death.", m_id );
+			Global::logger().log( LogType::WILDLIFE, "A " + S::s( "$CreatureName_" + m_species ) + " has starved to death.", m_id, m_position.x, m_position.y, m_position.z );
 			die();
 			return CreatureTickResult::DEAD;
 		}
@@ -427,11 +427,39 @@ CreatureTickResult Animal::onTick( quint64 tickNumber, bool seasonChanged, bool 
 		if ( m_hunger <= 10.0 && canEatMeat && !m_tame && !m_starvingAggro )
 		{
 			m_starvingAggro = true;
-			Global::logger().log( LogType::WILDLIFE, "A starving " + S::s( "$CreatureName_" + m_species ) + " has become aggressive!", m_id );
+			Global::logger().log( LogType::WILDLIFE, "A starving " + S::s( "$CreatureName_" + m_species ) + " has become aggressive!", m_id, m_position.x, m_position.y, m_position.z );
+
+			// Populate aggro list with nearby gnomes so the animal actually attacks
+			for ( auto gn : g->gm()->gnomes() )
+			{
+				if ( gn->isDead() ) continue;
+				Position gnPos = gn->getPos();
+				int dist = abs( m_position.x - gnPos.x ) + abs( m_position.y - gnPos.y ) + abs( m_position.z - gnPos.z );
+				if ( dist < 30 )
+				{
+					addAggro( gn->id(), 50 );
+				}
+			}
+
+			// Switch to hunter behavior tree so GetTarget/AttackTarget nodes are available
+			if ( m_btName != "AnimalHunter" )
+			{
+				m_btName = "AnimalHunter";
+				loadBehaviorTree( m_btName );
+			}
 		}
 		else if ( m_hunger > 30.0 && m_starvingAggro )
 		{
-			m_starvingAggro = false; // calms down once fed
+			m_starvingAggro = false;
+			m_aggroList.clear();
+			// Switch back to original behavior tree
+			QVariantMap avm = DB::selectRow( "Animals", m_species );
+			QString originalBT = avm.value( "BehaviorTree" ).toString();
+			if ( m_btName != originalBT )
+			{
+				m_btName = originalBT;
+				loadBehaviorTree( m_btName );
+			}
 		}
 
 		// Visual feedback

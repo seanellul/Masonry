@@ -73,7 +73,7 @@ public:
 		quint64 createdTick = 0;
 		float alpha         = 1.0f;
 		unsigned int entityID = 0;
-		Position eventPosition;  // stored at log time — works even after entity dies
+		int eventPosX = 0, eventPosY = 0, eventPosZ = 0; // stored at log time
 		bool dismissed = false;
 	};
 	QList<ToastNotification> activeToasts;

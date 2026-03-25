@@ -6,6 +6,39 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-25] Starving Animals Attack + Position-Based Go To
+
+**Files changed**: `src/base/logger.h`, `src/base/logger.cpp`, `src/game/animal.cpp`, `src/gui/imguibridge.h`, `src/gui/imguibridge.cpp`, `src/gui/ui/ui_gamehud.cpp`
+
+### Changes
+- **Starving animals now actually attack** — when `m_starvingAggro` triggers, the animal populates its aggro list with nearby gnomes (within 30 tiles) and switches BT to "AnimalHunter" (GetTarget → Move → AttackTarget). Reverts when fed.
+- **Position stored in log messages** — `LogMessage` has `posX/posY/posZ` fields. Animal events pass position.
+- **"Go To" works for dead entities** — toast stores position at creation. Falls back to stored position when entity is dead.
+- **cmdNavigateToPosition()** — new bridge method for direct position navigation.
+
+---
+
+## [2026-03-25] CI/CD Pipeline + In-Game Update Checker
+
+**Files changed**: `.github/workflows/release.yml`, `.github/workflows/cmake.yml.old`, `CMakeLists.txt`, `src/main.cpp`, `src/gui/updatechecker.h`, `src/gui/updatechecker.cpp`, `src/gui/imguibridge.h`, `src/gui/ui/ui_mainmenu.cpp`
+
+### Changes
+- **GitHub Actions CI/CD** — automated cross-platform builds (Windows, macOS, Linux) on every push to master, with GitHub Releases for distribution
+- **In-game update checker** — checks GitHub releases API on startup, shows green "Update available" banner + download button on the main menu when a newer version exists
+- **Auto-generated release notes** — extracts the latest DEVLOG.md entry and includes it in each GitHub Release
+- **macOS code signing** — workflow supports Developer ID signing via GitHub Secrets
+- **Disabled old CI** — renamed legacy `cmake.yml` (referenced dead Noesis/BugSplat/SFML deps) to `.old`
+
+### Technical Details
+- `UpdateChecker` uses `QNetworkAccessManager` (Qt5::Network) to hit `api.github.com/repos/{owner}/{repo}/releases/latest`
+- Version comparison: parses dotted version strings + build number suffix (e.g. `v0.8.11.0+42`)
+- Guarded by `#ifdef GIT_REPO` — local builds without CI skip the update check
+- Update check fires 2s after window show via `QTimer::singleShot`, only in non-test mode
+- macOS builds use `macos-13` (Intel) runners for Qt5 compatibility
+- Linux packages as `.tar.gz` with launcher script; Windows uses `windeployqt` + zip
+
+---
+
 ## [2026-03-25] Toast "Go To" Navigation + WILDLIFE Log Category
 
 **Files changed**: `src/base/logger.h`, `src/game/animal.cpp`, `src/gui/imguibridge.h`, `src/gui/imguibridge.cpp`, `src/gui/ui/ui_gamehud.cpp`, `src/gui/ui/ui_sidepanels.cpp`, `src/gui/mainwindow.cpp`

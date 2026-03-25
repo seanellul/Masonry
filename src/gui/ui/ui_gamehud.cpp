@@ -703,6 +703,9 @@ void drawGameHUD( ImGuiBridge& bridge )
 					toast.createdTick = GameState::tick;
 					toast.alpha = 1.0f;
 					toast.entityID = lm.source;
+					toast.eventPosX = lm.posX;
+					toast.eventPosY = lm.posY;
+					toast.eventPosZ = lm.posZ;
 					toast.dismissed = false;
 					bridge.activeToasts.append( toast );
 
@@ -778,13 +781,20 @@ void drawGameHUD( ImGuiBridge& bridge )
 				// Buttons on the same line as the last line of text
 				ImGui::SameLine( toastWidth - 24 - buttonAreaWidth );
 
-				// "Go To" button — navigate camera to entity
-				if ( toast.entityID != 0 )
+				// "Go To" button — navigate camera to entity or stored position
+				bool hasGoTo = ( toast.entityID != 0 ) ||
+					( toast.eventPosX > 0 || toast.eventPosY > 0 || toast.eventPosZ > 0 );
+				if ( hasGoTo )
 				{
 					ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0.2f, 0.4f, 0.6f, 0.7f ) );
 					if ( ImGui::SmallButton( "Go To" ) )
 					{
-						bridge.cmdNavigateToEntity( toast.entityID );
+						// Try live entity first, fall back to stored position
+						if ( toast.entityID != 0 )
+							bridge.cmdNavigateToEntity( toast.entityID );
+						// If entity not found (dead), use stored position
+						if ( !bridge.pendingCameraNav )
+							bridge.cmdNavigateToPosition( Position( toast.eventPosX, toast.eventPosY, toast.eventPosZ ) );
 					}
 					ImGui::PopStyleColor();
 					ImGui::SameLine();

@@ -38,11 +38,39 @@ void Logger::log( LogType lt, QString msg, unsigned int sourceEntity )
 		GameState::seasonString + " D" + QString::number( GameState::day ) +
 		" " + QString::number( GameState::hour ) + ":" +
 		QString::number( GameState::minute ).rightJustified( 2, '0' );
-	LogMessage lm { GameState::tick, dateTime, lt, msg, sourceEntity };
+	LogMessage lm;
+	lm.tick = GameState::tick;
+	lm.dateTime = dateTime;
+	lm.type = lt;
+	lm.message = msg;
+	lm.source = sourceEntity;
 	QMutexLocker lock( &m_mutex );
 	m_messages.push_back( lm );
 
-	// Cap log at 1000 entries to prevent unbounded growth
+	if ( m_messages.size() > 1000 )
+	{
+		m_messages.erase( m_messages.begin() );
+	}
+}
+
+void Logger::log( LogType lt, QString msg, unsigned int sourceEntity, int posX, int posY, int posZ )
+{
+	QString dateTime = "Y" + QString::number( GameState::year ) + " " +
+		GameState::seasonString + " D" + QString::number( GameState::day ) +
+		" " + QString::number( GameState::hour ) + ":" +
+		QString::number( GameState::minute ).rightJustified( 2, '0' );
+	LogMessage lm;
+	lm.tick = GameState::tick;
+	lm.dateTime = dateTime;
+	lm.type = lt;
+	lm.message = msg;
+	lm.source = sourceEntity;
+	lm.posX = posX;
+	lm.posY = posY;
+	lm.posZ = posZ;
+	QMutexLocker lock( &m_mutex );
+	m_messages.push_back( lm );
+
 	if ( m_messages.size() > 1000 )
 	{
 		m_messages.erase( m_messages.begin() );
