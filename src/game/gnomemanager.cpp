@@ -649,7 +649,24 @@ int GnomeManager::opinion( unsigned int gnomeA, unsigned int gnomeB ) const
 void GnomeManager::modifyOpinion( unsigned int gnomeA, unsigned int gnomeB, int delta )
 {
 	int current = opinion( gnomeA, gnomeB );
-	m_opinions[gnomeA][gnomeB] = qBound( -100, current + delta, 100 );
+	int newVal = qBound( -100, current + delta, 100 );
+	m_opinions[gnomeA][gnomeB] = newVal;
+
+	// Log friendship/rivalry milestones when crossing thresholds
+	if ( current < 30 && newVal >= 30 )
+	{
+		Gnome* a = gnome( gnomeA );
+		Gnome* b = gnome( gnomeB );
+		if ( a && b )
+			Global::logger().log( LogType::INFO, a->name() + " and " + b->name() + " have become close friends.", gnomeA );
+	}
+	else if ( current > -30 && newVal <= -30 )
+	{
+		Gnome* a = gnome( gnomeA );
+		Gnome* b = gnome( gnomeB );
+		if ( a && b )
+			Global::logger().log( LogType::WARNING, a->name() + " and " + b->name() + " have become rivals.", gnomeA );
+	}
 }
 
 QString GnomeManager::relationshipLabel( unsigned int gnomeA, unsigned int gnomeB ) const
@@ -873,6 +890,7 @@ void GnomeManager::processSocialInteractions( quint64 tickNumber )
 				modifyOpinion( b->id(), a->id(), 3 );
 				addSocialMemory( a->id(), b->id(), "Apologized", tickNumber, 2 );
 				addSocialMemory( b->id(), a->id(), "Received apology", tickNumber, 3 );
+				Global::logger().log( LogType::INFO, a->name() + " apologized to " + b->name() + ".", a->id() );
 				continue;
 			}
 			// Gnomes with high Temper may escalate past conflicts
@@ -882,6 +900,7 @@ void GnomeManager::processSocialInteractions( quint64 tickNumber )
 				modifyOpinion( b->id(), a->id(), -3 );
 				addSocialMemory( a->id(), b->id(), "Was confronted", tickNumber, -2 );
 				addSocialMemory( b->id(), a->id(), "Confronted", tickNumber, -3 );
+				Global::logger().log( LogType::WARNING, b->name() + " confronted " + a->name() + "!", b->id() );
 				continue;
 			}
 
@@ -922,6 +941,7 @@ void GnomeManager::processSocialInteractions( quint64 tickNumber )
 					modifyOpinion( b->id(), a->id(), -2 );
 					addSocialMemory( a->id(), b->id(), "Argued", tickNumber, -2 );
 					addSocialMemory( b->id(), a->id(), "Argued", tickNumber, -2 );
+					Global::logger().log( LogType::WARNING, a->name() + " and " + b->name() + " had an argument.", a->id() );
 				}
 				else if ( roll < 90 )
 				{
@@ -929,6 +949,7 @@ void GnomeManager::processSocialInteractions( quint64 tickNumber )
 					modifyOpinion( b->id(), a->id(), -3 );
 					addSocialMemory( a->id(), b->id(), "Said something rude", tickNumber, 0 );
 					addSocialMemory( b->id(), a->id(), "Was insulted", tickNumber, -3 );
+					Global::logger().log( LogType::WARNING, a->name() + " insulted " + b->name() + "!", a->id() );
 				}
 				// else: 10% cold shoulder, no change
 			}

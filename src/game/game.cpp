@@ -148,6 +148,7 @@ void Game::setWorld( int dimX, int dimY, int dimZ )
 void Game::start()
 {
 	qDebug() << "Starting game";
+	Global::logger().log( LogType::INFO, "Game started. " + GameState::currentYearAndSeason + ", " + GameState::currentDayTime, 0 );
 
 	if ( GameState::tick == 0 && !GameState::initialSave )
 	{

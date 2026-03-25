@@ -287,6 +287,29 @@ void CanWork::cleanUpJob( bool finished )
 			QVariant tgv = DB::select( "TechGain", "Jobs", m_job->type() );
 			gainTech( tgv, m_job );
 
+			// Log job completion for significant job types
+			QString jt = m_job->type();
+			if ( jt == "MineWall" || jt == "MineFloor" || jt == "ExplorativeMineWall" )
+				Global::logger().log( LogType::JOB, m_name + " finished mining.", m_id );
+			else if ( jt == "DigHole" || jt == "ConstructDugStairs" || jt == "ConstructDugRamp" )
+				Global::logger().log( LogType::JOB, m_name + " finished digging.", m_id );
+			else if ( jt.startsWith( "Construct" ) || jt == "BuildWall" || jt == "BuildFloor" || jt == "BuildFence" || jt == "BuildWorkshop" )
+				Global::logger().log( LogType::JOB, m_name + " finished building.", m_id );
+			else if ( jt == "Harvest" || jt == "HarvestHay" )
+				Global::logger().log( LogType::JOB, m_name + " harvested crops.", m_id );
+			else if ( jt == "PlantFarm" || jt == "PlantTree" )
+				Global::logger().log( LogType::JOB, m_name + " planted " + m_job->material() + ".", m_id );
+			else if ( jt == "FellTree" )
+				Global::logger().log( LogType::JOB, m_name + " felled a tree.", m_id );
+			else if ( jt == "Till" )
+				Global::logger().log( LogType::JOB, m_name + " tilled a field.", m_id );
+			else if ( jt == "Craft" )
+				Global::logger().log( LogType::CRAFT, m_name + " crafted " + m_job->item() + ".", m_id );
+			else if ( jt == "ButcherAnimal" )
+				Global::logger().log( LogType::JOB, m_name + " butchered an animal.", m_id );
+			else if ( jt == "Fish" )
+				Global::logger().log( LogType::JOB, m_name + " went fishing.", m_id );
+
 			g->jm()->finishJob( m_jobID );
 		}
 		else
