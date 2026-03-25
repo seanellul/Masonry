@@ -695,12 +695,22 @@ int GnomeManager::traitCompatibility( Gnome* a, Gnome* b ) const
 
 void GnomeManager::processSocialInteractions( quint64 tickNumber )
 {
-	// Only process social interactions every 10 ticks to keep cost low
-	if ( tickNumber % 10 != 0 ) return;
+	// Process every 50 ticks (~2.5 seconds at normal speed) — slower than before
+	if ( tickNumber % 50 != 0 ) return;
 	if ( m_gnomes.size() < 2 ) return;
 
-	// Group gnomes by position (same tile = same room/area, close enough for interaction)
-	// Use a simple proximity check: gnomes within 3 tiles of each other can interact
+	// Step 1: Natural opinion decay — all opinions drift toward 0 over time
+	for ( auto it = m_opinions.begin(); it != m_opinions.end(); ++it )
+	{
+		for ( auto jt = it.value().begin(); jt != it.value().end(); ++jt )
+		{
+			int& op = jt.value();
+			if ( op > 0 ) op = qMax( 0, op - 1 );       // decay +1 toward 0
+			else if ( op < 0 ) op = qMin( 0, op + 1 );   // decay -1 toward 0
+		}
+	}
+
+	// Step 2: Process interactions between nearby gnomes
 	for ( int i = 0; i < m_gnomes.size(); ++i )
 	{
 		Gnome* a = m_gnomes[i];
@@ -717,66 +727,91 @@ void GnomeManager::processSocialInteractions( quint64 tickNumber )
 			int dist = abs( posA.x - posB.x ) + abs( posA.y - posB.y ) + abs( posA.z - posB.z );
 			if ( dist > 5 ) continue;
 
-			// Random chance of interaction (low probability keeps it from being spammy)
-			if ( rand() % 100 > 15 ) continue; // 15% chance per eligible pair per check
+			// 8% chance per eligible pair per check (was 15%)
+			if ( rand() % 100 > 8 ) continue;
 
-			// Determine interaction type based on trait compatibility
 			int compat = traitCompatibility( a, b );
 			int currentOp = opinion( a->id(), b->id() );
 			int roll = rand() % 100;
 
-			if ( compat > 20 || currentOp > 20 )
+			// Compatibility + current opinion determines interaction tone
+			// Weighted sum: 60% compatibility, 40% current opinion
+			int tone = ( compat * 6 + currentOp * 4 ) / 10;
+
+			if ( tone > 15 )
 			{
-				// Positive interaction likely
-				if ( roll < 60 )
+				// Positive interaction likely — but not guaranteed
+				if ( roll < 50 )
 				{
 					// Chat: +1 opinion both ways
 					modifyOpinion( a->id(), b->id(), 1 );
 					modifyOpinion( b->id(), a->id(), 1 );
 				}
-				else if ( roll < 85 && currentOp > 20 )
+				else if ( roll < 70 && currentOp > 25 )
 				{
-					// Deep conversation: +8 opinion (requires existing friendship)
-					modifyOpinion( a->id(), b->id(), 8 );
-					modifyOpinion( b->id(), a->id(), 8 );
+					// Deep conversation: +3 opinion (reduced from +8, requires friendship)
+					modifyOpinion( a->id(), b->id(), 3 );
+					modifyOpinion( b->id(), a->id(), 3 );
 				}
-				else
+				else if ( roll < 85 )
 				{
-					// Compliment: +5 opinion, needs high Empathy or Sociability
+					// Compliment: +2 opinion
 					int empA = a->trait( "Empathy" );
 					int socA = a->trait( "Sociability" );
 					if ( empA > 10 || socA > 10 )
 					{
-						modifyOpinion( a->id(), b->id(), 5 );
-						modifyOpinion( b->id(), a->id(), 3 );
+						modifyOpinion( a->id(), b->id(), 2 );
+						modifyOpinion( b->id(), a->id(), 1 );
 					}
-				}
-			}
-			else if ( compat < -20 || currentOp < -20 )
-			{
-				// Negative interaction likely
-				if ( roll < 50 )
-				{
-					// Argument: -8 opinion both ways
-					modifyOpinion( a->id(), b->id(), -8 );
-					modifyOpinion( b->id(), a->id(), -8 );
 				}
 				else
 				{
-					// Insult: -12 opinion for target, -4 for initiator
+					// Even friends can have awkward moments: no change or slight friction
+					// 15% of "positive tone" interactions are neutral
+				}
+			}
+			else if ( tone < -15 )
+			{
+				// Negative interaction likely
+				if ( roll < 40 )
+				{
+					// Argument: -3 opinion both ways (reduced from -8)
+					modifyOpinion( a->id(), b->id(), -3 );
+					modifyOpinion( b->id(), a->id(), -3 );
+				}
+				else if ( roll < 65 )
+				{
+					// Insult: -5 for target, -1 for initiator (reduced from -12/-4)
 					int tempA = a->trait( "Temper" );
-					if ( tempA > 10 || roll < 70 )
+					if ( tempA > 10 || roll < 55 )
 					{
-						modifyOpinion( a->id(), b->id(), -4 );
-						modifyOpinion( b->id(), a->id(), -12 );
+						modifyOpinion( a->id(), b->id(), -1 );
+						modifyOpinion( b->id(), a->id(), -5 );
 					}
+				}
+				else
+				{
+					// Cold shoulder: -1 both ways
+					modifyOpinion( a->id(), b->id(), -1 );
+					modifyOpinion( b->id(), a->id(), -1 );
 				}
 			}
 			else
 			{
-				// Neutral interaction — small positive (chat)
-				modifyOpinion( a->id(), b->id(), 1 );
-				modifyOpinion( b->id(), a->id(), 1 );
+				// Neutral tone — could go either way, slight random drift
+				if ( roll < 40 )
+				{
+					// Pleasant chat: +1
+					modifyOpinion( a->id(), b->id(), 1 );
+					modifyOpinion( b->id(), a->id(), 1 );
+				}
+				else if ( roll < 55 )
+				{
+					// Awkward silence: -1
+					modifyOpinion( a->id(), b->id(), -1 );
+					modifyOpinion( b->id(), a->id(), -1 );
+				}
+				// else: no change (45% of neutral interactions)
 			}
 		}
 	}
