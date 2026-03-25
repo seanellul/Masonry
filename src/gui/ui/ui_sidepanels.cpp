@@ -1846,11 +1846,12 @@ void drawEventLogPanel( ImGuiBridge& bridge )
 	if ( !open ) bridge.activeSidePanel = ImGuiBridge::SidePanel::None;
 
 	// Filter buttons
-	static bool showInfo = true, showWarning = true, showCombat = true, showDeath = true, showJobs = false, showDebug = false;
+	static bool showInfo = true, showWarning = true, showCombat = true, showDeath = true, showWildlife = true, showJobs = false, showDebug = false;
 	ImGui::Checkbox( "Info", &showInfo ); ImGui::SameLine();
 	ImGui::Checkbox( "Warning", &showWarning ); ImGui::SameLine();
 	ImGui::Checkbox( "Combat", &showCombat ); ImGui::SameLine();
 	ImGui::Checkbox( "Death", &showDeath ); ImGui::SameLine();
+	ImGui::Checkbox( "Wildlife", &showWildlife ); ImGui::SameLine();
 	ImGui::Checkbox( "Jobs", &showJobs ); ImGui::SameLine();
 	ImGui::Checkbox( "Debug", &showDebug );
 	ImGui::Separator();
@@ -1872,6 +1873,7 @@ void drawEventLogPanel( ImGuiBridge& bridge )
 			case LogType::WARNING:   show = showWarning; break;
 			case LogType::COMBAT:    show = showCombat; break;
 			case LogType::DEATH:     show = showDeath; break;
+			case LogType::WILDLIFE:  show = showWildlife; break;
 			case LogType::JOB:
 			case LogType::CRAFT:     show = showJobs; break;
 			case LogType::DEBUG:     show = showDebug; break;
@@ -1888,6 +1890,7 @@ void drawEventLogPanel( ImGuiBridge& bridge )
 			case LogType::WARNING:   color = ImVec4( 1.0f, 0.8f, 0.0f, 1.0f ); break;
 			case LogType::COMBAT:    color = ImVec4( 0.9f, 0.4f, 0.4f, 1.0f ); break;
 			case LogType::MIGRATION: color = ImVec4( 0.4f, 0.8f, 0.4f, 1.0f ); break;
+			case LogType::WILDLIFE:  color = ImVec4( 0.8f, 0.6f, 0.2f, 1.0f ); break;
 			case LogType::INFO:      color = ImVec4( 0.7f, 0.7f, 1.0f, 1.0f ); break;
 			case LogType::JOB:
 			case LogType::CRAFT:     color = ImVec4( 0.6f, 0.6f, 0.6f, 1.0f ); break;

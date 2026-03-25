@@ -656,6 +656,16 @@ void MainWindow::paintGL()
 	// Apply latest position
 	keyboardMove();
 
+	// Process pending camera navigation from toast "Go To" buttons
+	if ( m_bridge && m_bridge->pendingCameraNav )
+	{
+		m_bridge->pendingCameraNav = false;
+		m_renderer->onCenterCameraPosition( m_bridge->cameraNavTarget );
+		GameState::viewLevel = m_bridge->cameraNavTarget.z;
+		m_renderer->setViewLevel( GameState::viewLevel );
+		emit signalViewLevel( GameState::viewLevel );
+	}
+
 	// Render the game world
 	m_renderer->paintWorld();
 

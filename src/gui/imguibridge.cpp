@@ -2,6 +2,9 @@
 
 #include "../base/global.h"
 #include "eventconnector.h"
+#include "../game/game.h"
+#include "../game/gnomemanager.h"
+#include "../game/creaturemanager.h"
 
 ImGuiBridge::ImGuiBridge( QObject* parent )
 	: QObject( parent )
@@ -397,6 +400,36 @@ void ImGuiBridge::cmdSetSelectionAction( const QString& action ) { emit signalSe
 void ImGuiBridge::cmdRequestBuildItems( BuildSelection sel, const QString& category ) { emit signalRequestBuildItems( sel, category ); }
 void ImGuiBridge::cmdBuild( BuildItemType type, const QString& param, const QString& item, const QStringList& mats ) { emit signalCmdBuild( type, param, item, mats ); }
 void ImGuiBridge::cmdEventAnswer( unsigned int eventID, bool answer ) { emit signalEventAnswer( eventID, answer ); }
+
+void ImGuiBridge::cmdNavigateToEntity( unsigned int entityID )
+{
+	auto* ec = Global::eventConnector;
+	if ( !ec || !ec->game() ) return;
+
+	Position target;
+	bool found = false;
+
+	// Try gnome first
+	auto* gnome = ec->game()->gm()->gnome( entityID );
+	if ( gnome ) { target = gnome->getPos(); found = true; }
+
+	if ( !found )
+	{
+		auto* animal = ec->game()->cm()->animal( entityID );
+		if ( animal ) { target = animal->getPos(); found = true; }
+	}
+	if ( !found )
+	{
+		auto* monster = ec->game()->cm()->monster( entityID );
+		if ( monster ) { target = monster->getPos(); found = true; }
+	}
+
+	if ( found )
+	{
+		pendingCameraNav = true;
+		cameraNavTarget = target;
+	}
+}
 
 // Tile info commands
 void ImGuiBridge::cmdTerrainCommand( unsigned int tileID, const QString& cmd ) { emit signalTerrainCommand( tileID, cmd ); }

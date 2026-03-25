@@ -697,11 +697,12 @@ void drawGameHUD( ImGuiBridge& bridge )
 		// Render all toasts in a single stacked window
 		if ( !bridge.activeToasts.isEmpty() )
 		{
-			float toastWidth = 330.0f;
-			ImGui::SetNextWindowPos( ImVec2( io.DisplaySize.x - toastWidth - 5, 80 ), ImGuiCond_Always );
+			float toastWidth = 350.0f;
+			ImGui::SetNextWindowPos( ImVec2( io.DisplaySize.x - toastWidth - 10, 80 ), ImGuiCond_Always );
 			ImGui::SetNextWindowSize( ImVec2( toastWidth, 0 ), ImGuiCond_Always );
-			ImGui::SetNextWindowBgAlpha( 0.85f );
-			ImGui::PushStyleVar( ImGuiStyleVar_WindowPadding, ImVec2( 8, 6 ) );
+			ImGui::SetNextWindowBgAlpha( 0.88f );
+			ImGui::PushStyleVar( ImGuiStyleVar_WindowPadding, ImVec2( 12, 10 ) );
+			ImGui::PushStyleVar( ImGuiStyleVar_ItemSpacing, ImVec2( 8, 6 ) );
 
 			ImGui::Begin( "##toasts", nullptr,
 				ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
@@ -722,36 +723,54 @@ void drawGameHUD( ImGuiBridge& bridge )
 					case LogType::WARNING:   color = ImVec4( 1.0f, 0.8f, 0.2f, toast.alpha ); break;
 					case LogType::COMBAT:    color = ImVec4( 0.9f, 0.3f, 0.3f, toast.alpha ); break;
 					case LogType::MIGRATION: color = ImVec4( 0.3f, 0.8f, 0.3f, toast.alpha ); break;
+					case LogType::WILDLIFE:  color = ImVec4( 0.8f, 0.6f, 0.2f, toast.alpha ); break;
 					default:                 color = ImVec4( 0.7f, 0.7f, 0.7f, toast.alpha ); break;
 				}
 
-				// Close button (right-aligned, before text so it doesn't jump)
-				float closeX = toastWidth - 30;
-				ImGui::SameLine( closeX );
-				ImGui::PushStyleColor( ImGuiCol_Text, ImVec4( 0.6f, 0.6f, 0.6f, toast.alpha ) );
-				if ( ImGui::SmallButton( "x" ) )
+				// Message text
+				float buttonAreaWidth = ( toast.entityID != 0 ) ? 90 : 40;
+				ImGui::PushStyleColor( ImGuiCol_Text, color );
+				ImGui::PushTextWrapPos( ImGui::GetCursorPosX() + toastWidth - 24 - buttonAreaWidth );
+				ImGui::TextWrapped( "%s", toast.text.toStdString().c_str() );
+				ImGui::PopTextWrapPos();
+				ImGui::PopStyleColor();
+
+				// Buttons on the same line as the last line of text
+				ImGui::SameLine( toastWidth - 24 - buttonAreaWidth );
+
+				// "Go To" button — navigate camera to entity
+				if ( toast.entityID != 0 )
+				{
+					ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0.2f, 0.4f, 0.6f, 0.7f ) );
+					if ( ImGui::SmallButton( "Go To" ) )
+					{
+						bridge.cmdNavigateToEntity( toast.entityID );
+						toast.dismissed = true;
+					}
+					ImGui::PopStyleColor();
+					ImGui::SameLine();
+				}
+
+				// Close button
+				ImGui::PushStyleColor( ImGuiCol_Text, ImVec4( 0.5f, 0.5f, 0.5f, toast.alpha ) );
+				if ( ImGui::SmallButton( "X" ) )
 				{
 					toast.dismissed = true;
 				}
 				ImGui::PopStyleColor();
 
-				// Rewind to start of line for the message
-				ImGui::SameLine( 0 );
-				ImGui::SetCursorPosX( 8 );
-				ImGui::PushStyleColor( ImGuiCol_Text, color );
-				ImGui::PushTextWrapPos( closeX - 5 );
-				ImGui::TextWrapped( "%s", toast.text.toStdString().c_str() );
-				ImGui::PopTextWrapPos();
-				ImGui::PopStyleColor();
-
 				ImGui::PopID();
 
 				if ( i < bridge.activeToasts.size() - 1 )
+				{
+					ImGui::Spacing();
 					ImGui::Separator();
+					ImGui::Spacing();
+				}
 			}
 
 			ImGui::End();
-			ImGui::PopStyleVar();
+			ImGui::PopStyleVar( 2 );
 		}
 	}
 

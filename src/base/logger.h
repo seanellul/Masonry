@@ -32,7 +32,8 @@ enum class LogType
 	WARNING,
 	DANGER,
 	MIGRATION,
-	DEATH
+	DEATH,
+	WILDLIFE  // animal behavior: starving, aggression, starvation death
 };
 
 struct LogMessage

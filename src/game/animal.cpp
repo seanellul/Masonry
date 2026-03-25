@@ -417,7 +417,7 @@ CreatureTickResult Animal::onTick( quint64 tickNumber, bool seasonChanged, bool 
 		// Starvation death
 		if ( m_hunger <= -20.0 )
 		{
-			Global::logger().log( LogType::INFO, "A " + S::s( "$CreatureName_" + m_species ) + " has starved to death.", m_id );
+			Global::logger().log( LogType::WILDLIFE, "A " + S::s( "$CreatureName_" + m_species ) + " has starved to death.", m_id );
 			die();
 			return CreatureTickResult::DEAD;
 		}
@@ -427,7 +427,7 @@ CreatureTickResult Animal::onTick( quint64 tickNumber, bool seasonChanged, bool 
 		if ( m_hunger <= 10.0 && canEatMeat && !m_tame && !m_starvingAggro )
 		{
 			m_starvingAggro = true;
-			Global::logger().log( LogType::DANGER, "A starving " + S::s( "$CreatureName_" + m_species ) + " has become aggressive!", m_id );
+			Global::logger().log( LogType::WILDLIFE, "A starving " + S::s( "$CreatureName_" + m_species ) + " has become aggressive!", m_id );
 		}
 		else if ( m_hunger > 30.0 && m_starvingAggro )
 		{

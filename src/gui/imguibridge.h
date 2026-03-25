@@ -80,6 +80,7 @@ public:
 	// Camera navigation request (set by UI, consumed by MainWindow)
 	bool pendingCameraNav = false;
 	Position cameraNavTarget;
+	void cmdNavigateToEntity( unsigned int entityID );
 
 	bool showDebugPanel = false;
 

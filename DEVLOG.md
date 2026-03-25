@@ -6,6 +6,25 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-25] Toast "Go To" Navigation + WILDLIFE Log Category
+
+**Files changed**: `src/base/logger.h`, `src/game/animal.cpp`, `src/gui/imguibridge.h`, `src/gui/imguibridge.cpp`, `src/gui/ui/ui_gamehud.cpp`, `src/gui/ui/ui_sidepanels.cpp`, `src/gui/mainwindow.cpp`
+
+### Changes
+- **"Go To" button** on toasts — clicks navigate the camera to the entity's position and Z-level. Works for gnomes, animals, and monsters.
+- **WILDLIFE log category** — new `LogType::WILDLIFE` for animal behavior events (starvation, aggression). Shown as amber/brown in logs and toasts.
+- **Wildlife filter** in Event Log — new "Wildlife" checkbox lets you hide/show animal events separately from combat/danger.
+- **Better toast padding** — increased window padding (12px horizontal, 10px vertical), wider toast panel (350px), more spacing between separator lines.
+- **Camera navigation system** — `ImGuiBridge::cmdNavigateToEntity()` looks up creature position via Game pointer, sets `pendingCameraNav` which MainWindow consumes in `paintGL()` to center camera + set Z-level.
+
+### Technical Details
+- `cmdNavigateToEntity` checks gnome → animal → monster via GnomeManager/CreatureManager lookups
+- MainWindow processes `pendingCameraNav` at start of `paintGL()`, calls `onCenterCameraPosition()` + `setViewLevel()`
+- Toast buttons: "Go To" (blue, only shown when entityID != 0) + "X" (grey, always shown)
+- WILDLIFE color: amber `ImVec4(0.8f, 0.6f, 0.2f)` — distinct from DANGER (orange) and WARNING (yellow)
+
+---
+
 ## [2026-03-25] Toast Notifications — Non-Overlapping, Dismissible
 
 **Files changed**: `src/gui/imguibridge.h`, `src/gui/ui/ui_gamehud.cpp`
