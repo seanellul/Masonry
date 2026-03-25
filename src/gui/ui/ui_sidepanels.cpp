@@ -217,12 +217,15 @@ void drawStockpilePanel( ImGuiBridge& bridge )
 		if ( !anyCatChecked ) allCatChecked = false;
 
 		bool catChecked = allCatChecked;
+		bool catPartial = anyCatChecked && !allCatChecked;
 		bool catOpen = ImGui::TreeNodeEx( "##catTree", ( !searchStr.isEmpty() ? ImGuiTreeNodeFlags_DefaultOpen : 0 ) | ImGuiTreeNodeFlags_AllowOverlap | ImGuiTreeNodeFlags_SpanAvailWidth );
 		ImGui::SameLine();
+		if ( catPartial ) { ImGui::PushStyleColor( ImGuiCol_CheckMark, ImVec4( 0.7f, 0.7f, 0.3f, 1.0f ) ); catChecked = true; }
 		if ( ImGui::Checkbox( cat.toStdString().c_str(), &catChecked ) )
 		{
-			bridge.cmdStockpileSetActive( bridge.activeStockpileID, catChecked, cat, "", "", "" );
+			bridge.cmdStockpileSetActive( bridge.activeStockpileID, catPartial ? true : catChecked, cat, "", "", "" );
 		}
+		if ( catPartial ) ImGui::PopStyleColor();
 
 		if ( catOpen )
 		{
@@ -258,12 +261,15 @@ void drawStockpilePanel( ImGuiBridge& bridge )
 				if ( !anyGroupChecked ) allGroupChecked = false;
 
 				bool groupChecked = allGroupChecked;
+				bool groupPartial = anyGroupChecked && !allGroupChecked;
 				bool groupOpen = ImGui::TreeNodeEx( "##grpTree", ( !searchStr.isEmpty() ? ImGuiTreeNodeFlags_DefaultOpen : 0 ) | ImGuiTreeNodeFlags_AllowOverlap | ImGuiTreeNodeFlags_SpanAvailWidth );
 				ImGui::SameLine();
+				if ( groupPartial ) { ImGui::PushStyleColor( ImGuiCol_CheckMark, ImVec4( 0.7f, 0.7f, 0.3f, 1.0f ) ); groupChecked = true; }
 				if ( ImGui::Checkbox( group.toStdString().c_str(), &groupChecked ) )
 				{
-					bridge.cmdStockpileSetActive( bridge.activeStockpileID, groupChecked, cat, group, "", "" );
+					bridge.cmdStockpileSetActive( bridge.activeStockpileID, groupPartial ? true : groupChecked, cat, group, "", "" );
 				}
+				if ( groupPartial ) ImGui::PopStyleColor();
 
 				if ( groupOpen )
 				{
@@ -301,16 +307,19 @@ void drawStockpilePanel( ImGuiBridge& bridge )
 							if ( !anyItemChecked ) allItemChecked = false;
 
 							bool itemChecked = allItemChecked;
+							bool itemPartial = anyItemChecked && !allItemChecked;
 							bool itemOpen = ImGui::TreeNodeEx( "##itemTree", ImGuiTreeNodeFlags_AllowOverlap | ImGuiTreeNodeFlags_SpanAvailWidth );
 							ImGui::SameLine();
+							if ( itemPartial ) { ImGui::PushStyleColor( ImGuiCol_CheckMark, ImVec4( 0.7f, 0.7f, 0.3f, 1.0f ) ); itemChecked = true; }
 							if ( ImGui::Checkbox( item.toStdString().c_str(), &itemChecked ) )
 							{
 								// Toggle all materials for this item
 								for ( const auto& mat : mats )
 								{
-									bridge.cmdStockpileSetActive( bridge.activeStockpileID, itemChecked, cat, group, item, mat );
+									bridge.cmdStockpileSetActive( bridge.activeStockpileID, itemPartial ? true : itemChecked, cat, group, item, mat );
 								}
 							}
+							if ( itemPartial ) ImGui::PopStyleColor();
 
 							if ( itemOpen )
 							{
@@ -1115,6 +1124,8 @@ static void drawFarmView( ImGuiBridge& bridge )
 	auto& farm = bridge.farmInfo;
 	if ( farm.name.isEmpty() ) return;
 
+	unsigned int farmID = farm.ID;
+
 	ImGui::TextColored( ImVec4( 0.6f, 0.85f, 0.45f, 1.0f ), "Farm" );
 	ImGui::SameLine( 60 );
 
@@ -1123,26 +1134,26 @@ static void drawFarmView( ImGuiBridge& bridge )
 	ImGui::PushItemWidth( -1 );
 	if ( ImGui::InputText( "##FarmName", farmName, sizeof( farmName ), ImGuiInputTextFlags_EnterReturnsTrue ) )
 	{
-		bridge.cmdAgriSetOptions( bridge.activeAgriID, farmName, farm.priority, farm.suspended );
+		bridge.cmdAgriSetOptions( farmID, farmName, farm.priority, farm.suspended );
 	}
 	ImGui::PopItemWidth();
 
 	bool suspended = farm.suspended;
 	if ( ImGui::Checkbox( "Suspended", &suspended ) )
 	{
-		bridge.cmdAgriSetOptions( bridge.activeAgriID, farm.name, farm.priority, suspended );
+		bridge.cmdAgriSetOptions( farmID, farm.name, farm.priority, suspended );
 	}
 	ImGui::SameLine();
 	bool harvest = farm.harvest;
 	if ( ImGui::Checkbox( "Harvest", &harvest ) )
 	{
-		bridge.cmdAgriSetHarvestOptions( bridge.activeAgriID, harvest, false, false );
+		bridge.cmdAgriSetHarvestOptions( farmID, harvest, false, false );
 	}
 
 	ImGui::Separator();
 
 	QString currentCropName = farm.plantType.isEmpty() ? "None" : farm.product.name;
-	if ( currentCropName.isEmpty() ) currentCropName = farm.plantType;
+	if ( currentCropName.isEmpty() && !farm.plantType.isEmpty() ) currentCropName = farm.plantType;
 
 	ImGui::Text( "Crop:" );
 	ImGui::PushItemWidth( -1 );
@@ -1154,9 +1165,11 @@ static void drawFarmView( ImGuiBridge& bridge )
 			QString label = plant.name;
 			if ( plant.seedCount > 0 )
 				label += QString( " (%1 seeds)" ).arg( plant.seedCount );
+			else
+				label += " (no seeds)";
 			if ( ImGui::Selectable( label.toStdString().c_str(), selected ) )
 			{
-				bridge.cmdAgriSelectProduct( bridge.activeAgriID, plant.plantID );
+				bridge.cmdAgriSelectProduct( farmID, plant.plantID );
 			}
 			if ( selected )
 				ImGui::SetItemDefaultFocus();
@@ -1164,6 +1177,12 @@ static void drawFarmView( ImGuiBridge& bridge )
 		ImGui::EndCombo();
 	}
 	ImGui::PopItemWidth();
+
+	// Show seed info for selected crop
+	if ( !farm.plantType.isEmpty() && farm.product.seedCount >= 0 )
+	{
+		ImGui::Text( "Seeds available: %d", farm.product.seedCount );
+	}
 
 	ImGui::Separator();
 
