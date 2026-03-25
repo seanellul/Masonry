@@ -70,9 +70,16 @@ public:
 		LogType severity;
 		quint64 createdTick = 0;
 		float alpha         = 1.0f;
+		unsigned int entityID = 0; // creature/item ID for future use
+		bool dismissed = false;
 	};
 	QList<ToastNotification> activeToasts;
 	quint64 lastLogCount = 0; // track new log entries for toast generation
+	static constexpr int MAX_TOASTS = 5; // max visible toasts at once
+
+	// Camera navigation request (set by UI, consumed by MainWindow)
+	bool pendingCameraNav = false;
+	Position cameraNavTarget;
 
 	bool showDebugPanel = false;
 

@@ -645,7 +645,7 @@ void drawGameHUD( ImGuiBridge& bridge )
 	}
 
 	// =========================================================================
-	// Toast notifications (top-right, fading)
+	// Toast notifications (single stacked panel, interactive)
 	// =========================================================================
 	{
 		// Generate toasts from new log entries
@@ -655,7 +655,6 @@ void drawGameHUD( ImGuiBridge& bridge )
 			for ( size_t i = bridge.lastLogCount; i < logMessages.size(); ++i )
 			{
 				auto& lm = logMessages[i];
-				// Only toast for important messages
 				if ( lm.type == LogType::WARNING || lm.type == LogType::DANGER ||
 					 lm.type == LogType::COMBAT || lm.type == LogType::DEATH ||
 					 lm.type == LogType::MIGRATION )
@@ -665,57 +664,96 @@ void drawGameHUD( ImGuiBridge& bridge )
 					toast.severity = lm.type;
 					toast.createdTick = GameState::tick;
 					toast.alpha = 1.0f;
+					toast.entityID = lm.source;
+					toast.dismissed = false;
 					bridge.activeToasts.append( toast );
+
+					// Cap visible toasts
+					while ( bridge.activeToasts.size() > bridge.MAX_TOASTS )
+						bridge.activeToasts.removeFirst();
 				}
 			}
 			bridge.lastLogCount = logMessages.size();
 		}
 
-		// Render and fade toasts
-		float toastY = 100.0f;
+		// Remove dismissed and faded toasts
 		for ( int i = bridge.activeToasts.size() - 1; i >= 0; --i )
 		{
 			auto& toast = bridge.activeToasts[i];
-			quint64 age = GameState::tick - toast.createdTick;
-			float fadeStart = 3000; // start fading after ~5 minutes game time
-			float fadeDuration = 1500;
-
-			if ( age > fadeStart )
-			{
-				toast.alpha = qMax( 0.0f, 1.0f - (float)( age - fadeStart ) / fadeDuration );
-			}
-
-			if ( toast.alpha <= 0.0f )
+			if ( toast.dismissed )
 			{
 				bridge.activeToasts.removeAt( i );
 				continue;
 			}
-
-			// Color by severity
-			ImVec4 color;
-			switch ( toast.severity )
+			quint64 age = GameState::tick - toast.createdTick;
+			if ( age > 4500 )
 			{
-				case LogType::DEATH:   color = ImVec4( 1.0f, 0.2f, 0.2f, toast.alpha ); break;
-				case LogType::DANGER:  color = ImVec4( 1.0f, 0.4f, 0.0f, toast.alpha ); break;
-				case LogType::WARNING: color = ImVec4( 1.0f, 0.8f, 0.0f, toast.alpha ); break;
-				case LogType::COMBAT:  color = ImVec4( 0.8f, 0.3f, 0.3f, toast.alpha ); break;
-				default:               color = ImVec4( 0.7f, 0.7f, 0.7f, toast.alpha ); break;
+				toast.alpha = qMax( 0.0f, 1.0f - (float)( age - 4500 ) / 1500.0f );
+				if ( toast.alpha <= 0.0f )
+				{
+					bridge.activeToasts.removeAt( i );
+				}
+			}
+		}
+
+		// Render all toasts in a single stacked window
+		if ( !bridge.activeToasts.isEmpty() )
+		{
+			float toastWidth = 330.0f;
+			ImGui::SetNextWindowPos( ImVec2( io.DisplaySize.x - toastWidth - 5, 80 ), ImGuiCond_Always );
+			ImGui::SetNextWindowSize( ImVec2( toastWidth, 0 ), ImGuiCond_Always );
+			ImGui::SetNextWindowBgAlpha( 0.85f );
+			ImGui::PushStyleVar( ImGuiStyleVar_WindowPadding, ImVec2( 8, 6 ) );
+
+			ImGui::Begin( "##toasts", nullptr,
+				ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
+				ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav |
+				ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_AlwaysAutoResize );
+
+			for ( int i = 0; i < bridge.activeToasts.size(); ++i )
+			{
+				auto& toast = bridge.activeToasts[i];
+				ImGui::PushID( i );
+
+				// Severity color
+				ImVec4 color;
+				switch ( toast.severity )
+				{
+					case LogType::DEATH:     color = ImVec4( 1.0f, 0.2f, 0.2f, toast.alpha ); break;
+					case LogType::DANGER:    color = ImVec4( 1.0f, 0.5f, 0.1f, toast.alpha ); break;
+					case LogType::WARNING:   color = ImVec4( 1.0f, 0.8f, 0.2f, toast.alpha ); break;
+					case LogType::COMBAT:    color = ImVec4( 0.9f, 0.3f, 0.3f, toast.alpha ); break;
+					case LogType::MIGRATION: color = ImVec4( 0.3f, 0.8f, 0.3f, toast.alpha ); break;
+					default:                 color = ImVec4( 0.7f, 0.7f, 0.7f, toast.alpha ); break;
+				}
+
+				// Close button (right-aligned, before text so it doesn't jump)
+				float closeX = toastWidth - 30;
+				ImGui::SameLine( closeX );
+				ImGui::PushStyleColor( ImGuiCol_Text, ImVec4( 0.6f, 0.6f, 0.6f, toast.alpha ) );
+				if ( ImGui::SmallButton( "x" ) )
+				{
+					toast.dismissed = true;
+				}
+				ImGui::PopStyleColor();
+
+				// Rewind to start of line for the message
+				ImGui::SameLine( 0 );
+				ImGui::SetCursorPosX( 8 );
+				ImGui::PushStyleColor( ImGuiCol_Text, color );
+				ImGui::PushTextWrapPos( closeX - 5 );
+				ImGui::TextWrapped( "%s", toast.text.toStdString().c_str() );
+				ImGui::PopTextWrapPos();
+				ImGui::PopStyleColor();
+
+				ImGui::PopID();
+
+				if ( i < bridge.activeToasts.size() - 1 )
+					ImGui::Separator();
 			}
 
-			ImGui::SetNextWindowPos( ImVec2( io.DisplaySize.x - 310, toastY ) );
-			ImGui::SetNextWindowSize( ImVec2( 300, 0 ) );
-			ImGui::SetNextWindowBgAlpha( 0.7f * toast.alpha );
-			QString winId = "##toast" + QString::number( i );
-			ImGui::Begin( winId.toStdString().c_str(), nullptr,
-				ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
-				ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoInputs );
-			ImGui::PushStyleColor( ImGuiCol_Text, color );
-			ImGui::TextWrapped( "%s", toast.text.toStdString().c_str() );
-			ImGui::PopStyleColor();
 			ImGui::End();
-
-			toastY += 30.0f;
-			if ( toastY > io.DisplaySize.y * 0.5f ) break; // don't fill the screen
+			ImGui::PopStyleVar();
 		}
 	}
 

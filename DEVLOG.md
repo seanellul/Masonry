@@ -6,6 +6,26 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-25] Toast Notifications — Non-Overlapping, Dismissible
+
+**Files changed**: `src/gui/imguibridge.h`, `src/gui/ui/ui_gamehud.cpp`
+
+### Changes
+- **Single stacked panel** — all toasts rendered in one auto-sized window instead of separate overlapping windows. No more text-on-text overlap.
+- **Close button** — each toast has an "x" button to dismiss it immediately.
+- **Max 5 toasts** — oldest removed when new ones arrive to prevent clutter.
+- **Better fade timing** — toasts start fading after ~7.5 min game time (was ~5 min), giving more time to read.
+- **Entity ID stored** — each toast tracks the source entity ID for future "Go To" navigation.
+- **Severity colors** — MIGRATION now green, all others unchanged.
+
+### Technical Details
+- Toasts in a single `ImGui::Begin("##toasts")` window with auto-resize
+- `ImGuiWindowFlags_AlwaysAutoResize` ensures the window shrinks as toasts are dismissed
+- `toast.dismissed` flag checked each frame; dismissed toasts removed before rendering
+- Close button uses `ImGui::SameLine()` for right-alignment before wrapping text
+
+---
+
 ## [2026-03-25] Animal Hunger Behavior — Starvation, Aggression, Diet System
 
 **Files changed**: `src/game/animal.h`, `src/game/animal.cpp`
