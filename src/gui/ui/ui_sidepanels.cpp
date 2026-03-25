@@ -1748,6 +1748,48 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 		}
 	}
 
+	// Skills
+	if ( !ci.skills.isEmpty() )
+	{
+		if ( ImGui::CollapsingHeader( "Skills" ) )
+		{
+			ImGui::Indent( 8.0f );
+			for ( const auto& skill : ci.skills )
+			{
+				// Color by level
+				ImVec4 lvlColor;
+				if ( skill.level >= 10 )
+					lvlColor = ImVec4( 1.0f, 0.85f, 0.2f, 1.0f ); // gold - master
+				else if ( skill.level >= 5 )
+					lvlColor = ImVec4( 0.3f, 0.8f, 0.3f, 1.0f ); // green - skilled
+				else if ( skill.level >= 1 )
+					lvlColor = ImVec4( 0.7f, 0.7f, 0.7f, 1.0f ); // grey - basic
+				else
+					lvlColor = ImVec4( 0.4f, 0.4f, 0.4f, 1.0f ); // dim - untrained
+
+				// Dim inactive skills
+				if ( !skill.active )
+					lvlColor.w = 0.4f;
+
+				ImGui::TextColored( lvlColor, "%2d", skill.level );
+				ImGui::SameLine();
+				if ( skill.active )
+					ImGui::Text( "%s", skill.name.toStdString().c_str() );
+				else
+					ImGui::TextDisabled( "%s (off)", skill.name.toStdString().c_str() );
+
+				if ( ImGui::IsItemHovered() )
+				{
+					ImGui::SetTooltip( "%s\nLevel: %d\nXP: %d\n%s",
+						skill.name.toStdString().c_str(),
+						skill.level, skill.xp,
+						skill.active ? "Active" : "Inactive — won't take these jobs" );
+				}
+			}
+			ImGui::Unindent( 8.0f );
+		}
+	}
+
 	// Stats (collapsed by default)
 	if ( ImGui::CollapsingHeader( "Stats" ) )
 	{

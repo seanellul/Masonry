@@ -173,6 +173,20 @@ void AggregatorCreatureInfo::onRequestCreatureUpdate( unsigned int id )
 			m_info.socialMemories.append( entry );
 		}
 
+		// Skills
+		m_info.skills.clear();
+		auto skillPrios = gnome->skillPrios();
+		for ( const auto& sid : skillPrios )
+		{
+			int level = gnome->getSkillLevel( sid );
+			if ( level < 0 ) continue; // skill not present
+			int xp = gnome->getSkillXP( sid );
+			bool active = gnome->getSkillActive( sid );
+			QString name = S::s( "$SkillName_" + sid );
+			if ( name.isEmpty() || name.startsWith( "$" ) ) name = sid;
+			m_info.skills.append( { name, level, xp, active } );
+		}
+
 		// Mood breakdown
 		gnome->moodBreakdown( m_info.baseMood, m_info.thoughtSum, m_info.needsPenalty );
 

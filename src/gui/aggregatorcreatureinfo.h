@@ -97,6 +97,10 @@ struct GuiCreatureInfo
 	int baseMood = 50;      // from Optimism trait
 	int thoughtSum = 0;     // sum of all thought values
 	int needsPenalty = 0;   // penalty from low needs
+
+	// Skills
+	struct SkillEntry { QString name; int level; int xp; bool active; };
+	QList<SkillEntry> skills;
 };
 Q_DECLARE_METATYPE( GuiCreatureInfo )
 
