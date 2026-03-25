@@ -1701,6 +1701,54 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 			}
 		}
 
+		// Anatomy section (for animals/monsters)
+		ImGui::Separator();
+		if ( ImGui::CollapsingHeader( "Anatomy" ) )
+		{
+			// Blood bar
+			float bloodRatio = ci.maxBlood > 0 ? ci.bloodLevel / ci.maxBlood : 0;
+			ImVec4 bloodColor = bloodRatio > 0.8f ? ImVec4( 0.7f, 0.1f, 0.1f, 1.0f ) :
+			                    bloodRatio > 0.4f ? ImVec4( 0.7f, 0.4f, 0.1f, 1.0f ) :
+			                                        ImVec4( 0.3f, 0.3f, 0.3f, 1.0f );
+			ImGui::Text( "Blood" );
+			ImGui::SameLine( 80 );
+			ImGui::PushStyleColor( ImGuiCol_PlotHistogram, bloodColor );
+			ImGui::ProgressBar( qBound( 0.0f, bloodRatio, 1.0f ), ImVec2( -1, 0 ) );
+			ImGui::PopStyleColor();
+
+			if ( ci.bleedingRate > 0 )
+			{
+				ImGui::TextColored( ImVec4( 1.0f, 0.2f, 0.2f, 1.0f ), "BLEEDING (%.1f/tick)", ci.bleedingRate );
+			}
+
+			// Status
+			if ( ci.anatomyStatus & AS_UNCONSCIOUS ) ImGui::TextColored( ImVec4( 0.8f, 0.5f, 0.1f, 1.0f ), "Unconscious" );
+			if ( ci.anatomyStatus & AS_HALFBLIND ) ImGui::TextColored( ImVec4( 0.7f, 0.7f, 0.3f, 1.0f ), "Partially Blind" );
+			if ( ci.anatomyStatus & AS_BLIND ) ImGui::TextColored( ImVec4( 0.8f, 0.2f, 0.2f, 1.0f ), "Blind" );
+
+			// Body parts
+			for ( const auto& bp : ci.bodyParts )
+			{
+				float hpRatio = bp.maxHP > 0 ? (float)bp.hp / bp.maxHP : 0;
+				ImVec4 partColor;
+				if ( bp.hp <= 0 )       partColor = ImVec4( 0.4f, 0.4f, 0.4f, 1.0f ); // destroyed
+				else if ( hpRatio > 0.75f ) partColor = ImVec4( 0.2f, 0.7f, 0.3f, 1.0f ); // healthy
+				else if ( hpRatio > 0.25f ) partColor = ImVec4( 0.7f, 0.6f, 0.1f, 1.0f ); // damaged
+				else                    partColor = ImVec4( 0.8f, 0.2f, 0.2f, 1.0f ); // critical
+
+				QString label = bp.name;
+				if ( bp.isVital ) label += " *";
+
+				ImGui::Text( "%s", label.toStdString().c_str() );
+				ImGui::SameLine( bp.isInside ? 120 : 100 );
+				ImGui::PushStyleColor( ImGuiCol_PlotHistogram, partColor );
+				ImGui::PushID( label.toStdString().c_str() );
+				ImGui::ProgressBar( qBound( 0.0f, hpRatio, 1.0f ), ImVec2( -1, 0 ), bp.hp <= 0 ? "destroyed" : "" );
+				ImGui::PopID();
+				ImGui::PopStyleColor();
+			}
+		}
+
 		ImGui::End();
 		return;
 	}
@@ -1955,6 +2003,47 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 	{
 		ImGui::Text( "STR: %d  DEX: %d  CON: %d", ci.str, ci.dex, ci.con );
 		ImGui::Text( "INT: %d  WIS: %d  CHA: %d", ci.intel, ci.wis, ci.cha );
+	}
+
+	// Anatomy section (for gnomes)
+	ImGui::Separator();
+	if ( ImGui::CollapsingHeader( "Anatomy" ) )
+	{
+		float bloodRatio = ci.maxBlood > 0 ? ci.bloodLevel / ci.maxBlood : 0;
+		ImVec4 bloodColor = bloodRatio > 0.8f ? ImVec4( 0.7f, 0.1f, 0.1f, 1.0f ) :
+		                    bloodRatio > 0.4f ? ImVec4( 0.7f, 0.4f, 0.1f, 1.0f ) :
+		                                        ImVec4( 0.3f, 0.3f, 0.3f, 1.0f );
+		ImGui::Text( "Blood" );
+		ImGui::SameLine( 80 );
+		ImGui::PushStyleColor( ImGuiCol_PlotHistogram, bloodColor );
+		ImGui::ProgressBar( qBound( 0.0f, bloodRatio, 1.0f ), ImVec2( -1, 0 ) );
+		ImGui::PopStyleColor();
+
+		if ( ci.bleedingRate > 0 )
+			ImGui::TextColored( ImVec4( 1.0f, 0.2f, 0.2f, 1.0f ), "BLEEDING (%.1f/tick)", ci.bleedingRate );
+
+		if ( ci.anatomyStatus & AS_UNCONSCIOUS ) ImGui::TextColored( ImVec4( 0.8f, 0.5f, 0.1f, 1.0f ), "Unconscious" );
+		if ( ci.anatomyStatus & AS_HALFBLIND ) ImGui::TextColored( ImVec4( 0.7f, 0.7f, 0.3f, 1.0f ), "Partially Blind" );
+		if ( ci.anatomyStatus & AS_BLIND ) ImGui::TextColored( ImVec4( 0.8f, 0.2f, 0.2f, 1.0f ), "Blind" );
+
+		for ( const auto& bp : ci.bodyParts )
+		{
+			float hpRatio = bp.maxHP > 0 ? (float)bp.hp / bp.maxHP : 0;
+			ImVec4 partColor;
+			if ( bp.hp <= 0 )           partColor = ImVec4( 0.4f, 0.4f, 0.4f, 1.0f );
+			else if ( hpRatio > 0.75f ) partColor = ImVec4( 0.2f, 0.7f, 0.3f, 1.0f );
+			else if ( hpRatio > 0.25f ) partColor = ImVec4( 0.7f, 0.6f, 0.1f, 1.0f );
+			else                        partColor = ImVec4( 0.8f, 0.2f, 0.2f, 1.0f );
+
+			QString label = bp.name + ( bp.isVital ? " *" : "" );
+			ImGui::Text( "%s", label.toStdString().c_str() );
+			ImGui::SameLine( bp.isInside ? 120 : 100 );
+			ImGui::PushStyleColor( ImGuiCol_PlotHistogram, partColor );
+			ImGui::PushID( label.toStdString().c_str() );
+			ImGui::ProgressBar( qBound( 0.0f, hpRatio, 1.0f ), ImVec2( -1, 0 ), bp.hp <= 0 ? "destroyed" : "" );
+			ImGui::PopID();
+			ImGui::PopStyleColor();
+		}
 	}
 
 	ImGui::End();

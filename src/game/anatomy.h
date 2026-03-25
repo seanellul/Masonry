@@ -61,13 +61,16 @@ public:
 	void heal();
 
 	bool statusChanged();
-	AnatomyStatus status();
+	AnatomyStatus status() const;
 
 	void setFluidLevelonTile( unsigned char fluidLevel );
 
 	AnatomyHeight randomAttackHeight() const;
 
 	float blood() const { return m_blood; }
+	float maxBlood() const { return 5000.0f; }
+	float bleeding() const { return m_bleeding; }
+	const QHash<CreaturePart, AnatomyPart>& parts() const { return m_parts; }
 
 private:
 	QString m_type;

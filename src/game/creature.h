@@ -231,7 +231,8 @@ public:
 	// Anatomy accessors for UI
 	AnatomyStatus anatomyStatus() { return m_anatomy.status(); }
 	float anatomyBlood() const { return m_anatomy.blood(); }
-	float anatomyMaxBlood() const { return 5000.0f; } // TODO: read from DB per species
+	float anatomyMaxBlood() const { return 5000.0f; }
+	const Anatomy& anatomy() const { return m_anatomy; }
 
 	QString thoughtBubble() const;
 	void setThoughtBubble( QString thought );

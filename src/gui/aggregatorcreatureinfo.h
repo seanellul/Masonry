@@ -101,6 +101,20 @@ struct GuiCreatureInfo
 	// Skills
 	struct SkillEntry { QString name; int level; int xp; bool active; };
 	QList<SkillEntry> skills;
+
+	// Anatomy
+	struct BodyPartInfo {
+		QString name;
+		int hp = 0;
+		int maxHP = 0;
+		bool isVital = false;
+		bool isInside = false;
+	};
+	float bloodLevel = 5000;
+	float maxBlood = 5000;
+	float bleedingRate = 0;
+	unsigned int anatomyStatus = 0; // AS_HEALTHY etc.
+	QList<BodyPartInfo> bodyParts;
 };
 Q_DECLARE_METATYPE( GuiCreatureInfo )
 

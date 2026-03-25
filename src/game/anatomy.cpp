@@ -354,7 +354,7 @@ bool Anatomy::statusChanged()
 	return out;
 }
 
-AnatomyStatus Anatomy::status()
+AnatomyStatus Anatomy::status() const
 {
 	return m_status;
 }

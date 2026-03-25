@@ -23,11 +23,84 @@
 #include "../base/util.h"
 
 #include "../game/game.h"
+#include "../game/anatomy.h"
 #include "../game/creaturemanager.h"
 #include "../game/gnomemanager.h"
 #include "../game/militarymanager.h"
 
 #include "../gfx/spritefactory.h"
+
+namespace {
+QString bodyPartName( CreaturePart part )
+{
+	switch ( part )
+	{
+		case CP_HEAD:            return "Head";
+		case CP_TORSO:           return "Torso";
+		case CP_LEFT_ARM:        return "Left Arm";
+		case CP_RIGHT_ARM:       return "Right Arm";
+		case CP_LEFT_HAND:       return "Left Hand";
+		case CP_RIGHT_HAND:      return "Right Hand";
+		case CP_LEFT_LEG:        return "Left Leg";
+		case CP_RIGHT_LEG:       return "Right Leg";
+		case CP_LEFT_FOOT:       return "Left Foot";
+		case CP_RIGHT_FOOT:      return "Right Foot";
+		case CP_LEFT_FRONT_LEG:  return "Left Front Leg";
+		case CP_RIGHT_FRONT_LEG: return "Right Front Leg";
+		case CP_LEFT_FRONT_FOOT: return "Left Front Foot";
+		case CP_RIGHT_FRONT_FOOT:return "Right Front Foot";
+		case CP_LEFT_WING:       return "Left Wing";
+		case CP_RIGHT_WING:      return "Right Wing";
+		case CP_BRAIN:           return "Brain";
+		case CP_LEFT_EYE:        return "Left Eye";
+		case CP_RIGHT_EYE:       return "Right Eye";
+		case CP_HEART:           return "Heart";
+		case CP_LEFT_LUNG:       return "Left Lung";
+		case CP_RIGHT_LUNG:      return "Right Lung";
+		default:                 return "Unknown";
+	}
+}
+
+void populateAnatomy( GuiCreatureInfo& info, const Creature* creature )
+{
+	const auto& anat = creature->anatomy();
+	info.bloodLevel = anat.blood();
+	info.maxBlood = anat.maxBlood();
+	info.bleedingRate = anat.bleeding();
+	info.anatomyStatus = (unsigned int)anat.status();
+
+	info.bodyParts.clear();
+	// External parts first, then internal
+	for ( const auto& part : anat.parts() )
+	{
+		if ( part.isInside ) continue;
+		GuiCreatureInfo::BodyPartInfo bp;
+		bp.name = bodyPartName( part.id );
+		bp.hp = part.hp;
+		bp.maxHP = part.maxHP;
+		bp.isVital = part.isVital;
+		bp.isInside = false;
+		info.bodyParts.append( bp );
+	}
+	for ( const auto& part : anat.parts() )
+	{
+		if ( !part.isInside ) continue;
+		GuiCreatureInfo::BodyPartInfo bp;
+		bp.name = "  " + bodyPartName( part.id );
+		bp.hp = part.hp;
+		bp.maxHP = part.maxHP;
+		bp.isVital = part.isVital;
+		bp.isInside = true;
+		info.bodyParts.append( bp );
+	}
+
+	info.healthPercent = ( anat.maxBlood() > 0 ) ? (int)( anat.blood() * 100.0f / anat.maxBlood() ) : 0;
+	if ( anat.status() & AS_DEAD ) info.healthStatus = "Dead";
+	else if ( anat.status() & AS_UNCONSCIOUS ) info.healthStatus = "Unconscious";
+	else if ( anat.status() & AS_WOUNDED ) info.healthStatus = "Wounded";
+	else info.healthStatus = "Healthy";
+}
+} // namespace
 
 #include <algorithm>
 
@@ -63,8 +136,7 @@ void AggregatorCreatureInfo::onRequestCreatureUpdate( unsigned int id )
 		m_info.profession = gnome->profession();
 		m_info.creatureType = "Gnome";
 		m_info.species = "Gnome";
-		m_info.healthPercent = 100; // TODO: derive from anatomy
-		m_info.healthStatus = "Healthy";
+		populateAnatomy( m_info, gnome );
 
 		m_info.str = gnome->attribute( "Str" );
 		m_info.con = gnome->attribute( "Con" );
@@ -278,6 +350,7 @@ void AggregatorCreatureInfo::onRequestCreatureUpdate( unsigned int id )
 			m_info.species = S::s( "$CreatureName_" + monster->species() );
 			m_info.profession = m_info.species;
 			m_info.activity = "";
+			populateAnatomy( m_info, monster );
 
 			m_info.hunger = 100;
 			m_info.thirst = 100;
@@ -305,6 +378,7 @@ void AggregatorCreatureInfo::onRequestCreatureUpdate( unsigned int id )
 				m_info.species = S::s( "$CreatureName_" + animal->species() );
 				m_info.profession = animal->isTame() ? "Tame" : "Wild";
 				m_info.activity = "";
+				populateAnatomy( m_info, animal );
 
 				m_info.hunger = (int)animal->hunger();
 				m_info.thirst = 100;
