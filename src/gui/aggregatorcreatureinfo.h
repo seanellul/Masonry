@@ -78,7 +78,9 @@ struct GuiCreatureInfo
 
 	// Social (Milestone 2.0b)
 	struct Relationship { QString name; int opinion; QString label; };
+	struct MemoryEntry { QString event; int change; int daysAgo; };
 	QList<Relationship> relationships;
+	QList<MemoryEntry> socialMemories;
 
 	// Mood breakdown
 	int baseMood = 50;      // from Optimism trait

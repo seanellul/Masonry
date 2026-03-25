@@ -155,6 +155,20 @@ void AggregatorCreatureInfo::onRequestCreatureUpdate( unsigned int id )
 			m_info.relationships.append( rel );
 		}
 
+		// Social memories (recent interactions)
+		m_info.socialMemories.clear();
+		auto memories = g->gm()->memoriesOf( gnome->id() );
+		for ( const auto& mem : memories )
+		{
+			GuiCreatureInfo::MemoryEntry entry;
+			Gnome* other = g->gm()->gnome( mem.otherID );
+			QString otherName = other ? other->name() : "someone";
+			entry.event = mem.event + " with " + otherName;
+			entry.change = mem.opinionChange;
+			entry.daysAgo = ( GameState::tick > mem.tick ) ? ( GameState::tick - mem.tick ) / 14400 : 0;
+			m_info.socialMemories.append( entry );
+		}
+
 		// Mood breakdown
 		gnome->moodBreakdown( m_info.baseMood, m_info.thoughtSum, m_info.needsPenalty );
 

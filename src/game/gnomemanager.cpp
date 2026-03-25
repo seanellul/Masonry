@@ -634,7 +634,7 @@ int GnomeManager::numGnomes()
 }
 
 // =============================================================================
-// Social System (Milestone 2.0b)
+// Social System (Milestone 2.0b, redesigned)
 // =============================================================================
 
 int GnomeManager::opinion( unsigned int gnomeA, unsigned int gnomeB ) const
@@ -665,48 +665,170 @@ QString GnomeManager::relationshipLabel( unsigned int gnomeA, unsigned int gnome
 QHash<unsigned int, int> GnomeManager::opinionsOf( unsigned int gnomeID ) const
 {
 	if ( m_opinions.contains( gnomeID ) )
-	{
 		return m_opinions[gnomeID];
-	}
 	return QHash<unsigned int, int>();
+}
+
+QList<GnomeManager::SocialMemory> GnomeManager::memoriesOf( unsigned int gnomeID ) const
+{
+	if ( m_socialMemories.contains( gnomeID ) )
+		return m_socialMemories[gnomeID];
+	return QList<SocialMemory>();
+}
+
+void GnomeManager::addSocialMemory( unsigned int gnomeID, unsigned int otherID, const QString& event, quint64 tick, int change )
+{
+	SocialMemory mem;
+	mem.otherID = otherID;
+	mem.event = event;
+	mem.tick = tick;
+	mem.opinionChange = change;
+
+	auto& list = m_socialMemories[gnomeID];
+	list.prepend( mem );
+
+	// Keep only last 10 memories per gnome
+	while ( list.size() > 10 )
+		list.removeLast();
+}
+
+bool GnomeManager::hasRecentGrievance( unsigned int gnomeA, unsigned int gnomeB, quint64 currentTick ) const
+{
+	if ( !m_socialMemories.contains( gnomeA ) ) return false;
+	quint64 threeDays = 14400 * 3; // 3 in-game days
+	for ( const auto& mem : m_socialMemories[gnomeA] )
+	{
+		if ( mem.otherID == gnomeB && mem.opinionChange < -1 && ( currentTick - mem.tick ) < threeDays )
+			return true;
+	}
+	return false;
 }
 
 int GnomeManager::traitCompatibility( Gnome* a, Gnome* b ) const
 {
-	// Compare trait values: similar traits → positive compatibility, divergent → negative
-	// Returns a score from roughly -100 to +100
+	// Weighted compatibility based on specific trait interactions
+	// Returns -50 to +50
 	int score = 0;
-	int count = 0;
-	for ( auto it = a->traits().constBegin(); it != a->traits().constEnd(); ++it )
+
+	// Optimism vs Pessimism: opposites clash
+	int optA = a->trait( "Optimism" ), optB = b->trait( "Optimism" );
+	if ( ( optA > 20 && optB < -20 ) || ( optA < -20 && optB > 20 ) )
+		score -= 8; // strong friction
+	else if ( abs( optA - optB ) < 15 )
+		score += 3; // similar outlook
+
+	// Sociability: similar levels get along
+	int socA = a->trait( "Sociability" ), socB = b->trait( "Sociability" );
+	if ( abs( socA - socB ) < 15 )
+		score += 2;
+	else if ( abs( socA - socB ) > 40 )
+		score -= 3; // introvert + extrovert friction
+
+	// Empathy: both high = strong affinity
+	int empA = a->trait( "Empathy" ), empB = b->trait( "Empathy" );
+	if ( empA > 15 && empB > 15 )
+		score += 5;
+	else if ( empA < -15 && empB < -15 )
+		score += 2; // cold people tolerate each other
+
+	// Temper: two hot-heads are volatile
+	int tmpA = a->trait( "Temper" ), tmpB = b->trait( "Temper" );
+	if ( tmpA > 20 && tmpB > 20 )
+		score -= 4; // both volatile = sparks fly
+
+	// Industriousness: similar work ethic
+	int indA = a->trait( "Industriousness" ), indB = b->trait( "Industriousness" );
+	if ( abs( indA - indB ) < 15 )
+		score += 2;
+	else if ( ( indA > 20 && indB < -20 ) || ( indA < -20 && indB > 20 ) )
+		score -= 3; // hard worker resents lazy one
+
+	// Curiosity: explorers bond
+	int curA = a->trait( "Curiosity" ), curB = b->trait( "Curiosity" );
+	if ( curA > 15 && curB > 15 )
+		score += 3;
+
+	// Creativity: artists appreciate each other
+	int creA = a->trait( "Creativity" ), creB = b->trait( "Creativity" );
+	if ( creA > 15 && creB > 15 )
+		score += 3;
+
+	return qBound( -50, score, 50 );
+}
+
+int GnomeManager::backstoryCompatibility( Gnome* a, Gnome* b ) const
+{
+	// Check if backstories share skill modifiers (similar backgrounds = affinity)
+	int score = 0;
+
+	auto getSkillGroups = []( Gnome* gn ) -> QStringList
 	{
-		int valA = it.value().toInt();
-		int valB = b->trait( it.key() );
-		int diff = abs( valA - valB );
-		// Similar traits (diff < 20) add positive, divergent (diff > 60) add negative
-		if ( diff < 20 )
-			score += 2;
-		else if ( diff > 60 )
-			score -= 3;
-		count++;
+		QStringList groups;
+		auto addFromBackstory = [&groups]( const QString& bsID )
+		{
+			if ( bsID.isEmpty() ) return;
+			auto row = DB::selectRow( "Backstories", bsID );
+			QString mods = row.value( "SkillModifiers" ).toString();
+			for ( const auto& entry : mods.split( '|' ) )
+			{
+				auto parts = entry.split( ':' );
+				if ( parts.size() == 2 )
+				{
+					// Look up the skill's group
+					auto skillRow = DB::selectRow( "Skills", parts[0] );
+					QString group = skillRow.value( "SkillGroup" ).toString();
+					if ( !group.isEmpty() && !groups.contains( group ) )
+						groups.append( group );
+				}
+			}
+		};
+		addFromBackstory( gn->childhoodBackstory() );
+		addFromBackstory( gn->adulthoodBackstory() );
+		return groups;
+	};
+
+	QStringList groupsA = getSkillGroups( a );
+	QStringList groupsB = getSkillGroups( b );
+
+	// Count shared skill groups
+	for ( const auto& g : groupsA )
+	{
+		if ( groupsB.contains( g ) )
+			score += 4; // shared background area = affinity
 	}
-	if ( count == 0 ) return 0;
-	return qBound( -100, score * 100 / ( count * 3 ), 100 );
+
+	return qBound( -10, score, 15 );
 }
 
 void GnomeManager::processSocialInteractions( quint64 tickNumber )
 {
-	// Process every 50 ticks (~2.5 seconds at normal speed) — slower than before
-	if ( tickNumber % 50 != 0 ) return;
+	// Process once per in-game hour (600 ticks) — gives ~1-2 interactions/pair/day
+	if ( tickNumber % 600 != 0 ) return;
 	if ( m_gnomes.size() < 2 ) return;
 
-	// Step 1: Natural opinion decay — all opinions drift toward 0 over time
-	for ( auto it = m_opinions.begin(); it != m_opinions.end(); ++it )
+	// Step 1: Opinion decay — 1 point toward 0 per in-game day (every 24 checks)
+	if ( tickNumber % 14400 == 0 )
 	{
-		for ( auto jt = it.value().begin(); jt != it.value().end(); ++jt )
+		for ( auto it = m_opinions.begin(); it != m_opinions.end(); ++it )
 		{
-			int& op = jt.value();
-			if ( op > 0 ) op = qMax( 0, op - 1 );       // decay +1 toward 0
-			else if ( op < 0 ) op = qMin( 0, op + 1 );   // decay -1 toward 0
+			for ( auto jt = it.value().begin(); jt != it.value().end(); ++jt )
+			{
+				int& op = jt.value();
+				if ( op > 0 ) op--;
+				else if ( op < 0 ) op++;
+			}
+		}
+
+		// Clean up old social memories (older than 3 days)
+		quint64 threeDays = 14400 * 3;
+		for ( auto it = m_socialMemories.begin(); it != m_socialMemories.end(); ++it )
+		{
+			auto& list = it.value();
+			for ( int i = list.size() - 1; i >= 0; --i )
+			{
+				if ( tickNumber - list[i].tick > threeDays )
+					list.removeAt( i );
+			}
 		}
 	}
 
@@ -721,98 +843,96 @@ void GnomeManager::processSocialInteractions( quint64 tickNumber )
 			Gnome* b = m_gnomes[j];
 			if ( b->isDead() ) continue;
 
-			// Check proximity (within 5 tiles Manhattan distance)
 			Position posA = a->getPos();
 			Position posB = b->getPos();
 			int dist = abs( posA.x - posB.x ) + abs( posA.y - posB.y ) + abs( posA.z - posB.z );
 			if ( dist > 5 ) continue;
 
-			// 8% chance per eligible pair per check (was 15%)
-			if ( rand() % 100 > 8 ) continue;
+			// 5% chance per eligible pair per hourly check = ~1.2 interactions/day
+			if ( rand() % 100 >= 5 ) continue;
 
+			// Calculate interaction tone from multiple factors
 			int compat = traitCompatibility( a, b );
-			int currentOp = opinion( a->id(), b->id() );
+			int bsCompat = backstoryCompatibility( a, b );
+
+			// Mood modifier: happy gnomes are more agreeable, unhappy more prickly
+			int moodModA = ( a->mood() - 50 ) / 10; // -5 to +5
+			int moodModB = ( b->mood() - 50 ) / 10;
+			int moodBonus = ( moodModA + moodModB ) / 2;
+
+			int tone = compat + bsCompat + moodBonus;
+
+			// Grievance/apology check
+			bool aHasGrievance = hasRecentGrievance( a->id(), b->id(), tickNumber );
+			bool bHasGrievance = hasRecentGrievance( b->id(), a->id(), tickNumber );
+
+			// Gnomes with high Empathy may apologize for past wrongs
+			if ( aHasGrievance && a->trait( "Empathy" ) > 15 && rand() % 100 < 20 )
+			{
+				modifyOpinion( a->id(), b->id(), 2 );
+				modifyOpinion( b->id(), a->id(), 3 );
+				addSocialMemory( a->id(), b->id(), "Apologized", tickNumber, 2 );
+				addSocialMemory( b->id(), a->id(), "Received apology", tickNumber, 3 );
+				continue;
+			}
+			// Gnomes with high Temper may escalate past conflicts
+			if ( bHasGrievance && b->trait( "Temper" ) > 20 && rand() % 100 < 15 )
+			{
+				modifyOpinion( a->id(), b->id(), -2 );
+				modifyOpinion( b->id(), a->id(), -3 );
+				addSocialMemory( a->id(), b->id(), "Was confronted", tickNumber, -2 );
+				addSocialMemory( b->id(), a->id(), "Confronted", tickNumber, -3 );
+				continue;
+			}
+
 			int roll = rand() % 100;
 
-			// Compatibility + current opinion determines interaction tone
-			// Weighted sum: 60% compatibility, 40% current opinion
-			int tone = ( compat * 6 + currentOp * 4 ) / 10;
-
-			if ( tone > 15 )
+			if ( tone > 10 )
 			{
-				// Positive interaction likely — but not guaranteed
+				// Positive tone
+				if ( roll < 60 )
+				{
+					modifyOpinion( a->id(), b->id(), 1 );
+					modifyOpinion( b->id(), a->id(), 1 );
+					addSocialMemory( a->id(), b->id(), "Had a good chat", tickNumber, 1 );
+					addSocialMemory( b->id(), a->id(), "Had a good chat", tickNumber, 1 );
+				}
+				else if ( roll < 80 )
+				{
+					modifyOpinion( a->id(), b->id(), 2 );
+					modifyOpinion( b->id(), a->id(), 2 );
+					addSocialMemory( a->id(), b->id(), "Shared a laugh", tickNumber, 2 );
+					addSocialMemory( b->id(), a->id(), "Shared a laugh", tickNumber, 2 );
+				}
+				// else: 20% no meaningful interaction
+			}
+			else if ( tone < -10 )
+			{
+				// Negative tone
 				if ( roll < 50 )
 				{
-					// Chat: +1 opinion both ways
-					modifyOpinion( a->id(), b->id(), 1 );
-					modifyOpinion( b->id(), a->id(), 1 );
+					modifyOpinion( a->id(), b->id(), -1 );
+					modifyOpinion( b->id(), a->id(), -1 );
+					addSocialMemory( a->id(), b->id(), "Awkward exchange", tickNumber, -1 );
+					addSocialMemory( b->id(), a->id(), "Awkward exchange", tickNumber, -1 );
 				}
-				else if ( roll < 70 && currentOp > 25 )
+				else if ( roll < 75 )
 				{
-					// Deep conversation: +3 opinion (reduced from +8, requires friendship)
-					modifyOpinion( a->id(), b->id(), 3 );
-					modifyOpinion( b->id(), a->id(), 3 );
+					modifyOpinion( a->id(), b->id(), -2 );
+					modifyOpinion( b->id(), a->id(), -2 );
+					addSocialMemory( a->id(), b->id(), "Argued", tickNumber, -2 );
+					addSocialMemory( b->id(), a->id(), "Argued", tickNumber, -2 );
 				}
-				else if ( roll < 85 )
+				else if ( roll < 90 )
 				{
-					// Compliment: +2 opinion
-					int empA = a->trait( "Empathy" );
-					int socA = a->trait( "Sociability" );
-					if ( empA > 10 || socA > 10 )
-					{
-						modifyOpinion( a->id(), b->id(), 2 );
-						modifyOpinion( b->id(), a->id(), 1 );
-					}
-				}
-				else
-				{
-					// Even friends can have awkward moments: no change or slight friction
-					// 15% of "positive tone" interactions are neutral
-				}
-			}
-			else if ( tone < -15 )
-			{
-				// Negative interaction likely
-				if ( roll < 40 )
-				{
-					// Argument: -3 opinion both ways (reduced from -8)
-					modifyOpinion( a->id(), b->id(), -3 );
+					// Insult: asymmetric
 					modifyOpinion( b->id(), a->id(), -3 );
+					addSocialMemory( a->id(), b->id(), "Said something rude", tickNumber, 0 );
+					addSocialMemory( b->id(), a->id(), "Was insulted", tickNumber, -3 );
 				}
-				else if ( roll < 65 )
-				{
-					// Insult: -5 for target, -1 for initiator (reduced from -12/-4)
-					int tempA = a->trait( "Temper" );
-					if ( tempA > 10 || roll < 55 )
-					{
-						modifyOpinion( a->id(), b->id(), -1 );
-						modifyOpinion( b->id(), a->id(), -5 );
-					}
-				}
-				else
-				{
-					// Cold shoulder: -1 both ways
-					modifyOpinion( a->id(), b->id(), -1 );
-					modifyOpinion( b->id(), a->id(), -1 );
-				}
+				// else: 10% cold shoulder, no change
 			}
-			else
-			{
-				// Neutral tone — could go either way, slight random drift
-				if ( roll < 40 )
-				{
-					// Pleasant chat: +1
-					modifyOpinion( a->id(), b->id(), 1 );
-					modifyOpinion( b->id(), a->id(), 1 );
-				}
-				else if ( roll < 55 )
-				{
-					// Awkward silence: -1
-					modifyOpinion( a->id(), b->id(), -1 );
-					modifyOpinion( b->id(), a->id(), -1 );
-				}
-				// else: no change (45% of neutral interactions)
-			}
+			// else: neutral tone = no opinion change (the key fix)
 		}
 	}
 }

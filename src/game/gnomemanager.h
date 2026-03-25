@@ -47,11 +47,24 @@ private:
 
 	int m_startIndex = 0;
 
-	// Social system (Milestone 2.0b)
-	// Opinion scores: m_opinions[gnomeA_id][gnomeB_id] = opinion (-100 to +100)
+	// Social system (Milestone 2.0b, redesigned)
 	QHash<unsigned int, QHash<unsigned int, int>> m_opinions;
+
+	// Social memory: gnomes remember recent interactions
+	struct SocialMemory
+	{
+		unsigned int otherID;
+		QString event;       // "Chatted", "Argued", "Complimented", "Insulted", "Apologized", "Escalated"
+		quint64 tick;        // when it happened
+		int opinionChange;   // the change applied
+	};
+	QHash<unsigned int, QList<SocialMemory>> m_socialMemories;
+
 	void processSocialInteractions( quint64 tickNumber );
 	int traitCompatibility( Gnome* a, Gnome* b ) const;
+	int backstoryCompatibility( Gnome* a, Gnome* b ) const;
+	void addSocialMemory( unsigned int gnomeID, unsigned int otherID, const QString& event, quint64 tick, int change );
+	bool hasRecentGrievance( unsigned int gnomeA, unsigned int gnomeB, quint64 currentTick ) const;
 
 public:
 	GnomeManager( Game* parent );
@@ -123,6 +136,7 @@ public:
 	void modifyOpinion( unsigned int gnomeA, unsigned int gnomeB, int delta );
 	QString relationshipLabel( unsigned int gnomeA, unsigned int gnomeB ) const;
 	QHash<unsigned int, int> opinionsOf( unsigned int gnomeID ) const;
+	QList<SocialMemory> memoriesOf( unsigned int gnomeID ) const;
 
 private:
 	void getRefuelJob( Automaton* a );

@@ -1,6 +1,8 @@
 #include "ui_sidepanels.h"
 #include "../imguibridge.h"
 #include "../../base/global.h"
+#include "../../base/gamestate.h"
+#include "../../base/logger.h"
 #include <imgui.h>
 
 // =============================================================================
@@ -96,6 +98,15 @@ void drawStockpilePanel( ImGuiBridge& bridge )
 	ImGui::Text( "Capacity: %d / %d items (%d reserved)", sp.itemCount, sp.capacity, sp.reserved );
 
 	ImGui::Separator();
+
+	// Search bar
+	static char searchBuf[128] = "";
+	ImGui::Text( "Search:" );
+	ImGui::SameLine();
+	ImGui::SetNextItemWidth( -1 );
+	ImGui::InputText( "##filterSearch", searchBuf, sizeof( searchBuf ) );
+	QString searchStr = QString( searchBuf ).toLower();
+
 	ImGui::Text( "Filters:" );
 	ImGui::SameLine();
 	if ( ImGui::SmallButton( "Select All" ) )
@@ -112,59 +123,160 @@ void drawStockpilePanel( ImGuiBridge& bridge )
 			bridge.cmdStockpileSetActive( bridge.activeStockpileID, false, cat, "", "", "" );
 	}
 
-	// Render filter tree: Category → Group → Item → Material
+	ImGui::BeginChild( "FilterTree", ImVec2( 0, 0 ), false );
+
+	// Render filter tree: Category (checkbox) → Group (checkbox) → Item (checkbox) → Material (checkbox)
 	auto& filter = bridge.stockpileInfo.filter;
 	for ( const auto& cat : filter.categories() )
 	{
+		// Search filter: skip categories with no matching content
+		bool catMatchesSearch = searchStr.isEmpty() || cat.toLower().contains( searchStr );
+		bool anyChildMatches = false;
+		if ( !catMatchesSearch )
+		{
+			for ( const auto& group : filter.groups( cat ) )
+			{
+				if ( group.toLower().contains( searchStr ) ) { anyChildMatches = true; break; }
+				for ( const auto& item : filter.items( cat, group ) )
+				{
+					if ( item.toLower().contains( searchStr ) ) { anyChildMatches = true; break; }
+				}
+				if ( anyChildMatches ) break;
+			}
+		}
+		if ( !catMatchesSearch && !anyChildMatches ) continue;
+
 		ImGui::PushID( cat.toStdString().c_str() );
 
-		// Category-level toggle
-		ImGui::AlignTextToFramePadding();
-		bool catOpen = ImGui::TreeNode( "##cat", "%s", "" );
-		ImGui::SameLine();
-		if ( ImGui::SmallButton( ("+ " + cat).toStdString().c_str() ) )
+		// Category checkbox + tree node
+		// Check if all items in category are checked
+		bool allCatChecked = true;
+		bool anyCatChecked = false;
+		for ( const auto& group : filter.groups( cat ) )
 		{
-			bridge.cmdStockpileSetActive( bridge.activeStockpileID, true, cat, "", "", "" );
+			for ( const auto& item : filter.items( cat, group ) )
+			{
+				for ( const auto& mat : filter.materials( cat, group, item ) )
+				{
+					if ( filter.getCheckState( cat, group, item, mat ) )
+						anyCatChecked = true;
+					else
+						allCatChecked = false;
+				}
+			}
 		}
+		if ( !anyCatChecked ) allCatChecked = false;
+
+		bool catChecked = allCatChecked;
+		bool catOpen = ImGui::TreeNodeEx( "##catTree", ( !searchStr.isEmpty() ? ImGuiTreeNodeFlags_DefaultOpen : 0 ) | ImGuiTreeNodeFlags_AllowOverlap );
 		ImGui::SameLine();
-		if ( ImGui::SmallButton( ("- ##cat" + cat).toStdString().c_str() ) )
+		if ( ImGui::Checkbox( cat.toStdString().c_str(), &catChecked ) )
 		{
-			bridge.cmdStockpileSetActive( bridge.activeStockpileID, false, cat, "", "", "" );
+			bridge.cmdStockpileSetActive( bridge.activeStockpileID, catChecked, cat, "", "", "" );
 		}
 
 		if ( catOpen )
 		{
 			for ( const auto& group : filter.groups( cat ) )
 			{
+				// Search filter at group level
+				bool groupMatches = searchStr.isEmpty() || group.toLower().contains( searchStr ) || catMatchesSearch;
+				bool anyItemMatches = false;
+				if ( !groupMatches )
+				{
+					for ( const auto& item : filter.items( cat, group ) )
+					{
+						if ( item.toLower().contains( searchStr ) ) { anyItemMatches = true; break; }
+					}
+				}
+				if ( !groupMatches && !anyItemMatches ) continue;
+
 				ImGui::PushID( group.toStdString().c_str() );
 
-				// Group-level toggle
-				bool groupOpen = ImGui::TreeNode( "##grp", "%s", "" );
-				ImGui::SameLine();
-				if ( ImGui::SmallButton( ("+ " + group).toStdString().c_str() ) )
+				// Group checkbox + tree node
+				bool allGroupChecked = true;
+				bool anyGroupChecked = false;
+				for ( const auto& item : filter.items( cat, group ) )
 				{
-					bridge.cmdStockpileSetActive( bridge.activeStockpileID, true, cat, group, "", "" );
+					for ( const auto& mat : filter.materials( cat, group, item ) )
+					{
+						if ( filter.getCheckState( cat, group, item, mat ) )
+							anyGroupChecked = true;
+						else
+							allGroupChecked = false;
+					}
 				}
+				if ( !anyGroupChecked ) allGroupChecked = false;
+
+				bool groupChecked = allGroupChecked;
+				bool groupOpen = ImGui::TreeNodeEx( "##grpTree", ( !searchStr.isEmpty() ? ImGuiTreeNodeFlags_DefaultOpen : 0 ) | ImGuiTreeNodeFlags_AllowOverlap );
 				ImGui::SameLine();
-				if ( ImGui::SmallButton( ("- ##grp" + group).toStdString().c_str() ) )
+				if ( ImGui::Checkbox( group.toStdString().c_str(), &groupChecked ) )
 				{
-					bridge.cmdStockpileSetActive( bridge.activeStockpileID, false, cat, group, "", "" );
+					bridge.cmdStockpileSetActive( bridge.activeStockpileID, groupChecked, cat, group, "", "" );
 				}
 
 				if ( groupOpen )
 				{
 					for ( const auto& item : filter.items( cat, group ) )
 					{
+						// Search filter at item level
+						if ( !searchStr.isEmpty() && !item.toLower().contains( searchStr ) && !groupMatches ) continue;
+
 						ImGui::PushID( item.toStdString().c_str() );
-						for ( const auto& mat : filter.materials( cat, group, item ) )
+
+						auto mats = filter.materials( cat, group, item );
+						if ( mats.size() <= 1 )
 						{
-							bool checked = filter.getCheckState( cat, group, item, mat );
-							QString label = item + " (" + mat + ")";
+							// Single material — just show checkbox
+							QString mat = mats.isEmpty() ? "" : mats.first();
+							bool checked = !mat.isEmpty() && filter.getCheckState( cat, group, item, mat );
+							QString label = mat.isEmpty() ? item : item;
 							if ( ImGui::Checkbox( label.toStdString().c_str(), &checked ) )
 							{
 								bridge.cmdStockpileSetActive( bridge.activeStockpileID, checked, cat, group, item, mat );
 							}
 						}
+						else
+						{
+							// Multiple materials — item as tree node with checkbox
+							bool allItemChecked = true;
+							bool anyItemChecked = false;
+							for ( const auto& mat : mats )
+							{
+								if ( filter.getCheckState( cat, group, item, mat ) )
+									anyItemChecked = true;
+								else
+									allItemChecked = false;
+							}
+							if ( !anyItemChecked ) allItemChecked = false;
+
+							bool itemChecked = allItemChecked;
+							bool itemOpen = ImGui::TreeNodeEx( "##itemTree", ImGuiTreeNodeFlags_AllowOverlap );
+							ImGui::SameLine();
+							if ( ImGui::Checkbox( item.toStdString().c_str(), &itemChecked ) )
+							{
+								// Toggle all materials for this item
+								for ( const auto& mat : mats )
+								{
+									bridge.cmdStockpileSetActive( bridge.activeStockpileID, itemChecked, cat, group, item, mat );
+								}
+							}
+
+							if ( itemOpen )
+							{
+								for ( const auto& mat : mats )
+								{
+									bool matChecked = filter.getCheckState( cat, group, item, mat );
+									if ( ImGui::Checkbox( mat.toStdString().c_str(), &matChecked ) )
+									{
+										bridge.cmdStockpileSetActive( bridge.activeStockpileID, matChecked, cat, group, item, mat );
+									}
+								}
+								ImGui::TreePop();
+							}
+						}
+
 						ImGui::PopID();
 					}
 					ImGui::TreePop();
@@ -178,6 +290,7 @@ void drawStockpilePanel( ImGuiBridge& bridge )
 		ImGui::PopID();
 	}
 
+	ImGui::EndChild();
 	ImGui::End();
 }
 
@@ -1173,12 +1286,13 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 		ImGui::Unindent( 8.0f );
 	}
 
-	// Social relationships
-	if ( !ci.relationships.isEmpty() )
+	// Social: relationships + recent memories
+	if ( !ci.relationships.isEmpty() || !ci.socialMemories.isEmpty() )
 	{
-		if ( ImGui::CollapsingHeader( "Relationships" ) )
+		if ( ImGui::CollapsingHeader( "Social" ) )
 		{
 			ImGui::Indent( 8.0f );
+
 			for ( const auto& rel : ci.relationships )
 			{
 				ImVec4 relColor;
@@ -1192,6 +1306,27 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 				ImGui::SameLine();
 				ImGui::Text( "%s (%+d)", rel.name.toStdString().c_str(), rel.opinion );
 			}
+
+			if ( !ci.socialMemories.isEmpty() )
+			{
+				ImGui::Spacing();
+				ImGui::TextColored( ImVec4( 0.6f, 0.6f, 0.8f, 1.0f ), "Recent events:" );
+				for ( const auto& mem : ci.socialMemories )
+				{
+					ImVec4 memColor = mem.change > 0 ?
+						ImVec4( 0.4f, 0.7f, 0.4f, 0.8f ) :
+						( mem.change < 0 ? ImVec4( 0.7f, 0.4f, 0.4f, 0.8f ) : ImVec4( 0.5f, 0.5f, 0.5f, 0.8f ) );
+					ImGui::TextColored( memColor, "  %s", mem.event.toStdString().c_str() );
+					if ( ImGui::IsItemHovered() )
+					{
+						if ( mem.daysAgo == 0 )
+							ImGui::SetTooltip( "Today (%+d opinion)", mem.change );
+						else
+							ImGui::SetTooltip( "%d day%s ago (%+d opinion)", mem.daysAgo, mem.daysAgo > 1 ? "s" : "", mem.change );
+					}
+				}
+			}
+
 			ImGui::Unindent( 8.0f );
 		}
 	}
