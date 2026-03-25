@@ -6,6 +6,50 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-25] Improve Build UX, Tile Info, and Container Display
+
+**Commit**: `d555196`
+**Files changed**: `src/gui/ui/ui_gamehud.cpp`, `src/gui/ui/ui_tileinfo.cpp`, `src/gui/aggregatortileinfo.cpp`
+
+### Changes
+- **"Mine Vein"** replaces "Explorative Mine" — clearer label for auto-vein-chasing mining
+- **Build material display** shows translated item type + material name (e.g., "2 x Plank: Pine (5)") instead of raw IDs
+- **Container info in Tile Info** — crates/barrels show as expandable tree nodes with [used/capacity] and list of contained items
+- **CraftUntilStock** mode shows "Stock" label in workshop craft list
+- Tile Info panel now moveable and resizable
+
+---
+
+## [2026-03-25] Overhaul Stockpile UI: Ledger Tab, Filter Redesign, Search
+
+**Commit**: `eec1d91`
+**Files changed**: `src/gui/aggregatorstockpile.cpp`, `src/gui/aggregatortileinfo.h`, `src/gui/ui/ui_sidepanels.cpp`
+
+### Changes
+- **Two-tab stockpile panel**: Ledger (stored items table) + Filters (acceptance tree)
+- **Capacity display fixed** — was always showing 0/0, now correctly sums across all tile fields
+- **Color-coded capacity bar** — green (<70%), yellow (70-90%), red (>90%)
+- **Filter tree redesign** — checkboxes at every level (category/group/item/material). Checking a parent toggles all children. Items with multiple materials get expandable sub-trees.
+- **Search bar** — type to filter categories/groups/items, matching branches auto-expand
+- **Settings refresh** — name/priority changes update UI immediately without reopening panel
+- **All side panels** now smaller (60% width) and moveable/resizable
+
+---
+
+## [2026-03-25] Fix Input Handling and Panel Layout
+
+**Commit**: `efb7a76`
+**Files changed**: `src/gui/imguibridge.cpp`, `src/gui/imguibridge.h`, `src/gui/eventconnector.cpp`, `src/gui/eventconnector.h`
+
+### Changes
+- **Space bar always pauses** — handled before ImGui keyboard capture check. Also fixed the underlying bug: `onTogglePause()` was only updating UI state, never calling `gm->setPaused()` on the game engine.
+- **Escape always works** — tool dismissal and panel closing from any ImGui focus state
+- **Click-to-manage** — clicking stockpile/workshop/farm tiles auto-opens the management panel (new `onTileClickAutoOpen` in EventConnector)
+- **Creature Info** repositioned below time display, Workshop panel moved to left side
+- Null safety for pause toggle when no game is loaded
+
+---
+
 ## [2026-03-25] Redesign Social System — Realistic Pacing & Personality-Driven Outcomes
 
 **Milestone**: 2.0b (iteration 3) — Gnome Depth
