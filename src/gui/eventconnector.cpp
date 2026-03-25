@@ -222,17 +222,20 @@ void EventConnector::onTileClickAutoOpen( unsigned int tileID )
 
 	Position pos( tileID );
 
-	// Priority 1: Creatures take precedence (they're standing on top)
-	// Check gnomes first
+	// Priority 1: Living creatures take precedence, then dead ones
+	// Check gnomes first (alive first, then dead)
 	auto gnomes = gm->game()->gm()->gnomesAtPosition( pos );
 	if ( !gnomes.isEmpty() )
 	{
-		auto gnome = gnomes.first();
-		if ( !gnome->isDead() )
+		// Prefer living gnome over dead corpse
+		Gnome* target = nullptr;
+		for ( auto gn : gnomes )
 		{
-			emit signalOpenCreatureInfo( gnome->id() );
-			return;
+			if ( !gn->isDead() ) { target = gn; break; }
 		}
+		if ( !target ) target = gnomes.first(); // all dead — show corpse
+		emit signalOpenCreatureInfo( target->id() );
+		return;
 	}
 
 	// Check animals and monsters
