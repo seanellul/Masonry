@@ -711,15 +711,20 @@ void drawMilitaryPanel( ImGuiBridge& bridge )
 {
 	ImGuiIO& io = ImGui::GetIO();
 	ImGui::SetNextWindowPos( ImVec2( 5, 50 ), ImGuiCond_FirstUseEver );
-	ImGui::SetNextWindowSize( ImVec2( io.DisplaySize.x * 0.6f, io.DisplaySize.y * 0.7f ), ImGuiCond_FirstUseEver );
+	ImGui::SetNextWindowSize( ImVec2( 500, io.DisplaySize.y * 0.7f ), ImGuiCond_FirstUseEver );
 
 	bool open = true;
 	ImGui::Begin( "Military", &open, 0 );
 
 	if ( !open ) bridge.activeSidePanel = ImGuiBridge::SidePanel::None;
 
+	static const char* attitudeNames[] = { "Flee", "Defend", "Attack", "Hunt" };
+
 	if ( ImGui::BeginTabBar( "MilTabs" ) )
 	{
+		// =================================================================
+		// SQUADS TAB
+		// =================================================================
 		if ( ImGui::BeginTabItem( "Squads" ) )
 		{
 			if ( ImGui::Button( "Add Squad" ) )
@@ -728,59 +733,160 @@ void drawMilitaryPanel( ImGuiBridge& bridge )
 				bridge.cmdRequestMilitaryUpdate();
 			}
 
-			for ( const auto& squad : bridge.squads )
+			// Get unassigned gnomes (squad index 0 = "no squad")
+			QList<GuiSquadGnome> unassigned;
+			if ( !bridge.squads.isEmpty() && bridge.squads[0].id == 0 )
 			{
+				unassigned = bridge.squads[0].gnomes;
+			}
+
+			// Skip index 0 (the "no squad" virtual squad) — show real squads
+			for ( int si = 1; si < bridge.squads.size(); ++si )
+			{
+				const auto& squad = bridge.squads[si];
 				ImGui::PushID( squad.id );
 
-				if ( ImGui::CollapsingHeader( squad.name.toStdString().c_str() ) )
+				QString headerLabel = squad.name + " (" + QString::number( squad.gnomes.size() ) + " gnomes)";
+				if ( ImGui::CollapsingHeader( headerLabel.toStdString().c_str(), ImGuiTreeNodeFlags_DefaultOpen ) )
 				{
-					char squadName[128];
+					// Rename
+					static char squadName[128];
 					snprintf( squadName, sizeof( squadName ), "%s", squad.name.toStdString().c_str() );
-					if ( ImGui::InputText( "Name", squadName, sizeof( squadName ), ImGuiInputTextFlags_EnterReturnsTrue ) )
+					ImGui::PushItemWidth( 200 );
+					if ( ImGui::InputText( "##SquadName", squadName, sizeof( squadName ), ImGuiInputTextFlags_EnterReturnsTrue ) )
 					{
 						bridge.cmdRenameSquad( squad.id, squadName );
+						bridge.cmdRequestMilitaryUpdate();
 					}
+					ImGui::PopItemWidth();
 
-					for ( const auto& gnome : squad.gnomes )
+					// --- Gnome list with combat stats ---
+					if ( !squad.gnomes.isEmpty() )
 					{
-						ImGui::Text( "  %s", gnome.name.toStdString().c_str() );
-						ImGui::SameLine();
-						ImGui::PushID( (int)gnome.id );
-						if ( ImGui::SmallButton( "Remove" ) )
+						ImGui::TextColored( ImVec4( 0.6f, 0.7f, 0.9f, 1.0f ), "Members:" );
+						for ( const auto& gnome : squad.gnomes )
 						{
-							bridge.cmdRemoveGnomeFromSquad( gnome.id );
-							bridge.cmdRequestMilitaryUpdate();
-						}
-						ImGui::PopID();
-					}
-
-					// Add gnome to squad - show available gnomes from population
-					if ( !bridge.populationInfo.gnomes.isEmpty() )
-					{
-						static int selectedGnome = 0;
-						if ( ImGui::Button( "+ Add Gnome" ) )
-						{
-							if ( selectedGnome >= 0 && selectedGnome < bridge.populationInfo.gnomes.size() )
+							ImGui::PushID( (int)gnome.id );
+							ImGui::Text( "  %s", gnome.name.toStdString().c_str() );
+							ImGui::SameLine();
+							ImGui::TextDisabled( "Mel:%d Dge:%d Arm:%d", gnome.meleeSkill, gnome.dodgeSkill, gnome.armorSkill );
+							ImGui::SameLine();
+							ImGui::TextColored( ImVec4( 0.7f, 0.7f, 0.5f, 1.0f ), "[%s]", gnome.weapon.toStdString().c_str() );
+							ImGui::SameLine();
+							if ( ImGui::SmallButton( "X" ) )
 							{
-								bridge.cmdMoveGnomeRight( bridge.populationInfo.gnomes[selectedGnome].id );
+								bridge.cmdRemoveGnomeFromSquad( gnome.id );
 								bridge.cmdRequestMilitaryUpdate();
 							}
+							if ( ImGui::IsItemHovered() ) ImGui::SetTooltip( "Remove from squad" );
+							ImGui::PopID();
 						}
 					}
 
+					// --- Add gnome dropdown ---
+					if ( !unassigned.isEmpty() )
+					{
+						ImGui::PushItemWidth( 200 );
+						if ( ImGui::BeginCombo( "##AddGnome", "+ Add Gnome..." ) )
+						{
+							for ( const auto& g : unassigned )
+							{
+								QString label = g.name + " (Mel:" + QString::number( g.meleeSkill ) + ")";
+								if ( ImGui::Selectable( label.toStdString().c_str() ) )
+								{
+									bridge.cmdAddGnomeToSquad( g.id, squad.id );
+									bridge.cmdRequestMilitaryUpdate();
+								}
+							}
+							ImGui::EndCombo();
+						}
+						ImGui::PopItemWidth();
+					}
+					else
+					{
+						ImGui::TextDisabled( "All gnomes assigned" );
+					}
+
+					ImGui::Separator();
+
+					// --- Target Priorities ---
+					if ( !squad.priorities.isEmpty() )
+					{
+						ImGui::TextColored( ImVec4( 0.9f, 0.7f, 0.4f, 1.0f ), "Target Priorities:" );
+						for ( int pi = 0; pi < squad.priorities.size(); ++pi )
+						{
+							const auto& prio = squad.priorities[pi];
+							ImGui::PushID( pi );
+
+							// Creature name
+							ImGui::Text( "  %s", prio.name.toStdString().c_str() );
+							ImGui::SameLine( 160 );
+
+							// Attitude dropdown
+							int att = (int)prio.attitude;
+							ImGui::PushItemWidth( 80 );
+							if ( ImGui::Combo( "##att", &att, attitudeNames, 4 ) )
+							{
+								bridge.cmdSetAttitude( squad.id, prio.id, att );
+								bridge.cmdRequestMilitaryUpdate();
+							}
+							ImGui::PopItemWidth();
+
+							// Priority reorder buttons
+							ImGui::SameLine();
+							if ( pi > 0 )
+							{
+								if ( ImGui::SmallButton( "^" ) )
+								{
+									bridge.cmdMovePrioUp( squad.id, prio.id );
+									bridge.cmdRequestMilitaryUpdate();
+								}
+							}
+							else
+							{
+								ImGui::TextDisabled( " " );
+							}
+							ImGui::SameLine();
+							if ( pi < squad.priorities.size() - 1 )
+							{
+								if ( ImGui::SmallButton( "v" ) )
+								{
+									bridge.cmdMovePrioDown( squad.id, prio.id );
+									bridge.cmdRequestMilitaryUpdate();
+								}
+							}
+
+							ImGui::PopID();
+						}
+					}
+
+					ImGui::Separator();
+
+					ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0.5f, 0.15f, 0.15f, 1.0f ) );
 					if ( ImGui::SmallButton( "Remove Squad" ) )
 					{
 						bridge.cmdRemoveSquad( squad.id );
 						bridge.cmdRequestMilitaryUpdate();
 					}
+					ImGui::PopStyleColor();
 				}
 
 				ImGui::PopID();
 			}
 
+			// Show unassigned gnome count
+			if ( !unassigned.isEmpty() )
+			{
+				ImGui::Separator();
+				ImGui::TextDisabled( "%d gnomes unassigned", unassigned.size() );
+			}
+
 			ImGui::EndTabItem();
 		}
 
+		// =================================================================
+		// ROLES TAB
+		// =================================================================
 		if ( ImGui::BeginTabItem( "Roles" ) )
 		{
 			if ( bridge.roles.isEmpty() )
@@ -799,11 +905,65 @@ void drawMilitaryPanel( ImGuiBridge& bridge )
 				ImGui::PushID( role.id );
 				if ( ImGui::CollapsingHeader( role.name.toStdString().c_str() ) )
 				{
+					// Rename
+					static char roleName[128];
+					snprintf( roleName, sizeof( roleName ), "%s", role.name.toStdString().c_str() );
+					ImGui::PushItemWidth( 200 );
+					if ( ImGui::InputText( "##RoleName", roleName, sizeof( roleName ), ImGuiInputTextFlags_EnterReturnsTrue ) )
+					{
+						bridge.cmdRenameRole( role.id, roleName );
+						bridge.cmdRequestRoles();
+					}
+					ImGui::PopItemWidth();
+
 					bool civ = role.isCivilian;
 					if ( ImGui::Checkbox( "Civilian", &civ ) )
 					{
 						bridge.cmdSetRoleCivilian( role.id, civ );
 					}
+
+					// Uniform configuration (only if not civilian)
+					if ( !civ && !role.uniform.isEmpty() )
+					{
+						ImGui::TextColored( ImVec4( 0.6f, 0.7f, 0.9f, 1.0f ), "Uniform:" );
+						for ( const auto& slot : role.uniform )
+						{
+							ImGui::PushID( slot.slotName.toStdString().c_str() );
+							ImGui::Text( "  %s:", slot.slotName.toStdString().c_str() );
+							ImGui::SameLine( 100 );
+
+							// Armor type dropdown
+							int typeIdx = slot.possibleTypesForSlot.indexOf( slot.armorType );
+							if ( typeIdx < 0 ) typeIdx = 0;
+
+							ImGui::PushItemWidth( 120 );
+							if ( ImGui::BeginCombo( "##type", slot.armorType.toStdString().c_str() ) )
+							{
+								for ( int t = 0; t < slot.possibleTypesForSlot.size(); ++t )
+								{
+									bool sel = ( t == typeIdx );
+									if ( ImGui::Selectable( slot.possibleTypesForSlot[t].toStdString().c_str(), sel ) )
+									{
+										bridge.cmdSetArmorType( role.id, slot.slotName, slot.possibleTypesForSlot[t], "any" );
+										bridge.cmdRequestRoles();
+									}
+								}
+								ImGui::EndCombo();
+							}
+							ImGui::PopItemWidth();
+
+							ImGui::PopID();
+						}
+					}
+
+					ImGui::Separator();
+					ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0.5f, 0.15f, 0.15f, 1.0f ) );
+					if ( ImGui::SmallButton( "Remove Role" ) )
+					{
+						bridge.cmdRemoveRole( role.id );
+						bridge.cmdRequestRoles();
+					}
+					ImGui::PopStyleColor();
 				}
 				ImGui::PopID();
 			}

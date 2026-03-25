@@ -431,6 +431,15 @@ void ImGuiBridge::cmdNavigateToEntity( unsigned int entityID )
 	}
 }
 
+void ImGuiBridge::cmdNavigateToPosition( Position pos )
+{
+	if ( pos.x > 0 || pos.y > 0 || pos.z > 0 )
+	{
+		pendingCameraNav = true;
+		cameraNavTarget = pos;
+	}
+}
+
 // Tile info commands
 void ImGuiBridge::cmdTerrainCommand( unsigned int tileID, const QString& cmd ) { emit signalTerrainCommand( tileID, cmd ); }
 void ImGuiBridge::cmdManageCommand( unsigned int tileID ) { emit signalManageCommand( tileID ); }
@@ -605,6 +614,7 @@ void ImGuiBridge::cmdRenameSquad( unsigned int id, const QString& name ) { Globa
 void ImGuiBridge::cmdMoveSquadLeft( unsigned int id ) { Global::eventConnector->aggregatorMilitary()->onMoveSquadLeft( id ); }
 void ImGuiBridge::cmdMoveSquadRight( unsigned int id ) { Global::eventConnector->aggregatorMilitary()->onMoveSquadRight( id ); }
 void ImGuiBridge::cmdRemoveGnomeFromSquad( unsigned int id ) { Global::eventConnector->aggregatorMilitary()->onRemoveGnomeFromSquad( id ); }
+void ImGuiBridge::cmdAddGnomeToSquad( unsigned int gnomeID, unsigned int squadID ) { Global::eventConnector->aggregatorMilitary()->onAddGnomeToSquad( gnomeID, squadID ); }
 void ImGuiBridge::cmdMoveGnomeLeft( unsigned int id ) { Global::eventConnector->aggregatorMilitary()->onMoveGnomeLeft( id ); }
 void ImGuiBridge::cmdMoveGnomeRight( unsigned int id ) { Global::eventConnector->aggregatorMilitary()->onMoveGnomeRight( id ); }
 void ImGuiBridge::cmdSetRole( unsigned int gid, const QString& role ) { Global::eventConnector->aggregatorMilitary()->onSetRole( gid, role.toUInt() ); }

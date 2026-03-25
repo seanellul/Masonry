@@ -28,8 +28,13 @@ struct GuiSquadGnome
 {
 	unsigned int id = 0;
 	QString name;
-
 	unsigned int roleID = 0;
+
+	// Combat stats for display
+	int meleeSkill = 0;
+	int dodgeSkill = 0;
+	int armorSkill = 0;
+	QString weapon;   // equipped weapon name or "Unarmed"
 };
 Q_DECLARE_METATYPE( GuiSquadGnome )
 
@@ -117,6 +122,7 @@ public slots:
 	void onMoveSquadLeft( unsigned int id );
 	void onMoveSquadRight( unsigned int id );
 	void onRemoveGnomeFromSquad( unsigned int gnomeID );
+	void onAddGnomeToSquad( unsigned int gnomeID, unsigned int squadID );
 	void onMoveGnomeLeft( unsigned int id );
 	void onMoveGnomeRight( unsigned int id );
 

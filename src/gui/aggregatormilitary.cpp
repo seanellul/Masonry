@@ -80,6 +80,21 @@ void AggregatorMilitary::sendSquadUpdate()
 			gsg.name = g->gm()->name( gnomeID );
 			gsg.roleID = g->gm()->roleID( gnomeID );
 
+			// Combat stats
+			Gnome* gnome = g->gm()->gnome( gnomeID );
+			if ( gnome )
+			{
+				gsg.meleeSkill = gnome->getSkillLevel( "Melee" );
+				gsg.dodgeSkill = gnome->getSkillLevel( "Dodge" );
+				gsg.armorSkill = gnome->getSkillLevel( "Armor" );
+
+				auto eq = gnome->equipment();
+				if ( eq.rightHandHeld.itemID )
+					gsg.weapon = S::s( "$ItemName_" + eq.rightHandHeld.item );
+				else
+					gsg.weapon = "Unarmed";
+			}
+
 			gs.gnomes.append( gsg );
 		}
 		m_squads.append( gs );
@@ -216,6 +231,21 @@ void AggregatorMilitary::onRemoveGnomeFromSquad( unsigned int gnomeID )
 	}
 }
 	
+void AggregatorMilitary::onAddGnomeToSquad( unsigned int gnomeID, unsigned int squadID )
+{
+	if( !g ) return;
+	// Remove from any current squad
+	g->mil()->removeGnome( gnomeID );
+	// Add to target squad
+	auto squad = g->mil()->squad( squadID );
+	if ( squad )
+	{
+		squad->gnomes.append( gnomeID );
+		g->mil()->updateGnome( gnomeID );
+	}
+	sendSquadUpdate();
+}
+
 void AggregatorMilitary::onMoveGnomeLeft( unsigned int gnomeID )
 {
 	if( !g ) return;

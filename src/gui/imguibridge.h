@@ -19,6 +19,8 @@
 
 #include <QObject>
 
+class UpdateChecker;
+
 class ImGuiBridge : public QObject
 {
 	Q_OBJECT
@@ -70,7 +72,8 @@ public:
 		LogType severity;
 		quint64 createdTick = 0;
 		float alpha         = 1.0f;
-		unsigned int entityID = 0; // creature/item ID for future use
+		unsigned int entityID = 0;
+		Position eventPosition;  // stored at log time — works even after entity dies
 		bool dismissed = false;
 	};
 	QList<ToastNotification> activeToasts;
@@ -81,6 +84,10 @@ public:
 	bool pendingCameraNav = false;
 	Position cameraNavTarget;
 	void cmdNavigateToEntity( unsigned int entityID );
+	void cmdNavigateToPosition( Position pos );
+
+	// Update checker
+	UpdateChecker* updateChecker = nullptr;
 
 	bool showDebugPanel = false;
 
@@ -313,6 +320,7 @@ public:
 	void cmdMoveSquadLeft( unsigned int id );
 	void cmdMoveSquadRight( unsigned int id );
 	void cmdRemoveGnomeFromSquad( unsigned int id );
+	void cmdAddGnomeToSquad( unsigned int gnomeID, unsigned int squadID );
 	void cmdMoveGnomeLeft( unsigned int id );
 	void cmdMoveGnomeRight( unsigned int id );
 	void cmdSetRole( unsigned int gnomeID, const QString& role );
