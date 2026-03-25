@@ -395,6 +395,46 @@ void drawPopulationPanel( ImGuiBridge& bridge )
 			ImGui::EndTabItem();
 		}
 
+		if ( ImGui::BeginTabItem( "Social" ) )
+		{
+			for ( const auto& gnome : bridge.populationInfo.gnomes )
+			{
+				if ( gnome.relationships.isEmpty() ) continue;
+
+				if ( ImGui::TreeNode( gnome.name.toStdString().c_str() ) )
+				{
+					for ( const auto& rel : gnome.relationships )
+					{
+						// Color: green for positive, red for negative, yellow for neutral
+						ImVec4 color;
+						if ( rel.opinion > 20 )
+							color = ImVec4( 0.2f, 0.7f, 0.3f, 1.0f );
+						else if ( rel.opinion < -20 )
+							color = ImVec4( 0.8f, 0.2f, 0.2f, 1.0f );
+						else
+							color = ImVec4( 0.7f, 0.7f, 0.3f, 1.0f );
+
+						ImGui::TextColored( color, "%s", rel.label.toStdString().c_str() );
+						ImGui::SameLine();
+						ImGui::Text( " %s (%+d)", rel.name.toStdString().c_str(), rel.opinion );
+					}
+					ImGui::TreePop();
+					ImGui::Separator();
+				}
+			}
+
+			bool anyRelationships = false;
+			for ( const auto& gnome : bridge.populationInfo.gnomes )
+			{
+				if ( !gnome.relationships.isEmpty() ) { anyRelationships = true; break; }
+			}
+			if ( !anyRelationships )
+			{
+				ImGui::TextDisabled( "No relationships yet — gnomes develop opinions over time" );
+			}
+			ImGui::EndTabItem();
+		}
+
 		if ( ImGui::BeginTabItem( "Professions" ) )
 		{
 			if ( bridge.professionList.isEmpty() )

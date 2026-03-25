@@ -47,6 +47,12 @@ private:
 
 	int m_startIndex = 0;
 
+	// Social system (Milestone 2.0b)
+	// Opinion scores: m_opinions[gnomeA_id][gnomeB_id] = opinion (-100 to +100)
+	QHash<unsigned int, QHash<unsigned int, int>> m_opinions;
+	void processSocialInteractions( quint64 tickNumber );
+	int traitCompatibility( Gnome* a, Gnome* b ) const;
+
 public:
 	GnomeManager( Game* parent );
 	~GnomeManager();
@@ -111,6 +117,12 @@ public:
 	void setRoleID( unsigned int gnomeID, unsigned int roleID );
 
 	int numGnomes();
+
+	// Social system accessors
+	int opinion( unsigned int gnomeA, unsigned int gnomeB ) const;
+	void modifyOpinion( unsigned int gnomeA, unsigned int gnomeB, int delta );
+	QString relationshipLabel( unsigned int gnomeA, unsigned int gnomeB ) const;
+	QHash<unsigned int, int> opinionsOf( unsigned int gnomeID ) const;
 
 private:
 	void getRefuelJob( Automaton* a );

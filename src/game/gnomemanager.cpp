@@ -153,6 +153,9 @@ void GnomeManager::onTick( quint64 tickNumber, bool seasonChanged, bool dayChang
 	//create possible automaton jobs;
 	createJobs();
 
+	// Process social interactions between nearby gnomes
+	processSocialInteractions( tickNumber );
+
 	if ( m_startIndex >= m_gnomes.size() )
 	{
 		m_startIndex = 0;
@@ -628,4 +631,153 @@ void GnomeManager::setRoleID( unsigned int gnomeID, unsigned int roleID )
 int GnomeManager::numGnomes()
 {
 	return m_gnomes.size();
+}
+
+// =============================================================================
+// Social System (Milestone 2.0b)
+// =============================================================================
+
+int GnomeManager::opinion( unsigned int gnomeA, unsigned int gnomeB ) const
+{
+	if ( m_opinions.contains( gnomeA ) && m_opinions[gnomeA].contains( gnomeB ) )
+	{
+		return m_opinions[gnomeA][gnomeB];
+	}
+	return 0;
+}
+
+void GnomeManager::modifyOpinion( unsigned int gnomeA, unsigned int gnomeB, int delta )
+{
+	int current = opinion( gnomeA, gnomeB );
+	m_opinions[gnomeA][gnomeB] = qBound( -100, current + delta, 100 );
+}
+
+QString GnomeManager::relationshipLabel( unsigned int gnomeA, unsigned int gnomeB ) const
+{
+	int op = opinion( gnomeA, gnomeB );
+	if ( op < -30 ) return "Rival";
+	if ( op < -10 ) return "Disliked";
+	if ( op < 10 ) return "Neutral";
+	if ( op < 30 ) return "Friendly";
+	return "Close Friend";
+}
+
+QHash<unsigned int, int> GnomeManager::opinionsOf( unsigned int gnomeID ) const
+{
+	if ( m_opinions.contains( gnomeID ) )
+	{
+		return m_opinions[gnomeID];
+	}
+	return QHash<unsigned int, int>();
+}
+
+int GnomeManager::traitCompatibility( Gnome* a, Gnome* b ) const
+{
+	// Compare trait values: similar traits → positive compatibility, divergent → negative
+	// Returns a score from roughly -100 to +100
+	int score = 0;
+	int count = 0;
+	for ( auto it = a->traits().constBegin(); it != a->traits().constEnd(); ++it )
+	{
+		int valA = it.value().toInt();
+		int valB = b->trait( it.key() );
+		int diff = abs( valA - valB );
+		// Similar traits (diff < 20) add positive, divergent (diff > 60) add negative
+		if ( diff < 20 )
+			score += 2;
+		else if ( diff > 60 )
+			score -= 3;
+		count++;
+	}
+	if ( count == 0 ) return 0;
+	return qBound( -100, score * 100 / ( count * 3 ), 100 );
+}
+
+void GnomeManager::processSocialInteractions( quint64 tickNumber )
+{
+	// Only process social interactions every 10 ticks to keep cost low
+	if ( tickNumber % 10 != 0 ) return;
+	if ( m_gnomes.size() < 2 ) return;
+
+	// Group gnomes by position (same tile = same room/area, close enough for interaction)
+	// Use a simple proximity check: gnomes within 3 tiles of each other can interact
+	for ( int i = 0; i < m_gnomes.size(); ++i )
+	{
+		Gnome* a = m_gnomes[i];
+		if ( a->isDead() ) continue;
+
+		for ( int j = i + 1; j < m_gnomes.size(); ++j )
+		{
+			Gnome* b = m_gnomes[j];
+			if ( b->isDead() ) continue;
+
+			// Check proximity (within 5 tiles Manhattan distance)
+			Position posA = a->getPos();
+			Position posB = b->getPos();
+			int dist = abs( posA.x - posB.x ) + abs( posA.y - posB.y ) + abs( posA.z - posB.z );
+			if ( dist > 5 ) continue;
+
+			// Random chance of interaction (low probability keeps it from being spammy)
+			if ( rand() % 100 > 15 ) continue; // 15% chance per eligible pair per check
+
+			// Determine interaction type based on trait compatibility
+			int compat = traitCompatibility( a, b );
+			int currentOp = opinion( a->id(), b->id() );
+			int roll = rand() % 100;
+
+			if ( compat > 20 || currentOp > 20 )
+			{
+				// Positive interaction likely
+				if ( roll < 60 )
+				{
+					// Chat: +1 opinion both ways
+					modifyOpinion( a->id(), b->id(), 1 );
+					modifyOpinion( b->id(), a->id(), 1 );
+				}
+				else if ( roll < 85 && currentOp > 20 )
+				{
+					// Deep conversation: +8 opinion (requires existing friendship)
+					modifyOpinion( a->id(), b->id(), 8 );
+					modifyOpinion( b->id(), a->id(), 8 );
+				}
+				else
+				{
+					// Compliment: +5 opinion, needs high Empathy or Sociability
+					int empA = a->trait( "Empathy" );
+					int socA = a->trait( "Sociability" );
+					if ( empA > 10 || socA > 10 )
+					{
+						modifyOpinion( a->id(), b->id(), 5 );
+						modifyOpinion( b->id(), a->id(), 3 );
+					}
+				}
+			}
+			else if ( compat < -20 || currentOp < -20 )
+			{
+				// Negative interaction likely
+				if ( roll < 50 )
+				{
+					// Argument: -8 opinion both ways
+					modifyOpinion( a->id(), b->id(), -8 );
+					modifyOpinion( b->id(), a->id(), -8 );
+				}
+				else
+				{
+					// Insult: -12 opinion for target, -4 for initiator
+					int tempA = a->trait( "Temper" );
+					if ( tempA > 10 || roll < 70 )
+					{
+						modifyOpinion( a->id(), b->id(), -4 );
+						modifyOpinion( b->id(), a->id(), -12 );
+					}
+				}
+			}
+			else
+			{
+				// Neutral interaction — small positive (chat)
+				modifyOpinion( a->id(), b->id(), 1 );
+				modifyOpinion( b->id(), a->id(), 1 );
+			}
+		}
+	}
 }

@@ -6,6 +6,60 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-25] Milestone 2.0b — Social System
+
+**Milestone**: 2.0b — Gnome Depth
+**Files changed**: `src/game/gnomemanager.h`, `src/game/gnomemanager.cpp`, `src/gui/aggregatorpopulation.h`, `src/gui/aggregatorpopulation.cpp`, `src/gui/ui/ui_sidepanels.cpp`
+
+### Changes
+
+- **Opinion system** — each gnome pair has an opinion score (-100 to +100) stored in `GnomeManager::m_opinions`
+- **Social interactions** — gnomes within 5 tiles interact every 10 ticks (15% chance per pair). Interaction type determined by trait compatibility and current opinion: Chat (+1), Deep Conversation (+8), Compliment (+5), Argument (-8), Insult (-12)
+- **Trait compatibility** — calculated from similarity of trait values across all 12 traits. Similar profiles → friendship, divergent → rivalry
+- **Relationship labels** at thresholds: Rival (<-30), Disliked (-30 to -10), Neutral (-10 to +10), Friendly (+10 to +30), Close Friend (>+30)
+- **Social tab** in Population panel — shows all non-neutral relationships color-coded (green=positive, red=negative, yellow=neutral)
+
+### Technical Details
+- `processSocialInteractions()` runs in `GnomeManager::onTick`, guarded by `tickNumber % 10`
+- O(gnomes²) but only for proximity-checked pairs within 5 tiles — negligible with <100 gnomes
+- Opinions not yet serialized to save files — will be added when mood system (2.1) needs persistent relationships
+
+---
+
+## [2026-03-25] Milestone 1.3 — Workshop Production Limits
+
+**Milestone**: 1.3 — Workshop Production Limits
+**Files changed**: `src/game/workshop.h`, `src/game/workshop.cpp`
+
+### Changes
+- **Added CraftUntilStock mode** — New `CraftMode::CraftUntilStock` alongside existing CraftNumber/CraftTo/Repeat. Checks free item count in stockpile (via `Inventory::itemCount()`) rather than items-including-in-job (CraftTo's behavior). When stockpile count >= target, craft job auto-pauses.
+- **Serialization** — New mode persists as "CraftUntilStock" in save files, backward-compatible with old saves.
+
+### Technical Details
+- CraftTo uses `itemCountWithInJob()` (counts items claimed by jobs), CraftUntilStock uses `itemCount()` (only free items) — this means CraftUntilStock won't over-produce when multiple jobs are in-flight
+- Both modes share the same pause/resume logic in the workshop tick loop
+- `Inventory::itemCount()` is now cached from Milestone 0.3 work, so this check is O(1)
+
+---
+
+## [2026-03-25] Milestone 1.4 — HUD & UI Improvements
+
+**Milestone**: 1.4 — HUD & UI Improvements
+**Files changed**: `src/gui/ui/ui_gamehud.cpp`, `src/gui/imguibridge.h`, `src/gui/imguibridge.cpp`, `src/game/game.cpp`, `src/game/inventory.h`, `src/gui/mainwindow.cpp`
+
+### Changes
+- **Resource bar** — New horizontal bar above toolbar showing Food, Drink, Gnomes, Items counts. Food/drink color-coded: green >50, yellow 10-50, red <10.
+- **Food/drink counters** — Game emits food and drink item counts via kingdom info signal. `Inventory::foodItemCount()` and `drinkItemCount()` methods added.
+- **Z-level keyboard shortcuts** — Page Up/Page Down now change Z-level (previously only scroll wheel worked). Addresses accessibility request from trackpad users.
+- **Kingdom info updated** — Info bar now shows "Food: N | Drink: N" instead of "Animals: N" for more useful at-a-glance data.
+
+### Technical Details
+- Resource bar rendered at `io.DisplaySize.y - 50 - 24` (just above toolbar)
+- `onKingdomInfo` parses "Food: N | Drink: N" from i2 string by splitting on '|'
+- Page Up/Down mapped in `keyPressEvent` switch to `keyboardZPlus`/`keyboardZMinus`
+
+---
+
 ## [2026-03-25] Milestone 2.0 — Character Traits & Backstories
 
 **Milestone**: 2.0 — Gnome Depth

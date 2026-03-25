@@ -53,6 +53,15 @@ struct GuiBackstoryInfo
 };
 Q_DECLARE_METATYPE( GuiBackstoryInfo )
 
+struct GuiRelationshipInfo
+{
+	QString name;
+	unsigned int id;
+	int opinion;
+	QString label;  // "Rival", "Friendly", "Close Friend", etc.
+};
+Q_DECLARE_METATYPE( GuiRelationshipInfo )
+
 struct GuiGnomeInfo
 {
 	QString name;
@@ -62,6 +71,7 @@ struct GuiGnomeInfo
 	QList<GuiTraitInfo> traits;
 	GuiBackstoryInfo childhood;
 	GuiBackstoryInfo adulthood;
+	QList<GuiRelationshipInfo> relationships;
 };
 Q_DECLARE_METATYPE( GuiGnomeInfo )
 

@@ -126,17 +126,17 @@ Biggest source of frustration across all suggestions.
 - [ ] Copy/paste stockpile settings between stockpiles (clarify UX)
 - [ ] Drag-and-drop stockpile priority ordering
 
-### 1.3 — Workshop Production Limits (#48)
+### 1.3 — Workshop Production Limits (#48) (DONE)
 `craft-to` mode was added in v0.4.0 ("jobs suspend when number reached") and workshop assignment was added in v0.6.1. But the community still wanted "craft until N **in stockpile**" which is different from "craft N total."
 
-- [ ] Add "craft until N in stockpile" mode — check Inventory count before starting repeat, not just count crafted
+- [x] Add "craft until N in stockpile" mode — CraftUntilStock checks free item count, auto-pauses when target met
 - [x] ~~Assign gnomes to workshops~~ — done in v0.6.1
 
-### 1.4 — HUD & UI Improvements (#1, #2, #12, #14)
-- [ ] Stock counters on main HUD (food/drink/materials count) — like Gnomoria
-- [ ] Battle recap screen after combat (8⭐ — injuries, deaths, equipment summary)
+### 1.4 — HUD & UI Improvements (#1, #2, #12, #14) (PARTIAL)
+- [x] Stock counters on main HUD — resource bar with food/drink/gnomes/items, color-coded
+- [ ] Battle recap screen after combat (8⭐ — deferred to Milestone 3.1 combat work)
 - [ ] Gnome job counter next to name in population list
-- [ ] Z-level keyboard shortcut (not just scroll wheel)
+- [x] Z-level keyboard shortcut — Page Up/Page Down mapped
 
 ---
 
@@ -157,15 +157,16 @@ Foundation for all personality-driven systems. Must be implemented BEFORE mood (
 - [x] Gnome info panel shows traits + backstory (Personality tab in Population panel)
 - [x] Traits visible as plain-language descriptions (not raw numbers)
 
-### 2.0b — Social System (NEW)
+### 2.0b — Social System (DONE)
 Relationships between gnomes — the engine for emergent stories. Depends on traits (2.0) for compatibility calculations.
 
-- [ ] Opinion score per gnome pair (-100 to +100) stored in `GnomeManager` or new `SocialManager`
-- [ ] Social interactions during idle time in shared rooms (Chat +1, Deep Talk +8, Argument -8, Insult -12, Compliment +5)
-- [ ] Trait compatibility drives interaction outcomes (similar traits → friendship, divergent → rivalry)
-- [ ] Relationship labels at thresholds (Rival, Disliked, Neutral, Friendly, Close Friend)
-- [ ] Social mood thoughts: Close Friend nearby +3, Rival nearby -2, Friend died -8, Insulted -3
-- [ ] Dining hall as social hub (bonus interaction chances when eating together)
+- [x] Opinion score per gnome pair (-100 to +100) stored in `GnomeManager`
+- [x] Social interactions when gnomes are within 5 tiles (Chat +1, Deep Talk +8, Argument -8, Insult -12, Compliment +5)
+- [x] Trait compatibility drives interaction outcomes (similar traits → friendship, divergent → rivalry)
+- [x] Relationship labels at thresholds (Rival, Disliked, Neutral, Friendly, Close Friend)
+- [ ] Social mood thoughts: Close Friend nearby +3, Rival nearby -2, Friend died -8, Insulted -3 (deferred to 2.1 Mood)
+- [ ] Dining hall as social hub (bonus interaction chances when eating together) (deferred)
+- [x] Social tab in Population panel showing relationships color-coded
 
 ### 2.1 — Happiness/Mood System (#17, #89, #91)
 The needs map exists (`creature.h:m_needs`) with Hunger/Thirst/Sleep. Automatons explicitly remove "Happiness" — so the slot exists but is unused. Depends on traits (2.0) and social (2.0b) for full effect.

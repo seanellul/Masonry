@@ -118,6 +118,22 @@ void AggregatorPopulation::onRequestPopulationUpdate()
 				ggi.adulthood.description = row.value( "Description" ).toString();
 			}
 
+			// Populate relationships (only non-neutral ones)
+			auto opinions = g->gm()->opinionsOf( gnome->id() );
+			for ( auto it = opinions.constBegin(); it != opinions.constEnd(); ++it )
+			{
+				int op = it.value();
+				if ( abs( op ) < 5 ) continue; // skip negligible opinions
+				GuiRelationshipInfo gri;
+				gri.id = it.key();
+				gri.opinion = op;
+				gri.label = g->gm()->relationshipLabel( gnome->id(), it.key() );
+				// Look up name
+				Gnome* other = g->gm()->gnome( it.key() );
+				gri.name = other ? other->name() : "Unknown";
+				ggi.relationships.append( gri );
+			}
+
 			m_populationInfo.gnomes.append( ggi );
 		}
 	}
