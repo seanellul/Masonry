@@ -1,0 +1,2196 @@
+[
+    {
+        "Anatomy": {
+            "Aquatic": false,
+            "Bleeding": 0,
+            "Blood": 5000,
+            "Parts": [
+                {
+                    "HP": 30,
+                    "ID": 4
+                },
+                {
+                    "HP": 15,
+                    "ID": 5
+                },
+                {
+                    "HP": 1,
+                    "ID": 20
+                },
+                {
+                    "HP": 15,
+                    "ID": 6
+                },
+                {
+                    "HP": 1,
+                    "ID": 21
+                },
+                {
+                    "HP": 1,
+                    "ID": 22
+                },
+                {
+                    "HP": 0,
+                    "ID": 0
+                },
+                {
+                    "HP": 50,
+                    "ID": 1
+                },
+                {
+                    "HP": 20,
+                    "ID": 16
+                },
+                {
+                    "HP": 50,
+                    "ID": 2
+                },
+                {
+                    "HP": 1,
+                    "ID": 17
+                },
+                {
+                    "HP": 1,
+                    "ID": 18
+                },
+                {
+                    "HP": 30,
+                    "ID": 3
+                },
+                {
+                    "HP": 1,
+                    "ID": 19
+                },
+                {
+                    "HP": 40,
+                    "ID": 13
+                },
+                {
+                    "HP": 40,
+                    "ID": 14
+                },
+                {
+                    "HP": 20,
+                    "ID": 15
+                }
+            ],
+            "Status": 0,
+            "Type": "Humanoid"
+        },
+        "Animal": 0,
+        "AssignedWorkshop": 0,
+        "Attributes": {
+            "Cha": 1,
+            "Con": 7,
+            "Dex": 9,
+            "Int": 10,
+            "Str": 8,
+            "Wis": 10
+        },
+        "BTBlackBoard": {
+            "JobType": "DigStairsDown"
+        },
+        "BTName": "",
+        "BehaviorTreeState": {
+            "Childs": [
+                {
+                    "Childs": [
+                        {
+                            "Childs": [
+                            ],
+                            "ID": 0,
+                            "Name": "Alarm",
+                            "Status": 0
+                        },
+                        {
+                            "Childs": [
+                            ],
+                            "ID": 0,
+                            "Name": "IsCivilian",
+                            "Status": 3
+                        },
+                        {
+                            "Childs": [
+                            ],
+                            "ID": 0,
+                            "Name": "AbortJob",
+                            "Status": 3
+                        },
+                        {
+                            "Childs": [
+                                {
+                                    "Childs": [
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "IsInSafeRoom",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "RandomMove",
+                                            "Status": 3
+                                        }
+                                    ],
+                                    "ID": 0,
+                                    "Name": "",
+                                    "Status": 3
+                                },
+                                {
+                                    "Childs": [
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "GetSafeRoomPosition",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "Move",
+                                            "Status": 3
+                                        }
+                                    ],
+                                    "ID": 0,
+                                    "Name": "",
+                                    "Status": 3
+                                }
+                            ],
+                            "ID": 0,
+                            "Name": "",
+                            "Status": 3
+                        }
+                    ],
+                    "ID": 0,
+                    "Name": "",
+                    "Status": 2
+                },
+                {
+                    "Childs": [
+                        {
+                            "Childs": [
+                                {
+                                    "Childs": [
+                                    ],
+                                    "ID": 0,
+                                    "Name": "IsInCombat",
+                                    "Status": 0
+                                },
+                                {
+                                    "Childs": [
+                                    ],
+                                    "ID": 0,
+                                    "Name": "HasHuntTarget",
+                                    "Status": 0
+                                }
+                            ],
+                            "ID": 0,
+                            "Name": "",
+                            "Status": 2
+                        },
+                        {
+                            "Childs": [
+                            ],
+                            "ID": 0,
+                            "Name": "AbortJob",
+                            "Status": 3
+                        },
+                        {
+                            "Childs": [
+                                {
+                                    "Childs": [
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "GetTarget",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "Move",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                                {
+                                                    "Childs": [
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "TargetAdjacent",
+                                                    "Status": 3
+                                                },
+                                                {
+                                                    "Childs": [
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "AttackTarget",
+                                                    "Status": 3
+                                                }
+                                            ],
+                                            "ID": 0,
+                                            "Name": "",
+                                            "Status": 3
+                                        }
+                                    ],
+                                    "ID": 0,
+                                    "Name": "",
+                                    "Status": 3
+                                }
+                            ],
+                            "ID": 0,
+                            "Name": "ForceSuccess",
+                            "Status": 3
+                        },
+                        {
+                            "Childs": [
+                            ],
+                            "ID": 0,
+                            "Name": "IsInCombat",
+                            "Status": 3
+                        }
+                    ],
+                    "ID": 0,
+                    "Name": "",
+                    "Status": 2
+                },
+                {
+                    "Childs": [
+                        {
+                            "Childs": [
+                            ],
+                            "ID": 0,
+                            "Name": "IsOnMission",
+                            "Status": 0
+                        },
+                        {
+                            "Childs": [
+                            ],
+                            "ID": 0,
+                            "Name": "AbortJob",
+                            "Status": 3
+                        },
+                        {
+                            "Childs": [
+                            ],
+                            "ID": 0,
+                            "Name": "GetExitPosition",
+                            "Status": 3
+                        },
+                        {
+                            "Childs": [
+                            ],
+                            "ID": 0,
+                            "Name": "Move",
+                            "Status": 3
+                        },
+                        {
+                            "Childs": [
+                            ],
+                            "ID": 0,
+                            "Name": "LeaveForMission",
+                            "Status": 3
+                        },
+                        {
+                            "Childs": [
+                            ],
+                            "ID": 0,
+                            "Name": "DoMission",
+                            "Status": 3
+                        },
+                        {
+                            "Childs": [
+                            ],
+                            "ID": 0,
+                            "Name": "ReturnFromMission",
+                            "Status": 3
+                        }
+                    ],
+                    "ID": 0,
+                    "Name": "",
+                    "Status": 2
+                },
+                {
+                    "Childs": [
+                        {
+                            "Childs": [
+                                {
+                                    "Childs": [
+                                    ],
+                                    "ID": 0,
+                                    "Name": "IsHungry",
+                                    "Status": 0
+                                },
+                                {
+                                    "Childs": [
+                                        {
+                                            "Childs": [
+                                                {
+                                                    "Childs": [
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "FindFood",
+                                                    "Status": 3
+                                                },
+                                                {
+                                                    "Childs": [
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "Move",
+                                                    "Status": 3
+                                                },
+                                                {
+                                                    "Childs": [
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "PickUpItem",
+                                                    "Status": 3
+                                                },
+                                                {
+                                                    "Childs": [
+                                                        {
+                                                            "Childs": [
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "FindDining",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "Move",
+                                                                    "Status": 3
+                                                                }
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "",
+                                                            "Status": 3
+                                                        }
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "ForceSuccess",
+                                                    "Status": 3
+                                                },
+                                                {
+                                                    "Childs": [
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "Eat",
+                                                    "Status": 3
+                                                }
+                                            ],
+                                            "ID": 0,
+                                            "Name": "Hunger",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "IsFull",
+                                            "Status": 3
+                                        }
+                                    ],
+                                    "ID": 0,
+                                    "Name": "",
+                                    "Status": 3
+                                }
+                            ],
+                            "ID": 0,
+                            "Name": "",
+                            "Status": 2
+                        },
+                        {
+                            "Childs": [
+                                {
+                                    "Childs": [
+                                    ],
+                                    "ID": 0,
+                                    "Name": "IsThirsty",
+                                    "Status": 0
+                                },
+                                {
+                                    "Childs": [
+                                        {
+                                            "Childs": [
+                                                {
+                                                    "Childs": [
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "FindDrink",
+                                                    "Status": 3
+                                                },
+                                                {
+                                                    "Childs": [
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "Move",
+                                                    "Status": 3
+                                                },
+                                                {
+                                                    "Childs": [
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "PickUpItem",
+                                                    "Status": 3
+                                                },
+                                                {
+                                                    "Childs": [
+                                                        {
+                                                            "Childs": [
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "FindDining",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "Move",
+                                                                    "Status": 3
+                                                                }
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "",
+                                                            "Status": 3
+                                                        }
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "ForceSuccess",
+                                                    "Status": 3
+                                                },
+                                                {
+                                                    "Childs": [
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "Drink",
+                                                    "Status": 3
+                                                }
+                                            ],
+                                            "ID": 0,
+                                            "Name": "Thirst",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "IsDrinkFull",
+                                            "Status": 3
+                                        }
+                                    ],
+                                    "ID": 0,
+                                    "Name": "",
+                                    "Status": 3
+                                }
+                            ],
+                            "ID": 0,
+                            "Name": "",
+                            "Status": 2
+                        },
+                        {
+                            "Childs": [
+                                {
+                                    "Childs": [
+                                    ],
+                                    "ID": 0,
+                                    "Name": "IsSleepy",
+                                    "Status": 0
+                                },
+                                {
+                                    "Childs": [
+                                        {
+                                            "Childs": [
+                                                {
+                                                    "Childs": [
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "FindBed",
+                                                    "Status": 3
+                                                },
+                                                {
+                                                    "Childs": [
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "Move",
+                                                    "Status": 3
+                                                }
+                                            ],
+                                            "ID": 0,
+                                            "Name": "",
+                                            "Status": 3
+                                        }
+                                    ],
+                                    "ID": 0,
+                                    "Name": "ForceSuccess",
+                                    "Status": 3
+                                },
+                                {
+                                    "Childs": [
+                                    ],
+                                    "ID": 0,
+                                    "Name": "Sleep",
+                                    "Status": 3
+                                }
+                            ],
+                            "ID": 0,
+                            "Name": "Sleep",
+                            "Status": 2
+                        }
+                    ],
+                    "ID": 0,
+                    "Name": "Needs",
+                    "Status": 2
+                },
+                {
+                    "Childs": [
+                        {
+                            "Childs": [
+                                {
+                                    "Childs": [
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "CheckBandages",
+                                            "Status": 0
+                                        },
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "Move",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "PickUpItem",
+                                            "Status": 3
+                                        }
+                                    ],
+                                    "ID": 0,
+                                    "Name": "",
+                                    "Status": 2
+                                },
+                                {
+                                    "Childs": [
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "IsTrainingTime",
+                                            "Status": 0
+                                        },
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "FindTrainingGround",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "Move",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "Train",
+                                            "Status": 3
+                                        }
+                                    ],
+                                    "ID": 0,
+                                    "Name": "Training",
+                                    "Status": 2
+                                },
+                                {
+                                    "Childs": [
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "IsTrainer",
+                                            "Status": 0
+                                        },
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "FindTrainerPosition",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "Move",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "SuperviseTraining",
+                                            "Status": 3
+                                        }
+                                    ],
+                                    "ID": 0,
+                                    "Name": "Trainer",
+                                    "Status": 2
+                                }
+                            ],
+                            "ID": 0,
+                            "Name": "",
+                            "Status": 2
+                        },
+                        {
+                            "Childs": [
+                                {
+                                    "Childs": [
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "CheckUniform",
+                                            "Status": 0
+                                        },
+                                        {
+                                            "Childs": [
+                                            ],
+                                            "ID": 0,
+                                            "Name": "GetJob",
+                                            "Status": 1
+                                        }
+                                    ],
+                                    "ID": 0,
+                                    "Name": "",
+                                    "Status": 2
+                                },
+                                {
+                                    "Childs": [
+                                        {
+                                            "Childs": [
+                                                {
+                                                    "Childs": [
+                                                        {
+                                                            "Childs": [
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "InitAnimalJob",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "Move",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "GrabAnimal",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "GetItemDropPosition",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "Move",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "FinalMoveAnimal",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "ButcherAnimal",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "FinishJob",
+                                                                    "Status": 3
+                                                                }
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "",
+                                                            "Status": 3
+                                                        },
+                                                        {
+                                                            "Childs": [
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "AbortJob",
+                                                            "Status": 3
+                                                        }
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "",
+                                                    "Status": 3
+                                                }
+                                            ],
+                                            "ID": 0,
+                                            "Name": "",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                                {
+                                                    "Childs": [
+                                                        {
+                                                            "Childs": [
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "InitJob",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "ClaimItems",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                        {
+                                                                            "Childs": [
+                                                                                {
+                                                                                    "Childs": [
+                                                                                        {
+                                                                                            "Childs": [
+                                                                                                {
+                                                                                                    "Childs": [
+                                                                                                    ],
+                                                                                                    "ID": 0,
+                                                                                                    "Name": "AllItemsInPlaceForJob",
+                                                                                                    "Status": 3
+                                                                                                }
+                                                                                            ],
+                                                                                            "ID": 0,
+                                                                                            "Name": "",
+                                                                                            "Status": 3
+                                                                                        },
+                                                                                        {
+                                                                                            "Childs": [
+                                                                                                {
+                                                                                                    "Childs": [
+                                                                                                    ],
+                                                                                                    "ID": 0,
+                                                                                                    "Name": "Move",
+                                                                                                    "Status": 3
+                                                                                                },
+                                                                                                {
+                                                                                                    "Childs": [
+                                                                                                    ],
+                                                                                                    "ID": 0,
+                                                                                                    "Name": "PickUpItem",
+                                                                                                    "Status": 3
+                                                                                                },
+                                                                                                {
+                                                                                                    "Childs": [
+                                                                                                    ],
+                                                                                                    "ID": 0,
+                                                                                                    "Name": "GetItemDropPosition",
+                                                                                                    "Status": 3
+                                                                                                },
+                                                                                                {
+                                                                                                    "Childs": [
+                                                                                                    ],
+                                                                                                    "ID": 0,
+                                                                                                    "Name": "Move",
+                                                                                                    "Status": 3
+                                                                                                },
+                                                                                                {
+                                                                                                    "Childs": [
+                                                                                                    ],
+                                                                                                    "ID": 0,
+                                                                                                    "Name": "DropItem",
+                                                                                                    "Status": 3
+                                                                                                }
+                                                                                            ],
+                                                                                            "ID": 0,
+                                                                                            "Name": "",
+                                                                                            "Status": 3
+                                                                                        },
+                                                                                        {
+                                                                                            "Childs": [
+                                                                                            ],
+                                                                                            "ID": 0,
+                                                                                            "Name": "ReturnAlwaysRunning",
+                                                                                            "Status": 3
+                                                                                        }
+                                                                                    ],
+                                                                                    "ID": 0,
+                                                                                    "Name": "",
+                                                                                    "Status": 3
+                                                                                }
+                                                                            ],
+                                                                            "ID": 0,
+                                                                            "Name": "",
+                                                                            "Status": 3
+                                                                        },
+                                                                        {
+                                                                            "Childs": [
+                                                                            ],
+                                                                            "ID": 0,
+                                                                            "Name": "AllItemsInPlaceForJob",
+                                                                            "Status": 3
+                                                                        }
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "InitAnimalJob",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "Move",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "GrabAnimal",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "GetItemDropPosition",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "Move",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "FinalMoveAnimal",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "DyeAnimal",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "FinishJob",
+                                                                    "Status": 3
+                                                                }
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "",
+                                                            "Status": 3
+                                                        },
+                                                        {
+                                                            "Childs": [
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "AbortJob",
+                                                            "Status": 3
+                                                        }
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "",
+                                                    "Status": 3
+                                                }
+                                            ],
+                                            "ID": 0,
+                                            "Name": "",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                                {
+                                                    "Childs": [
+                                                        {
+                                                            "Childs": [
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "InitAnimalJob",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "Move",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "GrabAnimal",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "GetItemDropPosition",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "Move",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "FinalMoveAnimal",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "ReleaseAnimal",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "FinishJob",
+                                                                    "Status": 3
+                                                                }
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "",
+                                                            "Status": 3
+                                                        },
+                                                        {
+                                                            "Childs": [
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "AbortJob",
+                                                            "Status": 3
+                                                        }
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "",
+                                                    "Status": 3
+                                                }
+                                            ],
+                                            "ID": 0,
+                                            "Name": "",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                                {
+                                                    "Childs": [
+                                                        {
+                                                            "Childs": [
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "InitAnimalJob",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "Move",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "GrabAnimal",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "HarvestAnimal",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "ReleaseAnimal",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "FinishJob",
+                                                                    "Status": 3
+                                                                }
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "",
+                                                            "Status": 3
+                                                        },
+                                                        {
+                                                            "Childs": [
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "AbortJob",
+                                                            "Status": 3
+                                                        }
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "",
+                                                    "Status": 3
+                                                }
+                                            ],
+                                            "ID": 0,
+                                            "Name": "",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                                {
+                                                    "Childs": [
+                                                        {
+                                                            "Childs": [
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "InitAnimalJob",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "Move",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "TameAnimal",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "GrabAnimal",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "GetItemDropPosition",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "Move",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "FinalMoveAnimal",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "ReleaseAnimal",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "FinishJob",
+                                                                    "Status": 3
+                                                                }
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "",
+                                                            "Status": 3
+                                                        },
+                                                        {
+                                                            "Childs": [
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "AbortJob",
+                                                            "Status": 3
+                                                        }
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "",
+                                                    "Status": 3
+                                                }
+                                            ],
+                                            "ID": 0,
+                                            "Name": "",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                                {
+                                                    "Childs": [
+                                                        {
+                                                            "Childs": [
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "InitJob",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "FindTool",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "Move",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "EquipTool",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                        {
+                                                                            "Childs": [
+                                                                                {
+                                                                                    "Childs": [
+                                                                                        {
+                                                                                            "Childs": [
+                                                                                            ],
+                                                                                            "ID": 0,
+                                                                                            "Name": "AllPickedUp",
+                                                                                            "Status": 3
+                                                                                        }
+                                                                                    ],
+                                                                                    "ID": 0,
+                                                                                    "Name": "",
+                                                                                    "Status": 3
+                                                                                },
+                                                                                {
+                                                                                    "Childs": [
+                                                                                        {
+                                                                                            "Childs": [
+                                                                                            ],
+                                                                                            "ID": 0,
+                                                                                            "Name": "Move",
+                                                                                            "Status": 3
+                                                                                        },
+                                                                                        {
+                                                                                            "Childs": [
+                                                                                            ],
+                                                                                            "ID": 0,
+                                                                                            "Name": "PickUpItem",
+                                                                                            "Status": 3
+                                                                                        }
+                                                                                    ],
+                                                                                    "ID": 0,
+                                                                                    "Name": "",
+                                                                                    "Status": 3
+                                                                                },
+                                                                                {
+                                                                                    "Childs": [
+                                                                                    ],
+                                                                                    "ID": 0,
+                                                                                    "Name": "ReturnAlwaysRunning",
+                                                                                    "Status": 3
+                                                                                }
+                                                                            ],
+                                                                            "ID": 0,
+                                                                            "Name": "",
+                                                                            "Status": 3
+                                                                        }
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "AllPickedUp",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "GetItemDropPosition",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "Move",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "DropAllItems",
+                                                                    "Status": 3
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "FinishJob",
+                                                                    "Status": 3
+                                                                }
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "",
+                                                            "Status": 3
+                                                        },
+                                                        {
+                                                            "Childs": [
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "AbortJob",
+                                                            "Status": 3
+                                                        }
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "",
+                                                    "Status": 3
+                                                }
+                                            ],
+                                            "ID": 0,
+                                            "Name": "",
+                                            "Status": 3
+                                        },
+                                        {
+                                            "Childs": [
+                                                {
+                                                    "Childs": [
+                                                        {
+                                                            "Childs": [
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "InitJob",
+                                                            "Status": 1
+                                                        },
+                                                        {
+                                                            "Childs": [
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "ClaimItems",
+                                                            "Status": 1
+                                                        },
+                                                        {
+                                                            "Childs": [
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "FindTool",
+                                                            "Status": 1
+                                                        },
+                                                        {
+                                                            "Childs": [
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "Move",
+                                                            "Status": 1
+                                                        },
+                                                        {
+                                                            "Childs": [
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "EquipTool",
+                                                            "Status": 1
+                                                        },
+                                                        {
+                                                            "Childs": [
+                                                                {
+                                                                    "Childs": [
+                                                                        {
+                                                                            "Childs": [
+                                                                                {
+                                                                                    "Childs": [
+                                                                                        {
+                                                                                            "Childs": [
+                                                                                            ],
+                                                                                            "ID": 0,
+                                                                                            "Name": "AllItemsInPlaceForJob",
+                                                                                            "Status": 1
+                                                                                        }
+                                                                                    ],
+                                                                                    "ID": 0,
+                                                                                    "Name": "",
+                                                                                    "Status": 0
+                                                                                },
+                                                                                {
+                                                                                    "Childs": [
+                                                                                        {
+                                                                                            "Childs": [
+                                                                                            ],
+                                                                                            "ID": 0,
+                                                                                            "Name": "Move",
+                                                                                            "Status": 3
+                                                                                        },
+                                                                                        {
+                                                                                            "Childs": [
+                                                                                            ],
+                                                                                            "ID": 0,
+                                                                                            "Name": "PickUpItem",
+                                                                                            "Status": 3
+                                                                                        },
+                                                                                        {
+                                                                                            "Childs": [
+                                                                                            ],
+                                                                                            "ID": 0,
+                                                                                            "Name": "GetItemDropPosition",
+                                                                                            "Status": 3
+                                                                                        },
+                                                                                        {
+                                                                                            "Childs": [
+                                                                                            ],
+                                                                                            "ID": 0,
+                                                                                            "Name": "Move",
+                                                                                            "Status": 3
+                                                                                        },
+                                                                                        {
+                                                                                            "Childs": [
+                                                                                            ],
+                                                                                            "ID": 0,
+                                                                                            "Name": "DropItem",
+                                                                                            "Status": 3
+                                                                                        }
+                                                                                    ],
+                                                                                    "ID": 0,
+                                                                                    "Name": "",
+                                                                                    "Status": 3
+                                                                                },
+                                                                                {
+                                                                                    "Childs": [
+                                                                                    ],
+                                                                                    "ID": 0,
+                                                                                    "Name": "ReturnAlwaysRunning",
+                                                                                    "Status": 3
+                                                                                }
+                                                                            ],
+                                                                            "ID": 0,
+                                                                            "Name": "",
+                                                                            "Status": 2
+                                                                        }
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "",
+                                                                    "Status": 1
+                                                                },
+                                                                {
+                                                                    "Childs": [
+                                                                    ],
+                                                                    "ID": 0,
+                                                                    "Name": "AllItemsInPlaceForJob",
+                                                                    "Status": 1
+                                                                }
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "",
+                                                            "Status": 2
+                                                        },
+                                                        {
+                                                            "Childs": [
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "GetWorkPosition",
+                                                            "Status": 1
+                                                        },
+                                                        {
+                                                            "Childs": [
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "Move",
+                                                            "Status": 1
+                                                        },
+                                                        {
+                                                            "Childs": [
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "Work",
+                                                            "Status": 2
+                                                        },
+                                                        {
+                                                            "Childs": [
+                                                            ],
+                                                            "ID": 0,
+                                                            "Name": "FinishJob",
+                                                            "Status": 3
+                                                        }
+                                                    ],
+                                                    "ID": 8,
+                                                    "Name": "StandardJobs",
+                                                    "Status": 2
+                                                },
+                                                {
+                                                    "Childs": [
+                                                    ],
+                                                    "ID": 0,
+                                                    "Name": "AbortJob",
+                                                    "Status": 3
+                                                }
+                                            ],
+                                            "ID": 0,
+                                            "Name": "",
+                                            "Status": 2
+                                        }
+                                    ],
+                                    "ID": 6,
+                                    "Name": "",
+                                    "Status": 2
+                                }
+                            ],
+                            "ID": 1,
+                            "Name": "",
+                            "Status": 2
+                        },
+                        {
+                            "Childs": [
+                            ],
+                            "ID": 0,
+                            "Name": "RandomMove",
+                            "Status": 1
+                        }
+                    ],
+                    "ID": 1,
+                    "Name": "GnomeStandard",
+                    "Status": 2
+                }
+            ],
+            "ID": 0,
+            "Name": "",
+            "Status": 2
+        },
+        "CarryBandages": false,
+        "CarryDrinks": false,
+        "CarryFood": false,
+        "CurrentAction": "work job",
+        "CurrentAttackTarget": 0,
+        "CurrentTargetPos": "46 47 100",
+        "CurrentTask": {
+            "ConstructionID": "",
+            "Duration": 50,
+            "ID": "DigStairsDown",
+            "Material": "",
+            "Offset": "0 0 -1",
+            "Task": "ConstructDugStairs"
+        },
+        "Equipment": {
+            "FacialHair": "GnomeFacialHair7",
+            "Hair": "GnomeHair4",
+            "HairColor": 4,
+            "Items": {
+                "ArmArmor": {
+                    "AllMats": [
+                    ],
+                    "Item": "",
+                    "ItemID": 0,
+                    "Material": "",
+                    "MaterialID": 0
+                },
+                "Back": {
+                    "AllMats": [
+                    ],
+                    "Item": "",
+                    "ItemID": 0,
+                    "Material": "",
+                    "MaterialID": 0
+                },
+                "ChestArmor": {
+                    "AllMats": [
+                    ],
+                    "Item": "",
+                    "ItemID": 0,
+                    "Material": "",
+                    "MaterialID": 0
+                },
+                "FootArmor": {
+                    "AllMats": [
+                    ],
+                    "Item": "",
+                    "ItemID": 0,
+                    "Material": "",
+                    "MaterialID": 0
+                },
+                "HandArmor": {
+                    "AllMats": [
+                    ],
+                    "Item": "",
+                    "ItemID": 0,
+                    "Material": "",
+                    "MaterialID": 0
+                },
+                "HeadArmor": {
+                    "AllMats": [
+                    ],
+                    "Item": "",
+                    "ItemID": 0,
+                    "Material": "",
+                    "MaterialID": 0
+                },
+                "LeftHandHeld": {
+                    "AllMats": [
+                    ],
+                    "Item": "",
+                    "ItemID": 0,
+                    "Material": "",
+                    "MaterialID": 0
+                },
+                "LegArmor": {
+                    "AllMats": [
+                    ],
+                    "Item": "",
+                    "ItemID": 0,
+                    "Material": "",
+                    "MaterialID": 0
+                },
+                "RightHandHeld": {
+                    "AllMats": [
+                    ],
+                    "Item": "Pickaxe",
+                    "ItemID": 1000992,
+                    "Material": "Pine",
+                    "MaterialID": 29
+                }
+            },
+            "RoomID": 0,
+            "Shirt": "GnomeShirt4",
+            "ShirtColor": 5,
+            "UniformID": 0
+        },
+        "Expires": 0,
+        "FacingAfterMove": -1,
+        "FollowID": 0,
+        "FollowPosition": "0 0 0",
+        "Gender": 1,
+        "GoneOffMap": false,
+        "ID": 1000987,
+        "IgnoreNoPass": false,
+        "Immobile": false,
+        "IsDead": false,
+        "IsOnMission": false,
+        "ItemToPickUp": 0,
+        "JobID": 1001260,
+        "LastOnTick": 289,
+        "LightIntensity": 0,
+        "Mission": 0,
+        "MoveCooldown": -7800,
+        "MoveDelay": 250,
+        "Name": "Bembledack",
+        "Needs": {
+            "Happiness": 91,
+            "Hunger": 92.29995727539062,
+            "Sleep": 98.1600341796875,
+            "Thirst": 81.29995727539062
+        },
+        "NextCheckTick": 0,
+        "Orientation": 3,
+        "Position": "46 47 100",
+        "Profession": "Gnomad",
+        "RepeatJob": false,
+        "Role": 0,
+        "Schedule": [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+        ],
+        "SkillActive": {
+            "AnimalHusbandry": true,
+            "Armor": true,
+            "ArmorCrafting": true,
+            "Blacksmithing": true,
+            "Block": true,
+            "Bonecarving": true,
+            "Brewing": true,
+            "Butchery": true,
+            "Caretaking": true,
+            "Carpentry": true,
+            "Construction": true,
+            "Cooking": true,
+            "Crossbow": true,
+            "Dodge": true,
+            "Dyeing": true,
+            "Engineering": true,
+            "Farming": true,
+            "Fishing": true,
+            "Gemcutting": true,
+            "GlassMaking": true,
+            "Gun": true,
+            "Hauling": true,
+            "Horticulture": true,
+            "JewelryMaking": true,
+            "Leatherworking": true,
+            "Machining": true,
+            "MagicGeomancy": true,
+            "MagicNature": true,
+            "Masonry": true,
+            "Mechanic": true,
+            "Medic": true,
+            "Melee": true,
+            "Metalworking": true,
+            "Mining": true,
+            "Pottery": true,
+            "Prospecting": true,
+            "Ranged": true,
+            "Smelting": true,
+            "Stonecarving": true,
+            "Tailoring": true,
+            "Thrown": true,
+            "Tinkering": true,
+            "Unarmed": true,
+            "WeaponCrafting": true,
+            "Weaving": true,
+            "Woodcarving": true,
+            "Woodcutting": true
+        },
+        "SkillPriorities": [
+            "Mining",
+            "Masonry",
+            "Stonecarving",
+            "Woodcutting",
+            "Carpentry",
+            "Woodcarving",
+            "Smelting",
+            "Blacksmithing",
+            "Metalworking",
+            "WeaponCrafting",
+            "ArmorCrafting",
+            "Gemcutting",
+            "JewelryMaking",
+            "Weaving",
+            "Tailoring",
+            "Dyeing",
+            "Pottery",
+            "Leatherworking",
+            "Bonecarving",
+            "Prospecting",
+            "Tinkering",
+            "Machining",
+            "Engineering",
+            "Mechanic",
+            "AnimalHusbandry",
+            "Butchery",
+            "Fishing",
+            "Horticulture",
+            "Farming",
+            "Cooking",
+            "Brewing",
+            "Construction",
+            "Hauling",
+            "Medic",
+            "Caretaking",
+            "MagicNature",
+            "MagicGeomancy",
+            "GlassMaking"
+        ],
+        "Skills": {
+            "AnimalHusbandry": 204,
+            "Armor": 363,
+            "ArmorCrafting": 1250,
+            "Blacksmithing": 1627,
+            "Block": 753,
+            "Bonecarving": 391,
+            "Brewing": 1849,
+            "Butchery": 456,
+            "Caretaking": 282,
+            "Carpentry": 1921,
+            "Construction": 1062,
+            "Cooking": 1846,
+            "Crossbow": 571,
+            "Dodge": 1389,
+            "Dyeing": 1862,
+            "Engineering": 1438,
+            "Farming": 280,
+            "Fishing": 1965,
+            "Gemcutting": 1615,
+            "GlassMaking": 1047,
+            "Gun": 437,
+            "Hauling": 1867,
+            "Horticulture": 811,
+            "JewelryMaking": 711,
+            "Leatherworking": 1594,
+            "Machining": 1521,
+            "MagicGeomancy": 1159,
+            "MagicNature": 65,
+            "Masonry": 33,
+            "Mechanic": 215,
+            "Medic": 337,
+            "Melee": 1095,
+            "Metalworking": 937,
+            "Mining": 979,
+            "Pottery": 1222,
+            "Prospecting": 1666,
+            "Ranged": 1519,
+            "Smelting": 1907,
+            "Stonecarving": 1426,
+            "Tailoring": 1604,
+            "Thrown": 1142,
+            "Tinkering": 1515,
+            "Unarmed": 731,
+            "WeaponCrafting": 1143,
+            "Weaving": 856,
+            "Woodcarving": 1053,
+            "Woodcutting": 1538
+        },
+        "Species": "Gnome",
+        "Speed": 50,
+        "SpriteDef": [
+            {
+                "BaseSprite": "GnomeArmLeft",
+                "Conceales": "",
+                "ID": "Gnome",
+                "Order": 1,
+                "Part": "LeftArm",
+                "Tint": ""
+            },
+            {
+                "BaseSprite": "",
+                "Conceales": "",
+                "ID": "Gnome",
+                "Order": 2,
+                "Part": "LeftArmArmor",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "",
+                "Conceales": "",
+                "ID": "Gnome",
+                "Order": 3,
+                "Part": "LeftHandArmor",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "GnomeTorso",
+                "Conceales": "",
+                "ID": "Gnome",
+                "Order": 4,
+                "Part": "Torso",
+                "Tint": ""
+            },
+            {
+                "BaseSprite": "GnomeShirt4",
+                "Conceales": "",
+                "ID": "Gnome",
+                "Order": 5,
+                "Part": "Clothing",
+                "Tint": 5
+            },
+            {
+                "BaseSprite": "GnomeArmRight",
+                "Conceales": "",
+                "ID": "Gnome",
+                "Order": 6,
+                "Part": "RightArm",
+                "Tint": ""
+            },
+            {
+                "BaseSprite": "",
+                "Conceales": "",
+                "ID": "Gnome",
+                "Order": 7,
+                "Part": "RightArmArmor",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "",
+                "Conceales": "",
+                "ID": "Gnome",
+                "Order": 8,
+                "Part": "RightHandArmor",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "",
+                "Conceales": "",
+                "ID": "Gnome",
+                "Order": 9,
+                "Part": "ChestArmor",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "GnomeBoots",
+                "Conceales": "",
+                "ID": "Gnome",
+                "Order": "A",
+                "Part": "Boots",
+                "Tint": ""
+            },
+            {
+                "BaseSprite": "",
+                "Conceales": "",
+                "ID": "Gnome",
+                "Order": "B",
+                "Part": "LeftFootArmor",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "",
+                "Conceales": "",
+                "ID": "Gnome",
+                "Order": "C",
+                "Part": "RightFootArmor",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "GnomeHead",
+                "Conceales": "",
+                "ID": "Gnome",
+                "Order": "D",
+                "Part": "Head",
+                "Tint": ""
+            },
+            {
+                "BaseSprite": "GnomeFacialHair7",
+                "Conceales": "",
+                "ID": "Gnome",
+                "Order": "E",
+                "Part": "Facial",
+                "Tint": 4
+            },
+            {
+                "BaseSprite": "",
+                "Conceales": "Hair",
+                "ID": "Gnome",
+                "Order": "F",
+                "Part": "HeadArmor",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "GnomeHair4",
+                "Conceales": "",
+                "Hidden": false,
+                "ID": "Gnome",
+                "IsHair": true,
+                "Order": "G",
+                "Part": "Hair",
+                "Tint": 4
+            },
+            {
+                "BaseSprite": "GnomePickaxeRight",
+                "Conceales": "",
+                "HasBase": true,
+                "ID": "Gnome",
+                "Material": "",
+                "Order": "H",
+                "Part": "RightHandHeld",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "",
+                "Conceales": "",
+                "ID": "Gnome",
+                "Order": "I",
+                "Part": "LeftHandHeld",
+                "Tint": "Material"
+            }
+        ],
+        "SpriteDefBack": [
+            {
+                "BaseSprite": "GnomeHeadBack",
+                "Conceales": "",
+                "ID": "GnomeBack",
+                "Order": 1,
+                "Part": "Head",
+                "Tint": ""
+            },
+            {
+                "BaseSprite": "GnomeArmLeftBack",
+                "Conceales": "",
+                "ID": "GnomeBack",
+                "Order": 2,
+                "Part": "LeftArm",
+                "Tint": ""
+            },
+            {
+                "BaseSprite": "Back",
+                "Conceales": "",
+                "ID": "GnomeBack",
+                "Order": 3,
+                "Part": "LeftArmArmor",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "Back",
+                "Conceales": "",
+                "ID": "GnomeBack",
+                "Order": 4,
+                "Part": "LeftHandArmor",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "GnomeBootsBack",
+                "Conceales": "",
+                "ID": "GnomeBack",
+                "Order": 5,
+                "Part": "Boots",
+                "Tint": ""
+            },
+            {
+                "BaseSprite": "Back",
+                "Conceales": "",
+                "ID": "GnomeBack",
+                "Order": 6,
+                "Part": "LeftFootArmor",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "Back",
+                "Conceales": "",
+                "ID": "GnomeBack",
+                "Order": 7,
+                "Part": "RightFootArmor",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "GnomeTorsoBack",
+                "Conceales": "",
+                "ID": "GnomeBack",
+                "Order": 8,
+                "Part": "Torso",
+                "Tint": ""
+            },
+            {
+                "BaseSprite": "GnomeShirt4Back",
+                "Conceales": "",
+                "ID": "GnomeBack",
+                "Order": 9,
+                "Part": "Clothing",
+                "Tint": 5
+            },
+            {
+                "BaseSprite": "GnomeArmRightBack",
+                "Conceales": "",
+                "ID": "GnomeBack",
+                "Order": "A",
+                "Part": "RightArm",
+                "Tint": ""
+            },
+            {
+                "BaseSprite": "Back",
+                "Conceales": "",
+                "ID": "GnomeBack",
+                "Order": "B",
+                "Part": "RightArmArmor",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "Back",
+                "Conceales": "",
+                "ID": "GnomeBack",
+                "Order": "C",
+                "Part": "RightHandArmor",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "Back",
+                "Conceales": "",
+                "ID": "GnomeBack",
+                "Order": "D",
+                "Part": "ChestArmor",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "Back",
+                "Conceales": "Hair",
+                "ID": "GnomeBack",
+                "Order": "E",
+                "Part": "HeadArmor",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "GnomeHair4Back",
+                "Conceales": "",
+                "Hidden": false,
+                "ID": "GnomeBack",
+                "IsHair": true,
+                "Order": "F",
+                "Part": "Hair",
+                "Tint": 4
+            },
+            {
+                "BaseSprite": "GnomePickaxeRightBack",
+                "Conceales": "",
+                "HasBase": true,
+                "ID": "GnomeBack",
+                "Material": "",
+                "Order": "G",
+                "Part": "RightHandHeld",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "Back",
+                "Conceales": "",
+                "ID": "GnomeBack",
+                "Order": "H",
+                "Part": "LeftHandHeld",
+                "Tint": "Material"
+            },
+            {
+                "BaseSprite": "Back",
+                "Conceales": "",
+                "ID": "GnomeBack",
+                "Order": "I",
+                "Part": "Back",
+                "Tint": ""
+            }
+        ],
+        "SpriteID": 0,
+        "StartedDrinking": false,
+        "StartedEating": false,
+        "State": 0,
+        "TaskFinishTick": 529,
+        "TaskList": [
+        ],
+        "ToDestroy": false,
+        "TotalDurationTicks": 400,
+        "TrainCounter": -1,
+        "TrainingGround": 0,
+        "Type": 1,
+        "WorkPosition": "0 0 0",
+        "WorkPositionQueue": [
+            {
+                "first": 9,
+                "second": "45 48 100"
+            },
+            {
+                "first": 17,
+                "second": "44 47 100"
+            },
+            {
+                "first": 23,
+                "second": "45 46 100"
+            }
+        ],
+        "globalCooldown": -289,
+        "jobCoolDown": -188,
+        "kickCooldown": -289,
+        "leftHandArmed": false,
+        "leftHandAttackSkill": 4,
+        "leftHandAttackValue": 8,
+        "leftHandCooldown": -289,
+        "leftHandHasWeapon": false,
+        "rightHandArmed": true,
+        "rightHandAttackSkill": 4,
+        "rightHandAttackValue": 5,
+        "rightHandCooldown": -289,
+        "rpc": true,
+        "sct": 0,
+        "specialAttackCoolDown": -289,
+        "spritUIDs": {
+        }
+    }
+]

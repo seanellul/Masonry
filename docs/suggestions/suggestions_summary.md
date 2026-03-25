@@ -1,0 +1,3900 @@
+# Ingnomia Community Suggestions
+
+Extracted from Discord #suggestions channel (2017-12-30 to 2022-09-06)
+
+**322 suggestion threads** from 335 conversations
+
+## Category Breakdown
+
+| Category | Count |
+|----------|-------|
+| Crafting/Workshop | 110 |
+| Gnome Behavior/AI | 109 |
+| Building/Architecture | 94 |
+| Mining/Resources | 88 |
+| UI/UX | 78 |
+| Farming/Agriculture | 77 |
+| Combat/Military | 76 |
+| World/Environment | 67 |
+| Performance/Technical | 60 |
+| Trading/Economy | 55 |
+| Stockpile/Storage | 48 |
+| Automation/Mechanics | 45 |
+| General/Other | 44 |
+| Animals/Creatures | 43 |
+| Modding/Customization | 30 |
+| Social/Religion | 24 |
+| Magic/Spells | 21 |
+
+---
+
+## Animals/Creatures
+
+- **fatmck** (2019-10-01): Suggestion for Needs / Mood  Just read the wiki and read about Needs. Beside hunger, thirst and sleep I would add comfort and satisfaction. Propably they are more moods then needs, depending on how mood will be implemented into the game.  Comfort and satisfaction wouldn’t be necessary at the beginni
+  - _Context: Need a better system than that_
+  - _Context: Gnomoria had happiness, just no way of knowing that it existed until a gnome refused to work._
+  - _Context: I never noticed it so it might as well have not had a happiness system_
+- **dinosaure.plz_nofriendrequests** (2021-01-19): While I'm in the suggestion channel: - Have a "paint" mode, similar to the "Cut trees" one, but targeting farm/grove/pasture type helping changing seeds en masse - Have an "any" mode on farm/grove/pasture to let them accept any seed/seed(/acorn/pine)/animal available - Name the personalised "Set up"
+  - _Context: Issues page should stay reserved for stuff which has been adopted by a developer or modder. There is just no point to flood it with 10+ new "suggestio_
+  - _Context: Just to avoid further misunderstandings, when I said "threaded" I meant "one thread per suggestion".  Because most of these "one liners" are still far_
+  - _Context: Should get a "suggestions" page on github to comment on suggestions, just to help keep track of them and the discussions around each of them_
+- **chaineddjinn** (2019-04-19): <@207714562437414912>  Sounds a lot similar to what the devs want to make with StoneHearth https://store.steampowered.com/app/253250/Stonehearth/  I agree, it would be interesting and add replayability. Let's get the game out of the ugly duckling stage first, there's a lot that needs to be cleaned a
+  - _Context: Backpacks would also allow for 'Expeditions' and the bigger the pack, the more they can explore. Maybe instead of 'waiting' for migrants you can go ou_
+  - _Context: Maybe eventual 'carts' could be made? Or different kinds of 'Pack animal' for longer distance... but I'm not gonna wager that far, keep things simple _
+  - _Context: I've also thought about backpacks and other things to allow gnomes to carry food and weapons_
+- **.elfu** (2020-04-01): You know, there's prospector, that gives the ability to at least process trash dirt and similar raw materials. When it comes to food items, these could get made into a compost or fertilizer, and in later game, maybe fuel for machines/golems. Other than that an item could simply decay into a pile of 
+  - _Context: Oh, by the way. Curious thing that I never understood in Gomoria. Why are containers, such as drawers or cupboards, not able to hold items in them? It_
+  - _Context: I remember in Gnomoria traders were my number 1 sinkhole for overflowing items. I'd rather have workshops and mechanics that allowed me to use these t_
+  - _Context: It doesn't change the fact that excess items get used. Make it use 10 seeds to make one bottle of oil, and you got yourself a pretty big sinkhole righ_
+- **chaosjester** (2018-05-05): I beg forgivness, I've been reading a bucket load of Roomcarnage (DF story thing, epic, go google it) and have a few suggestions. I haven't gone through to see what other folks have sugessted so Imma just go ahead and put it out there  Something like Foul Fog; I love the aspect of having an almost e
+  - _Context: Well... perhaps for the underground, a thought occured to me though, instead of having fow for above ground, how about a 'map' over look, as a thought_
+  - _Context: <@161788523127635968> When you said Space Elevators I got a distictly kittensgame vibe.  Please add a catnip forest._
+  - _Context: Its all good man. My thought was mostly due to PG, like as you explore shit kinda just *pops* up_
+- **.lld** (2018-05-11): Do our gnomes live in a land of milk and honey, or sand and pain?  That could be a global fertility slider at game creation.  Then all crops would need to be balanced for high and low fertility soils.  Even with High and Low fertility, I could see a lot of dev time for not a lot of gameplay.  If you
+  - _Context: maybe add in bone meal so farmers can fertilize fields of your choosing. I know by endgame you have thousands of damn bones. Instead of the fert tiles_
+  - _Context: then a slider for overall fertility is probably a bad idea.  how about a slider that increases the chance/quantity of high fertility spots? that would_
+  - _Context: <@176318165129756672> <@204036338888998912> high/normal fertile soil then like rimworld? could get manure for animals and fertilizer and maybe special_
+- **hughheggen** (2019-09-07): There can be straw bales that take like 20 or so straw to make. Grazing animals could eat straw as well as grass so you can fees them even if their pasture has no grass. Add a straw weaver profession to make woven furniture and baskets. Add an option to farms for farmers to plow the straw back into 
+  - _Context: Or just add a tick box to harvest straw for farms. If unchecked, the grain is harvested with no straw_
+- **the_real_kyrros** (2018-01-31) [1⭐]: I imagine, if putting in production limits/caps, those limits would only need to be in place for tasks that are set to repeat (set it and forget it), because those are not necessarily needing to be monitored. Whereas, take Roest's example, we're capped at 5 tables, but I want to build a different on
+  - _Context: Of course not all workshops. The modfiles define the inputs. For example, Those that need fuel could have one extra input._
+  - _Context: Craft portals to the demon world to store infinite ressources, but be exposed to random attacks 😛  More ressources stored  =  Higher chance of being a_
+  - _Context: How about just managing your stockpiles better and not having more than 2000 seeds and clippings_
+- **sorsaj** (2018-08-28) [1⭐]: stockpile ordering is really a hazzle, please move up/down arrows to the left side next to the name and add a move top/move bottom or make it drag and drop like steam wishlist ordering ( drag and drop at will and click safe when done)
+  - _Context: please make it so i dont have to go into stockpiles and enable each new item that i mine or craft if i have set to accept "all" of one type (like soil_
+  - _Context: hm strange i just had this with bones, i hadn't butcherd an animal yet, so i couldn't setup my bone pile, but as soon as i got my first llamabone i co_
+  - _Context: look at it yourself, a dropdown list of stockpiles with 2 "paste" buttons and one "copy" without any idea of what gets copied to what or pasted to wha_
+- **.alch** (2019-11-22) [1⭐]: I have an idea. implement wheat seeds, we might use all our grain on bread so we should have a seed version and a food version
+  - _Context: If collecting seeds, a harvest could yield 2-3 seeds and no crop but if collecting crops it could yield 1 seed and 1 crop with a small chance of yield_
+  - _Context: I think you should add goblins to the game along with combat, it would really spice up the gameplay_
+  - _Context: With chickens, just have a manual pop limit on their pasture. If a farmer doesn't want any more chickens, they just take the ferterlised eggs from the_
+- **.elfu** (2020-03-15): It's already extra clicks to make a pasture and set the hay harvesting. The inputed number doesn't tell me, whether it's a percentage of pasture's area or amount (it defaults to 100 which is why, I think, I confused it). It's more of an inconveniently placed action rather than automation. If you wan
+  - _Context: Suggestion: Add display stands. You can place a specific item in a display stand. It will receive a slight bonus to worth. Items in vicinity receive s_
+  - _Context: thanks but i like it easy to automate and there is an option to set the max you want to harvest, i don't want extra clicks_
+  - _Context: And you could set exactly how much hay you'd want to gather_
+- **not__** (2018-05-10): You could always assign the name to one tree per game.  The Woody Memorial Birch.  Speaking of giant dildos, gnomes need love too, so please implement.
+  - _Context: Oooo sweet, I'll be a chicken .... wooden cock_
+  - _Context: So I just have to say “I’m a patron” and I get yellow?!_
+  - _Context: What additional gameplay do we get for the complexity?_
+- **tacyn.** (2018-07-30): I think it would add some logistical/planning depth since you would have to run several workshops in parallel for jobs with long completion time. Also I would like it better to have large cellars where wine and cheese ripen instead of a single brewery/kitchen mass producing them.
+  - _Context: in regard to smokery/cheese making, I'd like a mechanic where a workshop can complete a job without a gnome present after it's been started.  No reaso_
+  - _Context: But what kind of cheese is it?  A nice Brie, or cheddar?  Who doesn’t love a nice smoked cheddar with their yak steaks ?_
+  - _Context: I think once trade comes in, anything that's preserved can be traded. Fresh and perishables can't be. Also preserving gives a slight food and happines_
+- **desolator_x** (2019-05-27): That's a pretty good idea. Added to that I'd like to see something like a little counter behind the name of each gnome to see how many jobs they currently have active, would be handy if you don't want to use preset professions but don't want to overload individual gnomes
+  - _Context: One more tiiiiiny thing, instead of having to click every tile in the population window one by one, allow "painting" over then by just holding the mou_
+  - _Context: Implement the gnome skills tab with the overall population window, so we can assign jobs from the pop window and see what gnomes have what jobs, what _
+  - _Context: Along with that, another QOL thing would be with the dropdown in the gnomes skill tab, have a small popup when hovering over a preset that tells you w_
+- **Deleted User** (2019-08-14): SUGGESTION: Add checkbox option to stop milking pasture. I only want my pasture for meat, do not want gnomes wasting time going there to milk animals.
+  - _Context: Suggestion: Indicate or standardize the side of workshops that can link stockpiles. Each workshop has one different side that can link, and  it makes _
+  - _Context: Or maybe I have bad memory. Or could be both_
+  - _Context: And also just 1 high versions of it, so I can have nice vertical wood walls_
+- **Deleted User** (2020-02-05): - I think that 2x leather straps per hide is too low, or that only 1x hide per cow/yak butchered is too low. One of them should be increased. I've been trying to gather leather straps and I'm on year 4 and could only get a meager amount of leather while also trying to grow my herd. Or at least scale
+  - _Context: -On the new gui, the ability to rearrange stockpiles  priority with dragging would be awesome. On bigger and older maps with lots of stockpiles, click_
+  - _Context: -Why butchering goats doesn't yield any hide/leather? It could give less than cows/yaks, but goat skin/leather is a thing and ppl use it (it is even t_
+  - _Context: - Option to chose order of priority of pastures for Auto butcher excess livestock, or use pasture priority for that._
+- **ext3h** (2020-04-06): Hunting board, serving both as "cull population down to X" instruction and as drop off point for corpses could work, I suppose? But not as friendly as the butcher job, where animals just stop moving and wait once marked for killing. Hunting also requires corresponding adjustments to animal AI, to en
+  - _Context: I mean, it depends how it'd be designed. If you make it like pasture, then a hunter would hunt any available animal on map. If you made it like butche_
+  - _Context: A middle ground would be selecting what animal type to hunt and maybe range from the structure, or amount to let live (so that you don't wipe out enti_
+  - _Context: well have to consider the available control schemes we have, so it's either a structure that has the option, like the taming animals thing, or it's li_
+- **.roboute** (2018-06-12): please also make fence doors that can be placed without the need of adjacent full walls. It always bothered me that in gnomoria you could not place doors next to fences
+  - _Context: what about goblin corpse fence?_
+  - _Context: I really like the idea of green leather from goblin skin_
+  - _Context: so I better make some fences then for the pastures_
+- **.roest** (2020-03-31): I wouldn't stop stuff from producing, if someone wants to play that way they should be able to do so, we should just implement things that "encourage" better behavior
+  - _Context: Not so sure, that is escalating into infinite stacks, from non-stocked items. That got to have an impact at some point. Item stacks are not something _
+  - _Context: Balancing question, should plants keep growing / animal keep giving birth / laying eggs / beehives keep producing honey / trees growing if there is an_
+- **flash.1** (2018-05-15): So we either need a routine that automatically defines pastures inside fences or we need the option to freely define pastures ourselves and put fences around them
+  - _Context: but you had me thinking, you know i want to implement a mission system, where you just select a few gnomes and send them on a mission, be it diplomati_
+  - _Context: the fuck am I looking at 0.o can we please go back to the normal 2 genders and people with a mental disability?_
+  - _Context: do you think animals should be magically contained on pastures or should they be able to wander off and need fences_
+- **prassel** (2018-09-01): -make stockpile settings window open when you designate a new one. -(resuggest) option to toggle show all items when filtering so you dont have to edit every time a new object is crafted. -ability to set a position in the stocks list in the stockpile setting (so you dont have to open that every time
+  - _Context: i'd like to see an option to toggle showing every item when you filter for stockpile so i dont have to go in a dozen time and edit it when i craft new_
+  - _Context: some things come naturally for you cause you know all the workings, for me this (adding a single skill via sheet) could have been something that just _
+  - _Context: 0.4.0 - stockpiling, tiles with containers are handled first - job queue: craft# the number to craft will count down now - job queue: craft to, jobs w_
+- **vanda1475** (2019-08-25): Also would love to be able to exclude certain food items from the gnomes eating menu. It would be really helpful for early game if gnomes wouldn't eat the apples I want set aside for fruit wine. It could be a tab in the kingdom menu since it's kinda like a "Law" of the kingdom. "Thou shall not eatit
+  - _Context: Although maybe it could just be a function of the linked stockpiles when that is working that nothing can be consumed from a linked stockpile._
+  - _Context: Had an idea about the animal overpopulation. What if the females, once an adult, aren't able to be pregnant for 8-10 days. That'd help keep the very n_
+  - _Context: i now limit animals to 1000 per type, also animals only get pregnant when on a pasture, so you can control it by having no mixed genders on pastures_
+- **.elfu** (2020-03-09): Something that made Gnomoria a bit cheaty and at times very easy and It'd be really interesting to have it changed here: not allow characters to stand in the same spot. I remember abusing that during raids in Gnomoria, where I focused all attack and defense in one point, making all my 10-20 gnomes a
+  - _Context: Doesn't really mean it has to be that way in the end, does it? Having it how it is right now means there's one and only one effective way of defense a_
+  - _Context: That change would make formations more useful and military in total would become more tactical._
+  - _Context: I'm thinking solution to all of these implications is proper building of rooms and corridors_
+- **.elfu** (2020-03-10): Think Stardew Valley then. If youblock an NPC, after a few seconds it shoves past you. It could work like that here too. If two gnomes block each other, they swap spots after, let's say, 3 seconds. Actually, they could do that, even if they don't block each other, as long as their routes intersect.
+  - _Context: Units preferring not to stay on an occupied tile, but still being allowed to, would still lead to exact same scenario of defense, because you could fo_
+  - _Context: Unfortunately enemies tend to attack one single target, usually the first one they see (or closest one) so if you rush your first squad as a tank forc_
+  - _Context: Yes and no... You can assign different squads diffent targets. You can assign some gnomes to have ranged role. (Actually you can't, currently, but in _
+- **ext3h** (2020-11-28): We would have to see how much "full" SFX we need and want in the first place. Not that we fall in the trap that after giving the first couple of events SFX, that all the ones not having any suddenly start sticking out.
+  - _Context: Hi, new here, sorry if this is the wrong chat.  So I felt the game was a little too quiet, and decided to throw this together and see how it feels pla_
+  - _Context: For synchronized playback of multiple instruments I need to decode "manually" anyway. Just sampling rate better fit, or mixing becomes "troublesome"_
+  - _Context: Qt should handle that just fine. Not going to pull in more libraries. Just going to have to implement mixing and synchronization._
+- **.elfu** (2020-04-05): How about adding a tick to corpses info panel that says "butcher this corpse", so that we can handpick which corpses get butchered directly, without the need to stockpile them?
+  - _Context: Would you still leave the _Butcher excess livestock_ option? If yes, then it sounds quite fine to me._
+  - _Context: There was one in Gnomoria. I think it ws either an action or initiated by ticking a proper option in creature info panel_
+  - _Context: I'm fairly sure that there was a list of available corpses in Gnomoria, not sure if there was a way to select which one to butcher. But, mmm, Goblin S_
+- **condac** (2021-01-25): We really need some kind of event log, when you find all your cows dead you want to know why. Same with gnomes, when you find one dead on the floor there is nothing that tell you what have happened
+  - _Context: I don't know how the development is going but, in the option to hide the walls, you could put only a part of it, very low, just to differentiate where_
+  - _Context: Another suggestion is also to overhaul the trade price of coins and bars. I have tin bars that trade for ~100 but a tin coin trade for ~30, blacksmith_
+  - _Context: Yes that particular bug i found out and also found the issue on. But during battle or animal encoutnters or whatever The odds of seeing what hapens is_
+- **.elfu** (2020-03-04): But why would you want to do that, every time a game loads? I really wouldn't want my gnomes to suddenly change everything they do at the start of the game
+  - _Context: Once a unit is spotted, the check should stop for the other side for that unit for X number turns time, combat should skip check completely for x turn_
+  - _Context: Could be worse, I could be a UI guy instead_
+  - _Context: well, if you can make a distance check between two units, just by looking up their coordinates in world, then I'm thinking that could be faster_
+- **ext3h** (2020-12-04): That's one part. Also need to implement game rules which *severely* reduce the number of items and creatures in the world. No more 2k chickens and 50k uncollected eggs.
+  - _Context: If Chicken = 10, then Merge into 1 mega chicken_
+  - _Context: Another point to solve before that is savegame sizes. can't afford to waste several GB of disk space on save games on a tablet or smartphone._
+  - _Context: That should work for gnomes also._
+- **woody1842** (2018-05-09): Hmm hey I'm looking are your patreon and I was wondering that for a reward, you should add the patreons names into the game when an Item has become legendary
+  - _Context: interesting idea, or maybe let them design item names_
+  - _Context: I liked the way  prison architect did it, let them create a character or something and you can encounter them in the world_
+  - _Context: ok woody for your pledge you can be a chicken, rabbit or sheep_
+- **enukar** (2018-08-24): I might be too greedy suggesting this. But is there a chance you make a creature editor? Like a ingame or mod tool that lets people create they own animals/creatures in the game, and add their own sprites.
+  - _Context: Also, white letters in light gray background hurts. https://gyazo.com/5231d755f0c666a2214edfeb51c51204_
+- **vorg9431** (2019-01-16): It would be nice if we could expand a pasture or farm area by starting or ending inside an exsisting one
+  - _Context: In Char skills there is a place where you can change the priority of their skill. Would be nice to have and auto sort button, that sorts by skill leve_
+  - _Context: Hmm, I'll try again, but each time I started in or ended in, it seemed to create a new small area in the newly included area._
+  - _Context: but that is how it works right now, if you start insde a farm, pasture, stockpile or room it adds those fields to the exisiting one_
+- **hughheggen** (2018-06-27) [1⭐]: tame bear should end in a dead gnome
+  - _Context: I can't wait to tame dragons and make them heat the forges >:D_
+  - _Context: probably will need to make a tame difficulty per animal, make a tame skill or use animal husbandry, give it a fail/success chance depending on skill v_
+  - _Context: you could try and use a goat as bait_
+- **styfrit** (2018-08-25): it don't appear so you place the zone on the floor for sand But wall down on dirt make the wall appear at the top of the tile it should be
+  - _Context: the upper lines are exactly the same , so its not the floortile from above cause that should be a bit higher_
+  - _Context: the functionality of the walldown is still not quite there, it felt somehow off yet looks right so i tried to put it in a picturestory 😛_
+  - _Context: can you try to show your wallhide with fow? in the corner?_
+- **.alch** (2019-11-21): I told you, my laptop is a beast with a puny fan. It could keep a family warm during the nights of winter if it ran ingnomia uncapped
+  - _Context: I don't get the reference and I've been reading science fiction for most of my life, work in IT and have strong opinions about the importance of space_
+  - _Context: Lower (user configurable) FPS when paused option_
+  - _Context: Dont need a virginity card anyway ;)_
+- **cptvolkow** (2020-12-17) [1⭐]: Some kind of stuck NPC warning system
+  - _Context: If a Pasture has a Shed, the animal is moved there to milk_
+  - _Context: Checking a job tells you if it's missing a necessary item._
+- **.alch** (2019-07-30): What about having stocks in the top left/right of the screen 😦
+  - _Context: Or have it be the job of someone to count all the items in each stockpile like in at least one of them?_
+  - _Context: I don't see a problem with a counter of how many you can make. It's a good quick look tool that shows how your stocks are doin_
+  - _Context: When choosing to build items/storage, have a number count of how many of that item you can build_
+- **hughheggen** (2019-07-31): Maybe you can enslave deep gnomes when I make them
+  - _Context: That's how slavermaker ants work, they kidnap ants from other hives and force them to do all the work for them._
+  - _Context: I brought a sheepdog on my last start, it moves around a little but it's not really doing much sheeping._
+  - _Context: Take the queen hostage and they work for you?_
+- **maveross** (2021-01-05): Adding a "butcher pen" designation for excess livestock. Gnomes with animal husbandry can move excess livestock, to/from. And butchers can pull from
+  - _Context: Would it be possible to show oak acorns and pine cones in seed category, along with willow and birch seeds?_
+- **.alch** (2019-01-24): Animal migration might be a nice addition, animals coming in during some seasons and leaving in winter or so, eating plants while they're there
+- **hughheggen** (2018-04-06): I could send them little frowny faces
+  - _Context: They should suffer for this atrocity_
+  - _Context: (But don't forget to save the bones or you won't be able to make cloth)_
+  - _Context: no? Haven't played for a while_
+- **desolator_x** (2018-04-11): that's for when the gnomes tame a bear: you can have heads hanging off the side of the saddle like a mongol / viking warrior 😄
+  - _Context: just goblis riding bears would be awsome_
+  - _Context: A bear riding a 2 headed goblin_
+- **hughheggen** (2019-11-05): If you have many in a pen and one starts bleeding all the others will start packing at it
+  - _Context: Tame the chickens and train them to hunt their own kind_
+  - _Context: I managed to get jerky done too_
+
+## Automation/Mechanics
+
+- **fatmck** (2018-10-14) [1⭐]: I would like to suggest a kind of combat screen when we get enemies. During combat I would like to see all my in combat envolved gnomes on the left side with stats (equipment, health, dazed, bleeding, injured, blinded, on the ground, ..), the actual combat log in the mid, and all spottet and envolve
+  - _Context: but please make the width of windows borders a little wider. i have to be really careful to catch that area where i can resize the window... is it one_
+  - _Context: yeah but having 3 with 2 axes could be. so the third one could do other jobs, if he is assigned to them. well, i can live with it being the way it is_
+  - _Context: if a gnome carries something to eat and gets hungry, he should eat the food he is carrying. one of my gnomes just threw away his apple because of his _
+- **chaineddjinn** (2019-04-19): <@207714562437414912>  Sounds a lot similar to what the devs want to make with StoneHearth https://store.steampowered.com/app/253250/Stonehearth/  I agree, it would be interesting and add replayability. Let's get the game out of the ugly duckling stage first, there's a lot that needs to be cleaned a
+  - _Context: Backpacks would also allow for 'Expeditions' and the bigger the pack, the more they can explore. Maybe instead of 'waiting' for migrants you can go ou_
+  - _Context: Maybe eventual 'carts' could be made? Or different kinds of 'Pack animal' for longer distance... but I'm not gonna wager that far, keep things simple _
+  - _Context: I've also thought about backpacks and other things to allow gnomes to carry food and weapons_
+- **hughheggen** (2018-05-13): <@172353609269248000> Certain bioms could have different fertility rates, and events such as a drought could reduce the fertility of the whole map for a few years. Make things a little bit more involved. <@202164327606648841> Yeah, I did heaps of farming sprites. <@204036338888998912>  A fertility s
+  - _Context: irrigation could be something like "replacing" a sand floor with dirt and it'd need some water for it_
+  - _Context: I'd love to see some events like that as well. I do think they should be moved to post release (like pretty much everything else here 😛 )_
+  - _Context: Oh, I'd like to suggest events that change around some of the game dynamics. Spice things up a bit._
+- **chaineddjinn** (2018-08-21): I have an idea, make it so Gnomes don't auto-join Kingdom. Little bit of papers please in a way, I mean; Do you want this Gnome? What's his Stats? His Trade? How is his demeanor and personality? I'd want them to come in on something like a caravan and PICK who I want rather then have them shoved off
+  - _Context: 1; I'd say more "Request for Caravan" then "Demand" Too snooty. Would also hinge on the 'Popularity' of your kingdom. The more 'Renown' your kingdom g_
+  - _Context: Sure, you turn someone royal away their gonna say bad things about your Kingdom... but it'd be better then letting them stay and mandate you can't tra_
+  - _Context: 1)maybe a sort of "ability demand for the next caravan" system and possibility to refuse new arrivals is an idea to look for._
+- **.elfu** (2020-04-01): You know, there's prospector, that gives the ability to at least process trash dirt and similar raw materials. When it comes to food items, these could get made into a compost or fertilizer, and in later game, maybe fuel for machines/golems. Other than that an item could simply decay into a pile of 
+  - _Context: Oh, by the way. Curious thing that I never understood in Gomoria. Why are containers, such as drawers or cupboards, not able to hold items in them? It_
+  - _Context: I remember in Gnomoria traders were my number 1 sinkhole for overflowing items. I'd rather have workshops and mechanics that allowed me to use these t_
+  - _Context: It doesn't change the fact that excess items get used. Make it use 10 seeds to make one bottle of oil, and you got yourself a pretty big sinkhole righ_
+- **cannonball_k** (2018-05-06): Pretty sure this has been suggested but gnomes riding yaks?  Trainable yaks that fight and attachments for their horns like axes or saws.  Also use them as labor animals like how gnomes have wheelbarrows, yaks can have wagons.  This could require training or it couldn't.  Some kind of book system wi
+  - _Context: I like the idea of yaks as beasts of burden_
+  - _Context: It all sounds pretty damned good there Cannon! Doing some more thinking obviously mood effects will come into play woth time, but how about different _
+  - _Context: I suddenly like you more I wish that were always the case... sometimes I have these neat ideas that just *fut* away at the worst times... BUT! Its oka_
+- **chaosjester** (2018-05-05): I beg forgivness, I've been reading a bucket load of Roomcarnage (DF story thing, epic, go google it) and have a few suggestions. I haven't gone through to see what other folks have sugessted so Imma just go ahead and put it out there  Something like Foul Fog; I love the aspect of having an almost e
+  - _Context: Well... perhaps for the underground, a thought occured to me though, instead of having fow for above ground, how about a 'map' over look, as a thought_
+  - _Context: <@161788523127635968> When you said Space Elevators I got a distictly kittensgame vibe.  Please add a catnip forest._
+  - _Context: Its all good man. My thought was mostly due to PG, like as you explore shit kinda just *pops* up_
+- **_ysabell_** (2018-05-14): why sacrifice the gnome children when there will be plenty of goblins to appease the gnomes' gods? yeah, maybe in the future we could capture gnomes' enemies and sacrifice them for some form of bonuses... obsidian would definitely be great for sacrificial altars, knives, etc... err... well,, if play
+  - _Context: I suppose one thing that might need looking at: Obsidian's value as a resource. In Gnomoria, by the time you have the tech level to actually make thin_
+  - _Context: Obsidian is far sharper than surgical steel, it's the only material we have (I believe) that can cut between cells instead of through them, though tho_
+  - _Context: Or allow lava/water to be 'bucketed' somehow to be brought to the surface/bottom to allow local obsidian creation ._
+- **optimus.0001** (2018-05-19): Let me regurgitate some thoughts all over the nice clean channel.   Magic candles/lights would need a source of power, as would other magic elements in the base. There's also the notion of using magic as offensive skills or buffs eg insta-harvest... These could come from a common resource (say, mana
+  - _Context: If the plan is to have eldritch horrors in the game, bright light should be a way to either reduce sanity loss (assuming sanity is a stat), prevent it_
+  - _Context: <@362644073095626754> While the idea is interesting, what you're suggesting would make gnomoria/ingnomia a completely different game that what it was _
+  - _Context: Depends on how you implement the refueling... If it's automatic via one of the auto-jobs like hauling or building (for example) but with a slightly hi_
+- **hughheggen** (2018-04-04): and divine favor could be like a tech level. to gain raise the dead spell, you might need to have 1000 favor with the dead god or something, so maybe sacrifice 20 goblins, 40 goats, 10 gnomes or 5 gnome children maybe?
+  - _Context: so I was thinking  about religion because praying could add to gnomish happiness, with praying done in a temple room for a bigger happiness bonus_
+  - _Context: temples could be a large multiplier to kingdom wealth, like the great hall, so players would be encouraged to add lots of treasure to it_
+  - _Context: temples could also have priests, which also improve happiness bonus_
+- **not__** (2018-05-03) [1⭐]: More pointless fluff is awesome.  There had better be a kickass icon for me to put on my desktop.  Maybe something 3D that been raytraced and rendered with god rays and shadows and all sorts of time consuming computationally expensive crap.
+  - _Context: I love the possibility of adding boats and travel by water. I'm wondering... if we do have the ability to trade with other colonies via water using bo_
+  - _Context: I'd just use a text icon that says "Click here for fun time"_
+  - _Context: And Troop-Transports to reenact D-Day_
+- **sorsaj** (2018-08-28) [1⭐]: stockpile ordering is really a hazzle, please move up/down arrows to the left side next to the name and add a move top/move bottom or make it drag and drop like steam wishlist ordering ( drag and drop at will and click safe when done)
+  - _Context: please make it so i dont have to go into stockpiles and enable each new item that i mine or craft if i have set to accept "all" of one type (like soil_
+  - _Context: hm strange i just had this with bones, i hadn't butcherd an animal yet, so i couldn't setup my bone pile, but as soon as i got my first llamabone i co_
+  - _Context: look at it yourself, a dropdown list of stockpiles with 2 "paste" buttons and one "copy" without any idea of what gets copied to what or pasted to wha_
+- **_ysabell_** (2018-04-27): I don't know if anyone has suggested this yet. The general happiness of a settlement could also affect (in part) the number of gnomes joining the settlement each season, as well as kingdom worth. Conversely, there could be a chance for gnomes with 0 or low happiness to leave the settlement. Perhaps 
+  - _Context: I don't think stuff like slavery necessarily leads to bad press (Rimworld has it, and no one complains about it). I do think that having something lik_
+  - _Context: I mean that as gnomes become more experienced, they need better furnishings and food quality to stay happy, with higher professions needing more to st_
+  - _Context: I thought kingdom wealth was a simple and easy way to increase population size but we could go by a development score instead. The more infrastructure_
+- **slippuu4247** (2018-04-30) [3⭐]: __***The Teachings of Saitama***__ _Kill a goblin with 1 punch_
+  - _Context: I think everyone is missing what Ingnomia really needs.  Steam Trading Cards!_
+  - _Context: you should get a mark of recognition when you make 1000 goblin food items or make your first child sacrifice_
+  - _Context: yes, give free stuff that i can sell and buy other games with 😄 (jk i dont really care, and no if it takes time from development)_
+- **tacyn.** (2018-10-15) [1⭐]: The designation would be the same as other rooms. Comparable to dormitories, which allow gnomes to use the beds build within them. The crafting screen is the same as for single workshops, with the difference that it can do everything the workshops within the designation can. The orders created in th
+  - _Context: I think it could combine my idea of attaching workshops to stockpiles. instead of stockpiles, the management desk_
+  - _Context: we need crafting options for the workshop it self, and a "global" option that's shared between all crafting stations of that type right?_
+  - _Context: because if it can collect and hold rain, that could be a problem for people controlling running water into their bases. I know with Gnomoria, I dig a _
+- **der_kobold** (2020-12-30): a thing that could be handy   no more 1:1 drop of rock or soil when destroying a block   The amount of littering of those materials get insane over time when you dig done   Maybe a drop chance of 10% or something instead? Would help to keep the world a bit more free of waste stockpiles and overall i
+  - _Context: Not dead too? Would think they would be quite sensitive regarding water ^^   But when there's no magma in the bottom of the map what else is currently_
+  - _Context: Then it's going well for the tools  But something is eating my weapons   Maybe also caused by the long game time? I'm now in year 10_
+  - _Context: ah ok the prospector gets rid of stones, good to know ^^   ok, I think I found the reason why armor and weapons arent adding up.  it seems like weapon_
+- **the_real_kyrros** (2018-01-11): Could implement some kind of one-shot creation of a scaffold/rope ladder, or even just allow gnomes to  moved up one level to an adjacent square occupied by another gnome (i.e. get 'pulled up')
+  - _Context: i JUST thought of something that might be AWESOME!  if the game world generates like DF...as in it generates an ENTIRE world and you only play a bit o_
+  - _Context: than a hack maybe, allow diagonal movement when trapped by "remove floor" jobs this should at least ease the problem_
+  - _Context: i know its a hard problem, but could be avoided by letting them walk on walls (maybe only allow when trapped)_
+- **.lld** (2018-04-22): The perception of what is right and the actuality are very different things.  Honestly has the RoboBob email ever been released?  Roest could be a lying mother fucker, and we have no way of knowing. ( I am not saying, and personally, don't think he is.)  Take a look at the subreddit today.  There is
+  - _Context: yes, I know. I'm just wondering if you had any thought on what you should initially start with and whether the list <@386915067477753858> made in the _
+  - _Context: actually he could just say 'stop using it now' to be legally binding there would need to be a formal, signed agreement beyond just a casual email...  _
+  - _Context: it'd be nice to add that in at some point though, even if only as an option for a player to set things like "only highest skill crafter makes statues)_
+- **hughheggen** (2019-03-09) [2⭐]: Did you like the idea of mudbrick and rammed earth?
+  - _Context: When you select the furniture to be installed. You can select the type of metal. Why not right under it somehing like in the smelter: Any / average or_
+  - _Context: Jokes aside, I think there should be a way of making sand/clay without needing to mine it, since once you mine out those two layers, you just have an _
+  - _Context: I added the ability to turn dirt and water into clay in my mod in Gnomoria, so I fully support the idea of turning dirt into clay 😃_
+- **chaineddjinn** (2019-05-15): I'm sorry but in the convo above <@202164327606648841> is **SUPER** aggro toward @derPaddy#0188 just because he had a difference in opinion.  I feel surface stone would also prove useful as eventually their may be a point system which is costly to bring stone at embark or may have other restrictions
+  - _Context: (Not that many would give a rats rump, but that's not the point.) I had felt this would aspire to include some of the function and versatility of wher_
+  - _Context: I don't want to continue the discussion on derpaddy. He didn't even read the steam page, as such he comes here with a totally uninformed opinion. The _
+  - _Context: The game has always seemed to be advertised as a gnomoria+, with a focus on getting the gnomoria part working fully then adding new things. I think it_
+- **desolator_x** (2019-01-18): also, I like the idea that <@177094350201683968> had with carrying food with them. It could be restricted to a certain piece of gear you'd have to make first, say a lunchbox 😛 so your gnomes would equip the lunchbox and then be able to carry one sandwich and one drink with them or something
+  - _Context: You have outside corner ramps for straw roof I see. I could see people wanting both inside and outside corners for all ramp types for roofs. So may ju_
+  - _Context: So for suggestions, could we  get a different color or some sort of Icon to note input linking block for workbenches? As near as I can tell, only 3 ar_
+  - _Context: The sand tile is really hard  to distinguish from the mine wall colour... just started playing around. I think this could be a problem for a new playe_
+- **.lld** (2017-12-30): Maybe hourly would be better since a gnome might need 10 hours of sleep on the floor vs like 6 on a super cushy king bed?
+  - _Context: like the military schedule, but in general? I'd like that too but it doesn't need to be per hour, dividing a day into three 8-hour or four 6-hour slot_
+  - _Context: well, something like cooking / growing perhaps? planting during the night so the plants grow during the day and the gnome can go cook during the day w_
+  - _Context: The schedule could be a suggestion rather than a rule. Let's say gnomes have a rested value going from 0 to 100 and they normally go to sleep below 50_
+- **stenner** (2018-05-20): Suggestion!  Can we add a screen shots channel?  I want to see more of the game and I have to search for the recent ones.
+  - _Context: Light needing fuel is a horrible idea_
+  - _Context: don't want it permanently, maybe have a key that shows mood icons for a couple seconds_
+  - _Context: HAY! <@280266293490221056> ! Do you want some mood icons for the gnomes_
+- **rookie0117** (2018-06-25): The mushroom parent? found deep underground? Or is it a mushroom golem? left from thousands of unkept mushrooms.  That reminds me, should people be able to designate an area to dump water in via buckets for underground farms?
+  - _Context: <@280266293490221056> you are a mushroom now (kept in the dark and fed bullshit)?  I thought you left the corporate world?_
+  - _Context: should be able to cut trees with most types of axes_
+  - _Context: not sure yet, it might be as easy as in DF where you need no water or it'll be solar powered pump and tube system with sprinklers_
+- **.elfu** (2020-04-05): How about adding a tick to corpses info panel that says "butcher this corpse", so that we can handpick which corpses get butchered directly, without the need to stockpile them?
+  - _Context: Would you still leave the _Butcher excess livestock_ option? If yes, then it sounds quite fine to me._
+  - _Context: There was one in Gnomoria. I think it ws either an action or initiated by ticking a proper option in creature info panel_
+  - _Context: I'm fairly sure that there was a list of available corpses in Gnomoria, not sure if there was a way to select which one to butcher. But, mmm, Goblin S_
+- **sibaz_** (2019-09-12): Also in DF all dwarfs start with no skills and by doing a job, they gain skills, so specialise.  Gnomes seem to start and keep their skill level at everything, they should be able to improve
+  - _Context: feathers/straw/cotton stuffing should all be potential mattress fillers, and they should be the primary 'type' of a mattress_
+  - _Context: could I suggest that the info box, or the gnome log, has more info in it.  It's often quite vaigue_
+  - _Context: Someone talked about fishbones being made into glue, which is probably silly, but you could require glue for making arrows_
+- **skeeball3635** (2018-02-16): New here, still looking around. If this is based off Gnomoria, in big G water physics and evaporation are terrible. Like, if you try to drain a lake into an underground cistern it'll evaporate in the tunnels before it even gets close. Very annoying. If you make a system of trenches as a precursor to
+  - _Context: agreed, liquid physics (including the dreaded magma pumps of DF) would be very nice to have_
+- **.alch** (2019-09-01): Why not have it use a fuel resource bar like the engine did? You won't need fuel per recipe but instead per time spent crafting
+  - _Context: Plus it will tie in well if you make temperature a thing and gnomes need to keep themselves warm_
+  - _Context: it would just add  another ingredient to cooking recipes and unnecessarily add lots of items_
+  - _Context: I thought it would be cool and to provide a reason for some foods adding happiness_
+- **dinosaure.plz_nofriendrequests** (2020-12-29): Suggestion: add more starting drinkable things. Even low quality would make it. I'm actually trying something like "DrinkValue" of 10 to every fruit and vegetable (wheat/grass/hay/.. excluded). `update "Items" set "DrinkValue"=10 where "DrinkValue"=0 and ("ItemGroup" in ('Corpses', 'Meat') or "Categ
+  - _Context: Can't place them myself whenever I want to. Edit: https://i.ebayimg.com/images/g/AocAAOSwmflfT~IU/s-l1600.jpg <- this is a "magic tree", nothing can f_
+  - _Context: oh a thing I would be happy about   abundance of ore as a setting ^^  And maybe reduce a bit the occurrence of gems? I am looking for ore and find rid_
+  - _Context: Allow a grove to be placed under an existing tree, and auto-set to actual type. (Don't know how I managed to place groves under wild tree roots someho_
+- **dinosaure.plz_nofriendrequests** (2021-01-03): Suggestion: multithread the game. At any point in the game, there is not much than 5% use of global 3700x cpu, indicating single core use. Maybe related: unleash the rabbit power, as it's actually barely more than tortoise x2.
+  - _Context: Well, there is multithreading where applicable. Simulation and UI are running in fully decoupled threads. Pathfinding is running multithreaded. It's j_
+  - _Context: If it's 3x3x3, and you had to load the incinerator from the top, it could be a decent rationalization to have it incinerate more material simultaneous_
+  - _Context: Changing the "EatValue" of the cooked foods to be the sum of their component foods+10, to more fairly compensate for the time cost and ingredient cost_
+- **.lld** (2018-04-02): Does the engine have a gnome state for like prayer or illness?  I am thinking the gnome stops, displays a thought of like praying or puking.  This might be very extendable to modders.
+  - _Context: So you're not keen on having gnomish priests, alters or temples?_
+  - _Context: which would be most of them right?_
+- **lokkiser** (2020-12-05): Manual refresh save list? I have to restart game to load list (yeah, savescumming). Also autosave is not listed at all, so it would be nice to be able to load it.
+  - _Context: yea, i know, it's high on the list, and now on Steam_
+- **.elfu** (2020-02-29): Here's an idea that is in my mind, which I always wanted to be in Gnomoria: Animated gnome sprites. Like pickaxe swinging, sawing, tailoring, walking, attacking, etc.
+- **jyeguru** (2018-04-23): So, you have to manually manage it at the start, then you get some tech/etc that allows it to be automated (maybe at a slight resource or efficiency cost)
+  - _Context: I just want to gas goblins or set unwanted gnomads on fire. Am I asking too much <@280266293490221056> ?_
+  - _Context: not if they have eye patches_
+  - _Context: Well not necessarily CO, but maybe gas or fumes?_
+- **inkraja** (2019-03-14): <@202164327606648841>  some more suggestions for your list, hatch xyz animals, butcher it, make the best meal + drink quality that is possible. Defend  (for later) 100 gnomes, a bear and 100 spiders and each tier of golem. "You died" - lost a gnome in battle. "Coco Channel" Starving to death. "Livin
+- **styfrit** (2018-08-25): it don't appear so you place the zone on the floor for sand But wall down on dirt make the wall appear at the top of the tile it should be
+  - _Context: the upper lines are exactly the same , so its not the floortile from above cause that should be a bit higher_
+  - _Context: the functionality of the walldown is still not quite there, it felt somehow off yet looks right so i tried to put it in a picturestory 😛_
+  - _Context: can you try to show your wallhide with fow? in the corner?_
+- **.roest** (2020-11-23): no idea, maybe once the CI build for linux on github is able to run on its own it might be enough to just copy it on Steam
+  - _Context: adding onto that, who is currently working on testing the game out in Linux and how much would someone here have to do for you to consider putting a L_
+- **der_kobold** (2020-12-20): What would be really good would be localize buttons, like from where are the invading goblins coming?  Where is gnome x when I click on him in the population window and so on
+  - _Context: 3x5 sawmill and you need to attach a steam engine to it_
+  - _Context: Mechanical workbench for fast &/ mass production, e.g. big ass sawmill_
+- **ctherain** (2018-05-04): but think of harpooning a whale (your mom tehe) and the entire water turns red like in my japanese whale hunting videos and some strange red slimes and blood elements spawn and invade your fort.
+  - _Context: If the water is big enough we could have water farms and gnome diving_
+  - _Context: you lot all going on about boats and water  I'm waiting for the gnome space program DLC where you build space elevators and mine asteroids_
+  - _Context: Gnome Space Program, the blocky replica of Kerbal Space Program?_
+- **hughheggen** (2018-06-06): OK, so I've made a flat window, a large stone column, clear glass block, stained glass block, cobble stone, stone and wood halfsies block and a 2x2 gnome face wall relief
+  - _Context: while we're at it why don't we just add wind power_
+  - _Context: or should I just steal them from the fortress mod_
+  - _Context: is someone else going to add that_
+- **styfrit** (2019-09-13): Powder can be usefull if we need to made a big hole...
+  - _Context: which could then be used to power... an automaton_
+  - _Context: Automatons are a lower stage of technology than blowyuppypowder?_
+  - _Context: It can be a high level job for an alchemist_
+- **optimus.0001** (2018-03-10): then you could share your best ones on steam etc
+  - _Context: hmm yeah, if it was a thing where it's recorded as a macro and replayed_
+  - _Context: or selected a region which was then saved_
+- **chaineddjinn** (2019-10-30): Light should 'pool' around an area like water
+  - _Context: im sure you already have plans for this but be cool to see light flood in tho a hole in the roof. rather then only lighting up one tile 🙂_
+  - _Context: Just doesn't get brighter over time_
+- **.elfu** (2020-02-26): Maybe not today, but will think of something.
+  - _Context: could desycronize types of trees_
+  - _Context: Any chance for UI rework? Gnomoria was a pain to undesrtand and it's not easy here either._
+  - _Context: Nope, I do not. But I have crawled from underneath it, if that's what you asking (joined the server 5 minutes ago)_
+- **styfrit** (2020-12-19): made river water level 2 tile high, or make sure there is wall all around
+
+## Building/Architecture
+
+- **binaryalgorithm** (2018-11-29) [9⭐]: mainly, I want to see all the lists with minimal scroling so I make my windows bigger
+  - _Context: when windows are resized, save the position/size when that type of window is open again_
+- **fatmck** (2019-10-01): Suggestion for Needs / Mood  Just read the wiki and read about Needs. Beside hunger, thirst and sleep I would add comfort and satisfaction. Propably they are more moods then needs, depending on how mood will be implemented into the game.  Comfort and satisfaction wouldn’t be necessary at the beginni
+  - _Context: Need a better system than that_
+  - _Context: Gnomoria had happiness, just no way of knowing that it existed until a gnome refused to work._
+  - _Context: I never noticed it so it might as well have not had a happiness system_
+- **fatmck** (2018-10-14) [1⭐]: I would like to suggest a kind of combat screen when we get enemies. During combat I would like to see all my in combat envolved gnomes on the left side with stats (equipment, health, dazed, bleeding, injured, blinded, on the ground, ..), the actual combat log in the mid, and all spottet and envolve
+  - _Context: but please make the width of windows borders a little wider. i have to be really careful to catch that area where i can resize the window... is it one_
+  - _Context: yeah but having 3 with 2 axes could be. so the third one could do other jobs, if he is assigned to them. well, i can live with it being the way it is_
+  - _Context: if a gnome carries something to eat and gets hungry, he should eat the food he is carrying. one of my gnomes just threw away his apple because of his _
+- **chaineddjinn** (2022-02-11): I HAVE A SUGGESTION!   To cut to the content quick Drying Station  ||~~Was thinking drying rack but after thinking it over thought it'd be better as a station instead~~|| Takes grass/weeds and dries them to make better fodder. As you dry the plants you have rare chance to discover new seeds. ||Works
+- **hughheggen** (2018-05-13): <@172353609269248000> Certain bioms could have different fertility rates, and events such as a drought could reduce the fertility of the whole map for a few years. Make things a little bit more involved. <@202164327606648841> Yeah, I did heaps of farming sprites. <@204036338888998912>  A fertility s
+  - _Context: irrigation could be something like "replacing" a sand floor with dirt and it'd need some water for it_
+  - _Context: I'd love to see some events like that as well. I do think they should be moved to post release (like pretty much everything else here 😛 )_
+  - _Context: Oh, I'd like to suggest events that change around some of the game dynamics. Spice things up a bit._
+- **.elfu** (2020-04-01): You know, there's prospector, that gives the ability to at least process trash dirt and similar raw materials. When it comes to food items, these could get made into a compost or fertilizer, and in later game, maybe fuel for machines/golems. Other than that an item could simply decay into a pile of 
+  - _Context: Oh, by the way. Curious thing that I never understood in Gomoria. Why are containers, such as drawers or cupboards, not able to hold items in them? It_
+  - _Context: I remember in Gnomoria traders were my number 1 sinkhole for overflowing items. I'd rather have workshops and mechanics that allowed me to use these t_
+  - _Context: It doesn't change the fact that excess items get used. Make it use 10 seeds to make one bottle of oil, and you got yourself a pretty big sinkhole righ_
+- **tacyn.** (2018-12-09) [2⭐]: In regards to trade, I would like to mark stockpiles as 'for trade' and then have a filter in the trade window that shows only items in marked stockpiles. This can also tie into automatic trading where it allows selecting the option 'sell from marked stockpiles'.  Could even assign stockpiles to ind
+- **.lld** (2018-05-11): Do our gnomes live in a land of milk and honey, or sand and pain?  That could be a global fertility slider at game creation.  Then all crops would need to be balanced for high and low fertility soils.  Even with High and Low fertility, I could see a lot of dev time for not a lot of gameplay.  If you
+  - _Context: maybe add in bone meal so farmers can fertilize fields of your choosing. I know by endgame you have thousands of damn bones. Instead of the fert tiles_
+  - _Context: then a slider for overall fertility is probably a bad idea.  how about a slider that increases the chance/quantity of high fertility spots? that would_
+  - _Context: <@176318165129756672> <@204036338888998912> high/normal fertile soil then like rimworld? could get manure for animals and fertilizer and maybe special_
+- **Deleted User** (2019-07-27): -Suggestion: Is it possible to add and option to stockpile limits to count items of any/selected materials?  For instance, I`m crafting statuettes from orange and pine planks (order with any materials, whatever is available) and I'm storing them at a stockpile but I don't want my haulers running the
+  - _Context: Just and idea of course.  what about zones that we can set for the gnomes we have. like rimworld has like you can only go to places in this designated_
+  - _Context: Like, the design can be an either or, the the internal option for stockpile? Would be possible to have and stockpile with material limit and other wit_
+  - _Context: Hmmmm, let us think about that a little more. I'll check which would be more useful in my usual game play and lets wait for input from others._
+- **chaineddjinn** (2019-10-28): <@202164327606648841> Sorry just got back to this.  The problem with that "cost" is it's easily subverted if your clever. I put most of my people in a group and start training them asap, after initial set up.(1st day forging/logging/mining) I put 1 miner, farmer and anyone non-essential into 2 group
+  - _Context: obviously you don't need to be without workers doing certain jobs. I'm not that dumb that I'd be without miners, ever (or anything else essential for _
+  - _Context: Not only is this great for defense but also hunting, as animals get thirst and run the gauntlet, they alert dwarves so I can move 1 ranged squad in fr_
+  - _Context: <@202164327606648841> PFFFT! Ummm, I have no idea how you built your fort... but I haven't implemented a single automation and I believe I have yet to_
+- **optimus.0001** (2018-05-19): Let me regurgitate some thoughts all over the nice clean channel.   Magic candles/lights would need a source of power, as would other magic elements in the base. There's also the notion of using magic as offensive skills or buffs eg insta-harvest... These could come from a common resource (say, mana
+  - _Context: If the plan is to have eldritch horrors in the game, bright light should be a way to either reduce sanity loss (assuming sanity is a stat), prevent it_
+  - _Context: <@362644073095626754> While the idea is interesting, what you're suggesting would make gnomoria/ingnomia a completely different game that what it was _
+  - _Context: Depends on how you implement the refueling... If it's automatic via one of the auto-jobs like hauling or building (for example) but with a slightly hi_
+- **.alch** (2019-08-06): On crafting workshops, rather than having to click the item you want to craft, then click the craft button which might have the added effort of scrolling down to get to, implement some "instant" method.   Like maybe if I just right click on the item I want to craft it just skips the "click craft" st
+  - _Context: I just don't want to have to click the craft button every time when I just want one of the item and don't care about the material_
+  - _Context: Sometimes the situation comes where you just don't care what material it's made out of and just want 1 of the item or so_
+  - _Context: Close the "build containers" window when I pick what I want to build_
+- **hughheggen** (2019-09-07): There can be straw bales that take like 20 or so straw to make. Grazing animals could eat straw as well as grass so you can fees them even if their pasture has no grass. Add a straw weaver profession to make woven furniture and baskets. Add an option to farms for farmers to plow the straw back into 
+  - _Context: Or just add a tick box to harvest straw for farms. If unchecked, the grain is harvested with no straw_
+- **hughheggen** (2018-04-04): and divine favor could be like a tech level. to gain raise the dead spell, you might need to have 1000 favor with the dead god or something, so maybe sacrifice 20 goblins, 40 goats, 10 gnomes or 5 gnome children maybe?
+  - _Context: so I was thinking  about religion because praying could add to gnomish happiness, with praying done in a temple room for a bigger happiness bonus_
+  - _Context: temples could be a large multiplier to kingdom wealth, like the great hall, so players would be encouraged to add lots of treasure to it_
+  - _Context: temples could also have priests, which also improve happiness bonus_
+- **the_real_kyrros** (2018-01-31) [1⭐]: I imagine, if putting in production limits/caps, those limits would only need to be in place for tasks that are set to repeat (set it and forget it), because those are not necessarily needing to be monitored. Whereas, take Roest's example, we're capped at 5 tables, but I want to build a different on
+  - _Context: Of course not all workshops. The modfiles define the inputs. For example, Those that need fuel could have one extra input._
+  - _Context: Craft portals to the demon world to store infinite ressources, but be exposed to random attacks 😛  More ressources stored  =  Higher chance of being a_
+  - _Context: How about just managing your stockpiles better and not having more than 2000 seeds and clippings_
+- **slowbro1337** (2018-09-23) [1⭐]: Can we have diseases: flu, gangrene, maybe some magical ones? Asking cuz my first FUN in DF was when my militia killed wereunicorn and one of the dwarves lost all limbs and he got infected. So, night kicks in, the fortress is slaughered.
+  - _Context: In regards to automation, mid/lategame workshops that don't need gnomes to build objects, like a sawmill that just needs to be supplied with wood and _
+  - _Context: i thought about that but havent found a decent way to combine it into my main transport shaft_
+  - _Context: I also want sickness. That will be later though. Probably much later_
+- **sorsaj** (2018-08-28) [1⭐]: stockpile ordering is really a hazzle, please move up/down arrows to the left side next to the name and add a move top/move bottom or make it drag and drop like steam wishlist ordering ( drag and drop at will and click safe when done)
+  - _Context: please make it so i dont have to go into stockpiles and enable each new item that i mine or craft if i have set to accept "all" of one type (like soil_
+  - _Context: hm strange i just had this with bones, i hadn't butcherd an animal yet, so i couldn't setup my bone pile, but as soon as i got my first llamabone i co_
+  - _Context: look at it yourself, a dropdown list of stockpiles with 2 "paste" buttons and one "copy" without any idea of what gets copied to what or pasted to wha_
+- **fatmck** (2018-10-05): Wouldn't it be some kind of solution if we could check something like "build in order" before we draw a line of wall or filling a hole? So if we want a 13 tile long fill job of a 1 wide tunnel we check it and draw it from exit to entrance. It would then offer only the first wall as job to the gnomes
+- **guri9486** (2018-03-08): Also, I thought that the alarm bell mechanic was implemented in a way that’s punishingly confusing.  I think that you should either allow the bell to be rung by the player, or else give the bell its own priority so that we can make sure that ring a bell overrides every other action.
+  - _Context: An easier way to fit downwards.  In Gnomoria I found that I had to give the commends to dig, adding ramps to each level. I don’t know how it should be_
+- **_ysabell_** (2018-04-27): I don't know if anyone has suggested this yet. The general happiness of a settlement could also affect (in part) the number of gnomes joining the settlement each season, as well as kingdom worth. Conversely, there could be a chance for gnomes with 0 or low happiness to leave the settlement. Perhaps 
+  - _Context: I don't think stuff like slavery necessarily leads to bad press (Rimworld has it, and no one complains about it). I do think that having something lik_
+  - _Context: I mean that as gnomes become more experienced, they need better furnishings and food quality to stay happy, with higher professions needing more to st_
+  - _Context: I thought kingdom wealth was a simple and easy way to increase population size but we could go by a development score instead. The more infrastructure_
+- **tacyn.** (2018-07-30): I think it would add some logistical/planning depth since you would have to run several workshops in parallel for jobs with long completion time. Also I would like it better to have large cellars where wine and cheese ripen instead of a single brewery/kitchen mass producing them.
+  - _Context: in regard to smokery/cheese making, I'd like a mechanic where a workshop can complete a job without a gnome present after it's been started.  No reaso_
+  - _Context: But what kind of cheese is it?  A nice Brie, or cheddar?  Who doesn’t love a nice smoked cheddar with their yak steaks ?_
+  - _Context: I think once trade comes in, anything that's preserved can be traded. Fresh and perishables can't be. Also preserving gives a slight food and happines_
+- **desolator_x** (2019-01-10): well, the idea is (for me at least) that you'd want to set up a proper workflow. Autocrafting like that has always been in gnomoria, and works well as long as you only have one chain of buildings. As soon as you have a second carpenter or something, suddenly your gnomes need to haul components all o
+  - _Context: not sure if its still planned, but I once suggested a workshop-room designation which allows managing all workshops within it. The autocraft could the_
+  - _Context: I Didn't understand the job manager discussion. If I want a bed, there should be a tick box that's default on that auto crafts all the required sub co_
+  - _Context: Trying to remember here, but didn't GNM have a "Craft Requirements" function? So if I went to a carpenter to queue up 10 4 poster beds it would spawn _
+- **desolator_x** (2019-05-27): That's a pretty good idea. Added to that I'd like to see something like a little counter behind the name of each gnome to see how many jobs they currently have active, would be handy if you don't want to use preset professions but don't want to overload individual gnomes
+  - _Context: One more tiiiiiny thing, instead of having to click every tile in the population window one by one, allow "painting" over then by just holding the mou_
+  - _Context: Implement the gnome skills tab with the overall population window, so we can assign jobs from the pop window and see what gnomes have what jobs, what _
+  - _Context: Along with that, another QOL thing would be with the dropdown in the gnomes skill tab, have a small popup when hovering over a preset that tells you w_
+- **maveross** (2021-01-12): In the case where you need a table nd a chair built, instead of one carpenter queueing up both, you can have one make the chair and one make the table. Donno if that's a level of automation that should be allowed, but I would like it
+  - _Context: I've set up multiple workshops to do a decent number of things. I think it would be particularly time saving when amping up production of a certain it_
+  - _Context: In the sawmill, I'll create a set of craft to 20 for each type of plank, then another set of craft to 50, and another set of craft to 100. So that I'm_
+  - _Context: Having multiple of the same type workshops that have "craft required goods" toggled spread out the load so  one workshop isn't being focused would be _
+- **sknortsch4137** (2018-12-01): i like the idea of NOT seeing als the possible items right from the start, but as one knows the game, this hiding would be obsolete. well, isn't this possible: new items of a category, when they appear the first time, are automatically put under the categories they belong and are handled the same wa
+  - _Context: i wanna be able to see all the items in a category when i set allowed stuff in a stockpile so i dont have to open the stockpile settings every time i _
+  - _Context: well as a compromise, i just made it so that all categories are visible from the start and you can activate them, so new items under that category wil_
+  - _Context: thats what he said he did, isnt it?_
+- **tacyn.** (2018-10-15) [1⭐]: The designation would be the same as other rooms. Comparable to dormitories, which allow gnomes to use the beds build within them. The crafting screen is the same as for single workshops, with the difference that it can do everything the workshops within the designation can. The orders created in th
+  - _Context: I think it could combine my idea of attaching workshops to stockpiles. instead of stockpiles, the management desk_
+  - _Context: we need crafting options for the workshop it self, and a "global" option that's shared between all crafting stations of that type right?_
+  - _Context: because if it can collect and hold rain, that could be a problem for people controlling running water into their bases. I know with Gnomoria, I dig a _
+- **der_kobold** (2020-12-30): a thing that could be handy   no more 1:1 drop of rock or soil when destroying a block   The amount of littering of those materials get insane over time when you dig done   Maybe a drop chance of 10% or something instead? Would help to keep the world a bit more free of waste stockpiles and overall i
+  - _Context: Not dead too? Would think they would be quite sensitive regarding water ^^   But when there's no magma in the bottom of the map what else is currently_
+  - _Context: Then it's going well for the tools  But something is eating my weapons   Maybe also caused by the long game time? I'm now in year 10_
+  - _Context: ah ok the prospector gets rid of stones, good to know ^^   ok, I think I found the reason why armor and weapons arent adding up.  it seems like weapon_
+- **the_real_kyrros** (2018-01-11): Could implement some kind of one-shot creation of a scaffold/rope ladder, or even just allow gnomes to  moved up one level to an adjacent square occupied by another gnome (i.e. get 'pulled up')
+  - _Context: i JUST thought of something that might be AWESOME!  if the game world generates like DF...as in it generates an ENTIRE world and you only play a bit o_
+  - _Context: than a hack maybe, allow diagonal movement when trapped by "remove floor" jobs this should at least ease the problem_
+  - _Context: i know its a hard problem, but could be avoided by letting them walk on walls (maybe only allow when trapped)_
+- **mazerduckingrakum** (2018-03-09): Maybe just like a default blueprint type of thing, and a system where you could create new blueprints.  IE, a 4x4 staircase blueprint that you can just draw where you want it
+  - _Context: Or maybe a way to draw a staircase or ramp?  A way to draw a long stair that knows to go downward (or upward)?_
+  - _Context: could be implemented as the number of left clicks increases task repeats, right-click decreases (and cancels at 1)_
+  - _Context: the job might need to move down/up 1 level per repeat so you can still repeat or cancel it_
+- **.lld** (2018-04-22): The perception of what is right and the actuality are very different things.  Honestly has the RoboBob email ever been released?  Roest could be a lying mother fucker, and we have no way of knowing. ( I am not saying, and personally, don't think he is.)  Take a look at the subreddit today.  There is
+  - _Context: yes, I know. I'm just wondering if you had any thought on what you should initially start with and whether the list <@386915067477753858> made in the _
+  - _Context: actually he could just say 'stop using it now' to be legally binding there would need to be a formal, signed agreement beyond just a casual email...  _
+  - _Context: it'd be nice to add that in at some point though, even if only as an option for a player to set things like "only highest skill crafter makes statues)_
+- **drucifer8036** (2018-09-14): Could we eventually get hotkeys for other specific actions?  Specifically, I'm thinking of "cancel a build or designation," "deconstruct something built," and "mine/dig wall."  Maybe you'd like hotkeys for other commands too?
+- **hughheggen** (2019-03-09) [2⭐]: Did you like the idea of mudbrick and rammed earth?
+  - _Context: When you select the furniture to be installed. You can select the type of metal. Why not right under it somehing like in the smelter: Any / average or_
+  - _Context: Jokes aside, I think there should be a way of making sand/clay without needing to mine it, since once you mine out those two layers, you just have an _
+  - _Context: I added the ability to turn dirt and water into clay in my mod in Gnomoria, so I fully support the idea of turning dirt into clay 😃_
+- **chaineddjinn** (2019-05-15): I'm sorry but in the convo above <@202164327606648841> is **SUPER** aggro toward @derPaddy#0188 just because he had a difference in opinion.  I feel surface stone would also prove useful as eventually their may be a point system which is costly to bring stone at embark or may have other restrictions
+  - _Context: (Not that many would give a rats rump, but that's not the point.) I had felt this would aspire to include some of the function and versatility of wher_
+  - _Context: I don't want to continue the discussion on derpaddy. He didn't even read the steam page, as such he comes here with a totally uninformed opinion. The _
+  - _Context: The game has always seemed to be advertised as a gnomoria+, with a focus on getting the gnomoria part working fully then adding new things. I think it_
+- **nordiii** (2018-01-14): In case of an raid, an option for Military only would be nice too. Maybe an event system for specific action? Would be awesome for mechanisms.
+  - _Context: you're responding in suggestions to a general thread message, maybe give a hint as to what you're referring to for future reference? 😉_
+  - _Context: Something like left click , just select the furniture as in the current overview. Right click, open a larger window docked on the general furniture ov_
+  - _Context: Maybe divided by "you have the resources " and "you don't have the resources"_
+- **flash.1** (2018-05-15): So we either need a routine that automatically defines pastures inside fences or we need the option to freely define pastures ourselves and put fences around them
+  - _Context: but you had me thinking, you know i want to implement a mission system, where you just select a few gnomes and send them on a mission, be it diplomati_
+  - _Context: the fuck am I looking at 0.o can we please go back to the normal 2 genders and people with a mental disability?_
+  - _Context: do you think animals should be magically contained on pastures or should they be able to wander off and need fences_
+- **saint_of_grey** (2019-01-22) [1⭐]: Shiny dude with a pick for an arm. Only works with stone, can't do anything else. Maybe give him a hub to sleep at when you don't have anything for him to do, so he doesn't eat up coal while you aren't mining.
+  - _Context: Does he have a Drow friend and the other arm with a hammer on it?_
+  - _Context: All in one build wall + floor either above or below job_
+  - _Context: Stuff like that for other jobs as well._
+- **prassel** (2018-09-01): -make stockpile settings window open when you designate a new one. -(resuggest) option to toggle show all items when filtering so you dont have to edit every time a new object is crafted. -ability to set a position in the stocks list in the stockpile setting (so you dont have to open that every time
+  - _Context: i'd like to see an option to toggle showing every item when you filter for stockpile so i dont have to go in a dozen time and edit it when i craft new_
+  - _Context: some things come naturally for you cause you know all the workings, for me this (adding a single skill via sheet) could have been something that just _
+  - _Context: 0.4.0 - stockpiling, tiles with containers are handled first - job queue: craft# the number to craft will count down now - job queue: craft to, jobs w_
+- **sknortsch4137** (2018-10-11): in DF digging the tile you stand on leaves a ramp up. this could be a more realistic possibility though. or implement mining ramps up - would be nearly the same. but mining stairs out of a single-tile-wall as the only solution  is a little weird to figure out 😉
+  - _Context: when i try to remove the highest level of a hill with "dig hole" order, the last tile stays and will not be dug. in gnomoria gnomes were able to dig d_
+  - _Context: Calling something a first world problem is not a viable argument Roest, come on now.  We should all stop worrying about this game and go volunteer our_
+  - _Context: well, leave it the way it is then, I can live with that stair-workaround ^^ but I think I am not the only one with that idea - as we are used to that _
+- **yksleets** (2019-01-08): 1) Some sort of a blueprint system, maybe along the lines of Factorio where you have to build it once but then you can make a copy to a book you can plop down items from as needed. I like to build my core the same way each time so having an easy way to recreate it woudl be amazing. Maybe even a way 
+  - _Context: True, I was thinking it more as an addition if I need 25 beds for the new sleeping wing as a oneoff, the bread and butter smelting, bar creation and s_
+  - _Context: that's why we have the amazing linked stockpiles_
+  - _Context: you don't want gnomes to haul the logs, then the planks to the other side of the base just because the sawmill is busy right at that second, and then _
+- **desolator_x** (2019-01-18): also, I like the idea that <@177094350201683968> had with carrying food with them. It could be restricted to a certain piece of gear you'd have to make first, say a lunchbox 😛 so your gnomes would equip the lunchbox and then be able to carry one sandwich and one drink with them or something
+  - _Context: You have outside corner ramps for straw roof I see. I could see people wanting both inside and outside corners for all ramp types for roofs. So may ju_
+  - _Context: So for suggestions, could we  get a different color or some sort of Icon to note input linking block for workbenches? As near as I can tell, only 3 ar_
+  - _Context: The sand tile is really hard  to distinguish from the mine wall colour... just started playing around. I think this could be a problem for a new playe_
+- **chacina7810** (2019-03-10): A system of achievements for the noobs to know the progression and for the players to complete all the possible things of the game. And up to challenges ... 300 of  such an item crafted, etc. It could have an option to show or hide the achviments pop-up
+  - _Context: I feel that when I craft something and put any material into the workshop it is harder for the gnomes to complete the craft than when I put in a speci_
+  - _Context: well, one thing that could be nice is the ability to start a new world/game with some of the gnomes from a previous world/game_
+  - _Context: especially for streamers, but also if you want to have this idea of a world where you have different settlements_
+- **chacina7810** (2019-03-11): I do not think it's particularly a good idea for one game to affect the beginning of the other... But if you believe it will improve the game scene and for everyone to be happy it could be a wonder (haha 😅 ) <@177094350201683968> that gives you a backupsave, helping in the same run. Dunno
+  - _Context: It could be as simple* as an option to retire the game and the gnomes get tossed into a pool and can random into the next games. *simple to write, I h_
+  - _Context: I think you should need stone.  Either add some on start or have surface stone_
+  - _Context: Agree wih Lord Hugh here : in my opinion stone is needed. I mean how do you cut a log to become a plank. You need somehig at least stronger than wood._
+- **hughheggen** (2019-07-29): I'm trying to think of a situation when you might need 200 of the same item of 4 different materials. Wood. You could use the most expensive wood (say mahogany) and use that for furniture. A light wood (pine) for arrow making and a strong heavy wood for shields and doors (oak)
+  - _Context: Wait, I just tested it. I thought this was taking away my ability to filter what specific material goes into the stockpile, but it's just the min and _
+  - _Context: No! This is a terrible idea. I like to craft with only certain materials like 1 log type and 1 stone type, and my OCD needs the specific materials nex_
+  - _Context: Just final comment on limiting by materials: another use case of limiting stockpiles with different materials is while using it with linked stockpiles_
+- **Deleted User** (2020-02-04): -Deconstruct job should not  target floor tiles built from blocks. This makes deconstructing large workshops and large areas for reordering harder! Since we already have remove and replace floor for floor tiles, for  me it seems better to remove deconstructing from targeting  floor.
+- **.lld** (2017-12-30): Maybe hourly would be better since a gnome might need 10 hours of sleep on the floor vs like 6 on a super cushy king bed?
+  - _Context: like the military schedule, but in general? I'd like that too but it doesn't need to be per hour, dividing a day into three 8-hour or four 6-hour slot_
+  - _Context: well, something like cooking / growing perhaps? planting during the night so the plants grow during the day and the gnome can go cook during the day w_
+  - _Context: The schedule could be a suggestion rather than a rule. Let's say gnomes have a rested value going from 0 to 100 and they normally go to sleep below 50_
+- **.elfu** (2020-04-05): How about adding a tick to corpses info panel that says "butcher this corpse", so that we can handpick which corpses get butchered directly, without the need to stockpile them?
+  - _Context: Would you still leave the _Butcher excess livestock_ option? If yes, then it sounds quite fine to me._
+  - _Context: There was one in Gnomoria. I think it ws either an action or initiated by ticking a proper option in creature info panel_
+  - _Context: I'm fairly sure that there was a list of available corpses in Gnomoria, not sure if there was a way to select which one to butcher. But, mmm, Goblin S_
+- **korvar** (2020-04-13) [1⭐]: Another suggestion: if you click on an under-construction workshop, and it's missing something, it'd be nice to be able to find out what is missing.
+  - _Context: Suggestion: Switch up how a workshop under construction looks like. Right now it lights up a few tiles, indicating, that something is there. To actual_
+  - _Context: Although that might be difficult because items required for construction are not delivered to the place, until all of them are available. Which means _
+- **.alch** (2019-03-12): You could remove the need for stone but then add the requirement for an axe to use the workshop
+  - _Context: I believe the question what whether the building requirements for the makeshift workbench should include stone, not whether you use it for the later t_
+  - _Context: Don't you need it for a chisel?_
+  - _Context: stone is only used in the sprite as a makeshift table or workbench isn't it? It's not used for tools afaik_
+- **condac** (2021-01-25): We really need some kind of event log, when you find all your cows dead you want to know why. Same with gnomes, when you find one dead on the floor there is nothing that tell you what have happened
+  - _Context: I don't know how the development is going but, in the option to hide the walls, you could put only a part of it, very low, just to differentiate where_
+  - _Context: Another suggestion is also to overhaul the trade price of coins and bars. I have tin bars that trade for ~100 but a tin coin trade for ~30, blacksmith_
+  - _Context: Yes that particular bug i found out and also found the issue on. But during battle or animal encoutnters or whatever The odds of seeing what hapens is_
+- **sibaz_** (2019-09-12): Also in DF all dwarfs start with no skills and by doing a job, they gain skills, so specialise.  Gnomes seem to start and keep their skill level at everything, they should be able to improve
+  - _Context: feathers/straw/cotton stuffing should all be potential mattress fillers, and they should be the primary 'type' of a mattress_
+  - _Context: could I suggest that the info box, or the gnome log, has more info in it.  It's often quite vaigue_
+  - _Context: Someone talked about fishbones being made into glue, which is probably silly, but you could require glue for making arrows_
+- **.elfu** (2020-03-04): But why would you want to do that, every time a game loads? I really wouldn't want my gnomes to suddenly change everything they do at the start of the game
+  - _Context: Once a unit is spotted, the check should stop for the other side for that unit for X number turns time, combat should skip check completely for x turn_
+  - _Context: Could be worse, I could be a UI guy instead_
+  - _Context: well, if you can make a distance check between two units, just by looking up their coordinates in world, then I'm thinking that could be faster_
+- **drumoriginal** (2018-05-31): on the point of miasma, please don't add it, it is such a exaggerated feature
+  - _Context: for diseases I think you are better of with a wow system, instead of cellular automaton_
+  - _Context: I think a miasma like object could be useful for modeling the spread of disease_
+  - _Context: if you want to see a nice example search Conway's Game of Life_
+- **desolator_x** (2018-07-12): <@456226577798135808> 1) there should be easy / normal / hard starts that give you what you need 4) sounds like a hardware issue, what specs do you run?
+  - _Context: <@456226577798135808> hello i would suggest you make a new line for each point instead of a wall of text 😬_
+  - _Context: uh, should be fine then, so it's probably a driver issue_
+  - _Context: <@202164327606648841> i have 2500k @ 4.5ghz and r9 290x and have bad fps too on normal size map_
+- **mindwarpaus** (2018-08-29): Not sure how many people would agree with me, but I'd really like to be able to replace floors under constructions. Seems really harsh that I can't replace the floor under beds, doors, torches or workbenches.  My gnomes can't put a torch back in the same place after laying a new floor? Maybe rimworl
+  - _Context: "Literally anything" technically includes "Ban prassel from Discord".  Not saying you should, but it does gets prassel's seal of approval on making In_
+  - _Context: it's more what is copied and pasted to what, and why is there 2 "paste" buttons? like, does it copy/paste the setting for the chosen pile in the dropd_
+  - _Context: The ability to sticky windows.  e.g. Sticky the Build Workshop Window so I can just click on workshops from the stickied window.  Or see what is in a _
+- **desolator_x** (2018-05-27): Eh, if you're going to have nobles and stuff in the game having special clothing needs etc for them would make sense. If you just have common gnomes I don't really see a reason to have clothing needs. Having their needs condensed into bedroom wealth should be good enough
+  - _Context: also, looking at the barn building, I think it'd be nice if the game would automatically add the needed floors when you're building up the walls_
+  - _Context: would be nice if you could see where the selection sprite for each tile is so you can count if needed_
+  - _Context: Could gnome-needs become active over time? For example at the start there are just Hunger, Thirst and Sleep,  but at certain kingdom sizes new needs l_
+- **.roest** (2018-10-04): about gnomes falling down when you remove floor, i'm a bit undecided about that, the remove floor job is done from a neighboring tile, so instead of removing the floor and letting the gnome that is on the tile fall down, we could evacuate him to the tile the worker is on
+  - _Context: Something to add when a gnome falls, the location they fall to doesn't seem to become discovered, so if they fall into a wall tile, it stays as an und_
+  - _Context: any auto prioritization for large scale dig/build orders?  An example problem I've had, building filling a 1 wide tunnel and a gnome getting stuck bec_
+  - _Context: just like in Dungeons 3, sounds like a good idea to implement_
+- **.roest** (2018-12-10): and I guess I can implement additional filters, think that would be the better way to control clutter instead of limiting the stockpiles to draw from
+  - _Context: In gnomoria, you get a giant list of everything in your fort. This always made finding the things you wanted to sell a pain. This optional filter woul_
+  - _Context: filters, or a search function so you can just type is part of the name of the items_
+  - _Context: as always I'd ask what a mechanic like that would add_
+- **dinosaure.plz_nofriendrequests** (2020-12-24): I'd admit that the tree colour can be changed to blue, that has no gameplay change. Tree structure do have a gameplay impact, that's the kind of change that changes a world from "boringly standardized result" to "hey, I didn't expected that tree to grow as high!". Not a primordial feature, but somet
+  - _Context: Could you keep level encumbrance not checked? (please?)_
+  - _Context: <@!465569148798238720> they are a lot better than games not levelling their assets ; and they are pretty cute as they are today, this suggestion would_
+  - _Context: you want procedural tree layouts so you need sprites that can be stitched together at different locations, all possible but takes a talentend sprite a_
+- **dinosaure.plz_nofriendrequests** (2020-12-29): Suggestion: add more starting drinkable things. Even low quality would make it. I'm actually trying something like "DrinkValue" of 10 to every fruit and vegetable (wheat/grass/hay/.. excluded). `update "Items" set "DrinkValue"=10 where "DrinkValue"=0 and ("ItemGroup" in ('Corpses', 'Meat') or "Categ
+  - _Context: Can't place them myself whenever I want to. Edit: https://i.ebayimg.com/images/g/AocAAOSwmflfT~IU/s-l1600.jpg <- this is a "magic tree", nothing can f_
+  - _Context: oh a thing I would be happy about   abundance of ore as a setting ^^  And maybe reduce a bit the occurrence of gems? I am looking for ore and find rid_
+  - _Context: Allow a grove to be placed under an existing tree, and auto-set to actual type. (Don't know how I managed to place groves under wild tree roots someho_
+- **rankin6** (2018-08-31): When Toggling the On/Off on what's allowed can we add color not just a depth change on the button. - IE Green for GO.. Red for No!
+  - _Context: add crafting chisel at the stonemason so i can deconstruct crude workbench?_
+  - _Context: can you make the window that opens when you click stuff active? i keep opening list windows and scrolling and it changes Z level all the time 😄_
+  - _Context: What all are chisels used for? just make like 10 and kill the crude workbench?_
+- **makarygo** (2018-10-10): If I want to build first 3 workshops and a well - I make just 8 clicks. But if I have to pre-craft all the ingredients, it actually doubles. Not to mention that I don't always remember what furniture is required to which workshop.
+  - _Context: Uhm, please clarify your question, I'm not sure what you mean_
+  - _Context: If you do so, you will automagically create a job to build chairs, tables, chisels, workbenches and whatsoever is needed to build this workshop_
+  - _Context: (Please, ping me in case of answer, thx)_
+- **dinosaure.plz_nofriendrequests** (2021-01-04): I only wanted to see how others were playing, and as Discord accepts users to stream (even if not recording), that was the idea. I'm not comfortable enough to talk while streaming, and that would have zero-pro stream quality.
+  - _Context: Actually no, it's not even the seeds which are out in the world. It's the seeds which are already in the stockpile (on the floor), which are causing t_
+  - _Context: Just thought it would be interesting to see others playing, and multiple streams are ok on the same room._
+  - _Context: Starting a game on a more open platform like Twitch, and then announcing the stream in the <#447757383985266700> channel or alike is fair game though_
+- **drucifer8036** (2019-05-25): I'd like to see more stair options, assuming this is still the place for suggestions.  Even just a reskin of the raw stone sprite, but the recipe uses blocks instead of raw stone.  Wood, stone block, metal,  bone.
+  - _Context: Could have it that the trainer gives a boost to training their highest combat skill. Makes sense for a trainer who's a master with a sword to give xp _
+  - _Context: Add a trainer job to military training grounds. If they have high skill, then your recruits train faster_
+- **yes072083** (2018-07-04): suggestion: tile selected when tile info is displayed should be highlighted to allow easy identification
+  - _Context: Suggestion: keyboard shortcut to "flatten" current z level to better see the floor behind a wall. Gnomoria key was F_
+  - _Context: suggestion selected tile should contain information of tile. IE: weather dirt/clay/stone ect.._
+  - _Context: Suggestion: tile with job should be selectable to show job pending and gnome assigned if any_
+- **vorg9431** (2019-01-16): It would be nice if we could expand a pasture or farm area by starting or ending inside an exsisting one
+  - _Context: In Char skills there is a place where you can change the priority of their skill. Would be nice to have and auto sort button, that sorts by skill leve_
+  - _Context: Hmm, I'll try again, but each time I started in or ended in, it seemed to create a new small area in the newly included area._
+  - _Context: but that is how it works right now, if you start insde a farm, pasture, stockpile or room it adds those fields to the exisiting one_
+- **drumoriginal** (2018-05-26): better cheese out and go the timber & stone route if you really want more realistic building
+  - _Context: anyway, it is a very small feature and it turned out to be hell for automatic building_
+  - _Context: Stonehearth is a game which had scaffolding in their prototype, since then it has been a pain in their ass_
+  - _Context: it is not about the actual scaffolding, it is about spatial awareness around the building 😃_
+- **vorg9431** (2019-06-04): I did set it to the 1080 size of my screen with borderless and it does cover te task bar. Looks full screen. Maybe that was a factor in the crash I reported in bugs?
+  - _Context: Haven't played in awhile and just fired it up. Is there going to be a Full Screen option for video settings?_
+  - _Context: full screen is problematic, the framework I use has a bug/feature that makes it misbehave when the window is overlapping the task bar, you can set the_
+  - _Context: Normally play the game filling half a screen with some other program in the other half, defaulting to borderless and fitting screen would ruin that 😦_
+- **mcphisto2051** (2020-12-07): perhaps checking if its a corner and the surrounding walls should be changed too, the dig 1 surrounding wall replace it and build on the removed wall slot?
+  - _Context: Food and Drink need indicator color codes_
+  - _Context: Mine both tiles. Plan both for re-construction. They will be reconstructed in an order which is possible, so much you may have._
+  - _Context: 🇫🇮 We too have a long tradition of turning vegetables into alcohol_
+- **optimus.0001** (2018-03-17): maybe you could 'designate region' for it, do it floor by floor
+  - _Context: Maybe make some blocks containing very valuable resources only mineable with explosives_
+  - _Context: and if you put a torch on a coal seam there should be a risk of fire/bang_
+  - _Context: re: darkness, that could make tunneling fun_
+- **.alch** (2019-05-28): Click on an existing build job and see what the job is waiting for, E.g if you're building a workshop and don't have a chair, it should say "waiting for chair"
+  - _Context: "Craft-to" jobs don't take the material type into account, so having a system of always keeping 100 planks for every wood can't be done atm_
+  - _Context: that's a bug report, not a suggestion 😛_
+- **dinosaure.plz_nofriendrequests** (2020-12-28): Suggestion: add buttons to manage the view, likely turn camera around, change zoom (+zoom reinit), change level. (I like to play without keyboard while working.)
+  - _Context: Idon't want to fell wild trees when starting a new colony. (And I don't wanna give me free seeds either)_
+  - _Context: They could be used to seed groves with grown trees, without the log spam._
+  - _Context: I like to let the starting place as untouched as possible.  Until the moment I replace all layers with log floor and agriculture._
+- **korvar** (2021-01-02): Maybe you need a "Manager" gnome to do that sort of thing...
+  - _Context: Suggestion² (as I'm going to sleep): a "don't pause my game with Gnomes arrival as I'm not interested for the moment anyway" checkable option. 🙂_
+  - _Context: That's the wrong channel, but if you scroll level high enough to have this floating in the bottom layer, you're often able to click on it. (Saw this o_
+  - _Context: Suggestion: Having a visual histogram displaying how much of anything went recorded at any time. +relative "per day" consumption/production._
+- **hughheggen** (2019-12-17): It wouldn't be a bad idea to add that to a fill hole tool
+  - _Context: Would be useful for those of us trying to get rid of sand by building the earth above - that stuff has no bulk container and takes up a lot of room_
+  - _Context: You can use the replace wall and floor tool_
+- **drucifer8036** (2018-10-03): are we avoiding the bone figurines and such that were in Gnomoria?  though, i also think that bone fertilizer is a great idea.
+  - _Context: I want bone statues and bone walls_
+  - _Context: It's not my fault if <@280266293490221056> hasn't added them yet_
+  - _Context: Bone furniture, bone walls, bone beds.  Little goth gnomes 😃_
+- **hughheggen** (2019-07-19): You guys are over thinking this. The system could be as simple as a direct connection between tavern size and value and the number of travelers you get
+  - _Context: If a gnome becomes a goblin loving radical, can we make sandwiches of him or her as well?_
+  - _Context: I guess if you're at peace with a goblin settlement then goblin merchant and travelers could visit_
+  - _Context: So I think we need to have a tavern now so we can sell pancakes and waffles to travelers_
+- **dinosaure.plz_nofriendrequests** (2020-12-23): Okay, what would be a real game changer, would be the floor's physic: can't have a "soft" floor more than 1 tile away from a pillar, while "hard" floors would have something like a 5-pillars radius; and crushing said pillar would lower the floor down level(s). That, and/or a "you can't stand an enti
+  - _Context: Suggestion : reduce the tree encumbrance to the only 4 direct neighbouring cells, in order to permit the trees to grow diagonally from each other. T.._
+  - _Context: please rename flatness or invert the scroll bar ^^_
+  - _Context: Isn't mead always made of honey? 😅_
+- **styfrit** (2018-08-25): it don't appear so you place the zone on the floor for sand But wall down on dirt make the wall appear at the top of the tile it should be
+  - _Context: the upper lines are exactly the same , so its not the floortile from above cause that should be a bit higher_
+  - _Context: the functionality of the walldown is still not quite there, it felt somehow off yet looks right so i tried to put it in a picturestory 😛_
+  - _Context: can you try to show your wallhide with fow? in the corner?_
+- **.roest** (2018-04-28) [2⭐]: yea that will be fixed next update
+  - _Context: tile info window pops up way too easily when i quickly click and drag to move camera around, mostly when doing short/small moves. would it be possible_
+  - _Context: 2-headed zombie pandas confirmed!_
+- **Deleted User** (2019-12-02): <@110645938350981120> You can inspect items in stockpile on the stockpile screen. If you mean to inspect items on the same floor of the stockpile, you can hold shift while clicking on a tile and it will force tile inspection.
+  - _Context: Agree but there then needs too be some way to inspect items in stockpile_
+- **hughheggen** (2018-10-07): I suggested months ago some grappling hook equipment that gnomes could have and use to scale 1 or 2 block high walls.
+  - _Context: Well, moving the gnome standing on the floor that's being removed to the workers location makes a lot of sense to me as a simple and working solution _
+  - _Context: Would also make cave exploration easier and open the possibility of a cave diving profession_
+- **ald_productions** (2019-12-16): Could we get a tool to turn a ramp or stairs back into a full wall block?
+- **der_kobold** (2020-12-20): What would be really good would be localize buttons, like from where are the invading goblins coming?  Where is gnome x when I click on him in the population window and so on
+  - _Context: 3x5 sawmill and you need to attach a steam engine to it_
+  - _Context: Mechanical workbench for fast &/ mass production, e.g. big ass sawmill_
+- **.alch** (2019-10-29): Can we have a wall of text channel to show off these magnificent walls that nobody will read
+  - _Context: <@386915067477753858> <@211419446391209984>  The TL;DR is the last sentence_
+  - _Context: I think the acronym "TL;DR" is too long._
+- **hughheggen** (2018-06-06): OK, so I've made a flat window, a large stone column, clear glass block, stained glass block, cobble stone, stone and wood halfsies block and a 2x2 gnome face wall relief
+  - _Context: while we're at it why don't we just add wind power_
+  - _Context: or should I just steal them from the fortress mod_
+  - _Context: is someone else going to add that_
+- **der_kobold** (2020-12-27): a crematory would be maybe handy until we have coffins for a crypt
+  - _Context: I believe I've already sent some glass block sprites to Roest_
+  - _Context: They magically disappear currently quite fast  So no worries_
+  - _Context: Just dump the bodies in the mines and forget about them_
+- **.alch** (2019-01-19): It was besides two workshops, both of which were deconstructed.   Had some crates on it, which were deconstructed. Then i removed it when it had nothing in it
+  - _Context: An autosave feature would be a nice addition_
+  - _Context: I can understand, though I'd imagine it wouldn't be much help when I don't even have a save and the action I did wasn't anything out there_
+  - _Context: xD Decided to work on coursework after that crash, I should probably thank it for that._
+- **saint_of_grey** (2019-01-27): Why not make gnomes themselves items?
+  - _Context: well you know what a window is? A class wall is a large block of stained glass bricks_
+  - _Context: But I mean, how would a window be implemented? Like a fence?_
+  - _Context: What would the difference between windows and glass walls even be?_
+- **.elfu** (2020-04-04): THis could finally bring more use to infirmary/hospital room
+  - _Context: I want different types of illnesses_
+  - _Context: Get worse with more attacks. Depreciates when going infirmary or sleep overtime._
+  - _Context: Devil Dragg, Hunger and thirst 20%?_
+- **chaineddjinn** (2019-10-30): Light should 'pool' around an area like water
+  - _Context: im sure you already have plans for this but be cool to see light flood in tho a hole in the roof. rather then only lighting up one tile 🙂_
+  - _Context: Just doesn't get brighter over time_
+- **not__** (2018-05-16): Wow, I go to work after making an innocent Alien Nation reference and you lot almost burn down the chat room with your spirited commentary.
+  - _Context: You should take up the linked project_
+  - _Context: If I were him, I'd be working on this project: http://docplayer.org/docs-images/69/60722589/images/6-1.jpg_
+  - _Context: time is a resiliant little bugger, won't stay dead_
+- **Deleted User** (2019-08-01): Are you planning on having auto sell (like Gnomoria mod) or some options with previously selected items to sell?
+  - _Context: Or at least a check-box to determine which stockpiles would show on sell tab, if that makes things easier on your side/_
+  - _Context: An autosell would come handy (although, I'd personally think this is preeeetty low on my wishlist priorities)_
+  - _Context: and it's better than in Gnomoria because it only takes stockpiled items_
+- **berkys32** (2020-01-22): Suggestion - when assigning room to gnome, theres number behind his / her name indicating how much rooms he / she already has
+  - _Context: Suggestion - grass floor changes to soil floor, if wall built on it. Soil tile change to grass, if built._
+  - _Context: thats why Im asking for it - so I can see which gnomes already have room_
+- **hughheggen** (2019-01-11): I just had all the workshops of the same type in the same room and all workshop rooms were close together
+- **styfrit** (2020-12-19): made river water level 2 tile high, or make sure there is wall all around
+
+## Combat/Military
+
+- **bananamonkeytaco** (2020-06-26) [8⭐]: has anyone suggested to have an end battle recap? Something that would just state all injuries taken as a result of the battle? Would save some headache over checking the battlefield for gnome limbs/blood or the troops individual health pages
+- **fatmck** (2019-10-01): Suggestion for Needs / Mood  Just read the wiki and read about Needs. Beside hunger, thirst and sleep I would add comfort and satisfaction. Propably they are more moods then needs, depending on how mood will be implemented into the game.  Comfort and satisfaction wouldn’t be necessary at the beginni
+  - _Context: Need a better system than that_
+  - _Context: Gnomoria had happiness, just no way of knowing that it existed until a gnome refused to work._
+  - _Context: I never noticed it so it might as well have not had a happiness system_
+- **dinosaure.plz_nofriendrequests** (2021-01-19): While I'm in the suggestion channel: - Have a "paint" mode, similar to the "Cut trees" one, but targeting farm/grove/pasture type helping changing seeds en masse - Have an "any" mode on farm/grove/pasture to let them accept any seed/seed(/acorn/pine)/animal available - Name the personalised "Set up"
+  - _Context: Issues page should stay reserved for stuff which has been adopted by a developer or modder. There is just no point to flood it with 10+ new "suggestio_
+  - _Context: Just to avoid further misunderstandings, when I said "threaded" I meant "one thread per suggestion".  Because most of these "one liners" are still far_
+  - _Context: Should get a "suggestions" page on github to comment on suggestions, just to help keep track of them and the discussions around each of them_
+- **fatmck** (2018-10-14) [1⭐]: I would like to suggest a kind of combat screen when we get enemies. During combat I would like to see all my in combat envolved gnomes on the left side with stats (equipment, health, dazed, bleeding, injured, blinded, on the ground, ..), the actual combat log in the mid, and all spottet and envolve
+  - _Context: but please make the width of windows borders a little wider. i have to be really careful to catch that area where i can resize the window... is it one_
+  - _Context: yeah but having 3 with 2 axes could be. so the third one could do other jobs, if he is assigned to them. well, i can live with it being the way it is_
+  - _Context: if a gnome carries something to eat and gets hungry, he should eat the food he is carrying. one of my gnomes just threw away his apple because of his _
+- **fatmck** (2018-09-29): What I missed in Gnomoria and really would like to see in Ingnomia is to set designated areas where we could allow/disallow our gnomes to go. So we could disallow any gnomes to leave our fortress at all or only hunters. Designate battle zones where only military could go and maybe medics if selected
+  - _Context: I like that idea of designated no go areas_
+  - _Context: did i hear blockchain? *invests 50 million dollars*_
+  - _Context: Zombie spores from mushrooms would need it_
+- **chaineddjinn** (2019-04-19): <@207714562437414912>  Sounds a lot similar to what the devs want to make with StoneHearth https://store.steampowered.com/app/253250/Stonehearth/  I agree, it would be interesting and add replayability. Let's get the game out of the ugly duckling stage first, there's a lot that needs to be cleaned a
+  - _Context: Backpacks would also allow for 'Expeditions' and the bigger the pack, the more they can explore. Maybe instead of 'waiting' for migrants you can go ou_
+  - _Context: Maybe eventual 'carts' could be made? Or different kinds of 'Pack animal' for longer distance... but I'm not gonna wager that far, keep things simple _
+  - _Context: I've also thought about backpacks and other things to allow gnomes to carry food and weapons_
+- **hughheggen** (2018-05-13): <@172353609269248000> Certain bioms could have different fertility rates, and events such as a drought could reduce the fertility of the whole map for a few years. Make things a little bit more involved. <@202164327606648841> Yeah, I did heaps of farming sprites. <@204036338888998912>  A fertility s
+  - _Context: irrigation could be something like "replacing" a sand floor with dirt and it'd need some water for it_
+  - _Context: I'd love to see some events like that as well. I do think they should be moved to post release (like pretty much everything else here 😛 )_
+  - _Context: Oh, I'd like to suggest events that change around some of the game dynamics. Spice things up a bit._
+- **.elfu** (2020-04-01): You know, there's prospector, that gives the ability to at least process trash dirt and similar raw materials. When it comes to food items, these could get made into a compost or fertilizer, and in later game, maybe fuel for machines/golems. Other than that an item could simply decay into a pile of 
+  - _Context: Oh, by the way. Curious thing that I never understood in Gomoria. Why are containers, such as drawers or cupboards, not able to hold items in them? It_
+  - _Context: I remember in Gnomoria traders were my number 1 sinkhole for overflowing items. I'd rather have workshops and mechanics that allowed me to use these t_
+  - _Context: It doesn't change the fact that excess items get used. Make it use 10 seeds to make one bottle of oil, and you got yourself a pretty big sinkhole righ_
+- **cannonball_k** (2018-05-06): Pretty sure this has been suggested but gnomes riding yaks?  Trainable yaks that fight and attachments for their horns like axes or saws.  Also use them as labor animals like how gnomes have wheelbarrows, yaks can have wagons.  This could require training or it couldn't.  Some kind of book system wi
+  - _Context: I like the idea of yaks as beasts of burden_
+  - _Context: It all sounds pretty damned good there Cannon! Doing some more thinking obviously mood effects will come into play woth time, but how about different _
+  - _Context: I suddenly like you more I wish that were always the case... sometimes I have these neat ideas that just *fut* away at the worst times... BUT! Its oka_
+- **chaosjester** (2018-05-05): I beg forgivness, I've been reading a bucket load of Roomcarnage (DF story thing, epic, go google it) and have a few suggestions. I haven't gone through to see what other folks have sugessted so Imma just go ahead and put it out there  Something like Foul Fog; I love the aspect of having an almost e
+  - _Context: Well... perhaps for the underground, a thought occured to me though, instead of having fow for above ground, how about a 'map' over look, as a thought_
+  - _Context: <@161788523127635968> When you said Space Elevators I got a distictly kittensgame vibe.  Please add a catnip forest._
+  - _Context: Its all good man. My thought was mostly due to PG, like as you explore shit kinda just *pops* up_
+- **.lld** (2018-05-11): Do our gnomes live in a land of milk and honey, or sand and pain?  That could be a global fertility slider at game creation.  Then all crops would need to be balanced for high and low fertility soils.  Even with High and Low fertility, I could see a lot of dev time for not a lot of gameplay.  If you
+  - _Context: maybe add in bone meal so farmers can fertilize fields of your choosing. I know by endgame you have thousands of damn bones. Instead of the fert tiles_
+  - _Context: then a slider for overall fertility is probably a bad idea.  how about a slider that increases the chance/quantity of high fertility spots? that would_
+  - _Context: <@176318165129756672> <@204036338888998912> high/normal fertile soil then like rimworld? could get manure for animals and fertilizer and maybe special_
+- **_ysabell_** (2018-05-14): why sacrifice the gnome children when there will be plenty of goblins to appease the gnomes' gods? yeah, maybe in the future we could capture gnomes' enemies and sacrifice them for some form of bonuses... obsidian would definitely be great for sacrificial altars, knives, etc... err... well,, if play
+  - _Context: I suppose one thing that might need looking at: Obsidian's value as a resource. In Gnomoria, by the time you have the tech level to actually make thin_
+  - _Context: Obsidian is far sharper than surgical steel, it's the only material we have (I believe) that can cut between cells instead of through them, though tho_
+  - _Context: Or allow lava/water to be 'bucketed' somehow to be brought to the surface/bottom to allow local obsidian creation ._
+- **Deleted User** (2019-07-27): -Suggestion: Is it possible to add and option to stockpile limits to count items of any/selected materials?  For instance, I`m crafting statuettes from orange and pine planks (order with any materials, whatever is available) and I'm storing them at a stockpile but I don't want my haulers running the
+  - _Context: Just and idea of course.  what about zones that we can set for the gnomes we have. like rimworld has like you can only go to places in this designated_
+  - _Context: Like, the design can be an either or, the the internal option for stockpile? Would be possible to have and stockpile with material limit and other wit_
+  - _Context: Hmmmm, let us think about that a little more. I'll check which would be more useful in my usual game play and lets wait for input from others._
+- **chaineddjinn** (2019-10-28): <@202164327606648841> Sorry just got back to this.  The problem with that "cost" is it's easily subverted if your clever. I put most of my people in a group and start training them asap, after initial set up.(1st day forging/logging/mining) I put 1 miner, farmer and anyone non-essential into 2 group
+  - _Context: obviously you don't need to be without workers doing certain jobs. I'm not that dumb that I'd be without miners, ever (or anything else essential for _
+  - _Context: Not only is this great for defense but also hunting, as animals get thirst and run the gauntlet, they alert dwarves so I can move 1 ranged squad in fr_
+  - _Context: <@202164327606648841> PFFFT! Ummm, I have no idea how you built your fort... but I haven't implemented a single automation and I believe I have yet to_
+- **dragonwrath420** (2018-05-18): The effect on enemies would be rather interesting and to add an option of a setting to make certain enemies stronger while in light (for the more diehard fans that like the challenges).  I like that though I would change the certain jobs requiring light to function to using the light to increase pro
+  - _Context: Another is that some can give a passive benefit such as allowing crops to continue to grow at night (since it was mentioned earlier that crops won't c_
+  - _Context: but back to the bees: I think the idea of hives/crops is a pretty good idea to limit the amount of hives you can reasonably build. (modders can add th_
+  - _Context: If light is just aesthetic, then permanent light sources are fine.  But, if light has a proper use that adds to the game rather than detract from it, _
+- **optimus.0001** (2018-05-19): Let me regurgitate some thoughts all over the nice clean channel.   Magic candles/lights would need a source of power, as would other magic elements in the base. There's also the notion of using magic as offensive skills or buffs eg insta-harvest... These could come from a common resource (say, mana
+  - _Context: If the plan is to have eldritch horrors in the game, bright light should be a way to either reduce sanity loss (assuming sanity is a stat), prevent it_
+  - _Context: <@362644073095626754> While the idea is interesting, what you're suggesting would make gnomoria/ingnomia a completely different game that what it was _
+  - _Context: Depends on how you implement the refueling... If it's automatic via one of the auto-jobs like hauling or building (for example) but with a slightly hi_
+- **the_real_kyrros** (2018-01-31) [1⭐]: I imagine, if putting in production limits/caps, those limits would only need to be in place for tasks that are set to repeat (set it and forget it), because those are not necessarily needing to be monitored. Whereas, take Roest's example, we're capped at 5 tables, but I want to build a different on
+  - _Context: Of course not all workshops. The modfiles define the inputs. For example, Those that need fuel could have one extra input._
+  - _Context: Craft portals to the demon world to store infinite ressources, but be exposed to random attacks 😛  More ressources stored  =  Higher chance of being a_
+  - _Context: How about just managing your stockpiles better and not having more than 2000 seeds and clippings_
+- **.alch** (2019-10-23) [3⭐]: Healing magic should have a chance to horribly fail and disfigure the target
+  - _Context: Along with that, other magic spells should have a chance to backfire too, e.g spells miscasting on the caster_
+  - _Context: So what should our gnomish automatons look like?_
+  - _Context: How about turning them into an uncontrollable flesh monster_
+- **.alch** (2019-11-22) [1⭐]: I have an idea. implement wheat seeds, we might use all our grain on bread so we should have a seed version and a food version
+  - _Context: If collecting seeds, a harvest could yield 2-3 seeds and no crop but if collecting crops it could yield 1 seed and 1 crop with a small chance of yield_
+  - _Context: I think you should add goblins to the game along with combat, it would really spice up the gameplay_
+  - _Context: With chickens, just have a manual pop limit on their pasture. If a farmer doesn't want any more chickens, they just take the ferterlised eggs from the_
+- **_ysabell_** (2018-04-27): I don't know if anyone has suggested this yet. The general happiness of a settlement could also affect (in part) the number of gnomes joining the settlement each season, as well as kingdom worth. Conversely, there could be a chance for gnomes with 0 or low happiness to leave the settlement. Perhaps 
+  - _Context: I don't think stuff like slavery necessarily leads to bad press (Rimworld has it, and no one complains about it). I do think that having something lik_
+  - _Context: I mean that as gnomes become more experienced, they need better furnishings and food quality to stay happy, with higher professions needing more to st_
+  - _Context: I thought kingdom wealth was a simple and easy way to increase population size but we could go by a development score instead. The more infrastructure_
+- **Deleted User** (2019-08-14): SUGGESTION: Add checkbox option to stop milking pasture. I only want my pasture for meat, do not want gnomes wasting time going there to milk animals.
+  - _Context: Suggestion: Indicate or standardize the side of workshops that can link stockpiles. Each workshop has one different side that can link, and  it makes _
+  - _Context: Or maybe I have bad memory. Or could be both_
+  - _Context: And also just 1 high versions of it, so I can have nice vertical wood walls_
+- **tacyn.** (2019-01-04) [3⭐]: I'd rather a medic takes the bandage to the injured gnome or the injured gnome to the hospital.
+  - _Context: Just to chime in on my worst experience in gnome behaviour...  A gnome hurt in combat, no leg, was hobbling to hospital on other side of map for a ban_
+  - _Context: they could drag themselves to the hospital until medic picks them up and carries them there_
+  - _Context: yes, I suggested that early on_
+- **slippuu4247** (2018-04-30) [3⭐]: __***The Teachings of Saitama***__ _Kill a goblin with 1 punch_
+  - _Context: I think everyone is missing what Ingnomia really needs.  Steam Trading Cards!_
+  - _Context: you should get a mark of recognition when you make 1000 goblin food items or make your first child sacrifice_
+  - _Context: yes, give free stuff that i can sell and buy other games with 😄 (jk i dont really care, and no if it takes time from development)_
+- **der_kobold** (2020-12-30): a thing that could be handy   no more 1:1 drop of rock or soil when destroying a block   The amount of littering of those materials get insane over time when you dig done   Maybe a drop chance of 10% or something instead? Would help to keep the world a bit more free of waste stockpiles and overall i
+  - _Context: Not dead too? Would think they would be quite sensitive regarding water ^^   But when there's no magma in the bottom of the map what else is currently_
+  - _Context: Then it's going well for the tools  But something is eating my weapons   Maybe also caused by the long game time? I'm now in year 10_
+  - _Context: ah ok the prospector gets rid of stones, good to know ^^   ok, I think I found the reason why armor and weapons arent adding up.  it seems like weapon_
+- **the_real_kyrros** (2018-01-11): Could implement some kind of one-shot creation of a scaffold/rope ladder, or even just allow gnomes to  moved up one level to an adjacent square occupied by another gnome (i.e. get 'pulled up')
+  - _Context: i JUST thought of something that might be AWESOME!  if the game world generates like DF...as in it generates an ENTIRE world and you only play a bit o_
+  - _Context: than a hack maybe, allow diagonal movement when trapped by "remove floor" jobs this should at least ease the problem_
+  - _Context: i know its a hard problem, but could be avoided by letting them walk on walls (maybe only allow when trapped)_
+- **hughheggen** (2019-03-09) [2⭐]: Did you like the idea of mudbrick and rammed earth?
+  - _Context: When you select the furniture to be installed. You can select the type of metal. Why not right under it somehing like in the smelter: Any / average or_
+  - _Context: Jokes aside, I think there should be a way of making sand/clay without needing to mine it, since once you mine out those two layers, you just have an _
+  - _Context: I added the ability to turn dirt and water into clay in my mod in Gnomoria, so I fully support the idea of turning dirt into clay 😃_
+- **ext3h** (2020-04-06): Hunting board, serving both as "cull population down to X" instruction and as drop off point for corpses could work, I suppose? But not as friendly as the butcher job, where animals just stop moving and wait once marked for killing. Hunting also requires corresponding adjustments to animal AI, to en
+  - _Context: I mean, it depends how it'd be designed. If you make it like pasture, then a hunter would hunt any available animal on map. If you made it like butche_
+  - _Context: A middle ground would be selecting what animal type to hunt and maybe range from the structure, or amount to let live (so that you don't wipe out enti_
+  - _Context: well have to consider the available control schemes we have, so it's either a structure that has the option, like the taming animals thing, or it's li_
+- **.roboute** (2018-06-12): please also make fence doors that can be placed without the need of adjacent full walls. It always bothered me that in gnomoria you could not place doors next to fences
+  - _Context: what about goblin corpse fence?_
+  - _Context: I really like the idea of green leather from goblin skin_
+  - _Context: so I better make some fences then for the pastures_
+- **nordiii** (2018-01-14): In case of an raid, an option for Military only would be nice too. Maybe an event system for specific action? Would be awesome for mechanisms.
+  - _Context: you're responding in suggestions to a general thread message, maybe give a hint as to what you're referring to for future reference? 😉_
+  - _Context: Something like left click , just select the furniture as in the current overview. Right click, open a larger window docked on the general furniture ov_
+  - _Context: Maybe divided by "you have the resources " and "you don't have the resources"_
+- **flash.1** (2018-05-15): So we either need a routine that automatically defines pastures inside fences or we need the option to freely define pastures ourselves and put fences around them
+  - _Context: but you had me thinking, you know i want to implement a mission system, where you just select a few gnomes and send them on a mission, be it diplomati_
+  - _Context: the fuck am I looking at 0.o can we please go back to the normal 2 genders and people with a mental disability?_
+  - _Context: do you think animals should be magically contained on pastures or should they be able to wander off and need fences_
+- **hughheggen** (2018-04-05): Engineers, alchemists and mages need to study for years to unlock new recipes. Or maybe they need to study to be able to use high level recipes themselves
+  - _Context: I was thinking the low intelligence thing in the context of Roest’s quip about low intelligence gnomes.  Either way a mechanic to stop a gnome and pop_
+  - _Context: Nothing is produced out of nothing, you want books, you better produce paper, leather and ink, I was talking about research jobs_
+  - _Context: About the library thing, tech level is gained by completing jobs, so there could be a library workshop with study jobs which take no input materials a_
+- **chacina7810** (2019-03-10): A system of achievements for the noobs to know the progression and for the players to complete all the possible things of the game. And up to challenges ... 300 of  such an item crafted, etc. It could have an option to show or hide the achviments pop-up
+  - _Context: I feel that when I craft something and put any material into the workshop it is harder for the gnomes to complete the craft than when I put in a speci_
+  - _Context: well, one thing that could be nice is the ability to start a new world/game with some of the gnomes from a previous world/game_
+  - _Context: especially for streamers, but also if you want to have this idea of a world where you have different settlements_
+- **hughheggen** (2019-07-29): I'm trying to think of a situation when you might need 200 of the same item of 4 different materials. Wood. You could use the most expensive wood (say mahogany) and use that for furniture. A light wood (pine) for arrow making and a strong heavy wood for shields and doors (oak)
+  - _Context: Wait, I just tested it. I thought this was taking away my ability to filter what specific material goes into the stockpile, but it's just the min and _
+  - _Context: No! This is a terrible idea. I like to craft with only certain materials like 1 log type and 1 stone type, and my OCD needs the specific materials nex_
+  - _Context: Just final comment on limiting by materials: another use case of limiting stockpiles with different materials is while using it with linked stockpiles_
+- **ext3h** (2020-03-05): > Once a unit is spotted, the check should stop for the other side for that unit for X number turns time, combat should skip check completely for x turns <@151685227947884544> can't stop in the case either. Got to keep updating visibility when moving while in combat stance too. Point is, you are not
+  - _Context: Reminds me, there is also an Action missing for kiting movement. Actually two of them. One for finding random, safe tile within distance X, one for fi_
+  - _Context: Finding safe position is simple. Find visible enemies first. From all found enemies simultaneously, flood map (BFS, no A*) to create threat assessment_
+  - _Context: Doing update on move should still be cheaper than doing update in evaluation of condition._
+- **.elfu** (2020-03-09): Something that made Gnomoria a bit cheaty and at times very easy and It'd be really interesting to have it changed here: not allow characters to stand in the same spot. I remember abusing that during raids in Gnomoria, where I focused all attack and defense in one point, making all my 10-20 gnomes a
+  - _Context: Doesn't really mean it has to be that way in the end, does it? Having it how it is right now means there's one and only one effective way of defense a_
+  - _Context: That change would make formations more useful and military in total would become more tactical._
+  - _Context: I'm thinking solution to all of these implications is proper building of rooms and corridors_
+- **.elfu** (2020-03-10): Think Stardew Valley then. If youblock an NPC, after a few seconds it shoves past you. It could work like that here too. If two gnomes block each other, they swap spots after, let's say, 3 seconds. Actually, they could do that, even if they don't block each other, as long as their routes intersect.
+  - _Context: Units preferring not to stay on an occupied tile, but still being allowed to, would still lead to exact same scenario of defense, because you could fo_
+  - _Context: Unfortunately enemies tend to attack one single target, usually the first one they see (or closest one) so if you rush your first squad as a tank forc_
+  - _Context: Yes and no... You can assign different squads diffent targets. You can assign some gnomes to have ranged role. (Actually you can't, currently, but in _
+- **condac** (2021-01-26): I just have to put this here, I know you have recently started to change the gui but this is not the right type of form to use to assign squads it is very annoying to use, when you want to add someone to the VIP squad and you have  big squad in the middle and you have to press the right arrov and th
+  - _Context: drag and drop will probably get more annoying when you get many squads and have to scroll to see where you are dropping things_
+  - _Context: I think producing multiple coins would balance that issue. It would have to be a giant coin if you made 1 coin from 1 bar_
+  - _Context: Would it be possible to have some sort of drag'n'drop mechanic?_
+- **.lld** (2017-12-30): Maybe hourly would be better since a gnome might need 10 hours of sleep on the floor vs like 6 on a super cushy king bed?
+  - _Context: like the military schedule, but in general? I'd like that too but it doesn't need to be per hour, dividing a day into three 8-hour or four 6-hour slot_
+  - _Context: well, something like cooking / growing perhaps? planting during the night so the plants grow during the day and the gnome can go cook during the day w_
+  - _Context: The schedule could be a suggestion rather than a rule. Let's say gnomes have a rested value going from 0 to 100 and they normally go to sleep below 50_
+- **hughheggen** (2018-04-25): what about goblin testicles? I could make a testicle sprite that drops after you butcher them, or maybe eyes
+  - _Context: is you want globe shaped bit use eyes instead of testicles, people'll get upset and go full SJW on the game_
+  - _Context: you could write your own story about the time your gnomes defeated the goblin commander Skret and disemboweled him_
+  - _Context: Commanders, maybe.  Then you stick the commanders head on a spike for morale_
+- **rookie0117** (2018-06-25): The mushroom parent? found deep underground? Or is it a mushroom golem? left from thousands of unkept mushrooms.  That reminds me, should people be able to designate an area to dump water in via buckets for underground farms?
+  - _Context: <@280266293490221056> you are a mushroom now (kept in the dark and fed bullshit)?  I thought you left the corporate world?_
+  - _Context: should be able to cut trees with most types of axes_
+  - _Context: not sure yet, it might be as easy as in DF where you need no water or it'll be solar powered pump and tube system with sprinklers_
+- **ext3h** (2020-11-28): We would have to see how much "full" SFX we need and want in the first place. Not that we fall in the trap that after giving the first couple of events SFX, that all the ones not having any suddenly start sticking out.
+  - _Context: Hi, new here, sorry if this is the wrong chat.  So I felt the game was a little too quiet, and decided to throw this together and see how it feels pla_
+  - _Context: For synchronized playback of multiple instruments I need to decode "manually" anyway. Just sampling rate better fit, or mixing becomes "troublesome"_
+  - _Context: Qt should handle that just fine. Not going to pull in more libraries. Just going to have to implement mixing and synchronization._
+- **hughheggen** (2018-06-01): Suggestion: being able to dig dirt and maybe sand without a pickaxe (just slower)  could be a good idea
+  - _Context: suggestion: work regions in to the job filtering eg. allow gnomes to be assigned to dining halls (or something), they will give jobs closer to that di_
+  - _Context: <@386915067477753858> have you ever dug a hole IRL with a shovel in ground that is 50-70% fist sized stones? unless it's pure dirt and half clay or sa_
+  - _Context: how about needing a shovel then instead of a pickaxe_
+- **.elfu** (2020-04-05): How about adding a tick to corpses info panel that says "butcher this corpse", so that we can handpick which corpses get butchered directly, without the need to stockpile them?
+  - _Context: Would you still leave the _Butcher excess livestock_ option? If yes, then it sounds quite fine to me._
+  - _Context: There was one in Gnomoria. I think it ws either an action or initiated by ticking a proper option in creature info panel_
+  - _Context: I'm fairly sure that there was a list of available corpses in Gnomoria, not sure if there was a way to select which one to butcher. But, mmm, Goblin S_
+- **condac** (2021-01-25): We really need some kind of event log, when you find all your cows dead you want to know why. Same with gnomes, when you find one dead on the floor there is nothing that tell you what have happened
+  - _Context: I don't know how the development is going but, in the option to hide the walls, you could put only a part of it, very low, just to differentiate where_
+  - _Context: Another suggestion is also to overhaul the trade price of coins and bars. I have tin bars that trade for ~100 but a tin coin trade for ~30, blacksmith_
+  - _Context: Yes that particular bug i found out and also found the issue on. But during battle or animal encoutnters or whatever The odds of seeing what hapens is_
+- **.elfu** (2020-03-04): But why would you want to do that, every time a game loads? I really wouldn't want my gnomes to suddenly change everything they do at the start of the game
+  - _Context: Once a unit is spotted, the check should stop for the other side for that unit for X number turns time, combat should skip check completely for x turn_
+  - _Context: Could be worse, I could be a UI guy instead_
+  - _Context: well, if you can make a distance check between two units, just by looking up their coordinates in world, then I'm thinking that could be faster_
+- **tacyn.** (2019-01-03): Have you considered using behavior trees for the ai? For example, this free library at https://github.com/BehaviorTree/BehaviorTree.CPP. It allows loading behavior-trees as xml at runtime. With this, the AI could be moddable. And even without making it moddable, this might make it easier to develop 
+  - _Context: The gnome behavior in regular play is probably simple enough for a hard-coded version to be manageable. But once combat is introduced, it could get me_
+  - _Context: yes i know, and when i get there, which should be within the next half year, i might rewrite the whole gnome behavior_
+  - _Context: Well, I probably asked about the planned ai before._
+- **envycreat1on** (2019-03-23): The old fort will continue to live on with the chosen leadership. The new fort could even receive traders from the old fort and your old gnomes could come to visit
+  - _Context: (sorry, going back the continuity thing) you could "retire" your settlement once you set a full leadership of sorts. Once you have a full leadership, _
+  - _Context: This would also open up the possibility of creating new leadership roles depending on how many forts you have. Say, you have 4 forts so you appoint a _
+  - _Context: and later down the road of development, those lords could be called upon to provide soldiers to fight goblins or whatever_
+- **dommain.** (2020-03-01): Could create a menu to control animations to turn on and off unwanted ones but also allow the potato computer powered by the hamsters have smooth gameplay.
+  - _Context: Assigning uniforms to professions would be quite helpful. Currently, you can only assign an uniform implicitly by including a Gnome in a squad. IIRC, _
+  - _Context: That would be nice to tell what job the gnome is heading for with out have to click on him_
+  - _Context: I did think of maybe having different hats for different jobs_
+- **desolator_x** (2019-10-16): eh, based on what's currently in the game and how gnomoria handled it, the idea of 1k bugs doesn't exactly appeal to me. Granted, if you say we'll have enough AoE damage by the time we're supposed to be digging that deep my argument obviously is invalid 😛
+  - _Context: My problem isn't less of the amount than how they spawn. I didn't even dig that tunnel and now it's just a permanent, beetle-and-zombie-filled deathtr_
+  - _Context: is every mob already charged at the start of the game ? or only when you open a cave ?_
+  - _Context: I can understand this coming from someone who doesn't follow development but you two <@202164327606648841> <@211419446391209984> disappoint me, it's b_
+- **Deleted User** (2018-07-07): Suggestion: When assigning a squad to train, have the extra gnomads that arent training but standing around the Training ground have the ability to go do work and come back to the training grounds if theres no one there or only one
+  - _Context: I hate it when you assign a squad of 5 and have only 2 train and the other 3 just stand there and look dumb_
+  - _Context: I'd rather have that whole system reworked than have the Gnomoria one again_
+- **desolator_x** (2018-04-29): I don't, it's far more fun to write epitaphs for fallen gnomes, it's just a shame that it's really hard to build a proper monument to the fallen since there's no mausoleum / coffin option that you can set inscriptions on
+  - _Context: suggestion: cemetery, gives stone masons something to do, effects dwarf happiness (maybe 50% reduction in the sads when a gnome dies if they are burie_
+  - _Context: I don't really see the point, those who don't want to save scum won't, and other people will. Ironman mode doesn't seem like a priority_
+  - _Context: Maybe an implementation of a "Hardore" or "Ironman" mode.  No saving (other than to quit), but in turn, increased rewards etc_
+- **drucifer8036** (2019-05-25): I'd like to see more stair options, assuming this is still the place for suggestions.  Even just a reskin of the raw stone sprite, but the recipe uses blocks instead of raw stone.  Wood, stone block, metal,  bone.
+  - _Context: Could have it that the trainer gives a boost to training their highest combat skill. Makes sense for a trainer who's a master with a sword to give xp _
+  - _Context: Add a trainer job to military training grounds. If they have high skill, then your recruits train faster_
+- **_dreddos** (2019-12-24): Manable stationary ballista turrets with different bolts (higher the metal the more accurate + dmg) with bolts for accuracy, bolts with possible aoe splash etc If adding dragons this could be a good counter to them
+  - _Context: I have a suggestion about straw use, since we have separation between straw and hay.Unlike hay, animals generally don´t eat straw, but straw can be us_
+  - _Context: We need working ranged combat first_
+  - _Context: <@141075323990179841> , fully agreed with you._
+- **quibuz** (2020-09-05): is there an option to make autosave overwrite it's files yet? I just removed dozens of GB of savegame data from my harddisk. My world wasn't even very big or anything
+  - _Context: Also : are there plans for stuff like (manned) guard towers yet? I feel like the goblin raids are kinda random at the moment. They always walk through_
+  - _Context: I have a feeling it was just a huge number of autosave files (should probably have checked before deleting it :P)_
+- **flash.1** (2018-05-08): Or... and hear me out now, it's getting wild... we could wait until the base game is done at like the level of Gnomoria, then play it, then think about what's really missing.
+  - _Context: If we covert my gold stack on Runescape to USD I could hire 200 people for Roest to make DF 2.0 with 3D graphics._
+  - _Context: gogo make sprites, now that Roest has too much time to work on this you need to step up your game man 😛_
+  - _Context: How about building a rocket later on to settle the moon?_
+- **chaineddjinn** (2019-10-19): Just came up with something; Levels of combat at the training ground. Soft; not all that different from standard Gnomoria settings, just less experience like .2 normal Mid; No training weapons, units do minimum weapon damage with possibility of accidents. Hard;Closest to actual combat, units can get
+- **inkraja** (2019-03-14): <@202164327606648841>  some more suggestions for your list, hatch xyz animals, butcher it, make the best meal + drink quality that is possible. Defend  (for later) 100 gnomes, a bear and 100 spiders and each tier of golem. "You died" - lost a gnome in battle. "Coco Channel" Starving to death. "Livin
+- **hughheggen** (2019-07-19): You guys are over thinking this. The system could be as simple as a direct connection between tavern size and value and the number of travelers you get
+  - _Context: If a gnome becomes a goblin loving radical, can we make sandwiches of him or her as well?_
+  - _Context: I guess if you're at peace with a goblin settlement then goblin merchant and travelers could visit_
+  - _Context: So I think we need to have a tavern now so we can sell pancakes and waffles to travelers_
+- **styfrit** (2018-08-25): it don't appear so you place the zone on the floor for sand But wall down on dirt make the wall appear at the top of the tile it should be
+  - _Context: the upper lines are exactly the same , so its not the floortile from above cause that should be a bit higher_
+  - _Context: the functionality of the walldown is still not quite there, it felt somehow off yet looks right so i tried to put it in a picturestory 😛_
+  - _Context: can you try to show your wallhide with fow? in the corner?_
+- **condac** (2021-02-01): There is a long time in the gameplay where you do not have enough of one type to dreass all gnomes so wear best of any kind would be nice yes
+  - _Context: Is there any setting to tell gnomes to just put on any armor of any kind? If not it will be a nice feature to have._
+- **woody1842** (2018-04-10): Regarding the goblin army, should there be a mid tier enemy between goblins and orges being HobGoblins?
+  - _Context: there's armored goblins and the metal quality upgrades so I don't think a mid tier goblin is necessary_
+  - _Context: Russia edition?_
+  - _Context: in soviet ingnomia, bears ride you_
+- **mcphisto2051** (2020-12-09): the neighbored kindgoms need a little rework, 1 name occured for me more than 5 times, all have the same travel time and so on
+  - _Context: Speaking of Goblins, any plans on adding a console/log for combat events? I had a solid 4 days of goblin waves on the 2nd year and lost half my popula_
+  - _Context: perhaps if a name is taken, dont create the same one for another kingdom?_
+  - _Context: Suggestion: Tombs for our sadly drowned/starved/goblin-ed Gnomes._
+- **desolator_x** (2018-06-26): give it a mood modifier? you'll need sprites for the new materials in that case as well 😉
+  - _Context: suggestion: Add veal and other baby butcher jobs to the butcher. Extra succulent and juice meats, but less of it_
+  - _Context: will there be different tiers of tools? Stone felling axe, steel felling axe?_
+  - _Context: suggestion: split the population screen into two subscreens: one for "normal" jobs and one for combat related skills_
+- **hughheggen** (2020-03-11): Your hallways should be at least two tiles wide to minimise dwarfs bumping into each other
+  - _Context: Dwarf Fortress allows multiple creatures to occupy the same tile but they try to avoid it because it slows down movement and lowers defence._
+  - _Context: They will pile on when attacking if the enemy is unconscious, otherwise they will try to surround them instead._
+- **desolator_x** (2018-04-26): I think that all of this should probably be moved to a mod, instead of the base game xD
+  - _Context: <@280266293490221056> Now I want a special title for this discord "Voice of Reason" xD_
+  - _Context: Just call them goblin oysters. Anyone who knows what land oysters are will get it._
+  - _Context: look if you can have goblin sausages you can have goblin meatballs_
+- **desolator_x** (2019-04-21) [1⭐]: like for the aforementioned bandages
+  - _Context: hmm, a belt that would unlock extra "equipment" slots in a military setup would be very nice indeed_
+- **cptvolkow** (2021-02-03): Wear Best and squad option to set all to same uniform
+- **hughheggen** (2019-07-31): Maybe you can enslave deep gnomes when I make them
+  - _Context: That's how slavermaker ants work, they kidnap ants from other hives and force them to do all the work for them._
+  - _Context: I brought a sheepdog on my last start, it moves around a little but it's not really doing much sheeping._
+  - _Context: Take the queen hostage and they work for you?_
+- **not__** (2018-05-16): Wow, I go to work after making an innocent Alien Nation reference and you lot almost burn down the chat room with your spirited commentary.
+  - _Context: You should take up the linked project_
+  - _Context: If I were him, I'd be working on this project: http://docplayer.org/docs-images/69/60722589/images/6-1.jpg_
+  - _Context: time is a resiliant little bugger, won't stay dead_
+- **hughheggen** (2018-06-13): Enemies should be able to destroy fences
+  - _Context: Will spiderwebs do anything?  Will they slow movement or give silk if harvested?_
+- **hughheggen** (2018-04-06): I could send them little frowny faces
+  - _Context: They should suffer for this atrocity_
+  - _Context: (But don't forget to save the bones or you won't be able to make cloth)_
+  - _Context: no? Haven't played for a while_
+- **desolator_x** (2018-04-11): that's for when the gnomes tame a bear: you can have heads hanging off the side of the saddle like a mongol / viking warrior 😄
+  - _Context: just goblis riding bears would be awsome_
+  - _Context: A bear riding a 2 headed goblin_
+- **.elfu** (2020-04-03): Rats! Rats and overgrown bugs eat those. And if you get too close, they bite, making gnomes ill.
+  - _Context: Kinda, but the critters would eventually despawn and not attack your gnomes._
+- **cptvolkow** (2020-12-01): Armor stand and weapons rack for personal rooms, and nightstand
+- **hughheggen** (2019-09-16): I think Roest wants to work on magic and combat more
+  - _Context: We have a lot of other things to get through first_
+- **prassel** (2019-01-05): until there's combat this isnt really important
+
+## Crafting/Workshop
+
+- **fatmck** (2019-10-01): Suggestion for Needs / Mood  Just read the wiki and read about Needs. Beside hunger, thirst and sleep I would add comfort and satisfaction. Propably they are more moods then needs, depending on how mood will be implemented into the game.  Comfort and satisfaction wouldn’t be necessary at the beginni
+  - _Context: Need a better system than that_
+  - _Context: Gnomoria had happiness, just no way of knowing that it existed until a gnome refused to work._
+  - _Context: I never noticed it so it might as well have not had a happiness system_
+- **dinosaure.plz_nofriendrequests** (2021-01-19): While I'm in the suggestion channel: - Have a "paint" mode, similar to the "Cut trees" one, but targeting farm/grove/pasture type helping changing seeds en masse - Have an "any" mode on farm/grove/pasture to let them accept any seed/seed(/acorn/pine)/animal available - Name the personalised "Set up"
+  - _Context: Issues page should stay reserved for stuff which has been adopted by a developer or modder. There is just no point to flood it with 10+ new "suggestio_
+  - _Context: Just to avoid further misunderstandings, when I said "threaded" I meant "one thread per suggestion".  Because most of these "one liners" are still far_
+  - _Context: Should get a "suggestions" page on github to comment on suggestions, just to help keep track of them and the discussions around each of them_
+- **fatmck** (2018-10-14) [1⭐]: I would like to suggest a kind of combat screen when we get enemies. During combat I would like to see all my in combat envolved gnomes on the left side with stats (equipment, health, dazed, bleeding, injured, blinded, on the ground, ..), the actual combat log in the mid, and all spottet and envolve
+  - _Context: but please make the width of windows borders a little wider. i have to be really careful to catch that area where i can resize the window... is it one_
+  - _Context: yeah but having 3 with 2 axes could be. so the third one could do other jobs, if he is assigned to them. well, i can live with it being the way it is_
+  - _Context: if a gnome carries something to eat and gets hungry, he should eat the food he is carrying. one of my gnomes just threw away his apple because of his _
+- **Deleted User** (2019-08-11) [4⭐]: Is is possible to allow existing trees to be a part of groves? I cannot create grove areas on top of existing trees, so I have to cut down an apple tree, to plant one in the same spot and lose precious growing time!
+  - _Context: Dropdown menu on to assign Workshops to gnomes should list in names alphabetical order, just like Population tab. Imagine having 200 gnomes and scroll_
+  - _Context: yea i'll need to use a combobox with input so you can limit the search_
+  - _Context: Do not compare it with the predecessors._
+- **chaineddjinn** (2021-12-04): Another Idea I had was the ability to have more then one unit preform a task, like a cooperation feature; two working to build something would take less time then one on it's own. Also, if someone is gathering resources in a location with the intent to build, don't have gnomes stash stuff away just 
+  - _Context: <@!386915067477753858> Soil quality, hmmm 🤔  reminds my of haven & hearth, it had quality for just about everything but it was capped by a few factors_
+  - _Context: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F55%2Fd3%2F4a%2F55d34a0db8e93e2570ca1c4313dfa339.jpg&f=1&nofb=1_
+  - _Context: ¯\_(ツ)_/¯ Something to hope fordown the pipeline I guess_
+- **.elfu** (2020-04-01): You know, there's prospector, that gives the ability to at least process trash dirt and similar raw materials. When it comes to food items, these could get made into a compost or fertilizer, and in later game, maybe fuel for machines/golems. Other than that an item could simply decay into a pile of 
+  - _Context: Oh, by the way. Curious thing that I never understood in Gomoria. Why are containers, such as drawers or cupboards, not able to hold items in them? It_
+  - _Context: I remember in Gnomoria traders were my number 1 sinkhole for overflowing items. I'd rather have workshops and mechanics that allowed me to use these t_
+  - _Context: It doesn't change the fact that excess items get used. Make it use 10 seeds to make one bottle of oil, and you got yourself a pretty big sinkhole righ_
+- **chaosjester** (2018-05-05): I beg forgivness, I've been reading a bucket load of Roomcarnage (DF story thing, epic, go google it) and have a few suggestions. I haven't gone through to see what other folks have sugessted so Imma just go ahead and put it out there  Something like Foul Fog; I love the aspect of having an almost e
+  - _Context: Well... perhaps for the underground, a thought occured to me though, instead of having fow for above ground, how about a 'map' over look, as a thought_
+  - _Context: <@161788523127635968> When you said Space Elevators I got a distictly kittensgame vibe.  Please add a catnip forest._
+  - _Context: Its all good man. My thought was mostly due to PG, like as you explore shit kinda just *pops* up_
+- **.lld** (2018-05-11): Do our gnomes live in a land of milk and honey, or sand and pain?  That could be a global fertility slider at game creation.  Then all crops would need to be balanced for high and low fertility soils.  Even with High and Low fertility, I could see a lot of dev time for not a lot of gameplay.  If you
+  - _Context: maybe add in bone meal so farmers can fertilize fields of your choosing. I know by endgame you have thousands of damn bones. Instead of the fert tiles_
+  - _Context: then a slider for overall fertility is probably a bad idea.  how about a slider that increases the chance/quantity of high fertility spots? that would_
+  - _Context: <@176318165129756672> <@204036338888998912> high/normal fertile soil then like rimworld? could get manure for animals and fertilizer and maybe special_
+- **_ysabell_** (2018-05-14): why sacrifice the gnome children when there will be plenty of goblins to appease the gnomes' gods? yeah, maybe in the future we could capture gnomes' enemies and sacrifice them for some form of bonuses... obsidian would definitely be great for sacrificial altars, knives, etc... err... well,, if play
+  - _Context: I suppose one thing that might need looking at: Obsidian's value as a resource. In Gnomoria, by the time you have the tech level to actually make thin_
+  - _Context: Obsidian is far sharper than surgical steel, it's the only material we have (I believe) that can cut between cells instead of through them, though tho_
+  - _Context: Or allow lava/water to be 'bucketed' somehow to be brought to the surface/bottom to allow local obsidian creation ._
+- **desolator_x** (2018-01-30): Yeah, and there's a problem right there with a 3x3 and unstacked tiles: if you need / to store a decent amount of 4-5 materials it's really hard to get that organized in a single storage area. It'd be a lot easier if you could have one workshop feed off of, say, 3 stockpiles who're all 3x1 and only 
+  - _Context: That's getting too complicated. Both for reost to implement and debug as well as  for players to use. The feed stockpile is just meant as a buffer for_
+  - _Context: well, it's mostly for things like ores and gems and such, I assume there's going to be quite a lot of them, and a 3x3 stockpile might not be able to h_
+  - _Context: well, it would save some issues for people who don't want to make a million stockpiles for all the different goods. On that note: how many stockpiles _
+- **dragonwrath420** (2018-05-18): The effect on enemies would be rather interesting and to add an option of a setting to make certain enemies stronger while in light (for the more diehard fans that like the challenges).  I like that though I would change the certain jobs requiring light to function to using the light to increase pro
+  - _Context: Another is that some can give a passive benefit such as allowing crops to continue to grow at night (since it was mentioned earlier that crops won't c_
+  - _Context: but back to the bees: I think the idea of hives/crops is a pretty good idea to limit the amount of hives you can reasonably build. (modders can add th_
+  - _Context: If light is just aesthetic, then permanent light sources are fine.  But, if light has a proper use that adds to the game rather than detract from it, _
+- **optimus.0001** (2018-05-19): Let me regurgitate some thoughts all over the nice clean channel.   Magic candles/lights would need a source of power, as would other magic elements in the base. There's also the notion of using magic as offensive skills or buffs eg insta-harvest... These could come from a common resource (say, mana
+  - _Context: If the plan is to have eldritch horrors in the game, bright light should be a way to either reduce sanity loss (assuming sanity is a stat), prevent it_
+  - _Context: <@362644073095626754> While the idea is interesting, what you're suggesting would make gnomoria/ingnomia a completely different game that what it was _
+  - _Context: Depends on how you implement the refueling... If it's automatic via one of the auto-jobs like hauling or building (for example) but with a slightly hi_
+- **.alch** (2019-08-06): On crafting workshops, rather than having to click the item you want to craft, then click the craft button which might have the added effort of scrolling down to get to, implement some "instant" method.   Like maybe if I just right click on the item I want to craft it just skips the "click craft" st
+  - _Context: I just don't want to have to click the craft button every time when I just want one of the item and don't care about the material_
+  - _Context: Sometimes the situation comes where you just don't care what material it's made out of and just want 1 of the item or so_
+  - _Context: Close the "build containers" window when I pick what I want to build_
+- **the_real_kyrros** (2018-01-31) [1⭐]: I imagine, if putting in production limits/caps, those limits would only need to be in place for tasks that are set to repeat (set it and forget it), because those are not necessarily needing to be monitored. Whereas, take Roest's example, we're capped at 5 tables, but I want to build a different on
+  - _Context: Of course not all workshops. The modfiles define the inputs. For example, Those that need fuel could have one extra input._
+  - _Context: Craft portals to the demon world to store infinite ressources, but be exposed to random attacks 😛  More ressources stored  =  Higher chance of being a_
+  - _Context: How about just managing your stockpiles better and not having more than 2000 seeds and clippings_
+- **slowbro1337** (2018-09-23) [1⭐]: Can we have diseases: flu, gangrene, maybe some magical ones? Asking cuz my first FUN in DF was when my militia killed wereunicorn and one of the dwarves lost all limbs and he got infected. So, night kicks in, the fortress is slaughered.
+  - _Context: In regards to automation, mid/lategame workshops that don't need gnomes to build objects, like a sawmill that just needs to be supplied with wood and _
+  - _Context: i thought about that but havent found a decent way to combine it into my main transport shaft_
+  - _Context: I also want sickness. That will be later though. Probably much later_
+- **sorsaj** (2018-08-28) [1⭐]: stockpile ordering is really a hazzle, please move up/down arrows to the left side next to the name and add a move top/move bottom or make it drag and drop like steam wishlist ordering ( drag and drop at will and click safe when done)
+  - _Context: please make it so i dont have to go into stockpiles and enable each new item that i mine or craft if i have set to accept "all" of one type (like soil_
+  - _Context: hm strange i just had this with bones, i hadn't butcherd an animal yet, so i couldn't setup my bone pile, but as soon as i got my first llamabone i co_
+  - _Context: look at it yourself, a dropdown list of stockpiles with 2 "paste" buttons and one "copy" without any idea of what gets copied to what or pasted to wha_
+- **desolator_x** (2019-05-12) [2⭐]: basically everyone here except for you knows that this is going to be a Gnomoria+ game where maybe, if Roest is willing or the modding community very active, we'll get some extra depth
+  - _Context: ok but logical you can build thing first AFTEr you dig really down........ there should be option to build things before that even when you anly build_
+  - _Context: to the "stone" discuss  forageable surface stone that is rare is an good solution and as an alternate solution or recipe we can use clay-stones that w_
+  - _Context: i like both those ideas!  missing for when a gnome is dead and no one knows it; dead if/when someone discovers the body._
+- **desolator_x** (2018-01-26): Yeah, I agree with that one, that's why I'm so explicitly asking for it 😄 Maybe it could be build into the hauling job? Like, when the gnome gets to the stockpile and it has delivered the goods it immediately checks for a stacks in that stockpile that could be "tidied"
+  - _Context: Not sure there's a lot of need for that... at least I haven't run in to any issue. They fill each spot, until it's full, then when it's full, they sta_
+  - _Context: Also, saying that something can be done in 'Random game A' so it should be possible in 'Random Game B' is usually very not possible, especially if the_
+  - _Context: so the stockpile goes over its tiles and checks if there is space, then looks if there are items that need hauling, then claims such an item and creat_
+- **fatmck** (2018-10-05): Wouldn't it be some kind of solution if we could check something like "build in order" before we draw a line of wall or filling a hole? So if we want a 13 tile long fill job of a 1 wide tunnel we check it and draw it from exit to entrance. It would then offer only the first wall as job to the gnomes
+- **.alch** (2019-11-22) [1⭐]: I have an idea. implement wheat seeds, we might use all our grain on bread so we should have a seed version and a food version
+  - _Context: If collecting seeds, a harvest could yield 2-3 seeds and no crop but if collecting crops it could yield 1 seed and 1 crop with a small chance of yield_
+  - _Context: I think you should add goblins to the game along with combat, it would really spice up the gameplay_
+  - _Context: With chickens, just have a manual pop limit on their pasture. If a farmer doesn't want any more chickens, they just take the ferterlised eggs from the_
+- **.elfu** (2020-03-15): It's already extra clicks to make a pasture and set the hay harvesting. The inputed number doesn't tell me, whether it's a percentage of pasture's area or amount (it defaults to 100 which is why, I think, I confused it). It's more of an inconveniently placed action rather than automation. If you wan
+  - _Context: Suggestion: Add display stands. You can place a specific item in a display stand. It will receive a slight bonus to worth. Items in vicinity receive s_
+  - _Context: thanks but i like it easy to automate and there is an option to set the max you want to harvest, i don't want extra clicks_
+  - _Context: And you could set exactly how much hay you'd want to gather_
+- **_ysabell_** (2018-04-27): I don't know if anyone has suggested this yet. The general happiness of a settlement could also affect (in part) the number of gnomes joining the settlement each season, as well as kingdom worth. Conversely, there could be a chance for gnomes with 0 or low happiness to leave the settlement. Perhaps 
+  - _Context: I don't think stuff like slavery necessarily leads to bad press (Rimworld has it, and no one complains about it). I do think that having something lik_
+  - _Context: I mean that as gnomes become more experienced, they need better furnishings and food quality to stay happy, with higher professions needing more to st_
+  - _Context: I thought kingdom wealth was a simple and easy way to increase population size but we could go by a development score instead. The more infrastructure_
+- **tacyn.** (2018-07-30): I think it would add some logistical/planning depth since you would have to run several workshops in parallel for jobs with long completion time. Also I would like it better to have large cellars where wine and cheese ripen instead of a single brewery/kitchen mass producing them.
+  - _Context: in regard to smokery/cheese making, I'd like a mechanic where a workshop can complete a job without a gnome present after it's been started.  No reaso_
+  - _Context: But what kind of cheese is it?  A nice Brie, or cheddar?  Who doesn’t love a nice smoked cheddar with their yak steaks ?_
+  - _Context: I think once trade comes in, anything that's preserved can be traded. Fresh and perishables can't be. Also preserving gives a slight food and happines_
+- **desolator_x** (2019-01-10): well, the idea is (for me at least) that you'd want to set up a proper workflow. Autocrafting like that has always been in gnomoria, and works well as long as you only have one chain of buildings. As soon as you have a second carpenter or something, suddenly your gnomes need to haul components all o
+  - _Context: not sure if its still planned, but I once suggested a workshop-room designation which allows managing all workshops within it. The autocraft could the_
+  - _Context: I Didn't understand the job manager discussion. If I want a bed, there should be a tick box that's default on that auto crafts all the required sub co_
+  - _Context: Trying to remember here, but didn't GNM have a "Craft Requirements" function? So if I went to a carpenter to queue up 10 4 poster beds it would spawn _
+- **vorg9431** (2019-01-15): with the skill sort option, A multi level sort would be nice. Keep the last 3-4 sorts in desending order by when they where clicked. So you could click each skill in a group for example and it would keep the older sorts sorted with in the newest sorts.
+  - _Context: Adding to the above, a quick function to assign job templates through the pop menu rather than gnome menu_
+  - _Context: Have a forester workshop that turns tree seeds into saplings that can then be planted_
+  - _Context: Just so there's like 2 less steps to go through_
+- **itsadraelbaby** (2019-01-23): The problem with Gnome Golems in Gnomoria tended to be that they could do everything Gnomes could do, with very little investment, and didn't have to eat or drink, which meant you could eventually replace your entire population with them and coast on that lack of needs forever.
+  - _Context: Having them be limited in scope but still not really have much in the way of needs sounds neat, but what about having to have a dedicated team of Gnom_
+  - _Context: I suppose, yes, but i feel like we need a middle ground, too._
+  - _Context: I'd think the addition of golem based magical bionics would be awesome, upgrading gnome stats. Then maybe having tiers of golems, going from say, haul_
+- **Deleted User** (2019-08-14): SUGGESTION: Add checkbox option to stop milking pasture. I only want my pasture for meat, do not want gnomes wasting time going there to milk animals.
+  - _Context: Suggestion: Indicate or standardize the side of workshops that can link stockpiles. Each workshop has one different side that can link, and  it makes _
+  - _Context: Or maybe I have bad memory. Or could be both_
+  - _Context: And also just 1 high versions of it, so I can have nice vertical wood walls_
+- **maveross** (2021-01-12): In the case where you need a table nd a chair built, instead of one carpenter queueing up both, you can have one make the chair and one make the table. Donno if that's a level of automation that should be allowed, but I would like it
+  - _Context: I've set up multiple workshops to do a decent number of things. I think it would be particularly time saving when amping up production of a certain it_
+  - _Context: In the sawmill, I'll create a set of craft to 20 for each type of plank, then another set of craft to 50, and another set of craft to 100. So that I'm_
+  - _Context: Having multiple of the same type workshops that have "craft required goods" toggled spread out the load so  one workshop isn't being focused would be _
+- **tacyn.** (2018-10-15) [1⭐]: The designation would be the same as other rooms. Comparable to dormitories, which allow gnomes to use the beds build within them. The crafting screen is the same as for single workshops, with the difference that it can do everything the workshops within the designation can. The orders created in th
+  - _Context: I think it could combine my idea of attaching workshops to stockpiles. instead of stockpiles, the management desk_
+  - _Context: we need crafting options for the workshop it self, and a "global" option that's shared between all crafting stations of that type right?_
+  - _Context: because if it can collect and hold rain, that could be a problem for people controlling running water into their bases. I know with Gnomoria, I dig a _
+- **der_kobold** (2020-12-30): a thing that could be handy   no more 1:1 drop of rock or soil when destroying a block   The amount of littering of those materials get insane over time when you dig done   Maybe a drop chance of 10% or something instead? Would help to keep the world a bit more free of waste stockpiles and overall i
+  - _Context: Not dead too? Would think they would be quite sensitive regarding water ^^   But when there's no magma in the bottom of the map what else is currently_
+  - _Context: Then it's going well for the tools  But something is eating my weapons   Maybe also caused by the long game time? I'm now in year 10_
+  - _Context: ah ok the prospector gets rid of stones, good to know ^^   ok, I think I found the reason why armor and weapons arent adding up.  it seems like weapon_
+- **the_real_kyrros** (2018-01-11): Could implement some kind of one-shot creation of a scaffold/rope ladder, or even just allow gnomes to  moved up one level to an adjacent square occupied by another gnome (i.e. get 'pulled up')
+  - _Context: i JUST thought of something that might be AWESOME!  if the game world generates like DF...as in it generates an ENTIRE world and you only play a bit o_
+  - _Context: than a hack maybe, allow diagonal movement when trapped by "remove floor" jobs this should at least ease the problem_
+  - _Context: i know its a hard problem, but could be avoided by letting them walk on walls (maybe only allow when trapped)_
+- **mazerduckingrakum** (2018-03-09): Maybe just like a default blueprint type of thing, and a system where you could create new blueprints.  IE, a 4x4 staircase blueprint that you can just draw where you want it
+  - _Context: Or maybe a way to draw a staircase or ramp?  A way to draw a long stair that knows to go downward (or upward)?_
+  - _Context: could be implemented as the number of left clicks increases task repeats, right-click decreases (and cancels at 1)_
+  - _Context: the job might need to move down/up 1 level per repeat so you can still repeat or cancel it_
+- **.lld** (2018-04-22): The perception of what is right and the actuality are very different things.  Honestly has the RoboBob email ever been released?  Roest could be a lying mother fucker, and we have no way of knowing. ( I am not saying, and personally, don't think he is.)  Take a look at the subreddit today.  There is
+  - _Context: yes, I know. I'm just wondering if you had any thought on what you should initially start with and whether the list <@386915067477753858> made in the _
+  - _Context: actually he could just say 'stop using it now' to be legally binding there would need to be a formal, signed agreement beyond just a casual email...  _
+  - _Context: it'd be nice to add that in at some point though, even if only as an option for a player to set things like "only highest skill crafter makes statues)_
+- **drucifer8036** (2018-09-14): Could we eventually get hotkeys for other specific actions?  Specifically, I'm thinking of "cancel a build or designation," "deconstruct something built," and "mine/dig wall."  Maybe you'd like hotkeys for other commands too?
+- **hughheggen** (2019-03-09) [2⭐]: Did you like the idea of mudbrick and rammed earth?
+  - _Context: When you select the furniture to be installed. You can select the type of metal. Why not right under it somehing like in the smelter: Any / average or_
+  - _Context: Jokes aside, I think there should be a way of making sand/clay without needing to mine it, since once you mine out those two layers, you just have an _
+  - _Context: I added the ability to turn dirt and water into clay in my mod in Gnomoria, so I fully support the idea of turning dirt into clay 😃_
+- **nordiii** (2018-01-14): In case of an raid, an option for Military only would be nice too. Maybe an event system for specific action? Would be awesome for mechanisms.
+  - _Context: you're responding in suggestions to a general thread message, maybe give a hint as to what you're referring to for future reference? 😉_
+  - _Context: Something like left click , just select the furniture as in the current overview. Right click, open a larger window docked on the general furniture ov_
+  - _Context: Maybe divided by "you have the resources " and "you don't have the resources"_
+- **flash.1** (2018-05-15): So we either need a routine that automatically defines pastures inside fences or we need the option to freely define pastures ourselves and put fences around them
+  - _Context: but you had me thinking, you know i want to implement a mission system, where you just select a few gnomes and send them on a mission, be it diplomati_
+  - _Context: the fuck am I looking at 0.o can we please go back to the normal 2 genders and people with a mental disability?_
+  - _Context: do you think animals should be magically contained on pastures or should they be able to wander off and need fences_
+- **saint_of_grey** (2019-01-22) [1⭐]: Shiny dude with a pick for an arm. Only works with stone, can't do anything else. Maybe give him a hub to sleep at when you don't have anything for him to do, so he doesn't eat up coal while you aren't mining.
+  - _Context: Does he have a Drow friend and the other arm with a hammer on it?_
+  - _Context: All in one build wall + floor either above or below job_
+  - _Context: Stuff like that for other jobs as well._
+- **condac** (2021-01-29) [2⭐]: if you plant the wheat that you start with on medium there is no problem getting ~300 grains and  making bread and fruitbread to survive with no problem at all
+  - _Context: <@280266293490221056> I am trying to balance the food values so the top foods are under/around 75, Do you think there will be a problem if raw foods w_
+  - _Context: I have run a few test with beginning of game and the lower food values on raw fruit. Started on medium setting with 1 gnome, when winter came i had 10_
+  - _Context: I like the craft time multiplier method, higher cooking skills could tag on to that to add eatvalue to items they craft based on cooking time_
+- **hughheggen** (2018-04-05): Engineers, alchemists and mages need to study for years to unlock new recipes. Or maybe they need to study to be able to use high level recipes themselves
+  - _Context: I was thinking the low intelligence thing in the context of Roest’s quip about low intelligence gnomes.  Either way a mechanic to stop a gnome and pop_
+  - _Context: Nothing is produced out of nothing, you want books, you better produce paper, leather and ink, I was talking about research jobs_
+  - _Context: About the library thing, tech level is gained by completing jobs, so there could be a library workshop with study jobs which take no input materials a_
+- **Deleted User** (2018-07-11): hello im new here and i played my first hour on ingnomia and this is my first feedback: 1.i needed 10min to prepare a world(add tools, animals, food, drinks etc) it can be great add a starter pack automatically.   2. the night is too dark it is hard to see the blocks. 3. the stairs,  It would be gre
+  - _Context: Suggestion: Stockpile having a max of more than 100 per item, and/or the ability to set all items at once.  Either to $Number or Infinite_
+  - _Context: <@204036338888998912>  An all at once would be a good tool for stockpiles. Saves a bit of effort_
+  - _Context: The natural 100 item limit confuses me with my massive yet empty dumping ground stockpiles._
+- **prassel** (2018-09-01): -make stockpile settings window open when you designate a new one. -(resuggest) option to toggle show all items when filtering so you dont have to edit every time a new object is crafted. -ability to set a position in the stocks list in the stockpile setting (so you dont have to open that every time
+  - _Context: i'd like to see an option to toggle showing every item when you filter for stockpile so i dont have to go in a dozen time and edit it when i craft new_
+  - _Context: some things come naturally for you cause you know all the workings, for me this (adding a single skill via sheet) could have been something that just _
+  - _Context: 0.4.0 - stockpiling, tiles with containers are handled first - job queue: craft# the number to craft will count down now - job queue: craft to, jobs w_
+- **yksleets** (2019-01-08): 1) Some sort of a blueprint system, maybe along the lines of Factorio where you have to build it once but then you can make a copy to a book you can plop down items from as needed. I like to build my core the same way each time so having an easy way to recreate it woudl be amazing. Maybe even a way 
+  - _Context: True, I was thinking it more as an addition if I need 25 beds for the new sleeping wing as a oneoff, the bread and butter smelting, bar creation and s_
+  - _Context: that's why we have the amazing linked stockpiles_
+  - _Context: you don't want gnomes to haul the logs, then the planks to the other side of the base just because the sawmill is busy right at that second, and then _
+- **desolator_x** (2019-01-18): also, I like the idea that <@177094350201683968> had with carrying food with them. It could be restricted to a certain piece of gear you'd have to make first, say a lunchbox 😛 so your gnomes would equip the lunchbox and then be able to carry one sandwich and one drink with them or something
+  - _Context: You have outside corner ramps for straw roof I see. I could see people wanting both inside and outside corners for all ramp types for roofs. So may ju_
+  - _Context: So for suggestions, could we  get a different color or some sort of Icon to note input linking block for workbenches? As near as I can tell, only 3 ar_
+  - _Context: The sand tile is really hard  to distinguish from the mine wall colour... just started playing around. I think this could be a problem for a new playe_
+- **chacina7810** (2019-03-10): A system of achievements for the noobs to know the progression and for the players to complete all the possible things of the game. And up to challenges ... 300 of  such an item crafted, etc. It could have an option to show or hide the achviments pop-up
+  - _Context: I feel that when I craft something and put any material into the workshop it is harder for the gnomes to complete the craft than when I put in a speci_
+  - _Context: well, one thing that could be nice is the ability to start a new world/game with some of the gnomes from a previous world/game_
+  - _Context: especially for streamers, but also if you want to have this idea of a world where you have different settlements_
+- **chacina7810** (2019-03-11): I do not think it's particularly a good idea for one game to affect the beginning of the other... But if you believe it will improve the game scene and for everyone to be happy it could be a wonder (haha 😅 ) <@177094350201683968> that gives you a backupsave, helping in the same run. Dunno
+  - _Context: It could be as simple* as an option to retire the game and the gnomes get tossed into a pool and can random into the next games. *simple to write, I h_
+  - _Context: I think you should need stone.  Either add some on start or have surface stone_
+  - _Context: Agree wih Lord Hugh here : in my opinion stone is needed. I mean how do you cut a log to become a plank. You need somehig at least stronger than wood._
+- **hughheggen** (2019-07-29): I'm trying to think of a situation when you might need 200 of the same item of 4 different materials. Wood. You could use the most expensive wood (say mahogany) and use that for furniture. A light wood (pine) for arrow making and a strong heavy wood for shields and doors (oak)
+  - _Context: Wait, I just tested it. I thought this was taking away my ability to filter what specific material goes into the stockpile, but it's just the min and _
+  - _Context: No! This is a terrible idea. I like to craft with only certain materials like 1 log type and 1 stone type, and my OCD needs the specific materials nex_
+  - _Context: Just final comment on limiting by materials: another use case of limiting stockpiles with different materials is while using it with linked stockpiles_
+- **ext3h** (2020-03-05): > Once a unit is spotted, the check should stop for the other side for that unit for X number turns time, combat should skip check completely for x turns <@151685227947884544> can't stop in the case either. Got to keep updating visibility when moving while in combat stance too. Point is, you are not
+  - _Context: Reminds me, there is also an Action missing for kiting movement. Actually two of them. One for finding random, safe tile within distance X, one for fi_
+  - _Context: Finding safe position is simple. Find visible enemies first. From all found enemies simultaneously, flood map (BFS, no A*) to create threat assessment_
+  - _Context: Doing update on move should still be cheaper than doing update in evaluation of condition._
+- **.elfu** (2020-03-10): Think Stardew Valley then. If youblock an NPC, after a few seconds it shoves past you. It could work like that here too. If two gnomes block each other, they swap spots after, let's say, 3 seconds. Actually, they could do that, even if they don't block each other, as long as their routes intersect.
+  - _Context: Units preferring not to stay on an occupied tile, but still being allowed to, would still lead to exact same scenario of defense, because you could fo_
+  - _Context: Unfortunately enemies tend to attack one single target, usually the first one they see (or closest one) so if you rush your first squad as a tank forc_
+  - _Context: Yes and no... You can assign different squads diffent targets. You can assign some gnomes to have ranged role. (Actually you can't, currently, but in _
+- **korvar** (2020-07-03): Suggestion: Different levels of Automaton brain. First level Automatons can't act independently, and can only do very basic tasks like hauling.  So maybe a builder can get the automaton to load up all the stuff needed for a new workshop instead of fetching each thing individually.
+  - _Context: I would *never* have overlooked it and then thought it was a good idea, no.  Definitely not._
+  - _Context: Higher level Automaton brains allow for more independent operation, until the Automaton is essentially a fully-functional Gnome._
+  - _Context: What about modular automaton limbs_
+- **condac** (2021-01-28): I am just creating a sheet to calculate everything based on the ingreidients because i thought the current values where just very fluctuating in value and eatvalue and did not favour crafting any items at all, at current state eating raw foods is better because they loose value the more you craft th
+  - _Context: I have extended the sheet with crafting time so we can set a price per work time to get calculated cash value of items based on ingredients crafting t_
+  - _Context: Yes, that is what i think also, but the anwer was that they are planing on implementing happyness so the more you make a high end item the happier the_
+  - _Context: I have a much better suggestions for metal values now that fixes the issue where statues are not the right values if you compare a marble statue to a _
+- **hughheggen** (2021-03-10): So I've spent a bit of time playing Ingnomia recently and I've come up with these suggestions for improvements:  Merge harvest tree and forage into one command just called forage. There's little point in having them separate.  Allow Kitchens to turn seeds into flour at a rate of 4 or 5 seeds for 1 f
+  - _Context: A metal needle recipe was added  believe, to one of the metal workshops - I find I often get metal way before I get bone!_
+  - _Context: > Merge harvest tree and forage into one command just called forage. There's little point in having them separate.  +1_
+- **hughheggen** (2018-06-01): Suggestion: being able to dig dirt and maybe sand without a pickaxe (just slower)  could be a good idea
+  - _Context: suggestion: work regions in to the job filtering eg. allow gnomes to be assigned to dining halls (or something), they will give jobs closer to that di_
+  - _Context: <@386915067477753858> have you ever dug a hole IRL with a shovel in ground that is 50-70% fist sized stones? unless it's pure dirt and half clay or sa_
+  - _Context: how about needing a shovel then instead of a pickaxe_
+- **.elfu** (2020-04-05): How about adding a tick to corpses info panel that says "butcher this corpse", so that we can handpick which corpses get butchered directly, without the need to stockpile them?
+  - _Context: Would you still leave the _Butcher excess livestock_ option? If yes, then it sounds quite fine to me._
+  - _Context: There was one in Gnomoria. I think it ws either an action or initiated by ticking a proper option in creature info panel_
+  - _Context: I'm fairly sure that there was a list of available corpses in Gnomoria, not sure if there was a way to select which one to butcher. But, mmm, Goblin S_
+- **korvar** (2020-04-13) [1⭐]: Another suggestion: if you click on an under-construction workshop, and it's missing something, it'd be nice to be able to find out what is missing.
+  - _Context: Suggestion: Switch up how a workshop under construction looks like. Right now it lights up a few tiles, indicating, that something is there. To actual_
+  - _Context: Although that might be difficult because items required for construction are not delivered to the place, until all of them are available. Which means _
+- **.alch** (2019-03-12): You could remove the need for stone but then add the requirement for an axe to use the workshop
+  - _Context: I believe the question what whether the building requirements for the makeshift workbench should include stone, not whether you use it for the later t_
+  - _Context: Don't you need it for a chisel?_
+  - _Context: stone is only used in the sprite as a makeshift table or workbench isn't it? It's not used for tools afaik_
+- **.aedis** (2021-08-01): would be nice if when you are opening build/workshop menu you have any indication that you do have workshop of given kind or not, and maybe tooltip suggesting what kind of building happens there..
+- **sibaz_** (2019-09-12): Also in DF all dwarfs start with no skills and by doing a job, they gain skills, so specialise.  Gnomes seem to start and keep their skill level at everything, they should be able to improve
+  - _Context: feathers/straw/cotton stuffing should all be potential mattress fillers, and they should be the primary 'type' of a mattress_
+  - _Context: could I suggest that the info box, or the gnome log, has more info in it.  It's often quite vaigue_
+  - _Context: Someone talked about fishbones being made into glue, which is probably silly, but you could require glue for making arrows_
+- **drumoriginal** (2018-05-31): on the point of miasma, please don't add it, it is such a exaggerated feature
+  - _Context: for diseases I think you are better of with a wow system, instead of cellular automaton_
+  - _Context: I think a miasma like object could be useful for modeling the spread of disease_
+  - _Context: if you want to see a nice example search Conway's Game of Life_
+- **mindwarpaus** (2018-08-29): Not sure how many people would agree with me, but I'd really like to be able to replace floors under constructions. Seems really harsh that I can't replace the floor under beds, doors, torches or workbenches.  My gnomes can't put a torch back in the same place after laying a new floor? Maybe rimworl
+  - _Context: "Literally anything" technically includes "Ban prassel from Discord".  Not saying you should, but it does gets prassel's seal of approval on making In_
+  - _Context: it's more what is copied and pasted to what, and why is there 2 "paste" buttons? like, does it copy/paste the setting for the chosen pile in the dropd_
+  - _Context: The ability to sticky windows.  e.g. Sticky the Build Workshop Window so I can just click on workshops from the stickied window.  Or see what is in a _
+- **xeridanus** (2021-12-05): > Also, if someone is gathering resources in a location with the intent to build, don't have gnomes stash stuff away just because the one building got tired/hungry/thirsty/ect. > Could make a "construction site" that stocks the items used to build it. Doesn't this already happen? Gnomes drop stuff o
+- **envycreat1on** (2019-03-23): The old fort will continue to live on with the chosen leadership. The new fort could even receive traders from the old fort and your old gnomes could come to visit
+  - _Context: (sorry, going back the continuity thing) you could "retire" your settlement once you set a full leadership of sorts. Once you have a full leadership, _
+  - _Context: This would also open up the possibility of creating new leadership roles depending on how many forts you have. Say, you have 4 forts so you appoint a _
+  - _Context: and later down the road of development, those lords could be called upon to provide soldiers to fight goblins or whatever_
+- **woody1842** (2018-05-09): Hmm hey I'm looking are your patreon and I was wondering that for a reward, you should add the patreons names into the game when an Item has become legendary
+  - _Context: interesting idea, or maybe let them design item names_
+  - _Context: I liked the way  prison architect did it, let them create a character or something and you can encounter them in the world_
+  - _Context: ok woody for your pledge you can be a chicken, rabbit or sheep_
+- **dommain.** (2020-03-01): Could create a menu to control animations to turn on and off unwanted ones but also allow the potato computer powered by the hamsters have smooth gameplay.
+  - _Context: Assigning uniforms to professions would be quite helpful. Currently, you can only assign an uniform implicitly by including a Gnome in a squad. IIRC, _
+  - _Context: That would be nice to tell what job the gnome is heading for with out have to click on him_
+  - _Context: I did think of maybe having different hats for different jobs_
+- **the_real_kyrros** (2018-01-29): The issue, is that, functionally, stockpiles still work the same either way.  *Use until full *If full, organize/condense automatically to create more space (if available). Granted, the OCD in all of us want to just take a filing cabinet to the whole thing to make it look nice and tidy... but it com
+  - _Context: maybe diffentiate between hauling and tidieing?_
+- **desolator_x** (2018-05-27): Eh, if you're going to have nobles and stuff in the game having special clothing needs etc for them would make sense. If you just have common gnomes I don't really see a reason to have clothing needs. Having their needs condensed into bedroom wealth should be good enough
+  - _Context: also, looking at the barn building, I think it'd be nice if the game would automatically add the needed floors when you're building up the walls_
+  - _Context: would be nice if you could see where the selection sprite for each tile is so you can count if needed_
+  - _Context: Could gnome-needs become active over time? For example at the start there are just Hunger, Thirst and Sleep,  but at certain kingdom sizes new needs l_
+- **mindwarpaus** (2018-10-01): I'd really like to see a way to use up bone.  Some kind of consumable that would get rid of all the excess bone from butchering.  Right now, I'm ending up with butchery stations clogged up with bone, and stockpiles the same.  Even if we could just make torches out of bone would help a lot.
+  - _Context: Also a good idea would be to have workshop schedules. Like a distillery works from 8 am to 12 am and produces some amount of drinks. That would be gre_
+  - _Context: How about bonemeal? Use it to increase either the grow speed or yield of farms?_
+  - _Context: That sounds good.  I think increasing yield would be better for balance than increasing speed._
+- **.roest** (2018-10-04): about gnomes falling down when you remove floor, i'm a bit undecided about that, the remove floor job is done from a neighboring tile, so instead of removing the floor and letting the gnome that is on the tile fall down, we could evacuate him to the tile the worker is on
+  - _Context: Something to add when a gnome falls, the location they fall to doesn't seem to become discovered, so if they fall into a wall tile, it stays as an und_
+  - _Context: any auto prioritization for large scale dig/build orders?  An example problem I've had, building filling a 1 wide tunnel and a gnome getting stuck bec_
+  - _Context: just like in Dungeons 3, sounds like a good idea to implement_
+- **chaineddjinn** (2019-05-03): Came up with another function for backpacks, allow Stumpies to gather building supplies BEFORE building so their not running back an forth. Was playing Gnomoria and it took way too long to build some windmills, had to put a stockpile with just the parts nearby to get it done.
+  - _Context: No, Wheelbarrows move resources like stones and stuff into piles. When building something, a Gnome will grab each part one at a time and if ANYTHING h_
+  - _Context: Case in point, I was talking about Gnomoria. If you can gather things and build something strait from the wheelbarrow in Ingnomia then GREAT! Awesome _
+  - _Context: that's what wheelbarrows are for_
+- **.alch** (2019-09-01): Why not have it use a fuel resource bar like the engine did? You won't need fuel per recipe but instead per time spent crafting
+  - _Context: Plus it will tie in well if you make temperature a thing and gnomes need to keep themselves warm_
+  - _Context: it would just add  another ingredient to cooking recipes and unnecessarily add lots of items_
+  - _Context: I thought it would be cool and to provide a reason for some foods adding happiness_
+- **desolator_x** (2019-10-16): eh, based on what's currently in the game and how gnomoria handled it, the idea of 1k bugs doesn't exactly appeal to me. Granted, if you say we'll have enough AoE damage by the time we're supposed to be digging that deep my argument obviously is invalid 😛
+  - _Context: My problem isn't less of the amount than how they spawn. I didn't even dig that tunnel and now it's just a permanent, beetle-and-zombie-filled deathtr_
+  - _Context: is every mob already charged at the start of the game ? or only when you open a cave ?_
+  - _Context: I can understand this coming from someone who doesn't follow development but you two <@202164327606648841> <@211419446391209984> disappoint me, it's b_
+- **dinosaure.plz_nofriendrequests** (2020-12-24): I'd admit that the tree colour can be changed to blue, that has no gameplay change. Tree structure do have a gameplay impact, that's the kind of change that changes a world from "boringly standardized result" to "hey, I didn't expected that tree to grow as high!". Not a primordial feature, but somet
+  - _Context: Could you keep level encumbrance not checked? (please?)_
+  - _Context: <@!465569148798238720> they are a lot better than games not levelling their assets ; and they are pretty cute as they are today, this suggestion would_
+  - _Context: you want procedural tree layouts so you need sprites that can be stitched together at different locations, all possible but takes a talentend sprite a_
+- **dinosaure.plz_nofriendrequests** (2020-12-29): Suggestion: add more starting drinkable things. Even low quality would make it. I'm actually trying something like "DrinkValue" of 10 to every fruit and vegetable (wheat/grass/hay/.. excluded). `update "Items" set "DrinkValue"=10 where "DrinkValue"=0 and ("ItemGroup" in ('Corpses', 'Meat') or "Categ
+  - _Context: Can't place them myself whenever I want to. Edit: https://i.ebayimg.com/images/g/AocAAOSwmflfT~IU/s-l1600.jpg <- this is a "magic tree", nothing can f_
+  - _Context: oh a thing I would be happy about   abundance of ore as a setting ^^  And maybe reduce a bit the occurrence of gems? I am looking for ore and find rid_
+  - _Context: Allow a grove to be placed under an existing tree, and auto-set to actual type. (Don't know how I managed to place groves under wild tree roots someho_
+- **maveross** (2021-01-13): Being able to assign workers as well. Run in to a scenario where gnome A is at a workshop, producing a block, set to repeat. After finishing making the block, instead of grabbing a nearby raw stone out of the stockpile, gnome B (a long distance away) will get the next build order and this really bre
+  - _Context: A copy to build option would be extremely handy_
+- **enukar** (2018-08-24): I might be too greedy suggesting this. But is there a chance you make a creature editor? Like a ingame or mod tool that lets people create they own animals/creatures in the game, and add their own sprites.
+  - _Context: Also, white letters in light gray background hurts. https://gyazo.com/5231d755f0c666a2214edfeb51c51204_
+- **makarygo** (2018-10-10): If I want to build first 3 workshops and a well - I make just 8 clicks. But if I have to pre-craft all the ingredients, it actually doubles. Not to mention that I don't always remember what furniture is required to which workshop.
+  - _Context: Uhm, please clarify your question, I'm not sure what you mean_
+  - _Context: If you do so, you will automagically create a job to build chairs, tables, chisels, workbenches and whatsoever is needed to build this workshop_
+  - _Context: (Please, ping me in case of answer, thx)_
+- **dinosaure.plz_nofriendrequests** (2021-01-04): I only wanted to see how others were playing, and as Discord accepts users to stream (even if not recording), that was the idea. I'm not comfortable enough to talk while streaming, and that would have zero-pro stream quality.
+  - _Context: Actually no, it's not even the seeds which are out in the world. It's the seeds which are already in the stockpile (on the floor), which are causing t_
+  - _Context: Just thought it would be interesting to see others playing, and multiple streams are ok on the same room._
+  - _Context: Starting a game on a more open platform like Twitch, and then announcing the stream in the <#447757383985266700> channel or alike is fair game though_
+- **chaineddjinn** (2022-02-14): Any chance of collaborative projects?  Like having 2 or more construct a building or in a workshop to speed up production? Or to help train a newer worker up? I'd imagin it would take a bit more work code-wise, probably something for later, as long as the code isn't bottlenecked into a corner.
+- **desolator_x** (2018-04-29): I don't, it's far more fun to write epitaphs for fallen gnomes, it's just a shame that it's really hard to build a proper monument to the fallen since there's no mausoleum / coffin option that you can set inscriptions on
+  - _Context: suggestion: cemetery, gives stone masons something to do, effects dwarf happiness (maybe 50% reduction in the sads when a gnome dies if they are burie_
+  - _Context: I don't really see the point, those who don't want to save scum won't, and other people will. Ironman mode doesn't seem like a priority_
+  - _Context: Maybe an implementation of a "Hardore" or "Ironman" mode.  No saving (other than to quit), but in turn, increased rewards etc_
+- **drucifer8036** (2019-05-25): I'd like to see more stair options, assuming this is still the place for suggestions.  Even just a reskin of the raw stone sprite, but the recipe uses blocks instead of raw stone.  Wood, stone block, metal,  bone.
+  - _Context: Could have it that the trainer gives a boost to training their highest combat skill. Makes sense for a trainer who's a master with a sword to give xp _
+  - _Context: Add a trainer job to military training grounds. If they have high skill, then your recruits train faster_
+- **drumoriginal** (2018-05-17): <@386915067477753858> suggestion for sprites, make them grayscale so they can be recollored in game? I saw seasons come by and this could be easily achieved with just recoloring sprites
+  - _Context: ofcourse ask <@280266293490221056> if he would also want that :p_
+  - _Context: that's already what's being done_
+- **vorg9431** (2019-01-16): It would be nice if we could expand a pasture or farm area by starting or ending inside an exsisting one
+  - _Context: In Char skills there is a place where you can change the priority of their skill. Would be nice to have and auto sort button, that sorts by skill leve_
+  - _Context: Hmm, I'll try again, but each time I started in or ended in, it seemed to create a new small area in the newly included area._
+  - _Context: but that is how it works right now, if you start insde a farm, pasture, stockpile or room it adds those fields to the exisiting one_
+- **.lld** (2018-05-12): Which honestly if CO2 doesn’t build up, is a pretty peaceful way to go.  I hear a garbage bag of helium is a popular suicide option.  You breathe normally and never suffocate because co2 never builds up
+  - _Context: <@204036338888998912> what would happen if a magma proof set of doors was created? How would that go down? Espcially if the gnomes lived under ground?_
+  - _Context: Embark settings would benefit from a template save option, if the setup is time-consuming or fiddly._
+  - _Context: https://images.homedepot-static.com/productImages/4cd43ab8-2f52-483b-b145-97c41c0a8821/svn/dr-earth-plant-flower-fertilizer-718x-64_1000.jpg_
+- **drumoriginal** (2018-05-26): better cheese out and go the timber & stone route if you really want more realistic building
+  - _Context: anyway, it is a very small feature and it turned out to be hell for automatic building_
+  - _Context: Stonehearth is a game which had scaffolding in their prototype, since then it has been a pain in their ass_
+  - _Context: it is not about the actual scaffolding, it is about spatial awareness around the building 😃_
+- **mcphisto2051** (2020-12-07): perhaps checking if its a corner and the surrounding walls should be changed too, the dig 1 surrounding wall replace it and build on the removed wall slot?
+  - _Context: Food and Drink need indicator color codes_
+  - _Context: Mine both tiles. Plan both for re-construction. They will be reconstructed in an order which is possible, so much you may have._
+  - _Context: 🇫🇮 We too have a long tradition of turning vegetables into alcohol_
+- **flash.1** (2018-05-08): Or... and hear me out now, it's getting wild... we could wait until the base game is done at like the level of Gnomoria, then play it, then think about what's really missing.
+  - _Context: If we covert my gold stack on Runescape to USD I could hire 200 people for Roest to make DF 2.0 with 3D graphics._
+  - _Context: gogo make sprites, now that Roest has too much time to work on this you need to step up your game man 😛_
+  - _Context: How about building a rocket later on to settle the moon?_
+- **optimus.0001** (2018-03-17): maybe you could 'designate region' for it, do it floor by floor
+  - _Context: Maybe make some blocks containing very valuable resources only mineable with explosives_
+  - _Context: and if you put a torch on a coal seam there should be a risk of fire/bang_
+  - _Context: re: darkness, that could make tunneling fun_
+- **.roest** (2018-06-29): right now all jobs are checked because i don't want to go to the screen and check something when i test some feature, eventually they'll star with everything unchecked
+  - _Context: Currently the default job is miner, but all jobs a checked.  You have to assign another job role and back to miner to get it to stick_
+  - _Context: Having all jobs checked is good.  It just looks like they are miners.  It’s more of a ui bug/ quality of life thing._
+  - _Context: More verbose info in the Job Queuem to differentiate between Repeat/Crat#/Craft to without clicking on each entry._
+- **.alch** (2019-05-28): Click on an existing build job and see what the job is waiting for, E.g if you're building a workshop and don't have a chair, it should say "waiting for chair"
+  - _Context: "Craft-to" jobs don't take the material type into account, so having a system of always keeping 100 planks for every wood can't be done atm_
+  - _Context: that's a bug report, not a suggestion 😛_
+- **dinosaure.plz_nofriendrequests** (2020-12-28): Suggestion: add buttons to manage the view, likely turn camera around, change zoom (+zoom reinit), change level. (I like to play without keyboard while working.)
+  - _Context: Idon't want to fell wild trees when starting a new colony. (And I don't wanna give me free seeds either)_
+  - _Context: They could be used to seed groves with grown trees, without the log spam._
+  - _Context: I like to let the starting place as untouched as possible.  Until the moment I replace all layers with log floor and agriculture._
+- **korvar** (2021-01-02): Maybe you need a "Manager" gnome to do that sort of thing...
+  - _Context: Suggestion² (as I'm going to sleep): a "don't pause my game with Gnomes arrival as I'm not interested for the moment anyway" checkable option. 🙂_
+  - _Context: That's the wrong channel, but if you scroll level high enough to have this floating in the bottom layer, you're often able to click on it. (Saw this o_
+  - _Context: Suggestion: Having a visual histogram displaying how much of anything went recorded at any time. +relative "per day" consumption/production._
+- **thepak.** (2019-10-31) [1⭐]: <@280266293490221056> I just saw the update with the off screen mission, quest, things.   I really like it.
+  - _Context: Light sloshing between mountain peaks?_
+- **hughheggen** (2019-12-17): It wouldn't be a bad idea to add that to a fill hole tool
+  - _Context: Would be useful for those of us trying to get rid of sand by building the earth above - that stuff has no bulk container and takes up a lot of room_
+  - _Context: You can use the replace wall and floor tool_
+- **.roest** (2018-05-29): world size near max requires a good gpu right now, there's still one thing i can implement to help with that, guess i need to do it sooner than i wanted
+  - _Context: Suggestion: In the "mine down" menu, integrate a tool for block removal. Also, the stairs-down tool doesn't automatically clear the block above. The s_
+  - _Context: Unsure what is happening under the hood, but during world creation Windows thinks Ingnomia is not responding.  I assume you are locked in world creati_
+  - _Context: but I am also getting 5fps, I think I need to update drivers or something_
+- **.elfu** (2020-03-22): Suggestion: Spice up the visual part of how items on ground are presented. Currently only one item is rendered, even if there are hundreds of them underneath. Create a few additional graphics to represent how cluttered a tile on ground is: 1 item of 1 type: show that item 2 items of 1 type: show 2 i
+  - _Context: any support for large TV displays?  I have a 4k 50" TV_
+- **.lld** (2018-07-09): Suggestion: For jobs that are multiple runs, add (Repeat) for repeated jobs, ($Number) for craft X jobs, and (<$number) for craft until jobs.
+- **vorg9431** (2019-01-17): Maybe pressing/holding L-Shift or L-Alt while draging to switch to z-axis or using the scroll wheel?
+  - _Context: A method of harvesting/felling a selection of multiple z levels at once, maybe like 5 max_
+  - _Context: simply need to add "MultiZ": true,  to the entries in actions.json_
+  - _Context: Gnomes carrying food with them, only a small amount but it would save from them constantly having to walk back and forth to get food_
+- **mcphisto2051** (2020-12-09): the neighbored kindgoms need a little rework, 1 name occured for me more than 5 times, all have the same travel time and so on
+  - _Context: Speaking of Goblins, any plans on adding a console/log for combat events? I had a solid 4 days of goblin waves on the 2nd year and lost half my popula_
+  - _Context: perhaps if a name is taken, dont create the same one for another kingdom?_
+  - _Context: Suggestion: Tombs for our sadly drowned/starved/goblin-ed Gnomes._
+- **.roest** (2020-11-23): no idea, maybe once the CI build for linux on github is able to run on its own it might be enough to just copy it on Steam
+  - _Context: adding onto that, who is currently working on testing the game out in Linux and how much would someone here have to do for you to consider putting a L_
+- **prassel** (2018-06-07): caramelized onions 👌 should be a dish in the game tbh. with beef patties and potatoes and brown cream sauce
+  - _Context: Ummmm, maybe a powered workshop at a later date_
+  - _Context: and that where ON == L are lions? ..._
+  - _Context: Opinions on a right click menu?_
+- **ald_productions** (2019-12-16): Could we get a tool to turn a ramp or stairs back into a full wall block?
+- **ctherain** (2018-05-04): but think of harpooning a whale (your mom tehe) and the entire water turns red like in my japanese whale hunting videos and some strange red slimes and blood elements spawn and invade your fort.
+  - _Context: If the water is big enough we could have water farms and gnome diving_
+  - _Context: you lot all going on about boats and water  I'm waiting for the gnome space program DLC where you build space elevators and mine asteroids_
+  - _Context: Gnome Space Program, the blocky replica of Kerbal Space Program?_
+- **fourofire** (2019-11-26): An average Profession skill score: In either the population screen or the specific gnome screen, each gnome displays the average of points it has in the skills selected by it's given profession.
+  - _Context: *Fizzle picks up dirt*   x424 *Fizzle puts dirt in Stockpile 1*   x423_
+  - _Context: that would create a 300 pages diary / day  tbh_
+- **hughheggen** (2018-06-06): OK, so I've made a flat window, a large stone column, clear glass block, stained glass block, cobble stone, stone and wood halfsies block and a 2x2 gnome face wall relief
+  - _Context: while we're at it why don't we just add wind power_
+  - _Context: or should I just steal them from the fortress mod_
+  - _Context: is someone else going to add that_
+- **.alch** (2019-07-30): What about having stocks in the top left/right of the screen 😦
+  - _Context: Or have it be the job of someone to count all the items in each stockpile like in at least one of them?_
+  - _Context: I don't see a problem with a counter of how many you can make. It's a good quick look tool that shows how your stocks are doin_
+  - _Context: When choosing to build items/storage, have a number count of how many of that item you can build_
+- **cptvolkow** (2020-12-25): Ability to haul resources to build projects
+  - _Context: Suggestion: Baby animals in pastures get to spend the night in the shed!_
+  - _Context: Well, theoretically you can set up one-use stockpiles for that..._
+  - _Context: (Building ~100 blocks high scaffold takes a while)_
+- **hughheggen** (2019-01-11): I just had all the workshops of the same type in the same room and all workshop rooms were close together
+- **flash.1** (2019-07-22): Yeah, just saw your message and checked the history, too. We didn't speak for too long for you to know.
+  - _Context: Well, you know why I'm mostly absent right now 😕_
+  - _Context: I just realized this was written 3 days ago_
+  - _Context: those damn Omni's ... get off my lawn!_
+- **.roest** (2020-12-02): we actually have sprites for that but it's a bit harder to implement with pathfinding and all that
+  - _Context: Take wood scaffolds and stack them on top of each other_
+  - _Context: Proposal: Remove the Ingnomia floating text._
+- **korvar** (2020-12-15): Also, you can create a scarecrow in the carpenter and tailor 😄
+  - _Context: Winter destroys all unstockpiled seeds_
+  - _Context: Birds eat unstockpiled seeds!_
+
+## Farming/Agriculture
+
+- **fatmck** (2019-10-01): Suggestion for Needs / Mood  Just read the wiki and read about Needs. Beside hunger, thirst and sleep I would add comfort and satisfaction. Propably they are more moods then needs, depending on how mood will be implemented into the game.  Comfort and satisfaction wouldn’t be necessary at the beginni
+  - _Context: Need a better system than that_
+  - _Context: Gnomoria had happiness, just no way of knowing that it existed until a gnome refused to work._
+  - _Context: I never noticed it so it might as well have not had a happiness system_
+- **dinosaure.plz_nofriendrequests** (2021-01-19): While I'm in the suggestion channel: - Have a "paint" mode, similar to the "Cut trees" one, but targeting farm/grove/pasture type helping changing seeds en masse - Have an "any" mode on farm/grove/pasture to let them accept any seed/seed(/acorn/pine)/animal available - Name the personalised "Set up"
+  - _Context: Issues page should stay reserved for stuff which has been adopted by a developer or modder. There is just no point to flood it with 10+ new "suggestio_
+  - _Context: Just to avoid further misunderstandings, when I said "threaded" I meant "one thread per suggestion".  Because most of these "one liners" are still far_
+  - _Context: Should get a "suggestions" page on github to comment on suggestions, just to help keep track of them and the discussions around each of them_
+- **fatmck** (2018-10-14) [1⭐]: I would like to suggest a kind of combat screen when we get enemies. During combat I would like to see all my in combat envolved gnomes on the left side with stats (equipment, health, dazed, bleeding, injured, blinded, on the ground, ..), the actual combat log in the mid, and all spottet and envolve
+  - _Context: but please make the width of windows borders a little wider. i have to be really careful to catch that area where i can resize the window... is it one_
+  - _Context: yeah but having 3 with 2 axes could be. so the third one could do other jobs, if he is assigned to them. well, i can live with it being the way it is_
+  - _Context: if a gnome carries something to eat and gets hungry, he should eat the food he is carrying. one of my gnomes just threw away his apple because of his _
+- **Deleted User** (2019-08-11) [4⭐]: Is is possible to allow existing trees to be a part of groves? I cannot create grove areas on top of existing trees, so I have to cut down an apple tree, to plant one in the same spot and lose precious growing time!
+  - _Context: Dropdown menu on to assign Workshops to gnomes should list in names alphabetical order, just like Population tab. Imagine having 200 gnomes and scroll_
+  - _Context: yea i'll need to use a combobox with input so you can limit the search_
+  - _Context: Do not compare it with the predecessors._
+- **chaineddjinn** (2019-04-19): <@207714562437414912>  Sounds a lot similar to what the devs want to make with StoneHearth https://store.steampowered.com/app/253250/Stonehearth/  I agree, it would be interesting and add replayability. Let's get the game out of the ugly duckling stage first, there's a lot that needs to be cleaned a
+  - _Context: Backpacks would also allow for 'Expeditions' and the bigger the pack, the more they can explore. Maybe instead of 'waiting' for migrants you can go ou_
+  - _Context: Maybe eventual 'carts' could be made? Or different kinds of 'Pack animal' for longer distance... but I'm not gonna wager that far, keep things simple _
+  - _Context: I've also thought about backpacks and other things to allow gnomes to carry food and weapons_
+- **chaineddjinn** (2021-12-04): Another Idea I had was the ability to have more then one unit preform a task, like a cooperation feature; two working to build something would take less time then one on it's own. Also, if someone is gathering resources in a location with the intent to build, don't have gnomes stash stuff away just 
+  - _Context: <@!386915067477753858> Soil quality, hmmm 🤔  reminds my of haven & hearth, it had quality for just about everything but it was capped by a few factors_
+  - _Context: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F55%2Fd3%2F4a%2F55d34a0db8e93e2570ca1c4313dfa339.jpg&f=1&nofb=1_
+  - _Context: ¯\_(ツ)_/¯ Something to hope fordown the pipeline I guess_
+- **chaineddjinn** (2022-02-11): I HAVE A SUGGESTION!   To cut to the content quick Drying Station  ||~~Was thinking drying rack but after thinking it over thought it'd be better as a station instead~~|| Takes grass/weeds and dries them to make better fodder. As you dry the plants you have rare chance to discover new seeds. ||Works
+- **.elfu** (2020-04-01): You know, there's prospector, that gives the ability to at least process trash dirt and similar raw materials. When it comes to food items, these could get made into a compost or fertilizer, and in later game, maybe fuel for machines/golems. Other than that an item could simply decay into a pile of 
+  - _Context: Oh, by the way. Curious thing that I never understood in Gomoria. Why are containers, such as drawers or cupboards, not able to hold items in them? It_
+  - _Context: I remember in Gnomoria traders were my number 1 sinkhole for overflowing items. I'd rather have workshops and mechanics that allowed me to use these t_
+  - _Context: It doesn't change the fact that excess items get used. Make it use 10 seeds to make one bottle of oil, and you got yourself a pretty big sinkhole righ_
+- **cannonball_k** (2018-05-06): Pretty sure this has been suggested but gnomes riding yaks?  Trainable yaks that fight and attachments for their horns like axes or saws.  Also use them as labor animals like how gnomes have wheelbarrows, yaks can have wagons.  This could require training or it couldn't.  Some kind of book system wi
+  - _Context: I like the idea of yaks as beasts of burden_
+  - _Context: It all sounds pretty damned good there Cannon! Doing some more thinking obviously mood effects will come into play woth time, but how about different _
+  - _Context: I suddenly like you more I wish that were always the case... sometimes I have these neat ideas that just *fut* away at the worst times... BUT! Its oka_
+- **chaosjester** (2018-05-05): I beg forgivness, I've been reading a bucket load of Roomcarnage (DF story thing, epic, go google it) and have a few suggestions. I haven't gone through to see what other folks have sugessted so Imma just go ahead and put it out there  Something like Foul Fog; I love the aspect of having an almost e
+  - _Context: Well... perhaps for the underground, a thought occured to me though, instead of having fow for above ground, how about a 'map' over look, as a thought_
+  - _Context: <@161788523127635968> When you said Space Elevators I got a distictly kittensgame vibe.  Please add a catnip forest._
+  - _Context: Its all good man. My thought was mostly due to PG, like as you explore shit kinda just *pops* up_
+- **.lld** (2018-05-11): Do our gnomes live in a land of milk and honey, or sand and pain?  That could be a global fertility slider at game creation.  Then all crops would need to be balanced for high and low fertility soils.  Even with High and Low fertility, I could see a lot of dev time for not a lot of gameplay.  If you
+  - _Context: maybe add in bone meal so farmers can fertilize fields of your choosing. I know by endgame you have thousands of damn bones. Instead of the fert tiles_
+  - _Context: then a slider for overall fertility is probably a bad idea.  how about a slider that increases the chance/quantity of high fertility spots? that would_
+  - _Context: <@176318165129756672> <@204036338888998912> high/normal fertile soil then like rimworld? could get manure for animals and fertilizer and maybe special_
+- **chaineddjinn** (2019-10-28): <@202164327606648841> Sorry just got back to this.  The problem with that "cost" is it's easily subverted if your clever. I put most of my people in a group and start training them asap, after initial set up.(1st day forging/logging/mining) I put 1 miner, farmer and anyone non-essential into 2 group
+  - _Context: obviously you don't need to be without workers doing certain jobs. I'm not that dumb that I'd be without miners, ever (or anything else essential for _
+  - _Context: Not only is this great for defense but also hunting, as animals get thirst and run the gauntlet, they alert dwarves so I can move 1 ranged squad in fr_
+  - _Context: <@202164327606648841> PFFFT! Ummm, I have no idea how you built your fort... but I haven't implemented a single automation and I believe I have yet to_
+- **dragonwrath420** (2018-05-18): The effect on enemies would be rather interesting and to add an option of a setting to make certain enemies stronger while in light (for the more diehard fans that like the challenges).  I like that though I would change the certain jobs requiring light to function to using the light to increase pro
+  - _Context: Another is that some can give a passive benefit such as allowing crops to continue to grow at night (since it was mentioned earlier that crops won't c_
+  - _Context: but back to the bees: I think the idea of hives/crops is a pretty good idea to limit the amount of hives you can reasonably build. (modders can add th_
+  - _Context: If light is just aesthetic, then permanent light sources are fine.  But, if light has a proper use that adds to the game rather than detract from it, _
+- **optimus.0001** (2018-05-19): Let me regurgitate some thoughts all over the nice clean channel.   Magic candles/lights would need a source of power, as would other magic elements in the base. There's also the notion of using magic as offensive skills or buffs eg insta-harvest... These could come from a common resource (say, mana
+  - _Context: If the plan is to have eldritch horrors in the game, bright light should be a way to either reduce sanity loss (assuming sanity is a stat), prevent it_
+  - _Context: <@362644073095626754> While the idea is interesting, what you're suggesting would make gnomoria/ingnomia a completely different game that what it was _
+  - _Context: Depends on how you implement the refueling... If it's automatic via one of the auto-jobs like hauling or building (for example) but with a slightly hi_
+- **hughheggen** (2019-09-07): There can be straw bales that take like 20 or so straw to make. Grazing animals could eat straw as well as grass so you can fees them even if their pasture has no grass. Add a straw weaver profession to make woven furniture and baskets. Add an option to farms for farmers to plow the straw back into 
+  - _Context: Or just add a tick box to harvest straw for farms. If unchecked, the grain is harvested with no straw_
+- **.alch** (2019-01-13): Maybe i'm missing something obvious, but is the feature to have the numbers of certain stocks on the main screen added? Similar to how you could have food/drink total in gnomoria and add stock counts for other items
+  - _Context: <@177094350201683968> I think that's probably a planned, but not-yet-implemented, feature, and if not, I hope it gets planned, because I made heavy us_
+  - _Context: you probably couldn't distribute mariadb like that anyway_
+  - _Context: imagine the patch migration headaches_
+- **the_real_kyrros** (2018-01-31) [1⭐]: I imagine, if putting in production limits/caps, those limits would only need to be in place for tasks that are set to repeat (set it and forget it), because those are not necessarily needing to be monitored. Whereas, take Roest's example, we're capped at 5 tables, but I want to build a different on
+  - _Context: Of course not all workshops. The modfiles define the inputs. For example, Those that need fuel could have one extra input._
+  - _Context: Craft portals to the demon world to store infinite ressources, but be exposed to random attacks 😛  More ressources stored  =  Higher chance of being a_
+  - _Context: How about just managing your stockpiles better and not having more than 2000 seeds and clippings_
+- **.alch** (2019-11-22) [1⭐]: I have an idea. implement wheat seeds, we might use all our grain on bread so we should have a seed version and a food version
+  - _Context: If collecting seeds, a harvest could yield 2-3 seeds and no crop but if collecting crops it could yield 1 seed and 1 crop with a small chance of yield_
+  - _Context: I think you should add goblins to the game along with combat, it would really spice up the gameplay_
+  - _Context: With chickens, just have a manual pop limit on their pasture. If a farmer doesn't want any more chickens, they just take the ferterlised eggs from the_
+- **.elfu** (2020-03-15): It's already extra clicks to make a pasture and set the hay harvesting. The inputed number doesn't tell me, whether it's a percentage of pasture's area or amount (it defaults to 100 which is why, I think, I confused it). It's more of an inconveniently placed action rather than automation. If you wan
+  - _Context: Suggestion: Add display stands. You can place a specific item in a display stand. It will receive a slight bonus to worth. Items in vicinity receive s_
+  - _Context: thanks but i like it easy to automate and there is an option to set the max you want to harvest, i don't want extra clicks_
+  - _Context: And you could set exactly how much hay you'd want to gather_
+- **_ysabell_** (2018-04-27): I don't know if anyone has suggested this yet. The general happiness of a settlement could also affect (in part) the number of gnomes joining the settlement each season, as well as kingdom worth. Conversely, there could be a chance for gnomes with 0 or low happiness to leave the settlement. Perhaps 
+  - _Context: I don't think stuff like slavery necessarily leads to bad press (Rimworld has it, and no one complains about it). I do think that having something lik_
+  - _Context: I mean that as gnomes become more experienced, they need better furnishings and food quality to stay happy, with higher professions needing more to st_
+  - _Context: I thought kingdom wealth was a simple and easy way to increase population size but we could go by a development score instead. The more infrastructure_
+- **not__** (2018-05-10): You could always assign the name to one tree per game.  The Woody Memorial Birch.  Speaking of giant dildos, gnomes need love too, so please implement.
+  - _Context: Oooo sweet, I'll be a chicken .... wooden cock_
+  - _Context: So I just have to say “I’m a patron” and I get yellow?!_
+  - _Context: What additional gameplay do we get for the complexity?_
+- **tacyn.** (2018-07-30): I think it would add some logistical/planning depth since you would have to run several workshops in parallel for jobs with long completion time. Also I would like it better to have large cellars where wine and cheese ripen instead of a single brewery/kitchen mass producing them.
+  - _Context: in regard to smokery/cheese making, I'd like a mechanic where a workshop can complete a job without a gnome present after it's been started.  No reaso_
+  - _Context: But what kind of cheese is it?  A nice Brie, or cheddar?  Who doesn’t love a nice smoked cheddar with their yak steaks ?_
+  - _Context: I think once trade comes in, anything that's preserved can be traded. Fresh and perishables can't be. Also preserving gives a slight food and happines_
+- **vorg9431** (2019-01-15): with the skill sort option, A multi level sort would be nice. Keep the last 3-4 sorts in desending order by when they where clicked. So you could click each skill in a group for example and it would keep the older sorts sorted with in the newest sorts.
+  - _Context: Adding to the above, a quick function to assign job templates through the pop menu rather than gnome menu_
+  - _Context: Have a forester workshop that turns tree seeds into saplings that can then be planted_
+  - _Context: Just so there's like 2 less steps to go through_
+- **Deleted User** (2019-08-14): SUGGESTION: Add checkbox option to stop milking pasture. I only want my pasture for meat, do not want gnomes wasting time going there to milk animals.
+  - _Context: Suggestion: Indicate or standardize the side of workshops that can link stockpiles. Each workshop has one different side that can link, and  it makes _
+  - _Context: Or maybe I have bad memory. Or could be both_
+  - _Context: And also just 1 high versions of it, so I can have nice vertical wood walls_
+- **chaineddjinn** (2021-11-28): Suggestion, add more farming options. Like using fertilizer(Ash, compost, fertilizer, bone meal) and/or irrigation(Either by bucket or through piping like axles) on farmland. I wanna make indoor pond for fish & such, like Koi. Maybe useful for making baths/hot spring.  Angry @ Gnomoria for requiring
+- **maveross** (2021-01-12): In the case where you need a table nd a chair built, instead of one carpenter queueing up both, you can have one make the chair and one make the table. Donno if that's a level of automation that should be allowed, but I would like it
+  - _Context: I've set up multiple workshops to do a decent number of things. I think it would be particularly time saving when amping up production of a certain it_
+  - _Context: In the sawmill, I'll create a set of craft to 20 for each type of plank, then another set of craft to 50, and another set of craft to 100. So that I'm_
+  - _Context: Having multiple of the same type workshops that have "craft required goods" toggled spread out the load so  one workshop isn't being focused would be _
+- **slippuu4247** (2018-04-30) [3⭐]: __***The Teachings of Saitama***__ _Kill a goblin with 1 punch_
+  - _Context: I think everyone is missing what Ingnomia really needs.  Steam Trading Cards!_
+  - _Context: you should get a mark of recognition when you make 1000 goblin food items or make your first child sacrifice_
+  - _Context: yes, give free stuff that i can sell and buy other games with 😄 (jk i dont really care, and no if it takes time from development)_
+- **tacyn.** (2018-10-15) [1⭐]: The designation would be the same as other rooms. Comparable to dormitories, which allow gnomes to use the beds build within them. The crafting screen is the same as for single workshops, with the difference that it can do everything the workshops within the designation can. The orders created in th
+  - _Context: I think it could combine my idea of attaching workshops to stockpiles. instead of stockpiles, the management desk_
+  - _Context: we need crafting options for the workshop it self, and a "global" option that's shared between all crafting stations of that type right?_
+  - _Context: because if it can collect and hold rain, that could be a problem for people controlling running water into their bases. I know with Gnomoria, I dig a _
+- **the_real_kyrros** (2018-01-11): Could implement some kind of one-shot creation of a scaffold/rope ladder, or even just allow gnomes to  moved up one level to an adjacent square occupied by another gnome (i.e. get 'pulled up')
+  - _Context: i JUST thought of something that might be AWESOME!  if the game world generates like DF...as in it generates an ENTIRE world and you only play a bit o_
+  - _Context: than a hack maybe, allow diagonal movement when trapped by "remove floor" jobs this should at least ease the problem_
+  - _Context: i know its a hard problem, but could be avoided by letting them walk on walls (maybe only allow when trapped)_
+- **Deleted User** (2020-02-05): - I think that 2x leather straps per hide is too low, or that only 1x hide per cow/yak butchered is too low. One of them should be increased. I've been trying to gather leather straps and I'm on year 4 and could only get a meager amount of leather while also trying to grow my herd. Or at least scale
+  - _Context: -On the new gui, the ability to rearrange stockpiles  priority with dragging would be awesome. On bigger and older maps with lots of stockpiles, click_
+  - _Context: -Why butchering goats doesn't yield any hide/leather? It could give less than cows/yaks, but goat skin/leather is a thing and ppl use it (it is even t_
+  - _Context: - Option to chose order of priority of pastures for Auto butcher excess livestock, or use pasture priority for that._
+- **ext3h** (2020-04-06): Hunting board, serving both as "cull population down to X" instruction and as drop off point for corpses could work, I suppose? But not as friendly as the butcher job, where animals just stop moving and wait once marked for killing. Hunting also requires corresponding adjustments to animal AI, to en
+  - _Context: I mean, it depends how it'd be designed. If you make it like pasture, then a hunter would hunt any available animal on map. If you made it like butche_
+  - _Context: A middle ground would be selecting what animal type to hunt and maybe range from the structure, or amount to let live (so that you don't wipe out enti_
+  - _Context: well have to consider the available control schemes we have, so it's either a structure that has the option, like the taming animals thing, or it's li_
+- **flash.1** (2018-05-15): So we either need a routine that automatically defines pastures inside fences or we need the option to freely define pastures ourselves and put fences around them
+  - _Context: but you had me thinking, you know i want to implement a mission system, where you just select a few gnomes and send them on a mission, be it diplomati_
+  - _Context: the fuck am I looking at 0.o can we please go back to the normal 2 genders and people with a mental disability?_
+  - _Context: do you think animals should be magically contained on pastures or should they be able to wander off and need fences_
+- **condac** (2021-01-29) [2⭐]: if you plant the wheat that you start with on medium there is no problem getting ~300 grains and  making bread and fruitbread to survive with no problem at all
+  - _Context: <@280266293490221056> I am trying to balance the food values so the top foods are under/around 75, Do you think there will be a problem if raw foods w_
+  - _Context: I have run a few test with beginning of game and the lower food values on raw fruit. Started on medium setting with 1 gnome, when winter came i had 10_
+  - _Context: I like the craft time multiplier method, higher cooking skills could tag on to that to add eatvalue to items they craft based on cooking time_
+- **Deleted User** (2018-07-11): hello im new here and i played my first hour on ingnomia and this is my first feedback: 1.i needed 10min to prepare a world(add tools, animals, food, drinks etc) it can be great add a starter pack automatically.   2. the night is too dark it is hard to see the blocks. 3. the stairs,  It would be gre
+  - _Context: Suggestion: Stockpile having a max of more than 100 per item, and/or the ability to set all items at once.  Either to $Number or Infinite_
+  - _Context: <@204036338888998912>  An all at once would be a good tool for stockpiles. Saves a bit of effort_
+  - _Context: The natural 100 item limit confuses me with my massive yet empty dumping ground stockpiles._
+- **desolator_x** (2019-01-18): also, I like the idea that <@177094350201683968> had with carrying food with them. It could be restricted to a certain piece of gear you'd have to make first, say a lunchbox 😛 so your gnomes would equip the lunchbox and then be able to carry one sandwich and one drink with them or something
+  - _Context: You have outside corner ramps for straw roof I see. I could see people wanting both inside and outside corners for all ramp types for roofs. So may ju_
+  - _Context: So for suggestions, could we  get a different color or some sort of Icon to note input linking block for workbenches? As near as I can tell, only 3 ar_
+  - _Context: The sand tile is really hard  to distinguish from the mine wall colour... just started playing around. I think this could be a problem for a new playe_
+- **chacina7810** (2019-03-10): A system of achievements for the noobs to know the progression and for the players to complete all the possible things of the game. And up to challenges ... 300 of  such an item crafted, etc. It could have an option to show or hide the achviments pop-up
+  - _Context: I feel that when I craft something and put any material into the workshop it is harder for the gnomes to complete the craft than when I put in a speci_
+  - _Context: well, one thing that could be nice is the ability to start a new world/game with some of the gnomes from a previous world/game_
+  - _Context: especially for streamers, but also if you want to have this idea of a world where you have different settlements_
+- **chacina7810** (2019-03-11): I do not think it's particularly a good idea for one game to affect the beginning of the other... But if you believe it will improve the game scene and for everyone to be happy it could be a wonder (haha 😅 ) <@177094350201683968> that gives you a backupsave, helping in the same run. Dunno
+  - _Context: It could be as simple* as an option to retire the game and the gnomes get tossed into a pool and can random into the next games. *simple to write, I h_
+  - _Context: I think you should need stone.  Either add some on start or have surface stone_
+  - _Context: Agree wih Lord Hugh here : in my opinion stone is needed. I mean how do you cut a log to become a plank. You need somehig at least stronger than wood._
+- **vanda1475** (2019-08-25): Also would love to be able to exclude certain food items from the gnomes eating menu. It would be really helpful for early game if gnomes wouldn't eat the apples I want set aside for fruit wine. It could be a tab in the kingdom menu since it's kinda like a "Law" of the kingdom. "Thou shall not eatit
+  - _Context: Although maybe it could just be a function of the linked stockpiles when that is working that nothing can be consumed from a linked stockpile._
+  - _Context: Had an idea about the animal overpopulation. What if the females, once an adult, aren't able to be pregnant for 8-10 days. That'd help keep the very n_
+  - _Context: i now limit animals to 1000 per type, also animals only get pregnant when on a pasture, so you can control it by having no mixed genders on pastures_
+- **condac** (2021-01-28): I am just creating a sheet to calculate everything based on the ingreidients because i thought the current values where just very fluctuating in value and eatvalue and did not favour crafting any items at all, at current state eating raw foods is better because they loose value the more you craft th
+  - _Context: I have extended the sheet with crafting time so we can set a price per work time to get calculated cash value of items based on ingredients crafting t_
+  - _Context: Yes, that is what i think also, but the anwer was that they are planing on implementing happyness so the more you make a high end item the happier the_
+  - _Context: I have a much better suggestions for metal values now that fixes the issue where statues are not the right values if you compare a marble statue to a _
+- **hughheggen** (2021-03-10): So I've spent a bit of time playing Ingnomia recently and I've come up with these suggestions for improvements:  Merge harvest tree and forage into one command just called forage. There's little point in having them separate.  Allow Kitchens to turn seeds into flour at a rate of 4 or 5 seeds for 1 f
+  - _Context: A metal needle recipe was added  believe, to one of the metal workshops - I find I often get metal way before I get bone!_
+  - _Context: > Merge harvest tree and forage into one command just called forage. There's little point in having them separate.  +1_
+- **.lld** (2017-12-30): Maybe hourly would be better since a gnome might need 10 hours of sleep on the floor vs like 6 on a super cushy king bed?
+  - _Context: like the military schedule, but in general? I'd like that too but it doesn't need to be per hour, dividing a day into three 8-hour or four 6-hour slot_
+  - _Context: well, something like cooking / growing perhaps? planting during the night so the plants grow during the day and the gnome can go cook during the day w_
+  - _Context: The schedule could be a suggestion rather than a rule. Let's say gnomes have a rested value going from 0 to 100 and they normally go to sleep below 50_
+- **rookie0117** (2018-06-25): The mushroom parent? found deep underground? Or is it a mushroom golem? left from thousands of unkept mushrooms.  That reminds me, should people be able to designate an area to dump water in via buckets for underground farms?
+  - _Context: <@280266293490221056> you are a mushroom now (kept in the dark and fed bullshit)?  I thought you left the corporate world?_
+  - _Context: should be able to cut trees with most types of axes_
+  - _Context: not sure yet, it might be as easy as in DF where you need no water or it'll be solar powered pump and tube system with sprinklers_
+- **hughheggen** (2018-06-01): Suggestion: being able to dig dirt and maybe sand without a pickaxe (just slower)  could be a good idea
+  - _Context: suggestion: work regions in to the job filtering eg. allow gnomes to be assigned to dining halls (or something), they will give jobs closer to that di_
+  - _Context: <@386915067477753858> have you ever dug a hole IRL with a shovel in ground that is 50-70% fist sized stones? unless it's pure dirt and half clay or sa_
+  - _Context: how about needing a shovel then instead of a pickaxe_
+- **sibaz_** (2019-09-12): Also in DF all dwarfs start with no skills and by doing a job, they gain skills, so specialise.  Gnomes seem to start and keep their skill level at everything, they should be able to improve
+  - _Context: feathers/straw/cotton stuffing should all be potential mattress fillers, and they should be the primary 'type' of a mattress_
+  - _Context: could I suggest that the info box, or the gnome log, has more info in it.  It's often quite vaigue_
+  - _Context: Someone talked about fishbones being made into glue, which is probably silly, but you could require glue for making arrows_
+- **.elfu** (2020-03-04): But why would you want to do that, every time a game loads? I really wouldn't want my gnomes to suddenly change everything they do at the start of the game
+  - _Context: Once a unit is spotted, the check should stop for the other side for that unit for X number turns time, combat should skip check completely for x turn_
+  - _Context: Could be worse, I could be a UI guy instead_
+  - _Context: well, if you can make a distance check between two units, just by looking up their coordinates in world, then I'm thinking that could be faster_
+- **drumoriginal** (2018-05-31): on the point of miasma, please don't add it, it is such a exaggerated feature
+  - _Context: for diseases I think you are better of with a wow system, instead of cellular automaton_
+  - _Context: I think a miasma like object could be useful for modeling the spread of disease_
+  - _Context: if you want to see a nice example search Conway's Game of Life_
+- **dommain.** (2020-03-01): Could create a menu to control animations to turn on and off unwanted ones but also allow the potato computer powered by the hamsters have smooth gameplay.
+  - _Context: Assigning uniforms to professions would be quite helpful. Currently, you can only assign an uniform implicitly by including a Gnome in a squad. IIRC, _
+  - _Context: That would be nice to tell what job the gnome is heading for with out have to click on him_
+  - _Context: I did think of maybe having different hats for different jobs_
+- **desolator_x** (2018-06-22): Show the relevant stats of a gnome, either a dropdown list of all skills of a profession when you hover over the profession name, or put the numbers after the skill (mining, masonry, etc) so you get a better indication of what your gnomes are good at
+  - _Context: Sorted trade list? Quality, value, etc. One thing about gnomoria that irritated me was what you discover first is the first on the long trading list. _
+  - _Context: Can we get a reason for jobs being aborted in the gnome log?_
+  - _Context: right now my gnomes keep getting farming jobs, then aborting, but never get down to mining_
+- **mindwarpaus** (2018-10-01): I'd really like to see a way to use up bone.  Some kind of consumable that would get rid of all the excess bone from butchering.  Right now, I'm ending up with butchery stations clogged up with bone, and stockpiles the same.  Even if we could just make torches out of bone would help a lot.
+  - _Context: Also a good idea would be to have workshop schedules. Like a distillery works from 8 am to 12 am and produces some amount of drinks. That would be gre_
+  - _Context: How about bonemeal? Use it to increase either the grow speed or yield of farms?_
+  - _Context: That sounds good.  I think increasing yield would be better for balance than increasing speed._
+- **reaperofbunnies** (2019-11-04): Suggestions as of todays playthrough -Max worldsize to 500, seems to save fine -More food options, nothing i found yet to use vegetables for (if im wrong educate me)  -Ability to hunt, i currently have hundreds of chickens but can only slaughter 20 -Some form of resource dislpay on screen, show food
+- **dinosaure.plz_nofriendrequests** (2020-12-24): I'd admit that the tree colour can be changed to blue, that has no gameplay change. Tree structure do have a gameplay impact, that's the kind of change that changes a world from "boringly standardized result" to "hey, I didn't expected that tree to grow as high!". Not a primordial feature, but somet
+  - _Context: Could you keep level encumbrance not checked? (please?)_
+  - _Context: <@!465569148798238720> they are a lot better than games not levelling their assets ; and they are pretty cute as they are today, this suggestion would_
+  - _Context: you want procedural tree layouts so you need sprites that can be stitched together at different locations, all possible but takes a talentend sprite a_
+- **dinosaure.plz_nofriendrequests** (2020-12-29): Suggestion: add more starting drinkable things. Even low quality would make it. I'm actually trying something like "DrinkValue" of 10 to every fruit and vegetable (wheat/grass/hay/.. excluded). `update "Items" set "DrinkValue"=10 where "DrinkValue"=0 and ("ItemGroup" in ('Corpses', 'Meat') or "Categ
+  - _Context: Can't place them myself whenever I want to. Edit: https://i.ebayimg.com/images/g/AocAAOSwmflfT~IU/s-l1600.jpg <- this is a "magic tree", nothing can f_
+  - _Context: oh a thing I would be happy about   abundance of ore as a setting ^^  And maybe reduce a bit the occurrence of gems? I am looking for ore and find rid_
+  - _Context: Allow a grove to be placed under an existing tree, and auto-set to actual type. (Don't know how I managed to place groves under wild tree roots someho_
+- **condac** (2021-01-27): Soo i thougt the food values where off, but I got the answer that happyness was a upcomming feature that will offset time spent on making food for the price of actual hunger values going down compared to values of the ingredients. But I have but togheter a small sheet of values where the total amoun
+  - _Context: QoL: when you make a new group it's places on the left_
+- **dinosaure.plz_nofriendrequests** (2021-01-03): Suggestion: multithread the game. At any point in the game, there is not much than 5% use of global 3700x cpu, indicating single core use. Maybe related: unleash the rabbit power, as it's actually barely more than tortoise x2.
+  - _Context: Well, there is multithreading where applicable. Simulation and UI are running in fully decoupled threads. Pathfinding is running multithreaded. It's j_
+  - _Context: If it's 3x3x3, and you had to load the incinerator from the top, it could be a decent rationalization to have it incinerate more material simultaneous_
+  - _Context: Changing the "EatValue" of the cooked foods to be the sum of their component foods+10, to more fairly compensate for the time cost and ingredient cost_
+- **korvar** (2021-02-07): In either Gnomoria or an older version of Ingnomia, I could make hierarchical stock lists by both deciding the order things got shown and changing the title, like adding "   " to the beginning of entries to inset them.
+  - _Context: When listing Food total in the upper left corner Egg should not count as food as they are not eatable and make the impression that food stocks is fine_
+  - _Context: While we're talking suggestions, making the item lists show up better over the white snow!_
+  - _Context: So like ``` Food 200     Bread 30     Sausage 10 Drink 100     Milk 100     Beer 0 ```_
+- **_dreddos** (2019-12-24): Manable stationary ballista turrets with different bolts (higher the metal the more accurate + dmg) with bolts for accuracy, bolts with possible aoe splash etc If adding dragons this could be a good counter to them
+  - _Context: I have a suggestion about straw use, since we have separation between straw and hay.Unlike hay, animals generally don´t eat straw, but straw can be us_
+  - _Context: We need working ranged combat first_
+  - _Context: <@141075323990179841> , fully agreed with you._
+- **vorg9431** (2019-01-16): It would be nice if we could expand a pasture or farm area by starting or ending inside an exsisting one
+  - _Context: In Char skills there is a place where you can change the priority of their skill. Would be nice to have and auto sort button, that sorts by skill leve_
+  - _Context: Hmm, I'll try again, but each time I started in or ended in, it seemed to create a new small area in the newly included area._
+  - _Context: but that is how it works right now, if you start insde a farm, pasture, stockpile or room it adds those fields to the exisiting one_
+- **.lld** (2018-05-12): Which honestly if CO2 doesn’t build up, is a pretty peaceful way to go.  I hear a garbage bag of helium is a popular suicide option.  You breathe normally and never suffocate because co2 never builds up
+  - _Context: <@204036338888998912> what would happen if a magma proof set of doors was created? How would that go down? Espcially if the gnomes lived under ground?_
+  - _Context: Embark settings would benefit from a template save option, if the setup is time-consuming or fiddly._
+  - _Context: https://images.homedepot-static.com/productImages/4cd43ab8-2f52-483b-b145-97c41c0a8821/svn/dr-earth-plant-flower-fertilizer-718x-64_1000.jpg_
+- **condac** (2021-01-30): I think food items shoud have quality to them but changing hunger to much based on quality might make things hard in the beginning of the game. When happiness comes in play it should affect that.
+  - _Context: Cook skill should effect any happiness value of the food along with cook speed_
+- **mcphisto2051** (2020-12-07): perhaps checking if its a corner and the surrounding walls should be changed too, the dig 1 surrounding wall replace it and build on the removed wall slot?
+  - _Context: Food and Drink need indicator color codes_
+  - _Context: Mine both tiles. Plan both for re-construction. They will be reconstructed in an order which is possible, so much you may have._
+  - _Context: 🇫🇮 We too have a long tradition of turning vegetables into alcohol_
+- **tacyn.** (2020-04-02): How about having wild critters spawn on  fields, groves, and pastures that eat any loose food items? The more loose items the more of them spawn.
+- **dinosaure.plz_nofriendrequests** (2020-12-28): Suggestion: add buttons to manage the view, likely turn camera around, change zoom (+zoom reinit), change level. (I like to play without keyboard while working.)
+  - _Context: Idon't want to fell wild trees when starting a new colony. (And I don't wanna give me free seeds either)_
+  - _Context: They could be used to seed groves with grown trees, without the log spam._
+  - _Context: I like to let the starting place as untouched as possible.  Until the moment I replace all layers with log floor and agriculture._
+- **hughheggen** (2019-07-19): You guys are over thinking this. The system could be as simple as a direct connection between tavern size and value and the number of travelers you get
+  - _Context: If a gnome becomes a goblin loving radical, can we make sandwiches of him or her as well?_
+  - _Context: I guess if you're at peace with a goblin settlement then goblin merchant and travelers could visit_
+  - _Context: So I think we need to have a tavern now so we can sell pancakes and waffles to travelers_
+- **dinosaure.plz_nofriendrequests** (2020-12-23): Okay, what would be a real game changer, would be the floor's physic: can't have a "soft" floor more than 1 tile away from a pillar, while "hard" floors would have something like a 5-pillars radius; and crushing said pillar would lower the floor down level(s). That, and/or a "you can't stand an enti
+  - _Context: Suggestion : reduce the tree encumbrance to the only 4 direct neighbouring cells, in order to permit the trees to grow diagonally from each other. T.._
+  - _Context: please rename flatness or invert the scroll bar ^^_
+  - _Context: Isn't mead always made of honey? 😅_
+- **saint_of_grey** (2019-11-28): Sometimes you just need to tell players "PAY SOME FUCKING ATTENTION THIS SHIT IS IMPORTANT". My favorite games let you customize the popups though.
+  - _Context: or just simple - WTF MAN you dont have any food, WTF man your gnomes arew not plants they need booze to survive_
+  - _Context: Sometimes I want to be interrupted. Other times it can wait until I'm done doing a thing._
+  - _Context: Popups in general would be nice. Gnomoria didn't even have those._
+- **styfrit** (2018-08-25): it don't appear so you place the zone on the floor for sand But wall down on dirt make the wall appear at the top of the tile it should be
+  - _Context: the upper lines are exactly the same , so its not the floortile from above cause that should be a bit higher_
+  - _Context: the functionality of the walldown is still not quite there, it felt somehow off yet looks right so i tried to put it in a picturestory 😛_
+  - _Context: can you try to show your wallhide with fow? in the corner?_
+- **hughheggen** (2019-09-29): We should really add pancakes to ingnomia
+  - _Context: I think gnomoria had an overcomplicated cooking mod, we could just copy that_
+  - _Context: But, I want to make my own food sprites_
+  - _Context: Can still do that. Just... copy part of the game system. With the wheat and stuff._
+- **condac** (2021-02-01): There is a long time in the gameplay where you do not have enough of one type to dreass all gnomes so wear best of any kind would be nice yes
+  - _Context: Is there any setting to tell gnomes to just put on any armor of any kind? If not it will be a nice feature to have._
+- **vorg9431** (2019-01-17): Maybe pressing/holding L-Shift or L-Alt while draging to switch to z-axis or using the scroll wheel?
+  - _Context: A method of harvesting/felling a selection of multiple z levels at once, maybe like 5 max_
+  - _Context: simply need to add "MultiZ": true,  to the entries in actions.json_
+  - _Context: Gnomes carrying food with them, only a small amount but it would save from them constantly having to walk back and forth to get food_
+- **tacyn.** (2018-01-05): What's the problem with that,? the large trees also take up 9x as much space as the old ones. Also, isn't that just a matter of balancing that can be easily adjusted later?
+  - _Context: Has there been any thought to how groves will work with the new trees?_
+  - _Context: Better prepare for them long harvests 2 years from now_
+  - _Context: i think 9 wood per tree atm is overkill (depending on how long they take to grow, of course)_
+- **optimus.0001** (2018-06-18): no need for sprites, roest can just program it through fractal shaders or some shite.
+  - _Context: when a gnome loses an arm or leg, you plant it and grow it into a new gnome..._
+- **ext3h** (2021-01-31): If any. Unless you burn your food to a crisp, so there is no nutritional value left, bad food will nourish you just as much as good food. Just won't make you happy...
+  - _Context: Hunger effect from quality should be mild_
+- **optimus.0001** (2018-06-05): a better thingy would be get the sprites done as cloth patches
+  - _Context: do u want me to knock some up?_
+  - _Context: http://www.curiousinkling.com/img/graphic-t-shirts/graphic-t-shirts-061210/1/chillin-with-my-gnomies.gif_
+  - _Context: 3d Gnome printed models as rewards for patreon levels_
+- **maveross** (2021-01-05): Adding a "butcher pen" designation for excess livestock. Gnomes with animal husbandry can move excess livestock, to/from. And butchers can pull from
+  - _Context: Would it be possible to show oak acorns and pine cones in seed category, along with willow and birch seeds?_
+- **optimus.0001** (2018-01-06): 9 square trees, maybe 3 logs (1 per height)
+  - _Context: and yes i think Gnomoria trees grow too fast, so expect at least a year grow time in the base game, (what modders do with that later on is a different_
+  - _Context: @Tacyn#0525 , yep def balancing for later on_
+  - _Context: I think groves were OP in gnomoria anyway_
+- **the_real_kyrros** (2018-07-31): Besides, these are Gnomes... not tree-hugging elves. They're not historically the most Epicurean of races.
+  - _Context: i'd agree with a bit less realism over more simplicity and ease of gameplay_
+  - _Context: will there even be an upper class?_
+- **seirved** (2020-04-27): I'm a massive over-entitled baby look at me! 💩
+
+## General/Other
+
+- **desolator_x** (2018-06-02) [2⭐]: not sure if there are states you could check for that would allow something like that?
+  - _Context: maybe you could modify the fleeing behaviour of gnomes so that it checks for nearby (drafted) gnomes and only engages when X other gnomes are within Y_
+  - _Context: there was a perk for that in gnomoria I believe if the squadleader wasn't wearing a helmet or something_
+- **saint_of_grey** (2019-07-23) [3⭐]: Being phased out, adobe is cutting support in 2020
+  - _Context: so what's been happening Flash?_
+- **mallakor.** (2019-03-06): 1 thing I found missing in Gnomoria is the diversity of enemies : Flying one to go over walls or Maybe Goblins that are good at disarming traps and gets better/go faster if it encounters many time the same type of trap
+- **max2veg_9410** (2019-01-12): <@280266293490221056> any chance for Ingnomia to use MySQL (now MariaDB) for all the data stuff? It'd make dev so much easier down the line, IMO, and should be fairly easy to be implemented if not directly then via a Java middle layer
+  - _Context: MySQL requires server-client architecture, doesn't it? I think it would be a bad choice for a single player game_
+  - _Context: <@322792986306150400> there are no requirements for the DB and client software to reside on different machines._
+- **.elfu** (2020-02-28): Suggestion: Allow us to split schedules into shifts and assign pops to that shift. It'll allow us to use the ALL buttons more effectively
+- **.alch** (2019-03-08): Regarding Scaffolding, Atm if you deconstruct the scaffolding at the bottom of a tower, it removes all above it. Could there be a setting to deconstruct all connected scaffolding  rather than just above,  E.g 0 X 0 X X 0 0 X X
+  - _Context: I'd prefer is to only grab the ones above, to better control what's done._
+  - _Context: X being scaffolding, Deconstructing the block at 1,0 would deconstruct them all?_
+- **sassy_witch** (2017-12-31) [1⭐]: the ability for gnomes to place block walls in corners
+- **xecutor2907** (2018-06-08) [2⭐]: What about Roested onions? 😉
+  - _Context: My colleagues from Thailand often use 555 instead of lol. Because 5 in Thai pronounced as 'ha'. So 555 = 'hahaha' 😃_
+  - _Context: Yeah, nothing wrong with caramelized onions. They're not very common in Germany, though._
+  - _Context: it's wwwwwwwww in japanese. and xaxaxaxaxa in russian_
+- **qtw** (2019-01-20): are we getting gnome crafted robots? (faster than spelling automaton)  if so, can we also have golems of various types rather than just robots?
+- **desolator_x** (2019-05-11) [1⭐]: then add a "missing" thing like in DF
+  - _Context: Only when another gnome sees the corpse_
+  - _Context: is there a notification for whenever a gnome dies?_
+- **mazerduckingrakum** (2018-04-16): I always thought gnomes should be the Viking Funeral type of creatures
+  - _Context: So I guess we need boats that can be burned_
+  - _Context: Or just go GoT and burn the bodies on site... can't have undead plaguing the colony._
+  - _Context: A tragic cliché is having an argument with a loved one just before they died_
+- **hughheggen** (2018-03-31): I think it could be a great idea if each gnome had a little bio
+  - _Context: constructed from a list of different text segments_
+- **.roest** (2018-05-02) [2⭐]: i'll stop everything else and start making these asap
+  - _Context: no idea, i think it doesn't matter if the game is free or not for trading cards_
+  - _Context: I'm glad to see you've gotten your priorities straight 😛_
+- **hughheggen** (2018-09-17): The ability to customize your own hotkeys would be better
+- **slowbro1337** (2019-05-04): Can we get improved WASD? It's very small thing, but it feels kinda weird when pressing W moves camera not freely but for 1 block
+  - _Context: I just think that it would feel much more comfortable for majority of population it it would just move camera as long as you press it, if I hold it - _
+  - _Context: I agree with the WASD suggestion_
+- **ald_productions** (2022-09-06): It took me a bit too long to figure out how the groves and farms work. Could the default "nothing selected" picture be replaced with a symbol like 🚫 , ❌ or ❓
+- **.alch** (2019-12-20): Can we use fill hole commands to fill multiple block deep holes, makes sense that if you just drop dirt down a deep hole, eventually it would get filled
+  - _Context: Samuel Vimes is my Kindred Spirit, it's not I'm well rooted in reality at the best of times._
+  - _Context: After some ancient force threw a bunch of stuff in the hole_
+  - _Context: Talking to myself at work is the only way I stay sane._
+- **.alch** (2019-01-26): Could have a dead gnome item that's directly linked to the gnome to get the sprite and stats, but can just be treated as an item
+  - _Context: Hauling corpses needs to be added... just in case someone sucks enough to have their gnomes die_
+  - _Context: replace them with a dead gnome item the next tick?_
+  - _Context: it's a bit more difficult, because technically dead gnomes aren't items but still gnomes just with a dead flag_
+- **maveross** (2021-01-06) [1⭐]: I think this is what Dinosaure is referring to?
+- **hughheggen** (2018-06-28): OK, but what about gnomes stranding themselves when digging or removing floors?
+  - _Context: Suggestion: Ladder sprites to allow gnomes to scale 1 block high holes, ditches and walls._
+  - _Context: maybe make path finding a bit easier for now?_
+- **.alch** (2019-09-15): We need giant automatons that fire automaton cores out of their cannon, which creates minion automatons
+  - _Context: we will need a spin off game named inautomatonomia_
+- **abbayarra** (2020-07-21): Early game leg replacement. Can we have peg legs?
+  - _Context: I think abbayaraa could donate his leg for the cause...._
+- **rookie0117** (2018-07-08): So here's a question that may have been asked before, how large can these colonies get? What limits if there are any?
+- **larshos** (2019-09-09): i wish to change direction of savegames, or max autosavegames of 3 (overwrite older) so.. after play some hours my drive is full of gigabytes of ingnomia saves XD
+- **defox241** (2020-11-29): I can chop this down into individual channels if you need,
+  - _Context: i like it. Sounds like night music_
+- **lisasysiss** (2020-05-09): I don't know if it work for Ingnomia. I found it on the internet. It is for translation. Sorry my english is not so good.  https://www.localizor.com/
+- **hughheggen** (2018-04-17): yeah, a funeral pyre sounds like a great idea
+- **thepak.** (2020-06-29): <@158662530699362304>  I really like that idea.
+- **cptvolkow** (2021-01-11): Ability to copy workshops production line
+- **ext3h** (2020-12-13): Was planned to be showing that in the bottom right corner, together with some info such as "how much material will be needed / produced"
+  - _Context: Text over the pointer to show how large of an area is selected_
+  - _Context: Size indicator when building areas, e.g. ``11x11``_
+- **hughheggen** (2020-01-23): Or mayne put already assigned gnomes at the bottom of the list and dull their names?
+- **.lld** (2018-06-19): How else do you make flesh golems?  If you used goblins they’d be meat golems
+  - _Context: or automatons can use severed gnome limbs if no metallic ones available_
+  - _Context: No no making a golem out of gnome parts._
+- **foxprimegames** (2020-08-06): is there a site that tracks all the suggestions that have been "accepted"?
+- **dinosaure.plz_nofriendrequests** (2020-12-21): Permit the corner works. Something like XGX works, while X.. ..G ....X doesn't.
+- **vanda1475** (2019-08-13): It's noticeable, getting great framerates with hundreds of ducks
+- **hughheggen** (2020-05-16): How does that relate to gnomes though?
+  - _Context: gnomes like parrots and parties?_
+  - _Context: Suggestion for additional Discord emote: :partyparrot:_
+  - _Context: No. Take that epilepsy shit somewhere else_
+- **saint_of_grey** (2020-07-04): Why cradle what you intend to replace?
+- **desolator_x** (2018-05-24): nah, properly buried gnomes shouldn't rise as angry spirits 😛
+  - _Context: I love that, but replace stockpiled with burred or entombed_
+  - _Context: Ghosts and spectres get summoned around stockpiled corpses_
+  - _Context: Putting them in graves would be like RIP in peace_
+- **envycreat1on** (2019-03-26): so you're saying it's possible <:roest:452562992022945803>
+  - _Context: Anything is possible if you imagine it_
+- **azuwkurw** (2019-11-27): event log for major events like starving, gnomes dying, or so
+- **defox241** (2020-12-10): yeah I just had em keep spawning day after day in summer
+- **optimus.0001** (2020-07-25): peg extensions from the mechanics bench 😎
+- **reeez_ng** (2021-02-08): A function to toogle scaffold visibility
+- **hughheggen** (2021-02-11): No kind of aquaduct I've ever seen
+
+## Gnome Behavior/AI
+
+- **fatmck** (2019-10-01): Suggestion for Needs / Mood  Just read the wiki and read about Needs. Beside hunger, thirst and sleep I would add comfort and satisfaction. Propably they are more moods then needs, depending on how mood will be implemented into the game.  Comfort and satisfaction wouldn’t be necessary at the beginni
+  - _Context: Need a better system than that_
+  - _Context: Gnomoria had happiness, just no way of knowing that it existed until a gnome refused to work._
+  - _Context: I never noticed it so it might as well have not had a happiness system_
+- **dinosaure.plz_nofriendrequests** (2021-01-19): While I'm in the suggestion channel: - Have a "paint" mode, similar to the "Cut trees" one, but targeting farm/grove/pasture type helping changing seeds en masse - Have an "any" mode on farm/grove/pasture to let them accept any seed/seed(/acorn/pine)/animal available - Name the personalised "Set up"
+  - _Context: Issues page should stay reserved for stuff which has been adopted by a developer or modder. There is just no point to flood it with 10+ new "suggestio_
+  - _Context: Just to avoid further misunderstandings, when I said "threaded" I meant "one thread per suggestion".  Because most of these "one liners" are still far_
+  - _Context: Should get a "suggestions" page on github to comment on suggestions, just to help keep track of them and the discussions around each of them_
+- **fatmck** (2018-10-14) [1⭐]: I would like to suggest a kind of combat screen when we get enemies. During combat I would like to see all my in combat envolved gnomes on the left side with stats (equipment, health, dazed, bleeding, injured, blinded, on the ground, ..), the actual combat log in the mid, and all spottet and envolve
+  - _Context: but please make the width of windows borders a little wider. i have to be really careful to catch that area where i can resize the window... is it one_
+  - _Context: yeah but having 3 with 2 axes could be. so the third one could do other jobs, if he is assigned to them. well, i can live with it being the way it is_
+  - _Context: if a gnome carries something to eat and gets hungry, he should eat the food he is carrying. one of my gnomes just threw away his apple because of his _
+- **chaineddjinn** (2019-04-19): <@207714562437414912>  Sounds a lot similar to what the devs want to make with StoneHearth https://store.steampowered.com/app/253250/Stonehearth/  I agree, it would be interesting and add replayability. Let's get the game out of the ugly duckling stage first, there's a lot that needs to be cleaned a
+  - _Context: Backpacks would also allow for 'Expeditions' and the bigger the pack, the more they can explore. Maybe instead of 'waiting' for migrants you can go ou_
+  - _Context: Maybe eventual 'carts' could be made? Or different kinds of 'Pack animal' for longer distance... but I'm not gonna wager that far, keep things simple _
+  - _Context: I've also thought about backpacks and other things to allow gnomes to carry food and weapons_
+- **chaineddjinn** (2021-12-04): Another Idea I had was the ability to have more then one unit preform a task, like a cooperation feature; two working to build something would take less time then one on it's own. Also, if someone is gathering resources in a location with the intent to build, don't have gnomes stash stuff away just 
+  - _Context: <@!386915067477753858> Soil quality, hmmm 🤔  reminds my of haven & hearth, it had quality for just about everything but it was capped by a few factors_
+  - _Context: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F55%2Fd3%2F4a%2F55d34a0db8e93e2570ca1c4313dfa339.jpg&f=1&nofb=1_
+  - _Context: ¯\_(ツ)_/¯ Something to hope fordown the pipeline I guess_
+- **chaineddjinn** (2018-08-21): I have an idea, make it so Gnomes don't auto-join Kingdom. Little bit of papers please in a way, I mean; Do you want this Gnome? What's his Stats? His Trade? How is his demeanor and personality? I'd want them to come in on something like a caravan and PICK who I want rather then have them shoved off
+  - _Context: 1; I'd say more "Request for Caravan" then "Demand" Too snooty. Would also hinge on the 'Popularity' of your kingdom. The more 'Renown' your kingdom g_
+  - _Context: Sure, you turn someone royal away their gonna say bad things about your Kingdom... but it'd be better then letting them stay and mandate you can't tra_
+  - _Context: 1)maybe a sort of "ability demand for the next caravan" system and possibility to refuse new arrivals is an idea to look for._
+- **.elfu** (2020-04-01): You know, there's prospector, that gives the ability to at least process trash dirt and similar raw materials. When it comes to food items, these could get made into a compost or fertilizer, and in later game, maybe fuel for machines/golems. Other than that an item could simply decay into a pile of 
+  - _Context: Oh, by the way. Curious thing that I never understood in Gomoria. Why are containers, such as drawers or cupboards, not able to hold items in them? It_
+  - _Context: I remember in Gnomoria traders were my number 1 sinkhole for overflowing items. I'd rather have workshops and mechanics that allowed me to use these t_
+  - _Context: It doesn't change the fact that excess items get used. Make it use 10 seeds to make one bottle of oil, and you got yourself a pretty big sinkhole righ_
+- **cannonball_k** (2018-05-06): Pretty sure this has been suggested but gnomes riding yaks?  Trainable yaks that fight and attachments for their horns like axes or saws.  Also use them as labor animals like how gnomes have wheelbarrows, yaks can have wagons.  This could require training or it couldn't.  Some kind of book system wi
+  - _Context: I like the idea of yaks as beasts of burden_
+  - _Context: It all sounds pretty damned good there Cannon! Doing some more thinking obviously mood effects will come into play woth time, but how about different _
+  - _Context: I suddenly like you more I wish that were always the case... sometimes I have these neat ideas that just *fut* away at the worst times... BUT! Its oka_
+- **.lld** (2018-05-11): Do our gnomes live in a land of milk and honey, or sand and pain?  That could be a global fertility slider at game creation.  Then all crops would need to be balanced for high and low fertility soils.  Even with High and Low fertility, I could see a lot of dev time for not a lot of gameplay.  If you
+  - _Context: maybe add in bone meal so farmers can fertilize fields of your choosing. I know by endgame you have thousands of damn bones. Instead of the fert tiles_
+  - _Context: then a slider for overall fertility is probably a bad idea.  how about a slider that increases the chance/quantity of high fertility spots? that would_
+  - _Context: <@176318165129756672> <@204036338888998912> high/normal fertile soil then like rimworld? could get manure for animals and fertilizer and maybe special_
+- **chaineddjinn** (2019-10-28): <@202164327606648841> Sorry just got back to this.  The problem with that "cost" is it's easily subverted if your clever. I put most of my people in a group and start training them asap, after initial set up.(1st day forging/logging/mining) I put 1 miner, farmer and anyone non-essential into 2 group
+  - _Context: obviously you don't need to be without workers doing certain jobs. I'm not that dumb that I'd be without miners, ever (or anything else essential for _
+  - _Context: Not only is this great for defense but also hunting, as animals get thirst and run the gauntlet, they alert dwarves so I can move 1 ranged squad in fr_
+  - _Context: <@202164327606648841> PFFFT! Ummm, I have no idea how you built your fort... but I haven't implemented a single automation and I believe I have yet to_
+- **desolator_x** (2018-01-30): Yeah, and there's a problem right there with a 3x3 and unstacked tiles: if you need / to store a decent amount of 4-5 materials it's really hard to get that organized in a single storage area. It'd be a lot easier if you could have one workshop feed off of, say, 3 stockpiles who're all 3x1 and only 
+  - _Context: That's getting too complicated. Both for reost to implement and debug as well as  for players to use. The feed stockpile is just meant as a buffer for_
+  - _Context: well, it's mostly for things like ores and gems and such, I assume there's going to be quite a lot of them, and a 3x3 stockpile might not be able to h_
+  - _Context: well, it would save some issues for people who don't want to make a million stockpiles for all the different goods. On that note: how many stockpiles _
+- **dragonwrath420** (2018-05-18): The effect on enemies would be rather interesting and to add an option of a setting to make certain enemies stronger while in light (for the more diehard fans that like the challenges).  I like that though I would change the certain jobs requiring light to function to using the light to increase pro
+  - _Context: Another is that some can give a passive benefit such as allowing crops to continue to grow at night (since it was mentioned earlier that crops won't c_
+  - _Context: but back to the bees: I think the idea of hives/crops is a pretty good idea to limit the amount of hives you can reasonably build. (modders can add th_
+  - _Context: If light is just aesthetic, then permanent light sources are fine.  But, if light has a proper use that adds to the game rather than detract from it, _
+- **optimus.0001** (2018-05-19): Let me regurgitate some thoughts all over the nice clean channel.   Magic candles/lights would need a source of power, as would other magic elements in the base. There's also the notion of using magic as offensive skills or buffs eg insta-harvest... These could come from a common resource (say, mana
+  - _Context: If the plan is to have eldritch horrors in the game, bright light should be a way to either reduce sanity loss (assuming sanity is a stat), prevent it_
+  - _Context: <@362644073095626754> While the idea is interesting, what you're suggesting would make gnomoria/ingnomia a completely different game that what it was _
+  - _Context: Depends on how you implement the refueling... If it's automatic via one of the auto-jobs like hauling or building (for example) but with a slightly hi_
+- **.alch** (2019-08-06): On crafting workshops, rather than having to click the item you want to craft, then click the craft button which might have the added effort of scrolling down to get to, implement some "instant" method.   Like maybe if I just right click on the item I want to craft it just skips the "click craft" st
+  - _Context: I just don't want to have to click the craft button every time when I just want one of the item and don't care about the material_
+  - _Context: Sometimes the situation comes where you just don't care what material it's made out of and just want 1 of the item or so_
+  - _Context: Close the "build containers" window when I pick what I want to build_
+- **hughheggen** (2019-09-07): There can be straw bales that take like 20 or so straw to make. Grazing animals could eat straw as well as grass so you can fees them even if their pasture has no grass. Add a straw weaver profession to make woven furniture and baskets. Add an option to farms for farmers to plow the straw back into 
+  - _Context: Or just add a tick box to harvest straw for farms. If unchecked, the grain is harvested with no straw_
+- **.alch** (2019-01-13): Maybe i'm missing something obvious, but is the feature to have the numbers of certain stocks on the main screen added? Similar to how you could have food/drink total in gnomoria and add stock counts for other items
+  - _Context: <@177094350201683968> I think that's probably a planned, but not-yet-implemented, feature, and if not, I hope it gets planned, because I made heavy us_
+  - _Context: you probably couldn't distribute mariadb like that anyway_
+  - _Context: imagine the patch migration headaches_
+- **the_real_kyrros** (2018-01-31) [1⭐]: I imagine, if putting in production limits/caps, those limits would only need to be in place for tasks that are set to repeat (set it and forget it), because those are not necessarily needing to be monitored. Whereas, take Roest's example, we're capped at 5 tables, but I want to build a different on
+  - _Context: Of course not all workshops. The modfiles define the inputs. For example, Those that need fuel could have one extra input._
+  - _Context: Craft portals to the demon world to store infinite ressources, but be exposed to random attacks 😛  More ressources stored  =  Higher chance of being a_
+  - _Context: How about just managing your stockpiles better and not having more than 2000 seeds and clippings_
+- **sorsaj** (2018-08-28) [1⭐]: stockpile ordering is really a hazzle, please move up/down arrows to the left side next to the name and add a move top/move bottom or make it drag and drop like steam wishlist ordering ( drag and drop at will and click safe when done)
+  - _Context: please make it so i dont have to go into stockpiles and enable each new item that i mine or craft if i have set to accept "all" of one type (like soil_
+  - _Context: hm strange i just had this with bones, i hadn't butcherd an animal yet, so i couldn't setup my bone pile, but as soon as i got my first llamabone i co_
+  - _Context: look at it yourself, a dropdown list of stockpiles with 2 "paste" buttons and one "copy" without any idea of what gets copied to what or pasted to wha_
+- **desolator_x** (2018-01-26): Yeah, I agree with that one, that's why I'm so explicitly asking for it 😄 Maybe it could be build into the hauling job? Like, when the gnome gets to the stockpile and it has delivered the goods it immediately checks for a stacks in that stockpile that could be "tidied"
+  - _Context: Not sure there's a lot of need for that... at least I haven't run in to any issue. They fill each spot, until it's full, then when it's full, they sta_
+  - _Context: Also, saying that something can be done in 'Random game A' so it should be possible in 'Random Game B' is usually very not possible, especially if the_
+  - _Context: so the stockpile goes over its tiles and checks if there is space, then looks if there are items that need hauling, then claims such an item and creat_
+- **fatmck** (2018-10-05): Wouldn't it be some kind of solution if we could check something like "build in order" before we draw a line of wall or filling a hole? So if we want a 13 tile long fill job of a 1 wide tunnel we check it and draw it from exit to entrance. It would then offer only the first wall as job to the gnomes
+- **.alch** (2019-11-22) [1⭐]: I have an idea. implement wheat seeds, we might use all our grain on bread so we should have a seed version and a food version
+  - _Context: If collecting seeds, a harvest could yield 2-3 seeds and no crop but if collecting crops it could yield 1 seed and 1 crop with a small chance of yield_
+  - _Context: I think you should add goblins to the game along with combat, it would really spice up the gameplay_
+  - _Context: With chickens, just have a manual pop limit on their pasture. If a farmer doesn't want any more chickens, they just take the ferterlised eggs from the_
+- **.elfu** (2020-03-15): It's already extra clicks to make a pasture and set the hay harvesting. The inputed number doesn't tell me, whether it's a percentage of pasture's area or amount (it defaults to 100 which is why, I think, I confused it). It's more of an inconveniently placed action rather than automation. If you wan
+  - _Context: Suggestion: Add display stands. You can place a specific item in a display stand. It will receive a slight bonus to worth. Items in vicinity receive s_
+  - _Context: thanks but i like it easy to automate and there is an option to set the max you want to harvest, i don't want extra clicks_
+  - _Context: And you could set exactly how much hay you'd want to gather_
+- **desolator_x** (2018-01-25): Something that popped into my mind when playing Rimworld: can we please have gnomes use stockpiles efficiently in the sense that they stack items to their max stack size instead of spreading 10 pieces of wood over as many tiles?
+  - _Context: I dunno, there's a mod for it in Rimworld, so I guess it can be done. It's also *per stockpile* not global, so if a gnome brings, say, 10 wood to a st_
+  - _Context: It can even be a "technology" (ie : you need to develop something to tie the planks together, like a string)_
+  - _Context: hard to implement i guess, imagine a 63/64 Stack of wood on the other end of the map..._
+- **guri9486** (2018-03-08): Also, I thought that the alarm bell mechanic was implemented in a way that’s punishingly confusing.  I think that you should either allow the bell to be rung by the player, or else give the bell its own priority so that we can make sure that ring a bell overrides every other action.
+  - _Context: An easier way to fit downwards.  In Gnomoria I found that I had to give the commends to dig, adding ramps to each level. I don’t know how it should be_
+- **_ysabell_** (2018-04-27): I don't know if anyone has suggested this yet. The general happiness of a settlement could also affect (in part) the number of gnomes joining the settlement each season, as well as kingdom worth. Conversely, there could be a chance for gnomes with 0 or low happiness to leave the settlement. Perhaps 
+  - _Context: I don't think stuff like slavery necessarily leads to bad press (Rimworld has it, and no one complains about it). I do think that having something lik_
+  - _Context: I mean that as gnomes become more experienced, they need better furnishings and food quality to stay happy, with higher professions needing more to st_
+  - _Context: I thought kingdom wealth was a simple and easy way to increase population size but we could go by a development score instead. The more infrastructure_
+- **tacyn.** (2018-07-30): I think it would add some logistical/planning depth since you would have to run several workshops in parallel for jobs with long completion time. Also I would like it better to have large cellars where wine and cheese ripen instead of a single brewery/kitchen mass producing them.
+  - _Context: in regard to smokery/cheese making, I'd like a mechanic where a workshop can complete a job without a gnome present after it's been started.  No reaso_
+  - _Context: But what kind of cheese is it?  A nice Brie, or cheddar?  Who doesn’t love a nice smoked cheddar with their yak steaks ?_
+  - _Context: I think once trade comes in, anything that's preserved can be traded. Fresh and perishables can't be. Also preserving gives a slight food and happines_
+- **desolator_x** (2019-01-10): well, the idea is (for me at least) that you'd want to set up a proper workflow. Autocrafting like that has always been in gnomoria, and works well as long as you only have one chain of buildings. As soon as you have a second carpenter or something, suddenly your gnomes need to haul components all o
+  - _Context: not sure if its still planned, but I once suggested a workshop-room designation which allows managing all workshops within it. The autocraft could the_
+  - _Context: I Didn't understand the job manager discussion. If I want a bed, there should be a tick box that's default on that auto crafts all the required sub co_
+  - _Context: Trying to remember here, but didn't GNM have a "Craft Requirements" function? So if I went to a carpenter to queue up 10 4 poster beds it would spawn _
+- **vorg9431** (2019-01-15): with the skill sort option, A multi level sort would be nice. Keep the last 3-4 sorts in desending order by when they where clicked. So you could click each skill in a group for example and it would keep the older sorts sorted with in the newest sorts.
+  - _Context: Adding to the above, a quick function to assign job templates through the pop menu rather than gnome menu_
+  - _Context: Have a forester workshop that turns tree seeds into saplings that can then be planted_
+  - _Context: Just so there's like 2 less steps to go through_
+- **itsadraelbaby** (2019-01-23): The problem with Gnome Golems in Gnomoria tended to be that they could do everything Gnomes could do, with very little investment, and didn't have to eat or drink, which meant you could eventually replace your entire population with them and coast on that lack of needs forever.
+  - _Context: Having them be limited in scope but still not really have much in the way of needs sounds neat, but what about having to have a dedicated team of Gnom_
+  - _Context: I suppose, yes, but i feel like we need a middle ground, too._
+  - _Context: I'd think the addition of golem based magical bionics would be awesome, upgrading gnome stats. Then maybe having tiers of golems, going from say, haul_
+- **desolator_x** (2019-05-27): That's a pretty good idea. Added to that I'd like to see something like a little counter behind the name of each gnome to see how many jobs they currently have active, would be handy if you don't want to use preset professions but don't want to overload individual gnomes
+  - _Context: One more tiiiiiny thing, instead of having to click every tile in the population window one by one, allow "painting" over then by just holding the mou_
+  - _Context: Implement the gnome skills tab with the overall population window, so we can assign jobs from the pop window and see what gnomes have what jobs, what _
+  - _Context: Along with that, another QOL thing would be with the dropdown in the gnomes skill tab, have a small popup when hovering over a preset that tells you w_
+- **Deleted User** (2019-08-14): SUGGESTION: Add checkbox option to stop milking pasture. I only want my pasture for meat, do not want gnomes wasting time going there to milk animals.
+  - _Context: Suggestion: Indicate or standardize the side of workshops that can link stockpiles. Each workshop has one different side that can link, and  it makes _
+  - _Context: Or maybe I have bad memory. Or could be both_
+  - _Context: And also just 1 high versions of it, so I can have nice vertical wood walls_
+- **tacyn.** (2019-01-04) [3⭐]: I'd rather a medic takes the bandage to the injured gnome or the injured gnome to the hospital.
+  - _Context: Just to chime in on my worst experience in gnome behaviour...  A gnome hurt in combat, no leg, was hobbling to hospital on other side of map for a ban_
+  - _Context: they could drag themselves to the hospital until medic picks them up and carries them there_
+  - _Context: yes, I suggested that early on_
+- **maveross** (2021-01-12): In the case where you need a table nd a chair built, instead of one carpenter queueing up both, you can have one make the chair and one make the table. Donno if that's a level of automation that should be allowed, but I would like it
+  - _Context: I've set up multiple workshops to do a decent number of things. I think it would be particularly time saving when amping up production of a certain it_
+  - _Context: In the sawmill, I'll create a set of craft to 20 for each type of plank, then another set of craft to 50, and another set of craft to 100. So that I'm_
+  - _Context: Having multiple of the same type workshops that have "craft required goods" toggled spread out the load so  one workshop isn't being focused would be _
+- **tacyn.** (2018-10-15) [1⭐]: The designation would be the same as other rooms. Comparable to dormitories, which allow gnomes to use the beds build within them. The crafting screen is the same as for single workshops, with the difference that it can do everything the workshops within the designation can. The orders created in th
+  - _Context: I think it could combine my idea of attaching workshops to stockpiles. instead of stockpiles, the management desk_
+  - _Context: we need crafting options for the workshop it self, and a "global" option that's shared between all crafting stations of that type right?_
+  - _Context: because if it can collect and hold rain, that could be a problem for people controlling running water into their bases. I know with Gnomoria, I dig a _
+- **der_kobold** (2020-12-30): a thing that could be handy   no more 1:1 drop of rock or soil when destroying a block   The amount of littering of those materials get insane over time when you dig done   Maybe a drop chance of 10% or something instead? Would help to keep the world a bit more free of waste stockpiles and overall i
+  - _Context: Not dead too? Would think they would be quite sensitive regarding water ^^   But when there's no magma in the bottom of the map what else is currently_
+  - _Context: Then it's going well for the tools  But something is eating my weapons   Maybe also caused by the long game time? I'm now in year 10_
+  - _Context: ah ok the prospector gets rid of stones, good to know ^^   ok, I think I found the reason why armor and weapons arent adding up.  it seems like weapon_
+- **the_real_kyrros** (2018-01-11): Could implement some kind of one-shot creation of a scaffold/rope ladder, or even just allow gnomes to  moved up one level to an adjacent square occupied by another gnome (i.e. get 'pulled up')
+  - _Context: i JUST thought of something that might be AWESOME!  if the game world generates like DF...as in it generates an ENTIRE world and you only play a bit o_
+  - _Context: than a hack maybe, allow diagonal movement when trapped by "remove floor" jobs this should at least ease the problem_
+  - _Context: i know its a hard problem, but could be avoided by letting them walk on walls (maybe only allow when trapped)_
+- **mazerduckingrakum** (2018-03-09): Maybe just like a default blueprint type of thing, and a system where you could create new blueprints.  IE, a 4x4 staircase blueprint that you can just draw where you want it
+  - _Context: Or maybe a way to draw a staircase or ramp?  A way to draw a long stair that knows to go downward (or upward)?_
+  - _Context: could be implemented as the number of left clicks increases task repeats, right-click decreases (and cancels at 1)_
+  - _Context: the job might need to move down/up 1 level per repeat so you can still repeat or cancel it_
+- **.lld** (2018-04-22): The perception of what is right and the actuality are very different things.  Honestly has the RoboBob email ever been released?  Roest could be a lying mother fucker, and we have no way of knowing. ( I am not saying, and personally, don't think he is.)  Take a look at the subreddit today.  There is
+  - _Context: yes, I know. I'm just wondering if you had any thought on what you should initially start with and whether the list <@386915067477753858> made in the _
+  - _Context: actually he could just say 'stop using it now' to be legally binding there would need to be a formal, signed agreement beyond just a casual email...  _
+  - _Context: it'd be nice to add that in at some point though, even if only as an option for a player to set things like "only highest skill crafter makes statues)_
+- **Deleted User** (2020-02-05): - I think that 2x leather straps per hide is too low, or that only 1x hide per cow/yak butchered is too low. One of them should be increased. I've been trying to gather leather straps and I'm on year 4 and could only get a meager amount of leather while also trying to grow my herd. Or at least scale
+  - _Context: -On the new gui, the ability to rearrange stockpiles  priority with dragging would be awesome. On bigger and older maps with lots of stockpiles, click_
+  - _Context: -Why butchering goats doesn't yield any hide/leather? It could give less than cows/yaks, but goat skin/leather is a thing and ppl use it (it is even t_
+  - _Context: - Option to chose order of priority of pastures for Auto butcher excess livestock, or use pasture priority for that._
+- **ext3h** (2020-04-06): Hunting board, serving both as "cull population down to X" instruction and as drop off point for corpses could work, I suppose? But not as friendly as the butcher job, where animals just stop moving and wait once marked for killing. Hunting also requires corresponding adjustments to animal AI, to en
+  - _Context: I mean, it depends how it'd be designed. If you make it like pasture, then a hunter would hunt any available animal on map. If you made it like butche_
+  - _Context: A middle ground would be selecting what animal type to hunt and maybe range from the structure, or amount to let live (so that you don't wipe out enti_
+  - _Context: well have to consider the available control schemes we have, so it's either a structure that has the option, like the taming animals thing, or it's li_
+- **.roest** (2020-03-31): I wouldn't stop stuff from producing, if someone wants to play that way they should be able to do so, we should just implement things that "encourage" better behavior
+  - _Context: Not so sure, that is escalating into infinite stacks, from non-stocked items. That got to have an impact at some point. Item stacks are not something _
+  - _Context: Balancing question, should plants keep growing / animal keep giving birth / laying eggs / beehives keep producing honey / trees growing if there is an_
+- **flash.1** (2018-05-15): So we either need a routine that automatically defines pastures inside fences or we need the option to freely define pastures ourselves and put fences around them
+  - _Context: but you had me thinking, you know i want to implement a mission system, where you just select a few gnomes and send them on a mission, be it diplomati_
+  - _Context: the fuck am I looking at 0.o can we please go back to the normal 2 genders and people with a mental disability?_
+  - _Context: do you think animals should be magically contained on pastures or should they be able to wander off and need fences_
+- **saint_of_grey** (2019-01-22) [1⭐]: Shiny dude with a pick for an arm. Only works with stone, can't do anything else. Maybe give him a hub to sleep at when you don't have anything for him to do, so he doesn't eat up coal while you aren't mining.
+  - _Context: Does he have a Drow friend and the other arm with a hammer on it?_
+  - _Context: All in one build wall + floor either above or below job_
+  - _Context: Stuff like that for other jobs as well._
+- **condac** (2021-01-29) [2⭐]: if you plant the wheat that you start with on medium there is no problem getting ~300 grains and  making bread and fruitbread to survive with no problem at all
+  - _Context: <@280266293490221056> I am trying to balance the food values so the top foods are under/around 75, Do you think there will be a problem if raw foods w_
+  - _Context: I have run a few test with beginning of game and the lower food values on raw fruit. Started on medium setting with 1 gnome, when winter came i had 10_
+  - _Context: I like the craft time multiplier method, higher cooking skills could tag on to that to add eatvalue to items they craft based on cooking time_
+- **prassel** (2018-09-01): -make stockpile settings window open when you designate a new one. -(resuggest) option to toggle show all items when filtering so you dont have to edit every time a new object is crafted. -ability to set a position in the stocks list in the stockpile setting (so you dont have to open that every time
+  - _Context: i'd like to see an option to toggle showing every item when you filter for stockpile so i dont have to go in a dozen time and edit it when i craft new_
+  - _Context: some things come naturally for you cause you know all the workings, for me this (adding a single skill via sheet) could have been something that just _
+  - _Context: 0.4.0 - stockpiling, tiles with containers are handled first - job queue: craft# the number to craft will count down now - job queue: craft to, jobs w_
+- **sknortsch4137** (2018-10-11): in DF digging the tile you stand on leaves a ramp up. this could be a more realistic possibility though. or implement mining ramps up - would be nearly the same. but mining stairs out of a single-tile-wall as the only solution  is a little weird to figure out 😉
+  - _Context: when i try to remove the highest level of a hill with "dig hole" order, the last tile stays and will not be dug. in gnomoria gnomes were able to dig d_
+  - _Context: Calling something a first world problem is not a viable argument Roest, come on now.  We should all stop worrying about this game and go volunteer our_
+  - _Context: well, leave it the way it is then, I can live with that stair-workaround ^^ but I think I am not the only one with that idea - as we are used to that _
+- **yksleets** (2019-01-08): 1) Some sort of a blueprint system, maybe along the lines of Factorio where you have to build it once but then you can make a copy to a book you can plop down items from as needed. I like to build my core the same way each time so having an easy way to recreate it woudl be amazing. Maybe even a way 
+  - _Context: True, I was thinking it more as an addition if I need 25 beds for the new sleeping wing as a oneoff, the bread and butter smelting, bar creation and s_
+  - _Context: that's why we have the amazing linked stockpiles_
+  - _Context: you don't want gnomes to haul the logs, then the planks to the other side of the base just because the sawmill is busy right at that second, and then _
+- **desolator_x** (2019-01-18): also, I like the idea that <@177094350201683968> had with carrying food with them. It could be restricted to a certain piece of gear you'd have to make first, say a lunchbox 😛 so your gnomes would equip the lunchbox and then be able to carry one sandwich and one drink with them or something
+  - _Context: You have outside corner ramps for straw roof I see. I could see people wanting both inside and outside corners for all ramp types for roofs. So may ju_
+  - _Context: So for suggestions, could we  get a different color or some sort of Icon to note input linking block for workbenches? As near as I can tell, only 3 ar_
+  - _Context: The sand tile is really hard  to distinguish from the mine wall colour... just started playing around. I think this could be a problem for a new playe_
+- **chacina7810** (2019-03-11): I do not think it's particularly a good idea for one game to affect the beginning of the other... But if you believe it will improve the game scene and for everyone to be happy it could be a wonder (haha 😅 ) <@177094350201683968> that gives you a backupsave, helping in the same run. Dunno
+  - _Context: It could be as simple* as an option to retire the game and the gnomes get tossed into a pool and can random into the next games. *simple to write, I h_
+  - _Context: I think you should need stone.  Either add some on start or have surface stone_
+  - _Context: Agree wih Lord Hugh here : in my opinion stone is needed. I mean how do you cut a log to become a plank. You need somehig at least stronger than wood._
+- **vanda1475** (2019-08-25): Also would love to be able to exclude certain food items from the gnomes eating menu. It would be really helpful for early game if gnomes wouldn't eat the apples I want set aside for fruit wine. It could be a tab in the kingdom menu since it's kinda like a "Law" of the kingdom. "Thou shall not eatit
+  - _Context: Although maybe it could just be a function of the linked stockpiles when that is working that nothing can be consumed from a linked stockpile._
+  - _Context: Had an idea about the animal overpopulation. What if the females, once an adult, aren't able to be pregnant for 8-10 days. That'd help keep the very n_
+  - _Context: i now limit animals to 1000 per type, also animals only get pregnant when on a pasture, so you can control it by having no mixed genders on pastures_
+- **Deleted User** (2020-02-04): -Deconstruct job should not  target floor tiles built from blocks. This makes deconstructing large workshops and large areas for reordering harder! Since we already have remove and replace floor for floor tiles, for  me it seems better to remove deconstructing from targeting  floor.
+- **condac** (2021-01-28): I am just creating a sheet to calculate everything based on the ingreidients because i thought the current values where just very fluctuating in value and eatvalue and did not favour crafting any items at all, at current state eating raw foods is better because they loose value the more you craft th
+  - _Context: I have extended the sheet with crafting time so we can set a price per work time to get calculated cash value of items based on ingredients crafting t_
+  - _Context: Yes, that is what i think also, but the anwer was that they are planing on implementing happyness so the more you make a high end item the happier the_
+  - _Context: I have a much better suggestions for metal values now that fixes the issue where statues are not the right values if you compare a marble statue to a _
+- **hughheggen** (2021-03-10): So I've spent a bit of time playing Ingnomia recently and I've come up with these suggestions for improvements:  Merge harvest tree and forage into one command just called forage. There's little point in having them separate.  Allow Kitchens to turn seeds into flour at a rate of 4 or 5 seeds for 1 f
+  - _Context: A metal needle recipe was added  believe, to one of the metal workshops - I find I often get metal way before I get bone!_
+  - _Context: > Merge harvest tree and forage into one command just called forage. There's little point in having them separate.  +1_
+- **.lld** (2017-12-30): Maybe hourly would be better since a gnome might need 10 hours of sleep on the floor vs like 6 on a super cushy king bed?
+  - _Context: like the military schedule, but in general? I'd like that too but it doesn't need to be per hour, dividing a day into three 8-hour or four 6-hour slot_
+  - _Context: well, something like cooking / growing perhaps? planting during the night so the plants grow during the day and the gnome can go cook during the day w_
+  - _Context: The schedule could be a suggestion rather than a rule. Let's say gnomes have a rested value going from 0 to 100 and they normally go to sleep below 50_
+- **stenner** (2018-05-20): Suggestion!  Can we add a screen shots channel?  I want to see more of the game and I have to search for the recent ones.
+  - _Context: Light needing fuel is a horrible idea_
+  - _Context: don't want it permanently, maybe have a key that shows mood icons for a couple seconds_
+  - _Context: HAY! <@280266293490221056> ! Do you want some mood icons for the gnomes_
+- **fatmck** (2021-01-08): I suggest that in the schedule planer we should be able to see the professions beside the gnomes names. That would help alot as we currently have to switch constantly between skills and schedule (unless you know all your gnomes).
+  - _Context: I always re-enact Papers Please when new gnomes show up_
+  - _Context: Actually I see myself as king and don't really care about the mob! 👑_
+  - _Context: Can be hard to keep track at 140 gnomes :p_
+- **flash.1** (2018-05-30): That idea is nothing that should make it into release, though. I just thought of it when I encountered the bug yesterday.
+  - _Context: My above-ground coal got me thinking. Maybe include some kind of shrubbery? That's what I at first thought, the bugged coal was. A non-passable growth_
+  - _Context: Could make for more interesting maps_
+  - _Context: ^I think that'd be nice for different biomes, kinda like the evil environment from DF?_
+- **.lld** (2018-06-17) [1⭐]: So we need sprites of gnomes budding gnomes from them?  or do they just split into 2 smaller gnomes when they split? /s
+  - _Context: i thought gnomes were clones or jelly fish, no kids, they just split in to two separate organisms_
+  - _Context: also maybe straw beds for the bigger animals to sleep in?_
+  - _Context: Suggestion: Hutches for small animals to sleep in and lay eggs. I'm making the sprites now_
+- **ext3h** (2020-11-28): We would have to see how much "full" SFX we need and want in the first place. Not that we fall in the trap that after giving the first couple of events SFX, that all the ones not having any suddenly start sticking out.
+  - _Context: Hi, new here, sorry if this is the wrong chat.  So I felt the game was a little too quiet, and decided to throw this together and see how it feels pla_
+  - _Context: For synchronized playback of multiple instruments I need to decode "manually" anyway. Just sampling rate better fit, or mixing becomes "troublesome"_
+  - _Context: Qt should handle that just fine. Not going to pull in more libraries. Just going to have to implement mixing and synchronization._
+- **dinosaure.plz_nofriendrequests** (2021-01-01): Okay, you definitively should implement a ctrl-key reminder somehow. :D But hey, that's exactly my need, so thanks a lot!
+  - _Context: Qol suggestion: have the fences just covering the previsualized perimeter, instead of fill all area. Related suggestion: having a way to declare (Alt _
+  - _Context: No, just keep it in here. There is really no point in transfering that over to Github unless feasibility has been discussed in the first place, and th_
+  - _Context: Yeah, can always go back the way you come in that sense. It was just my mind going "oh this seems inconvenient, must be something wrong with the game"_
+- **not__** (2018-06-30): Certain vegetables could be made into juice.  Thinking carrots, especially as a short-term option for early beverage manufacture (since carrots tend to be relatively abundant via forage)..  Probably not onions though.
+  - _Context: Clicking on the job label in "Population": can we have it sort by skill level?_
+  - _Context: juices would be a nice addition to beverages, and should be easier than wines for sure_
+  - _Context: In Escape menu, Esc key should act like "Resume"_
+- **hughheggen** (2018-06-01): Suggestion: being able to dig dirt and maybe sand without a pickaxe (just slower)  could be a good idea
+  - _Context: suggestion: work regions in to the job filtering eg. allow gnomes to be assigned to dining halls (or something), they will give jobs closer to that di_
+  - _Context: <@386915067477753858> have you ever dug a hole IRL with a shovel in ground that is 50-70% fist sized stones? unless it's pure dirt and half clay or sa_
+  - _Context: how about needing a shovel then instead of a pickaxe_
+- **.elfu** (2020-04-05): How about adding a tick to corpses info panel that says "butcher this corpse", so that we can handpick which corpses get butchered directly, without the need to stockpile them?
+  - _Context: Would you still leave the _Butcher excess livestock_ option? If yes, then it sounds quite fine to me._
+  - _Context: There was one in Gnomoria. I think it ws either an action or initiated by ticking a proper option in creature info panel_
+  - _Context: I'm fairly sure that there was a list of available corpses in Gnomoria, not sure if there was a way to select which one to butcher. But, mmm, Goblin S_
+- **sibaz_** (2019-09-12): Also in DF all dwarfs start with no skills and by doing a job, they gain skills, so specialise.  Gnomes seem to start and keep their skill level at everything, they should be able to improve
+  - _Context: feathers/straw/cotton stuffing should all be potential mattress fillers, and they should be the primary 'type' of a mattress_
+  - _Context: could I suggest that the info box, or the gnome log, has more info in it.  It's often quite vaigue_
+  - _Context: Someone talked about fishbones being made into glue, which is probably silly, but you could require glue for making arrows_
+- **.elfu** (2020-03-04): But why would you want to do that, every time a game loads? I really wouldn't want my gnomes to suddenly change everything they do at the start of the game
+  - _Context: Once a unit is spotted, the check should stop for the other side for that unit for X number turns time, combat should skip check completely for x turn_
+  - _Context: Could be worse, I could be a UI guy instead_
+  - _Context: well, if you can make a distance check between two units, just by looking up their coordinates in world, then I'm thinking that could be faster_
+- **tacyn.** (2019-01-03): Have you considered using behavior trees for the ai? For example, this free library at https://github.com/BehaviorTree/BehaviorTree.CPP. It allows loading behavior-trees as xml at runtime. With this, the AI could be moddable. And even without making it moddable, this might make it easier to develop 
+  - _Context: The gnome behavior in regular play is probably simple enough for a hard-coded version to be manageable. But once combat is introduced, it could get me_
+  - _Context: yes i know, and when i get there, which should be within the next half year, i might rewrite the whole gnome behavior_
+  - _Context: Well, I probably asked about the planned ai before._
+- **ext3h** (2020-12-04): That's one part. Also need to implement game rules which *severely* reduce the number of items and creatures in the world. No more 2k chickens and 50k uncollected eggs.
+  - _Context: If Chicken = 10, then Merge into 1 mega chicken_
+  - _Context: Another point to solve before that is savegame sizes. can't afford to waste several GB of disk space on save games on a tablet or smartphone._
+  - _Context: That should work for gnomes also._
+- **dommain.** (2020-03-01): Could create a menu to control animations to turn on and off unwanted ones but also allow the potato computer powered by the hamsters have smooth gameplay.
+  - _Context: Assigning uniforms to professions would be quite helpful. Currently, you can only assign an uniform implicitly by including a Gnome in a squad. IIRC, _
+  - _Context: That would be nice to tell what job the gnome is heading for with out have to click on him_
+  - _Context: I did think of maybe having different hats for different jobs_
+- **desolator_x** (2018-05-27): Eh, if you're going to have nobles and stuff in the game having special clothing needs etc for them would make sense. If you just have common gnomes I don't really see a reason to have clothing needs. Having their needs condensed into bedroom wealth should be good enough
+  - _Context: also, looking at the barn building, I think it'd be nice if the game would automatically add the needed floors when you're building up the walls_
+  - _Context: would be nice if you could see where the selection sprite for each tile is so you can count if needed_
+  - _Context: Could gnome-needs become active over time? For example at the start there are just Hunger, Thirst and Sleep,  but at certain kingdom sizes new needs l_
+- **desolator_x** (2018-06-22): Show the relevant stats of a gnome, either a dropdown list of all skills of a profession when you hover over the profession name, or put the numbers after the skill (mining, masonry, etc) so you get a better indication of what your gnomes are good at
+  - _Context: Sorted trade list? Quality, value, etc. One thing about gnomoria that irritated me was what you discover first is the first on the long trading list. _
+  - _Context: Can we get a reason for jobs being aborted in the gnome log?_
+  - _Context: right now my gnomes keep getting farming jobs, then aborting, but never get down to mining_
+- **mindwarpaus** (2018-10-01): I'd really like to see a way to use up bone.  Some kind of consumable that would get rid of all the excess bone from butchering.  Right now, I'm ending up with butchery stations clogged up with bone, and stockpiles the same.  Even if we could just make torches out of bone would help a lot.
+  - _Context: Also a good idea would be to have workshop schedules. Like a distillery works from 8 am to 12 am and produces some amount of drinks. That would be gre_
+  - _Context: How about bonemeal? Use it to increase either the grow speed or yield of farms?_
+  - _Context: That sounds good.  I think increasing yield would be better for balance than increasing speed._
+- **.roest** (2018-10-04): about gnomes falling down when you remove floor, i'm a bit undecided about that, the remove floor job is done from a neighboring tile, so instead of removing the floor and letting the gnome that is on the tile fall down, we could evacuate him to the tile the worker is on
+  - _Context: Something to add when a gnome falls, the location they fall to doesn't seem to become discovered, so if they fall into a wall tile, it stays as an und_
+  - _Context: any auto prioritization for large scale dig/build orders?  An example problem I've had, building filling a 1 wide tunnel and a gnome getting stuck bec_
+  - _Context: just like in Dungeons 3, sounds like a good idea to implement_
+- **chaineddjinn** (2019-05-03): Came up with another function for backpacks, allow Stumpies to gather building supplies BEFORE building so their not running back an forth. Was playing Gnomoria and it took way too long to build some windmills, had to put a stockpile with just the parts nearby to get it done.
+  - _Context: No, Wheelbarrows move resources like stones and stuff into piles. When building something, a Gnome will grab each part one at a time and if ANYTHING h_
+  - _Context: Case in point, I was talking about Gnomoria. If you can gather things and build something strait from the wheelbarrow in Ingnomia then GREAT! Awesome _
+  - _Context: that's what wheelbarrows are for_
+- **dinosaure.plz_nofriendrequests** (2020-12-24): I'd admit that the tree colour can be changed to blue, that has no gameplay change. Tree structure do have a gameplay impact, that's the kind of change that changes a world from "boringly standardized result" to "hey, I didn't expected that tree to grow as high!". Not a primordial feature, but somet
+  - _Context: Could you keep level encumbrance not checked? (please?)_
+  - _Context: <@!465569148798238720> they are a lot better than games not levelling their assets ; and they are pretty cute as they are today, this suggestion would_
+  - _Context: you want procedural tree layouts so you need sprites that can be stitched together at different locations, all possible but takes a talentend sprite a_
+- **dinosaure.plz_nofriendrequests** (2020-12-29): Suggestion: add more starting drinkable things. Even low quality would make it. I'm actually trying something like "DrinkValue" of 10 to every fruit and vegetable (wheat/grass/hay/.. excluded). `update "Items" set "DrinkValue"=10 where "DrinkValue"=0 and ("ItemGroup" in ('Corpses', 'Meat') or "Categ
+  - _Context: Can't place them myself whenever I want to. Edit: https://i.ebayimg.com/images/g/AocAAOSwmflfT~IU/s-l1600.jpg <- this is a "magic tree", nothing can f_
+  - _Context: oh a thing I would be happy about   abundance of ore as a setting ^^  And maybe reduce a bit the occurrence of gems? I am looking for ore and find rid_
+  - _Context: Allow a grove to be placed under an existing tree, and auto-set to actual type. (Don't know how I managed to place groves under wild tree roots someho_
+- **makarygo** (2018-10-10): If I want to build first 3 workshops and a well - I make just 8 clicks. But if I have to pre-craft all the ingredients, it actually doubles. Not to mention that I don't always remember what furniture is required to which workshop.
+  - _Context: Uhm, please clarify your question, I'm not sure what you mean_
+  - _Context: If you do so, you will automagically create a job to build chairs, tables, chisels, workbenches and whatsoever is needed to build this workshop_
+  - _Context: (Please, ping me in case of answer, thx)_
+- **.roest** (2018-04-15) [3⭐]: what about dead friends
+  - _Context: also: the option to have your own written inscriptions on the grave / coffin_
+  - _Context: i'd love to rimworld it and add butchering of gnome corpses 😏_
+  - _Context: and possibly a mood hit when happiness is implemented whenever the gnomes see a gnome corpse so you have an incentive to busy them quickly_
+- **dinosaure.plz_nofriendrequests** (2021-01-04): I only wanted to see how others were playing, and as Discord accepts users to stream (even if not recording), that was the idea. I'm not comfortable enough to talk while streaming, and that would have zero-pro stream quality.
+  - _Context: Actually no, it's not even the seeds which are out in the world. It's the seeds which are already in the stockpile (on the floor), which are causing t_
+  - _Context: Just thought it would be interesting to see others playing, and multiple streams are ok on the same room._
+  - _Context: Starting a game on a more open platform like Twitch, and then announcing the stream in the <#447757383985266700> channel or alike is fair game though_
+- **desolator_x** (2018-04-29): I don't, it's far more fun to write epitaphs for fallen gnomes, it's just a shame that it's really hard to build a proper monument to the fallen since there's no mausoleum / coffin option that you can set inscriptions on
+  - _Context: suggestion: cemetery, gives stone masons something to do, effects dwarf happiness (maybe 50% reduction in the sads when a gnome dies if they are burie_
+  - _Context: I don't really see the point, those who don't want to save scum won't, and other people will. Ironman mode doesn't seem like a priority_
+  - _Context: Maybe an implementation of a "Hardore" or "Ironman" mode.  No saving (other than to quit), but in turn, increased rewards etc_
+- **korvar** (2021-02-07): In either Gnomoria or an older version of Ingnomia, I could make hierarchical stock lists by both deciding the order things got shown and changing the title, like adding "   " to the beginning of entries to inset them.
+  - _Context: When listing Food total in the upper left corner Egg should not count as food as they are not eatable and make the impression that food stocks is fine_
+  - _Context: While we're talking suggestions, making the item lists show up better over the white snow!_
+  - _Context: So like ``` Food 200     Bread 30     Sausage 10 Drink 100     Milk 100     Beer 0 ```_
+- **drucifer8036** (2019-05-25): I'd like to see more stair options, assuming this is still the place for suggestions.  Even just a reskin of the raw stone sprite, but the recipe uses blocks instead of raw stone.  Wood, stone block, metal,  bone.
+  - _Context: Could have it that the trainer gives a boost to training their highest combat skill. Makes sense for a trainer who's a master with a sword to give xp _
+  - _Context: Add a trainer job to military training grounds. If they have high skill, then your recruits train faster_
+- **_dreddos** (2019-12-24): Manable stationary ballista turrets with different bolts (higher the metal the more accurate + dmg) with bolts for accuracy, bolts with possible aoe splash etc If adding dragons this could be a good counter to them
+  - _Context: I have a suggestion about straw use, since we have separation between straw and hay.Unlike hay, animals generally don´t eat straw, but straw can be us_
+  - _Context: We need working ranged combat first_
+  - _Context: <@141075323990179841> , fully agreed with you._
+- **yes072083** (2018-07-04): suggestion: tile selected when tile info is displayed should be highlighted to allow easy identification
+  - _Context: Suggestion: keyboard shortcut to "flatten" current z level to better see the floor behind a wall. Gnomoria key was F_
+  - _Context: suggestion selected tile should contain information of tile. IE: weather dirt/clay/stone ect.._
+  - _Context: Suggestion: tile with job should be selectable to show job pending and gnome assigned if any_
+- **vorg9431** (2019-01-16): It would be nice if we could expand a pasture or farm area by starting or ending inside an exsisting one
+  - _Context: In Char skills there is a place where you can change the priority of their skill. Would be nice to have and auto sort button, that sorts by skill leve_
+  - _Context: Hmm, I'll try again, but each time I started in or ended in, it seemed to create a new small area in the newly included area._
+  - _Context: but that is how it works right now, if you start insde a farm, pasture, stockpile or room it adds those fields to the exisiting one_
+- **vorg9431** (2019-06-04): I did set it to the 1080 size of my screen with borderless and it does cover te task bar. Looks full screen. Maybe that was a factor in the crash I reported in bugs?
+  - _Context: Haven't played in awhile and just fired it up. Is there going to be a Full Screen option for video settings?_
+  - _Context: full screen is problematic, the framework I use has a bug/feature that makes it misbehave when the window is overlapping the task bar, you can set the_
+  - _Context: Normally play the game filling half a screen with some other program in the other half, defaulting to borderless and fitting screen would ruin that 😦_
+- **hughheggen** (2018-06-27) [1⭐]: tame bear should end in a dead gnome
+  - _Context: I can't wait to tame dragons and make them heat the forges >:D_
+  - _Context: probably will need to make a tame difficulty per animal, make a tame skill or use animal husbandry, give it a fail/success chance depending on skill v_
+  - _Context: you could try and use a goat as bait_
+- **mcphisto2051** (2020-12-07): perhaps checking if its a corner and the surrounding walls should be changed too, the dig 1 surrounding wall replace it and build on the removed wall slot?
+  - _Context: Food and Drink need indicator color codes_
+  - _Context: Mine both tiles. Plan both for re-construction. They will be reconstructed in an order which is possible, so much you may have._
+  - _Context: 🇫🇮 We too have a long tradition of turning vegetables into alcohol_
+- **tacyn.** (2020-04-02): How about having wild critters spawn on  fields, groves, and pastures that eat any loose food items? The more loose items the more of them spawn.
+- **.roest** (2018-06-29): right now all jobs are checked because i don't want to go to the screen and check something when i test some feature, eventually they'll star with everything unchecked
+  - _Context: Currently the default job is miner, but all jobs a checked.  You have to assign another job role and back to miner to get it to stick_
+  - _Context: Having all jobs checked is good.  It just looks like they are miners.  It’s more of a ui bug/ quality of life thing._
+  - _Context: More verbose info in the Job Queuem to differentiate between Repeat/Crat#/Craft to without clicking on each entry._
+- **.alch** (2019-05-28): Click on an existing build job and see what the job is waiting for, E.g if you're building a workshop and don't have a chair, it should say "waiting for chair"
+  - _Context: "Craft-to" jobs don't take the material type into account, so having a system of always keeping 100 planks for every wood can't be done atm_
+  - _Context: that's a bug report, not a suggestion 😛_
+- **dinosaure.plz_nofriendrequests** (2020-12-28): Suggestion: add buttons to manage the view, likely turn camera around, change zoom (+zoom reinit), change level. (I like to play without keyboard while working.)
+  - _Context: Idon't want to fell wild trees when starting a new colony. (And I don't wanna give me free seeds either)_
+  - _Context: They could be used to seed groves with grown trees, without the log spam._
+  - _Context: I like to let the starting place as untouched as possible.  Until the moment I replace all layers with log floor and agriculture._
+- **korvar** (2021-01-02): Maybe you need a "Manager" gnome to do that sort of thing...
+  - _Context: Suggestion² (as I'm going to sleep): a "don't pause my game with Gnomes arrival as I'm not interested for the moment anyway" checkable option. 🙂_
+  - _Context: That's the wrong channel, but if you scroll level high enough to have this floating in the bottom layer, you're often able to click on it. (Saw this o_
+  - _Context: Suggestion: Having a visual histogram displaying how much of anything went recorded at any time. +relative "per day" consumption/production._
+- **chaineddjinn** (2021-12-09): Also, if the game shares any compairable code with gnomoria. Please for all that is good, don't let golems spawn from items that are currently being hauled. >.<
+  - _Context: Sorry for the rant, troubles in gnomoria again and was worried is anything similar could occur_
+  - _Context: Ahhh, thought I was based on it's code at least in part... again, my bad_
+  - _Context: and there was never any shared code with gnomoria_
+- **inkraja** (2019-03-14): <@202164327606648841>  some more suggestions for your list, hatch xyz animals, butcher it, make the best meal + drink quality that is possible. Defend  (for later) 100 gnomes, a bear and 100 spiders and each tier of golem. "You died" - lost a gnome in battle. "Coco Channel" Starving to death. "Livin
+- **hughheggen** (2019-07-19): You guys are over thinking this. The system could be as simple as a direct connection between tavern size and value and the number of travelers you get
+  - _Context: If a gnome becomes a goblin loving radical, can we make sandwiches of him or her as well?_
+  - _Context: I guess if you're at peace with a goblin settlement then goblin merchant and travelers could visit_
+  - _Context: So I think we need to have a tavern now so we can sell pancakes and waffles to travelers_
+- **.elfu** (2020-03-03): Imagine you use A to set everyone's schedule the same, but then you want some gnomes to have exactly the same schedule, but shifted 3 hours forward
+  - _Context: I just had an idea about schedule and stuff. What if I was able to shift a gnome's schedule left/right?_
+  - _Context: Can we have a left/right arrow at the tips of schedule lines?_
+  - _Context: (think timezones in the world)_
+- **.roest** (2020-12-31) [2⭐]: also he's only suggesting a happy new year
+  - _Context: It's only 2... So you're an aussie???_
+  - _Context: I mean a new year party on the first of the year seems a decent in game suggestion._
+  - _Context: +10% productivity, double beer consumption_
+- **arieriel** (2018-03-12): I suggest an Auto Save feature
+  - _Context: Make idle Gnomes consume alcohol, tobacco and chat to one another in a hall to increase happiness_
+  - _Context: May be fun to have a penalty for not tasking gnomes like they burn through consumables faster._
+  - _Context: well how do you know if everything is getting done then?_
+- **desolator_x** (2018-06-26): give it a mood modifier? you'll need sprites for the new materials in that case as well 😉
+  - _Context: suggestion: Add veal and other baby butcher jobs to the butcher. Extra succulent and juice meats, but less of it_
+  - _Context: will there be different tiers of tools? Stone felling axe, steel felling axe?_
+  - _Context: suggestion: split the population screen into two subscreens: one for "normal" jobs and one for combat related skills_
+- **cptvolkow** (2020-12-17) [1⭐]: Some kind of stuck NPC warning system
+  - _Context: If a Pasture has a Shed, the animal is moved there to milk_
+  - _Context: Checking a job tells you if it's missing a necessary item._
+- **ext3h** (2021-01-31): If any. Unless you burn your food to a crisp, so there is no nutritional value left, bad food will nourish you just as much as good food. Just won't make you happy...
+  - _Context: Hunger effect from quality should be mild_
+- **.alch** (2019-01-19): It was besides two workshops, both of which were deconstructed.   Had some crates on it, which were deconstructed. Then i removed it when it had nothing in it
+  - _Context: An autosave feature would be a nice addition_
+  - _Context: I can understand, though I'd imagine it wouldn't be much help when I don't even have a save and the action I did wasn't anything out there_
+  - _Context: xD Decided to work on coursework after that crash, I should probably thank it for that._
+- **.alch** (2019-07-30): What about having stocks in the top left/right of the screen 😦
+  - _Context: Or have it be the job of someone to count all the items in each stockpile like in at least one of them?_
+  - _Context: I don't see a problem with a counter of how many you can make. It's a good quick look tool that shows how your stocks are doin_
+  - _Context: When choosing to build items/storage, have a number count of how many of that item you can build_
+- **.elfu** (2020-04-04): THis could finally bring more use to infirmary/hospital room
+  - _Context: I want different types of illnesses_
+  - _Context: Get worse with more attacks. Depreciates when going infirmary or sleep overtime._
+  - _Context: Devil Dragg, Hunger and thirst 20%?_
+- **styfrit** (2019-09-13): Powder can be usefull if we need to made a big hole...
+  - _Context: which could then be used to power... an automaton_
+  - _Context: Automatons are a lower stage of technology than blowyuppypowder?_
+  - _Context: It can be a high level job for an alchemist_
+- **ext3h** (2021-12-06): They don't cooperate though, the same gnome is carrying the stuff and performing the job. And if that gnome aborts the job due to being sidetracked...
+- **hughheggen** (2018-04-06): I could send them little frowny faces
+  - _Context: They should suffer for this atrocity_
+  - _Context: (But don't forget to save the bones or you won't be able to make cloth)_
+  - _Context: no? Haven't played for a while_
+- **.elfu** (2020-04-03): Rats! Rats and overgrown bugs eat those. And if you get too close, they bite, making gnomes ill.
+  - _Context: Kinda, but the critters would eventually despawn and not attack your gnomes._
+- **korvar** (2020-12-15): Also, you can create a scarecrow in the carpenter and tailor 😄
+  - _Context: Winter destroys all unstockpiled seeds_
+  - _Context: Birds eat unstockpiled seeds!_
+
+## Magic/Spells
+
+- **chaineddjinn** (2019-04-19): <@207714562437414912>  Sounds a lot similar to what the devs want to make with StoneHearth https://store.steampowered.com/app/253250/Stonehearth/  I agree, it would be interesting and add replayability. Let's get the game out of the ugly duckling stage first, there's a lot that needs to be cleaned a
+  - _Context: Backpacks would also allow for 'Expeditions' and the bigger the pack, the more they can explore. Maybe instead of 'waiting' for migrants you can go ou_
+  - _Context: Maybe eventual 'carts' could be made? Or different kinds of 'Pack animal' for longer distance... but I'm not gonna wager that far, keep things simple _
+  - _Context: I've also thought about backpacks and other things to allow gnomes to carry food and weapons_
+- **.elfu** (2020-04-01): You know, there's prospector, that gives the ability to at least process trash dirt and similar raw materials. When it comes to food items, these could get made into a compost or fertilizer, and in later game, maybe fuel for machines/golems. Other than that an item could simply decay into a pile of 
+  - _Context: Oh, by the way. Curious thing that I never understood in Gomoria. Why are containers, such as drawers or cupboards, not able to hold items in them? It_
+  - _Context: I remember in Gnomoria traders were my number 1 sinkhole for overflowing items. I'd rather have workshops and mechanics that allowed me to use these t_
+  - _Context: It doesn't change the fact that excess items get used. Make it use 10 seeds to make one bottle of oil, and you got yourself a pretty big sinkhole righ_
+- **cannonball_k** (2018-05-06): Pretty sure this has been suggested but gnomes riding yaks?  Trainable yaks that fight and attachments for their horns like axes or saws.  Also use them as labor animals like how gnomes have wheelbarrows, yaks can have wagons.  This could require training or it couldn't.  Some kind of book system wi
+  - _Context: I like the idea of yaks as beasts of burden_
+  - _Context: It all sounds pretty damned good there Cannon! Doing some more thinking obviously mood effects will come into play woth time, but how about different _
+  - _Context: I suddenly like you more I wish that were always the case... sometimes I have these neat ideas that just *fut* away at the worst times... BUT! Its oka_
+- **.lld** (2018-05-11): Do our gnomes live in a land of milk and honey, or sand and pain?  That could be a global fertility slider at game creation.  Then all crops would need to be balanced for high and low fertility soils.  Even with High and Low fertility, I could see a lot of dev time for not a lot of gameplay.  If you
+  - _Context: maybe add in bone meal so farmers can fertilize fields of your choosing. I know by endgame you have thousands of damn bones. Instead of the fert tiles_
+  - _Context: then a slider for overall fertility is probably a bad idea.  how about a slider that increases the chance/quantity of high fertility spots? that would_
+  - _Context: <@176318165129756672> <@204036338888998912> high/normal fertile soil then like rimworld? could get manure for animals and fertilizer and maybe special_
+- **_ysabell_** (2018-05-14): why sacrifice the gnome children when there will be plenty of goblins to appease the gnomes' gods? yeah, maybe in the future we could capture gnomes' enemies and sacrifice them for some form of bonuses... obsidian would definitely be great for sacrificial altars, knives, etc... err... well,, if play
+  - _Context: I suppose one thing that might need looking at: Obsidian's value as a resource. In Gnomoria, by the time you have the tech level to actually make thin_
+  - _Context: Obsidian is far sharper than surgical steel, it's the only material we have (I believe) that can cut between cells instead of through them, though tho_
+  - _Context: Or allow lava/water to be 'bucketed' somehow to be brought to the surface/bottom to allow local obsidian creation ._
+- **chaineddjinn** (2019-10-28): <@202164327606648841> Sorry just got back to this.  The problem with that "cost" is it's easily subverted if your clever. I put most of my people in a group and start training them asap, after initial set up.(1st day forging/logging/mining) I put 1 miner, farmer and anyone non-essential into 2 group
+  - _Context: obviously you don't need to be without workers doing certain jobs. I'm not that dumb that I'd be without miners, ever (or anything else essential for _
+  - _Context: Not only is this great for defense but also hunting, as animals get thirst and run the gauntlet, they alert dwarves so I can move 1 ranged squad in fr_
+  - _Context: <@202164327606648841> PFFFT! Ummm, I have no idea how you built your fort... but I haven't implemented a single automation and I believe I have yet to_
+- **dragonwrath420** (2018-05-18): The effect on enemies would be rather interesting and to add an option of a setting to make certain enemies stronger while in light (for the more diehard fans that like the challenges).  I like that though I would change the certain jobs requiring light to function to using the light to increase pro
+  - _Context: Another is that some can give a passive benefit such as allowing crops to continue to grow at night (since it was mentioned earlier that crops won't c_
+  - _Context: but back to the bees: I think the idea of hives/crops is a pretty good idea to limit the amount of hives you can reasonably build. (modders can add th_
+  - _Context: If light is just aesthetic, then permanent light sources are fine.  But, if light has a proper use that adds to the game rather than detract from it, _
+- **optimus.0001** (2018-05-19): Let me regurgitate some thoughts all over the nice clean channel.   Magic candles/lights would need a source of power, as would other magic elements in the base. There's also the notion of using magic as offensive skills or buffs eg insta-harvest... These could come from a common resource (say, mana
+  - _Context: If the plan is to have eldritch horrors in the game, bright light should be a way to either reduce sanity loss (assuming sanity is a stat), prevent it_
+  - _Context: <@362644073095626754> While the idea is interesting, what you're suggesting would make gnomoria/ingnomia a completely different game that what it was _
+  - _Context: Depends on how you implement the refueling... If it's automatic via one of the auto-jobs like hauling or building (for example) but with a slightly hi_
+- **hughheggen** (2018-04-04): and divine favor could be like a tech level. to gain raise the dead spell, you might need to have 1000 favor with the dead god or something, so maybe sacrifice 20 goblins, 40 goats, 10 gnomes or 5 gnome children maybe?
+  - _Context: so I was thinking  about religion because praying could add to gnomish happiness, with praying done in a temple room for a bigger happiness bonus_
+  - _Context: temples could be a large multiplier to kingdom wealth, like the great hall, so players would be encouraged to add lots of treasure to it_
+  - _Context: temples could also have priests, which also improve happiness bonus_
+- **.alch** (2019-10-23) [3⭐]: Healing magic should have a chance to horribly fail and disfigure the target
+  - _Context: Along with that, other magic spells should have a chance to backfire too, e.g spells miscasting on the caster_
+  - _Context: So what should our gnomish automatons look like?_
+  - _Context: How about turning them into an uncontrollable flesh monster_
+- **desolator_x** (2019-05-12) [2⭐]: basically everyone here except for you knows that this is going to be a Gnomoria+ game where maybe, if Roest is willing or the modding community very active, we'll get some extra depth
+  - _Context: ok but logical you can build thing first AFTEr you dig really down........ there should be option to build things before that even when you anly build_
+  - _Context: to the "stone" discuss  forageable surface stone that is rare is an good solution and as an alternate solution or recipe we can use clay-stones that w_
+  - _Context: i like both those ideas!  missing for when a gnome is dead and no one knows it; dead if/when someone discovers the body._
+- **_ysabell_** (2018-04-27): I don't know if anyone has suggested this yet. The general happiness of a settlement could also affect (in part) the number of gnomes joining the settlement each season, as well as kingdom worth. Conversely, there could be a chance for gnomes with 0 or low happiness to leave the settlement. Perhaps 
+  - _Context: I don't think stuff like slavery necessarily leads to bad press (Rimworld has it, and no one complains about it). I do think that having something lik_
+  - _Context: I mean that as gnomes become more experienced, they need better furnishings and food quality to stay happy, with higher professions needing more to st_
+  - _Context: I thought kingdom wealth was a simple and easy way to increase population size but we could go by a development score instead. The more infrastructure_
+- **chacina7810** (2019-03-10): A system of achievements for the noobs to know the progression and for the players to complete all the possible things of the game. And up to challenges ... 300 of  such an item crafted, etc. It could have an option to show or hide the achviments pop-up
+  - _Context: I feel that when I craft something and put any material into the workshop it is harder for the gnomes to complete the craft than when I put in a speci_
+  - _Context: well, one thing that could be nice is the ability to start a new world/game with some of the gnomes from a previous world/game_
+  - _Context: especially for streamers, but also if you want to have this idea of a world where you have different settlements_
+- **hughheggen** (2018-06-01): Suggestion: being able to dig dirt and maybe sand without a pickaxe (just slower)  could be a good idea
+  - _Context: suggestion: work regions in to the job filtering eg. allow gnomes to be assigned to dining halls (or something), they will give jobs closer to that di_
+  - _Context: <@386915067477753858> have you ever dug a hole IRL with a shovel in ground that is 50-70% fist sized stones? unless it's pure dirt and half clay or sa_
+  - _Context: how about needing a shovel then instead of a pickaxe_
+- **desolator_x** (2019-10-16): eh, based on what's currently in the game and how gnomoria handled it, the idea of 1k bugs doesn't exactly appeal to me. Granted, if you say we'll have enough AoE damage by the time we're supposed to be digging that deep my argument obviously is invalid 😛
+  - _Context: My problem isn't less of the amount than how they spawn. I didn't even dig that tunnel and now it's just a permanent, beetle-and-zombie-filled deathtr_
+  - _Context: is every mob already charged at the start of the game ? or only when you open a cave ?_
+  - _Context: I can understand this coming from someone who doesn't follow development but you two <@202164327606648841> <@211419446391209984> disappoint me, it's b_
+- **dinosaure.plz_nofriendrequests** (2020-12-29): Suggestion: add more starting drinkable things. Even low quality would make it. I'm actually trying something like "DrinkValue" of 10 to every fruit and vegetable (wheat/grass/hay/.. excluded). `update "Items" set "DrinkValue"=10 where "DrinkValue"=0 and ("ItemGroup" in ('Corpses', 'Meat') or "Categ
+  - _Context: Can't place them myself whenever I want to. Edit: https://i.ebayimg.com/images/g/AocAAOSwmflfT~IU/s-l1600.jpg <- this is a "magic tree", nothing can f_
+  - _Context: oh a thing I would be happy about   abundance of ore as a setting ^^  And maybe reduce a bit the occurrence of gems? I am looking for ore and find rid_
+  - _Context: Allow a grove to be placed under an existing tree, and auto-set to actual type. (Don't know how I managed to place groves under wild tree roots someho_
+- **.lld** (2018-04-02): Does the engine have a gnome state for like prayer or illness?  I am thinking the gnome stops, displays a thought of like praying or puking.  This might be very extendable to modders.
+  - _Context: So you're not keen on having gnomish priests, alters or temples?_
+  - _Context: which would be most of them right?_
+- **flash.1** (2018-05-08): Or... and hear me out now, it's getting wild... we could wait until the base game is done at like the level of Gnomoria, then play it, then think about what's really missing.
+  - _Context: If we covert my gold stack on Runescape to USD I could hire 200 people for Roest to make DF 2.0 with 3D graphics._
+  - _Context: gogo make sprites, now that Roest has too much time to work on this you need to step up your game man 😛_
+  - _Context: How about building a rocket later on to settle the moon?_
+- **desolator_x** (2019-10-22): I'm not sure, on one hand it's a nice idea, on the other: the largest "cost" of training is hidden in the training time in that your dudes who are training can't work.
+  - _Context: I like the idea of gnomes getting injured accidentally while training_
+  - _Context: I wouldn't mind the extra training boost if the baseline was what we had in Gnomoria, which was already slow in my opinion_
+  - _Context: it only works if healing is available very early on, and hospitals and bandages aren't really immediately available_
+- **not__** (2018-05-16): Wow, I go to work after making an innocent Alien Nation reference and you lot almost burn down the chat room with your spirited commentary.
+  - _Context: You should take up the linked project_
+  - _Context: If I were him, I'd be working on this project: http://docplayer.org/docs-images/69/60722589/images/6-1.jpg_
+  - _Context: time is a resiliant little bugger, won't stay dead_
+- **hughheggen** (2019-09-16): I think Roest wants to work on magic and combat more
+  - _Context: We have a lot of other things to get through first_
+
+## Mining/Resources
+
+- **fatmck** (2018-10-14) [1⭐]: I would like to suggest a kind of combat screen when we get enemies. During combat I would like to see all my in combat envolved gnomes on the left side with stats (equipment, health, dazed, bleeding, injured, blinded, on the ground, ..), the actual combat log in the mid, and all spottet and envolve
+  - _Context: but please make the width of windows borders a little wider. i have to be really careful to catch that area where i can resize the window... is it one_
+  - _Context: yeah but having 3 with 2 axes could be. so the third one could do other jobs, if he is assigned to them. well, i can live with it being the way it is_
+  - _Context: if a gnome carries something to eat and gets hungry, he should eat the food he is carrying. one of my gnomes just threw away his apple because of his _
+- **fatmck** (2018-09-29): What I missed in Gnomoria and really would like to see in Ingnomia is to set designated areas where we could allow/disallow our gnomes to go. So we could disallow any gnomes to leave our fortress at all or only hunters. Designate battle zones where only military could go and maybe medics if selected
+  - _Context: I like that idea of designated no go areas_
+  - _Context: did i hear blockchain? *invests 50 million dollars*_
+  - _Context: Zombie spores from mushrooms would need it_
+- **chaineddjinn** (2021-12-04): Another Idea I had was the ability to have more then one unit preform a task, like a cooperation feature; two working to build something would take less time then one on it's own. Also, if someone is gathering resources in a location with the intent to build, don't have gnomes stash stuff away just 
+  - _Context: <@!386915067477753858> Soil quality, hmmm 🤔  reminds my of haven & hearth, it had quality for just about everything but it was capped by a few factors_
+  - _Context: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F55%2Fd3%2F4a%2F55d34a0db8e93e2570ca1c4313dfa339.jpg&f=1&nofb=1_
+  - _Context: ¯\_(ツ)_/¯ Something to hope fordown the pipeline I guess_
+- **hughheggen** (2018-05-13): <@172353609269248000> Certain bioms could have different fertility rates, and events such as a drought could reduce the fertility of the whole map for a few years. Make things a little bit more involved. <@202164327606648841> Yeah, I did heaps of farming sprites. <@204036338888998912>  A fertility s
+  - _Context: irrigation could be something like "replacing" a sand floor with dirt and it'd need some water for it_
+  - _Context: I'd love to see some events like that as well. I do think they should be moved to post release (like pretty much everything else here 😛 )_
+  - _Context: Oh, I'd like to suggest events that change around some of the game dynamics. Spice things up a bit._
+- **.elfu** (2020-04-01): You know, there's prospector, that gives the ability to at least process trash dirt and similar raw materials. When it comes to food items, these could get made into a compost or fertilizer, and in later game, maybe fuel for machines/golems. Other than that an item could simply decay into a pile of 
+  - _Context: Oh, by the way. Curious thing that I never understood in Gomoria. Why are containers, such as drawers or cupboards, not able to hold items in them? It_
+  - _Context: I remember in Gnomoria traders were my number 1 sinkhole for overflowing items. I'd rather have workshops and mechanics that allowed me to use these t_
+  - _Context: It doesn't change the fact that excess items get used. Make it use 10 seeds to make one bottle of oil, and you got yourself a pretty big sinkhole righ_
+- **cannonball_k** (2018-05-06): Pretty sure this has been suggested but gnomes riding yaks?  Trainable yaks that fight and attachments for their horns like axes or saws.  Also use them as labor animals like how gnomes have wheelbarrows, yaks can have wagons.  This could require training or it couldn't.  Some kind of book system wi
+  - _Context: I like the idea of yaks as beasts of burden_
+  - _Context: It all sounds pretty damned good there Cannon! Doing some more thinking obviously mood effects will come into play woth time, but how about different _
+  - _Context: I suddenly like you more I wish that were always the case... sometimes I have these neat ideas that just *fut* away at the worst times... BUT! Its oka_
+- **.lld** (2018-05-11): Do our gnomes live in a land of milk and honey, or sand and pain?  That could be a global fertility slider at game creation.  Then all crops would need to be balanced for high and low fertility soils.  Even with High and Low fertility, I could see a lot of dev time for not a lot of gameplay.  If you
+  - _Context: maybe add in bone meal so farmers can fertilize fields of your choosing. I know by endgame you have thousands of damn bones. Instead of the fert tiles_
+  - _Context: then a slider for overall fertility is probably a bad idea.  how about a slider that increases the chance/quantity of high fertility spots? that would_
+  - _Context: <@176318165129756672> <@204036338888998912> high/normal fertile soil then like rimworld? could get manure for animals and fertilizer and maybe special_
+- **_ysabell_** (2018-05-14): why sacrifice the gnome children when there will be plenty of goblins to appease the gnomes' gods? yeah, maybe in the future we could capture gnomes' enemies and sacrifice them for some form of bonuses... obsidian would definitely be great for sacrificial altars, knives, etc... err... well,, if play
+  - _Context: I suppose one thing that might need looking at: Obsidian's value as a resource. In Gnomoria, by the time you have the tech level to actually make thin_
+  - _Context: Obsidian is far sharper than surgical steel, it's the only material we have (I believe) that can cut between cells instead of through them, though tho_
+  - _Context: Or allow lava/water to be 'bucketed' somehow to be brought to the surface/bottom to allow local obsidian creation ._
+- **chaineddjinn** (2019-10-28): <@202164327606648841> Sorry just got back to this.  The problem with that "cost" is it's easily subverted if your clever. I put most of my people in a group and start training them asap, after initial set up.(1st day forging/logging/mining) I put 1 miner, farmer and anyone non-essential into 2 group
+  - _Context: obviously you don't need to be without workers doing certain jobs. I'm not that dumb that I'd be without miners, ever (or anything else essential for _
+  - _Context: Not only is this great for defense but also hunting, as animals get thirst and run the gauntlet, they alert dwarves so I can move 1 ranged squad in fr_
+  - _Context: <@202164327606648841> PFFFT! Ummm, I have no idea how you built your fort... but I haven't implemented a single automation and I believe I have yet to_
+- **desolator_x** (2018-01-30): Yeah, and there's a problem right there with a 3x3 and unstacked tiles: if you need / to store a decent amount of 4-5 materials it's really hard to get that organized in a single storage area. It'd be a lot easier if you could have one workshop feed off of, say, 3 stockpiles who're all 3x1 and only 
+  - _Context: That's getting too complicated. Both for reost to implement and debug as well as  for players to use. The feed stockpile is just meant as a buffer for_
+  - _Context: well, it's mostly for things like ores and gems and such, I assume there's going to be quite a lot of them, and a 3x3 stockpile might not be able to h_
+  - _Context: well, it would save some issues for people who don't want to make a million stockpiles for all the different goods. On that note: how many stockpiles _
+- **dragonwrath420** (2018-05-18): The effect on enemies would be rather interesting and to add an option of a setting to make certain enemies stronger while in light (for the more diehard fans that like the challenges).  I like that though I would change the certain jobs requiring light to function to using the light to increase pro
+  - _Context: Another is that some can give a passive benefit such as allowing crops to continue to grow at night (since it was mentioned earlier that crops won't c_
+  - _Context: but back to the bees: I think the idea of hives/crops is a pretty good idea to limit the amount of hives you can reasonably build. (modders can add th_
+  - _Context: If light is just aesthetic, then permanent light sources are fine.  But, if light has a proper use that adds to the game rather than detract from it, _
+- **optimus.0001** (2018-05-19): Let me regurgitate some thoughts all over the nice clean channel.   Magic candles/lights would need a source of power, as would other magic elements in the base. There's also the notion of using magic as offensive skills or buffs eg insta-harvest... These could come from a common resource (say, mana
+  - _Context: If the plan is to have eldritch horrors in the game, bright light should be a way to either reduce sanity loss (assuming sanity is a stat), prevent it_
+  - _Context: <@362644073095626754> While the idea is interesting, what you're suggesting would make gnomoria/ingnomia a completely different game that what it was _
+  - _Context: Depends on how you implement the refueling... If it's automatic via one of the auto-jobs like hauling or building (for example) but with a slightly hi_
+- **the_real_kyrros** (2018-01-31) [1⭐]: I imagine, if putting in production limits/caps, those limits would only need to be in place for tasks that are set to repeat (set it and forget it), because those are not necessarily needing to be monitored. Whereas, take Roest's example, we're capped at 5 tables, but I want to build a different on
+  - _Context: Of course not all workshops. The modfiles define the inputs. For example, Those that need fuel could have one extra input._
+  - _Context: Craft portals to the demon world to store infinite ressources, but be exposed to random attacks 😛  More ressources stored  =  Higher chance of being a_
+  - _Context: How about just managing your stockpiles better and not having more than 2000 seeds and clippings_
+- **slowbro1337** (2018-09-23) [1⭐]: Can we have diseases: flu, gangrene, maybe some magical ones? Asking cuz my first FUN in DF was when my militia killed wereunicorn and one of the dwarves lost all limbs and he got infected. So, night kicks in, the fortress is slaughered.
+  - _Context: In regards to automation, mid/lategame workshops that don't need gnomes to build objects, like a sawmill that just needs to be supplied with wood and _
+  - _Context: i thought about that but havent found a decent way to combine it into my main transport shaft_
+  - _Context: I also want sickness. That will be later though. Probably much later_
+- **sorsaj** (2018-08-28) [1⭐]: stockpile ordering is really a hazzle, please move up/down arrows to the left side next to the name and add a move top/move bottom or make it drag and drop like steam wishlist ordering ( drag and drop at will and click safe when done)
+  - _Context: please make it so i dont have to go into stockpiles and enable each new item that i mine or craft if i have set to accept "all" of one type (like soil_
+  - _Context: hm strange i just had this with bones, i hadn't butcherd an animal yet, so i couldn't setup my bone pile, but as soon as i got my first llamabone i co_
+  - _Context: look at it yourself, a dropdown list of stockpiles with 2 "paste" buttons and one "copy" without any idea of what gets copied to what or pasted to wha_
+- **desolator_x** (2019-05-12) [2⭐]: basically everyone here except for you knows that this is going to be a Gnomoria+ game where maybe, if Roest is willing or the modding community very active, we'll get some extra depth
+  - _Context: ok but logical you can build thing first AFTEr you dig really down........ there should be option to build things before that even when you anly build_
+  - _Context: to the "stone" discuss  forageable surface stone that is rare is an good solution and as an alternate solution or recipe we can use clay-stones that w_
+  - _Context: i like both those ideas!  missing for when a gnome is dead and no one knows it; dead if/when someone discovers the body._
+- **.alch** (2019-11-22) [1⭐]: I have an idea. implement wheat seeds, we might use all our grain on bread so we should have a seed version and a food version
+  - _Context: If collecting seeds, a harvest could yield 2-3 seeds and no crop but if collecting crops it could yield 1 seed and 1 crop with a small chance of yield_
+  - _Context: I think you should add goblins to the game along with combat, it would really spice up the gameplay_
+  - _Context: With chickens, just have a manual pop limit on their pasture. If a farmer doesn't want any more chickens, they just take the ferterlised eggs from the_
+- **guri9486** (2018-03-08): Also, I thought that the alarm bell mechanic was implemented in a way that’s punishingly confusing.  I think that you should either allow the bell to be rung by the player, or else give the bell its own priority so that we can make sure that ring a bell overrides every other action.
+  - _Context: An easier way to fit downwards.  In Gnomoria I found that I had to give the commends to dig, adding ramps to each level. I don’t know how it should be_
+- **_ysabell_** (2018-04-27): I don't know if anyone has suggested this yet. The general happiness of a settlement could also affect (in part) the number of gnomes joining the settlement each season, as well as kingdom worth. Conversely, there could be a chance for gnomes with 0 or low happiness to leave the settlement. Perhaps 
+  - _Context: I don't think stuff like slavery necessarily leads to bad press (Rimworld has it, and no one complains about it). I do think that having something lik_
+  - _Context: I mean that as gnomes become more experienced, they need better furnishings and food quality to stay happy, with higher professions needing more to st_
+  - _Context: I thought kingdom wealth was a simple and easy way to increase population size but we could go by a development score instead. The more infrastructure_
+- **itsadraelbaby** (2019-01-23): The problem with Gnome Golems in Gnomoria tended to be that they could do everything Gnomes could do, with very little investment, and didn't have to eat or drink, which meant you could eventually replace your entire population with them and coast on that lack of needs forever.
+  - _Context: Having them be limited in scope but still not really have much in the way of needs sounds neat, but what about having to have a dedicated team of Gnom_
+  - _Context: I suppose, yes, but i feel like we need a middle ground, too._
+  - _Context: I'd think the addition of golem based magical bionics would be awesome, upgrading gnome stats. Then maybe having tiers of golems, going from say, haul_
+- **desolator_x** (2019-05-27): That's a pretty good idea. Added to that I'd like to see something like a little counter behind the name of each gnome to see how many jobs they currently have active, would be handy if you don't want to use preset professions but don't want to overload individual gnomes
+  - _Context: One more tiiiiiny thing, instead of having to click every tile in the population window one by one, allow "painting" over then by just holding the mou_
+  - _Context: Implement the gnome skills tab with the overall population window, so we can assign jobs from the pop window and see what gnomes have what jobs, what _
+  - _Context: Along with that, another QOL thing would be with the dropdown in the gnomes skill tab, have a small popup when hovering over a preset that tells you w_
+- **sknortsch4137** (2018-12-01): i like the idea of NOT seeing als the possible items right from the start, but as one knows the game, this hiding would be obsolete. well, isn't this possible: new items of a category, when they appear the first time, are automatically put under the categories they belong and are handled the same wa
+  - _Context: i wanna be able to see all the items in a category when i set allowed stuff in a stockpile so i dont have to open the stockpile settings every time i _
+  - _Context: well as a compromise, i just made it so that all categories are visible from the start and you can activate them, so new items under that category wil_
+  - _Context: thats what he said he did, isnt it?_
+- **tacyn.** (2018-10-15) [1⭐]: The designation would be the same as other rooms. Comparable to dormitories, which allow gnomes to use the beds build within them. The crafting screen is the same as for single workshops, with the difference that it can do everything the workshops within the designation can. The orders created in th
+  - _Context: I think it could combine my idea of attaching workshops to stockpiles. instead of stockpiles, the management desk_
+  - _Context: we need crafting options for the workshop it self, and a "global" option that's shared between all crafting stations of that type right?_
+  - _Context: because if it can collect and hold rain, that could be a problem for people controlling running water into their bases. I know with Gnomoria, I dig a _
+- **der_kobold** (2020-12-30): a thing that could be handy   no more 1:1 drop of rock or soil when destroying a block   The amount of littering of those materials get insane over time when you dig done   Maybe a drop chance of 10% or something instead? Would help to keep the world a bit more free of waste stockpiles and overall i
+  - _Context: Not dead too? Would think they would be quite sensitive regarding water ^^   But when there's no magma in the bottom of the map what else is currently_
+  - _Context: Then it's going well for the tools  But something is eating my weapons   Maybe also caused by the long game time? I'm now in year 10_
+  - _Context: ah ok the prospector gets rid of stones, good to know ^^   ok, I think I found the reason why armor and weapons arent adding up.  it seems like weapon_
+- **the_real_kyrros** (2018-01-11): Could implement some kind of one-shot creation of a scaffold/rope ladder, or even just allow gnomes to  moved up one level to an adjacent square occupied by another gnome (i.e. get 'pulled up')
+  - _Context: i JUST thought of something that might be AWESOME!  if the game world generates like DF...as in it generates an ENTIRE world and you only play a bit o_
+  - _Context: than a hack maybe, allow diagonal movement when trapped by "remove floor" jobs this should at least ease the problem_
+  - _Context: i know its a hard problem, but could be avoided by letting them walk on walls (maybe only allow when trapped)_
+- **mazerduckingrakum** (2018-03-09): Maybe just like a default blueprint type of thing, and a system where you could create new blueprints.  IE, a 4x4 staircase blueprint that you can just draw where you want it
+  - _Context: Or maybe a way to draw a staircase or ramp?  A way to draw a long stair that knows to go downward (or upward)?_
+  - _Context: could be implemented as the number of left clicks increases task repeats, right-click decreases (and cancels at 1)_
+  - _Context: the job might need to move down/up 1 level per repeat so you can still repeat or cancel it_
+- **.lld** (2018-04-22): The perception of what is right and the actuality are very different things.  Honestly has the RoboBob email ever been released?  Roest could be a lying mother fucker, and we have no way of knowing. ( I am not saying, and personally, don't think he is.)  Take a look at the subreddit today.  There is
+  - _Context: yes, I know. I'm just wondering if you had any thought on what you should initially start with and whether the list <@386915067477753858> made in the _
+  - _Context: actually he could just say 'stop using it now' to be legally binding there would need to be a formal, signed agreement beyond just a casual email...  _
+  - _Context: it'd be nice to add that in at some point though, even if only as an option for a player to set things like "only highest skill crafter makes statues)_
+- **drucifer8036** (2018-09-14): Could we eventually get hotkeys for other specific actions?  Specifically, I'm thinking of "cancel a build or designation," "deconstruct something built," and "mine/dig wall."  Maybe you'd like hotkeys for other commands too?
+- **hughheggen** (2019-03-09) [2⭐]: Did you like the idea of mudbrick and rammed earth?
+  - _Context: When you select the furniture to be installed. You can select the type of metal. Why not right under it somehing like in the smelter: Any / average or_
+  - _Context: Jokes aside, I think there should be a way of making sand/clay without needing to mine it, since once you mine out those two layers, you just have an _
+  - _Context: I added the ability to turn dirt and water into clay in my mod in Gnomoria, so I fully support the idea of turning dirt into clay 😃_
+- **chaineddjinn** (2019-05-15): I'm sorry but in the convo above <@202164327606648841> is **SUPER** aggro toward @derPaddy#0188 just because he had a difference in opinion.  I feel surface stone would also prove useful as eventually their may be a point system which is costly to bring stone at embark or may have other restrictions
+  - _Context: (Not that many would give a rats rump, but that's not the point.) I had felt this would aspire to include some of the function and versatility of wher_
+  - _Context: I don't want to continue the discussion on derpaddy. He didn't even read the steam page, as such he comes here with a totally uninformed opinion. The _
+  - _Context: The game has always seemed to be advertised as a gnomoria+, with a focus on getting the gnomoria part working fully then adding new things. I think it_
+- **nordiii** (2018-01-14): In case of an raid, an option for Military only would be nice too. Maybe an event system for specific action? Would be awesome for mechanisms.
+  - _Context: you're responding in suggestions to a general thread message, maybe give a hint as to what you're referring to for future reference? 😉_
+  - _Context: Something like left click , just select the furniture as in the current overview. Right click, open a larger window docked on the general furniture ov_
+  - _Context: Maybe divided by "you have the resources " and "you don't have the resources"_
+- **flash.1** (2018-05-15): So we either need a routine that automatically defines pastures inside fences or we need the option to freely define pastures ourselves and put fences around them
+  - _Context: but you had me thinking, you know i want to implement a mission system, where you just select a few gnomes and send them on a mission, be it diplomati_
+  - _Context: the fuck am I looking at 0.o can we please go back to the normal 2 genders and people with a mental disability?_
+  - _Context: do you think animals should be magically contained on pastures or should they be able to wander off and need fences_
+- **saint_of_grey** (2019-01-22) [1⭐]: Shiny dude with a pick for an arm. Only works with stone, can't do anything else. Maybe give him a hub to sleep at when you don't have anything for him to do, so he doesn't eat up coal while you aren't mining.
+  - _Context: Does he have a Drow friend and the other arm with a hammer on it?_
+  - _Context: All in one build wall + floor either above or below job_
+  - _Context: Stuff like that for other jobs as well._
+- **hughheggen** (2018-04-05): Engineers, alchemists and mages need to study for years to unlock new recipes. Or maybe they need to study to be able to use high level recipes themselves
+  - _Context: I was thinking the low intelligence thing in the context of Roest’s quip about low intelligence gnomes.  Either way a mechanic to stop a gnome and pop_
+  - _Context: Nothing is produced out of nothing, you want books, you better produce paper, leather and ink, I was talking about research jobs_
+  - _Context: About the library thing, tech level is gained by completing jobs, so there could be a library workshop with study jobs which take no input materials a_
+- **prassel** (2018-09-01): -make stockpile settings window open when you designate a new one. -(resuggest) option to toggle show all items when filtering so you dont have to edit every time a new object is crafted. -ability to set a position in the stocks list in the stockpile setting (so you dont have to open that every time
+  - _Context: i'd like to see an option to toggle showing every item when you filter for stockpile so i dont have to go in a dozen time and edit it when i craft new_
+  - _Context: some things come naturally for you cause you know all the workings, for me this (adding a single skill via sheet) could have been something that just _
+  - _Context: 0.4.0 - stockpiling, tiles with containers are handled first - job queue: craft# the number to craft will count down now - job queue: craft to, jobs w_
+- **sknortsch4137** (2018-10-11): in DF digging the tile you stand on leaves a ramp up. this could be a more realistic possibility though. or implement mining ramps up - would be nearly the same. but mining stairs out of a single-tile-wall as the only solution  is a little weird to figure out 😉
+  - _Context: when i try to remove the highest level of a hill with "dig hole" order, the last tile stays and will not be dug. in gnomoria gnomes were able to dig d_
+  - _Context: Calling something a first world problem is not a viable argument Roest, come on now.  We should all stop worrying about this game and go volunteer our_
+  - _Context: well, leave it the way it is then, I can live with that stair-workaround ^^ but I think I am not the only one with that idea - as we are used to that _
+- **yksleets** (2019-01-08): 1) Some sort of a blueprint system, maybe along the lines of Factorio where you have to build it once but then you can make a copy to a book you can plop down items from as needed. I like to build my core the same way each time so having an easy way to recreate it woudl be amazing. Maybe even a way 
+  - _Context: True, I was thinking it more as an addition if I need 25 beds for the new sleeping wing as a oneoff, the bread and butter smelting, bar creation and s_
+  - _Context: that's why we have the amazing linked stockpiles_
+  - _Context: you don't want gnomes to haul the logs, then the planks to the other side of the base just because the sawmill is busy right at that second, and then _
+- **desolator_x** (2019-01-18): also, I like the idea that <@177094350201683968> had with carrying food with them. It could be restricted to a certain piece of gear you'd have to make first, say a lunchbox 😛 so your gnomes would equip the lunchbox and then be able to carry one sandwich and one drink with them or something
+  - _Context: You have outside corner ramps for straw roof I see. I could see people wanting both inside and outside corners for all ramp types for roofs. So may ju_
+  - _Context: So for suggestions, could we  get a different color or some sort of Icon to note input linking block for workbenches? As near as I can tell, only 3 ar_
+  - _Context: The sand tile is really hard  to distinguish from the mine wall colour... just started playing around. I think this could be a problem for a new playe_
+- **chacina7810** (2019-03-10): A system of achievements for the noobs to know the progression and for the players to complete all the possible things of the game. And up to challenges ... 300 of  such an item crafted, etc. It could have an option to show or hide the achviments pop-up
+  - _Context: I feel that when I craft something and put any material into the workshop it is harder for the gnomes to complete the craft than when I put in a speci_
+  - _Context: well, one thing that could be nice is the ability to start a new world/game with some of the gnomes from a previous world/game_
+  - _Context: especially for streamers, but also if you want to have this idea of a world where you have different settlements_
+- **chacina7810** (2019-03-11): I do not think it's particularly a good idea for one game to affect the beginning of the other... But if you believe it will improve the game scene and for everyone to be happy it could be a wonder (haha 😅 ) <@177094350201683968> that gives you a backupsave, helping in the same run. Dunno
+  - _Context: It could be as simple* as an option to retire the game and the gnomes get tossed into a pool and can random into the next games. *simple to write, I h_
+  - _Context: I think you should need stone.  Either add some on start or have surface stone_
+  - _Context: Agree wih Lord Hugh here : in my opinion stone is needed. I mean how do you cut a log to become a plank. You need somehig at least stronger than wood._
+- **hughheggen** (2019-07-29): I'm trying to think of a situation when you might need 200 of the same item of 4 different materials. Wood. You could use the most expensive wood (say mahogany) and use that for furniture. A light wood (pine) for arrow making and a strong heavy wood for shields and doors (oak)
+  - _Context: Wait, I just tested it. I thought this was taking away my ability to filter what specific material goes into the stockpile, but it's just the min and _
+  - _Context: No! This is a terrible idea. I like to craft with only certain materials like 1 log type and 1 stone type, and my OCD needs the specific materials nex_
+  - _Context: Just final comment on limiting by materials: another use case of limiting stockpiles with different materials is while using it with linked stockpiles_
+- **condac** (2021-01-28): I am just creating a sheet to calculate everything based on the ingreidients because i thought the current values where just very fluctuating in value and eatvalue and did not favour crafting any items at all, at current state eating raw foods is better because they loose value the more you craft th
+  - _Context: I have extended the sheet with crafting time so we can set a price per work time to get calculated cash value of items based on ingredients crafting t_
+  - _Context: Yes, that is what i think also, but the anwer was that they are planing on implementing happyness so the more you make a high end item the happier the_
+  - _Context: I have a much better suggestions for metal values now that fixes the issue where statues are not the right values if you compare a marble statue to a _
+- **hughheggen** (2021-03-10): So I've spent a bit of time playing Ingnomia recently and I've come up with these suggestions for improvements:  Merge harvest tree and forage into one command just called forage. There's little point in having them separate.  Allow Kitchens to turn seeds into flour at a rate of 4 or 5 seeds for 1 f
+  - _Context: A metal needle recipe was added  believe, to one of the metal workshops - I find I often get metal way before I get bone!_
+  - _Context: > Merge harvest tree and forage into one command just called forage. There's little point in having them separate.  +1_
+- **.lld** (2017-12-30): Maybe hourly would be better since a gnome might need 10 hours of sleep on the floor vs like 6 on a super cushy king bed?
+  - _Context: like the military schedule, but in general? I'd like that too but it doesn't need to be per hour, dividing a day into three 8-hour or four 6-hour slot_
+  - _Context: well, something like cooking / growing perhaps? planting during the night so the plants grow during the day and the gnome can go cook during the day w_
+  - _Context: The schedule could be a suggestion rather than a rule. Let's say gnomes have a rested value going from 0 to 100 and they normally go to sleep below 50_
+- **flash.1** (2018-05-30): That idea is nothing that should make it into release, though. I just thought of it when I encountered the bug yesterday.
+  - _Context: My above-ground coal got me thinking. Maybe include some kind of shrubbery? That's what I at first thought, the bugged coal was. A non-passable growth_
+  - _Context: Could make for more interesting maps_
+  - _Context: ^I think that'd be nice for different biomes, kinda like the evil environment from DF?_
+- **ext3h** (2020-11-28): We would have to see how much "full" SFX we need and want in the first place. Not that we fall in the trap that after giving the first couple of events SFX, that all the ones not having any suddenly start sticking out.
+  - _Context: Hi, new here, sorry if this is the wrong chat.  So I felt the game was a little too quiet, and decided to throw this together and see how it feels pla_
+  - _Context: For synchronized playback of multiple instruments I need to decode "manually" anyway. Just sampling rate better fit, or mixing becomes "troublesome"_
+  - _Context: Qt should handle that just fine. Not going to pull in more libraries. Just going to have to implement mixing and synchronization._
+- **hughheggen** (2018-03-23): I really like the explosives idea and destructible terrain. Although the terrain thing would be hard (I guess) we could still have things like dynamite for resource extraction or explosives for traps and grenades
+- **hughheggen** (2018-06-01): Suggestion: being able to dig dirt and maybe sand without a pickaxe (just slower)  could be a good idea
+  - _Context: suggestion: work regions in to the job filtering eg. allow gnomes to be assigned to dining halls (or something), they will give jobs closer to that di_
+  - _Context: <@386915067477753858> have you ever dug a hole IRL with a shovel in ground that is 50-70% fist sized stones? unless it's pure dirt and half clay or sa_
+  - _Context: how about needing a shovel then instead of a pickaxe_
+- **.elfu** (2020-04-05): How about adding a tick to corpses info panel that says "butcher this corpse", so that we can handpick which corpses get butchered directly, without the need to stockpile them?
+  - _Context: Would you still leave the _Butcher excess livestock_ option? If yes, then it sounds quite fine to me._
+  - _Context: There was one in Gnomoria. I think it ws either an action or initiated by ticking a proper option in creature info panel_
+  - _Context: I'm fairly sure that there was a list of available corpses in Gnomoria, not sure if there was a way to select which one to butcher. But, mmm, Goblin S_
+- **.alch** (2019-03-12): You could remove the need for stone but then add the requirement for an axe to use the workshop
+  - _Context: I believe the question what whether the building requirements for the makeshift workbench should include stone, not whether you use it for the later t_
+  - _Context: Don't you need it for a chisel?_
+  - _Context: stone is only used in the sprite as a makeshift table or workbench isn't it? It's not used for tools afaik_
+- **condac** (2021-01-25): We really need some kind of event log, when you find all your cows dead you want to know why. Same with gnomes, when you find one dead on the floor there is nothing that tell you what have happened
+  - _Context: I don't know how the development is going but, in the option to hide the walls, you could put only a part of it, very low, just to differentiate where_
+  - _Context: Another suggestion is also to overhaul the trade price of coins and bars. I have tin bars that trade for ~100 but a tin coin trade for ~30, blacksmith_
+  - _Context: Yes that particular bug i found out and also found the issue on. But during battle or animal encoutnters or whatever The odds of seeing what hapens is_
+- **sibaz_** (2019-09-12): Also in DF all dwarfs start with no skills and by doing a job, they gain skills, so specialise.  Gnomes seem to start and keep their skill level at everything, they should be able to improve
+  - _Context: feathers/straw/cotton stuffing should all be potential mattress fillers, and they should be the primary 'type' of a mattress_
+  - _Context: could I suggest that the info box, or the gnome log, has more info in it.  It's often quite vaigue_
+  - _Context: Someone talked about fishbones being made into glue, which is probably silly, but you could require glue for making arrows_
+- **.elfu** (2020-03-04): But why would you want to do that, every time a game loads? I really wouldn't want my gnomes to suddenly change everything they do at the start of the game
+  - _Context: Once a unit is spotted, the check should stop for the other side for that unit for X number turns time, combat should skip check completely for x turn_
+  - _Context: Could be worse, I could be a UI guy instead_
+  - _Context: well, if you can make a distance check between two units, just by looking up their coordinates in world, then I'm thinking that could be faster_
+- **optimus.0001** (2018-01-17) [2⭐]: can monetize... blueprints available via loot box microtransacitons!
+  - _Context: or kill 1500 Mants to unlock stone sword!_
+- **woody1842** (2018-05-09): Hmm hey I'm looking are your patreon and I was wondering that for a reward, you should add the patreons names into the game when an Item has become legendary
+  - _Context: interesting idea, or maybe let them design item names_
+  - _Context: I liked the way  prison architect did it, let them create a character or something and you can encounter them in the world_
+  - _Context: ok woody for your pledge you can be a chicken, rabbit or sheep_
+- **dommain.** (2020-03-01): Could create a menu to control animations to turn on and off unwanted ones but also allow the potato computer powered by the hamsters have smooth gameplay.
+  - _Context: Assigning uniforms to professions would be quite helpful. Currently, you can only assign an uniform implicitly by including a Gnome in a squad. IIRC, _
+  - _Context: That would be nice to tell what job the gnome is heading for with out have to click on him_
+  - _Context: I did think of maybe having different hats for different jobs_
+- **desolator_x** (2018-05-27): Eh, if you're going to have nobles and stuff in the game having special clothing needs etc for them would make sense. If you just have common gnomes I don't really see a reason to have clothing needs. Having their needs condensed into bedroom wealth should be good enough
+  - _Context: also, looking at the barn building, I think it'd be nice if the game would automatically add the needed floors when you're building up the walls_
+  - _Context: would be nice if you could see where the selection sprite for each tile is so you can count if needed_
+  - _Context: Could gnome-needs become active over time? For example at the start there are just Hunger, Thirst and Sleep,  but at certain kingdom sizes new needs l_
+- **desolator_x** (2018-06-22): Show the relevant stats of a gnome, either a dropdown list of all skills of a profession when you hover over the profession name, or put the numbers after the skill (mining, masonry, etc) so you get a better indication of what your gnomes are good at
+  - _Context: Sorted trade list? Quality, value, etc. One thing about gnomoria that irritated me was what you discover first is the first on the long trading list. _
+  - _Context: Can we get a reason for jobs being aborted in the gnome log?_
+  - _Context: right now my gnomes keep getting farming jobs, then aborting, but never get down to mining_
+- **.roest** (2018-10-04): about gnomes falling down when you remove floor, i'm a bit undecided about that, the remove floor job is done from a neighboring tile, so instead of removing the floor and letting the gnome that is on the tile fall down, we could evacuate him to the tile the worker is on
+  - _Context: Something to add when a gnome falls, the location they fall to doesn't seem to become discovered, so if they fall into a wall tile, it stays as an und_
+  - _Context: any auto prioritization for large scale dig/build orders?  An example problem I've had, building filling a 1 wide tunnel and a gnome getting stuck bec_
+  - _Context: just like in Dungeons 3, sounds like a good idea to implement_
+- **.alch** (2019-09-01): Why not have it use a fuel resource bar like the engine did? You won't need fuel per recipe but instead per time spent crafting
+  - _Context: Plus it will tie in well if you make temperature a thing and gnomes need to keep themselves warm_
+  - _Context: it would just add  another ingredient to cooking recipes and unnecessarily add lots of items_
+  - _Context: I thought it would be cool and to provide a reason for some foods adding happiness_
+- **desolator_x** (2019-10-16): eh, based on what's currently in the game and how gnomoria handled it, the idea of 1k bugs doesn't exactly appeal to me. Granted, if you say we'll have enough AoE damage by the time we're supposed to be digging that deep my argument obviously is invalid 😛
+  - _Context: My problem isn't less of the amount than how they spawn. I didn't even dig that tunnel and now it's just a permanent, beetle-and-zombie-filled deathtr_
+  - _Context: is every mob already charged at the start of the game ? or only when you open a cave ?_
+  - _Context: I can understand this coming from someone who doesn't follow development but you two <@202164327606648841> <@211419446391209984> disappoint me, it's b_
+- **reaperofbunnies** (2019-11-04): Suggestions as of todays playthrough -Max worldsize to 500, seems to save fine -More food options, nothing i found yet to use vegetables for (if im wrong educate me)  -Ability to hunt, i currently have hundreds of chickens but can only slaughter 20 -Some form of resource dislpay on screen, show food
+- **dinosaure.plz_nofriendrequests** (2020-12-29): Suggestion: add more starting drinkable things. Even low quality would make it. I'm actually trying something like "DrinkValue" of 10 to every fruit and vegetable (wheat/grass/hay/.. excluded). `update "Items" set "DrinkValue"=10 where "DrinkValue"=0 and ("ItemGroup" in ('Corpses', 'Meat') or "Categ
+  - _Context: Can't place them myself whenever I want to. Edit: https://i.ebayimg.com/images/g/AocAAOSwmflfT~IU/s-l1600.jpg <- this is a "magic tree", nothing can f_
+  - _Context: oh a thing I would be happy about   abundance of ore as a setting ^^  And maybe reduce a bit the occurrence of gems? I am looking for ore and find rid_
+  - _Context: Allow a grove to be placed under an existing tree, and auto-set to actual type. (Don't know how I managed to place groves under wild tree roots someho_
+- **maveross** (2021-01-13): Being able to assign workers as well. Run in to a scenario where gnome A is at a workshop, producing a block, set to repeat. After finishing making the block, instead of grabbing a nearby raw stone out of the stockpile, gnome B (a long distance away) will get the next build order and this really bre
+  - _Context: A copy to build option would be extremely handy_
+- **saint_of_grey** (2019-01-21): Maybe add more limited constructs as a form of mid-tier automation. Like, something single purpose or something that's completely stationary.
+  - _Context: I can see the problem gnomoria had with automatons is that it threw them on you with no lead-up. One second you have walls that move, and the other yo_
+- **matrixq** (2019-10-02): Maybe "Motivation" could be a value that determines how fast and well a gnome is doing things, which is derived from a number of needs/wants.
+  - _Context: They could leave if they get unhappy enough and steal some stuff when they leave_
+  - _Context: No, after the threat of ending development we only talk about metal based golems._
+  - _Context: Some kind of... moving mechanical device made in imitation of a human being._
+- **dinosaure.plz_nofriendrequests** (2021-01-04): I only wanted to see how others were playing, and as Discord accepts users to stream (even if not recording), that was the idea. I'm not comfortable enough to talk while streaming, and that would have zero-pro stream quality.
+  - _Context: Actually no, it's not even the seeds which are out in the world. It's the seeds which are already in the stockpile (on the floor), which are causing t_
+  - _Context: Just thought it would be interesting to see others playing, and multiple streams are ok on the same room._
+  - _Context: Starting a game on a more open platform like Twitch, and then announcing the stream in the <#447757383985266700> channel or alike is fair game though_
+- **desolator_x** (2018-04-29): I don't, it's far more fun to write epitaphs for fallen gnomes, it's just a shame that it's really hard to build a proper monument to the fallen since there's no mausoleum / coffin option that you can set inscriptions on
+  - _Context: suggestion: cemetery, gives stone masons something to do, effects dwarf happiness (maybe 50% reduction in the sads when a gnome dies if they are burie_
+  - _Context: I don't really see the point, those who don't want to save scum won't, and other people will. Ironman mode doesn't seem like a priority_
+  - _Context: Maybe an implementation of a "Hardore" or "Ironman" mode.  No saving (other than to quit), but in turn, increased rewards etc_
+- **drucifer8036** (2019-05-25): I'd like to see more stair options, assuming this is still the place for suggestions.  Even just a reskin of the raw stone sprite, but the recipe uses blocks instead of raw stone.  Wood, stone block, metal,  bone.
+  - _Context: Could have it that the trainer gives a boost to training their highest combat skill. Makes sense for a trainer who's a master with a sword to give xp _
+  - _Context: Add a trainer job to military training grounds. If they have high skill, then your recruits train faster_
+- **_dreddos** (2019-12-24): Manable stationary ballista turrets with different bolts (higher the metal the more accurate + dmg) with bolts for accuracy, bolts with possible aoe splash etc If adding dragons this could be a good counter to them
+  - _Context: I have a suggestion about straw use, since we have separation between straw and hay.Unlike hay, animals generally don´t eat straw, but straw can be us_
+  - _Context: We need working ranged combat first_
+  - _Context: <@141075323990179841> , fully agreed with you._
+- **yes072083** (2018-07-04): suggestion: tile selected when tile info is displayed should be highlighted to allow easy identification
+  - _Context: Suggestion: keyboard shortcut to "flatten" current z level to better see the floor behind a wall. Gnomoria key was F_
+  - _Context: suggestion selected tile should contain information of tile. IE: weather dirt/clay/stone ect.._
+  - _Context: Suggestion: tile with job should be selectable to show job pending and gnome assigned if any_
+- **drumoriginal** (2018-05-26): better cheese out and go the timber & stone route if you really want more realistic building
+  - _Context: anyway, it is a very small feature and it turned out to be hell for automatic building_
+  - _Context: Stonehearth is a game which had scaffolding in their prototype, since then it has been a pain in their ass_
+  - _Context: it is not about the actual scaffolding, it is about spatial awareness around the building 😃_
+- **mcphisto2051** (2020-12-07): perhaps checking if its a corner and the surrounding walls should be changed too, the dig 1 surrounding wall replace it and build on the removed wall slot?
+  - _Context: Food and Drink need indicator color codes_
+  - _Context: Mine both tiles. Plan both for re-construction. They will be reconstructed in an order which is possible, so much you may have._
+  - _Context: 🇫🇮 We too have a long tradition of turning vegetables into alcohol_
+- **flash.1** (2018-05-08): Or... and hear me out now, it's getting wild... we could wait until the base game is done at like the level of Gnomoria, then play it, then think about what's really missing.
+  - _Context: If we covert my gold stack on Runescape to USD I could hire 200 people for Roest to make DF 2.0 with 3D graphics._
+  - _Context: gogo make sprites, now that Roest has too much time to work on this you need to step up your game man 😛_
+  - _Context: How about building a rocket later on to settle the moon?_
+- **optimus.0001** (2018-03-17): maybe you could 'designate region' for it, do it floor by floor
+  - _Context: Maybe make some blocks containing very valuable resources only mineable with explosives_
+  - _Context: and if you put a torch on a coal seam there should be a risk of fire/bang_
+  - _Context: re: darkness, that could make tunneling fun_
+- **desolator_x** (2019-10-22): I'm not sure, on one hand it's a nice idea, on the other: the largest "cost" of training is hidden in the training time in that your dudes who are training can't work.
+  - _Context: I like the idea of gnomes getting injured accidentally while training_
+  - _Context: I wouldn't mind the extra training boost if the baseline was what we had in Gnomoria, which was already slow in my opinion_
+  - _Context: it only works if healing is available very early on, and hospitals and bandages aren't really immediately available_
+- **jyeguru** (2018-04-23): So, you have to manually manage it at the start, then you get some tech/etc that allows it to be automated (maybe at a slight resource or efficiency cost)
+  - _Context: I just want to gas goblins or set unwanted gnomads on fire. Am I asking too much <@280266293490221056> ?_
+  - _Context: not if they have eye patches_
+  - _Context: Well not necessarily CO, but maybe gas or fumes?_
+- **.roest** (2018-05-29): world size near max requires a good gpu right now, there's still one thing i can implement to help with that, guess i need to do it sooner than i wanted
+  - _Context: Suggestion: In the "mine down" menu, integrate a tool for block removal. Also, the stairs-down tool doesn't automatically clear the block above. The s_
+  - _Context: Unsure what is happening under the hood, but during world creation Windows thinks Ingnomia is not responding.  I assume you are locked in world creati_
+  - _Context: but I am also getting 5fps, I think I need to update drivers or something_
+- **pumpkinlord2566** (2021-03-23): I have also had that problem many time’s and sometimes wishing I could make a metal one... however on the flip side it does make a good challenge as you can’t make first aid and makes you think more about your defences so I’m torn between it lol
+  - _Context: It'll become easier once hunting is implemented_
+- **woody1842** (2018-04-10): Regarding the goblin army, should there be a mid tier enemy between goblins and orges being HobGoblins?
+  - _Context: there's armored goblins and the metal quality upgrades so I don't think a mid tier goblin is necessary_
+  - _Context: Russia edition?_
+  - _Context: in soviet ingnomia, bears ride you_
+- **desolator_x** (2018-06-26): give it a mood modifier? you'll need sprites for the new materials in that case as well 😉
+  - _Context: suggestion: Add veal and other baby butcher jobs to the butcher. Extra succulent and juice meats, but less of it_
+  - _Context: will there be different tiers of tools? Stone felling axe, steel felling axe?_
+  - _Context: suggestion: split the population screen into two subscreens: one for "normal" jobs and one for combat related skills_
+- **Deleted User** (2019-10-15): i can suggest a limit of spawn number of each beetle nest as well as a limited number of nest at the same time
+  - _Context: this should avoid the risk of fps death of worlds_
+  - _Context: Yea, that was a complaint I had. Accidentally expose a cave system, you pretty much had to light all of it up or face FPS death._
+  - _Context: the only way i knew in gnomoria was lava. But the time needed to install the system was enough to make the game die_
+- **not__** (2018-06-23): Do not have an alpha key so can't verify, but a log with timestamps would be nice if not already in.
+  - _Context: I think my game gnomes were bugged due to making multiple kingdoms with the same name_
+  - _Context: Miner default *does* contain mining: it's at the very bottom 😛_
+  - _Context: I just purged my settings, so that might have been my issue._
+- **ctherain** (2018-05-04): but think of harpooning a whale (your mom tehe) and the entire water turns red like in my japanese whale hunting videos and some strange red slimes and blood elements spawn and invade your fort.
+  - _Context: If the water is big enough we could have water farms and gnome diving_
+  - _Context: you lot all going on about boats and water  I'm waiting for the gnome space program DLC where you build space elevators and mine asteroids_
+  - _Context: Gnome Space Program, the blocky replica of Kerbal Space Program?_
+- **hughheggen** (2018-06-06): OK, so I've made a flat window, a large stone column, clear glass block, stained glass block, cobble stone, stone and wood halfsies block and a 2x2 gnome face wall relief
+  - _Context: while we're at it why don't we just add wind power_
+  - _Context: or should I just steal them from the fortress mod_
+  - _Context: is someone else going to add that_
+- **styfrit** (2019-09-13): Powder can be usefull if we need to made a big hole...
+  - _Context: which could then be used to power... an automaton_
+  - _Context: Automatons are a lower stage of technology than blowyuppypowder?_
+  - _Context: It can be a high level job for an alchemist_
+- **.roest** (2020-12-02): we actually have sprites for that but it's a bit harder to implement with pathfinding and all that
+  - _Context: Take wood scaffolds and stack them on top of each other_
+  - _Context: Proposal: Remove the Ingnomia floating text._
+- **optimus.0001** (2018-04-03): suggestion: multiple statue sprites and one is randomly chosen per statue built
+  - _Context: ooh and looms to also make tapestries to sell as art_
+  - _Context: imagine a gnomish The Thinker or Easter Island head_
+  - _Context: and melting clock / screaming head_
+
+## Modding/Customization
+
+- **dinosaure.plz_nofriendrequests** (2021-01-19): While I'm in the suggestion channel: - Have a "paint" mode, similar to the "Cut trees" one, but targeting farm/grove/pasture type helping changing seeds en masse - Have an "any" mode on farm/grove/pasture to let them accept any seed/seed(/acorn/pine)/animal available - Name the personalised "Set up"
+  - _Context: Issues page should stay reserved for stuff which has been adopted by a developer or modder. There is just no point to flood it with 10+ new "suggestio_
+  - _Context: Just to avoid further misunderstandings, when I said "threaded" I meant "one thread per suggestion".  Because most of these "one liners" are still far_
+  - _Context: Should get a "suggestions" page on github to comment on suggestions, just to help keep track of them and the discussions around each of them_
+- **.roest** (2018-09-22) [6⭐]: so yea maybe later, as not in this lifetime
+  - _Context: I don't really see the use of trains anyway, since the maps aren't big enough to warrant them. you can always add it as a mod yourself I suppose_
+  - _Context: need to roll this in to ingnomia..._
+  - _Context: If you want trains - try factorio 😃_
+- **_ysabell_** (2018-05-14): why sacrifice the gnome children when there will be plenty of goblins to appease the gnomes' gods? yeah, maybe in the future we could capture gnomes' enemies and sacrifice them for some form of bonuses... obsidian would definitely be great for sacrificial altars, knives, etc... err... well,, if play
+  - _Context: I suppose one thing that might need looking at: Obsidian's value as a resource. In Gnomoria, by the time you have the tech level to actually make thin_
+  - _Context: Obsidian is far sharper than surgical steel, it's the only material we have (I believe) that can cut between cells instead of through them, though tho_
+  - _Context: Or allow lava/water to be 'bucketed' somehow to be brought to the surface/bottom to allow local obsidian creation ._
+- **chaineddjinn** (2019-10-28): <@202164327606648841> Sorry just got back to this.  The problem with that "cost" is it's easily subverted if your clever. I put most of my people in a group and start training them asap, after initial set up.(1st day forging/logging/mining) I put 1 miner, farmer and anyone non-essential into 2 group
+  - _Context: obviously you don't need to be without workers doing certain jobs. I'm not that dumb that I'd be without miners, ever (or anything else essential for _
+  - _Context: Not only is this great for defense but also hunting, as animals get thirst and run the gauntlet, they alert dwarves so I can move 1 ranged squad in fr_
+  - _Context: <@202164327606648841> PFFFT! Ummm, I have no idea how you built your fort... but I haven't implemented a single automation and I believe I have yet to_
+- **dragonwrath420** (2018-05-18): The effect on enemies would be rather interesting and to add an option of a setting to make certain enemies stronger while in light (for the more diehard fans that like the challenges).  I like that though I would change the certain jobs requiring light to function to using the light to increase pro
+  - _Context: Another is that some can give a passive benefit such as allowing crops to continue to grow at night (since it was mentioned earlier that crops won't c_
+  - _Context: but back to the bees: I think the idea of hives/crops is a pretty good idea to limit the amount of hives you can reasonably build. (modders can add th_
+  - _Context: If light is just aesthetic, then permanent light sources are fine.  But, if light has a proper use that adds to the game rather than detract from it, _
+- **.alch** (2019-08-06): On crafting workshops, rather than having to click the item you want to craft, then click the craft button which might have the added effort of scrolling down to get to, implement some "instant" method.   Like maybe if I just right click on the item I want to craft it just skips the "click craft" st
+  - _Context: I just don't want to have to click the craft button every time when I just want one of the item and don't care about the material_
+  - _Context: Sometimes the situation comes where you just don't care what material it's made out of and just want 1 of the item or so_
+  - _Context: Close the "build containers" window when I pick what I want to build_
+- **desolator_x** (2019-05-12) [2⭐]: basically everyone here except for you knows that this is going to be a Gnomoria+ game where maybe, if Roest is willing or the modding community very active, we'll get some extra depth
+  - _Context: ok but logical you can build thing first AFTEr you dig really down........ there should be option to build things before that even when you anly build_
+  - _Context: to the "stone" discuss  forageable surface stone that is rare is an good solution and as an alternate solution or recipe we can use clay-stones that w_
+  - _Context: i like both those ideas!  missing for when a gnome is dead and no one knows it; dead if/when someone discovers the body._
+- **desolator_x** (2018-01-25): Something that popped into my mind when playing Rimworld: can we please have gnomes use stockpiles efficiently in the sense that they stack items to their max stack size instead of spreading 10 pieces of wood over as many tiles?
+  - _Context: I dunno, there's a mod for it in Rimworld, so I guess it can be done. It's also *per stockpile* not global, so if a gnome brings, say, 10 wood to a st_
+  - _Context: It can even be a "technology" (ie : you need to develop something to tie the planks together, like a string)_
+  - _Context: hard to implement i guess, imagine a 63/64 Stack of wood on the other end of the map..._
+- **_ysabell_** (2018-04-27): I don't know if anyone has suggested this yet. The general happiness of a settlement could also affect (in part) the number of gnomes joining the settlement each season, as well as kingdom worth. Conversely, there could be a chance for gnomes with 0 or low happiness to leave the settlement. Perhaps 
+  - _Context: I don't think stuff like slavery necessarily leads to bad press (Rimworld has it, and no one complains about it). I do think that having something lik_
+  - _Context: I mean that as gnomes become more experienced, they need better furnishings and food quality to stay happy, with higher professions needing more to st_
+  - _Context: I thought kingdom wealth was a simple and easy way to increase population size but we could go by a development score instead. The more infrastructure_
+- **Deleted User** (2019-08-14): SUGGESTION: Add checkbox option to stop milking pasture. I only want my pasture for meat, do not want gnomes wasting time going there to milk animals.
+  - _Context: Suggestion: Indicate or standardize the side of workshops that can link stockpiles. Each workshop has one different side that can link, and  it makes _
+  - _Context: Or maybe I have bad memory. Or could be both_
+  - _Context: And also just 1 high versions of it, so I can have nice vertical wood walls_
+- **tacyn.** (2018-10-15) [1⭐]: The designation would be the same as other rooms. Comparable to dormitories, which allow gnomes to use the beds build within them. The crafting screen is the same as for single workshops, with the difference that it can do everything the workshops within the designation can. The orders created in th
+  - _Context: I think it could combine my idea of attaching workshops to stockpiles. instead of stockpiles, the management desk_
+  - _Context: we need crafting options for the workshop it self, and a "global" option that's shared between all crafting stations of that type right?_
+  - _Context: because if it can collect and hold rain, that could be a problem for people controlling running water into their bases. I know with Gnomoria, I dig a _
+- **.lld** (2018-04-22): The perception of what is right and the actuality are very different things.  Honestly has the RoboBob email ever been released?  Roest could be a lying mother fucker, and we have no way of knowing. ( I am not saying, and personally, don't think he is.)  Take a look at the subreddit today.  There is
+  - _Context: yes, I know. I'm just wondering if you had any thought on what you should initially start with and whether the list <@386915067477753858> made in the _
+  - _Context: actually he could just say 'stop using it now' to be legally binding there would need to be a formal, signed agreement beyond just a casual email...  _
+  - _Context: it'd be nice to add that in at some point though, even if only as an option for a player to set things like "only highest skill crafter makes statues)_
+- **hughheggen** (2019-03-09) [2⭐]: Did you like the idea of mudbrick and rammed earth?
+  - _Context: When you select the furniture to be installed. You can select the type of metal. Why not right under it somehing like in the smelter: Any / average or_
+  - _Context: Jokes aside, I think there should be a way of making sand/clay without needing to mine it, since once you mine out those two layers, you just have an _
+  - _Context: I added the ability to turn dirt and water into clay in my mod in Gnomoria, so I fully support the idea of turning dirt into clay 😃_
+- **chaineddjinn** (2019-05-15): I'm sorry but in the convo above <@202164327606648841> is **SUPER** aggro toward @derPaddy#0188 just because he had a difference in opinion.  I feel surface stone would also prove useful as eventually their may be a point system which is costly to bring stone at embark or may have other restrictions
+  - _Context: (Not that many would give a rats rump, but that's not the point.) I had felt this would aspire to include some of the function and versatility of wher_
+  - _Context: I don't want to continue the discussion on derpaddy. He didn't even read the steam page, as such he comes here with a totally uninformed opinion. The _
+  - _Context: The game has always seemed to be advertised as a gnomoria+, with a focus on getting the gnomoria part working fully then adding new things. I think it_
+- **hughheggen** (2018-04-05): Engineers, alchemists and mages need to study for years to unlock new recipes. Or maybe they need to study to be able to use high level recipes themselves
+  - _Context: I was thinking the low intelligence thing in the context of Roest’s quip about low intelligence gnomes.  Either way a mechanic to stop a gnome and pop_
+  - _Context: Nothing is produced out of nothing, you want books, you better produce paper, leather and ink, I was talking about research jobs_
+  - _Context: About the library thing, tech level is gained by completing jobs, so there could be a library workshop with study jobs which take no input materials a_
+- **yksleets** (2019-01-08): 1) Some sort of a blueprint system, maybe along the lines of Factorio where you have to build it once but then you can make a copy to a book you can plop down items from as needed. I like to build my core the same way each time so having an easy way to recreate it woudl be amazing. Maybe even a way 
+  - _Context: True, I was thinking it more as an addition if I need 25 beds for the new sleeping wing as a oneoff, the bread and butter smelting, bar creation and s_
+  - _Context: that's why we have the amazing linked stockpiles_
+  - _Context: you don't want gnomes to haul the logs, then the planks to the other side of the base just because the sawmill is busy right at that second, and then _
+- **.elfu** (2020-03-04): But why would you want to do that, every time a game loads? I really wouldn't want my gnomes to suddenly change everything they do at the start of the game
+  - _Context: Once a unit is spotted, the check should stop for the other side for that unit for X number turns time, combat should skip check completely for x turn_
+  - _Context: Could be worse, I could be a UI guy instead_
+  - _Context: well, if you can make a distance check between two units, just by looking up their coordinates in world, then I'm thinking that could be faster_
+- **tacyn.** (2019-01-03): Have you considered using behavior trees for the ai? For example, this free library at https://github.com/BehaviorTree/BehaviorTree.CPP. It allows loading behavior-trees as xml at runtime. With this, the AI could be moddable. And even without making it moddable, this might make it easier to develop 
+  - _Context: The gnome behavior in regular play is probably simple enough for a hard-coded version to be manageable. But once combat is introduced, it could get me_
+  - _Context: yes i know, and when i get there, which should be within the next half year, i might rewrite the whole gnome behavior_
+  - _Context: Well, I probably asked about the planned ai before._
+- **flash.1** (2018-03-24) [2⭐]: Is modding even implemented yet?
+  - _Context: will mods be able to affect blocks?_
+  - _Context: or do they tend to work on stats and sprites_
+- **desolator_x** (2018-05-27): Eh, if you're going to have nobles and stuff in the game having special clothing needs etc for them would make sense. If you just have common gnomes I don't really see a reason to have clothing needs. Having their needs condensed into bedroom wealth should be good enough
+  - _Context: also, looking at the barn building, I think it'd be nice if the game would automatically add the needed floors when you're building up the walls_
+  - _Context: would be nice if you could see where the selection sprite for each tile is so you can count if needed_
+  - _Context: Could gnome-needs become active over time? For example at the start there are just Hunger, Thirst and Sleep,  but at certain kingdom sizes new needs l_
+- **enukar** (2018-08-24): I might be too greedy suggesting this. But is there a chance you make a creature editor? Like a ingame or mod tool that lets people create they own animals/creatures in the game, and add their own sprites.
+  - _Context: Also, white letters in light gray background hurts. https://gyazo.com/5231d755f0c666a2214edfeb51c51204_
+- **desolator_x** (2018-04-29): I don't, it's far more fun to write epitaphs for fallen gnomes, it's just a shame that it's really hard to build a proper monument to the fallen since there's no mausoleum / coffin option that you can set inscriptions on
+  - _Context: suggestion: cemetery, gives stone masons something to do, effects dwarf happiness (maybe 50% reduction in the sads when a gnome dies if they are burie_
+  - _Context: I don't really see the point, those who don't want to save scum won't, and other people will. Ironman mode doesn't seem like a priority_
+  - _Context: Maybe an implementation of a "Hardore" or "Ironman" mode.  No saving (other than to quit), but in turn, increased rewards etc_
+- **_dreddos** (2019-12-24): Manable stationary ballista turrets with different bolts (higher the metal the more accurate + dmg) with bolts for accuracy, bolts with possible aoe splash etc If adding dragons this could be a good counter to them
+  - _Context: I have a suggestion about straw use, since we have separation between straw and hay.Unlike hay, animals generally don´t eat straw, but straw can be us_
+  - _Context: We need working ranged combat first_
+  - _Context: <@141075323990179841> , fully agreed with you._
+- **flash.1** (2018-05-08): Or... and hear me out now, it's getting wild... we could wait until the base game is done at like the level of Gnomoria, then play it, then think about what's really missing.
+  - _Context: If we covert my gold stack on Runescape to USD I could hire 200 people for Roest to make DF 2.0 with 3D graphics._
+  - _Context: gogo make sprites, now that Roest has too much time to work on this you need to step up your game man 😛_
+  - _Context: How about building a rocket later on to settle the moon?_
+- **jyeguru** (2018-04-23): So, you have to manually manage it at the start, then you get some tech/etc that allows it to be automated (maybe at a slight resource or efficiency cost)
+  - _Context: I just want to gas goblins or set unwanted gnomads on fire. Am I asking too much <@280266293490221056> ?_
+  - _Context: not if they have eye patches_
+  - _Context: Well not necessarily CO, but maybe gas or fumes?_
+- **hughheggen** (2019-09-29): We should really add pancakes to ingnomia
+  - _Context: I think gnomoria had an overcomplicated cooking mod, we could just copy that_
+  - _Context: But, I want to make my own food sprites_
+  - _Context: Can still do that. Just... copy part of the game system. With the wheat and stuff._
+- **vorg9431** (2019-01-17): Maybe pressing/holding L-Shift or L-Alt while draging to switch to z-axis or using the scroll wheel?
+  - _Context: A method of harvesting/felling a selection of multiple z levels at once, maybe like 5 max_
+  - _Context: simply need to add "MultiZ": true,  to the entries in actions.json_
+  - _Context: Gnomes carrying food with them, only a small amount but it would save from them constantly having to walk back and forth to get food_
+- **desolator_x** (2018-04-26): I think that all of this should probably be moved to a mod, instead of the base game xD
+  - _Context: <@280266293490221056> Now I want a special title for this discord "Voice of Reason" xD_
+  - _Context: Just call them goblin oysters. Anyone who knows what land oysters are will get it._
+  - _Context: look if you can have goblin sausages you can have goblin meatballs_
+- **hughheggen** (2018-06-06): OK, so I've made a flat window, a large stone column, clear glass block, stained glass block, cobble stone, stone and wood halfsies block and a 2x2 gnome face wall relief
+  - _Context: while we're at it why don't we just add wind power_
+  - _Context: or should I just steal them from the fortress mod_
+  - _Context: is someone else going to add that_
+- **Deleted User** (2019-08-01): Are you planning on having auto sell (like Gnomoria mod) or some options with previously selected items to sell?
+  - _Context: Or at least a check-box to determine which stockpiles would show on sell tab, if that makes things easier on your side/_
+  - _Context: An autosell would come handy (although, I'd personally think this is preeeetty low on my wishlist priorities)_
+  - _Context: and it's better than in Gnomoria because it only takes stockpiled items_
+
+## Performance/Technical
+
+- **binaryalgorithm** (2018-11-29) [9⭐]: mainly, I want to see all the lists with minimal scroling so I make my windows bigger
+  - _Context: when windows are resized, save the position/size when that type of window is open again_
+- **bananamonkeytaco** (2020-06-26) [8⭐]: has anyone suggested to have an end battle recap? Something that would just state all injuries taken as a result of the battle? Would save some headache over checking the battlefield for gnome limbs/blood or the troops individual health pages
+- **Deleted User** (2019-08-11) [4⭐]: Is is possible to allow existing trees to be a part of groves? I cannot create grove areas on top of existing trees, so I have to cut down an apple tree, to plant one in the same spot and lose precious growing time!
+  - _Context: Dropdown menu on to assign Workshops to gnomes should list in names alphabetical order, just like Population tab. Imagine having 200 gnomes and scroll_
+  - _Context: yea i'll need to use a combobox with input so you can limit the search_
+  - _Context: Do not compare it with the predecessors._
+- **chaosjester** (2018-05-05): I beg forgivness, I've been reading a bucket load of Roomcarnage (DF story thing, epic, go google it) and have a few suggestions. I haven't gone through to see what other folks have sugessted so Imma just go ahead and put it out there  Something like Foul Fog; I love the aspect of having an almost e
+  - _Context: Well... perhaps for the underground, a thought occured to me though, instead of having fow for above ground, how about a 'map' over look, as a thought_
+  - _Context: <@161788523127635968> When you said Space Elevators I got a distictly kittensgame vibe.  Please add a catnip forest._
+  - _Context: Its all good man. My thought was mostly due to PG, like as you explore shit kinda just *pops* up_
+- **desolator_x** (2018-01-16): Something that came up in a DF stream I was watching: will we have the ability to specify what our art should be about? It'd be amazing to be able to dedicate our statues to stuff that's important or be able to add names (mostly for people streaming, so they can make statues for subs or something)
+  - _Context: oh, and a copy paste option between workshops, or the ability to have a default list of jobs that you can load into workshops or something would be ni_
+  - _Context: oh god yes, please have blueprints so that you don't have to do the same layout for bedrooms and the like manually every game / migrant wave 😄_
+  - _Context: yes, that would be an awesome feature_
+- **chaineddjinn** (2019-10-28): <@202164327606648841> Sorry just got back to this.  The problem with that "cost" is it's easily subverted if your clever. I put most of my people in a group and start training them asap, after initial set up.(1st day forging/logging/mining) I put 1 miner, farmer and anyone non-essential into 2 group
+  - _Context: obviously you don't need to be without workers doing certain jobs. I'm not that dumb that I'd be without miners, ever (or anything else essential for _
+  - _Context: Not only is this great for defense but also hunting, as animals get thirst and run the gauntlet, they alert dwarves so I can move 1 ranged squad in fr_
+  - _Context: <@202164327606648841> PFFFT! Ummm, I have no idea how you built your fort... but I haven't implemented a single automation and I believe I have yet to_
+- **desolator_x** (2018-01-30): Yeah, and there's a problem right there with a 3x3 and unstacked tiles: if you need / to store a decent amount of 4-5 materials it's really hard to get that organized in a single storage area. It'd be a lot easier if you could have one workshop feed off of, say, 3 stockpiles who're all 3x1 and only 
+  - _Context: That's getting too complicated. Both for reost to implement and debug as well as  for players to use. The feed stockpile is just meant as a buffer for_
+  - _Context: well, it's mostly for things like ores and gems and such, I assume there's going to be quite a lot of them, and a 3x3 stockpile might not be able to h_
+  - _Context: well, it would save some issues for people who don't want to make a million stockpiles for all the different goods. On that note: how many stockpiles _
+- **desolator_x** (2019-05-12) [2⭐]: basically everyone here except for you knows that this is going to be a Gnomoria+ game where maybe, if Roest is willing or the modding community very active, we'll get some extra depth
+  - _Context: ok but logical you can build thing first AFTEr you dig really down........ there should be option to build things before that even when you anly build_
+  - _Context: to the "stone" discuss  forageable surface stone that is rare is an good solution and as an alternate solution or recipe we can use clay-stones that w_
+  - _Context: i like both those ideas!  missing for when a gnome is dead and no one knows it; dead if/when someone discovers the body._
+- **.lld** (2018-07-10) [2⭐]: Suggestion: a Troubleshooting channel.  Right now bug-reports and troubleshooting are kind of a mixed bag.  If we have a troubleshooting channel, we can help new alpha and EA testers troubleshoot issues and develop the tribal knowledge to quickly help new players.
+  - _Context: You should use the resources you mentioned. It would be dumb to try and host all of that yourself. There would be no benefit at all..._
+  - _Context: so if you're that paranoid then just backup your wiki every hour and if reddit at some point says they won't have free wikis anymore just move it else_
+  - _Context: why wouldn't you want to have ownership of all your IP/brand/assets_
+- **itsadraelbaby** (2019-01-23): The problem with Gnome Golems in Gnomoria tended to be that they could do everything Gnomes could do, with very little investment, and didn't have to eat or drink, which meant you could eventually replace your entire population with them and coast on that lack of needs forever.
+  - _Context: Having them be limited in scope but still not really have much in the way of needs sounds neat, but what about having to have a dedicated team of Gnom_
+  - _Context: I suppose, yes, but i feel like we need a middle ground, too._
+  - _Context: I'd think the addition of golem based magical bionics would be awesome, upgrading gnome stats. Then maybe having tiers of golems, going from say, haul_
+- **desolator_x** (2019-05-27): That's a pretty good idea. Added to that I'd like to see something like a little counter behind the name of each gnome to see how many jobs they currently have active, would be handy if you don't want to use preset professions but don't want to overload individual gnomes
+  - _Context: One more tiiiiiny thing, instead of having to click every tile in the population window one by one, allow "painting" over then by just holding the mou_
+  - _Context: Implement the gnome skills tab with the overall population window, so we can assign jobs from the pop window and see what gnomes have what jobs, what _
+  - _Context: Along with that, another QOL thing would be with the dropdown in the gnomes skill tab, have a small popup when hovering over a preset that tells you w_
+- **Deleted User** (2019-08-14): SUGGESTION: Add checkbox option to stop milking pasture. I only want my pasture for meat, do not want gnomes wasting time going there to milk animals.
+  - _Context: Suggestion: Indicate or standardize the side of workshops that can link stockpiles. Each workshop has one different side that can link, and  it makes _
+  - _Context: Or maybe I have bad memory. Or could be both_
+  - _Context: And also just 1 high versions of it, so I can have nice vertical wood walls_
+- **maveross** (2021-01-12): In the case where you need a table nd a chair built, instead of one carpenter queueing up both, you can have one make the chair and one make the table. Donno if that's a level of automation that should be allowed, but I would like it
+  - _Context: I've set up multiple workshops to do a decent number of things. I think it would be particularly time saving when amping up production of a certain it_
+  - _Context: In the sawmill, I'll create a set of craft to 20 for each type of plank, then another set of craft to 50, and another set of craft to 100. So that I'm_
+  - _Context: Having multiple of the same type workshops that have "craft required goods" toggled spread out the load so  one workshop isn't being focused would be _
+- **tacyn.** (2018-10-15) [1⭐]: The designation would be the same as other rooms. Comparable to dormitories, which allow gnomes to use the beds build within them. The crafting screen is the same as for single workshops, with the difference that it can do everything the workshops within the designation can. The orders created in th
+  - _Context: I think it could combine my idea of attaching workshops to stockpiles. instead of stockpiles, the management desk_
+  - _Context: we need crafting options for the workshop it self, and a "global" option that's shared between all crafting stations of that type right?_
+  - _Context: because if it can collect and hold rain, that could be a problem for people controlling running water into their bases. I know with Gnomoria, I dig a _
+- **der_kobold** (2020-12-30): a thing that could be handy   no more 1:1 drop of rock or soil when destroying a block   The amount of littering of those materials get insane over time when you dig done   Maybe a drop chance of 10% or something instead? Would help to keep the world a bit more free of waste stockpiles and overall i
+  - _Context: Not dead too? Would think they would be quite sensitive regarding water ^^   But when there's no magma in the bottom of the map what else is currently_
+  - _Context: Then it's going well for the tools  But something is eating my weapons   Maybe also caused by the long game time? I'm now in year 10_
+  - _Context: ah ok the prospector gets rid of stones, good to know ^^   ok, I think I found the reason why armor and weapons arent adding up.  it seems like weapon_
+- **Deleted User** (2020-02-05): - I think that 2x leather straps per hide is too low, or that only 1x hide per cow/yak butchered is too low. One of them should be increased. I've been trying to gather leather straps and I'm on year 4 and could only get a meager amount of leather while also trying to grow my herd. Or at least scale
+  - _Context: -On the new gui, the ability to rearrange stockpiles  priority with dragging would be awesome. On bigger and older maps with lots of stockpiles, click_
+  - _Context: -Why butchering goats doesn't yield any hide/leather? It could give less than cows/yaks, but goat skin/leather is a thing and ppl use it (it is even t_
+  - _Context: - Option to chose order of priority of pastures for Auto butcher excess livestock, or use pasture priority for that._
+- **flash.1** (2018-05-15): So we either need a routine that automatically defines pastures inside fences or we need the option to freely define pastures ourselves and put fences around them
+  - _Context: but you had me thinking, you know i want to implement a mission system, where you just select a few gnomes and send them on a mission, be it diplomati_
+  - _Context: the fuck am I looking at 0.o can we please go back to the normal 2 genders and people with a mental disability?_
+  - _Context: do you think animals should be magically contained on pastures or should they be able to wander off and need fences_
+- **Deleted User** (2018-07-11): hello im new here and i played my first hour on ingnomia and this is my first feedback: 1.i needed 10min to prepare a world(add tools, animals, food, drinks etc) it can be great add a starter pack automatically.   2. the night is too dark it is hard to see the blocks. 3. the stairs,  It would be gre
+  - _Context: Suggestion: Stockpile having a max of more than 100 per item, and/or the ability to set all items at once.  Either to $Number or Infinite_
+  - _Context: <@204036338888998912>  An all at once would be a good tool for stockpiles. Saves a bit of effort_
+  - _Context: The natural 100 item limit confuses me with my massive yet empty dumping ground stockpiles._
+- **prassel** (2018-09-01): -make stockpile settings window open when you designate a new one. -(resuggest) option to toggle show all items when filtering so you dont have to edit every time a new object is crafted. -ability to set a position in the stocks list in the stockpile setting (so you dont have to open that every time
+  - _Context: i'd like to see an option to toggle showing every item when you filter for stockpile so i dont have to go in a dozen time and edit it when i craft new_
+  - _Context: some things come naturally for you cause you know all the workings, for me this (adding a single skill via sheet) could have been something that just _
+  - _Context: 0.4.0 - stockpiling, tiles with containers are handled first - job queue: craft# the number to craft will count down now - job queue: craft to, jobs w_
+- **chacina7810** (2019-03-10): A system of achievements for the noobs to know the progression and for the players to complete all the possible things of the game. And up to challenges ... 300 of  such an item crafted, etc. It could have an option to show or hide the achviments pop-up
+  - _Context: I feel that when I craft something and put any material into the workshop it is harder for the gnomes to complete the craft than when I put in a speci_
+  - _Context: well, one thing that could be nice is the ability to start a new world/game with some of the gnomes from a previous world/game_
+  - _Context: especially for streamers, but also if you want to have this idea of a world where you have different settlements_
+- **chacina7810** (2019-03-11): I do not think it's particularly a good idea for one game to affect the beginning of the other... But if you believe it will improve the game scene and for everyone to be happy it could be a wonder (haha 😅 ) <@177094350201683968> that gives you a backupsave, helping in the same run. Dunno
+  - _Context: It could be as simple* as an option to retire the game and the gnomes get tossed into a pool and can random into the next games. *simple to write, I h_
+  - _Context: I think you should need stone.  Either add some on start or have surface stone_
+  - _Context: Agree wih Lord Hugh here : in my opinion stone is needed. I mean how do you cut a log to become a plank. You need somehig at least stronger than wood._
+- **vanda1475** (2019-08-25): Also would love to be able to exclude certain food items from the gnomes eating menu. It would be really helpful for early game if gnomes wouldn't eat the apples I want set aside for fruit wine. It could be a tab in the kingdom menu since it's kinda like a "Law" of the kingdom. "Thou shall not eatit
+  - _Context: Although maybe it could just be a function of the linked stockpiles when that is working that nothing can be consumed from a linked stockpile._
+  - _Context: Had an idea about the animal overpopulation. What if the females, once an adult, aren't able to be pregnant for 8-10 days. That'd help keep the very n_
+  - _Context: i now limit animals to 1000 per type, also animals only get pregnant when on a pasture, so you can control it by having no mixed genders on pastures_
+- **korvar** (2020-07-03): Suggestion: Different levels of Automaton brain. First level Automatons can't act independently, and can only do very basic tasks like hauling.  So maybe a builder can get the automaton to load up all the stuff needed for a new workshop instead of fetching each thing individually.
+  - _Context: I would *never* have overlooked it and then thought it was a good idea, no.  Definitely not._
+  - _Context: Higher level Automaton brains allow for more independent operation, until the Automaton is essentially a fully-functional Gnome._
+  - _Context: What about modular automaton limbs_
+- **flash.1** (2018-05-30): That idea is nothing that should make it into release, though. I just thought of it when I encountered the bug yesterday.
+  - _Context: My above-ground coal got me thinking. Maybe include some kind of shrubbery? That's what I at first thought, the bugged coal was. A non-passable growth_
+  - _Context: Could make for more interesting maps_
+  - _Context: ^I think that'd be nice for different biomes, kinda like the evil environment from DF?_
+- **korvar** (2020-04-13) [1⭐]: Another suggestion: if you click on an under-construction workshop, and it's missing something, it'd be nice to be able to find out what is missing.
+  - _Context: Suggestion: Switch up how a workshop under construction looks like. Right now it lights up a few tiles, indicating, that something is there. To actual_
+  - _Context: Although that might be difficult because items required for construction are not delivered to the place, until all of them are available. Which means _
+- **condac** (2021-01-25): We really need some kind of event log, when you find all your cows dead you want to know why. Same with gnomes, when you find one dead on the floor there is nothing that tell you what have happened
+  - _Context: I don't know how the development is going but, in the option to hide the walls, you could put only a part of it, very low, just to differentiate where_
+  - _Context: Another suggestion is also to overhaul the trade price of coins and bars. I have tin bars that trade for ~100 but a tin coin trade for ~30, blacksmith_
+  - _Context: Yes that particular bug i found out and also found the issue on. But during battle or animal encoutnters or whatever The odds of seeing what hapens is_
+- **.elfu** (2020-03-04): But why would you want to do that, every time a game loads? I really wouldn't want my gnomes to suddenly change everything they do at the start of the game
+  - _Context: Once a unit is spotted, the check should stop for the other side for that unit for X number turns time, combat should skip check completely for x turn_
+  - _Context: Could be worse, I could be a UI guy instead_
+  - _Context: well, if you can make a distance check between two units, just by looking up their coordinates in world, then I'm thinking that could be faster_
+- **drumoriginal** (2018-05-31): on the point of miasma, please don't add it, it is such a exaggerated feature
+  - _Context: for diseases I think you are better of with a wow system, instead of cellular automaton_
+  - _Context: I think a miasma like object could be useful for modeling the spread of disease_
+  - _Context: if you want to see a nice example search Conway's Game of Life_
+- **desolator_x** (2018-07-12): <@456226577798135808> 1) there should be easy / normal / hard starts that give you what you need 4) sounds like a hardware issue, what specs do you run?
+  - _Context: <@456226577798135808> hello i would suggest you make a new line for each point instead of a wall of text 😬_
+  - _Context: uh, should be fine then, so it's probably a driver issue_
+  - _Context: <@202164327606648841> i have 2500k @ 4.5ghz and r9 290x and have bad fps too on normal size map_
+- **ext3h** (2020-12-04): That's one part. Also need to implement game rules which *severely* reduce the number of items and creatures in the world. No more 2k chickens and 50k uncollected eggs.
+  - _Context: If Chicken = 10, then Merge into 1 mega chicken_
+  - _Context: Another point to solve before that is savegame sizes. can't afford to waste several GB of disk space on save games on a tablet or smartphone._
+  - _Context: That should work for gnomes also._
+- **desolator_x** (2018-05-27): Eh, if you're going to have nobles and stuff in the game having special clothing needs etc for them would make sense. If you just have common gnomes I don't really see a reason to have clothing needs. Having their needs condensed into bedroom wealth should be good enough
+  - _Context: also, looking at the barn building, I think it'd be nice if the game would automatically add the needed floors when you're building up the walls_
+  - _Context: would be nice if you could see where the selection sprite for each tile is so you can count if needed_
+  - _Context: Could gnome-needs become active over time? For example at the start there are just Hunger, Thirst and Sleep,  but at certain kingdom sizes new needs l_
+- **desolator_x** (2019-10-16): eh, based on what's currently in the game and how gnomoria handled it, the idea of 1k bugs doesn't exactly appeal to me. Granted, if you say we'll have enough AoE damage by the time we're supposed to be digging that deep my argument obviously is invalid 😛
+  - _Context: My problem isn't less of the amount than how they spawn. I didn't even dig that tunnel and now it's just a permanent, beetle-and-zombie-filled deathtr_
+  - _Context: is every mob already charged at the start of the game ? or only when you open a cave ?_
+  - _Context: I can understand this coming from someone who doesn't follow development but you two <@202164327606648841> <@211419446391209984> disappoint me, it's b_
+- **reaperofbunnies** (2019-11-04): Suggestions as of todays playthrough -Max worldsize to 500, seems to save fine -More food options, nothing i found yet to use vegetables for (if im wrong educate me)  -Ability to hunt, i currently have hundreds of chickens but can only slaughter 20 -Some form of resource dislpay on screen, show food
+- **dinosaure.plz_nofriendrequests** (2020-12-24): I'd admit that the tree colour can be changed to blue, that has no gameplay change. Tree structure do have a gameplay impact, that's the kind of change that changes a world from "boringly standardized result" to "hey, I didn't expected that tree to grow as high!". Not a primordial feature, but somet
+  - _Context: Could you keep level encumbrance not checked? (please?)_
+  - _Context: <@!465569148798238720> they are a lot better than games not levelling their assets ; and they are pretty cute as they are today, this suggestion would_
+  - _Context: you want procedural tree layouts so you need sprites that can be stitched together at different locations, all possible but takes a talentend sprite a_
+- **dinosaure.plz_nofriendrequests** (2021-01-03): Suggestion: multithread the game. At any point in the game, there is not much than 5% use of global 3700x cpu, indicating single core use. Maybe related: unleash the rabbit power, as it's actually barely more than tortoise x2.
+  - _Context: Well, there is multithreading where applicable. Simulation and UI are running in fully decoupled threads. Pathfinding is running multithreaded. It's j_
+  - _Context: If it's 3x3x3, and you had to load the incinerator from the top, it could be a decent rationalization to have it incinerate more material simultaneous_
+  - _Context: Changing the "EatValue" of the cooked foods to be the sum of their component foods+10, to more fairly compensate for the time cost and ingredient cost_
+- **dinosaure.plz_nofriendrequests** (2021-01-04): I only wanted to see how others were playing, and as Discord accepts users to stream (even if not recording), that was the idea. I'm not comfortable enough to talk while streaming, and that would have zero-pro stream quality.
+  - _Context: Actually no, it's not even the seeds which are out in the world. It's the seeds which are already in the stockpile (on the floor), which are causing t_
+  - _Context: Just thought it would be interesting to see others playing, and multiple streams are ok on the same room._
+  - _Context: Starting a game on a more open platform like Twitch, and then announcing the stream in the <#447757383985266700> channel or alike is fair game though_
+- **desolator_x** (2018-04-29): I don't, it's far more fun to write epitaphs for fallen gnomes, it's just a shame that it's really hard to build a proper monument to the fallen since there's no mausoleum / coffin option that you can set inscriptions on
+  - _Context: suggestion: cemetery, gives stone masons something to do, effects dwarf happiness (maybe 50% reduction in the sads when a gnome dies if they are burie_
+  - _Context: I don't really see the point, those who don't want to save scum won't, and other people will. Ironman mode doesn't seem like a priority_
+  - _Context: Maybe an implementation of a "Hardore" or "Ironman" mode.  No saving (other than to quit), but in turn, increased rewards etc_
+- **.lld** (2018-05-12): Which honestly if CO2 doesn’t build up, is a pretty peaceful way to go.  I hear a garbage bag of helium is a popular suicide option.  You breathe normally and never suffocate because co2 never builds up
+  - _Context: <@204036338888998912> what would happen if a magma proof set of doors was created? How would that go down? Espcially if the gnomes lived under ground?_
+  - _Context: Embark settings would benefit from a template save option, if the setup is time-consuming or fiddly._
+  - _Context: https://images.homedepot-static.com/productImages/4cd43ab8-2f52-483b-b145-97c41c0a8821/svn/dr-earth-plant-flower-fertilizer-718x-64_1000.jpg_
+- **vorg9431** (2019-06-04): I did set it to the 1080 size of my screen with borderless and it does cover te task bar. Looks full screen. Maybe that was a factor in the crash I reported in bugs?
+  - _Context: Haven't played in awhile and just fired it up. Is there going to be a Full Screen option for video settings?_
+  - _Context: full screen is problematic, the framework I use has a bug/feature that makes it misbehave when the window is overlapping the task bar, you can set the_
+  - _Context: Normally play the game filling half a screen with some other program in the other half, defaulting to borderless and fitting screen would ruin that 😦_
+- **lokkiser** (2020-12-05): Manual refresh save list? I have to restart game to load list (yeah, savescumming). Also autosave is not listed at all, so it would be nice to be able to load it.
+  - _Context: yea, i know, it's high on the list, and now on Steam_
+- **.roest** (2018-06-29): right now all jobs are checked because i don't want to go to the screen and check something when i test some feature, eventually they'll star with everything unchecked
+  - _Context: Currently the default job is miner, but all jobs a checked.  You have to assign another job role and back to miner to get it to stick_
+  - _Context: Having all jobs checked is good.  It just looks like they are miners.  It’s more of a ui bug/ quality of life thing._
+  - _Context: More verbose info in the Job Queuem to differentiate between Repeat/Crat#/Craft to without clicking on each entry._
+- **.alch** (2019-05-28): Click on an existing build job and see what the job is waiting for, E.g if you're building a workshop and don't have a chair, it should say "waiting for chair"
+  - _Context: "Craft-to" jobs don't take the material type into account, so having a system of always keeping 100 planks for every wood can't be done atm_
+  - _Context: that's a bug report, not a suggestion 😛_
+- **.roest** (2018-05-29): world size near max requires a good gpu right now, there's still one thing i can implement to help with that, guess i need to do it sooner than i wanted
+  - _Context: Suggestion: In the "mine down" menu, integrate a tool for block removal. Also, the stairs-down tool doesn't automatically clear the block above. The s_
+  - _Context: Unsure what is happening under the hood, but during world creation Windows thinks Ingnomia is not responding.  I assume you are locked in world creati_
+  - _Context: but I am also getting 5fps, I think I need to update drivers or something_
+- **prassel** (2018-07-13): But amd 290 and 380 cards are just 7900 chips with more ram and some features, and should handle this game fine, and 2500k is not that slow yet
+  - _Context: now if you get constantly bad fps it could mean the shader processing is slow on your grpahics card, the world is too big so not everything is in grap_
+  - _Context: other than that i have no idea than ati/amd is just bad for gaming and it reinforces my dislike 😃_
+  - _Context: Btw this game "works" on a 5th gen i5 mobile integrated gpu which i think get 1gb shared vram_
+- **styfrit** (2018-08-25): it don't appear so you place the zone on the floor for sand But wall down on dirt make the wall appear at the top of the tile it should be
+  - _Context: the upper lines are exactly the same , so its not the floortile from above cause that should be a bit higher_
+  - _Context: the functionality of the walldown is still not quite there, it felt somehow off yet looks right so i tried to put it in a picturestory 😛_
+  - _Context: can you try to show your wallhide with fow? in the corner?_
+- **.alch** (2019-11-21): I told you, my laptop is a beast with a puny fan. It could keep a family warm during the nights of winter if it ran ingnomia uncapped
+  - _Context: I don't get the reference and I've been reading science fiction for most of my life, work in IT and have strong opinions about the importance of space_
+  - _Context: Lower (user configurable) FPS when paused option_
+  - _Context: Dont need a virginity card anyway ;)_
+- **arieriel** (2018-03-12): I suggest an Auto Save feature
+  - _Context: Make idle Gnomes consume alcohol, tobacco and chat to one another in a hall to increase happiness_
+  - _Context: May be fun to have a penalty for not tasking gnomes like they burn through consumables faster._
+  - _Context: well how do you know if everything is getting done then?_
+- **vorg9431** (2019-01-17): Maybe pressing/holding L-Shift or L-Alt while draging to switch to z-axis or using the scroll wheel?
+  - _Context: A method of harvesting/felling a selection of multiple z levels at once, maybe like 5 max_
+  - _Context: simply need to add "MultiZ": true,  to the entries in actions.json_
+  - _Context: Gnomes carrying food with them, only a small amount but it would save from them constantly having to walk back and forth to get food_
+- **Deleted User** (2019-10-15): i can suggest a limit of spawn number of each beetle nest as well as a limited number of nest at the same time
+  - _Context: this should avoid the risk of fps death of worlds_
+  - _Context: Yea, that was a complaint I had. Accidentally expose a cave system, you pretty much had to light all of it up or face FPS death._
+  - _Context: the only way i knew in gnomoria was lava. But the time needed to install the system was enough to make the game die_
+- **reaperofbunnies** (2019-11-03): please prioritize save system to save 1k size or limit size to savable size for now
+- **.alch** (2019-05-29): Idk if that's a bug or just an oversight, or could just be intentional
+- **sirmushrooms** (2020-08-30): awesome!! i cant wait, and yeah i understand i dont know the workings of doing what your doing but keep it up 🙂 ill keep posting bugs and trying to help when i can
+  - _Context: would you consider a co-op building on a single map? like they host the game and a friend can join?_
+  - _Context: yes, i want that, i even implemented some basic networking stuff back then but it's on hold for now_
+  - _Context: that works, just had a crash and it looked like i was back to where i was_
+- **.alch** (2019-01-19): It was besides two workshops, both of which were deconstructed.   Had some crates on it, which were deconstructed. Then i removed it when it had nothing in it
+  - _Context: An autosave feature would be a nice addition_
+  - _Context: I can understand, though I'd imagine it wouldn't be much help when I don't even have a save and the action I did wasn't anything out there_
+  - _Context: xD Decided to work on coursework after that crash, I should probably thank it for that._
+- **.alch** (2019-07-30): What about having stocks in the top left/right of the screen 😦
+  - _Context: Or have it be the job of someone to count all the items in each stockpile like in at least one of them?_
+  - _Context: I don't see a problem with a counter of how many you can make. It's a good quick look tool that shows how your stocks are doin_
+  - _Context: When choosing to build items/storage, have a number count of how many of that item you can build_
+- **hughheggen** (2018-06-13): Enemies should be able to destroy fences
+  - _Context: Will spiderwebs do anything?  Will they slow movement or give silk if harvested?_
+- **.alch** (2019-06-23): A delete save option from the load menu
+- **hughheggen** (2018-04-06): I could send them little frowny faces
+  - _Context: They should suffer for this atrocity_
+  - _Context: (But don't forget to save the bones or you won't be able to make cloth)_
+  - _Context: no? Haven't played for a while_
+- **Deleted User** (2019-08-01): Are you planning on having auto sell (like Gnomoria mod) or some options with previously selected items to sell?
+  - _Context: Or at least a check-box to determine which stockpiles would show on sell tab, if that makes things easier on your side/_
+  - _Context: An autosell would come handy (although, I'd personally think this is preeeetty low on my wishlist priorities)_
+  - _Context: and it's better than in Gnomoria because it only takes stockpiled items_
+- **mcphisto2051** (2020-12-16): a menu thats a little responsive... e.g. pressing save shows a message: saving, and afterwards successfully saved
+  - _Context: or make a switch for it if to automatically get back or not_
+  - _Context: not automatically getting back ingame_
+- **.roest** (2020-12-02): we actually have sprites for that but it's a bit harder to implement with pathfinding and all that
+  - _Context: Take wood scaffolds and stack them on top of each other_
+  - _Context: Proposal: Remove the Ingnomia floating text._
+
+## Social/Religion
+
+- **fatmck** (2019-10-01): Suggestion for Needs / Mood  Just read the wiki and read about Needs. Beside hunger, thirst and sleep I would add comfort and satisfaction. Propably they are more moods then needs, depending on how mood will be implemented into the game.  Comfort and satisfaction wouldn’t be necessary at the beginni
+  - _Context: Need a better system than that_
+  - _Context: Gnomoria had happiness, just no way of knowing that it existed until a gnome refused to work._
+  - _Context: I never noticed it so it might as well have not had a happiness system_
+- **cannonball_k** (2018-05-06): Pretty sure this has been suggested but gnomes riding yaks?  Trainable yaks that fight and attachments for their horns like axes or saws.  Also use them as labor animals like how gnomes have wheelbarrows, yaks can have wagons.  This could require training or it couldn't.  Some kind of book system wi
+  - _Context: I like the idea of yaks as beasts of burden_
+  - _Context: It all sounds pretty damned good there Cannon! Doing some more thinking obviously mood effects will come into play woth time, but how about different _
+  - _Context: I suddenly like you more I wish that were always the case... sometimes I have these neat ideas that just *fut* away at the worst times... BUT! Its oka_
+- **desolator_x** (2018-01-16): Something that came up in a DF stream I was watching: will we have the ability to specify what our art should be about? It'd be amazing to be able to dedicate our statues to stuff that's important or be able to add names (mostly for people streaming, so they can make statues for subs or something)
+  - _Context: oh, and a copy paste option between workshops, or the ability to have a default list of jobs that you can load into workshops or something would be ni_
+  - _Context: oh god yes, please have blueprints so that you don't have to do the same layout for bedrooms and the like manually every game / migrant wave 😄_
+  - _Context: yes, that would be an awesome feature_
+- **_ysabell_** (2018-05-14): why sacrifice the gnome children when there will be plenty of goblins to appease the gnomes' gods? yeah, maybe in the future we could capture gnomes' enemies and sacrifice them for some form of bonuses... obsidian would definitely be great for sacrificial altars, knives, etc... err... well,, if play
+  - _Context: I suppose one thing that might need looking at: Obsidian's value as a resource. In Gnomoria, by the time you have the tech level to actually make thin_
+  - _Context: Obsidian is far sharper than surgical steel, it's the only material we have (I believe) that can cut between cells instead of through them, though tho_
+  - _Context: Or allow lava/water to be 'bucketed' somehow to be brought to the surface/bottom to allow local obsidian creation ._
+- **dragonwrath420** (2018-05-18): The effect on enemies would be rather interesting and to add an option of a setting to make certain enemies stronger while in light (for the more diehard fans that like the challenges).  I like that though I would change the certain jobs requiring light to function to using the light to increase pro
+  - _Context: Another is that some can give a passive benefit such as allowing crops to continue to grow at night (since it was mentioned earlier that crops won't c_
+  - _Context: but back to the bees: I think the idea of hives/crops is a pretty good idea to limit the amount of hives you can reasonably build. (modders can add th_
+  - _Context: If light is just aesthetic, then permanent light sources are fine.  But, if light has a proper use that adds to the game rather than detract from it, _
+- **hughheggen** (2018-04-04): and divine favor could be like a tech level. to gain raise the dead spell, you might need to have 1000 favor with the dead god or something, so maybe sacrifice 20 goblins, 40 goats, 10 gnomes or 5 gnome children maybe?
+  - _Context: so I was thinking  about religion because praying could add to gnomish happiness, with praying done in a temple room for a bigger happiness bonus_
+  - _Context: temples could be a large multiplier to kingdom wealth, like the great hall, so players would be encouraged to add lots of treasure to it_
+  - _Context: temples could also have priests, which also improve happiness bonus_
+- **not__** (2018-05-03) [1⭐]: More pointless fluff is awesome.  There had better be a kickass icon for me to put on my desktop.  Maybe something 3D that been raytraced and rendered with god rays and shadows and all sorts of time consuming computationally expensive crap.
+  - _Context: I love the possibility of adding boats and travel by water. I'm wondering... if we do have the ability to trade with other colonies via water using bo_
+  - _Context: I'd just use a text icon that says "Click here for fun time"_
+  - _Context: And Troop-Transports to reenact D-Day_
+- **_ysabell_** (2018-04-27): I don't know if anyone has suggested this yet. The general happiness of a settlement could also affect (in part) the number of gnomes joining the settlement each season, as well as kingdom worth. Conversely, there could be a chance for gnomes with 0 or low happiness to leave the settlement. Perhaps 
+  - _Context: I don't think stuff like slavery necessarily leads to bad press (Rimworld has it, and no one complains about it). I do think that having something lik_
+  - _Context: I mean that as gnomes become more experienced, they need better furnishings and food quality to stay happy, with higher professions needing more to st_
+  - _Context: I thought kingdom wealth was a simple and easy way to increase population size but we could go by a development score instead. The more infrastructure_
+- **Deleted User** (2019-08-14): SUGGESTION: Add checkbox option to stop milking pasture. I only want my pasture for meat, do not want gnomes wasting time going there to milk animals.
+  - _Context: Suggestion: Indicate or standardize the side of workshops that can link stockpiles. Each workshop has one different side that can link, and  it makes _
+  - _Context: Or maybe I have bad memory. Or could be both_
+  - _Context: And also just 1 high versions of it, so I can have nice vertical wood walls_
+- **.roest** (2018-04-01) [4⭐]: Only gnomes with low int will have a religion
+  - _Context: Also our Gnomes could have their own religion_
+- **.roest** (2021-02-09) [5⭐]: ok fixed next update
+  - _Context: for clarity. I know it's not a game changing feature... and a little bit special, but for me building high and rich buildings is the most fun in this _
+  - _Context: 1x2 scaffolds are easier to delete_
+  - _Context: This would be my other suggestion: In gnomoria it was possible to remove scaffold "in one move from below"_
+- **slippuu4247** (2018-04-30) [3⭐]: __***The Teachings of Saitama***__ _Kill a goblin with 1 punch_
+  - _Context: I think everyone is missing what Ingnomia really needs.  Steam Trading Cards!_
+  - _Context: you should get a mark of recognition when you make 1000 goblin food items or make your first child sacrifice_
+  - _Context: yes, give free stuff that i can sell and buy other games with 😄 (jk i dont really care, and no if it takes time from development)_
+- **the_real_kyrros** (2018-01-11): Could implement some kind of one-shot creation of a scaffold/rope ladder, or even just allow gnomes to  moved up one level to an adjacent square occupied by another gnome (i.e. get 'pulled up')
+  - _Context: i JUST thought of something that might be AWESOME!  if the game world generates like DF...as in it generates an ENTIRE world and you only play a bit o_
+  - _Context: than a hack maybe, allow diagonal movement when trapped by "remove floor" jobs this should at least ease the problem_
+  - _Context: i know its a hard problem, but could be avoided by letting them walk on walls (maybe only allow when trapped)_
+- **flash.1** (2018-05-15): So we either need a routine that automatically defines pastures inside fences or we need the option to freely define pastures ourselves and put fences around them
+  - _Context: but you had me thinking, you know i want to implement a mission system, where you just select a few gnomes and send them on a mission, be it diplomati_
+  - _Context: the fuck am I looking at 0.o can we please go back to the normal 2 genders and people with a mental disability?_
+  - _Context: do you think animals should be magically contained on pastures or should they be able to wander off and need fences_
+- **saint_of_grey** (2019-01-22) [1⭐]: Shiny dude with a pick for an arm. Only works with stone, can't do anything else. Maybe give him a hub to sleep at when you don't have anything for him to do, so he doesn't eat up coal while you aren't mining.
+  - _Context: Does he have a Drow friend and the other arm with a hammer on it?_
+  - _Context: All in one build wall + floor either above or below job_
+  - _Context: Stuff like that for other jobs as well._
+- **yksleets** (2019-01-08): 1) Some sort of a blueprint system, maybe along the lines of Factorio where you have to build it once but then you can make a copy to a book you can plop down items from as needed. I like to build my core the same way each time so having an easy way to recreate it woudl be amazing. Maybe even a way 
+  - _Context: True, I was thinking it more as an addition if I need 25 beds for the new sleeping wing as a oneoff, the bread and butter smelting, bar creation and s_
+  - _Context: that's why we have the amazing linked stockpiles_
+  - _Context: you don't want gnomes to haul the logs, then the planks to the other side of the base just because the sawmill is busy right at that second, and then _
+- **hughheggen** (2018-06-01): Suggestion: being able to dig dirt and maybe sand without a pickaxe (just slower)  could be a good idea
+  - _Context: suggestion: work regions in to the job filtering eg. allow gnomes to be assigned to dining halls (or something), they will give jobs closer to that di_
+  - _Context: <@386915067477753858> have you ever dug a hole IRL with a shovel in ground that is 50-70% fist sized stones? unless it's pure dirt and half clay or sa_
+  - _Context: how about needing a shovel then instead of a pickaxe_
+- **desolator_x** (2018-05-27): Eh, if you're going to have nobles and stuff in the game having special clothing needs etc for them would make sense. If you just have common gnomes I don't really see a reason to have clothing needs. Having their needs condensed into bedroom wealth should be good enough
+  - _Context: also, looking at the barn building, I think it'd be nice if the game would automatically add the needed floors when you're building up the walls_
+  - _Context: would be nice if you could see where the selection sprite for each tile is so you can count if needed_
+  - _Context: Could gnome-needs become active over time? For example at the start there are just Hunger, Thirst and Sleep,  but at certain kingdom sizes new needs l_
+- **.lld** (2018-04-02): Does the engine have a gnome state for like prayer or illness?  I am thinking the gnome stops, displays a thought of like praying or puking.  This might be very extendable to modders.
+  - _Context: So you're not keen on having gnomish priests, alters or temples?_
+  - _Context: which would be most of them right?_
+- **vorg9431** (2019-06-04): I did set it to the 1080 size of my screen with borderless and it does cover te task bar. Looks full screen. Maybe that was a factor in the crash I reported in bugs?
+  - _Context: Haven't played in awhile and just fired it up. Is there going to be a Full Screen option for video settings?_
+  - _Context: full screen is problematic, the framework I use has a bug/feature that makes it misbehave when the window is overlapping the task bar, you can set the_
+  - _Context: Normally play the game filling half a screen with some other program in the other half, defaulting to borderless and fitting screen would ruin that 😦_
+- **hughheggen** (2018-06-27) [1⭐]: tame bear should end in a dead gnome
+  - _Context: I can't wait to tame dragons and make them heat the forges >:D_
+  - _Context: probably will need to make a tame difficulty per animal, make a tame skill or use animal husbandry, give it a fail/success chance depending on skill v_
+  - _Context: you could try and use a goat as bait_
+- **prassel** (2018-07-13): But amd 290 and 380 cards are just 7900 chips with more ram and some features, and should handle this game fine, and 2500k is not that slow yet
+  - _Context: now if you get constantly bad fps it could mean the shader processing is slow on your grpahics card, the world is too big so not everything is in grap_
+  - _Context: other than that i have no idea than ati/amd is just bad for gaming and it reinforces my dislike 😃_
+  - _Context: Btw this game "works" on a 5th gen i5 mobile integrated gpu which i think get 1gb shared vram_
+- **.alch** (2019-11-21): I told you, my laptop is a beast with a puny fan. It could keep a family warm during the nights of winter if it ran ingnomia uncapped
+  - _Context: I don't get the reference and I've been reading science fiction for most of my life, work in IT and have strong opinions about the importance of space_
+  - _Context: Lower (user configurable) FPS when paused option_
+  - _Context: Dont need a virginity card anyway ;)_
+- **sirmushrooms** (2020-08-30): awesome!! i cant wait, and yeah i understand i dont know the workings of doing what your doing but keep it up 🙂 ill keep posting bugs and trying to help when i can
+  - _Context: would you consider a co-op building on a single map? like they host the game and a friend can join?_
+  - _Context: yes, i want that, i even implemented some basic networking stuff back then but it's on hold for now_
+  - _Context: that works, just had a crash and it looked like i was back to where i was_
+
+## Stockpile/Storage
+
+- **dinosaure.plz_nofriendrequests** (2021-01-19): While I'm in the suggestion channel: - Have a "paint" mode, similar to the "Cut trees" one, but targeting farm/grove/pasture type helping changing seeds en masse - Have an "any" mode on farm/grove/pasture to let them accept any seed/seed(/acorn/pine)/animal available - Name the personalised "Set up"
+  - _Context: Issues page should stay reserved for stuff which has been adopted by a developer or modder. There is just no point to flood it with 10+ new "suggestio_
+  - _Context: Just to avoid further misunderstandings, when I said "threaded" I meant "one thread per suggestion".  Because most of these "one liners" are still far_
+  - _Context: Should get a "suggestions" page on github to comment on suggestions, just to help keep track of them and the discussions around each of them_
+- **fatmck** (2018-10-14) [1⭐]: I would like to suggest a kind of combat screen when we get enemies. During combat I would like to see all my in combat envolved gnomes on the left side with stats (equipment, health, dazed, bleeding, injured, blinded, on the ground, ..), the actual combat log in the mid, and all spottet and envolve
+  - _Context: but please make the width of windows borders a little wider. i have to be really careful to catch that area where i can resize the window... is it one_
+  - _Context: yeah but having 3 with 2 axes could be. so the third one could do other jobs, if he is assigned to them. well, i can live with it being the way it is_
+  - _Context: if a gnome carries something to eat and gets hungry, he should eat the food he is carrying. one of my gnomes just threw away his apple because of his _
+- **chaineddjinn** (2019-04-19): <@207714562437414912>  Sounds a lot similar to what the devs want to make with StoneHearth https://store.steampowered.com/app/253250/Stonehearth/  I agree, it would be interesting and add replayability. Let's get the game out of the ugly duckling stage first, there's a lot that needs to be cleaned a
+  - _Context: Backpacks would also allow for 'Expeditions' and the bigger the pack, the more they can explore. Maybe instead of 'waiting' for migrants you can go ou_
+  - _Context: Maybe eventual 'carts' could be made? Or different kinds of 'Pack animal' for longer distance... but I'm not gonna wager that far, keep things simple _
+  - _Context: I've also thought about backpacks and other things to allow gnomes to carry food and weapons_
+- **chaineddjinn** (2021-12-04): Another Idea I had was the ability to have more then one unit preform a task, like a cooperation feature; two working to build something would take less time then one on it's own. Also, if someone is gathering resources in a location with the intent to build, don't have gnomes stash stuff away just 
+  - _Context: <@!386915067477753858> Soil quality, hmmm 🤔  reminds my of haven & hearth, it had quality for just about everything but it was capped by a few factors_
+  - _Context: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F55%2Fd3%2F4a%2F55d34a0db8e93e2570ca1c4313dfa339.jpg&f=1&nofb=1_
+  - _Context: ¯\_(ツ)_/¯ Something to hope fordown the pipeline I guess_
+- **.elfu** (2020-04-01): You know, there's prospector, that gives the ability to at least process trash dirt and similar raw materials. When it comes to food items, these could get made into a compost or fertilizer, and in later game, maybe fuel for machines/golems. Other than that an item could simply decay into a pile of 
+  - _Context: Oh, by the way. Curious thing that I never understood in Gomoria. Why are containers, such as drawers or cupboards, not able to hold items in them? It_
+  - _Context: I remember in Gnomoria traders were my number 1 sinkhole for overflowing items. I'd rather have workshops and mechanics that allowed me to use these t_
+  - _Context: It doesn't change the fact that excess items get used. Make it use 10 seeds to make one bottle of oil, and you got yourself a pretty big sinkhole righ_
+- **_ysabell_** (2018-05-14): why sacrifice the gnome children when there will be plenty of goblins to appease the gnomes' gods? yeah, maybe in the future we could capture gnomes' enemies and sacrifice them for some form of bonuses... obsidian would definitely be great for sacrificial altars, knives, etc... err... well,, if play
+  - _Context: I suppose one thing that might need looking at: Obsidian's value as a resource. In Gnomoria, by the time you have the tech level to actually make thin_
+  - _Context: Obsidian is far sharper than surgical steel, it's the only material we have (I believe) that can cut between cells instead of through them, though tho_
+  - _Context: Or allow lava/water to be 'bucketed' somehow to be brought to the surface/bottom to allow local obsidian creation ._
+- **Deleted User** (2019-07-27): -Suggestion: Is it possible to add and option to stockpile limits to count items of any/selected materials?  For instance, I`m crafting statuettes from orange and pine planks (order with any materials, whatever is available) and I'm storing them at a stockpile but I don't want my haulers running the
+  - _Context: Just and idea of course.  what about zones that we can set for the gnomes we have. like rimworld has like you can only go to places in this designated_
+  - _Context: Like, the design can be an either or, the the internal option for stockpile? Would be possible to have and stockpile with material limit and other wit_
+  - _Context: Hmmmm, let us think about that a little more. I'll check which would be more useful in my usual game play and lets wait for input from others._
+- **desolator_x** (2018-01-30): Yeah, and there's a problem right there with a 3x3 and unstacked tiles: if you need / to store a decent amount of 4-5 materials it's really hard to get that organized in a single storage area. It'd be a lot easier if you could have one workshop feed off of, say, 3 stockpiles who're all 3x1 and only 
+  - _Context: That's getting too complicated. Both for reost to implement and debug as well as  for players to use. The feed stockpile is just meant as a buffer for_
+  - _Context: well, it's mostly for things like ores and gems and such, I assume there's going to be quite a lot of them, and a 3x3 stockpile might not be able to h_
+  - _Context: well, it would save some issues for people who don't want to make a million stockpiles for all the different goods. On that note: how many stockpiles _
+- **the_real_kyrros** (2018-01-31) [1⭐]: I imagine, if putting in production limits/caps, those limits would only need to be in place for tasks that are set to repeat (set it and forget it), because those are not necessarily needing to be monitored. Whereas, take Roest's example, we're capped at 5 tables, but I want to build a different on
+  - _Context: Of course not all workshops. The modfiles define the inputs. For example, Those that need fuel could have one extra input._
+  - _Context: Craft portals to the demon world to store infinite ressources, but be exposed to random attacks 😛  More ressources stored  =  Higher chance of being a_
+  - _Context: How about just managing your stockpiles better and not having more than 2000 seeds and clippings_
+- **sorsaj** (2018-08-28) [1⭐]: stockpile ordering is really a hazzle, please move up/down arrows to the left side next to the name and add a move top/move bottom or make it drag and drop like steam wishlist ordering ( drag and drop at will and click safe when done)
+  - _Context: please make it so i dont have to go into stockpiles and enable each new item that i mine or craft if i have set to accept "all" of one type (like soil_
+  - _Context: hm strange i just had this with bones, i hadn't butcherd an animal yet, so i couldn't setup my bone pile, but as soon as i got my first llamabone i co_
+  - _Context: look at it yourself, a dropdown list of stockpiles with 2 "paste" buttons and one "copy" without any idea of what gets copied to what or pasted to wha_
+- **desolator_x** (2018-01-26): Yeah, I agree with that one, that's why I'm so explicitly asking for it 😄 Maybe it could be build into the hauling job? Like, when the gnome gets to the stockpile and it has delivered the goods it immediately checks for a stacks in that stockpile that could be "tidied"
+  - _Context: Not sure there's a lot of need for that... at least I haven't run in to any issue. They fill each spot, until it's full, then when it's full, they sta_
+  - _Context: Also, saying that something can be done in 'Random game A' so it should be possible in 'Random Game B' is usually very not possible, especially if the_
+  - _Context: so the stockpile goes over its tiles and checks if there is space, then looks if there are items that need hauling, then claims such an item and creat_
+- **.alch** (2019-11-22) [1⭐]: I have an idea. implement wheat seeds, we might use all our grain on bread so we should have a seed version and a food version
+  - _Context: If collecting seeds, a harvest could yield 2-3 seeds and no crop but if collecting crops it could yield 1 seed and 1 crop with a small chance of yield_
+  - _Context: I think you should add goblins to the game along with combat, it would really spice up the gameplay_
+  - _Context: With chickens, just have a manual pop limit on their pasture. If a farmer doesn't want any more chickens, they just take the ferterlised eggs from the_
+- **desolator_x** (2018-01-25): Something that popped into my mind when playing Rimworld: can we please have gnomes use stockpiles efficiently in the sense that they stack items to their max stack size instead of spreading 10 pieces of wood over as many tiles?
+  - _Context: I dunno, there's a mod for it in Rimworld, so I guess it can be done. It's also *per stockpile* not global, so if a gnome brings, say, 10 wood to a st_
+  - _Context: It can even be a "technology" (ie : you need to develop something to tie the planks together, like a string)_
+  - _Context: hard to implement i guess, imagine a 63/64 Stack of wood on the other end of the map..._
+- **tacyn.** (2018-07-30): I think it would add some logistical/planning depth since you would have to run several workshops in parallel for jobs with long completion time. Also I would like it better to have large cellars where wine and cheese ripen instead of a single brewery/kitchen mass producing them.
+  - _Context: in regard to smokery/cheese making, I'd like a mechanic where a workshop can complete a job without a gnome present after it's been started.  No reaso_
+  - _Context: But what kind of cheese is it?  A nice Brie, or cheddar?  Who doesn’t love a nice smoked cheddar with their yak steaks ?_
+  - _Context: I think once trade comes in, anything that's preserved can be traded. Fresh and perishables can't be. Also preserving gives a slight food and happines_
+- **Deleted User** (2019-08-14): SUGGESTION: Add checkbox option to stop milking pasture. I only want my pasture for meat, do not want gnomes wasting time going there to milk animals.
+  - _Context: Suggestion: Indicate or standardize the side of workshops that can link stockpiles. Each workshop has one different side that can link, and  it makes _
+  - _Context: Or maybe I have bad memory. Or could be both_
+  - _Context: And also just 1 high versions of it, so I can have nice vertical wood walls_
+- **tacyn.** (2019-01-04) [3⭐]: I'd rather a medic takes the bandage to the injured gnome or the injured gnome to the hospital.
+  - _Context: Just to chime in on my worst experience in gnome behaviour...  A gnome hurt in combat, no leg, was hobbling to hospital on other side of map for a ban_
+  - _Context: they could drag themselves to the hospital until medic picks them up and carries them there_
+  - _Context: yes, I suggested that early on_
+- **sknortsch4137** (2018-12-01): i like the idea of NOT seeing als the possible items right from the start, but as one knows the game, this hiding would be obsolete. well, isn't this possible: new items of a category, when they appear the first time, are automatically put under the categories they belong and are handled the same wa
+  - _Context: i wanna be able to see all the items in a category when i set allowed stuff in a stockpile so i dont have to open the stockpile settings every time i _
+  - _Context: well as a compromise, i just made it so that all categories are visible from the start and you can activate them, so new items under that category wil_
+  - _Context: thats what he said he did, isnt it?_
+- **tacyn.** (2018-10-15) [1⭐]: The designation would be the same as other rooms. Comparable to dormitories, which allow gnomes to use the beds build within them. The crafting screen is the same as for single workshops, with the difference that it can do everything the workshops within the designation can. The orders created in th
+  - _Context: I think it could combine my idea of attaching workshops to stockpiles. instead of stockpiles, the management desk_
+  - _Context: we need crafting options for the workshop it self, and a "global" option that's shared between all crafting stations of that type right?_
+  - _Context: because if it can collect and hold rain, that could be a problem for people controlling running water into their bases. I know with Gnomoria, I dig a _
+- **der_kobold** (2020-12-30): a thing that could be handy   no more 1:1 drop of rock or soil when destroying a block   The amount of littering of those materials get insane over time when you dig done   Maybe a drop chance of 10% or something instead? Would help to keep the world a bit more free of waste stockpiles and overall i
+  - _Context: Not dead too? Would think they would be quite sensitive regarding water ^^   But when there's no magma in the bottom of the map what else is currently_
+  - _Context: Then it's going well for the tools  But something is eating my weapons   Maybe also caused by the long game time? I'm now in year 10_
+  - _Context: ah ok the prospector gets rid of stones, good to know ^^   ok, I think I found the reason why armor and weapons arent adding up.  it seems like weapon_
+- **.lld** (2018-04-22): The perception of what is right and the actuality are very different things.  Honestly has the RoboBob email ever been released?  Roest could be a lying mother fucker, and we have no way of knowing. ( I am not saying, and personally, don't think he is.)  Take a look at the subreddit today.  There is
+  - _Context: yes, I know. I'm just wondering if you had any thought on what you should initially start with and whether the list <@386915067477753858> made in the _
+  - _Context: actually he could just say 'stop using it now' to be legally binding there would need to be a formal, signed agreement beyond just a casual email...  _
+  - _Context: it'd be nice to add that in at some point though, even if only as an option for a player to set things like "only highest skill crafter makes statues)_
+- **Deleted User** (2020-02-05): - I think that 2x leather straps per hide is too low, or that only 1x hide per cow/yak butchered is too low. One of them should be increased. I've been trying to gather leather straps and I'm on year 4 and could only get a meager amount of leather while also trying to grow my herd. Or at least scale
+  - _Context: -On the new gui, the ability to rearrange stockpiles  priority with dragging would be awesome. On bigger and older maps with lots of stockpiles, click_
+  - _Context: -Why butchering goats doesn't yield any hide/leather? It could give less than cows/yaks, but goat skin/leather is a thing and ppl use it (it is even t_
+  - _Context: - Option to chose order of priority of pastures for Auto butcher excess livestock, or use pasture priority for that._
+- **hughheggen** (2018-04-05): Engineers, alchemists and mages need to study for years to unlock new recipes. Or maybe they need to study to be able to use high level recipes themselves
+  - _Context: I was thinking the low intelligence thing in the context of Roest’s quip about low intelligence gnomes.  Either way a mechanic to stop a gnome and pop_
+  - _Context: Nothing is produced out of nothing, you want books, you better produce paper, leather and ink, I was talking about research jobs_
+  - _Context: About the library thing, tech level is gained by completing jobs, so there could be a library workshop with study jobs which take no input materials a_
+- **Deleted User** (2018-07-11): hello im new here and i played my first hour on ingnomia and this is my first feedback: 1.i needed 10min to prepare a world(add tools, animals, food, drinks etc) it can be great add a starter pack automatically.   2. the night is too dark it is hard to see the blocks. 3. the stairs,  It would be gre
+  - _Context: Suggestion: Stockpile having a max of more than 100 per item, and/or the ability to set all items at once.  Either to $Number or Infinite_
+  - _Context: <@204036338888998912>  An all at once would be a good tool for stockpiles. Saves a bit of effort_
+  - _Context: The natural 100 item limit confuses me with my massive yet empty dumping ground stockpiles._
+- **prassel** (2018-09-01): -make stockpile settings window open when you designate a new one. -(resuggest) option to toggle show all items when filtering so you dont have to edit every time a new object is crafted. -ability to set a position in the stocks list in the stockpile setting (so you dont have to open that every time
+  - _Context: i'd like to see an option to toggle showing every item when you filter for stockpile so i dont have to go in a dozen time and edit it when i craft new_
+  - _Context: some things come naturally for you cause you know all the workings, for me this (adding a single skill via sheet) could have been something that just _
+  - _Context: 0.4.0 - stockpiling, tiles with containers are handled first - job queue: craft# the number to craft will count down now - job queue: craft to, jobs w_
+- **desolator_x** (2019-01-18): also, I like the idea that <@177094350201683968> had with carrying food with them. It could be restricted to a certain piece of gear you'd have to make first, say a lunchbox 😛 so your gnomes would equip the lunchbox and then be able to carry one sandwich and one drink with them or something
+  - _Context: You have outside corner ramps for straw roof I see. I could see people wanting both inside and outside corners for all ramp types for roofs. So may ju_
+  - _Context: So for suggestions, could we  get a different color or some sort of Icon to note input linking block for workbenches? As near as I can tell, only 3 ar_
+  - _Context: The sand tile is really hard  to distinguish from the mine wall colour... just started playing around. I think this could be a problem for a new playe_
+- **hughheggen** (2019-07-29): I'm trying to think of a situation when you might need 200 of the same item of 4 different materials. Wood. You could use the most expensive wood (say mahogany) and use that for furniture. A light wood (pine) for arrow making and a strong heavy wood for shields and doors (oak)
+  - _Context: Wait, I just tested it. I thought this was taking away my ability to filter what specific material goes into the stockpile, but it's just the min and _
+  - _Context: No! This is a terrible idea. I like to craft with only certain materials like 1 log type and 1 stone type, and my OCD needs the specific materials nex_
+  - _Context: Just final comment on limiting by materials: another use case of limiting stockpiles with different materials is while using it with linked stockpiles_
+- **vanda1475** (2019-08-25): Also would love to be able to exclude certain food items from the gnomes eating menu. It would be really helpful for early game if gnomes wouldn't eat the apples I want set aside for fruit wine. It could be a tab in the kingdom menu since it's kinda like a "Law" of the kingdom. "Thou shall not eatit
+  - _Context: Although maybe it could just be a function of the linked stockpiles when that is working that nothing can be consumed from a linked stockpile._
+  - _Context: Had an idea about the animal overpopulation. What if the females, once an adult, aren't able to be pregnant for 8-10 days. That'd help keep the very n_
+  - _Context: i now limit animals to 1000 per type, also animals only get pregnant when on a pasture, so you can control it by having no mixed genders on pastures_
+- **cbeatt13** (2020-01-29): (I may be missing something as I haven't played the game in a long while) but can we have stockpiles without item filters default to ALL ITEMS instead of NO ITEMS? Or an easy way to select all?
+- **noob_lurker.5764** (2018-08-03): Can the Population grid eventually get an area where we could, for each of the skill levels (1 through 6 currently) either highlight all combinations of that level, allow them all, or forbid them all?
+  - _Context: do they forbid gnomes from using those items by any chance? i had 19k loaves of bread, and then toggled the checkbox... All gnomes died of hunger with_
+  - _Context: Also, some kind of hint as to the purpose of checkboxes on each item in the Stocks/Inventory screen would be appreciated... :">_
+  - _Context: The ones by the groups are apparently collapse/expand toggles, but what do those by the items do?_
+- **dinosaure.plz_nofriendrequests** (2021-01-01): Okay, you definitively should implement a ctrl-key reminder somehow. :D But hey, that's exactly my need, so thanks a lot!
+  - _Context: Qol suggestion: have the fences just covering the previsualized perimeter, instead of fill all area. Related suggestion: having a way to declare (Alt _
+  - _Context: No, just keep it in here. There is really no point in transfering that over to Github unless feasibility has been discussed in the first place, and th_
+  - _Context: Yeah, can always go back the way you come in that sense. It was just my mind going "oh this seems inconvenient, must be something wrong with the game"_
+- **.elfu** (2020-04-05): How about adding a tick to corpses info panel that says "butcher this corpse", so that we can handpick which corpses get butchered directly, without the need to stockpile them?
+  - _Context: Would you still leave the _Butcher excess livestock_ option? If yes, then it sounds quite fine to me._
+  - _Context: There was one in Gnomoria. I think it ws either an action or initiated by ticking a proper option in creature info panel_
+  - _Context: I'm fairly sure that there was a list of available corpses in Gnomoria, not sure if there was a way to select which one to butcher. But, mmm, Goblin S_
+- **mindwarpaus** (2018-08-29): Not sure how many people would agree with me, but I'd really like to be able to replace floors under constructions. Seems really harsh that I can't replace the floor under beds, doors, torches or workbenches.  My gnomes can't put a torch back in the same place after laying a new floor? Maybe rimworl
+  - _Context: "Literally anything" technically includes "Ban prassel from Discord".  Not saying you should, but it does gets prassel's seal of approval on making In_
+  - _Context: it's more what is copied and pasted to what, and why is there 2 "paste" buttons? like, does it copy/paste the setting for the chosen pile in the dropd_
+  - _Context: The ability to sticky windows.  e.g. Sticky the Build Workshop Window so I can just click on workshops from the stickied window.  Or see what is in a _
+- **Deleted User** (2019-12-01): - I think clicking a stockpile that have a storage built on top of it should first open the stockpile screen. Currently, clicking a stockpile with a crate built will open tile inspection screen, so I have to click 2 times to open stockpile screen. Any thoughts on that?
+- **.roest** (2018-12-10): and I guess I can implement additional filters, think that would be the better way to control clutter instead of limiting the stockpiles to draw from
+  - _Context: In gnomoria, you get a giant list of everything in your fort. This always made finding the things you wanted to sell a pain. This optional filter woul_
+  - _Context: filters, or a search function so you can just type is part of the name of the items_
+  - _Context: as always I'd ask what a mechanic like that would add_
+- **chaineddjinn** (2019-05-03): Came up with another function for backpacks, allow Stumpies to gather building supplies BEFORE building so their not running back an forth. Was playing Gnomoria and it took way too long to build some windmills, had to put a stockpile with just the parts nearby to get it done.
+  - _Context: No, Wheelbarrows move resources like stones and stuff into piles. When building something, a Gnome will grab each part one at a time and if ANYTHING h_
+  - _Context: Case in point, I was talking about Gnomoria. If you can gather things and build something strait from the wheelbarrow in Ingnomia then GREAT! Awesome _
+  - _Context: that's what wheelbarrows are for_
+- **dinosaure.plz_nofriendrequests** (2020-12-29): Suggestion: add more starting drinkable things. Even low quality would make it. I'm actually trying something like "DrinkValue" of 10 to every fruit and vegetable (wheat/grass/hay/.. excluded). `update "Items" set "DrinkValue"=10 where "DrinkValue"=0 and ("ItemGroup" in ('Corpses', 'Meat') or "Categ
+  - _Context: Can't place them myself whenever I want to. Edit: https://i.ebayimg.com/images/g/AocAAOSwmflfT~IU/s-l1600.jpg <- this is a "magic tree", nothing can f_
+  - _Context: oh a thing I would be happy about   abundance of ore as a setting ^^  And maybe reduce a bit the occurrence of gems? I am looking for ore and find rid_
+  - _Context: Allow a grove to be placed under an existing tree, and auto-set to actual type. (Don't know how I managed to place groves under wild tree roots someho_
+- **maveross** (2021-01-13): Being able to assign workers as well. Run in to a scenario where gnome A is at a workshop, producing a block, set to repeat. After finishing making the block, instead of grabbing a nearby raw stone out of the stockpile, gnome B (a long distance away) will get the next build order and this really bre
+  - _Context: A copy to build option would be extremely handy_
+- **dinosaure.plz_nofriendrequests** (2021-01-04): I only wanted to see how others were playing, and as Discord accepts users to stream (even if not recording), that was the idea. I'm not comfortable enough to talk while streaming, and that would have zero-pro stream quality.
+  - _Context: Actually no, it's not even the seeds which are out in the world. It's the seeds which are already in the stockpile (on the floor), which are causing t_
+  - _Context: Just thought it would be interesting to see others playing, and multiple streams are ok on the same room._
+  - _Context: Starting a game on a more open platform like Twitch, and then announcing the stream in the <#447757383985266700> channel or alike is fair game though_
+- **vorg9431** (2019-01-16): It would be nice if we could expand a pasture or farm area by starting or ending inside an exsisting one
+  - _Context: In Char skills there is a place where you can change the priority of their skill. Would be nice to have and auto sort button, that sorts by skill leve_
+  - _Context: Hmm, I'll try again, but each time I started in or ended in, it seemed to create a new small area in the newly included area._
+  - _Context: but that is how it works right now, if you start insde a farm, pasture, stockpile or room it adds those fields to the exisiting one_
+- **hughheggen** (2019-12-17): It wouldn't be a bad idea to add that to a fill hole tool
+  - _Context: Would be useful for those of us trying to get rid of sand by building the earth above - that stuff has no bulk container and takes up a lot of room_
+  - _Context: You can use the replace wall and floor tool_
+- **mcphisto2051** (2020-12-03): if a stockpile has containers, it would be really nice to see the total amount of items in this stockpile, even better would be a list of all items in it
+  - _Context: I could help you to translate the game into german 🙂_
+  - _Context: with bags and seeds it seems to work but not with crates (correction, it works with crates if the hasve logs in it but not with e.g. soil)_
+  - _Context: so e.g. 10 crates would be x/320 items in the stockpile_
+- **.alch** (2019-07-28): I can't imagine any uses of a limit by material type personally, unless you'd want 50 of every type of plank in a specific woodcrafting stockpile
+  - _Context: to clarify the current implementation is by item type but separated by materials, so what he's asking is to bundle that and just make one limit settin_
+  - _Context: I would prefer limit by item type rather than material type_
+  - _Context: You're the dev, make material differences matter 😛_
+- **Deleted User** (2019-12-02): <@110645938350981120> You can inspect items in stockpile on the stockpile screen. If you mean to inspect items on the same floor of the stockpile, you can hold shift while clicking on a tile and it will force tile inspection.
+  - _Context: Agree but there then needs too be some way to inspect items in stockpile_
+- **sknortsch4137** (2018-10-13): Highlight-suggestion: highlight the area of a stockpile, when hovering over it with the mouse. I use to place all my storage areas side by side without visible borders. in gnomoria there was that highlighting.
+  - _Context: Small suggestion: in the population tab, show a highlight line when hovering over the "ALL" buttons in order to make it easier to look at. Keep up the_
+  - _Context: actually, another suggestion: highlight top 3 gnomes with highest profession in a skill with a green number in order to make it easier to look through_
+- **fourofire** (2019-11-26): An average Profession skill score: In either the population screen or the specific gnome screen, each gnome displays the average of points it has in the skills selected by it's given profession.
+  - _Context: *Fizzle picks up dirt*   x424 *Fizzle puts dirt in Stockpile 1*   x423_
+  - _Context: that would create a 300 pages diary / day  tbh_
+- **.alch** (2019-01-19): It was besides two workshops, both of which were deconstructed.   Had some crates on it, which were deconstructed. Then i removed it when it had nothing in it
+  - _Context: An autosave feature would be a nice addition_
+  - _Context: I can understand, though I'd imagine it wouldn't be much help when I don't even have a save and the action I did wasn't anything out there_
+  - _Context: xD Decided to work on coursework after that crash, I should probably thank it for that._
+- **.alch** (2019-07-30): What about having stocks in the top left/right of the screen 😦
+  - _Context: Or have it be the job of someone to count all the items in each stockpile like in at least one of them?_
+  - _Context: I don't see a problem with a counter of how many you can make. It's a good quick look tool that shows how your stocks are doin_
+  - _Context: When choosing to build items/storage, have a number count of how many of that item you can build_
+- **korvar** (2020-12-26): Some sort of dead gnome storage. Uh, for people who possibly mismanage things.
+
+## Trading/Economy
+
+- **fatmck** (2019-10-01): Suggestion for Needs / Mood  Just read the wiki and read about Needs. Beside hunger, thirst and sleep I would add comfort and satisfaction. Propably they are more moods then needs, depending on how mood will be implemented into the game.  Comfort and satisfaction wouldn’t be necessary at the beginni
+  - _Context: Need a better system than that_
+  - _Context: Gnomoria had happiness, just no way of knowing that it existed until a gnome refused to work._
+  - _Context: I never noticed it so it might as well have not had a happiness system_
+- **dinosaure.plz_nofriendrequests** (2021-01-19): While I'm in the suggestion channel: - Have a "paint" mode, similar to the "Cut trees" one, but targeting farm/grove/pasture type helping changing seeds en masse - Have an "any" mode on farm/grove/pasture to let them accept any seed/seed(/acorn/pine)/animal available - Name the personalised "Set up"
+  - _Context: Issues page should stay reserved for stuff which has been adopted by a developer or modder. There is just no point to flood it with 10+ new "suggestio_
+  - _Context: Just to avoid further misunderstandings, when I said "threaded" I meant "one thread per suggestion".  Because most of these "one liners" are still far_
+  - _Context: Should get a "suggestions" page on github to comment on suggestions, just to help keep track of them and the discussions around each of them_
+- **chaineddjinn** (2019-04-19): <@207714562437414912>  Sounds a lot similar to what the devs want to make with StoneHearth https://store.steampowered.com/app/253250/Stonehearth/  I agree, it would be interesting and add replayability. Let's get the game out of the ugly duckling stage first, there's a lot that needs to be cleaned a
+  - _Context: Backpacks would also allow for 'Expeditions' and the bigger the pack, the more they can explore. Maybe instead of 'waiting' for migrants you can go ou_
+  - _Context: Maybe eventual 'carts' could be made? Or different kinds of 'Pack animal' for longer distance... but I'm not gonna wager that far, keep things simple _
+  - _Context: I've also thought about backpacks and other things to allow gnomes to carry food and weapons_
+- **chaineddjinn** (2021-12-04): Another Idea I had was the ability to have more then one unit preform a task, like a cooperation feature; two working to build something would take less time then one on it's own. Also, if someone is gathering resources in a location with the intent to build, don't have gnomes stash stuff away just 
+  - _Context: <@!386915067477753858> Soil quality, hmmm 🤔  reminds my of haven & hearth, it had quality for just about everything but it was capped by a few factors_
+  - _Context: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F55%2Fd3%2F4a%2F55d34a0db8e93e2570ca1c4313dfa339.jpg&f=1&nofb=1_
+  - _Context: ¯\_(ツ)_/¯ Something to hope fordown the pipeline I guess_
+- **chaineddjinn** (2022-02-11): I HAVE A SUGGESTION!   To cut to the content quick Drying Station  ||~~Was thinking drying rack but after thinking it over thought it'd be better as a station instead~~|| Takes grass/weeds and dries them to make better fodder. As you dry the plants you have rare chance to discover new seeds. ||Works
+- **chaineddjinn** (2018-08-21): I have an idea, make it so Gnomes don't auto-join Kingdom. Little bit of papers please in a way, I mean; Do you want this Gnome? What's his Stats? His Trade? How is his demeanor and personality? I'd want them to come in on something like a caravan and PICK who I want rather then have them shoved off
+  - _Context: 1; I'd say more "Request for Caravan" then "Demand" Too snooty. Would also hinge on the 'Popularity' of your kingdom. The more 'Renown' your kingdom g_
+  - _Context: Sure, you turn someone royal away their gonna say bad things about your Kingdom... but it'd be better then letting them stay and mandate you can't tra_
+  - _Context: 1)maybe a sort of "ability demand for the next caravan" system and possibility to refuse new arrivals is an idea to look for._
+- **.elfu** (2020-04-01): You know, there's prospector, that gives the ability to at least process trash dirt and similar raw materials. When it comes to food items, these could get made into a compost or fertilizer, and in later game, maybe fuel for machines/golems. Other than that an item could simply decay into a pile of 
+  - _Context: Oh, by the way. Curious thing that I never understood in Gomoria. Why are containers, such as drawers or cupboards, not able to hold items in them? It_
+  - _Context: I remember in Gnomoria traders were my number 1 sinkhole for overflowing items. I'd rather have workshops and mechanics that allowed me to use these t_
+  - _Context: It doesn't change the fact that excess items get used. Make it use 10 seeds to make one bottle of oil, and you got yourself a pretty big sinkhole righ_
+- **cannonball_k** (2018-05-06): Pretty sure this has been suggested but gnomes riding yaks?  Trainable yaks that fight and attachments for their horns like axes or saws.  Also use them as labor animals like how gnomes have wheelbarrows, yaks can have wagons.  This could require training or it couldn't.  Some kind of book system wi
+  - _Context: I like the idea of yaks as beasts of burden_
+  - _Context: It all sounds pretty damned good there Cannon! Doing some more thinking obviously mood effects will come into play woth time, but how about different _
+  - _Context: I suddenly like you more I wish that were always the case... sometimes I have these neat ideas that just *fut* away at the worst times... BUT! Its oka_
+- **chaosjester** (2018-05-05): I beg forgivness, I've been reading a bucket load of Roomcarnage (DF story thing, epic, go google it) and have a few suggestions. I haven't gone through to see what other folks have sugessted so Imma just go ahead and put it out there  Something like Foul Fog; I love the aspect of having an almost e
+  - _Context: Well... perhaps for the underground, a thought occured to me though, instead of having fow for above ground, how about a 'map' over look, as a thought_
+  - _Context: <@161788523127635968> When you said Space Elevators I got a distictly kittensgame vibe.  Please add a catnip forest._
+  - _Context: Its all good man. My thought was mostly due to PG, like as you explore shit kinda just *pops* up_
+- **tacyn.** (2018-12-09) [2⭐]: In regards to trade, I would like to mark stockpiles as 'for trade' and then have a filter in the trade window that shows only items in marked stockpiles. This can also tie into automatic trading where it allows selecting the option 'sell from marked stockpiles'.  Could even assign stockpiles to ind
+- **desolator_x** (2018-01-16): Something that came up in a DF stream I was watching: will we have the ability to specify what our art should be about? It'd be amazing to be able to dedicate our statues to stuff that's important or be able to add names (mostly for people streaming, so they can make statues for subs or something)
+  - _Context: oh, and a copy paste option between workshops, or the ability to have a default list of jobs that you can load into workshops or something would be ni_
+  - _Context: oh god yes, please have blueprints so that you don't have to do the same layout for bedrooms and the like manually every game / migrant wave 😄_
+  - _Context: yes, that would be an awesome feature_
+- **.lld** (2018-05-11): Do our gnomes live in a land of milk and honey, or sand and pain?  That could be a global fertility slider at game creation.  Then all crops would need to be balanced for high and low fertility soils.  Even with High and Low fertility, I could see a lot of dev time for not a lot of gameplay.  If you
+  - _Context: maybe add in bone meal so farmers can fertilize fields of your choosing. I know by endgame you have thousands of damn bones. Instead of the fert tiles_
+  - _Context: then a slider for overall fertility is probably a bad idea.  how about a slider that increases the chance/quantity of high fertility spots? that would_
+  - _Context: <@176318165129756672> <@204036338888998912> high/normal fertile soil then like rimworld? could get manure for animals and fertilizer and maybe special_
+- **_ysabell_** (2018-05-14): why sacrifice the gnome children when there will be plenty of goblins to appease the gnomes' gods? yeah, maybe in the future we could capture gnomes' enemies and sacrifice them for some form of bonuses... obsidian would definitely be great for sacrificial altars, knives, etc... err... well,, if play
+  - _Context: I suppose one thing that might need looking at: Obsidian's value as a resource. In Gnomoria, by the time you have the tech level to actually make thin_
+  - _Context: Obsidian is far sharper than surgical steel, it's the only material we have (I believe) that can cut between cells instead of through them, though tho_
+  - _Context: Or allow lava/water to be 'bucketed' somehow to be brought to the surface/bottom to allow local obsidian creation ._
+- **dragonwrath420** (2018-05-18): The effect on enemies would be rather interesting and to add an option of a setting to make certain enemies stronger while in light (for the more diehard fans that like the challenges).  I like that though I would change the certain jobs requiring light to function to using the light to increase pro
+  - _Context: Another is that some can give a passive benefit such as allowing crops to continue to grow at night (since it was mentioned earlier that crops won't c_
+  - _Context: but back to the bees: I think the idea of hives/crops is a pretty good idea to limit the amount of hives you can reasonably build. (modders can add th_
+  - _Context: If light is just aesthetic, then permanent light sources are fine.  But, if light has a proper use that adds to the game rather than detract from it, _
+- **optimus.0001** (2018-05-19): Let me regurgitate some thoughts all over the nice clean channel.   Magic candles/lights would need a source of power, as would other magic elements in the base. There's also the notion of using magic as offensive skills or buffs eg insta-harvest... These could come from a common resource (say, mana
+  - _Context: If the plan is to have eldritch horrors in the game, bright light should be a way to either reduce sanity loss (assuming sanity is a stat), prevent it_
+  - _Context: <@362644073095626754> While the idea is interesting, what you're suggesting would make gnomoria/ingnomia a completely different game that what it was _
+  - _Context: Depends on how you implement the refueling... If it's automatic via one of the auto-jobs like hauling or building (for example) but with a slightly hi_
+- **hughheggen** (2018-04-04): and divine favor could be like a tech level. to gain raise the dead spell, you might need to have 1000 favor with the dead god or something, so maybe sacrifice 20 goblins, 40 goats, 10 gnomes or 5 gnome children maybe?
+  - _Context: so I was thinking  about religion because praying could add to gnomish happiness, with praying done in a temple room for a bigger happiness bonus_
+  - _Context: temples could be a large multiplier to kingdom wealth, like the great hall, so players would be encouraged to add lots of treasure to it_
+  - _Context: temples could also have priests, which also improve happiness bonus_
+- **the_real_kyrros** (2018-01-31) [1⭐]: I imagine, if putting in production limits/caps, those limits would only need to be in place for tasks that are set to repeat (set it and forget it), because those are not necessarily needing to be monitored. Whereas, take Roest's example, we're capped at 5 tables, but I want to build a different on
+  - _Context: Of course not all workshops. The modfiles define the inputs. For example, Those that need fuel could have one extra input._
+  - _Context: Craft portals to the demon world to store infinite ressources, but be exposed to random attacks 😛  More ressources stored  =  Higher chance of being a_
+  - _Context: How about just managing your stockpiles better and not having more than 2000 seeds and clippings_
+- **not__** (2018-05-03) [1⭐]: More pointless fluff is awesome.  There had better be a kickass icon for me to put on my desktop.  Maybe something 3D that been raytraced and rendered with god rays and shadows and all sorts of time consuming computationally expensive crap.
+  - _Context: I love the possibility of adding boats and travel by water. I'm wondering... if we do have the ability to trade with other colonies via water using bo_
+  - _Context: I'd just use a text icon that says "Click here for fun time"_
+  - _Context: And Troop-Transports to reenact D-Day_
+- **.alch** (2019-11-22) [1⭐]: I have an idea. implement wheat seeds, we might use all our grain on bread so we should have a seed version and a food version
+  - _Context: If collecting seeds, a harvest could yield 2-3 seeds and no crop but if collecting crops it could yield 1 seed and 1 crop with a small chance of yield_
+  - _Context: I think you should add goblins to the game along with combat, it would really spice up the gameplay_
+  - _Context: With chickens, just have a manual pop limit on their pasture. If a farmer doesn't want any more chickens, they just take the ferterlised eggs from the_
+- **.elfu** (2020-03-15): It's already extra clicks to make a pasture and set the hay harvesting. The inputed number doesn't tell me, whether it's a percentage of pasture's area or amount (it defaults to 100 which is why, I think, I confused it). It's more of an inconveniently placed action rather than automation. If you wan
+  - _Context: Suggestion: Add display stands. You can place a specific item in a display stand. It will receive a slight bonus to worth. Items in vicinity receive s_
+  - _Context: thanks but i like it easy to automate and there is an option to set the max you want to harvest, i don't want extra clicks_
+  - _Context: And you could set exactly how much hay you'd want to gather_
+- **_ysabell_** (2018-04-27): I don't know if anyone has suggested this yet. The general happiness of a settlement could also affect (in part) the number of gnomes joining the settlement each season, as well as kingdom worth. Conversely, there could be a chance for gnomes with 0 or low happiness to leave the settlement. Perhaps 
+  - _Context: I don't think stuff like slavery necessarily leads to bad press (Rimworld has it, and no one complains about it). I do think that having something lik_
+  - _Context: I mean that as gnomes become more experienced, they need better furnishings and food quality to stay happy, with higher professions needing more to st_
+  - _Context: I thought kingdom wealth was a simple and easy way to increase population size but we could go by a development score instead. The more infrastructure_
+- **tacyn.** (2018-07-30): I think it would add some logistical/planning depth since you would have to run several workshops in parallel for jobs with long completion time. Also I would like it better to have large cellars where wine and cheese ripen instead of a single brewery/kitchen mass producing them.
+  - _Context: in regard to smokery/cheese making, I'd like a mechanic where a workshop can complete a job without a gnome present after it's been started.  No reaso_
+  - _Context: But what kind of cheese is it?  A nice Brie, or cheddar?  Who doesn’t love a nice smoked cheddar with their yak steaks ?_
+  - _Context: I think once trade comes in, anything that's preserved can be traded. Fresh and perishables can't be. Also preserving gives a slight food and happines_
+- **slippuu4247** (2018-04-30) [3⭐]: __***The Teachings of Saitama***__ _Kill a goblin with 1 punch_
+  - _Context: I think everyone is missing what Ingnomia really needs.  Steam Trading Cards!_
+  - _Context: you should get a mark of recognition when you make 1000 goblin food items or make your first child sacrifice_
+  - _Context: yes, give free stuff that i can sell and buy other games with 😄 (jk i dont really care, and no if it takes time from development)_
+- **tacyn.** (2018-10-15) [1⭐]: The designation would be the same as other rooms. Comparable to dormitories, which allow gnomes to use the beds build within them. The crafting screen is the same as for single workshops, with the difference that it can do everything the workshops within the designation can. The orders created in th
+  - _Context: I think it could combine my idea of attaching workshops to stockpiles. instead of stockpiles, the management desk_
+  - _Context: we need crafting options for the workshop it self, and a "global" option that's shared between all crafting stations of that type right?_
+  - _Context: because if it can collect and hold rain, that could be a problem for people controlling running water into their bases. I know with Gnomoria, I dig a _
+- **the_real_kyrros** (2018-01-11): Could implement some kind of one-shot creation of a scaffold/rope ladder, or even just allow gnomes to  moved up one level to an adjacent square occupied by another gnome (i.e. get 'pulled up')
+  - _Context: i JUST thought of something that might be AWESOME!  if the game world generates like DF...as in it generates an ENTIRE world and you only play a bit o_
+  - _Context: than a hack maybe, allow diagonal movement when trapped by "remove floor" jobs this should at least ease the problem_
+  - _Context: i know its a hard problem, but could be avoided by letting them walk on walls (maybe only allow when trapped)_
+- **.lld** (2018-04-22): The perception of what is right and the actuality are very different things.  Honestly has the RoboBob email ever been released?  Roest could be a lying mother fucker, and we have no way of knowing. ( I am not saying, and personally, don't think he is.)  Take a look at the subreddit today.  There is
+  - _Context: yes, I know. I'm just wondering if you had any thought on what you should initially start with and whether the list <@386915067477753858> made in the _
+  - _Context: actually he could just say 'stop using it now' to be legally binding there would need to be a formal, signed agreement beyond just a casual email...  _
+  - _Context: it'd be nice to add that in at some point though, even if only as an option for a player to set things like "only highest skill crafter makes statues)_
+- **chaineddjinn** (2019-05-15): I'm sorry but in the convo above <@202164327606648841> is **SUPER** aggro toward @derPaddy#0188 just because he had a difference in opinion.  I feel surface stone would also prove useful as eventually their may be a point system which is costly to bring stone at embark or may have other restrictions
+  - _Context: (Not that many would give a rats rump, but that's not the point.) I had felt this would aspire to include some of the function and versatility of wher_
+  - _Context: I don't want to continue the discussion on derpaddy. He didn't even read the steam page, as such he comes here with a totally uninformed opinion. The _
+  - _Context: The game has always seemed to be advertised as a gnomoria+, with a focus on getting the gnomoria part working fully then adding new things. I think it_
+- **condac** (2021-01-29) [2⭐]: if you plant the wheat that you start with on medium there is no problem getting ~300 grains and  making bread and fruitbread to survive with no problem at all
+  - _Context: <@280266293490221056> I am trying to balance the food values so the top foods are under/around 75, Do you think there will be a problem if raw foods w_
+  - _Context: I have run a few test with beginning of game and the lower food values on raw fruit. Started on medium setting with 1 gnome, when winter came i had 10_
+  - _Context: I like the craft time multiplier method, higher cooking skills could tag on to that to add eatvalue to items they craft based on cooking time_
+- **hughheggen** (2018-04-05): Engineers, alchemists and mages need to study for years to unlock new recipes. Or maybe they need to study to be able to use high level recipes themselves
+  - _Context: I was thinking the low intelligence thing in the context of Roest’s quip about low intelligence gnomes.  Either way a mechanic to stop a gnome and pop_
+  - _Context: Nothing is produced out of nothing, you want books, you better produce paper, leather and ink, I was talking about research jobs_
+  - _Context: About the library thing, tech level is gained by completing jobs, so there could be a library workshop with study jobs which take no input materials a_
+- **yksleets** (2019-01-08): 1) Some sort of a blueprint system, maybe along the lines of Factorio where you have to build it once but then you can make a copy to a book you can plop down items from as needed. I like to build my core the same way each time so having an easy way to recreate it woudl be amazing. Maybe even a way 
+  - _Context: True, I was thinking it more as an addition if I need 25 beds for the new sleeping wing as a oneoff, the bread and butter smelting, bar creation and s_
+  - _Context: that's why we have the amazing linked stockpiles_
+  - _Context: you don't want gnomes to haul the logs, then the planks to the other side of the base just because the sawmill is busy right at that second, and then _
+- **condac** (2021-01-26): I just have to put this here, I know you have recently started to change the gui but this is not the right type of form to use to assign squads it is very annoying to use, when you want to add someone to the VIP squad and you have  big squad in the middle and you have to press the right arrov and th
+  - _Context: drag and drop will probably get more annoying when you get many squads and have to scroll to see where you are dropping things_
+  - _Context: I think producing multiple coins would balance that issue. It would have to be a giant coin if you made 1 coin from 1 bar_
+  - _Context: Would it be possible to have some sort of drag'n'drop mechanic?_
+- **condac** (2021-01-28): I am just creating a sheet to calculate everything based on the ingreidients because i thought the current values where just very fluctuating in value and eatvalue and did not favour crafting any items at all, at current state eating raw foods is better because they loose value the more you craft th
+  - _Context: I have extended the sheet with crafting time so we can set a price per work time to get calculated cash value of items based on ingredients crafting t_
+  - _Context: Yes, that is what i think also, but the anwer was that they are planing on implementing happyness so the more you make a high end item the happier the_
+  - _Context: I have a much better suggestions for metal values now that fixes the issue where statues are not the right values if you compare a marble statue to a _
+- **.lld** (2017-12-30): Maybe hourly would be better since a gnome might need 10 hours of sleep on the floor vs like 6 on a super cushy king bed?
+  - _Context: like the military schedule, but in general? I'd like that too but it doesn't need to be per hour, dividing a day into three 8-hour or four 6-hour slot_
+  - _Context: well, something like cooking / growing perhaps? planting during the night so the plants grow during the day and the gnome can go cook during the day w_
+  - _Context: The schedule could be a suggestion rather than a rule. Let's say gnomes have a rested value going from 0 to 100 and they normally go to sleep below 50_
+- **hughheggen** (2018-04-25): what about goblin testicles? I could make a testicle sprite that drops after you butcher them, or maybe eyes
+  - _Context: is you want globe shaped bit use eyes instead of testicles, people'll get upset and go full SJW on the game_
+  - _Context: you could write your own story about the time your gnomes defeated the goblin commander Skret and disemboweled him_
+  - _Context: Commanders, maybe.  Then you stick the commanders head on a spike for morale_
+- **hughheggen** (2018-06-01): Suggestion: being able to dig dirt and maybe sand without a pickaxe (just slower)  could be a good idea
+  - _Context: suggestion: work regions in to the job filtering eg. allow gnomes to be assigned to dining halls (or something), they will give jobs closer to that di_
+  - _Context: <@386915067477753858> have you ever dug a hole IRL with a shovel in ground that is 50-70% fist sized stones? unless it's pure dirt and half clay or sa_
+  - _Context: how about needing a shovel then instead of a pickaxe_
+- **condac** (2021-01-25): We really need some kind of event log, when you find all your cows dead you want to know why. Same with gnomes, when you find one dead on the floor there is nothing that tell you what have happened
+  - _Context: I don't know how the development is going but, in the option to hide the walls, you could put only a part of it, very low, just to differentiate where_
+  - _Context: Another suggestion is also to overhaul the trade price of coins and bars. I have tin bars that trade for ~100 but a tin coin trade for ~30, blacksmith_
+  - _Context: Yes that particular bug i found out and also found the issue on. But during battle or animal encoutnters or whatever The odds of seeing what hapens is_
+- **.elfu** (2020-03-04): But why would you want to do that, every time a game loads? I really wouldn't want my gnomes to suddenly change everything they do at the start of the game
+  - _Context: Once a unit is spotted, the check should stop for the other side for that unit for X number turns time, combat should skip check completely for x turn_
+  - _Context: Could be worse, I could be a UI guy instead_
+  - _Context: well, if you can make a distance check between two units, just by looking up their coordinates in world, then I'm thinking that could be faster_
+- **woody1842** (2018-05-09): Hmm hey I'm looking are your patreon and I was wondering that for a reward, you should add the patreons names into the game when an Item has become legendary
+  - _Context: interesting idea, or maybe let them design item names_
+  - _Context: I liked the way  prison architect did it, let them create a character or something and you can encounter them in the world_
+  - _Context: ok woody for your pledge you can be a chicken, rabbit or sheep_
+- **desolator_x** (2018-05-27): Eh, if you're going to have nobles and stuff in the game having special clothing needs etc for them would make sense. If you just have common gnomes I don't really see a reason to have clothing needs. Having their needs condensed into bedroom wealth should be good enough
+  - _Context: also, looking at the barn building, I think it'd be nice if the game would automatically add the needed floors when you're building up the walls_
+  - _Context: would be nice if you could see where the selection sprite for each tile is so you can count if needed_
+  - _Context: Could gnome-needs become active over time? For example at the start there are just Hunger, Thirst and Sleep,  but at certain kingdom sizes new needs l_
+- **desolator_x** (2018-06-22): Show the relevant stats of a gnome, either a dropdown list of all skills of a profession when you hover over the profession name, or put the numbers after the skill (mining, masonry, etc) so you get a better indication of what your gnomes are good at
+  - _Context: Sorted trade list? Quality, value, etc. One thing about gnomoria that irritated me was what you discover first is the first on the long trading list. _
+  - _Context: Can we get a reason for jobs being aborted in the gnome log?_
+  - _Context: right now my gnomes keep getting farming jobs, then aborting, but never get down to mining_
+- **.roest** (2018-12-10): and I guess I can implement additional filters, think that would be the better way to control clutter instead of limiting the stockpiles to draw from
+  - _Context: In gnomoria, you get a giant list of everything in your fort. This always made finding the things you wanted to sell a pain. This optional filter woul_
+  - _Context: filters, or a search function so you can just type is part of the name of the items_
+  - _Context: as always I'd ask what a mechanic like that would add_
+- **dinosaure.plz_nofriendrequests** (2020-12-24): I'd admit that the tree colour can be changed to blue, that has no gameplay change. Tree structure do have a gameplay impact, that's the kind of change that changes a world from "boringly standardized result" to "hey, I didn't expected that tree to grow as high!". Not a primordial feature, but somet
+  - _Context: Could you keep level encumbrance not checked? (please?)_
+  - _Context: <@!465569148798238720> they are a lot better than games not levelling their assets ; and they are pretty cute as they are today, this suggestion would_
+  - _Context: you want procedural tree layouts so you need sprites that can be stitched together at different locations, all possible but takes a talentend sprite a_
+- **dinosaure.plz_nofriendrequests** (2020-12-29): Suggestion: add more starting drinkable things. Even low quality would make it. I'm actually trying something like "DrinkValue" of 10 to every fruit and vegetable (wheat/grass/hay/.. excluded). `update "Items" set "DrinkValue"=10 where "DrinkValue"=0 and ("ItemGroup" in ('Corpses', 'Meat') or "Categ
+  - _Context: Can't place them myself whenever I want to. Edit: https://i.ebayimg.com/images/g/AocAAOSwmflfT~IU/s-l1600.jpg <- this is a "magic tree", nothing can f_
+  - _Context: oh a thing I would be happy about   abundance of ore as a setting ^^  And maybe reduce a bit the occurrence of gems? I am looking for ore and find rid_
+  - _Context: Allow a grove to be placed under an existing tree, and auto-set to actual type. (Don't know how I managed to place groves under wild tree roots someho_
+- **condac** (2021-01-27): Soo i thougt the food values where off, but I got the answer that happyness was a upcomming feature that will offset time spent on making food for the price of actual hunger values going down compared to values of the ingredients. But I have but togheter a small sheet of values where the total amoun
+  - _Context: QoL: when you make a new group it's places on the left_
+- **matrixq** (2019-10-02): Maybe "Motivation" could be a value that determines how fast and well a gnome is doing things, which is derived from a number of needs/wants.
+  - _Context: They could leave if they get unhappy enough and steal some stuff when they leave_
+  - _Context: No, after the threat of ending development we only talk about metal based golems._
+  - _Context: Some kind of... moving mechanical device made in imitation of a human being._
+- **dinosaure.plz_nofriendrequests** (2021-01-03): Suggestion: multithread the game. At any point in the game, there is not much than 5% use of global 3700x cpu, indicating single core use. Maybe related: unleash the rabbit power, as it's actually barely more than tortoise x2.
+  - _Context: Well, there is multithreading where applicable. Simulation and UI are running in fully decoupled threads. Pathfinding is running multithreaded. It's j_
+  - _Context: If it's 3x3x3, and you had to load the incinerator from the top, it could be a decent rationalization to have it incinerate more material simultaneous_
+  - _Context: Changing the "EatValue" of the cooked foods to be the sum of their component foods+10, to more fairly compensate for the time cost and ingredient cost_
+- **condac** (2021-01-30): I think food items shoud have quality to them but changing hunger to much based on quality might make things hard in the beginning of the game. When happiness comes in play it should affect that.
+  - _Context: Cook skill should effect any happiness value of the food along with cook speed_
+- **flash.1** (2018-05-08): Or... and hear me out now, it's getting wild... we could wait until the base game is done at like the level of Gnomoria, then play it, then think about what's really missing.
+  - _Context: If we covert my gold stack on Runescape to USD I could hire 200 people for Roest to make DF 2.0 with 3D graphics._
+  - _Context: gogo make sprites, now that Roest has too much time to work on this you need to step up your game man 😛_
+  - _Context: How about building a rocket later on to settle the moon?_
+- **jyeguru** (2018-04-23): So, you have to manually manage it at the start, then you get some tech/etc that allows it to be automated (maybe at a slight resource or efficiency cost)
+  - _Context: I just want to gas goblins or set unwanted gnomads on fire. Am I asking too much <@280266293490221056> ?_
+  - _Context: not if they have eye patches_
+  - _Context: Well not necessarily CO, but maybe gas or fumes?_
+- **hughheggen** (2019-07-19): You guys are over thinking this. The system could be as simple as a direct connection between tavern size and value and the number of travelers you get
+  - _Context: If a gnome becomes a goblin loving radical, can we make sandwiches of him or her as well?_
+  - _Context: I guess if you're at peace with a goblin settlement then goblin merchant and travelers could visit_
+  - _Context: So I think we need to have a tavern now so we can sell pancakes and waffles to travelers_
+- **maveross** (2021-01-16): spawn trader option providing a trader with all items would be helpful during playtesting
+  - _Context: that or being able to select a trader type to spawn_
+- **ext3h** (2021-01-31): If any. Unless you burn your food to a crisp, so there is no nutritional value left, bad food will nourish you just as much as good food. Just won't make you happy...
+  - _Context: Hunger effect from quality should be mild_
+- **.alch** (2019-01-19): It was besides two workshops, both of which were deconstructed.   Had some crates on it, which were deconstructed. Then i removed it when it had nothing in it
+  - _Context: An autosave feature would be a nice addition_
+  - _Context: I can understand, though I'd imagine it wouldn't be much help when I don't even have a save and the action I did wasn't anything out there_
+  - _Context: xD Decided to work on coursework after that crash, I should probably thank it for that._
+- **Deleted User** (2019-08-01): Are you planning on having auto sell (like Gnomoria mod) or some options with previously selected items to sell?
+  - _Context: Or at least a check-box to determine which stockpiles would show on sell tab, if that makes things easier on your side/_
+  - _Context: An autosell would come handy (although, I'd personally think this is preeeetty low on my wishlist priorities)_
+  - _Context: and it's better than in Gnomoria because it only takes stockpiled items_
+- **optimus.0001** (2018-04-03): suggestion: multiple statue sprites and one is randomly chosen per statue built
+  - _Context: ooh and looms to also make tapestries to sell as art_
+  - _Context: imagine a gnomish The Thinker or Easter Island head_
+  - _Context: and melting clock / screaming head_
+
+## UI/UX
+
+- **binaryalgorithm** (2018-11-29) [9⭐]: mainly, I want to see all the lists with minimal scroling so I make my windows bigger
+  - _Context: when windows are resized, save the position/size when that type of window is open again_
+- **dinosaure.plz_nofriendrequests** (2021-01-19): While I'm in the suggestion channel: - Have a "paint" mode, similar to the "Cut trees" one, but targeting farm/grove/pasture type helping changing seeds en masse - Have an "any" mode on farm/grove/pasture to let them accept any seed/seed(/acorn/pine)/animal available - Name the personalised "Set up"
+  - _Context: Issues page should stay reserved for stuff which has been adopted by a developer or modder. There is just no point to flood it with 10+ new "suggestio_
+  - _Context: Just to avoid further misunderstandings, when I said "threaded" I meant "one thread per suggestion".  Because most of these "one liners" are still far_
+  - _Context: Should get a "suggestions" page on github to comment on suggestions, just to help keep track of them and the discussions around each of them_
+- **fatmck** (2018-10-14) [1⭐]: I would like to suggest a kind of combat screen when we get enemies. During combat I would like to see all my in combat envolved gnomes on the left side with stats (equipment, health, dazed, bleeding, injured, blinded, on the ground, ..), the actual combat log in the mid, and all spottet and envolve
+  - _Context: but please make the width of windows borders a little wider. i have to be really careful to catch that area where i can resize the window... is it one_
+  - _Context: yeah but having 3 with 2 axes could be. so the third one could do other jobs, if he is assigned to them. well, i can live with it being the way it is_
+  - _Context: if a gnome carries something to eat and gets hungry, he should eat the food he is carrying. one of my gnomes just threw away his apple because of his _
+- **Deleted User** (2019-08-11) [4⭐]: Is is possible to allow existing trees to be a part of groves? I cannot create grove areas on top of existing trees, so I have to cut down an apple tree, to plant one in the same spot and lose precious growing time!
+  - _Context: Dropdown menu on to assign Workshops to gnomes should list in names alphabetical order, just like Population tab. Imagine having 200 gnomes and scroll_
+  - _Context: yea i'll need to use a combobox with input so you can limit the search_
+  - _Context: Do not compare it with the predecessors._
+- **tacyn.** (2018-12-09) [2⭐]: In regards to trade, I would like to mark stockpiles as 'for trade' and then have a filter in the trade window that shows only items in marked stockpiles. This can also tie into automatic trading where it allows selecting the option 'sell from marked stockpiles'.  Could even assign stockpiles to ind
+- **.lld** (2018-05-11): Do our gnomes live in a land of milk and honey, or sand and pain?  That could be a global fertility slider at game creation.  Then all crops would need to be balanced for high and low fertility soils.  Even with High and Low fertility, I could see a lot of dev time for not a lot of gameplay.  If you
+  - _Context: maybe add in bone meal so farmers can fertilize fields of your choosing. I know by endgame you have thousands of damn bones. Instead of the fert tiles_
+  - _Context: then a slider for overall fertility is probably a bad idea.  how about a slider that increases the chance/quantity of high fertility spots? that would_
+  - _Context: <@176318165129756672> <@204036338888998912> high/normal fertile soil then like rimworld? could get manure for animals and fertilizer and maybe special_
+- **.alch** (2019-08-06): On crafting workshops, rather than having to click the item you want to craft, then click the craft button which might have the added effort of scrolling down to get to, implement some "instant" method.   Like maybe if I just right click on the item I want to craft it just skips the "click craft" st
+  - _Context: I just don't want to have to click the craft button every time when I just want one of the item and don't care about the material_
+  - _Context: Sometimes the situation comes where you just don't care what material it's made out of and just want 1 of the item or so_
+  - _Context: Close the "build containers" window when I pick what I want to build_
+- **.alch** (2019-01-13): Maybe i'm missing something obvious, but is the feature to have the numbers of certain stocks on the main screen added? Similar to how you could have food/drink total in gnomoria and add stock counts for other items
+  - _Context: <@177094350201683968> I think that's probably a planned, but not-yet-implemented, feature, and if not, I hope it gets planned, because I made heavy us_
+  - _Context: you probably couldn't distribute mariadb like that anyway_
+  - _Context: imagine the patch migration headaches_
+- **the_real_kyrros** (2018-01-31) [1⭐]: I imagine, if putting in production limits/caps, those limits would only need to be in place for tasks that are set to repeat (set it and forget it), because those are not necessarily needing to be monitored. Whereas, take Roest's example, we're capped at 5 tables, but I want to build a different on
+  - _Context: Of course not all workshops. The modfiles define the inputs. For example, Those that need fuel could have one extra input._
+  - _Context: Craft portals to the demon world to store infinite ressources, but be exposed to random attacks 😛  More ressources stored  =  Higher chance of being a_
+  - _Context: How about just managing your stockpiles better and not having more than 2000 seeds and clippings_
+- **not__** (2018-05-03) [1⭐]: More pointless fluff is awesome.  There had better be a kickass icon for me to put on my desktop.  Maybe something 3D that been raytraced and rendered with god rays and shadows and all sorts of time consuming computationally expensive crap.
+  - _Context: I love the possibility of adding boats and travel by water. I'm wondering... if we do have the ability to trade with other colonies via water using bo_
+  - _Context: I'd just use a text icon that says "Click here for fun time"_
+  - _Context: And Troop-Transports to reenact D-Day_
+- **sorsaj** (2018-08-28) [1⭐]: stockpile ordering is really a hazzle, please move up/down arrows to the left side next to the name and add a move top/move bottom or make it drag and drop like steam wishlist ordering ( drag and drop at will and click safe when done)
+  - _Context: please make it so i dont have to go into stockpiles and enable each new item that i mine or craft if i have set to accept "all" of one type (like soil_
+  - _Context: hm strange i just had this with bones, i hadn't butcherd an animal yet, so i couldn't setup my bone pile, but as soon as i got my first llamabone i co_
+  - _Context: look at it yourself, a dropdown list of stockpiles with 2 "paste" buttons and one "copy" without any idea of what gets copied to what or pasted to wha_
+- **desolator_x** (2019-05-12) [2⭐]: basically everyone here except for you knows that this is going to be a Gnomoria+ game where maybe, if Roest is willing or the modding community very active, we'll get some extra depth
+  - _Context: ok but logical you can build thing first AFTEr you dig really down........ there should be option to build things before that even when you anly build_
+  - _Context: to the "stone" discuss  forageable surface stone that is rare is an good solution and as an alternate solution or recipe we can use clay-stones that w_
+  - _Context: i like both those ideas!  missing for when a gnome is dead and no one knows it; dead if/when someone discovers the body._
+- **.elfu** (2020-03-15): It's already extra clicks to make a pasture and set the hay harvesting. The inputed number doesn't tell me, whether it's a percentage of pasture's area or amount (it defaults to 100 which is why, I think, I confused it). It's more of an inconveniently placed action rather than automation. If you wan
+  - _Context: Suggestion: Add display stands. You can place a specific item in a display stand. It will receive a slight bonus to worth. Items in vicinity receive s_
+  - _Context: thanks but i like it easy to automate and there is an option to set the max you want to harvest, i don't want extra clicks_
+  - _Context: And you could set exactly how much hay you'd want to gather_
+- **desolator_x** (2019-01-10): well, the idea is (for me at least) that you'd want to set up a proper workflow. Autocrafting like that has always been in gnomoria, and works well as long as you only have one chain of buildings. As soon as you have a second carpenter or something, suddenly your gnomes need to haul components all o
+  - _Context: not sure if its still planned, but I once suggested a workshop-room designation which allows managing all workshops within it. The autocraft could the_
+  - _Context: I Didn't understand the job manager discussion. If I want a bed, there should be a tick box that's default on that auto crafts all the required sub co_
+  - _Context: Trying to remember here, but didn't GNM have a "Craft Requirements" function? So if I went to a carpenter to queue up 10 4 poster beds it would spawn _
+- **vorg9431** (2019-01-15): with the skill sort option, A multi level sort would be nice. Keep the last 3-4 sorts in desending order by when they where clicked. So you could click each skill in a group for example and it would keep the older sorts sorted with in the newest sorts.
+  - _Context: Adding to the above, a quick function to assign job templates through the pop menu rather than gnome menu_
+  - _Context: Have a forester workshop that turns tree seeds into saplings that can then be planted_
+  - _Context: Just so there's like 2 less steps to go through_
+- **desolator_x** (2019-05-27): That's a pretty good idea. Added to that I'd like to see something like a little counter behind the name of each gnome to see how many jobs they currently have active, would be handy if you don't want to use preset professions but don't want to overload individual gnomes
+  - _Context: One more tiiiiiny thing, instead of having to click every tile in the population window one by one, allow "painting" over then by just holding the mou_
+  - _Context: Implement the gnome skills tab with the overall population window, so we can assign jobs from the pop window and see what gnomes have what jobs, what _
+  - _Context: Along with that, another QOL thing would be with the dropdown in the gnomes skill tab, have a small popup when hovering over a preset that tells you w_
+- **Deleted User** (2019-08-14): SUGGESTION: Add checkbox option to stop milking pasture. I only want my pasture for meat, do not want gnomes wasting time going there to milk animals.
+  - _Context: Suggestion: Indicate or standardize the side of workshops that can link stockpiles. Each workshop has one different side that can link, and  it makes _
+  - _Context: Or maybe I have bad memory. Or could be both_
+  - _Context: And also just 1 high versions of it, so I can have nice vertical wood walls_
+- **tacyn.** (2018-10-15) [1⭐]: The designation would be the same as other rooms. Comparable to dormitories, which allow gnomes to use the beds build within them. The crafting screen is the same as for single workshops, with the difference that it can do everything the workshops within the designation can. The orders created in th
+  - _Context: I think it could combine my idea of attaching workshops to stockpiles. instead of stockpiles, the management desk_
+  - _Context: we need crafting options for the workshop it self, and a "global" option that's shared between all crafting stations of that type right?_
+  - _Context: because if it can collect and hold rain, that could be a problem for people controlling running water into their bases. I know with Gnomoria, I dig a _
+- **mazerduckingrakum** (2018-03-09): Maybe just like a default blueprint type of thing, and a system where you could create new blueprints.  IE, a 4x4 staircase blueprint that you can just draw where you want it
+  - _Context: Or maybe a way to draw a staircase or ramp?  A way to draw a long stair that knows to go downward (or upward)?_
+  - _Context: could be implemented as the number of left clicks increases task repeats, right-click decreases (and cancels at 1)_
+  - _Context: the job might need to move down/up 1 level per repeat so you can still repeat or cancel it_
+- **nordiii** (2018-01-14): In case of an raid, an option for Military only would be nice too. Maybe an event system for specific action? Would be awesome for mechanisms.
+  - _Context: you're responding in suggestions to a general thread message, maybe give a hint as to what you're referring to for future reference? 😉_
+  - _Context: Something like left click , just select the furniture as in the current overview. Right click, open a larger window docked on the general furniture ov_
+  - _Context: Maybe divided by "you have the resources " and "you don't have the resources"_
+- **prassel** (2018-09-01): -make stockpile settings window open when you designate a new one. -(resuggest) option to toggle show all items when filtering so you dont have to edit every time a new object is crafted. -ability to set a position in the stocks list in the stockpile setting (so you dont have to open that every time
+  - _Context: i'd like to see an option to toggle showing every item when you filter for stockpile so i dont have to go in a dozen time and edit it when i craft new_
+  - _Context: some things come naturally for you cause you know all the workings, for me this (adding a single skill via sheet) could have been something that just _
+  - _Context: 0.4.0 - stockpiling, tiles with containers are handled first - job queue: craft# the number to craft will count down now - job queue: craft to, jobs w_
+- **yksleets** (2019-01-08): 1) Some sort of a blueprint system, maybe along the lines of Factorio where you have to build it once but then you can make a copy to a book you can plop down items from as needed. I like to build my core the same way each time so having an easy way to recreate it woudl be amazing. Maybe even a way 
+  - _Context: True, I was thinking it more as an addition if I need 25 beds for the new sleeping wing as a oneoff, the bread and butter smelting, bar creation and s_
+  - _Context: that's why we have the amazing linked stockpiles_
+  - _Context: you don't want gnomes to haul the logs, then the planks to the other side of the base just because the sawmill is busy right at that second, and then _
+- **desolator_x** (2019-01-18): also, I like the idea that <@177094350201683968> had with carrying food with them. It could be restricted to a certain piece of gear you'd have to make first, say a lunchbox 😛 so your gnomes would equip the lunchbox and then be able to carry one sandwich and one drink with them or something
+  - _Context: You have outside corner ramps for straw roof I see. I could see people wanting both inside and outside corners for all ramp types for roofs. So may ju_
+  - _Context: So for suggestions, could we  get a different color or some sort of Icon to note input linking block for workbenches? As near as I can tell, only 3 ar_
+  - _Context: The sand tile is really hard  to distinguish from the mine wall colour... just started playing around. I think this could be a problem for a new playe_
+- **vanda1475** (2019-08-25): Also would love to be able to exclude certain food items from the gnomes eating menu. It would be really helpful for early game if gnomes wouldn't eat the apples I want set aside for fruit wine. It could be a tab in the kingdom menu since it's kinda like a "Law" of the kingdom. "Thou shall not eatit
+  - _Context: Although maybe it could just be a function of the linked stockpiles when that is working that nothing can be consumed from a linked stockpile._
+  - _Context: Had an idea about the animal overpopulation. What if the females, once an adult, aren't able to be pregnant for 8-10 days. That'd help keep the very n_
+  - _Context: i now limit animals to 1000 per type, also animals only get pregnant when on a pasture, so you can control it by having no mixed genders on pastures_
+- **condac** (2021-01-26): I just have to put this here, I know you have recently started to change the gui but this is not the right type of form to use to assign squads it is very annoying to use, when you want to add someone to the VIP squad and you have  big squad in the middle and you have to press the right arrov and th
+  - _Context: drag and drop will probably get more annoying when you get many squads and have to scroll to see where you are dropping things_
+  - _Context: I think producing multiple coins would balance that issue. It would have to be a giant coin if you made 1 coin from 1 bar_
+  - _Context: Would it be possible to have some sort of drag'n'drop mechanic?_
+- **stenner** (2018-05-20): Suggestion!  Can we add a screen shots channel?  I want to see more of the game and I have to search for the recent ones.
+  - _Context: Light needing fuel is a horrible idea_
+  - _Context: don't want it permanently, maybe have a key that shows mood icons for a couple seconds_
+  - _Context: HAY! <@280266293490221056> ! Do you want some mood icons for the gnomes_
+- **cbeatt13** (2020-01-29): (I may be missing something as I haven't played the game in a long while) but can we have stockpiles without item filters default to ALL ITEMS instead of NO ITEMS? Or an easy way to select all?
+- **noob_lurker.5764** (2018-08-03): Can the Population grid eventually get an area where we could, for each of the skill levels (1 through 6 currently) either highlight all combinations of that level, allow them all, or forbid them all?
+  - _Context: do they forbid gnomes from using those items by any chance? i had 19k loaves of bread, and then toggled the checkbox... All gnomes died of hunger with_
+  - _Context: Also, some kind of hint as to the purpose of checkboxes on each item in the Stocks/Inventory screen would be appreciated... :">_
+  - _Context: The ones by the groups are apparently collapse/expand toggles, but what do those by the items do?_
+- **.lld** (2018-06-17) [1⭐]: So we need sprites of gnomes budding gnomes from them?  or do they just split into 2 smaller gnomes when they split? /s
+  - _Context: i thought gnomes were clones or jelly fish, no kids, they just split in to two separate organisms_
+  - _Context: also maybe straw beds for the bigger animals to sleep in?_
+  - _Context: Suggestion: Hutches for small animals to sleep in and lay eggs. I'm making the sprites now_
+- **ext3h** (2020-11-28): We would have to see how much "full" SFX we need and want in the first place. Not that we fall in the trap that after giving the first couple of events SFX, that all the ones not having any suddenly start sticking out.
+  - _Context: Hi, new here, sorry if this is the wrong chat.  So I felt the game was a little too quiet, and decided to throw this together and see how it feels pla_
+  - _Context: For synchronized playback of multiple instruments I need to decode "manually" anyway. Just sampling rate better fit, or mixing becomes "troublesome"_
+  - _Context: Qt should handle that just fine. Not going to pull in more libraries. Just going to have to implement mixing and synchronization._
+- **dinosaure.plz_nofriendrequests** (2021-01-01): Okay, you definitively should implement a ctrl-key reminder somehow. :D But hey, that's exactly my need, so thanks a lot!
+  - _Context: Qol suggestion: have the fences just covering the previsualized perimeter, instead of fill all area. Related suggestion: having a way to declare (Alt _
+  - _Context: No, just keep it in here. There is really no point in transfering that over to Github unless feasibility has been discussed in the first place, and th_
+  - _Context: Yeah, can always go back the way you come in that sense. It was just my mind going "oh this seems inconvenient, must be something wrong with the game"_
+- **not__** (2018-06-30): Certain vegetables could be made into juice.  Thinking carrots, especially as a short-term option for early beverage manufacture (since carrots tend to be relatively abundant via forage)..  Probably not onions though.
+  - _Context: Clicking on the job label in "Population": can we have it sort by skill level?_
+  - _Context: juices would be a nice addition to beverages, and should be easier than wines for sure_
+  - _Context: In Escape menu, Esc key should act like "Resume"_
+- **.elfu** (2020-04-05): How about adding a tick to corpses info panel that says "butcher this corpse", so that we can handpick which corpses get butchered directly, without the need to stockpile them?
+  - _Context: Would you still leave the _Butcher excess livestock_ option? If yes, then it sounds quite fine to me._
+  - _Context: There was one in Gnomoria. I think it ws either an action or initiated by ticking a proper option in creature info panel_
+  - _Context: I'm fairly sure that there was a list of available corpses in Gnomoria, not sure if there was a way to select which one to butcher. But, mmm, Goblin S_
+- **korvar** (2020-04-13) [1⭐]: Another suggestion: if you click on an under-construction workshop, and it's missing something, it'd be nice to be able to find out what is missing.
+  - _Context: Suggestion: Switch up how a workshop under construction looks like. Right now it lights up a few tiles, indicating, that something is there. To actual_
+  - _Context: Although that might be difficult because items required for construction are not delivered to the place, until all of them are available. Which means _
+- **.aedis** (2021-08-01): would be nice if when you are opening build/workshop menu you have any indication that you do have workshop of given kind or not, and maybe tooltip suggesting what kind of building happens there..
+- **.elfu** (2020-03-04): But why would you want to do that, every time a game loads? I really wouldn't want my gnomes to suddenly change everything they do at the start of the game
+  - _Context: Once a unit is spotted, the check should stop for the other side for that unit for X number turns time, combat should skip check completely for x turn_
+  - _Context: Could be worse, I could be a UI guy instead_
+  - _Context: well, if you can make a distance check between two units, just by looking up their coordinates in world, then I'm thinking that could be faster_
+- **mindwarpaus** (2018-08-29): Not sure how many people would agree with me, but I'd really like to be able to replace floors under constructions. Seems really harsh that I can't replace the floor under beds, doors, torches or workbenches.  My gnomes can't put a torch back in the same place after laying a new floor? Maybe rimworl
+  - _Context: "Literally anything" technically includes "Ban prassel from Discord".  Not saying you should, but it does gets prassel's seal of approval on making In_
+  - _Context: it's more what is copied and pasted to what, and why is there 2 "paste" buttons? like, does it copy/paste the setting for the chosen pile in the dropd_
+  - _Context: The ability to sticky windows.  e.g. Sticky the Build Workshop Window so I can just click on workshops from the stickied window.  Or see what is in a _
+- **Deleted User** (2019-12-01): - I think clicking a stockpile that have a storage built on top of it should first open the stockpile screen. Currently, clicking a stockpile with a crate built will open tile inspection screen, so I have to click 2 times to open stockpile screen. Any thoughts on that?
+- **dommain.** (2020-03-01): Could create a menu to control animations to turn on and off unwanted ones but also allow the potato computer powered by the hamsters have smooth gameplay.
+  - _Context: Assigning uniforms to professions would be quite helpful. Currently, you can only assign an uniform implicitly by including a Gnome in a squad. IIRC, _
+  - _Context: That would be nice to tell what job the gnome is heading for with out have to click on him_
+  - _Context: I did think of maybe having different hats for different jobs_
+- **desolator_x** (2018-05-27): Eh, if you're going to have nobles and stuff in the game having special clothing needs etc for them would make sense. If you just have common gnomes I don't really see a reason to have clothing needs. Having their needs condensed into bedroom wealth should be good enough
+  - _Context: also, looking at the barn building, I think it'd be nice if the game would automatically add the needed floors when you're building up the walls_
+  - _Context: would be nice if you could see where the selection sprite for each tile is so you can count if needed_
+  - _Context: Could gnome-needs become active over time? For example at the start there are just Hunger, Thirst and Sleep,  but at certain kingdom sizes new needs l_
+- **.roest** (2018-12-10): and I guess I can implement additional filters, think that would be the better way to control clutter instead of limiting the stockpiles to draw from
+  - _Context: In gnomoria, you get a giant list of everything in your fort. This always made finding the things you wanted to sell a pain. This optional filter woul_
+  - _Context: filters, or a search function so you can just type is part of the name of the items_
+  - _Context: as always I'd ask what a mechanic like that would add_
+- **reaperofbunnies** (2019-11-04): Suggestions as of todays playthrough -Max worldsize to 500, seems to save fine -More food options, nothing i found yet to use vegetables for (if im wrong educate me)  -Ability to hunt, i currently have hundreds of chickens but can only slaughter 20 -Some form of resource dislpay on screen, show food
+- **rankin6** (2018-08-31): When Toggling the On/Off on what's allowed can we add color not just a depth change on the button. - IE Green for GO.. Red for No!
+  - _Context: add crafting chisel at the stonemason so i can deconstruct crude workbench?_
+  - _Context: can you make the window that opens when you click stuff active? i keep opening list windows and scrolling and it changes Z level all the time 😄_
+  - _Context: What all are chisels used for? just make like 10 and kill the crude workbench?_
+- **dinosaure.plz_nofriendrequests** (2021-01-03): Suggestion: multithread the game. At any point in the game, there is not much than 5% use of global 3700x cpu, indicating single core use. Maybe related: unleash the rabbit power, as it's actually barely more than tortoise x2.
+  - _Context: Well, there is multithreading where applicable. Simulation and UI are running in fully decoupled threads. Pathfinding is running multithreaded. It's j_
+  - _Context: If it's 3x3x3, and you had to load the incinerator from the top, it could be a decent rationalization to have it incinerate more material simultaneous_
+  - _Context: Changing the "EatValue" of the cooked foods to be the sum of their component foods+10, to more fairly compensate for the time cost and ingredient cost_
+- **dinosaure.plz_nofriendrequests** (2021-01-04): I only wanted to see how others were playing, and as Discord accepts users to stream (even if not recording), that was the idea. I'm not comfortable enough to talk while streaming, and that would have zero-pro stream quality.
+  - _Context: Actually no, it's not even the seeds which are out in the world. It's the seeds which are already in the stockpile (on the floor), which are causing t_
+  - _Context: Just thought it would be interesting to see others playing, and multiple streams are ok on the same room._
+  - _Context: Starting a game on a more open platform like Twitch, and then announcing the stream in the <#447757383985266700> channel or alike is fair game though_
+- **drucifer8036** (2018-08-30): suggestion:  please allow us to change the z-level with some keyboard command too.  some of us don't have scroll wheels.
+  - _Context: <@284497763448651797> Not activated yet_
+  - _Context: Thanks for the quick addition, Roest! 😃_
+- **vorg9431** (2019-01-16): It would be nice if we could expand a pasture or farm area by starting or ending inside an exsisting one
+  - _Context: In Char skills there is a place where you can change the priority of their skill. Would be nice to have and auto sort button, that sorts by skill leve_
+  - _Context: Hmm, I'll try again, but each time I started in or ended in, it seemed to create a new small area in the newly included area._
+  - _Context: but that is how it works right now, if you start insde a farm, pasture, stockpile or room it adds those fields to the exisiting one_
+- **vorg9431** (2019-06-04): I did set it to the 1080 size of my screen with borderless and it does cover te task bar. Looks full screen. Maybe that was a factor in the crash I reported in bugs?
+  - _Context: Haven't played in awhile and just fired it up. Is there going to be a Full Screen option for video settings?_
+  - _Context: full screen is problematic, the framework I use has a bug/feature that makes it misbehave when the window is overlapping the task bar, you can set the_
+  - _Context: Normally play the game filling half a screen with some other program in the other half, defaulting to borderless and fitting screen would ruin that 😦_
+- **.roest** (2018-06-29): right now all jobs are checked because i don't want to go to the screen and check something when i test some feature, eventually they'll star with everything unchecked
+  - _Context: Currently the default job is miner, but all jobs a checked.  You have to assign another job role and back to miner to get it to stick_
+  - _Context: Having all jobs checked is good.  It just looks like they are miners.  It’s more of a ui bug/ quality of life thing._
+  - _Context: More verbose info in the Job Queuem to differentiate between Repeat/Crat#/Craft to without clicking on each entry._
+- **.alch** (2019-05-28): Click on an existing build job and see what the job is waiting for, E.g if you're building a workshop and don't have a chair, it should say "waiting for chair"
+  - _Context: "Craft-to" jobs don't take the material type into account, so having a system of always keeping 100 planks for every wood can't be done atm_
+  - _Context: that's a bug report, not a suggestion 😛_
+- **dinosaure.plz_nofriendrequests** (2020-12-28): Suggestion: add buttons to manage the view, likely turn camera around, change zoom (+zoom reinit), change level. (I like to play without keyboard while working.)
+  - _Context: Idon't want to fell wild trees when starting a new colony. (And I don't wanna give me free seeds either)_
+  - _Context: They could be used to seed groves with grown trees, without the log spam._
+  - _Context: I like to let the starting place as untouched as possible.  Until the moment I replace all layers with log floor and agriculture._
+- **korvar** (2021-01-02): Maybe you need a "Manager" gnome to do that sort of thing...
+  - _Context: Suggestion² (as I'm going to sleep): a "don't pause my game with Gnomes arrival as I'm not interested for the moment anyway" checkable option. 🙂_
+  - _Context: That's the wrong channel, but if you scroll level high enough to have this floating in the bottom layer, you're often able to click on it. (Saw this o_
+  - _Context: Suggestion: Having a visual histogram displaying how much of anything went recorded at any time. +relative "per day" consumption/production._
+- **thepak.** (2019-10-31) [1⭐]: <@280266293490221056> I just saw the update with the off screen mission, quest, things.   I really like it.
+  - _Context: Light sloshing between mountain peaks?_
+- **.roest** (2018-05-29): world size near max requires a good gpu right now, there's still one thing i can implement to help with that, guess i need to do it sooner than i wanted
+  - _Context: Suggestion: In the "mine down" menu, integrate a tool for block removal. Also, the stairs-down tool doesn't automatically clear the block above. The s_
+  - _Context: Unsure what is happening under the hood, but during world creation Windows thinks Ingnomia is not responding.  I assume you are locked in world creati_
+  - _Context: but I am also getting 5fps, I think I need to update drivers or something_
+- **hughheggen** (2019-07-19): You guys are over thinking this. The system could be as simple as a direct connection between tavern size and value and the number of travelers you get
+  - _Context: If a gnome becomes a goblin loving radical, can we make sandwiches of him or her as well?_
+  - _Context: I guess if you're at peace with a goblin settlement then goblin merchant and travelers could visit_
+  - _Context: So I think we need to have a tavern now so we can sell pancakes and waffles to travelers_
+- **dinosaure.plz_nofriendrequests** (2020-12-23): Okay, what would be a real game changer, would be the floor's physic: can't have a "soft" floor more than 1 tile away from a pillar, while "hard" floors would have something like a 5-pillars radius; and crushing said pillar would lower the floor down level(s). That, and/or a "you can't stand an enti
+  - _Context: Suggestion : reduce the tree encumbrance to the only 4 direct neighbouring cells, in order to permit the trees to grow diagonally from each other. T.._
+  - _Context: please rename flatness or invert the scroll bar ^^_
+  - _Context: Isn't mead always made of honey? 😅_
+- **saint_of_grey** (2019-11-28): Sometimes you just need to tell players "PAY SOME FUCKING ATTENTION THIS SHIT IS IMPORTANT". My favorite games let you customize the popups though.
+  - _Context: or just simple - WTF MAN you dont have any food, WTF man your gnomes arew not plants they need booze to survive_
+  - _Context: Sometimes I want to be interrupted. Other times it can wait until I'm done doing a thing._
+  - _Context: Popups in general would be nice. Gnomoria didn't even have those._
+- **.roest** (2018-04-28) [2⭐]: yea that will be fixed next update
+  - _Context: tile info window pops up way too easily when i quickly click and drag to move camera around, mostly when doing short/small moves. would it be possible_
+  - _Context: 2-headed zombie pandas confirmed!_
+- **Deleted User** (2018-06-16): suggestion: add color change/highlight under mouse cursor in right-click menu to help distinct on what cursor is really pointing
+- **vorg9431** (2019-01-17): Maybe pressing/holding L-Shift or L-Alt while draging to switch to z-axis or using the scroll wheel?
+  - _Context: A method of harvesting/felling a selection of multiple z levels at once, maybe like 5 max_
+  - _Context: simply need to add "MultiZ": true,  to the entries in actions.json_
+  - _Context: Gnomes carrying food with them, only a small amount but it would save from them constantly having to walk back and forth to get food_
+- **Deleted User** (2019-12-02): <@110645938350981120> You can inspect items in stockpile on the stockpile screen. If you mean to inspect items on the same floor of the stockpile, you can hold shift while clicking on a tile and it will force tile inspection.
+  - _Context: Agree but there then needs too be some way to inspect items in stockpile_
+- **desolator_x** (2018-06-26): give it a mood modifier? you'll need sprites for the new materials in that case as well 😉
+  - _Context: suggestion: Add veal and other baby butcher jobs to the butcher. Extra succulent and juice meats, but less of it_
+  - _Context: will there be different tiers of tools? Stone felling axe, steel felling axe?_
+  - _Context: suggestion: split the population screen into two subscreens: one for "normal" jobs and one for combat related skills_
+- **hughheggen** (2018-12-17): Suggestion: add a controls tab on the menu that allows you to map your own keys and see what buttons do what
+- **prassel** (2018-06-07): caramelized onions 👌 should be a dish in the game tbh. with beef patties and potatoes and brown cream sauce
+  - _Context: Ummmm, maybe a powered workshop at a later date_
+  - _Context: and that where ON == L are lions? ..._
+  - _Context: Opinions on a right click menu?_
+- **der_kobold** (2020-12-20): What would be really good would be localize buttons, like from where are the invading goblins coming?  Where is gnome x when I click on him in the population window and so on
+  - _Context: 3x5 sawmill and you need to attach a steam engine to it_
+  - _Context: Mechanical workbench for fast &/ mass production, e.g. big ass sawmill_
+- **fourofire** (2019-11-26): An average Profession skill score: In either the population screen or the specific gnome screen, each gnome displays the average of points it has in the skills selected by it's given profession.
+  - _Context: *Fizzle picks up dirt*   x424 *Fizzle puts dirt in Stockpile 1*   x423_
+  - _Context: that would create a 300 pages diary / day  tbh_
+- **hughheggen** (2018-06-06): OK, so I've made a flat window, a large stone column, clear glass block, stained glass block, cobble stone, stone and wood halfsies block and a 2x2 gnome face wall relief
+  - _Context: while we're at it why don't we just add wind power_
+  - _Context: or should I just steal them from the fortress mod_
+  - _Context: is someone else going to add that_
+- **optimus.0001** (2018-06-05): a better thingy would be get the sprites done as cloth patches
+  - _Context: do u want me to knock some up?_
+  - _Context: http://www.curiousinkling.com/img/graphic-t-shirts/graphic-t-shirts-061210/1/chillin-with-my-gnomies.gif_
+  - _Context: 3d Gnome printed models as rewards for patreon levels_
+- **saint_of_grey** (2019-01-27): Why not make gnomes themselves items?
+  - _Context: well you know what a window is? A class wall is a large block of stained glass bricks_
+  - _Context: But I mean, how would a window be implemented? Like a fence?_
+  - _Context: What would the difference between windows and glass walls even be?_
+- **.alch** (2019-07-30): What about having stocks in the top left/right of the screen 😦
+  - _Context: Or have it be the job of someone to count all the items in each stockpile like in at least one of them?_
+  - _Context: I don't see a problem with a counter of how many you can make. It's a good quick look tool that shows how your stocks are doin_
+  - _Context: When choosing to build items/storage, have a number count of how many of that item you can build_
+- **.alch** (2019-01-24): Animal migration might be a nice addition, animals coming in during some seasons and leaving in winter or so, eating plants while they're there
+- **optimus.0001** (2019-07-05): I suggest/demand <:roest:452562992022945803>
+  - _Context: I am mortally offended that the game doesn't have a working icon for the exe yet, this is beyond excusable_
+  - _Context: whats wrong with the icon it has?_
+- **.elfu** (2020-02-26): Maybe not today, but will think of something.
+  - _Context: could desycronize types of trees_
+  - _Context: Any chance for UI rework? Gnomoria was a pain to undesrtand and it's not easy here either._
+  - _Context: Nope, I do not. But I have crawled from underneath it, if that's what you asking (joined the server 5 minutes ago)_
+- **.alch** (2019-06-23): A delete save option from the load menu
+- **mcphisto2051** (2020-12-16): a menu thats a little responsive... e.g. pressing save shows a message: saving, and afterwards successfully saved
+  - _Context: or make a switch for it if to automatically get back or not_
+  - _Context: not automatically getting back ingame_
+- **optimus.0001** (2018-01-04): i was getting big draw delays in windowed mode earlier, however I think it might actually be new AMD drivers
+  - _Context: rolling back to confirm before reporting it - and also those drivers are shittttttte_
+  - _Context: the UI needs some work, for those of us still using 4:3 Screens_
+- **maveross** (2021-02-05): Adding a toggled tutorial ui for new players? Probably a "down the road" thing.
+  - _Context: No fancy toggles? I want one jewel encrusted haha_
+  - _Context: Let's see about fancy toggles later_
+  - _Context: A tutorial would be a good start_
+- **maveross** (2021-01-09): Adding genders to animals when you click on them
+
+## World/Environment
+
+- **dinosaure.plz_nofriendrequests** (2021-01-19): While I'm in the suggestion channel: - Have a "paint" mode, similar to the "Cut trees" one, but targeting farm/grove/pasture type helping changing seeds en masse - Have an "any" mode on farm/grove/pasture to let them accept any seed/seed(/acorn/pine)/animal available - Name the personalised "Set up"
+  - _Context: Issues page should stay reserved for stuff which has been adopted by a developer or modder. There is just no point to flood it with 10+ new "suggestio_
+  - _Context: Just to avoid further misunderstandings, when I said "threaded" I meant "one thread per suggestion".  Because most of these "one liners" are still far_
+  - _Context: Should get a "suggestions" page on github to comment on suggestions, just to help keep track of them and the discussions around each of them_
+- **fatmck** (2018-10-14) [1⭐]: I would like to suggest a kind of combat screen when we get enemies. During combat I would like to see all my in combat envolved gnomes on the left side with stats (equipment, health, dazed, bleeding, injured, blinded, on the ground, ..), the actual combat log in the mid, and all spottet and envolve
+  - _Context: but please make the width of windows borders a little wider. i have to be really careful to catch that area where i can resize the window... is it one_
+  - _Context: yeah but having 3 with 2 axes could be. so the third one could do other jobs, if he is assigned to them. well, i can live with it being the way it is_
+  - _Context: if a gnome carries something to eat and gets hungry, he should eat the food he is carrying. one of my gnomes just threw away his apple because of his _
+- **hughheggen** (2018-05-13): <@172353609269248000> Certain bioms could have different fertility rates, and events such as a drought could reduce the fertility of the whole map for a few years. Make things a little bit more involved. <@202164327606648841> Yeah, I did heaps of farming sprites. <@204036338888998912>  A fertility s
+  - _Context: irrigation could be something like "replacing" a sand floor with dirt and it'd need some water for it_
+  - _Context: I'd love to see some events like that as well. I do think they should be moved to post release (like pretty much everything else here 😛 )_
+  - _Context: Oh, I'd like to suggest events that change around some of the game dynamics. Spice things up a bit._
+- **.elfu** (2020-04-01): You know, there's prospector, that gives the ability to at least process trash dirt and similar raw materials. When it comes to food items, these could get made into a compost or fertilizer, and in later game, maybe fuel for machines/golems. Other than that an item could simply decay into a pile of 
+  - _Context: Oh, by the way. Curious thing that I never understood in Gomoria. Why are containers, such as drawers or cupboards, not able to hold items in them? It_
+  - _Context: I remember in Gnomoria traders were my number 1 sinkhole for overflowing items. I'd rather have workshops and mechanics that allowed me to use these t_
+  - _Context: It doesn't change the fact that excess items get used. Make it use 10 seeds to make one bottle of oil, and you got yourself a pretty big sinkhole righ_
+- **cannonball_k** (2018-05-06): Pretty sure this has been suggested but gnomes riding yaks?  Trainable yaks that fight and attachments for their horns like axes or saws.  Also use them as labor animals like how gnomes have wheelbarrows, yaks can have wagons.  This could require training or it couldn't.  Some kind of book system wi
+  - _Context: I like the idea of yaks as beasts of burden_
+  - _Context: It all sounds pretty damned good there Cannon! Doing some more thinking obviously mood effects will come into play woth time, but how about different _
+  - _Context: I suddenly like you more I wish that were always the case... sometimes I have these neat ideas that just *fut* away at the worst times... BUT! Its oka_
+- **chaosjester** (2018-05-05): I beg forgivness, I've been reading a bucket load of Roomcarnage (DF story thing, epic, go google it) and have a few suggestions. I haven't gone through to see what other folks have sugessted so Imma just go ahead and put it out there  Something like Foul Fog; I love the aspect of having an almost e
+  - _Context: Well... perhaps for the underground, a thought occured to me though, instead of having fow for above ground, how about a 'map' over look, as a thought_
+  - _Context: <@161788523127635968> When you said Space Elevators I got a distictly kittensgame vibe.  Please add a catnip forest._
+  - _Context: Its all good man. My thought was mostly due to PG, like as you explore shit kinda just *pops* up_
+- **.lld** (2018-05-11): Do our gnomes live in a land of milk and honey, or sand and pain?  That could be a global fertility slider at game creation.  Then all crops would need to be balanced for high and low fertility soils.  Even with High and Low fertility, I could see a lot of dev time for not a lot of gameplay.  If you
+  - _Context: maybe add in bone meal so farmers can fertilize fields of your choosing. I know by endgame you have thousands of damn bones. Instead of the fert tiles_
+  - _Context: then a slider for overall fertility is probably a bad idea.  how about a slider that increases the chance/quantity of high fertility spots? that would_
+  - _Context: <@176318165129756672> <@204036338888998912> high/normal fertile soil then like rimworld? could get manure for animals and fertilizer and maybe special_
+- **_ysabell_** (2018-05-14): why sacrifice the gnome children when there will be plenty of goblins to appease the gnomes' gods? yeah, maybe in the future we could capture gnomes' enemies and sacrifice them for some form of bonuses... obsidian would definitely be great for sacrificial altars, knives, etc... err... well,, if play
+  - _Context: I suppose one thing that might need looking at: Obsidian's value as a resource. In Gnomoria, by the time you have the tech level to actually make thin_
+  - _Context: Obsidian is far sharper than surgical steel, it's the only material we have (I believe) that can cut between cells instead of through them, though tho_
+  - _Context: Or allow lava/water to be 'bucketed' somehow to be brought to the surface/bottom to allow local obsidian creation ._
+- **dragonwrath420** (2018-05-18): The effect on enemies would be rather interesting and to add an option of a setting to make certain enemies stronger while in light (for the more diehard fans that like the challenges).  I like that though I would change the certain jobs requiring light to function to using the light to increase pro
+  - _Context: Another is that some can give a passive benefit such as allowing crops to continue to grow at night (since it was mentioned earlier that crops won't c_
+  - _Context: but back to the bees: I think the idea of hives/crops is a pretty good idea to limit the amount of hives you can reasonably build. (modders can add th_
+  - _Context: If light is just aesthetic, then permanent light sources are fine.  But, if light has a proper use that adds to the game rather than detract from it, _
+- **optimus.0001** (2018-05-19): Let me regurgitate some thoughts all over the nice clean channel.   Magic candles/lights would need a source of power, as would other magic elements in the base. There's also the notion of using magic as offensive skills or buffs eg insta-harvest... These could come from a common resource (say, mana
+  - _Context: If the plan is to have eldritch horrors in the game, bright light should be a way to either reduce sanity loss (assuming sanity is a stat), prevent it_
+  - _Context: <@362644073095626754> While the idea is interesting, what you're suggesting would make gnomoria/ingnomia a completely different game that what it was _
+  - _Context: Depends on how you implement the refueling... If it's automatic via one of the auto-jobs like hauling or building (for example) but with a slightly hi_
+- **the_real_kyrros** (2018-01-31) [1⭐]: I imagine, if putting in production limits/caps, those limits would only need to be in place for tasks that are set to repeat (set it and forget it), because those are not necessarily needing to be monitored. Whereas, take Roest's example, we're capped at 5 tables, but I want to build a different on
+  - _Context: Of course not all workshops. The modfiles define the inputs. For example, Those that need fuel could have one extra input._
+  - _Context: Craft portals to the demon world to store infinite ressources, but be exposed to random attacks 😛  More ressources stored  =  Higher chance of being a_
+  - _Context: How about just managing your stockpiles better and not having more than 2000 seeds and clippings_
+- **desolator_x** (2019-05-12) [2⭐]: basically everyone here except for you knows that this is going to be a Gnomoria+ game where maybe, if Roest is willing or the modding community very active, we'll get some extra depth
+  - _Context: ok but logical you can build thing first AFTEr you dig really down........ there should be option to build things before that even when you anly build_
+  - _Context: to the "stone" discuss  forageable surface stone that is rare is an good solution and as an alternate solution or recipe we can use clay-stones that w_
+  - _Context: i like both those ideas!  missing for when a gnome is dead and no one knows it; dead if/when someone discovers the body._
+- **desolator_x** (2018-01-25): Something that popped into my mind when playing Rimworld: can we please have gnomes use stockpiles efficiently in the sense that they stack items to their max stack size instead of spreading 10 pieces of wood over as many tiles?
+  - _Context: I dunno, there's a mod for it in Rimworld, so I guess it can be done. It's also *per stockpile* not global, so if a gnome brings, say, 10 wood to a st_
+  - _Context: It can even be a "technology" (ie : you need to develop something to tie the planks together, like a string)_
+  - _Context: hard to implement i guess, imagine a 63/64 Stack of wood on the other end of the map..._
+- **_ysabell_** (2018-04-27): I don't know if anyone has suggested this yet. The general happiness of a settlement could also affect (in part) the number of gnomes joining the settlement each season, as well as kingdom worth. Conversely, there could be a chance for gnomes with 0 or low happiness to leave the settlement. Perhaps 
+  - _Context: I don't think stuff like slavery necessarily leads to bad press (Rimworld has it, and no one complains about it). I do think that having something lik_
+  - _Context: I mean that as gnomes become more experienced, they need better furnishings and food quality to stay happy, with higher professions needing more to st_
+  - _Context: I thought kingdom wealth was a simple and easy way to increase population size but we could go by a development score instead. The more infrastructure_
+- **tacyn.** (2019-01-04) [3⭐]: I'd rather a medic takes the bandage to the injured gnome or the injured gnome to the hospital.
+  - _Context: Just to chime in on my worst experience in gnome behaviour...  A gnome hurt in combat, no leg, was hobbling to hospital on other side of map for a ban_
+  - _Context: they could drag themselves to the hospital until medic picks them up and carries them there_
+  - _Context: yes, I suggested that early on_
+- **tacyn.** (2018-10-15) [1⭐]: The designation would be the same as other rooms. Comparable to dormitories, which allow gnomes to use the beds build within them. The crafting screen is the same as for single workshops, with the difference that it can do everything the workshops within the designation can. The orders created in th
+  - _Context: I think it could combine my idea of attaching workshops to stockpiles. instead of stockpiles, the management desk_
+  - _Context: we need crafting options for the workshop it self, and a "global" option that's shared between all crafting stations of that type right?_
+  - _Context: because if it can collect and hold rain, that could be a problem for people controlling running water into their bases. I know with Gnomoria, I dig a _
+- **der_kobold** (2020-12-30): a thing that could be handy   no more 1:1 drop of rock or soil when destroying a block   The amount of littering of those materials get insane over time when you dig done   Maybe a drop chance of 10% or something instead? Would help to keep the world a bit more free of waste stockpiles and overall i
+  - _Context: Not dead too? Would think they would be quite sensitive regarding water ^^   But when there's no magma in the bottom of the map what else is currently_
+  - _Context: Then it's going well for the tools  But something is eating my weapons   Maybe also caused by the long game time? I'm now in year 10_
+  - _Context: ah ok the prospector gets rid of stones, good to know ^^   ok, I think I found the reason why armor and weapons arent adding up.  it seems like weapon_
+- **the_real_kyrros** (2018-01-11): Could implement some kind of one-shot creation of a scaffold/rope ladder, or even just allow gnomes to  moved up one level to an adjacent square occupied by another gnome (i.e. get 'pulled up')
+  - _Context: i JUST thought of something that might be AWESOME!  if the game world generates like DF...as in it generates an ENTIRE world and you only play a bit o_
+  - _Context: than a hack maybe, allow diagonal movement when trapped by "remove floor" jobs this should at least ease the problem_
+  - _Context: i know its a hard problem, but could be avoided by letting them walk on walls (maybe only allow when trapped)_
+- **hughheggen** (2019-03-09) [2⭐]: Did you like the idea of mudbrick and rammed earth?
+  - _Context: When you select the furniture to be installed. You can select the type of metal. Why not right under it somehing like in the smelter: Any / average or_
+  - _Context: Jokes aside, I think there should be a way of making sand/clay without needing to mine it, since once you mine out those two layers, you just have an _
+  - _Context: I added the ability to turn dirt and water into clay in my mod in Gnomoria, so I fully support the idea of turning dirt into clay 😃_
+- **chaineddjinn** (2019-05-15): I'm sorry but in the convo above <@202164327606648841> is **SUPER** aggro toward @derPaddy#0188 just because he had a difference in opinion.  I feel surface stone would also prove useful as eventually their may be a point system which is costly to bring stone at embark or may have other restrictions
+  - _Context: (Not that many would give a rats rump, but that's not the point.) I had felt this would aspire to include some of the function and versatility of wher_
+  - _Context: I don't want to continue the discussion on derpaddy. He didn't even read the steam page, as such he comes here with a totally uninformed opinion. The _
+  - _Context: The game has always seemed to be advertised as a gnomoria+, with a focus on getting the gnomoria part working fully then adding new things. I think it_
+- **ext3h** (2020-04-06): Hunting board, serving both as "cull population down to X" instruction and as drop off point for corpses could work, I suppose? But not as friendly as the butcher job, where animals just stop moving and wait once marked for killing. Hunting also requires corresponding adjustments to animal AI, to en
+  - _Context: I mean, it depends how it'd be designed. If you make it like pasture, then a hunter would hunt any available animal on map. If you made it like butche_
+  - _Context: A middle ground would be selecting what animal type to hunt and maybe range from the structure, or amount to let live (so that you don't wipe out enti_
+  - _Context: well have to consider the available control schemes we have, so it's either a structure that has the option, like the taming animals thing, or it's li_
+- **Deleted User** (2018-07-11): hello im new here and i played my first hour on ingnomia and this is my first feedback: 1.i needed 10min to prepare a world(add tools, animals, food, drinks etc) it can be great add a starter pack automatically.   2. the night is too dark it is hard to see the blocks. 3. the stairs,  It would be gre
+  - _Context: Suggestion: Stockpile having a max of more than 100 per item, and/or the ability to set all items at once.  Either to $Number or Infinite_
+  - _Context: <@204036338888998912>  An all at once would be a good tool for stockpiles. Saves a bit of effort_
+  - _Context: The natural 100 item limit confuses me with my massive yet empty dumping ground stockpiles._
+- **sknortsch4137** (2018-10-11): in DF digging the tile you stand on leaves a ramp up. this could be a more realistic possibility though. or implement mining ramps up - would be nearly the same. but mining stairs out of a single-tile-wall as the only solution  is a little weird to figure out 😉
+  - _Context: when i try to remove the highest level of a hill with "dig hole" order, the last tile stays and will not be dug. in gnomoria gnomes were able to dig d_
+  - _Context: Calling something a first world problem is not a viable argument Roest, come on now.  We should all stop worrying about this game and go volunteer our_
+  - _Context: well, leave it the way it is then, I can live with that stair-workaround ^^ but I think I am not the only one with that idea - as we are used to that _
+- **desolator_x** (2019-01-18): also, I like the idea that <@177094350201683968> had with carrying food with them. It could be restricted to a certain piece of gear you'd have to make first, say a lunchbox 😛 so your gnomes would equip the lunchbox and then be able to carry one sandwich and one drink with them or something
+  - _Context: You have outside corner ramps for straw roof I see. I could see people wanting both inside and outside corners for all ramp types for roofs. So may ju_
+  - _Context: So for suggestions, could we  get a different color or some sort of Icon to note input linking block for workbenches? As near as I can tell, only 3 ar_
+  - _Context: The sand tile is really hard  to distinguish from the mine wall colour... just started playing around. I think this could be a problem for a new playe_
+- **chacina7810** (2019-03-10): A system of achievements for the noobs to know the progression and for the players to complete all the possible things of the game. And up to challenges ... 300 of  such an item crafted, etc. It could have an option to show or hide the achviments pop-up
+  - _Context: I feel that when I craft something and put any material into the workshop it is harder for the gnomes to complete the craft than when I put in a speci_
+  - _Context: well, one thing that could be nice is the ability to start a new world/game with some of the gnomes from a previous world/game_
+  - _Context: especially for streamers, but also if you want to have this idea of a world where you have different settlements_
+- **chacina7810** (2019-03-11): I do not think it's particularly a good idea for one game to affect the beginning of the other... But if you believe it will improve the game scene and for everyone to be happy it could be a wonder (haha 😅 ) <@177094350201683968> that gives you a backupsave, helping in the same run. Dunno
+  - _Context: It could be as simple* as an option to retire the game and the gnomes get tossed into a pool and can random into the next games. *simple to write, I h_
+  - _Context: I think you should need stone.  Either add some on start or have surface stone_
+  - _Context: Agree wih Lord Hugh here : in my opinion stone is needed. I mean how do you cut a log to become a plank. You need somehig at least stronger than wood._
+- **ext3h** (2020-03-05): > Once a unit is spotted, the check should stop for the other side for that unit for X number turns time, combat should skip check completely for x turns <@151685227947884544> can't stop in the case either. Got to keep updating visibility when moving while in combat stance too. Point is, you are not
+  - _Context: Reminds me, there is also an Action missing for kiting movement. Actually two of them. One for finding random, safe tile within distance X, one for fi_
+  - _Context: Finding safe position is simple. Find visible enemies first. From all found enemies simultaneously, flood map (BFS, no A*) to create threat assessment_
+  - _Context: Doing update on move should still be cheaper than doing update in evaluation of condition._
+- **.elfu** (2020-03-10): Think Stardew Valley then. If youblock an NPC, after a few seconds it shoves past you. It could work like that here too. If two gnomes block each other, they swap spots after, let's say, 3 seconds. Actually, they could do that, even if they don't block each other, as long as their routes intersect.
+  - _Context: Units preferring not to stay on an occupied tile, but still being allowed to, would still lead to exact same scenario of defense, because you could fo_
+  - _Context: Unfortunately enemies tend to attack one single target, usually the first one they see (or closest one) so if you rush your first squad as a tank forc_
+  - _Context: Yes and no... You can assign different squads diffent targets. You can assign some gnomes to have ranged role. (Actually you can't, currently, but in _
+- **condac** (2021-01-28): I am just creating a sheet to calculate everything based on the ingreidients because i thought the current values where just very fluctuating in value and eatvalue and did not favour crafting any items at all, at current state eating raw foods is better because they loose value the more you craft th
+  - _Context: I have extended the sheet with crafting time so we can set a price per work time to get calculated cash value of items based on ingredients crafting t_
+  - _Context: Yes, that is what i think also, but the anwer was that they are planing on implementing happyness so the more you make a high end item the happier the_
+  - _Context: I have a much better suggestions for metal values now that fixes the issue where statues are not the right values if you compare a marble statue to a _
+- **hughheggen** (2018-04-25): what about goblin testicles? I could make a testicle sprite that drops after you butcher them, or maybe eyes
+  - _Context: is you want globe shaped bit use eyes instead of testicles, people'll get upset and go full SJW on the game_
+  - _Context: you could write your own story about the time your gnomes defeated the goblin commander Skret and disemboweled him_
+  - _Context: Commanders, maybe.  Then you stick the commanders head on a spike for morale_
+- **rookie0117** (2018-06-25): The mushroom parent? found deep underground? Or is it a mushroom golem? left from thousands of unkept mushrooms.  That reminds me, should people be able to designate an area to dump water in via buckets for underground farms?
+  - _Context: <@280266293490221056> you are a mushroom now (kept in the dark and fed bullshit)?  I thought you left the corporate world?_
+  - _Context: should be able to cut trees with most types of axes_
+  - _Context: not sure yet, it might be as easy as in DF where you need no water or it'll be solar powered pump and tube system with sprinklers_
+- **ext3h** (2020-11-28): We would have to see how much "full" SFX we need and want in the first place. Not that we fall in the trap that after giving the first couple of events SFX, that all the ones not having any suddenly start sticking out.
+  - _Context: Hi, new here, sorry if this is the wrong chat.  So I felt the game was a little too quiet, and decided to throw this together and see how it feels pla_
+  - _Context: For synchronized playback of multiple instruments I need to decode "manually" anyway. Just sampling rate better fit, or mixing becomes "troublesome"_
+  - _Context: Qt should handle that just fine. Not going to pull in more libraries. Just going to have to implement mixing and synchronization._
+- **hughheggen** (2018-03-23): I really like the explosives idea and destructible terrain. Although the terrain thing would be hard (I guess) we could still have things like dynamite for resource extraction or explosives for traps and grenades
+- **hughheggen** (2018-06-01): Suggestion: being able to dig dirt and maybe sand without a pickaxe (just slower)  could be a good idea
+  - _Context: suggestion: work regions in to the job filtering eg. allow gnomes to be assigned to dining halls (or something), they will give jobs closer to that di_
+  - _Context: <@386915067477753858> have you ever dug a hole IRL with a shovel in ground that is 50-70% fist sized stones? unless it's pure dirt and half clay or sa_
+  - _Context: how about needing a shovel then instead of a pickaxe_
+- **.elfu** (2020-03-04): But why would you want to do that, every time a game loads? I really wouldn't want my gnomes to suddenly change everything they do at the start of the game
+  - _Context: Once a unit is spotted, the check should stop for the other side for that unit for X number turns time, combat should skip check completely for x turn_
+  - _Context: Could be worse, I could be a UI guy instead_
+  - _Context: well, if you can make a distance check between two units, just by looking up their coordinates in world, then I'm thinking that could be faster_
+- **desolator_x** (2018-07-12): <@456226577798135808> 1) there should be easy / normal / hard starts that give you what you need 4) sounds like a hardware issue, what specs do you run?
+  - _Context: <@456226577798135808> hello i would suggest you make a new line for each point instead of a wall of text 😬_
+  - _Context: uh, should be fine then, so it's probably a driver issue_
+  - _Context: <@202164327606648841> i have 2500k @ 4.5ghz and r9 290x and have bad fps too on normal size map_
+- **mindwarpaus** (2018-08-29): Not sure how many people would agree with me, but I'd really like to be able to replace floors under constructions. Seems really harsh that I can't replace the floor under beds, doors, torches or workbenches.  My gnomes can't put a torch back in the same place after laying a new floor? Maybe rimworl
+  - _Context: "Literally anything" technically includes "Ban prassel from Discord".  Not saying you should, but it does gets prassel's seal of approval on making In_
+  - _Context: it's more what is copied and pasted to what, and why is there 2 "paste" buttons? like, does it copy/paste the setting for the chosen pile in the dropd_
+  - _Context: The ability to sticky windows.  e.g. Sticky the Build Workshop Window so I can just click on workshops from the stickied window.  Or see what is in a _
+- **ext3h** (2020-12-04): That's one part. Also need to implement game rules which *severely* reduce the number of items and creatures in the world. No more 2k chickens and 50k uncollected eggs.
+  - _Context: If Chicken = 10, then Merge into 1 mega chicken_
+  - _Context: Another point to solve before that is savegame sizes. can't afford to waste several GB of disk space on save games on a tablet or smartphone._
+  - _Context: That should work for gnomes also._
+- **envycreat1on** (2019-03-23): The old fort will continue to live on with the chosen leadership. The new fort could even receive traders from the old fort and your old gnomes could come to visit
+  - _Context: (sorry, going back the continuity thing) you could "retire" your settlement once you set a full leadership of sorts. Once you have a full leadership, _
+  - _Context: This would also open up the possibility of creating new leadership roles depending on how many forts you have. Say, you have 4 forts so you appoint a _
+  - _Context: and later down the road of development, those lords could be called upon to provide soldiers to fight goblins or whatever_
+- **woody1842** (2018-05-09): Hmm hey I'm looking are your patreon and I was wondering that for a reward, you should add the patreons names into the game when an Item has become legendary
+  - _Context: interesting idea, or maybe let them design item names_
+  - _Context: I liked the way  prison architect did it, let them create a character or something and you can encounter them in the world_
+  - _Context: ok woody for your pledge you can be a chicken, rabbit or sheep_
+- **skeeball3635** (2018-02-16): New here, still looking around. If this is based off Gnomoria, in big G water physics and evaporation are terrible. Like, if you try to drain a lake into an underground cistern it'll evaporate in the tunnels before it even gets close. Very annoying. If you make a system of trenches as a precursor to
+  - _Context: agreed, liquid physics (including the dreaded magma pumps of DF) would be very nice to have_
+- **.roest** (2018-12-10): and I guess I can implement additional filters, think that would be the better way to control clutter instead of limiting the stockpiles to draw from
+  - _Context: In gnomoria, you get a giant list of everything in your fort. This always made finding the things you wanted to sell a pain. This optional filter woul_
+  - _Context: filters, or a search function so you can just type is part of the name of the items_
+  - _Context: as always I'd ask what a mechanic like that would add_
+- **.alch** (2019-09-01): Why not have it use a fuel resource bar like the engine did? You won't need fuel per recipe but instead per time spent crafting
+  - _Context: Plus it will tie in well if you make temperature a thing and gnomes need to keep themselves warm_
+  - _Context: it would just add  another ingredient to cooking recipes and unnecessarily add lots of items_
+  - _Context: I thought it would be cool and to provide a reason for some foods adding happiness_
+- **dinosaure.plz_nofriendrequests** (2020-12-24): I'd admit that the tree colour can be changed to blue, that has no gameplay change. Tree structure do have a gameplay impact, that's the kind of change that changes a world from "boringly standardized result" to "hey, I didn't expected that tree to grow as high!". Not a primordial feature, but somet
+  - _Context: Could you keep level encumbrance not checked? (please?)_
+  - _Context: <@!465569148798238720> they are a lot better than games not levelling their assets ; and they are pretty cute as they are today, this suggestion would_
+  - _Context: you want procedural tree layouts so you need sprites that can be stitched together at different locations, all possible but takes a talentend sprite a_
+- **dinosaure.plz_nofriendrequests** (2020-12-29): Suggestion: add more starting drinkable things. Even low quality would make it. I'm actually trying something like "DrinkValue" of 10 to every fruit and vegetable (wheat/grass/hay/.. excluded). `update "Items" set "DrinkValue"=10 where "DrinkValue"=0 and ("ItemGroup" in ('Corpses', 'Meat') or "Categ
+  - _Context: Can't place them myself whenever I want to. Edit: https://i.ebayimg.com/images/g/AocAAOSwmflfT~IU/s-l1600.jpg <- this is a "magic tree", nothing can f_
+  - _Context: oh a thing I would be happy about   abundance of ore as a setting ^^  And maybe reduce a bit the occurrence of gems? I am looking for ore and find rid_
+  - _Context: Allow a grove to be placed under an existing tree, and auto-set to actual type. (Don't know how I managed to place groves under wild tree roots someho_
+- **vorg9431** (2019-02-18): I thought it was neat that in that other game, when it rained, the rain drained down and filled low spots. It limited it so that it would fill a small area for a well, but wouldn't fill everything in. did some sort of soak in/evap or what ever.
+  - _Context: Rivers through the map, though might be laggy to implement, coming from one side of the map to the opposite side_
+- **matrixq** (2019-10-02): Maybe "Motivation" could be a value that determines how fast and well a gnome is doing things, which is derived from a number of needs/wants.
+  - _Context: They could leave if they get unhappy enough and steal some stuff when they leave_
+  - _Context: No, after the threat of ending development we only talk about metal based golems._
+  - _Context: Some kind of... moving mechanical device made in imitation of a human being._
+- **dinosaure.plz_nofriendrequests** (2021-01-04): I only wanted to see how others were playing, and as Discord accepts users to stream (even if not recording), that was the idea. I'm not comfortable enough to talk while streaming, and that would have zero-pro stream quality.
+  - _Context: Actually no, it's not even the seeds which are out in the world. It's the seeds which are already in the stockpile (on the floor), which are causing t_
+  - _Context: Just thought it would be interesting to see others playing, and multiple streams are ok on the same room._
+  - _Context: Starting a game on a more open platform like Twitch, and then announcing the stream in the <#447757383985266700> channel or alike is fair game though_
+- **korvar** (2021-02-07): In either Gnomoria or an older version of Ingnomia, I could make hierarchical stock lists by both deciding the order things got shown and changing the title, like adding "   " to the beginning of entries to inset them.
+  - _Context: When listing Food total in the upper left corner Egg should not count as food as they are not eatable and make the impression that food stocks is fine_
+  - _Context: While we're talking suggestions, making the item lists show up better over the white snow!_
+  - _Context: So like ``` Food 200     Bread 30     Sausage 10 Drink 100     Milk 100     Beer 0 ```_
+- **yes072083** (2018-07-04): suggestion: tile selected when tile info is displayed should be highlighted to allow easy identification
+  - _Context: Suggestion: keyboard shortcut to "flatten" current z level to better see the floor behind a wall. Gnomoria key was F_
+  - _Context: suggestion selected tile should contain information of tile. IE: weather dirt/clay/stone ect.._
+  - _Context: Suggestion: tile with job should be selectable to show job pending and gnome assigned if any_
+- **quibuz** (2020-09-05): is there an option to make autosave overwrite it's files yet? I just removed dozens of GB of savegame data from my harddisk. My world wasn't even very big or anything
+  - _Context: Also : are there plans for stuff like (manned) guard towers yet? I feel like the goblin raids are kinda random at the moment. They always walk through_
+  - _Context: I have a feeling it was just a huge number of autosave files (should probably have checked before deleting it :P)_
+- **optimus.0001** (2018-03-17): maybe you could 'designate region' for it, do it floor by floor
+  - _Context: Maybe make some blocks containing very valuable resources only mineable with explosives_
+  - _Context: and if you put a torch on a coal seam there should be a risk of fire/bang_
+  - _Context: re: darkness, that could make tunneling fun_
+- **korvar** (2021-01-02): Maybe you need a "Manager" gnome to do that sort of thing...
+  - _Context: Suggestion² (as I'm going to sleep): a "don't pause my game with Gnomes arrival as I'm not interested for the moment anyway" checkable option. 🙂_
+  - _Context: That's the wrong channel, but if you scroll level high enough to have this floating in the bottom layer, you're often able to click on it. (Saw this o_
+  - _Context: Suggestion: Having a visual histogram displaying how much of anything went recorded at any time. +relative "per day" consumption/production._
+- **jyeguru** (2018-04-23): So, you have to manually manage it at the start, then you get some tech/etc that allows it to be automated (maybe at a slight resource or efficiency cost)
+  - _Context: I just want to gas goblins or set unwanted gnomads on fire. Am I asking too much <@280266293490221056> ?_
+  - _Context: not if they have eye patches_
+  - _Context: Well not necessarily CO, but maybe gas or fumes?_
+- **.roest** (2018-05-29): world size near max requires a good gpu right now, there's still one thing i can implement to help with that, guess i need to do it sooner than i wanted
+  - _Context: Suggestion: In the "mine down" menu, integrate a tool for block removal. Also, the stairs-down tool doesn't automatically clear the block above. The s_
+  - _Context: Unsure what is happening under the hood, but during world creation Windows thinks Ingnomia is not responding.  I assume you are locked in world creati_
+  - _Context: but I am also getting 5fps, I think I need to update drivers or something_
+- **prassel** (2018-07-13): But amd 290 and 380 cards are just 7900 chips with more ram and some features, and should handle this game fine, and 2500k is not that slow yet
+  - _Context: now if you get constantly bad fps it could mean the shader processing is slow on your grpahics card, the world is too big so not everything is in grap_
+  - _Context: other than that i have no idea than ati/amd is just bad for gaming and it reinforces my dislike 😃_
+  - _Context: Btw this game "works" on a 5th gen i5 mobile integrated gpu which i think get 1gb shared vram_
+- **.elfu** (2020-03-03): Imagine you use A to set everyone's schedule the same, but then you want some gnomes to have exactly the same schedule, but shifted 3 hours forward
+  - _Context: I just had an idea about schedule and stuff. What if I was able to shift a gnome's schedule left/right?_
+  - _Context: Can we have a left/right arrow at the tips of schedule lines?_
+  - _Context: (think timezones in the world)_
+- **woody1842** (2018-04-10): Regarding the goblin army, should there be a mid tier enemy between goblins and orges being HobGoblins?
+  - _Context: there's armored goblins and the metal quality upgrades so I don't think a mid tier goblin is necessary_
+  - _Context: Russia edition?_
+  - _Context: in soviet ingnomia, bears ride you_
+- **prassel** (2018-08-27): why does the map not move on down-press WASD, but instead if moves when you release? 🤔 this is super weird and unconfortable since this is the first game ever that does it this way (for me)
+- **hughheggen** (2018-12-17): Suggestion: add a controls tab on the menu that allows you to map your own keys and see what buttons do what
+- **hughheggen** (2018-06-06): OK, so I've made a flat window, a large stone column, clear glass block, stained glass block, cobble stone, stone and wood halfsies block and a 2x2 gnome face wall relief
+  - _Context: while we're at it why don't we just add wind power_
+  - _Context: or should I just steal them from the fortress mod_
+  - _Context: is someone else going to add that_
+- **.lld** (2018-07-01): Suggestion: Make the sky 0, and count down to z level max being in the ground.  Right now with the options, its too easy to make a world with 100+ layers of empty sky
+  - _Context: do you really have to prefix with suggestion when you're posting in the suggestion channel? 🤔_
+  - _Context: I just do it so you know what as suggestion is and what a comment on another comment is_
+  - _Context: Suggestion:  Ensure gnomes are uniquely named.  Right now I have two Bardo's_
+- **sirmushrooms** (2020-08-30): awesome!! i cant wait, and yeah i understand i dont know the workings of doing what your doing but keep it up 🙂 ill keep posting bugs and trying to help when i can
+  - _Context: would you consider a co-op building on a single map? like they host the game and a friend can join?_
+  - _Context: yes, i want that, i even implemented some basic networking stuff back then but it's on hold for now_
+  - _Context: that works, just had a crash and it looked like i was back to where i was_
+- **.elfu** (2020-03-28): Suggestion: add a wild wheat to world generation
+- **berkys32** (2020-01-22): Suggestion - when assigning room to gnome, theres number behind his / her name indicating how much rooms he / she already has
+  - _Context: Suggestion - grass floor changes to soil floor, if wall built on it. Soil tile change to grass, if built._
+  - _Context: thats why Im asking for it - so I can see which gnomes already have room_
+- **dommain.** (2020-02-09): is it possible to switch tile sets every season automatically?
+- **styfrit** (2020-12-19): made river water level 2 tile high, or make sure there is wall all around
+

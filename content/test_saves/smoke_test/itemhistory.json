@@ -1,0 +1,200 @@
+{
+    "Days": [
+        {
+            "Data": [
+                {
+                    "ID": "Bread",
+                    "Mats": [
+                        {
+                            "ID": "Wheat",
+                            "Minus": 0,
+                            "Plus": 0,
+                            "Total": 32
+                        }
+                    ]
+                },
+                {
+                    "ID": "FellingAxe",
+                    "Mats": [
+                        {
+                            "ID": "Pine",
+                            "Minus": 0,
+                            "Plus": 0,
+                            "Total": 1
+                        }
+                    ]
+                },
+                {
+                    "ID": "FellingAxeBase",
+                    "Mats": [
+                        {
+                            "ID": "Pine",
+                            "Minus": 0,
+                            "Plus": 0,
+                            "Total": 0
+                        }
+                    ]
+                },
+                {
+                    "ID": "FellingAxeHead",
+                    "Mats": [
+                        {
+                            "ID": "Pine",
+                            "Minus": 0,
+                            "Plus": 0,
+                            "Total": 0
+                        }
+                    ]
+                },
+                {
+                    "ID": "Fruit",
+                    "Mats": [
+                        {
+                            "ID": "Strawberry",
+                            "Minus": 0,
+                            "Plus": 0,
+                            "Total": 32
+                        }
+                    ]
+                },
+                {
+                    "ID": "Grain",
+                    "Mats": [
+                        {
+                            "ID": "Wheat",
+                            "Minus": 0,
+                            "Plus": 0,
+                            "Total": 32
+                        }
+                    ]
+                },
+                {
+                    "ID": "Pickaxe",
+                    "Mats": [
+                        {
+                            "ID": "Pine",
+                            "Minus": 0,
+                            "Plus": 0,
+                            "Total": 2
+                        }
+                    ]
+                },
+                {
+                    "ID": "PickaxeBase",
+                    "Mats": [
+                        {
+                            "ID": "Pine",
+                            "Minus": 0,
+                            "Plus": 0,
+                            "Total": 0
+                        }
+                    ]
+                },
+                {
+                    "ID": "PickaxeHead",
+                    "Mats": [
+                        {
+                            "ID": "Pine",
+                            "Minus": 0,
+                            "Plus": 0,
+                            "Total": 0
+                        }
+                    ]
+                },
+                {
+                    "ID": "Seed",
+                    "Mats": [
+                        {
+                            "ID": "Strawberry",
+                            "Minus": 0,
+                            "Plus": 0,
+                            "Total": 32
+                        }
+                    ]
+                },
+                {
+                    "ID": "Wine",
+                    "Mats": [
+                        {
+                            "ID": "Apple",
+                            "Minus": 0,
+                            "Plus": 0,
+                            "Total": 128
+                        }
+                    ]
+                }
+            ],
+            "Day": 1,
+            "Season": 1,
+            "Year": 1
+        }
+    ],
+    "Items": [
+        {
+            "ID": "Bread",
+            "Mats": [
+                "Wheat"
+            ]
+        },
+        {
+            "ID": "FellingAxe",
+            "Mats": [
+                "Pine"
+            ]
+        },
+        {
+            "ID": "FellingAxeBase",
+            "Mats": [
+                "Pine"
+            ]
+        },
+        {
+            "ID": "FellingAxeHead",
+            "Mats": [
+                "Pine"
+            ]
+        },
+        {
+            "ID": "Fruit",
+            "Mats": [
+                "Strawberry"
+            ]
+        },
+        {
+            "ID": "Grain",
+            "Mats": [
+                "Wheat"
+            ]
+        },
+        {
+            "ID": "Pickaxe",
+            "Mats": [
+                "Pine"
+            ]
+        },
+        {
+            "ID": "PickaxeBase",
+            "Mats": [
+                "Pine"
+            ]
+        },
+        {
+            "ID": "PickaxeHead",
+            "Mats": [
+                "Pine"
+            ]
+        },
+        {
+            "ID": "Seed",
+            "Mats": [
+                "Strawberry"
+            ]
+        },
+        {
+            "ID": "Wine",
+            "Mats": [
+                "Apple"
+            ]
+        }
+    ]
+}

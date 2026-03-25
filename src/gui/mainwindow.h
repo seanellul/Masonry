@@ -20,8 +20,6 @@
 #include "../base/position.h"
 #include "../base/tile.h"
 
-#include <NsGui/IView.h>
-
 #include <QElapsedTimer>
 #include <QOpenGLWindow>
 #include <QTimer>
@@ -79,6 +77,10 @@ public:
 	bool noesisUpdate();
 
 	MainWindowRenderer* renderer();
+	class ImGuiBridge* imguiBridge() { return m_bridge; }
+
+	void takeScreenshot();
+	void takeScreenshot( const QString& outputPath );
 
 protected:
 	void paintGL() override;
@@ -95,7 +97,6 @@ protected:
 	void focusOutEvent( QFocusEvent* e ) override;
 
 private:
-	void noesisInit();
 	void imguiInit();
 	void imguiShutdown();
 	void drawImGui();
@@ -104,11 +105,8 @@ private:
 	void keyboardZMinus( bool shift = false, bool ctrl = false );
 	bool isOverGui( int x, int y );
 
-	void installResourceProviders();
-	void registerComponents();
 
 	void toggleFullScreen();
-	void takeScreenshot();
 	bool m_isFullScreen = false;
 	bool m_showImGuiDemo = false;
 	class ImGuiBridge* m_bridge = nullptr;
@@ -118,7 +116,6 @@ private:
 	QTimer* m_timer = nullptr;
 	QElapsedTimer m_keyboardMovementTimer;
 
-	Noesis::IView* m_view          = nullptr;
 	MainWindowRenderer* m_renderer = nullptr;
 
 	// Global position of last mouse click

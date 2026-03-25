@@ -19,7 +19,5 @@
 
 #include "base/global.h"
 
-#include <NoesisPCH.h>
-
 #include <QWidget>
 #include <QtCore>

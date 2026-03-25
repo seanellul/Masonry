@@ -14,7 +14,7 @@ project(Ingnomia
 	VERSION ${DEFAULT_VERSION}
 	DESCRIPTION "Gnome city builder"
 	HOMEPAGE_URL "https://github.com/rschurade/Ingnomia"
-	LANGUAGES "CXX" "OBJCXX"
+	LANGUAGES "CXX"
 )
 
 cmake_policy(SET CMP0144 NEW)
@@ -23,11 +23,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake/modules")
 find_package(Qt5 REQUIRED QUIET COMPONENTS Core Xml Sql OpenGL)
 
 find_package(Steam QUIET)
-find_package(Noesis REQUIRED)
 find_package(OpenAL REQUIRED)
-# Noesis license
-set(NOESIS_LICENSE_NAME "" CACHE STRING "Name")
-set(NOESIS_LICENSE_KEY "" CACHE STRING "Key")
 
 set(BUGSPLAT_DB "" CACHE STRING "BSDB")
 
@@ -91,18 +87,10 @@ target_link_libraries(${PROJECT_NAME}
 		Qt5::Sql
 		Qt5::OpenGL
 		$<$<BOOL:${Steam_FOUND}>:Steam>
-		NoesisApp
 		imgui
 		fastnoise
 		exprtk
 		OpenAL
-)
-
-# Noesis license
-configure_file(
-	${CMAKE_SOURCE_DIR}/src/gui/license.h.in
-	${CMAKE_SOURCE_DIR}/src/gui/license.h
-	@ONLY
 )
 
 configure_file(
@@ -113,7 +101,6 @@ configure_file(
 
 target_sources(${PROJECT_NAME}
 	PRIVATE
-		${CMAKE_SOURCE_DIR}/src/gui/license.h.in
 		${CMAKE_SOURCE_DIR}/src/version.h.in
 )
 
@@ -170,8 +157,6 @@ if(Steam_FOUND)
 	get_target_property(STEAM_DLL Steam LOCATION)
 	list(APPEND RUNTIME_DLLS ${STEAM_DLL})
 endif()
-get_target_property(NOESIS_DLL Noesis LOCATION)
-list(APPEND RUNTIME_DLLS ${NOESIS_DLL})
 
 if(WIN32)
 	# On Windows, we want to use bundled OpenAL for guaranteed OpenAL Soft support

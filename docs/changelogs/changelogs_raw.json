@@ -1,0 +1,4960 @@
+[
+  {
+    "type": 0,
+    "content": "==========================\n0.2.3\n- added random kingdom name generation\n- added support for multiple save games\n- added status screen for messages during world generation\n- screenshots\n- added keyboard support ( 1 - 0 ) for commands\n- hide undiscovered tiles",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-06-20T16:18:33.143000+00:00",
+    "edited_timestamp": "2018-06-21T12:08:55.922000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "459029298620137485",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🍆"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "452562992022945803",
+          "name": "roest"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "😍"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.2.4\n- menu option continue loads last save game now\n- when using a container to build a workshop it now drops its items\n- added metals and gems to underground\n- added config option for fow\n- reordered farm job priorities\n- fix gnome widget professions\n- added embark item presets",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-06-22T17:02:46.349000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "459765202704007198",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "➕"
+        },
+        "count": 8,
+        "count_details": {
+          "burst": 0,
+          "normal": 8
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🍏"
+        },
+        "count": 6,
+        "count_details": {
+          "burst": 0,
+          "normal": 6
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "😋"
+        },
+        "count": 7,
+        "count_details": {
+          "burst": 0,
+          "normal": 7
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.2.5\n- require felling axe for tree cutting\n- added baby animals\n- fixed crash with workshops with empty recipe lists\n- gnomes now die from hunger and thirst\n- updated to Qt5.11.1",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-06-25T17:22:42.703000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "460857384173043714",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🍒"
+        },
+        "count": 6,
+        "count_details": {
+          "burst": 0,
+          "normal": 6
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.2.6\n- fences\n- added cows, moo\n- fixed rotating workhop job sprites\n- fixed crash when loading constructions without sprite\n- add remove floor, replace wall/floor commands\n- added remove plant command",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-06-29T10:36:15.969000+00:00",
+    "edited_timestamp": "2018-06-29T10:36:44.389000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "462204650259480586",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "😍"
+        },
+        "count": 8,
+        "count_details": {
+          "burst": 0,
+          "normal": 8
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🐮"
+        },
+        "count": 8,
+        "count_details": {
+          "burst": 0,
+          "normal": 8
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.2.7\n- fixed crashes with removing stockpiles and pasture\n- fixed some stuff carrying over after new game\n- improved eating and drinking\n- added highlight to selected item in right click menu",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-07-04T06:19:50.413000+00:00",
+    "edited_timestamp": "2018-07-04T06:20:13.053000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "463952057888407552",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🌟"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.2.8\n- fixed creation of ghost items at position (0,0,0)\n- added tooltip to construct workshop button listing crafts\n- fix crash with deconstructing fences\n- added butcher excess lifestock\n- lowered food intake and doubled the time before gnomes die from thirst and starvation\n- added mine stairs up\n- fixed deconstruction stairs",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-07-04T10:45:47.221000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "464018985592291331",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "⛏"
+        },
+        "count": 9,
+        "count_details": {
+          "burst": 0,
+          "normal": 9
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.2.9\n- fixed crash with butcher when pressing cancel on empty list\n- fixed crash with deconstructing a torch\n- fixed removing rooms\n- fixed deconstructing furniture in rooms\n- fixed ghosts of felling axes making it to the next game",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-07-04T19:12:30.813000+00:00",
+    "edited_timestamp": "2018-07-04T19:12:41.574000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "464146507499831297",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👌"
+        },
+        "count": 9,
+        "count_details": {
+          "burst": 0,
+          "normal": 9
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "452562992022945803",
+          "name": "roest"
+        },
+        "count": 7,
+        "count_details": {
+          "burst": 0,
+          "normal": 7
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "450692975907831829",
+          "name": "gnome2"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.3.0\n- added check if required items exist before handing out jobs, should reduce green/yellow flashing of jobs\n- fixed memory leak with jobs\n- added message box when opengl init fails\n- reduced sleep, hunger, thirst\n- renamed the build door widget to build utility so people stop asking why torches are doors\n- fix stockpile filter settings for loading/saving copy&paste\n- big windows like Population Overview, Stocks and Kingdom now have a max size of the game window",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-08-04T17:28:52.850000+00:00",
+    "edited_timestamp": "2018-08-05T10:29:01.864000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "475354451306086401",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🛠"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "452562992022945803",
+          "name": "roest"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.3.1\n- abort jobs now correctly unclaims items\n- hunger and thirst now only abort jobs if food/drink items are available\n- fixed a crash with aborting jobs\n- made the new game screen more friendly for lower resolutions\n- added button to create a random gnome\n- fixed saving of job sprites\n- added status messages to loading screen\n- fixed gnomes freezing after load",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-08-18T15:37:59.694000+00:00",
+    "edited_timestamp": "2018-08-23T18:37:42.799000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "480399976065794079",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🛠"
+        },
+        "count": 10,
+        "count_details": {
+          "burst": 0,
+          "normal": 10
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.3.2\n- replacing walls now return materials\n- moved the log file to C:\\Users\\<User>\\Documents\\My Games\\Ingnomia\n- tweaked cursor positioning if there is a wall structure in the tile in front of it\n- fix space bar for toggle pause\n- added keyboard plus and minus for zoom",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-08-24T14:49:38.983000+00:00",
+    "edited_timestamp": "2018-08-24T15:10:05.587000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "482562136795774996",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.3.3\n- if embark items is empty medium preset will be selected\n- fixed crash when clicking on certain tiles of a rotated crude workbench",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-08-24T18:10:10.749000+00:00",
+    "edited_timestamp": "2018-08-25T07:54:30.971000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "482612601679773701",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👌"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.3.4\n- fixed some crashes with butchering animals\n- added short walls, hotkey H - will need new game\n- added bones to all butchering results\n- added animals: duck, goose, dog, cat, fox, wolf, deer, goat, squirrel\n- fixed sand short wall",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-08-25T13:17:08.736000+00:00",
+    "edited_timestamp": "2018-08-25T19:53:10.742000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "482901245237919754",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🐂"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🍖"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🐓"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "452562992022945803",
+          "name": "roest"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.3.5\n- fixed canceling workshop constructions leaving job sprites behind\n- show stair orientation when digging stairs down\n- fixed creatures and gnomes flashing when on the same tile\n- reworked the workshop gui\n- stockpiles: initial suspend threshold per item is now 0, if it's 0 the suspend threshold is ignored\n- fixed some items not possible to stockpile - please report if an item doesn't appear in the stockpile filter",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-08-27T16:34:57.181000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "483675800835719199",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🏄"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.3.6\n- added missing translation strings for some item groups\n- fix replace floor to work under designations\n- fixed a crash with multiple butchers butchering the same animals\n- fix missing item definition for sausage and sandwich causing pink boxes\n- fixed messed up sprites for constructed items on load (double beds)\n- fix missing definitions ammo pouch\n- fix workshop craft# and craft to",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-08-28T15:03:38.226000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "484015208298446849",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👌"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🛠"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.3.7\n- improved world rotation\n- added keybinding ctrl + / ctrl - for changing z levels\n- made key bindings configurable",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-08-30T15:48:53.567000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "484751372995133451",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "💡"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.3.8\n- fix: saving keeps stockpile order now\n- no more duplicate gnome names, Ulf Ulfson son of Ulf disagrees\n- gnomes on gnome list and profession overview are now sorted by name\n- population overview can now be sorted by skill\n- fixed keyboard zoom not working\n- population overview and gnome widgets now update each other in real time",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-08-31T18:40:47.343000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "485157019972665344",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.3.9\n- fix: update selection z level when changing level\n- added chisel to stone mason\n- added 3 pixel to mouse y for better tile selection\n- skill system overhaul (first part) - needs new game\n- gnome move speed now depends on hauling skill\n- added save button to profession management to prevent unwanted changes to professions",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-09-01T15:43:03.372000+00:00",
+    "edited_timestamp": "2018-09-01T15:43:13.309000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "485474679902175232",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👌"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "⚒"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.4.0\n- stockpiling, tiles with containers are handled first\n- job queue: craft# the number to craft will count down now\n- job queue: craft to, jobs will not disappear anymore when the number is reached but suspend\n- slowed down fast runners\n- sun loving plants no longer grow underground\n- fixed crash when removing a pasture\n- fixed selection checking for zLevel to only stop at walls and floors",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-09-02T08:23:01.223000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "485726329128615947",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🔥"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🌞"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "452562992022945803",
+          "name": "roest"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.4.1\n- shift leftclick now forces the tile info widget to open even if only one thing is on the tile\n- made gnomes less blinking\n- added cheese\n- added move top/bottom buttons to stockpile widgets\n- fixed bug that caused craft jobs with materials set to \"any\" not being started\n- add \"fow\" option to configs when missing",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-09-03T15:48:34.851000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "486200845956808705",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🅰"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇳"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇺"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇸"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🧀"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.4.2\n- fix Gnome list showing the right job after sorting\n- another fix for initial gnome speed\n- fixed brewing recipes to use brewing skill instead of cooking\n- building/replacing floor tiles with ramp tops is no longer possible\n- prevent logs created by felling a tree at map border to float in limbo",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-09-05T18:17:23.665000+00:00",
+    "edited_timestamp": "2018-09-05T18:18:43.142000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "486963071848415252",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 6,
+        "count_details": {
+          "burst": 0,
+          "normal": 6
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🍺"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "450692975907831829",
+          "name": "gnome2"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.4.3\n- update lights in range when mining a wall\n- open stockpile window at stockpile creation\n- goats give milk now\n- eggs can now be collected, omelette!\n- removed glFinish in the main render function, this might improve things on some systems\n- fixed a stockpile related crash",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-09-14T15:08:34.515000+00:00",
+    "edited_timestamp": "2018-09-14T19:44:12.345000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "490177044739653652",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🅰"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇳"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇺"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇸"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.4.4\n- improved check if item is allowed in a container\n- fixed items in containers being rendered after load\n- built soil and rough stone walls and floors will be mined rather than deconstructed\n- added cabinet, dresser, statues to funiture options\n- fixed a workshop crafting related crash\n- animals no longer randomly wander through doors that are blocked for them\n- fix: pasture onle show collect eggs checkbox for egg laying animals\n- separated selection rendering from main render",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-09-23T18:17:33.955000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "493486096588472320",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 7,
+        "count_details": {
+          "burst": 0,
+          "normal": 7
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇮"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇱"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇴"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇻"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇪"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇺"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🍆"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.4.5\n- tiles with non wall neighbors are discovered at game start\n- grass spreads now to dirt tiles\n- fixed beer and bread recipes taking grain\n- reinstated water\n- added fish",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-09-28T17:56:41.436000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "495292782471282693",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🐳"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🐟"
+        },
+        "count": 8,
+        "count_details": {
+          "burst": 0,
+          "normal": 8
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇫"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇮"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇸"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇭"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "💦"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.4.6\n- breaks save games, new game required\n- added dig ramps down\n- water flows down now\n- wild animals no longer spawn in the starting zone\n- animals now getting hungry\n- some animals on pastures eat grass\n- fix dig hole\n- fixed gravity for dropped tools\n- fixed path finding/move order not correctly aborting in in some cases\n- remove dead gnomes from lists",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-10-03T10:37:18.906000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "496994149333991437",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 6,
+        "count_details": {
+          "burst": 0,
+          "normal": 6
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🤤"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "👌"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "450692975907831829",
+          "name": "gnome2"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "💦"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "💀"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.4.7\n- added no pass designation \n- fix falling gnomes discover their new location\n- remove floor - improve job selection to avoid getting trapped\n- build wall - improve job selection to avoid getting trapped\n- add renaming of gnomes",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-10-09T18:59:05.031000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "499294750768234516",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.4.8\n- added checkbox to gnome window to let them ignore no pass zones\n- removed seperate render passes for floor and wall tiles",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-10-14T14:01:10.110000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "501031717243453442",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "452562992022945803",
+          "name": "roest"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "450692975907831829",
+          "name": "gnome2"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.4.9\n- fixed missing check for pasture when designating areas\n- added wheelbarrows\n- added gui for game settings\n- added auto generate jobs\n\nDisclaimer: \nWheelbarrows and auto generate are first implementations and still far from finalized.\nFor wheelbarrows it means the code implementation is done but a lot of definitions in the game's data files, which define which items and how many go into which carry container, are still missing.\nAuto generate works for generating craft jobs of \"any\" material. Why it's complicated to make it work with selected materials I'd need to explain in a longer extra post.",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-11-11T12:53:37.264000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "511161578612195340",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "⚙"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🛠"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🛒"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "➕"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.5.0\n- add buckets and sacks as carry containers\n- added fishery workshop\n- added item history",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-11-21T18:44:54.410000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "514873861225840652",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🎣"
+        },
+        "count": 6,
+        "count_details": {
+          "burst": 0,
+          "normal": 6
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🐟"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "😆"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.5.1\nNew game required\n- fixed workshop crafting queue behaving strangely\n- abort jobs when required skill gets deactivated\n- can activate stockpile filter categories even with no items in that category present so that newly created items go to that stockpile\n- added trading",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-12-04T18:20:08.250000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "519578670071808011",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "💰"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🛒"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.5.2\n- fix duplicate sprite creations\n- debug mode disable fow\n- started implementing basic magic features\n- added job info to tile info widget\n- UI overhaul\n- fix not possible to build walls on ramp tiles anymore\n- fix floor replacement on grass tiles turning out as raw soil floor",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-12-11T16:46:18.523000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "522091772344533008",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🌟"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "➕"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇳"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇮"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇨"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇪"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.5.3\n- fixed animals not following gnomes\n- added support for stylesheet mods\n- improved job sprite rendering\n- improved job sprites for wall and floor constructions\n- seperated stone and brick blocks",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-12-12T13:24:22.501000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "522403341930725386",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇩"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇮"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇨"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇰"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇺"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇸"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.5.4\n- added seed and animal trader\n- added migration, 1-5 gnomes will arrive each season\n- tile info window doesn't reveal undiscovered tiles anymore\n- fix crash with population overview clicking skill button after sorting\n- added bone furniture\n- added wall paintings",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2018-12-20T20:15:31.977000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "525405916137521164",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "☠"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇧"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇴"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇳"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇿"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🙉"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.5.5\nNeeds new game\n- fix deconstructing built ramps\n- fixed checkboxes not visible\n- added behavior trees for creature AI\n- added sheds, troughs and beehives",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-01-13T20:30:52.115000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "534107084250284074",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🐝"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "452562992022945803",
+          "name": "roest"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "450692975907831829",
+          "name": "gnome2"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.5.6\n- fix reset the behavior tree when aborting a job through skill deactivation\n- fix render depth in settings is an INT not a BOOL\n- fix harvesting trees\n- reactivated wheelbarrows to work with behavior tree\n- fix workshop widget checkbox showing the correct state for accept jobs\n- fix BT for aborting jobs\n- fix deconstructing stuff \n- fix deconstructing workshops returns items now",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-01-19T12:55:21.078000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "536166776766201865",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.5.7\nNeeds new game\n- fix some settings not saving their changes\n- harvesting trees is now a Horticulture job\n- dig hole now creates ramps at the outer tiles of the hole\n- improved get best drink, get best food\n- improved constructing ramps\n- fixed crash with removing a farm while paused\n- fix adding tiles to existing designations open the wrong window\n- added job priorities\n- fixed crash when removing linked stockpiles\n- raised drink value of wine to 40\n- carpenters can now craft fishing rods\n- changed saving items so that adding new items won't break saves anymore (breaks save games one last time)",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-01-19T12:55:28.602000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "536166808324014100",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🅱"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🛠"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "452562992022945803",
+          "name": "roest"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.5.8\n- creatures will now evade trees suddenly growing up below them\n- fixed priorities for different job types with same skill requirement\n- newly built workshops now accept generated jobs by default\n- reinstated death from hunger and thirst\n- gnomes now eat and drink up to full once they started\n- auto craft items for build jobs\n- plant tree now checks for other trees in range\n- plant tree now checks for other plant tree jobs in range\n- adjusted sunrise and sunset times for seasons\n- fix missing fish bones in stockpile filter\n- fix claim items for workshop craft jobs, when a linked stockpile exists but the item is not in that stockpile\n- fix job priorities when there are farming jobs around\n- fix deconstructing workhops only creates on deconstruct job even if more tiles are selected\n- fix deconstructing scaffolds deconstructs all scaffolds above\n- felling pine trees now produces 1-3 pine cones that can be used to plant new trees\n- fix plants growing in seasons they shouldn't when planted in that season\n- now also expel items from the trunk tile when a tree grows up\n- digging stairs down should create raw materials at \"0, 0, 0\" anymore\n- added indirect sunlight to neighboring tiles\n- fixed trader no appearing",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-01-22T12:46:42.720000+00:00",
+    "edited_timestamp": "2019-01-23T16:08:06.982000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "537251766211706881",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "➕"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.5.9\n- talked to some unreliable onions and straightened them out\n- fix build thatch outer ramp works again\n- mine stairs up now removes the wall in the tile above\n- added more walls with floor on top\n- fix pine cones defs for stockpiles and containers\n- add buildable soil and stone outer corner ramps\n- clicking the gnome list to open a gnome window that is already open now brings that window to front\n- fixed crash with opening item info when the maker has died\n- dead gnomes disappear after two days\n- fix animal state change tick doesn't reset on load\n- fix animals grow up again\n- disallow setting designations on tiles occupied by tree leaves\n- reinstated groves\n- added some dyes\n- added hair dyeing\n- improved lighting",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-01-28T12:48:39.482000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "539426583140892672",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "⛈"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "450692975907831829",
+          "name": "gnome2"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.6.1\n- added default material to sprite definition, no more bone table as default sprite when building workshops\n- fixed material2 for combined items at startup\n- redesigned the stockpile filter tab\n- added workshop priority\n- added assign gnome to workshops\n==========================\n0.6.0\n- added indicator to butcher list if animal is young\n- added job sprite to upper wall tile for DigStairs\n- fix renaming groves\n- fix adding tiles to existing groves\n- added oak trees\n- added combat - this is ongoing development\n- added auto butchering of corpses\n- added mushroom biome\n- added keybinding options for actions\n- added oaks for oak tree planting\n- replaced the external data storage with a SQLite database",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-03-08T11:39:35.642000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "553542329374474250",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "😍"
+        },
+        "count": 9,
+        "count_details": {
+          "burst": 0,
+          "normal": 9
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "👌"
+        },
+        "count": 6,
+        "count_details": {
+          "burst": 0,
+          "normal": 6
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🏹"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "⚔"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🍄"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "450692975907831829",
+          "name": "gnome2"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇾"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇪"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🇸"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.6.2\n- added prospecting recipes\n- fix building fisheries\n- fix crash with dirt floor sprites after loading\n- fix materials not registering for crafts\n- fix tech gain for crafting at workshops\n- fix tool pick up for dig jobs\n- fix planks and blocks not recognized for floor construction\n==========================\n0.6.3\n- added scheduling\n- cached some more db values to reduce reoccurring db access\n- added ingame bug report\n- fixed fences not showing up\n- fixed animals procreating\n- fixed stockpile stacksize when installing container\n- first goblins won't appear before summer year two\n- increased gnome move speed\n- clear log on start now clears log on start\n- fixed oak tree rotation - nobody noticed wtf\n- reduced grow time for most plants significantly",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-06-13T12:39:37.195000+00:00",
+    "edited_timestamp": "2019-06-13T12:40:43.306000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "588709058345697281",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.6.4\n- fixed build palisade, not possible anymore with floor above\n- fixed loading of installed crates on stockpiles\n- reduced DB calls for farms and groves\n- fixed stockpiles generating hauling jobs for fields with containers that don't accept that item\n- fix workshop crafting now costs time accoring to the crafting recipe\n- fix designating a grove also set farm flag\n- added armor and weapon crafting\n- added armor equipping\n- added military settings window\n- added training grounds\n- fixed crash when clicking the tailor workshop, error in mattress sprite\n- fixed crash when clicking an A button in the skill overview window\n- fixed soil corner ramp orientation\n- fixed crash when restarting the game\n- fix stone stair rotation\n- fix undefined job state when a gnome was working a job and a need kicked in\n- fix grass-soil uramps showing the winter sprite all season\n- fix another instance of tools not releasing properly when sleep hits\n==========================\n0.6.5\n- fixed crash when changing workhop priority\n- fixed setting uniform and squad names\n- fixed missing entry in material to tool level table for platinum\n- added auto save\n- fixed tools not getting release properly when interupted (this time for real hopefully)",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-06-13T12:39:48.724000+00:00",
+    "edited_timestamp": "2019-06-13T12:41:04.817000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "588709106702090241",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 11,
+        "count_details": {
+          "burst": 0,
+          "normal": 11
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "😘"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "450692975907831829",
+          "name": "gnome2"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.6.6\n- add target assignment for squads\n- fixed freeze with auto craft\n- fixed crash when pressing keys while in the menu\n- fix deconstructing workshops\n- fix lockup with butcher workshop\n- fix releasing carried items when a wheelbarrow job gets interrupted. \n- fix traders having no items\n- fix job selection test tile when clicking different job while one is already selected\n- switched sacks and bags, sacks are nor buildable and bags the carry container\n- added container info to item info widget\n- fix remove items from containers too when taking them from a stockpile\n- fix building sacks outside of stockpiles\n- fix building walls on doors\n- fix item count in trade widgte for items with quality",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-07-21T08:17:29.213000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "602413829300682762",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "😍"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 8,
+        "count_details": {
+          "burst": 0,
+          "normal": 8
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🛠"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "450692975907831829",
+          "name": "gnome2"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.6.7\n- possible fix for wrong material crafts\n- fix double tile definition for tailor workshops\n- add saving of monsters\n- add saving of event manager state\n- fix saving time and day with first auto save on new game\n- added occupied tile flag to prevent building into trees\n- fix clear reserved items on hauling job abortion\n- stockpile limits only uses item type now\n- fix replace wall being able to be applied to workshops\n- improved replacing of walls and floors\n- improved deconstructing\n- prevent digging ramps under fishery\n- add workshop craft to by material",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-07-31T15:50:05.258000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "606151608665112576",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 9,
+        "count_details": {
+          "burst": 0,
+          "normal": 9
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🛠"
+        },
+        "count": 6,
+        "count_details": {
+          "burst": 0,
+          "normal": 6
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "450692975907831829",
+          "name": "gnome2"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.6.8\n- added metal pickaxe heads\n- added peaceful mode\n- added octree to item management\n- fixed floor sprite rotation for stone stairs\n- added toggle for stockpile limit modes\n- assign workshop, sort gnomes by name\n- fixed super fast cows\n- fix crash with deleting a stockpile\n- added deleting of save games\n- add priorities to farms, groves and pastures\n- build containers with multi selection\n- fix traders having no inventory after load\n- fix beds sometimes not released properly\n- fix crash with dyers workshop and auto generating craft plank jobs\n- fix dyer workshop, save/load created materials and names",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-08-17T10:19:25.453000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "612228988206841856",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👌"
+        },
+        "count": 8,
+        "count_details": {
+          "burst": 0,
+          "normal": 8
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🌝"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.6.9\n- added profession selection to profession overview\n- lowered required tool level for felling trees so wooden felling axes work now\n- added sheep dyeing\n- add sort by profession to profession overview\n- checking for default profession on start and add it if it's missing\n- improved random movement\n- added hard limit of 1000 creatures per type\n- fix creature breeding when limit is reached\n- fix deconstructing doors\n- fix a crash with pastures\n- improved grass spreading\n- added birch trees\n- improved water handling\n- added engineer and machine workshops\n- fixed a bug with digging ramps down",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-10-11T13:53:19.730000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "632214151674069052",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.7.0\n- added death from drowning\n- added automatons\n- fixed floor disappearing when deconstructing workshops\n- fixed replacing fancy floors and walls\n- added windmill\n- add bone and skull walls\n- adjusted all item prices (wip)\n- fixed mod support\n- prepared main menu and the new game widget for translations\n- added neighbor kingdoms and interactions with them\n- made the ocean front uneven\n- added rivers",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-11-02T11:35:45.881000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "640152065565261857",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 12,
+        "count_details": {
+          "burst": 0,
+          "normal": 12
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "450692975907831829",
+          "name": "gnome2"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.7.1\n- fixed some definitions, flour, bone table\n- fix saving/loading for larger data size\n- fixed crash with removing stockpiles under constructed containers\n- fixed workshops creating auto craft jobs even when they shouldn't\n- fixed crash with deleting stockpiles\n- fixed crash with too many gnomes on the profession overview list\n- fixed crafting of automaton parts\n- fix auto harvester for vegetables\n- it's now possible to toggle the debug overlay, default key O\n- added on screen item counts",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-11-17T10:18:08.273000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "645568348125659157",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "❤️"
+        },
+        "count": 6,
+        "count_details": {
+          "burst": 0,
+          "normal": 6
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🏆"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.7.2\n- fix building workshops over the edge\n- fix automaton removing cores\n- fix automaton list reset on load\n- added quick save\n- fixed crash with non existant mission\n- added check if gnome can reach workshop when gettings jobs\n- some animals now drop hides on butcher\n- item info now shows tool level if item is a tool\n- job info in the tile info widget now shows required tool level if the job requires a tool\n- added flintstone pickaxe head\n- fix wood bed frame \n- fix wall floor construction\n- grain plants (wheat, oat, millet, barley) no longer produce seeds, the seed item is grain, they now produce 2 grain per harvest with a 50% chance of a third\n- fix giving out jobs when required items not exist, this will reduce many loops of getJob-dropJob\n- fix when building a wall it sets the embedded material and item spriteID to zero\n- fix when building a wall it moves items and creatures out of that tile.\n- fix unreachable material preventing some crafting\n- removed the constraint that all items have to be the same material when selecting \"any\" material for crafting\n- stopped eggs from walking around\n- added beehives and honey\n- added flowers",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-11-23T21:33:02.056000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "647912518555009045",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🐝"
+        },
+        "count": 7,
+        "count_details": {
+          "burst": 0,
+          "normal": 7
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🌻"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "👌"
+        },
+        "count": 6,
+        "count_details": {
+          "burst": 0,
+          "normal": 6
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "😘"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🥚"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.7.3\n- fix enemy kingdoms not attacking\n- fix goblin aggression being so high it overcomes the peaceful setting\n- fix gnomes changing haircolor depending on the direction they face\n- fix bug with fill trough that would stop gnomes from working\n- fix some weapon crafting recipes\n- added popup and center camera on gnome death\n- when sending several explorers at the same time, they shouldn't find the same kingdom anymore\n- fix endless get job loop when required items aren't reachable\n- added checkbox to pasture widget to toggle harvest jobs (milk, shear), that setting will be off for existing games so please check your pastures\n- improved auto crafting behavior\n- fix saving of embark presets\n- fix prospector making stone slivers\n- added fill hole command\n- fix crafting of metal bars when source material \"any\" is selected\n- fix reset mission list wehn starting a new game\n- fix crash with removing stockpile filter items\n- added checkbox to world size slider to enable map sizes greater than 300\n- added harvesting grass for hay from pastures\n- building a structure like fence that removes the WALKABLE flag will also remove the designation (farm, stockpile...) on that tile\n- improved (hopefully) stockpiling performance\n- goblins should no longer target gnomes that are on a mission\n- workshop and stockpile windows now remember their size and position\n- added new sprites for rough stone walls\n- split rendering into two passes for floor and everything above, sprites overlapping tile borders won't get cut off by neighboring floor sprite anymore",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-12-19T19:54:03.305000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "657309694133534740",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🦆"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 10,
+        "count_details": {
+          "burst": 0,
+          "normal": 10
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🛠️"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.7.4\n- sprite handling rework to allow more sprites in the future\n- added adjustable limit to hay harvesting\n- added water evaporation\n- fix save/load auqifiers and deaquifiers\n- fix building a wall removes water on that tile\n- added setting to set target fps when the game is paused, ( config.json: \"pausedRenderTimer\": # ) higher number = lower fps\n- added setting to adjust the light level at night time\n- added check connection between items and jobs before give the job to a gnome, fixes gnomes getting stuck because of unreachable items\n- fixed workshop tasks showing different materials when a new material appeared after creating the task\n- prospecting now has a 50% success chance\n- prospecting outcome now depends on source material\n- fix constructed wallfloor disappearing when building a wall on top\n- added alarm bell and gnomes retreating to its location when the alarm is raised",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2019-12-23T16:31:13.924000+00:00",
+    "edited_timestamp": "2020-01-02T22:01:02.294000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "658708203512528958",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 6,
+        "count_details": {
+          "burst": 0,
+          "normal": 6
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🛠️"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🌊"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "==========================\n0.7.5 indev\n- fix bee hive now craftable at carpenter\n- add wall torch\n- add plank stairs\n- fix furniture not buildable in rooms\n- fix phase shifting gnomes\n- fix deconstructing floors moves items to the worker's position\n- fix item search abandoning too soon\n- added categories to the workshop construction window to make it easier to find a specific workshop\n- add adjustable threshold to item overlay, mark item red if amount is lower than threshold\n- add big torch and brazier, both crafted in the blacksmith workshop\n- add config option to control the render order of layers: \"renderMode\": \"down|up\" up looks better with water transparency but adds more load to the gpu\n- fix rotating dresser\n- fix military widget multiple issues\n- fix gnomes in get job loop when trees not reachable for pick fruit or fell\n- add damage reduction when wearing armor\n- add glass workshops",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2020-01-15T13:32:39.074000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "666998183083245568",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 13,
+        "count_details": {
+          "burst": 0,
+          "normal": 13
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🛠️"
+        },
+        "count": 4,
+        "count_details": {
+          "burst": 0,
+          "normal": 4
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🔥"
+        },
+        "count": 6,
+        "count_details": {
+          "burst": 0,
+          "normal": 6
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "## 0.8.0 // no official release number but already on Steam\n### Fixed\n- Isolated simulation thread from UI thread, so they don't share data.\n  UI components are now split into a UI controller living in t he UI thread and a data aggregation component living in the simulation thread.\n  Both parts are connected via the Qt message system, but are not allowed to access state owned by the other thread.\n- Prevent errors in sprite mapping from cascading. The errors themselves are not resolved yet, but will no longer corrupt an entire save game.\n- Always resolve all assets relative to the main executable.\n### Added\n- Added Noesis based UI, replacing the existing UI from scratch. (Work in progress.)\n- Added \"Hunting\" behavior, in addition to legacy \"defend\" behavior.\n  Squads can actively seek out enemies all over the map as they become visible, without user involvement.\n- Added Linux support.",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2020-10-03T10:22:08.456000+00:00",
+    "edited_timestamp": "2020-11-09T17:09:49.946000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "761895860383514645",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false
+  },
+  {
+    "type": 0,
+    "content": "### Changed\n- Relicense code under [GNU AFFERO GENERAL PUBLIC LICENSE Version 3](LICENSE) and publish as open source.\n- Switch to CMake build system.\n- Switch from C++11 with MSVC legacy extensions to pure C++17.\n- Update Qt to 5.14.1.\n- Refactored rendering.\n    - Cull empty tiles in vertex rather than fragment shader.\n    - Split opaque and transparent tiles into distinct render passes.\n    - Upload data to GPU via compute shader rahter than direct mapping.\n    - Render dark areas desaturated.\n    - Improve visibility of designations.\n    - Cull tiles down to minimal screen space size in order to minimize overdraw.\n    - Increase required OpenGL version to 4.3.\n    - Add depth buffer to rendering.\n- Replace explicit squad target control by behavior settings for Squad.\n- Move Uniform assignment from squad position to individual gnome.\n  Gnomes can now have a uniform without being assigned to a squad, but they still need a squad to control their combat behavior.\n- Allow arbitrarily sized squads, up from only 5 slots.\n- Speed up high level pathability tests.\n- Speed up A* pathfinding.\n- Speed up liquid simulation.\n- Speed up spatial item lookup.\n- Switch from file based SQLite DB to pure in-memory SQLite DB.\n- Load SQLite DB from human readable SQL file instead of binary representation.\n- Run as \"native Windows 10 application\" under Windows 10, rather than running in compatibility mode.",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2020-10-03T10:22:19.332000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "761895906001027073",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🍉"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "### Removed\n- Removed old Qt based UI.\n- Removed RapidJSON from JSON parsing and dependencies. Comments in JSON files are no longer supported.\n- Removed Quazip from dependencies.\n- Removed zLib from dependencies.",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2020-10-03T10:22:28.833000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "761895945850978304",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false
+  },
+  {
+    "type": 0,
+    "content": "just posted the relevant part of the changelog.md from github here so it doesn't look like there were no changes since january 15th",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2020-10-03T10:23:16.878000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "761896147366707201",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "❤️"
+        },
+        "count": 3,
+        "count_details": {
+          "burst": 0,
+          "normal": 3
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "## [0.8.1]\n\n### Fixed\n- message window not disappearing after clicking an answer button if game is unpaused, \n  game not possible to unpause now when message window is open\n- GUI quickly changing size and back after resizing the window\n- key space for pause\n- text clipping in some menu panels\n- dig stairs and ramps cursor\n- rotating the world keeps view on current location\n- set view to correct position after load\n- added bounds to world movement so it can't be moved out of view accidentally\n- fix keyboard movement for fast speed\n- felling trees in groves requires a felling axe\n- jobs created with no required tool\n- groves not keeping suspend flag\n- killed animals leave corpses again\n- butchering animal corpses\n- explorative mining speed now the same as mining\n- jobs with missing materials not returned to job queue correctly\n- visual corruptions on AMD GPUs\n- some alpha blending issues\n- uiscale reverting to 100%\n- crash when adding or deleting a custom profession\n- building scaffolds\n- dead gnomes give up workshop assignments\n- dead creatures drop their inventory\n- fix crash on startup on some systems\n\n### Added\n- moved text in xamls to resource files as preparation for translations PR#90 Daynvheur\n- added french translation PR#90 Daynvheur\n- settings dialog\n- WASD movement\n- item summary\n- setting for minimum ambient light level\n- colors for skill buttons in population overview\n- colors for population schedule buttons\n- blacksmith recipe for metal needle\n- honey wine\n- fill hole command\n\n### Changed\n- more info for jobs  PR #91 by rivenwyrm\n- updated to Noesis 3.0.6\n- removed key triggers from xamls\n- use only one save game for auto save\n- improved auto craft behavior\n- honey can be stored in barrels\n- greatly reduced bone drops from butchering",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2020-11-09T17:10:30.886000+00:00",
+    "edited_timestamp": "2020-11-24T20:58:49.582000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "775406982051397642",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🔥"
+        },
+        "count": 7,
+        "count_details": {
+          "burst": 0,
+          "normal": 7
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🥳"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🎃"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "💯"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "## [0.8.2]\n\n### Fixed\n- suboptimal paths due to wrong heuristic in pathfinding\n- gnomes trying to work in deep water\n- missing floor texture for undiscovered areas\n- find new path if target has moved\n- crash with selected dig stairs tool at layer 0\n- build scaffolds on top of each other\n- added check for corrupted config file and load standard config if needed\n- deconstruct workshops sets tile flags correctly, allowing to build on that tile again\n- prevent creatures from walking into deep water\n- constrain camera to actual game area\n- reasonable speed range for WASD\n- load game screen updates without restarting now\n\n### Added\n- ui elements to show state of and toggle certain render options\n- toggle for job sprites\n- added bugsplat crash reporting to windows builds\n\n### Changed\n- improved cursor for building floor on walls\n- optimized pathfinding if multiple gnomes have same goal\n- reduced water pressure on the faucet\n- mining job sprite, first poc for job sprites giving more visual feedback about the job\n\n### Removed\n- old networking code",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2020-12-06T19:10:21.402000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "785221613632225351",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🥰"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🎃"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🙂"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "## [0.8.3]\n\n### Fixed\n- crash in tile info panel due to wrong thread\n- random crash due to use of GPU in wrong context\n- crash with auto craft in waste disposal\n\n### Added\n\n### Changed\n- sped up auto-craft job generation\n- include log file in crash dumps",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2020-12-20T10:31:32.738000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "790164480671612929",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false
+  },
+  {
+    "type": 0,
+    "content": "## [0.8.4]\n\n### Fixed\n- large refactor of code base to fix some crashes and memory leaks\n- behavior tree instantiation \n\n### Added\n- Willow trees\n- Info display for selected command and selection size\n\n### Changed\n- Rivers now have sand floor, preventing grass and plants spawning there\n- speed up light updates\n- speed up animal ai  for grazing",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2020-12-20T10:31:39.936000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "790164510861295628",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false
+  },
+  {
+    "type": 0,
+    "content": "## [0.8.5]\n\n### Fixed\n- moved cursor calculation to game thread\n- cursor detached from selection when using WASD\n- going back to resume screen when selecting settings out of a running game\n- container capacity on stockpiles after load\n- crash because of incorrect data in save folders\n- buildable carry containers\n- crash because of incorrect bitmaps in gnome detail window\n- user presets saving on embark\n- translation string for willow tree\n- willow trees are now plantable\n- fish shouldn't drown anymore\n\n### Added\n- capacity info for stockpile tiles on tile info\n- watched item list\n- 24 new food items with recipes and kitchen integration\n- button to save user presets\n- glass bottle and jar\n\n### Changed\n- furniture can now be constructed anywhere and won't get deconstructed when a room designation underneath is removed\n- redesigned inventory overview\n- removed direkt mapping of certain ids to databse rows, that should prevent save games breaking in the future when stuff is removed or inserted at the wrong place",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2020-12-20T10:31:49.884000+00:00",
+    "edited_timestamp": "2020-12-28T22:26:59.779000+00:00",
+    "flags": 0,
+    "components": [],
+    "id": "790164552586756126",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "🎃"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "❤️"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "## [0.8.6]\n\n### Fixed\n- crash with missions\n- remove plants on the tile above when digging stairs up\n- gnomes forgetting their rooms on load\n- swapped items getting stuck as constructed when looking for a tool\n- seeds for leaf plants like tea, tobacco, woad and dyers weed\n\n### Added\n- burn recipe for bones in the waste disposal\n- stairs made from stone blocks\n- fisher gui\n- controls for mechanisms\n- controls for automatons\n- full DPI scaling support\n- some statistics\n\n### Changed\n- restructured the tile info window\n- moved all job handling other than hauling jobs to central job manager instance\n- trees can no longer overlapp with each other\n- trees can no longer replace existing tiles\n- onions and potatos produces seeds again and use seeds to plant",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2020-12-30T19:49:10.313000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "793928690568134717",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false
+  },
+  {
+    "type": 0,
+    "content": "## [0.8.7]\n\n### Fixed\n- grape seed on start up\n- game pausing when in mainmenu\n- remove dead gnomes from squads\n- show number of trees in grove window\n- missing textures when loading the game\n- floating items when mining the ramp under a working gnome\n- amount buttons in trader UI\n- partial write back while updating workshop settings\n\n### Added\n- attack on sight combat behavior\n- defend (hold position) combat behavior\n\n### Changed\n- allow corpses outside stockpiles to be butchered\n- can designate groves over existing trees\n- allow jobs in mid-air to be selected\n- reduce number of item categories",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2021-01-05T20:04:18.223000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "796106825811361833",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "280266293490221056",
+      "username": ".roest",
+      "avatar": "b1421e61017db521d736acad8642d217",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ralph",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "♥️"
+        },
+        "count": 6,
+        "count_details": {
+          "burst": 0,
+          "normal": 6
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": "452562992022945803",
+          "name": "roest"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "🎃"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "## [0.8.9]\n\n### Fixed\n- fix trading of items without quality\n- fix data inconsitencies in trader UI\n- fixed potential failure of event spawns\n\n### Added\n- center camera on event notifications",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2021-08-01T17:25:55.367000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "871443643989381141",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "406873466537508864",
+      "username": "ext3h",
+      "avatar": "c485adec179ac49ddf163033a8f11a2b",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ext3h",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "😲"
+        },
+        "count": 2,
+        "count_details": {
+          "burst": 0,
+          "normal": 2
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 5,
+        "count_details": {
+          "burst": 0,
+          "normal": 5
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "content": "## [0.8.10]\n\n### Fixed\n- fix workshop getting stuck if job prerequisites are used elsewhere (#182)\n- fix half-height walls being completely flat",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2021-08-15T10:42:03.210000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "876415437074735124",
+    "channel_id": "459028911607644190",
+    "author": {
+      "id": "406873466537508864",
+      "username": "ext3h",
+      "avatar": "c485adec179ac49ddf163033a8f11a2b",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": "Ext3h",
+      "avatar_decoration_data": null,
+      "collectibles": null,
+      "display_name_styles": null,
+      "banner_color": null,
+      "clan": null,
+      "primary_guild": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "👍"
+        },
+        "count": 11,
+        "count_details": {
+          "burst": 0,
+          "normal": 11
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      },
+      {
+        "emoji": {
+          "id": null,
+          "name": "😭"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  }
+]

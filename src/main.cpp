@@ -36,6 +36,7 @@
 #include <QFileIconProvider>
 #include <QStandardPaths>
 #include <QSurfaceFormat>
+#include <QTimer>
 #include <QWindow>
 #include <QtWidgets/QApplication>
 
@@ -43,6 +44,8 @@
 #ifdef _WIN32
 #include <windows.h>
 #endif
+#include "test/testcontroller.h"
+#include "test/testcommandserver.h"
 #include "version.h"
 
 QTextStream* out = 0;
@@ -183,6 +186,7 @@ int main( int argc, char* argv[] )
 	Global::cfg->set( "CurrentVersion", PROJECT_VERSION );
 
 	QStringList args = a.arguments();
+	TestConfig testConfig;
 
 	for ( int i = 1; i < args.size(); ++i )
 	{
@@ -191,6 +195,12 @@ int main( int argc, char* argv[] )
 			qDebug() << "Command line options:";
 			qDebug() << "-h : displays this message";
 			qDebug() << "-v : toggles verbose mode, warning: this will spam your console with messages";
+			qDebug() << "--test-mode       : enable test mode (suppress audio, enable test controller)";
+			qDebug() << "--load-save <path> : load a specific save game on startup";
+			qDebug() << "--screenshot <path> : take a screenshot and save to path";
+			qDebug() << "--screenshot-delay <frames> : frames to wait before screenshot (default: 60)";
+			qDebug() << "--run-ticks <N>   : advance N game ticks, then exit";
+			qDebug() << "--metrics-out <path> : write metrics JSON to file (default: stdout)";
 			qDebug() << "---";
 		}
 		if ( args.at( i ) == "-v" )
@@ -200,6 +210,38 @@ int main( int argc, char* argv[] )
 		if ( args.at( i ) == "-ds" )
 		{
 			Global::debugSound = true;
+		}
+		if ( args.at( i ) == "--test-mode" )
+		{
+			testConfig.enabled = true;
+			Global::testMode = true;
+			Global::debugSound = true; // suppress audio in test mode
+		}
+		if ( args.at( i ) == "--load-save" && i + 1 < args.size() )
+		{
+			testConfig.loadSavePath = args.at( ++i );
+			testConfig.enabled = true;
+			Global::testMode = true;
+		}
+		if ( args.at( i ) == "--screenshot" && i + 1 < args.size() )
+		{
+			testConfig.screenshotPath = args.at( ++i );
+			testConfig.enabled = true;
+			Global::testMode = true;
+		}
+		if ( args.at( i ) == "--screenshot-delay" && i + 1 < args.size() )
+		{
+			testConfig.screenshotDelay = args.at( ++i ).toInt();
+		}
+		if ( args.at( i ) == "--run-ticks" && i + 1 < args.size() )
+		{
+			testConfig.runTicks = args.at( ++i ).toInt();
+			testConfig.enabled = true;
+			Global::testMode = true;
+		}
+		if ( args.at( i ) == "--metrics-out" && i + 1 < args.size() )
+		{
+			testConfig.metricsOutPath = args.at( ++i );
 		}
 	}
 
@@ -239,7 +281,46 @@ int main( int argc, char* argv[] )
 		w.onFullScreen( true );
 	}
 
+	// Create test controller if test flags were provided
+	TestController* testController = nullptr;
+	TestCommandServer* testCommandServer = nullptr;
+	if ( testConfig.enabled )
+	{
+		qDebug() << "[Test] Test mode enabled";
+		if ( Global::testMode )
+		{
+			w.showMinimized();
+		}
+
+		// If we have specific test actions (load-save, screenshot, run-ticks), use TestController
+		if ( !testConfig.loadSavePath.isEmpty() || !testConfig.screenshotPath.isEmpty() || testConfig.runTicks > 0 )
+		{
+			testController = new TestController( testConfig, &w );
+			// Delay start until event loop is running and GameManager is ready
+			QTimer::singleShot( 500, testController, &TestController::start );
+		}
+
+		// Always start the command server in test mode for interactive control
+		// It starts after GL init so ImGuiBridge is available
+		QTimer::singleShot( 1000, [&w, &testCommandServer]()
+		{
+			auto* bridge = w.imguiBridge();
+			if ( bridge )
+			{
+				testCommandServer = new TestCommandServer( bridge, &w );
+				testCommandServer->start();
+			}
+			else
+			{
+				qWarning() << "[Test] ImGuiBridge not available, command server not started";
+			}
+		} );
+	}
+
 	auto ret = a.exec();
+
+	delete testCommandServer;
+	delete testController;
 
 	gameThread.terminate();
 	gameThread.wait();

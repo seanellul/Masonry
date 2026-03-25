@@ -1,0 +1,2164 @@
+[
+  {
+    "date": "2017-11-11",
+    "categories": [
+      "Rendering / Graphics",
+      "Modding / Data Files",
+      "Game Mechanics"
+    ],
+    "authors": [
+      ".roest",
+      "bul1"
+    ],
+    "msg_count": 8,
+    "representative": "https://www.reddit.com/r/ingnomia/wiki/modding",
+    "all_content": "Forge and Butcher, still not placable. looking at it now, you forge has a few errors test tile with z level 1 test tile with \"job\": true butcher also has a tile check with z level 1 that would explain it. Did you like the new preview graphic? https://www.reddit.com/r/ingnomia/wiki/modding"
+  },
+  {
+    "date": "2018-05-18",
+    "categories": [
+      "Modding / Data Files"
+    ],
+    "authors": [
+      "tacyn.",
+      "dragonwrath420"
+    ],
+    "msg_count": 3,
+    "representative": "<@358668557074300942> Just curious but do you already have some larger mods in the pipeline/works/progress for ingnomia to take advantage of the new stuff/engine (such as multicore support, better file access for modding, etc)?",
+    "all_content": "<@358668557074300942> Just curious but do you already have some larger mods in the pipeline/works/progress for ingnomia to take advantage of the new stuff/engine (such as multicore support, better file access for modding, etc)? No, I'm not working on anything. But I'm planning to start transferring my Basemod once crafting/workshops has settled a bit. I can't wait for that 😄 lol"
+  },
+  {
+    "date": "2018-07-19",
+    "categories": [
+      "UI / GUI Framework",
+      "Architecture / Refactoring"
+    ],
+    "authors": [
+      "mr_mauve9582"
+    ],
+    "msg_count": 1,
+    "representative": "Are there any plans to hook functions and create an interface so modders can write actual mods?",
+    "all_content": "Are there any plans to hook functions and create an interface so modders can write actual mods?"
+  },
+  {
+    "date": "2018-08-25",
+    "categories": [
+      "Database / Data Model",
+      "UI / GUI Framework",
+      "Modding / Data Files",
+      "Bug Fixes / Debugging",
+      "Save / Load"
+    ],
+    "authors": [
+      ".roboute",
+      ".roest",
+      "socramazibi",
+      "shapkees"
+    ],
+    "msg_count": 28,
+    "representative": "honestly i'm not really sure that works, i did that like a year ago but in  Documents\\My Games\\Ingnomia\\settings\\config.json there's an entry language",
+    "all_content": "Hi, I'm translating the game, but when I upload the mod it doesn't change anything, any ideas? Thank you are you the author of that japanese mod? no, I have it in the document mod folder hard to say then does it appear on the mod page when you click mods in the main menu have you checked the checkbox to activate it? ah, the age old question of \"did you plug it in?\" hehehe i just checked it with that japanese mod and it replaces those words well it's not really japanese, they just copied the language files and used the japanese mod as template Is that all right? honestly i'm not really sure that works, i did that like a year ago but in  Documents\\My Games\\Ingnomia\\settings\\config.json there's an entry language if that doesn't work, just do as the japanese guy did for now, just leave it english and modify  it the whole language things needs an overhaul anyway <@280266293490221056> ok everything solved and left everything as \"english\" and works well Thank you very much Is there any way to"
+  },
+  {
+    "date": "2018-08-26",
+    "categories": [
+      "Database / Data Model",
+      "UI / GUI Framework",
+      "Modding / Data Files",
+      "Architecture / Refactoring"
+    ],
+    "authors": [
+      "currydays",
+      "shapkees",
+      ".roest"
+    ],
+    "msg_count": 11,
+    "representative": "it's a bit early to start with that anyway, too much stuff is still changing and many things are added, so it would be a nightmare to keep translation mods up to date",
+    "all_content": "Hello, I'm  author of japanese mod.\nI want replace \"menusettings.json\".\nBecause,  I want to overwrrite menu list message. {\n    \"TableName\": \"Translation\",\n    \"JSON\": [\n        {\n            \"File\": \"JSON/english/menusettings.json\"\n        }\n    ]\n} ↑ Can't replace this scripts... yes, menusettings is not in the normal database system, i will have to replace the strings in there with variables and put them in the translation files Since command menus are related to ease of adaptation to games, I will wait for correspondence. it's a bit early to start with that anyway, too much stuff is still changing and many things are added, so it would be a nightmare to keep translation mods up to date I think \"Mod\" : \"modify\" tag is good idea. that' s  make easy to update. <@280266293490221056> \nAre there any plans to completely transfer the whole text of the interface to the ./translation? I mean, how soon?\nAt the moment it would be great to add changelog to the ./translation well eventually but "
+  },
+  {
+    "date": "2018-10-06",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "seronis1129"
+    ],
+    "msg_count": 1,
+    "representative": "<@103489218805784576>  probably sometime after it becomes a priority.   There is no approx time on things that arent a priority in most projects unless you like the default  \"Soon(tm)\" answer which is safe to translate as  'not soon'",
+    "all_content": "<@103489218805784576>  probably sometime after it becomes a priority.   There is no approx time on things that arent a priority in most projects unless you like the default  \"Soon(tm)\" answer which is safe to translate as  'not soon'"
+  },
+  {
+    "date": "2018-10-20",
+    "categories": [
+      "Networking / Multiplayer"
+    ],
+    "authors": [
+      "guri9486",
+      "prassel"
+    ],
+    "msg_count": 2,
+    "representative": "Soon:\nhttps://developer.valvesoftware.com/wiki/Valve_Time",
+    "all_content": "Soon:\nhttps://developer.valvesoftware.com/wiki/Valve_Time CCP (EVE Online) also likes \"Soon TM\""
+  },
+  {
+    "date": "2018-10-22",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "shapkees",
+      "hughheggen",
+      "prassel"
+    ],
+    "msg_count": 6,
+    "representative": "https://developer.valvesoftware.com/wiki/Valve_Time",
+    "all_content": "What is valve time? https://developer.valvesoftware.com/wiki/Valve_Time <@386915067477753858> for example not as bad as CCP :^D some stuff was YEARS some stuff still waiting (HL3-time)"
+  },
+  {
+    "date": "2018-12-12",
+    "categories": [
+      "Modding / Data Files"
+    ],
+    "authors": [
+      ".roest"
+    ],
+    "msg_count": 1,
+    "representative": "example mod to change styles, just unzip in Documents\\My Games\\Ingnomia\\mods, rename and start modifying",
+    "all_content": "example mod to change styles, just unzip in Documents\\My Games\\Ingnomia\\mods, rename and start modifying"
+  },
+  {
+    "date": "2018-12-16",
+    "categories": [
+      "Modding / Data Files",
+      "Game Mechanics"
+    ],
+    "authors": [
+      "socramazibi"
+    ],
+    "msg_count": 1,
+    "representative": "I have put the mod in the folder that you comment and it does not work, instead I put it in the Steam workshop mod folder and it works",
+    "all_content": "I have put the mod in the folder that you comment and it does not work, instead I put it in the Steam workshop mod folder and it works"
+  },
+  {
+    "date": "2018-12-20",
+    "categories": [
+      "Modding / Data Files"
+    ],
+    "authors": [
+      "koogen"
+    ],
+    "msg_count": 1,
+    "representative": "I've been following this game for a while now, honestly surprised the modding scene hasn't exploded yet",
+    "all_content": "I've been following this game for a while now, honestly surprised the modding scene hasn't exploded yet"
+  },
+  {
+    "date": "2018-12-21",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "hughheggen"
+    ],
+    "msg_count": 1,
+    "representative": "it's not popular enough for that I think",
+    "all_content": "it's not popular enough for that I think"
+  },
+  {
+    "date": "2018-12-23",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      ".roboute",
+      "optimus.0001"
+    ],
+    "msg_count": 2,
+    "representative": "there's still game-breaking releases going on, when that's sorted I'm keen to try some tinkering",
+    "all_content": "there's still game-breaking releases going on, when that's sorted I'm keen to try some tinkering yeah same here"
+  },
+  {
+    "date": "2018-12-24",
+    "categories": [
+      "Database / Data Model",
+      "Rendering / Graphics",
+      "Modding / Data Files",
+      "Bug Fixes / Debugging"
+    ],
+    "authors": [
+      "fantasticteaman",
+      ".roest"
+    ],
+    "msg_count": 11,
+    "representative": "Does anyone know if there's a way to view everything below a z-level? It would be easier to manage things if we could see like 10 z-levels lower than whatever the current level is. I think Gnomoria did this originally.",
+    "all_content": "Does anyone know if there's a way to view everything below a z-level? It would be easier to manage things if we could see like 10 z-levels lower than whatever the current level is. I think Gnomoria did this originally. Strange question, it renders as many levels as your render depth setting is below current view level i see the option in video settings but i cannot actually do anything with it. it's a checkbox that doesn't check. click and nothing happens. Oh yeah saw that, need to fix that, well just change the value in the config.json in my games/ingnomia/settings mmm lemme try that But anyway, the default is like 10 or 15 already That's why it's strange you ask for 10 i've been playing when i can only see things on the z-level i've scrolled to. makes it a bit hard to get an idea of the landscape. but made the change in config.json and it's worked!"
+  },
+  {
+    "date": "2018-12-26",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "hughheggen"
+    ],
+    "msg_count": 1,
+    "representative": "You mean you want to make undiscovered blocks transparent so you can see underneath?",
+    "all_content": "You mean you want to make undiscovered blocks transparent so you can see underneath?"
+  },
+  {
+    "date": "2019-01-19",
+    "categories": [
+      "Database / Data Model",
+      "Modding / Data Files",
+      "Game Mechanics",
+      "Platform / Portability"
+    ],
+    "authors": [
+      "saint_of_grey",
+      ".roest",
+      "kondain",
+      "styfrit"
+    ],
+    "msg_count": 15,
+    "representative": "hmm theoretically you could, though at some points where I've been lazy/or simply didn't get to it yet it will look strange, like the Gnome List will still be called gnome list even if it's skeletons",
+    "all_content": "Sooo.... how much of the game is in these JSON files I'm looking at? Sweeet. What about adding new races? that is an overly vague question, can you specify what you mean Like, if I wanted to make a race of skeleton people, could I? A playable race. How do skeletons differ from gnomes? They only drink milk? They would not have any needs whatsoever, I did that in gnomoria to test things. hmm theoretically you could, though at some points where I've been lazy/or simply didn't get to it yet it will look strange, like the Gnome List will still be called gnome list even if it's skeletons I see. Are merchants in yet? I would like to port my skeleton merchant mod. merchants are in, but they are gnomes 😛 Awww.... I guess bone salesmen will have to wait then. traders.json i guess once I start implementing goblins and other races I can look at making merchants other races as well Half the appeal of my bone trader was the spooky skeleton jokes. It's not the same with gnomes....\nGranted, you don't "
+  },
+  {
+    "date": "2019-01-20",
+    "categories": [
+      "Database / Data Model",
+      "Modding / Data Files",
+      "Game Mechanics",
+      "Git / Version Control"
+    ],
+    "authors": [
+      ".alch",
+      "yksleets",
+      ".roest",
+      "qtw",
+      "saint_of_grey"
+    ],
+    "msg_count": 42,
+    "representative": "I'm thinking the game is in version 0.55.x and receiving more or less daily updates. making a mod on something that will most likely break tomorrow is a little optimistic",
+    "all_content": "i havent actually played yet. but are actual mods available instead of translations? We have to make them. so. its possible now but noone made any? I'm thinking the game is in version 0.55.x and receiving more or less daily updates. making a mod on something that will most likely break tomorrow is a little optimistic well im gonna start playin now. put it off too long I did a little playing, I have shelved it for now but I'll be there once a few more features are put in. I'm honestly thinking about adding automatons myself, as well. In Gnomoria they broke the game for me. It make the gnome completely irrelevant. I wouldn't mind replacements for limbs that have been misplaces. I like me some robots though! A good balance point would be limiting the skills they can use... why not make them more balanced than gnomoria? like for example Or maybe make them a static thing. All skills stuck at 10, no improvement. make them classed like some skills they can do and everything else no Possibly m"
+  },
+  {
+    "date": "2019-08-11",
+    "categories": [
+      "Bug Fixes / Debugging"
+    ],
+    "authors": [
+      "shapkees",
+      ".roest"
+    ],
+    "msg_count": 2,
+    "representative": "no sorry, haven't touched that issue in a while",
+    "all_content": "Any news about translations? no sorry, haven't touched that issue in a while"
+  },
+  {
+    "date": "2019-08-13",
+    "categories": [
+      "Networking / Multiplayer"
+    ],
+    "authors": [
+      ".alexgee",
+      "Deleted User"
+    ],
+    "msg_count": 7,
+    "representative": "Well, I see no problem (programming issues aside) in giving the option for the community of players to translate it to additional languages.",
+    "all_content": "why would you want to translate such a simple game? To make it accessible to those that do not speak English? i remember playing DIablo on battle.net when i was 7, no problems playing or communicating and english is not even my native gnomoria isnt eve online, i doubt you can get lost there Well, I see no problem (programming issues aside) in giving the option for the community of players to translate it to additional languages. It is a win win situation, for those that want it in another language and for those of us who want to contribute by translating it."
+  },
+  {
+    "date": "2019-09-02",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "shapkees"
+    ],
+    "msg_count": 2,
+    "representative": "<@376881239296180236> \nThe overwhelming number of Russian-speaking players do not know the English language at the proper level and are ready to play WITH TRANSLATION OF ANY QUALITY, if only in their native language. No kidding.",
+    "all_content": "<@376881239296180236> \nThe overwhelming number of Russian-speaking players do not know the English language at the proper level and are ready to play WITH TRANSLATION OF ANY QUALITY, if only in their native language. No kidding. And yes, i have a little ping"
+  },
+  {
+    "date": "2019-09-04",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      ".alexgee",
+      ".alch",
+      "desolator_x"
+    ],
+    "msg_count": 4,
+    "representative": "if someone wants to do a translation of a game that's still being developed that's on them. I'm pretty sure the translation is easier when the game is finished",
+    "all_content": "just add cyka blyat at the end of every sentence Just google translate every string or... bing translate if someone wants to do a translation of a game that's still being developed that's on them. I'm pretty sure the translation is easier when the game is finished"
+  },
+  {
+    "date": "2019-09-27",
+    "categories": [
+      "Modding / Data Files"
+    ],
+    "authors": [
+      "shapkees",
+      ".roest",
+      "desolator_x"
+    ],
+    "msg_count": 4,
+    "representative": "well, the option to mod is already in the game, so if someone wants to go ahead and translate the game in the language of their choice that's up to them",
+    "all_content": "I know, but it's hard to explain to my comrades. Well, in general, I asked - I got an answer. well, the option to mod is already in the game, so if someone wants to go ahead and translate the game in the language of their choice that's up to them there's already a russian translation mod on steam it's not working right now"
+  },
+  {
+    "date": "2019-10-10",
+    "categories": [
+      "Modding / Data Files"
+    ],
+    "authors": [
+      ".roest",
+      "Deleted User"
+    ],
+    "msg_count": 3,
+    "representative": "i absolutly don't know how to mod, but i can do the translate to French language if someone can create the mod ^^",
+    "all_content": "i absolutly don't know how to mod, but i can do the translate to French language if someone can create the mod ^^ (or at least explain me how to do it) not possible right now"
+  },
+  {
+    "date": "2019-10-19",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      ".mechworrier"
+    ],
+    "msg_count": 1,
+    "representative": "some small naked men",
+    "all_content": "some small naked men"
+  },
+  {
+    "date": "2019-10-21",
+    "categories": [
+      "Modding / Data Files"
+    ],
+    "authors": [
+      ".roest"
+    ],
+    "msg_count": 1,
+    "representative": "modding is back on indev",
+    "all_content": "modding is back on indev"
+  },
+  {
+    "date": "2019-10-22",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      ".roest",
+      "boris8681"
+    ],
+    "msg_count": 3,
+    "representative": "no idea, why would it be gone? that stuff is on your machine",
+    "all_content": "Is Cyrillic alphabet  back too? I could try to make a translation. no idea, why would it be gone? that stuff is on your machine"
+  },
+  {
+    "date": "2019-10-25",
+    "categories": [
+      "Database / Data Model",
+      "UI / GUI Framework",
+      "Modding / Data Files",
+      "Game Mechanics",
+      "Bug Fixes / Debugging"
+    ],
+    "authors": [
+      ".roest",
+      ".mechworrier"
+    ],
+    "msg_count": 14,
+    "representative": "then of course you should remove everything from the json you don't want to mod and then use that json in the mod as in the example mods, should be pretty much self explanatory",
+    "all_content": "is gnome hair tint something adjustable?  not having much luck finding anything relevant in the db or files haircolor is semi hardcoded, it's a random number of 0 to 5 and corresponds to materials type dye, taking the first 6 from the materials table sweet, thanks you're on indev? in the content/stuff/ folder are 3 example mods yeah, I saw those.  that's going to be really helpful thanks for including it ctrl+D opens the debug window on the DB editor tab is a button to export tables to json oh, well, that's awesome then of course you should remove everything from the json you don't want to mod and then use that json in the mod as in the example mods, should be pretty much self explanatory yeah, makes sense that's smooth as hell those jsons land in /my games/ingnomia/tmp btw"
+  },
+  {
+    "date": "2019-11-01",
+    "categories": [
+      "Modding / Data Files"
+    ],
+    "authors": [
+      ".mechworrier"
+    ],
+    "msg_count": 1,
+    "representative": "is the 32x32px grid size baked into the code, or is that something that could be increased with available config changes?",
+    "all_content": "is the 32x32px grid size baked into the code, or is that something that could be increased with available config changes?"
+  },
+  {
+    "date": "2019-11-02",
+    "categories": [
+      "Rendering / Graphics"
+    ],
+    "authors": [
+      ".alch",
+      ".roest",
+      ".mechworrier",
+      "hughheggen"
+    ],
+    "msg_count": 15,
+    "representative": "but if you try to make a model of a guy, then add a breathing animation or something, it would look pretty wonky if the eyes or hands keep chopping off because of the movement",
+    "all_content": "there are some hard coded instances, guess it would take an afternoon or so to make possible to work with bigger sprites though it probably will still be a multiple of 32 is that something you might be interested in doing at some point? 128x128 would be plenty of detail I'd think, and existing spritesheets could upscale pretty easy actually when I started i did 64x64 but was told by rho (the original gnomoria artist) that 32x32 is easier for artists and they like it more also mixing different resolutions looks bad yeah, understandable of course you can upscale but having 32x32 and 128x128 close to each other is ugly 4k photorealistic textures for full on immersion I was just looking at some blender techniques on making spritesheets (with animation) I don't think 32x32 would work too great for that, since detail like eyes would be easy to lose guess it doesn't work with blender, you need to employ pixelart techniques but i'm not the right person to talk about that, i'm completely oblivi"
+  },
+  {
+    "date": "2019-11-24",
+    "categories": [
+      "Database / Data Model",
+      "Modding / Data Files"
+    ],
+    "authors": [
+      "gamerase",
+      ".roest"
+    ],
+    "msg_count": 5,
+    "representative": "I am trying to add a new item that can be crafted in the Kitchen, so I am trying to update the record in Workshops. However, while adding a new row to the table works fine, I have had no luck with either:\nMod: \"replace\" - row does not get inserted, but original row does not get updated (using \"Kitch",
+    "all_content": "I am trying to add a new item that can be crafted in the Kitchen, so I am trying to update the record in Workshops. However, while adding a new row to the table works fine, I have had no luck with either:\nMod: \"replace\" - row does not get inserted, but original row does not get updated (using \"Kitchen\" as the ID)\nMod: \"remove\" - nothing happens (using \"Kitchen\" as the ID)\n\nAre these still supported? Also tried Mod: \"modify\" without success. Add Remove Update with capital starting letters if you ommit the \"Mod\" entry it automatically assumes Add Worked like a charm! Thanks!"
+  },
+  {
+    "date": "2019-11-25",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "reaperofbunnies"
+    ],
+    "msg_count": 2,
+    "representative": "I've been working in the foods and other items",
+    "all_content": "Yeah got a big one to upload I've been working in the foods and other items"
+  },
+  {
+    "date": "2019-11-26",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "fourofire"
+    ],
+    "msg_count": 1,
+    "representative": "Does anyone know a steam modder called Fenrir?",
+    "all_content": "Does anyone know a steam modder called Fenrir?"
+  },
+  {
+    "date": "2020-05-30",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "dommain."
+    ],
+    "msg_count": 1,
+    "representative": "I am waiting for seasons and getting to see leaves on the grounds during fall, snow in the winter, and butterflies during spring.",
+    "all_content": "I am waiting for seasons and getting to see leaves on the grounds during fall, snow in the winter, and butterflies during spring."
+  },
+  {
+    "date": "2020-08-13",
+    "categories": [
+      "Database / Data Model",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring"
+    ],
+    "authors": [
+      ".roest",
+      "tacyn."
+    ],
+    "msg_count": 11,
+    "representative": "Why is there \"QString materialSID = *materialSIDs.begin();\" at line 1000 in spritefactory.cpp instead of of just using materialSID as it is?",
+    "all_content": "Why is there \"QString materialSID = *materialSIDs.begin();\" at line 1000 in spritefactory.cpp instead of of just using materialSID as it is? ask my former self from 3 years ago i guess it never appeared that this might be wrong because we don't have different sprites for materials at least not in combination with Sprites_Combine right, what was i thinking though I must say I find it oddly specific that you found this 🙂 Just trying to understand how sprites work. Going only by the Json/SQL doesn't explain much. it's partly your own design our former selfs from 3 years ago discussed this I know. I recognise a lot. Though the devil is in the details i could walk you through it, just ask"
+  },
+  {
+    "date": "2020-08-18",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "shadmir"
+    ],
+    "msg_count": 1,
+    "representative": "Oh it's Tacyn",
+    "all_content": "Oh it's Tacyn"
+  },
+  {
+    "date": "2020-09-03",
+    "categories": [
+      "Build System / Compilation",
+      "UI / GUI Framework",
+      "Bug Fixes / Debugging",
+      "Platform / Portability"
+    ],
+    "authors": [
+      "deanec64",
+      ".roest",
+      "ext3h"
+    ],
+    "msg_count": 26,
+    "representative": "well the readme has instructions for that already, compiling from code takes a certain level of knowledge so I'm not sure how much could be added toe README to make it newb proof",
+    "all_content": "anybody able/willing to addon to README howto compile for Linux? _generic is fine_ uh can you rephrase that question, i'm not exactly sure what you're asking here unsure of howto Compile/make Ingomnia from scratch for Linux binaries technically is possible. but,  call me newb. I can't remember the steps to do it well the readme has instructions for that already, compiling from code takes a certain level of knowledge so I'm not sure how much could be added toe README to make it newb proof first you get all dependencies, these are Qt, noesis gui and the steam sdk well, not quite newb. I do at least know howto use Cmake somewhat then you clone the ingnomia repository then you can copy the console commands from the readme when that runs without errors you type make _my issue atm is not being sure which package is needed for QT_ under dependencies it says Qt 5.14.1 thats why, damn uppercase/lowercase fuck. its not latest with qt it doesn't really matter if you use a later one though its usi"
+  },
+  {
+    "date": "2020-09-29",
+    "categories": [
+      "Build System / Compilation",
+      "Rendering / Graphics",
+      "UI / GUI Framework",
+      "Game Mechanics",
+      "Architecture / Refactoring",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      ".roest",
+      "rivenwyrm"
+    ],
+    "msg_count": 41,
+    "representative": "No clue why it didn't react to job_prio branch. Maybe it didn't like the branch being created pointing to a commit already, and only triggers when a branch is updated.",
+    "all_content": "just getting my feet wet doing a tiny change to display job priority in the tileinfo, do I need permissions to push a branch to github? should I fork instead? You should fork and open a pull request. I don't understand the deal with the NOESIS_LICENSE_KEY and NOESIS_LICENSE_NAME, do I need values for those? do I have to go sign up for a noesis trial license? also... github can't seem to recognize that the .github/workflows/cmake.yml file already exists and therefore I already have a workflow set up? am I not doing something? noesis will stop working after a while if you have no trial license okay so for now it's fine to not have the secrets but what's the deal with the github workflow thing? (I'm a gitlab user, mostly, this workflow thing is new to me) it's an auto build that verifies that the code still compiles after changes and provides a binary, you don't need it when I go to actions \"no results matched your search\" but in your repo it shows up as 'CMAKE' with your cmake.yml file c"
+  },
+  {
+    "date": "2020-10-03",
+    "categories": [
+      "Platform / Portability"
+    ],
+    "authors": [
+      "deanec64"
+    ],
+    "msg_count": 1,
+    "representative": "anybody made a Linux release as of yet?",
+    "all_content": "anybody made a Linux release as of yet?"
+  },
+  {
+    "date": "2020-10-05",
+    "categories": [
+      "Build System / Compilation",
+      "Game Mechanics",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "rivenwyrm"
+    ],
+    "msg_count": 5,
+    "representative": "though I have no idea how the strings will display so my theoretical method might be awful, set myself up with a trial license",
+    "all_content": "started on the 'job workability display', Roest may have a very preliminary branch with the 'required items' and 'required tool' display will probably do the 'walkableJobPositions' after that though I have no idea how the strings will display so my theoretical method might be awful, set myself up with a trial license guess I'll have to actually build and run locally :P"
+  },
+  {
+    "date": "2020-10-06",
+    "categories": [
+      "Build System / Compilation",
+      "Platform / Portability"
+    ],
+    "authors": [
+      ".roest",
+      "hughheggen"
+    ],
+    "msg_count": 2,
+    "representative": "The game compiles on Linux, if you have basic knowledge to install prerequisites, run cmake and compile a program, which you really should have if you're running a linux system, you can get the game running on linux",
+    "all_content": "Some Linux has been added. Whatever that means The game compiles on Linux, if you have basic knowledge to install prerequisites, run cmake and compile a program, which you really should have if you're running a linux system, you can get the game running on linux"
+  },
+  {
+    "date": "2020-10-07",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "UI / GUI Framework",
+      "Game Mechanics",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring",
+      "Platform / Portability",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "djudgya",
+      "dinosaure.plz_nofriendrequests",
+      "rivenwyrm",
+      ".roest",
+      "xeridanus"
+    ],
+    "msg_count": 88,
+    "representative": "Okay, be right back.\nnoesisGUI accepted `a@yopmail.com` as a valid email/username, great.\n\nOkay, that's all for today, the cmdline did not work because cmake was not in the PATH yet and the tilesheet was not found.\n```\ncopy \".\\content\\tilesheet\" /content\nmkdir build && cd build\ncmake .. -DQt5_DIR=\"C",
+    "all_content": "Hello, translation question here, what is the ingame use of the \"Kiln\" workshop ? Google translate tells me it's `Touraille`, an object used as well for Whiskey as well as a furnace... half-offtopic: what is supposed to be a \"bone shirt\"? kiln is used to make bricks if i remember right a bone short is some type of armor made of bones okay, the bone shirt have no real-life equivalent. https://www.deviantart.com/davywagnarok/art/Post-Apoc-Bone-Armor-736871130 monster hunter wants to have a word with you Well people did used to make clothing/apparel from bones a long time ago. So today it may not be an equivalent, but it was Hahaha. French `Chemise en os` is approx \"Shirt that was made out of bones\". But even that is not a good (re-)translation. Maybe I'll go with `Chemise d'os` instead, that means a shirt that's some pieces of bones arranged together. Same question with \"pet rock\", is this really a stone company animal? well some stuff in the files is there because i just parsed the orig"
+  },
+  {
+    "date": "2020-10-08",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "Rendering / Graphics",
+      "UI / GUI Framework",
+      "Game Mechanics",
+      "Bug Fixes / Debugging",
+      "Platform / Portability",
+      "Save / Load",
+      "World Generation",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests",
+      ".roest",
+      "ext3h",
+      "rivenwyrm"
+    ],
+    "msg_count": 76,
+    "representative": "<@!280266293490221056> : I've some trouble with the CMake command.\nAt first, there were -DVars missing:\n```\ncmake .. -DQt5_DIR=\"C:\\Qt\\5.14.1\\msvc2017_64\\lib\\cmake\\Qt5\" -DSTEAM_SDK_ROOT=\"3rdparty/steamworks_sdk_150\" -DNOESIS_ROOT=\"..\\3rdparty\\NoesisGUI-NativeSDK-win-3.0.6\" -DNOESIS_LICENSE_NAME=\"your",
+    "all_content": "in fact said #defines are not even related to debug at all, there are a bunch of shader ones that aren't registering...? I cannot understand this, I must have built Noesis wrong, somehow? Noesis is supposed to be built ? \" Download the native SDK for your OS and build the NoesisApp in Debug configuration.\" ._. okay, makes sense. apple deprecated Opengl a good while ago, the last version on mac was 4.1, we need 4.3 so it's never gonna work on mac <@!280266293490221056> : I've some trouble with the CMake command.\nAt first, there were -DVars missing:\n```\ncmake .. -DQt5_DIR=\"C:\\Qt\\5.14.1\\msvc2017_64\\lib\\cmake\\Qt5\" -DSTEAM_SDK_ROOT=\"3rdparty/steamworks_sdk_150\" -DNOESIS_ROOT=\"..\\3rdparty\\NoesisGUI-NativeSDK-win-3.0.6\" -DNOESIS_LICENSE_NAME=\"your name\" -DNOESIS_LICENSE_KEY=\"qo+OZibHjma1aKPXaWZEyBGITPabJxhpqsIdSPRp61Z7gWS0\"\n-- Selecting Windows SDK version 10.0.19041.0 to target Windows 10.0.18363.\n-- Configuring done\nCMake Error: The following variables are used in this project, but they are"
+  },
+  {
+    "date": "2020-10-09",
+    "categories": [
+      "UI / GUI Framework",
+      "Modding / Data Files",
+      "Game Mechanics",
+      "Architecture / Refactoring",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests",
+      "rivenwyrm",
+      "ext3h",
+      ".roest",
+      "hughheggen"
+    ],
+    "msg_count": 49,
+    "representative": "Could you explain a little lore about the \"Embark\" verb used to start a new game?\nAre the Gnomes supposed to come from a ship (floating boat? spatial shuttle?), or any other form of vehicle?\nElse, does it bother if I translate it to \"Démarrer\" (\"Run\", or \"Launch\")?",
+    "all_content": "So we have one person working on a french translation. What are the other dev projects happening at the moment? just put up this PR https://github.com/rschurade/Ingnomia/pull/91 it's not quite what I'd originally planned, I may try to add a bit more to it or do some enhancement in another PR I think I want to add the count of items along with the item name so you can easily see if you have any also want to figure out how to display 'gnomes available' that's gonna be a bit more difficult like \"is there an alive gnome with this skill enabled, not asleep\" looking through the jobmanager and gnomemanager code that seems hard to do and needs to be idle but if a gnome is idle and there is an open job he can do he wouldn't be idle yeah, that's a gotcha, so I wouldn't bother to check it it'd be more useful to let you know that you may need to raise a job's priority or something or cancel other jobs future work think that's not really needed, maybe check if a gnome has that skill active at all `"
+  },
+  {
+    "date": "2020-10-10",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests",
+      "optimus.0001",
+      "xeridanus"
+    ],
+    "msg_count": 5,
+    "representative": "\"Embark\" might be translated as \"Embarquer\", but that's a very boat/ship/vehicule use. And that may be seen as a very poor translation if the Gnomes comes without vehicules at all.\n\"Embark on a journey\" would be \"Lancez-vous dans l'aventure\" (\"Go for an adventure\").\nThat was the lore question around",
+    "all_content": "'Chance' is usually 'Luck', right? by chance, you may be right. Embark can mean to embark on an overland journey, as is the case here. Launch wouldn't make sense I don't think. \"Embark\" might be translated as \"Embarquer\", but that's a very boat/ship/vehicule use. And that may be seen as a very poor translation if the Gnomes comes without vehicules at all.\n\"Embark on a journey\" would be \"Lancez-vous dans l'aventure\" (\"Go for an adventure\").\nThat was the lore question around the specific verb used. I'm done with FR translation. Next step will be a system to let the user change desired language, and/or default to OS language if compatible."
+  },
+  {
+    "date": "2020-10-11",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "drucifer8036",
+      "xeridanus"
+    ],
+    "msg_count": 2,
+    "representative": "Embark also has strong boat/ship/vehicle association in English but can be used for just a trip/journey. The Gnomes don't have a vehicle as far as I'm aware.",
+    "all_content": "Embark also has strong boat/ship/vehicle association in English but can be used for just a trip/journey. The Gnomes don't have a vehicle as far as I'm aware. s'aventurer?"
+  },
+  {
+    "date": "2020-10-13",
+    "categories": [
+      "UI / GUI Framework"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests"
+    ],
+    "msg_count": 2,
+    "representative": "<@!284497763448651797> \"s'aventurer\" has something risky in its meaning. Likely \"Face danger\", or \"Brave adventure\". That genuinely means \"go on an adventure\", but it includes danger-triggering sign. I'm likely to \"m'aventurer\" in a neighbour's garden, when I'd \"explorer\" some time-resisting old tom",
+    "all_content": "<@!284497763448651797> \"s'aventurer\" has something risky in its meaning. Likely \"Face danger\", or \"Brave adventure\". That genuinely means \"go on an adventure\", but it includes danger-triggering sign. I'm likely to \"m'aventurer\" in a neighbour's garden, when I'd \"explorer\" some time-resisting old tomb.\nI suppose this is not a Fr-translation specific channel, so if anyone does want to expand on this, we may request a dedicated one. 🙂 And I found the exact meaning of \"embarquer\" (Fr): \"board\" (En). I think this sense is near the one you use for an adventure (likely board + adventure = embark), but that would be a direct-from-english translation signal to french readers."
+  },
+  {
+    "date": "2020-10-14",
+    "categories": [
+      "UI / GUI Framework",
+      "Game Mechanics",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests",
+      "xeridanus",
+      ".roest"
+    ],
+    "msg_count": 13,
+    "representative": "i think the button should say `Si vous appuyez sur ce bouton, votre joyeuse bande de gnomes s'embarquera dans une longue aventure où ils formeront des amitiés, combattront des monstres et amasseront de grands et précieux trésors.`",
+    "all_content": "What about 'se mettre en route' ? Haha, that would fit perfectly.\nJust remember it's a button, the text might be more efficient if kept short. I asked a friend of mine who speaks French and she gave me the suggestion and thought the same thing. 😛 i think the button should say `Si vous appuyez sur ce bouton, votre joyeuse bande de gnomes s'embarquera dans une longue aventure où ils formeront des amitiés, combattront des monstres et amasseront de grands et précieux trésors.` How about \"en route!\" ? \"En route\" might go well, but with a litlle \"road-trip\" sense. But yeah, I'm doing orthograph checks (I wrote \"équip`p`ement\" some times), can change this word if you think it's good. <@!280266293490221056> So be it. https://github.com/rschurade/Ingnomia/commit/8e7982fdaca3c3cb0a6cddd0709cc3db9fb9d7c9\n<@!191133702552551425> https://github.com/rschurade/Ingnomia/commit/1b4a5a679c1268223b4c8b8703bb1167784468df (Miswrote your pseudo, sorry!) I've PRed it, with the <@!191133702552551425>  `En rout"
+  },
+  {
+    "date": "2020-10-15",
+    "categories": [
+      "Bug Fixes / Debugging"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests",
+      ".roest",
+      "rivenwyrm"
+    ],
+    "msg_count": 5,
+    "representative": "I might have eventually made some slight changes to your original French message. Possibly, treasures were mentionned, but not 100% sure of that.",
+    "all_content": "NO TREASURE!? call the whole thing off we're going home translation error on his part, in my perfect french i definitely mentioned treasure I might have eventually made some slight changes to your original French message. Possibly, treasures were mentionned, but not 100% sure of that."
+  },
+  {
+    "date": "2020-10-18",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "Pathfinding / AI",
+      "UI / GUI Framework",
+      "Game Mechanics",
+      "Performance / Optimization"
+    ],
+    "authors": [
+      "ext3h"
+    ],
+    "msg_count": 1,
+    "representative": "<@!593160154376044594> Please do not try to make the buttons or other labels scale with the text. It's really hard to build a layout around such behavior, and especially in table layouts, you are breaking essential optimizations in the Noesis internal layout algorithms. They ought to be fixed size, ",
+    "all_content": "<@!593160154376044594> Please do not try to make the buttons or other labels scale with the text. It's really hard to build a layout around such behavior, and especially in table layouts, you are breaking essential optimizations in the Noesis internal layout algorithms. They ought to be fixed size, not `minWidth`, but fixed in both width and height. Use a `Viewbox` where absolutely required, in order to dynamically reduce the text size inside a label, should it not fit. Otherwise just cut the overflow, and adjust the translation to fit the space.\n\nFor elements with `IsVirtualizing`, fixed sizes are absolutely mandatory, but even in other parts of the UI it's a big factor in layout performance."
+  },
+  {
+    "date": "2020-10-19",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests"
+    ],
+    "msg_count": 1,
+    "representative": "I totally understand that, but the layout \"LB4C\"-based square width was a problem, since \"designation\" (EN lengthen text) translates to \"zones\" (FR shortest text)....\nThought the \"square-like\" buttons would be enough.\nWe shall talk about that tomorrow, and with other foreign language people (German,",
+    "all_content": "I totally understand that, but the layout \"LB4C\"-based square width was a problem, since \"designation\" (EN lengthen text) translates to \"zones\" (FR shortest text)....\nThought the \"square-like\" buttons would be enough.\nWe shall talk about that tomorrow, and with other foreign language people (German, someone?) to have an even more diverse translation constraint overview."
+  },
+  {
+    "date": "2020-10-21",
+    "categories": [
+      "UI / GUI Framework",
+      "Architecture / Refactoring"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests",
+      "ext3h",
+      ".roest",
+      ".elfu",
+      "wibigdog"
+    ],
+    "msg_count": 36,
+    "representative": "\"Width\" is the size you want for your control; min is the minimal size you want for your control, that said if the width is \"Auto\" (or not set), this is the minimal value the \"Width\" will have; max is the maximal size you want for your control, and you already understood with the \"min\" thing.\nTellin",
+    "all_content": "Hello! I'm not here to go against anyone's will, the fixed 100px layout works well for French.\nTried at random \"Agriculture\" in German, and \"Landwirtschaft\" overflows (not by much, that said).\nI was curious about this 100px choice, what are the Noesis optimizations on that value? because it looks shit if you make buttons 500x500 Can't you accept 100x500 buttons? Why have they to be squared? It's German's fault their words are so goddamn long because non square buttons look even more shit sorry but designing the UI around the premise that it has to fit any possible translation in any language is not really a good idea some stuff will overflow, so what Don't want to put a hard word, I think 100x100 buttons don't look great either when there is no need for them to be as wide. You're the one(s) in charge of the UI design, so my word is not to take in account. well first of all the current sizes are for a normal hd display 1920x1080 I ahven't actually given the new UI a shot yet, how have t"
+  },
+  {
+    "date": "2020-10-22",
+    "categories": [
+      "Build System / Compilation",
+      "UI / GUI Framework",
+      "Game Mechanics",
+      "Architecture / Refactoring"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests",
+      "ext3h",
+      ".elfu"
+    ],
+    "msg_count": 17,
+    "representative": "Ok, time to stop faking: <@!280266293490221056>  and <@!406873466537508864>  are strongly in favor of a squared-shape button ; I made a modification that unconstrained the max width, constraint that was reapplied later on.\nI don't have any long-term care for the subject, but it seems <@!905241912661",
+    "all_content": "> Do not try to translate 1:1 - that never works.\n\nThanks, I'll try that. What about if the text is longer than 100 px when not 1:1 translated? Do that fall in the\n> 1. Widen the component\ncase? Hm, if widening the component won't work, there are 2 optional ways:\nA. Multi-line (which works only with multiple words. hyphening is ugly :S)\nB. Scaling down the label. The longer the text, the smaller it becomes Widening component does produce something.\nActual (top) vs widthable (bottom) Ok, time to stop faking: <@!280266293490221056>  and <@!406873466537508864>  are strongly in favor of a squared-shape button ; I made a modification that unconstrained the max width, constraint that was reapplied later on.\nI don't have any long-term care for the subject, but it seems <@!90524191266181120> you also think widthable buttons might go for a valid solution.\n\nWhat if another solution was made, so the HUD only displayed (fixed-width) buttons, and texts were featured as tooltip overlays only? Towns "
+  },
+  {
+    "date": "2020-10-23",
+    "categories": [
+      "UI / GUI Framework",
+      "Architecture / Refactoring",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests"
+    ],
+    "msg_count": 3,
+    "representative": "Interesting article.\nI'm quoting this particular sentence as I'm reading further into it:\n> In general, the more flexibly you can design your layout, the better. Allow text to reflow and avoid small fixed-width containers or tight squeezes where possible. Be especially careful about fitting text snu",
+    "all_content": "Interesting article.\nI'm quoting this particular sentence as I'm reading further into it:\n> In general, the more flexibly you can design your layout, the better. Allow text to reflow and avoid small fixed-width containers or tight squeezes where possible. Be especially careful about fitting text snugly into graphic designs. Separate presentation and content, so that font sizes, line heights, etc. can be easily adapted for translated text.\n> ...\n> Also, smaller translations can be as problematic as bigger ones if they leave too much white space on the page. <@!406873466537508864> In an article related from the one you shared ( https://r12a.github.io/blog/200610.html#20070613 ),it states that's a seemingly common pattern to use buttons instead of text+buttons: <@280266293490221056> & <@406873466537508864>  Any plan for the ui on this? May I find a compromise somewhere, or do you consider this topic a closed case?"
+  },
+  {
+    "date": "2020-10-24",
+    "categories": [
+      "UI / GUI Framework",
+      "Architecture / Refactoring"
+    ],
+    "authors": [
+      "troa_barton",
+      ".roest",
+      "dinosaure.plz_nofriendrequests",
+      "ext3h"
+    ],
+    "msg_count": 8,
+    "representative": "<@!494607567415410698> there's a large amount of people who have a problem with that kind of UI (towns without text) that's also how the old gnomoria gui was and that led to most of them using the right click menu because it had commands spelled out, finitial feedback here shows they like text on bu",
+    "all_content": "im just lurking and have never had to translate any of my applications to another language, but i will say i like the UI in that Towns image above. Its cleaner and no text to worry about. Though i think you can make either approach work. Prison Architect has a similar interface (boxes with image and test) but the boxes are separated by some space and the text is floating below it. I imagine that gives them more flexibility when translating to other languages. Multi-line and/or downsizing to fit 55px max width buttons.\nFoundations and Emergencies were already slightly smaller fonts. <@!494607567415410698> there's a large amount of people who have a problem with that kind of UI (towns without text) that's also how the old gnomoria gui was and that led to most of them using the right click menu because it had commands spelled out, finitial feedback here shows they like text on buttons and a more verbose UI > Multi-line and/or downsizing to fit 55px max width buttons.\n> Foundations and Eme"
+  },
+  {
+    "date": "2020-10-25",
+    "categories": [
+      "Database / Data Model",
+      "UI / GUI Framework",
+      "Game Mechanics"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests",
+      ".elfu"
+    ],
+    "msg_count": 4,
+    "representative": "Easiness of hit is usually the leading parameter. The bigger the button, the easier it is to click. This is common to mobile apps too. Desktop buttons have the benefit of pinpoint mouse cursor so they can, generally, be a bit smaller. You don't want to make them tiny though.\n\nOther thing is how clos",
+    "all_content": "One last thing that you could attempt, is to have horizontal buttons, meaning text next to icon, rather than underneath. The UI would change in look, but it'd give you enough space to have text as long as you want, maybe even multi-line. The tradeoff is that you'd have to stack the buttons on top of each other, rather than next to each other, like it is now. Vertical layout works well with small screens, like (vertical) phone apps. Note Discord uses it too, either in left channels list (icons only) and right people list (icons+name/subtext).\nI'm not sure that Ingnomia needs such layout, buttons+(downsizable)texts may do the job. How could one measure the layout efficiency? Likely what could make the key value for 55px buttons, vs 100px ones? Easiness of hit is usually the leading parameter. The bigger the button, the easier it is to click. This is common to mobile apps too. Desktop buttons have the benefit of pinpoint mouse cursor so they can, generally, be a bit smaller. You don't wan"
+  },
+  {
+    "date": "2020-11-07",
+    "categories": [
+      "UI / GUI Framework"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests"
+    ],
+    "msg_count": 2,
+    "representative": "Hello. For now, I didn't manage to make the translation work with current c++ culture as I don't have spare time anymore. Somehow, I may try to do it one day, if noone made it already. I'm not forgetting the button texts, nor the fixed UI sizes.\nAs little as I checked, you may want to look at the `R",
+    "all_content": "Hello. For now, I didn't manage to make the translation work with current c++ culture as I don't have spare time anymore. Somehow, I may try to do it one day, if noone made it already. I'm not forgetting the button texts, nor the fixed UI sizes.\nAs little as I checked, you may want to look at the `RowDefinition`s, and set some to `Auto` in the `LayoutRoot` named grids to scale interfaces smoothly with window resizes. See you one day."
+  },
+  {
+    "date": "2020-11-17",
+    "categories": [
+      "Build System / Compilation",
+      "Save / Load",
+      "World Generation"
+    ],
+    "authors": [
+      "fris0uman",
+      ".roest"
+    ],
+    "msg_count": 5,
+    "representative": "`SpriteFactory: failed to load  \"terrain.png\"` nop, that's probably what I'm missing ^^\"",
+    "all_content": "So it did compile this time, but the game just close upon trying to start anything X) did you copy over the tilesheets? `SpriteFactory: failed to load  \"terrain.png\"` nop, that's probably what I'm missing ^^\" So I need to get it from the steam version? That did it. Thanks for the help 👍"
+  },
+  {
+    "date": "2020-11-21",
+    "categories": [
+      "Database / Data Model",
+      "UI / GUI Framework",
+      "Game Mechanics",
+      "Bug Fixes / Debugging",
+      "Save / Load",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "fris0uman",
+      ".roest",
+      "ext3h"
+    ],
+    "msg_count": 23,
+    "representative": "So I tried to: make a crude workbench > order 10 plank > gnome get to work > kill that gnome > new gnome take his place\nIs there actually a menu somewhere to asign a gnome to a bench? because the automatic behaviour seem to work fine",
+    "all_content": "I think I have a fix for https://github.com/rschurade/Ingnomia/issues/62\nIs there an esay way to kill a gnome to test it? not really guess we need to add that to the debug functions you could set the hunger in the save game to -500 so he would die on load So make a world > make a workshop > assing gnome > save > edit save > load > observe? OK, thanks I'll try that So I tried to: make a crude workbench > order 10 plank > gnome get to work > kill that gnome > new gnome take his place\nIs there actually a menu somewhere to asign a gnome to a bench? because the automatic behaviour seem to work fine we definitely had that in the old gui, maybe it's not in yet that said, do we really need that functionality? Maybe not but then it means that #62 is actually already resolved? X) No, it doesn't mean that as (previously done) assignments still persist even though the UI is currently not there. Ok, what behaviour should I check to make sure it's working as intended? Just #62, adding to assignment "
+  },
+  {
+    "date": "2020-11-22",
+    "categories": [
+      "Rendering / Graphics",
+      "Pathfinding / AI",
+      "Game Mechanics",
+      "Bug Fixes / Debugging",
+      "Save / Load",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "fris0uman",
+      "ext3h",
+      ".roest",
+      "ash2ruin",
+      "hughheggen"
+    ],
+    "msg_count": 35,
+    "representative": "Basically will this actually empty all equipment and drop it?\n```cpp\nvoid Creature::dropEquipment()\n{\n    Inventory& inv = Global::inv();\n    for ( const unsigned int it : m_equipment.wornItems() )\n    {\n        inv.putDownItem( it, m_position );\n    }\n    m_equipment.clearAllItems();\n}\n```",
+    "all_content": "I feel bad for the gnomes murdered for bug fixing For the greater good. If I do `m_equipment.wornItems()` does it give me wielded items too? should be leftHandHeld and rightHandHeld Basically will this actually empty all equipment and drop it?\n```cpp\nvoid Creature::dropEquipment()\n{\n    Inventory& inv = Global::inv();\n    for ( const unsigned int it : m_equipment.wornItems() )\n    {\n        inv.putDownItem( it, m_position );\n    }\n    m_equipment.clearAllItems();\n}\n``` at this point i'd have to check the code myself to see whats going on there I'm trying to fix https://github.com/rschurade/Ingnomia/issues/98\nI'll do more testing and make a PR if it seems to work. right now I'm just getting a crash upon the gnome death so something is probably wrong Should droppin all your stuff upon death call `gravity()`? It sems to be a function that moves item one level down if there's no solid ground on the tile but it's only called in `dropEquippedItem()` that seem to be a function to drop the too"
+  },
+  {
+    "date": "2020-11-23",
+    "categories": [
+      "Pathfinding / AI",
+      "Game Mechanics",
+      "Bug Fixes / Debugging"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests",
+      ".roest",
+      "ext3h",
+      "thepak."
+    ],
+    "msg_count": 9,
+    "representative": "Fair word of warning, the definition of the `Star`-suffixed nodes is currently inverse to the definitions of these nodes in Groot. Maybe we should fix that at some point, so we can just point to their documentation. Since that one is arguably better, with plenty of examples.",
+    "all_content": "(You need to also check for its needs, there is nothing worse than a dying Gnome, because there was a bread under its feets but it was in combat mode) Or falling asleep on the front lines right after leaving combat mode. I get your point... <@280266293490221056> did you write the Behavior Tree from scratch? wow, that looks like it was alot of work! It does make it look like it's easy to add new behaviors with it yes it is, have you looked at groot? Fair word of warning, the definition of the `Star`-suffixed nodes is currently inverse to the definitions of these nodes in Groot. Maybe we should fix that at some point, so we can just point to their documentation. Since that one is arguably better, with plenty of examples. I haven't looked at groot. But now that I've glanced at it it looks like it makes things simple! I was wondering what the 'Star' in the Star-suffixed nodes where trying to define."
+  },
+  {
+    "date": "2020-11-24",
+    "categories": [
+      "Pathfinding / AI",
+      "Modding / Data Files",
+      "Game Mechanics",
+      "Performance / Optimization",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests",
+      "ext3h",
+      ".roest",
+      "ash2ruin",
+      "cravenwarrior"
+    ],
+    "msg_count": 24,
+    "representative": "Next up, not \"lag spikes\", but \"constant lag\", querying groves and farms for jobs, which is currently `num_gnomes * num_tiles` time complexity, rather than `num_gnomes + num_tiles` as it should be.",
+    "all_content": "I see in the actions for the behavior tree being called out in the Content/AI folder in the XML files. \nWhere are the actual actions they link to? https://github.com/rschurade/Ingnomia/blob/master/src/game/gnome.cpp#L525 Thanks.\nI just realized there was a GnomeActions.cpp and GnomeConditions.cpp I find it pretty impressive how easy to read your code is without comments! if it was too hard to read theyd never get anything done because of all the time wasted on trying to comprehend what everything was Yeah. I feel like for the vast majority of things if you need comments your code might need a bit of refactoring haha, yeah. I'm usually crap at naming variables though. variable names can create all sorts of fun im working a personal project right now and am trying to use things like `maxHealth` and `curHealth` for my names Yeah... I was writing a Fibonacci function in an interview and one of the guys didn't like me using a/b/c 😂 Rewrote it using previous, current and temp 😂 at one point "
+  },
+  {
+    "date": "2020-11-25",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "UI / GUI Framework",
+      "Modding / Data Files",
+      "Game Mechanics",
+      "Bug Fixes / Debugging",
+      "Platform / Portability",
+      "Save / Load",
+      "World Generation",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests",
+      "carlosgrr",
+      "ext3h",
+      "fris0uman",
+      ".roest"
+    ],
+    "msg_count": 60,
+    "representative": "<@!406873466537508864> since you asked for it just today, like Craven said, they almost build out of the box, I am running it on Arch Linux, like he said you have to change a single file, but another thing is that you can't just copy the tilesheet from anywhere. I copied mine from a Win10 steam inst",
+    "all_content": "https://github.com/rschurade/Ingnomia/commit/c5f6f41fac35b289500de2b30b9cba8d5bba46d9 that changed. Typical case of \"I should have read the full documentation\" so that was one of the issues causing the crash prior to logs? Yes, as far as I understand it only continued to work by chance on NTFS file systems... interesting although compiling the game on Linux didnt generate any database issues when you tried to launch the game Actually curious, do the recent Linux builds from GitHub run out of the box? And if so, on which distro? they work fine on Ubuntu 20.10 only issue is that NoesisGUI for Linux currently requires you to add a few things into one of the files before itll compile or at least thats the easiest way to fix it with no prior knowledge File a bug with Noesis, if not a gcc compiler bug ;) i really need to get back into working with C++, ive mostly just been screwing around with Kotlin i didnt know thatd be an option but it wouldnt hurt ill check if the issue is still around t"
+  },
+  {
+    "date": "2020-11-26",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "UI / GUI Framework",
+      "Modding / Data Files",
+      "Game Mechanics",
+      "Performance / Optimization",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring",
+      "Platform / Portability",
+      "Save / Load",
+      "Networking / Multiplayer",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests",
+      "carlosgrr",
+      "ext3h",
+      ".roest",
+      "cravenwarrior"
+    ],
+    "msg_count": 61,
+    "representative": "```\n<UserControl\n    x:Class=\"IngnomiaGUI.Agriculture\"\n    xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n    xmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\" xmlns:mc=\"http://schemas.openxmlformats.org/markup-",
+    "all_content": "From what I gathered reading the basic tutorials of the Noesis Engine and the bellow forum posting, the program is supposed to be using \"Data Bindings\" instead of \"StaticResources\" to make localisation work during runtime. But on that same post \"ai_enabled\" mentions that he did some in-house dev to make it work, and since Roest went to their forum to understand a little bit better how to make translations work, I imagine that right now everything is still a little bit open, although it comes all down to text, instead of using the \"mine\" word a translator might have to use another word closer to the \"dig\" word. It all comes down to how is the localisation built, and I am not that well versed in your engine to propose changes right now.\n\"ai_enabled post\": https://www.noesisengine.com/forums/viewtopic.php?t=1574 has something changed with compiling the game its saying thats its missing STEAM_LIBRARY STEAM_INCLUDE_DIR and STEAM_DLL but the instructions dont mention those anywhere alright t"
+  },
+  {
+    "date": "2020-11-27",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "Rendering / Graphics",
+      "UI / GUI Framework",
+      "Modding / Data Files",
+      "Game Mechanics",
+      "Performance / Optimization",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring",
+      "Platform / Portability",
+      "Save / Load",
+      "World Generation",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      ".roest",
+      "cravenwarrior",
+      "captain_corkscrew",
+      "mason1920"
+    ],
+    "msg_count": 278,
+    "representative": "remove the build directory and run\n```\ncmake .. \\\n    -DQt5_DIR=\"/home/goren/Qt/5.15.2/gcc_64/lib/cmake\" \\\n    -DSTEAM_SDK_ROOT=\"/home/goren/Downloads/src/steamsdk/sdk\" \\\n    -DNOESIS_ROOT=\"/home/goren/Downloads/src/NoesisGUI\" \\\n    -DNOESIS_LICENSE_NAME=\"goren\" \\\n    -DNOESIS_LICENSE_KEY=\"8fprw06ya",
+    "all_content": "Any of the Linux users want to give it a shot, and try in your fork what compiler options are exactly required to make the binaries built on GitHub portable to your corresponding distribution? Anything up to statically linking C++ runtime goes. Debian 10 needs QT to be distributed alongside it, whether that be static linking, or just shoving them in the same folder, as the QT version in the repo is too outdated. i always hated debian, was always a fight with the IT department to get up to date libraries btw which Qt version is in unstable? Debian Unstable should be good to go though. Same thing with anything before Ubuntu 20.10 Although it's not terribly hard to manually update Even then not too much of a hassle if you're doing it for one already though <@406873466537508864> If nobody else is available get me a list of Linux distributions you want to support and I can throw them into a VM for testing purposes I've got some version of Fedora already set up in a VM, maybe Elementary OS t"
+  },
+  {
+    "date": "2020-11-28",
+    "categories": [
+      "Build System / Compilation",
+      "Rendering / Graphics",
+      "UI / GUI Framework",
+      "Game Mechanics",
+      "Bug Fixes / Debugging",
+      "Platform / Portability"
+    ],
+    "authors": [
+      "totensonntag",
+      "carlosgrr",
+      "ext3h",
+      ".roest",
+      "cravenwarrior"
+    ],
+    "msg_count": 19,
+    "representative": "On the same note about external dependencies, not trying to be the kick in the groin here, but I just checked the licensing page of the noesis engine and their \"free - indie\" license is \"For individual developers or companies with less than 5 employees or EXTERNAL COLLABORATORS.\" Doesn't that mean t",
+    "all_content": "I have a *whole* bunch of shovelware from r/freegamefindings for... some reason. On the same note about external dependencies, not trying to be the kick in the groin here, but I just checked the licensing page of the noesis engine and their \"free - indie\" license is \"For individual developers or companies with less than 5 employees or EXTERNAL COLLABORATORS.\" Doesn't that mean that this project should not be open sourced? Or if it is using the \"Pro\" per project - unlimited seats license - Shouldn't you guys be able to include the souce code to distribute along the code files to decrease the amount of work we do to be able to build it on Linux?\nhttps://www.noesisengine.com/licensing.php thats one of my concerns with using stuff like NoesisGUI although they may have exceptions for open-source or a special agreement however unlikely that is i cant figure out how to find their FAQ to see any other notable conditions May Saint IGNUcius not allow this to be another ZFS on Linux scandall all "
+  },
+  {
+    "date": "2020-11-29",
+    "categories": [
+      "Build System / Compilation",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      "carlosgrr"
+    ],
+    "msg_count": 17,
+    "representative": "When I try to compile the code using gcc it comes with a lot of warnings (477), what are the odds that if I \"fixed\" some of the most obvious ones, or commented on some of the issues, someone would be willing to do a full code review and commit those changes to the code?\n\nAnd if that is a good idea, ",
+    "all_content": "When I try to compile the code using gcc it comes with a lot of warnings (477), what are the odds that if I \"fixed\" some of the most obvious ones, or commented on some of the issues, someone would be willing to do a full code review and commit those changes to the code?\n\nAnd if that is a good idea, what's the best strategy to send you the commits, slowly in batchs of 10 changed files per commit, or per-type-of-warning commits?\n\nDisclaimer: As I am not 100% sure of what everything is doing I wouldn't be able to do a thorough review, but I am sure somethings are very obvious like:\n\n------\ncomparison of integer expressions of different signedness: ‘int’ and ‘std::vector<BT_Node*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]\n------\nThis code:\n\nif ( vcl.size() == m_children.size() )\n\nwould become\n\nif ( ulong( vcl.size() ) == m_children.size() ) No c-style casts please Besides, the correct type would had been `size_t` in that case. As for how to commit, doesn't matter. Need to revi"
+  },
+  {
+    "date": "2020-12-01",
+    "categories": [
+      "Bug Fixes / Debugging",
+      "Platform / Portability"
+    ],
+    "authors": [
+      "cravenwarrior"
+    ],
+    "msg_count": 1,
+    "representative": "Update on that issue with the Linux version, NoesisGUI was patched so the next version may work fine without adding template throughout a file",
+    "all_content": "Update on that issue with the Linux version, NoesisGUI was patched so the next version may work fine without adding template throughout a file"
+  },
+  {
+    "date": "2020-12-03",
+    "categories": [
+      "Database / Data Model",
+      "UI / GUI Framework",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests",
+      "ext3h"
+    ],
+    "msg_count": 7,
+    "representative": "<@!406873466537508864> I've made a separate PR for a draft in which I tried to set resources as part of a .resx file. That looks kinda worky for MainPage.xaml, but I've not the time to finish this. Advantage is that debug texts are back. Inconvenient is (another) localization packaging, knowing that",
+    "all_content": "<@!406873466537508864> I've made a separate PR for a draft in which I tried to set resources as part of a .resx file. That looks kinda worky for MainPage.xaml, but I've not the time to finish this. Advantage is that debug texts are back. Inconvenient is (another) localization packaging, knowing that should be the last change.\nPrevious PR stays ready for review as-is: the debug texts can come back with a simple Find&Replace commented -> un-commented en_US.xaml, that looks like a not-so-big inconvenient, or a specific `debug` xaml localization could feature them (and be out of reach for release, maybe leaving texts as default). I have honestly no clue how that even works. I mean, I see how that works in the C# project. But how does that work in the Noesis project? Besides, that means we are still stuck with the original issue that we can only even ever manage a fraction of the translations in XAML, so managing them there really isn't an option at all? Most of the content is *not* static "
+  },
+  {
+    "date": "2020-12-04",
+    "categories": [
+      "Database / Data Model",
+      "UI / GUI Framework",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring",
+      "Platform / Portability",
+      "Networking / Multiplayer"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests",
+      "ext3h"
+    ],
+    "msg_count": 16,
+    "representative": "Hmm, on Windows env, I'd use `GetLocaleInfo` from `winnls.h`. https://docs.microsoft.com/fr-fr/windows/win32/api/winnls/nf-winnls-getlocaleinfoa?redirectedfrom=MSDN\nSorry, I'm really too far away from C++ on Linux to help with C++ localization outside Windows. 😦",
+    "all_content": "It's in the list of features Noesis doesn't _fully_ support. It doesn't support the `lang:` prefix at all, only the `local:` prefix. And the `local:` prefix is likewise nasty to use from C++ code. The `lang:` prefix is just a convenient namespace in top of xaml file. Could have used `localized:` without much change. Oh right, in C# that's flexible, and selection of the resx file to be used depends on language. But there is no such thing like the design time code generation for the localization model, as used in the C# project? Hmm, on Windows env, I'd use `GetLocaleInfo` from `winnls.h`. https://docs.microsoft.com/fr-fr/windows/win32/api/winnls/nf-winnls-getlocaleinfoa?redirectedfrom=MSDN\nSorry, I'm really too far away from C++ on Linux to help with C++ localization outside Windows. 😦 Related pages goes to https://docs.microsoft.com/en-us/windows/win32/intl/preparing-a-resource-configuration-file, but I'm unable to understand all that is written. 🙂 https://doc.qt.io/qt-5/i18n-source-tr"
+  },
+  {
+    "date": "2020-12-08",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests"
+    ],
+    "msg_count": 1,
+    "representative": "I'm leaving Ingnomia for the moment, see you one day or another.",
+    "all_content": "I'm leaving Ingnomia for the moment, see you one day or another."
+  },
+  {
+    "date": "2020-12-13",
+    "categories": [
+      "UI / GUI Framework",
+      "Performance / Optimization",
+      "Architecture / Refactoring",
+      "Save / Load",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      "cptvolkow"
+    ],
+    "msg_count": 4,
+    "representative": "Also clean isolation of the simulation and the UI thread, something we are going to need at some point next year for *--top secret plan--*.  In the mean time, this will hopefully enable us to better test the simulation part, as we can at last fully load and unload the simulation as we need to.",
+    "all_content": "So, what's going on with that monster commit / update today? \"Simple\", fixing up some of the bad design decisions of the past. Such as excessively recycling objects, global static variables etc. Also clean isolation of the simulation and the UI thread, something we are going to need at some point next year for *--top secret plan--*.  In the mean time, this will hopefully enable us to better test the simulation part, as we can at last fully load and unload the simulation as we need to. https://i.ytimg.com/vi/XuBcO9qK_ac/maxresdefault.jpg"
+  },
+  {
+    "date": "2020-12-29",
+    "categories": [
+      "Database / Data Model",
+      "UI / GUI Framework",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "njoyard",
+      ".roest",
+      "cravenwarrior"
+    ],
+    "msg_count": 5,
+    "representative": "Hi there,\n\nLately I've been working on auto-generated docs for items, workshops, etc. from the db, initially for personal purposes (ie. learning the game), but I figured it might be helpful for others. The generator is written in python and is themable using jinja2. Maybe at some point it could be m",
+    "all_content": "Hi there,\n\nLately I've been working on auto-generated docs for items, workshops, etc. from the db, initially for personal purposes (ie. learning the game), but I figured it might be helpful for others. The generator is written in python and is themable using jinja2. Maybe at some point it could be merged in the repo and triggered in CI for example? And with the theming stuff, we can also imagine rendering stuff to display in-game for in-game help (including rendering xaml if applicable).\n\nHere's a quick preview (just a screenshot while I figure out dns issues to show a live demo using github pages), the (incomplete) code is at https://github.com/njoyard/Ingnomia/tree/autodoc \n\nLet me know if you find it interesting and if I should pursue the dev efforts! (also I should mention, in case it's not obvious from the screenshot: definitely not an expert in desing and UX) thats neat, would be great if the game had an official wiki or something assuming different materials have different stats"
+  },
+  {
+    "date": "2020-12-30",
+    "categories": [
+      "Database / Data Model",
+      "Rendering / Graphics",
+      "Game Mechanics"
+    ],
+    "authors": [
+      "harminoff",
+      "lekkimsm2500",
+      "ext3h",
+      "njoyard",
+      ".roest"
+    ],
+    "msg_count": 14,
+    "representative": "<@!520653029955862528> Sprite definitions are spread over two (or technically 3) tables. `BaseSprites::SourceRectangle` tells you *where* to sample *from*, while `Sprites::Offset` then tells you how to align that in the default 64x32 space of a tile. `Items::spriteid` then indexes into `Sprites`, no",
+    "all_content": "<@520653029955862528> have the output items name listed in the first column in the used to craft table.\n That way people can more easily see what bones are used to make Also great job <@!520653029955862528> That's some A+ work. That seriously be a great addition to the game, especially for newcomers here is the live demo for docs http://ingnomia.njoyard.fr/ I'm digging a bit in the code to find out how to render all sprites (and hopefully tint & animate them) it's possible that we go from SQL back to json at some point rewriting the generator scripts should not be too complex in that case, given the data structure doesn't change too much which of course is just another form of representing the same data Thanks a ton <@!520653029955862528> , this is really handy <@!520653029955862528> Sprite definitions are spread over two (or technically 3) tables. `BaseSprites::SourceRectangle` tells you *where* to sample *from*, while `Sprites::Offset` then tells you how to align that in the default "
+  },
+  {
+    "date": "2020-12-31",
+    "categories": [
+      "Build System / Compilation",
+      "Rendering / Graphics",
+      "UI / GUI Framework",
+      "Game Mechanics",
+      "Performance / Optimization",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring",
+      "Platform / Portability",
+      "Save / Load",
+      "Networking / Multiplayer",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      ".roest",
+      "cptvolkow",
+      "cravenwarrior"
+    ],
+    "msg_count": 111,
+    "representative": "Need to figure out which detail about the compute shader `worldupdate_c.glsl` is causing a link failure with the message `SHADER_ID_LINK error has been generated. GLSL link failed for program 4, \"\": Out of resource error.`",
+    "all_content": "Have to ask once more, has anyone an HD4xxx or HD5xxx series Intel GPU available for testing? HD 4600 on my laptop <@!406873466537508864> what are you testing the game not running on these gpu its running off of a defective drive but i can force integrated pain onto it if needed Need to figure out which detail about the compute shader `worldupdate_c.glsl` is causing a link failure with the message `SHADER_ID_LINK error has been generated. GLSL link failed for program 4, \"\": Out of resource error.` do you just need a crash log or something trial and error let me know what exactly you want to do for testing and ill see if it complies for more than 15 minutes You can take the steam build just fine But you will need to try simplifying that shader until it boots up what exactly does this \"simplifying\" process involve Removing blocks and keywords till it works Minfying e.g. `TileData data[];` into plain `uint data[];` Or removing the content of `void main()` in that shader is that big `DO NO"
+  },
+  {
+    "date": "2021-01-01",
+    "categories": [
+      "Rendering / Graphics"
+    ],
+    "authors": [
+      "ext3h",
+      "cravenwarrior"
+    ],
+    "msg_count": 5,
+    "representative": "i was just researching Vulkan some since itd make a Metal-compatible version less ridiculous, figured out that Intel graphics dont support it below 6th gen",
+    "all_content": "on a scale of 1-10 how hard is it to work with OpenGL 3-4, if it weren't for driver bugs and the lack of a working validation layer Vulkan API is much harder, but it does have a great validation layer i was just researching Vulkan some since itd make a Metal-compatible version less ridiculous, figured out that Intel graphics dont support it below 6th gen so my plan now is to read OpenGL ES 3.2 documentation"
+  },
+  {
+    "date": "2021-01-02",
+    "categories": [
+      "Database / Data Model",
+      "Rendering / Graphics"
+    ],
+    "authors": [
+      "ext3h",
+      "njoyard",
+      ".roest"
+    ],
+    "msg_count": 5,
+    "representative": "<@!520653029955862528>  Looking great with the material animations and the bases.\nGot to admit, I actually also used your page a couple of times as reference by now.",
+    "all_content": "There are duplicate Sprites entries in the db with mismatching offsets (eg. beer, wine, milk), is that intended? most likely not <@!520653029955862528>  Looking great with the material animations and the bases.\nGot to admit, I actually also used your page a couple of times as reference by now. i'm struggling a bit to implement ByMaterials without too much code bloat I'd like to render tech trees as well, but there are a lot of possibilities depending on which starting items you have"
+  },
+  {
+    "date": "2021-01-03",
+    "categories": [
+      "Bug Fixes / Debugging",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      "harminoff",
+      ".roest",
+      "njoyard"
+    ],
+    "msg_count": 11,
+    "representative": "Hmm, I'm not seeing errors when using https. The certificate is a letsencrypt cert with a wildcard, so it should be valid. And it's the one I'm getting when accessing the site... :/",
+    "all_content": "<@!520653029955862528>  getting certificate error on your site now in chrome HSTS is enabled for the parent domain, with a wildcard. So visit the wrong domain once, and you are now forced onto SSL, for which the certificate isn't set up correctly. dang, I guess I just need to view it in incognito mode then, that still works for me at least wanted to check the main site to see what was there, my bad it's a trap always running into SSL issues with gh pages :(\nI'll look into it Hmm, I'm not seeing errors when using https. The certificate is a letsencrypt cert with a wildcard, so it should be valid. And it's the one I'm getting when accessing the site... :/ scratch that, it's a github issued cert works fine for me too though i didn't go to any other page on your domain it looks like the cert was generated jan 3rd around 11p CET, so I guess it was github doing its thing"
+  },
+  {
+    "date": "2021-01-04",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "Rendering / Graphics",
+      "Modding / Data Files",
+      "Game Mechanics",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring",
+      "Networking / Multiplayer",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests",
+      "ext3h",
+      "njoyard",
+      ".roest",
+      "xeridanus"
+    ],
+    "msg_count": 33,
+    "representative": "Saw this, but not in the mood to head-compile this tonight.\n```    if ( m_properties.autoHarvestSeed )\n    {\n        unsigned int count = Global::inv().itemCount( m_properties.seedItem, seedMaterialID );\n        unsigned int min   = m_properties.autoHarvestSeedMin;\n        unsigned int max   = m_pro",
+    "all_content": "njoyard: I would love a list of Items this container can contain in your doc. Or perhaps which container(s) this item can go in. Or both? or maybe it already has that Doesn't have the reverse (what can x contain) cause i figured this would make a huge list Can this be limited to item types, or alike? Things like \"seeds\", \"raw food\", etc. I've nearly completed sprite rendering (with tints, animations, combine, random) but due to a dell tech guy borking my laptop main board while replacing a broken key (...) that'll have to wait 2 days before going online Also added a plant table and considering rendering workshops now then I'll probably submit a pr Can anyone explain me how the `autoHarvestSeed` translates ingame? Is it seeds auto-pop ability, or anything different? Theoretically it's supposed to toggle the farm on/off entirely. Which makes it somewhat tricky to use, as you can only toggle the farm on/off for all produced goods at once, not just for the seeds. Related question is then h"
+  },
+  {
+    "date": "2021-01-06",
+    "categories": [
+      "Modding / Data Files",
+      "World Generation",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "dinosaure.plz_nofriendrequests",
+      "njoyard",
+      ".roest",
+      "cptvolkow",
+      "ash2ruin"
+    ],
+    "msg_count": 17,
+    "representative": "Because of the cold in the winter months they do this initial stage in a warmer more suitable setting for growth so they have a better chance of growing in to full trees in a generally colder climate",
+    "all_content": "Docs updated, really close to what i'd consider done now nooo do more I'm always taking suggestions, but by done I meant ready for an actual pr what does it need on the webserver, could we run it on a github.io page Embed it into ingnomia.wiki It is currently on gh I set up a gh action to deploy it oh thought it was on your webspace Nope, just using a custom domain on github pages by far one of my favorite features they offer. What's the general English for tree \"seeds\" (pine, acorns, etc), is it \"seed\", or do you have a specific tree-related word? > What's the general English for tree \"seeds\" (pine, acorns, etc), is it \"seed\", or do you have a specific tree-related word?\nIn general it's seed I think They are considered seeds, but often times small trees, or saplings are grown in pots to a certain stage before being transferred and planted in their final location At least they do here in Canada as far as I now West coast that is Because of the cold in the winter months they do this ini"
+  },
+  {
+    "date": "2021-01-07",
+    "categories": [
+      "Database / Data Model",
+      "Rendering / Graphics",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring"
+    ],
+    "authors": [
+      "ext3h",
+      "njoyard",
+      ".roest"
+    ],
+    "msg_count": 37,
+    "representative": "<@!520653029955862528> https://developer.mozilla.org/en-US/docs/Web/CSS/image-rendering with setting `pixelated` or `crisp-edges` should better correspond to the ingame rendering look. The default smooth interpolation (especially when upscaling on HDPI displays) is blowing out the highlights.",
+    "all_content": "I wonder, how does the game figure out how to render roofs from the DB, with a different material for rafters and  roofing ? I cannot find anything in the structure that says \"rafters should have the plank material and roofing should have the block material\" I could hardcode it in the docs, but I'd prefer not to it's the order in the combined sprite and it takes the list of source materials We're missing SoilRamp and SoilRampTop rotations in the db aren't we ? which table? Sprites_Rotations it uses Ramp and RampTop yes but those have ByMaterialTypes that point to SoilRamp[Top] for type Soil and SoilRamp[Top] is a dead end Oh I think I figured out what's wrong I'm not taking Sprites_Seasons / Sprites_Seasons_Rotations into account, and they're there thought I wouldn't need them Somehow the colors ingame and the colors on the website look entirely different to me. <@!520653029955862528> https://developer.mozilla.org/en-US/docs/Web/CSS/image-rendering with setting `pixelated` or `crisp-ed"
+  },
+  {
+    "date": "2021-01-08",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "Rendering / Graphics",
+      "Game Mechanics",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      "njoyard",
+      ".roest",
+      "cptvolkow"
+    ],
+    "msg_count": 29,
+    "representative": "I'm considering adding this tech tree, basically computed the same way the TechTree game class does (but with workshops).\n\nI'm not really sure because basically each level assumes you have built every workshop for previous levels. But I think that's the closest we can get, otherwise there are way to",
+    "all_content": "I'm considering adding this tech tree, basically computed the same way the TechTree game class does (but with workshops).\n\nI'm not really sure because basically each level assumes you have built every workshop for previous levels. But I think that's the closest we can get, otherwise there are way too many possibilities. WDYT? (maybe it'll be more legible here http://ingnomia.njoyard.fr/techtree.html - this is built from a separate branch, not yet in the PR) No clue regarding the test tree. It's not really \"levels\" like that, nor is it strictly a tree. It's more of a full, ordered acyclic graph What bothers me more, is that several items are still misaligned. Is that also the case in-game for all of them? I don't know, I spent way more time on docs than on actually playing, so I didn't craft them ! It's likely there is something in sprite offsets that I didn't completely figure out because I had to add a few manual overrides for offsets (see https://github.com/rschurade/Ingnomia/blob/ce"
+  },
+  {
+    "date": "2021-01-11",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "njoyard"
+    ],
+    "msg_count": 1,
+    "representative": "(edited) having fun refactoring docs sprites to be able to do more stuff",
+    "all_content": "(edited) having fun refactoring docs sprites to be able to do more stuff"
+  },
+  {
+    "date": "2021-01-12",
+    "categories": [
+      "Database / Data Model",
+      "Architecture / Refactoring",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "njoyard",
+      ".roest"
+    ],
+    "msg_count": 3,
+    "representative": "nice, do you ever feel like working on ingame stuff? we still have a lot of unused sprites that need definitions 🙂",
+    "all_content": "nice, do you ever feel like working on ingame stuff? we still have a lot of unused sprites that need definitions 🙂 yep, I was preparing a separate PR to add some db entries (eg missing animals) also I'd like to get back on my c++ skills at some point, not excluding contributing actual game code"
+  },
+  {
+    "date": "2021-01-13",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "Rendering / Graphics",
+      "UI / GUI Framework",
+      "Game Mechanics",
+      "Bug Fixes / Debugging",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      "njoyard",
+      ".roest"
+    ],
+    "msg_count": 10,
+    "representative": "Would something like that be useful ?\nBlue overlays for basesprites and shows basesprite IDs on hover (top right).\nGenerated using a new docs theme. We could also imagine showing Sprites_* entries that use those basesprites.",
+    "all_content": "Do we have a reference somewhere that lists tilesheet content? Nothing except that `BaseSprite` table, and not everything is indexed. also some sprites might be duplicate on two sprite sheets though not too many, some are referenced in BaseSprites but aren't used i have noticed at least the windmill sprites are on a seperate tilesheet and on the workshop sheet i was already working on that tough, there is some commented out code in spritefactory that finds unused basesprties also I want to get rid of the default png or what's left of it, so replacing or moving the remaining sprites on that tile sheet has priority Would something like that be useful ?\nBlue overlays for basesprites and shows basesprite IDs on hover (top right).\nGenerated using a new docs theme. We could also imagine showing Sprites_* entries that use those basesprites. useful yes, but more for us than the player, i actually had something like that in the debug window the old gui yeah I was not thinking about players I'll"
+  },
+  {
+    "date": "2021-01-14",
+    "categories": [
+      "Rendering / Graphics"
+    ],
+    "authors": [
+      "ext3h",
+      "njoyard",
+      ".roest"
+    ],
+    "msg_count": 5,
+    "representative": "-_-\njust did a bunch of moving around sprites, and discovered that the thing I did with html canvas does very subtle color changes when saving images... hardly visible, but still. have to find out why",
+    "all_content": "OK I now have a small tool to move sprites around between tilesheets.\nShould I start moving stuff away from default.png, at least for sprites that are allocated as BaseSprites? sure if it's clear where they might belong better sprite thingy is here http://ingnomia.njoyard.fr/spriteref/, very crude but better than nothing Would you mind adding the functions you have assigned to the shortcuts also as buttons (where the help texts are)? -_-\njust did a bunch of moving around sprites, and discovered that the thing I did with html canvas does very subtle color changes when saving images... hardly visible, but still. have to find out why"
+  },
+  {
+    "date": "2021-01-15",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "ext3h",
+      "njoyard"
+    ],
+    "msg_count": 4,
+    "representative": "Likely because the internal representation of the canvas is in linear color space, so you get unavoidable rounding errors both even loading and saving.",
+    "all_content": "Likely because the internal representation of the canvas is in linear color space, so you get unavoidable rounding errors both even loading and saving. Truth be told though, the viewing capability is far more useful than the editing capability anyway. definitely i'll just have it output imagemagick command lines instead of using the download thingy"
+  },
+  {
+    "date": "2021-01-18",
+    "categories": [
+      "Game Mechanics",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "rsmith32"
+    ],
+    "msg_count": 1,
+    "representative": "Hi! I just created a pull request for some minor Farm/FarmField optimizations. First time doing a pull request on git I think I did it correctly.",
+    "all_content": "Hi! I just created a pull request for some minor Farm/FarmField optimizations. First time doing a pull request on git I think I did it correctly."
+  },
+  {
+    "date": "2021-01-21",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "Rendering / Graphics",
+      "UI / GUI Framework",
+      "Performance / Optimization",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring",
+      "Networking / Multiplayer",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      "njoyard"
+    ],
+    "msg_count": 30,
+    "representative": "Some details you should then also try to understand about Qt containers, how they use copy-on-write-after-fork semantics. Meaning you can safely send a QList over a signal-slot into another thread, *but* that will result in (potential) iterator-invalidation on next write-access in the originally own",
+    "all_content": "are there more complete docs for noesis sdk than whats in their developer tab/doc folder of the sdk zip? https://www.noesisengine.com/docs/Gui.Core.Index.html That you mean? No, that's about it. For everything beyond, WPF is reference. And then some trial&error to find what examples you had found for WPF are unconditionally supported in Noesis Also tons of low-quality code for WPF around, so got to be careful. And also be careful not to fall for the trap where Visual Studio is actually doing code synthesis, rather than the logic in the offending example having been implemented with WPF: I'm not using VS\n(which is part of the problem actually since I don't have prototype hints setup) at least I can find correct method prototypes in wpf What are you trying to do? tinkering with implementing the sprites thingy I did in JS in a debug panel in game I was currently looking for the BitmapSource::Create prototype, but now I found it in wpf docs Oh my, you picked a fairly complex task for the f"
+  },
+  {
+    "date": "2021-01-22",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "njoyard",
+      ".roest"
+    ],
+    "msg_count": 2,
+    "representative": "starting to get the hang of it",
+    "all_content": "starting to get the hang of it is that in game?"
+  },
+  {
+    "date": "2021-01-24",
+    "categories": [
+      "Game Mechanics",
+      "Performance / Optimization",
+      "Bug Fixes / Debugging",
+      "Save / Load"
+    ],
+    "authors": [
+      "cptvolkow",
+      "rsmith32"
+    ],
+    "msg_count": 8,
+    "representative": "I was doing some testing replacing std::bind with lambdas when functions were being added to the  m_behaviors in animals. With some fairly crude performance measurements it seems like there was a performance increase between 5% - 7% on a new world. However, I don't have a more developed world and wa",
+    "all_content": "I was doing some testing replacing std::bind with lambdas when functions were being added to the  m_behaviors in animals. With some fairly crude performance measurements it seems like there was a performance increase between 5% - 7% on a new world. However, I don't have a more developed world and was wondering if anyone had a save they could give me so I could get a more realistic test.  I'm planning on also replacing the other places where this is done (gnome, gnometrader, and monster). just a sec too big even zipped do you have a google drive you could use? or maybe a smaller world lol https://www.dropbox.com/s/yisiyac81b1w8nq/autosave.zip?dl=0 awesome thanks! Having some issues loading it. It seems to load when compiled in RelWithDebInfo but not in Debug. Do I need to tweak any settings?\n\n```\n// line 75 of aggregatorInventory.cpp\nfor( auto gwi : GameState::watchedItemList )\n{\n    QString key = gwi.category + gwi.group + gwi.item + gwi.material; // crashing here    \n        ....\n}\n\n`"
+  },
+  {
+    "date": "2021-01-25",
+    "categories": [
+      "Database / Data Model",
+      "UI / GUI Framework",
+      "Bug Fixes / Debugging"
+    ],
+    "authors": [
+      "ext3h",
+      "rsmith32"
+    ],
+    "msg_count": 9,
+    "representative": "I think I get what your saying. Just to clarify  AggregatorInventory::updateWatchedItem  is causing an element in GameState::watchedItemList to be modified or deleted in a way that when it returns to the previous function AggregatorInventory::init  which is still currently iterating over the GameSta",
+    "all_content": "No, there is probably a real bug in there, some sort of use-after-free, which only is noticeable in Debug mode due to debug heap features. Not entirely sure what's happening, but most likely an issue triggered by the implicit sharing mechanism. Write access in `AggregatorInventory::updateWatchedItem` caused iterator invalidation in the outer loop, due to an already in-flight 2nd reference to `GameState::watchedItemList` somwhere else And that 2nd reference came from `signalWatchList` inside `updateWatchedItem` during the previous outer iteration. I think I get what your saying. Just to clarify  AggregatorInventory::updateWatchedItem  is causing an element in GameState::watchedItemList to be modified or deleted in a way that when it returns to the previous function AggregatorInventory::init  which is still currently iterating over the GameState::watchedItemList to get an invalid reference. was debugging a bit more and found a QList:insert(): Index out of range\n```\n//militarymanager.cpp\n"
+  },
+  {
+    "date": "2021-01-26",
+    "categories": [
+      "Git / Version Control"
+    ],
+    "authors": [
+      "rsmith32"
+    ],
+    "msg_count": 2,
+    "representative": "Also, curious what your thoughts are on making the object class extend from QObject. We would be able to implicitly do what were currently doing with the CreatureType enum. We would also be able to write better generics in general. I know QObjects arn't light but I think it would still be worth it. ",
+    "all_content": "<@!406873466537508864> just realized I had totally messed up my pull request from a few days ago. I fixed it and re-requested. Also, curious what your thoughts are on making the object class extend from QObject. We would be able to implicitly do what were currently doing with the CreatureType enum. We would also be able to write better generics in general. I know QObjects arn't light but I think it would still be worth it. I work with unreal engine and use its reflection system quite heavily.  I'm also making the assumption that QTs reflection system is similar to Unreals."
+  },
+  {
+    "date": "2021-01-27",
+    "categories": [
+      "Pathfinding / AI",
+      "UI / GUI Framework",
+      "Game Mechanics",
+      "Performance / Optimization",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring"
+    ],
+    "authors": [
+      "ext3h",
+      "rsmith32"
+    ],
+    "msg_count": 8,
+    "representative": "Qts reflection system uses strings for runtime lookups? yikes.  Unreal provides a pointer to a class type object. After I typed that out I also saw that items extended from object as well which your totally right would be way to heavy for all of them to be QObjects.  I agree the component pattern sh",
+    "all_content": "QObject comes with quite a lot of overhead, and you are not exactly supposed to have hundred thousands of them alive concurrently. If you aim at the \"reflections\" provided by the property system in Qt, you even have to go the route via string based lookups at runtime, nothing you would actually want to do. Unless I'm mistaken, part of what makes the `CreatureType` enum currently \"necessary\", is that the inheritance structure in the whole creatures tree wasn't exactly fully thought through.   Like the distinction between \"monster\" and \"animal\", that should not even exist in the first place. The behavior tree should differ, but not the C++ type. And it used a type hierarchy where it should have used entity-component pattern E.g. components to plug in the specialized anatomy (damage, needs/upkeep, reproduction), movement constraints, can-work extension, combat-/social-stance (squad based, monster squad, ant swarm, regular animal). Qts reflection system uses strings for runtime lookups? yi"
+  },
+  {
+    "date": "2021-01-29",
+    "categories": [
+      "Build System / Compilation",
+      "UI / GUI Framework",
+      "Performance / Optimization",
+      "Platform / Portability",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "condac",
+      "ext3h"
+    ],
+    "msg_count": 8,
+    "representative": "I am a total noob when it comes to signals and a few things in this code so I have probably done a few things that are not \"right way\". But it works... at least for me, someone will probably have to try and compile in windows and see if it works there also.",
+    "all_content": "So just for fun to teach my self abit of how the code works I have made a simple audio function for soundeffects. I have also recorded some own sounds that are free to use how ever you like. https://github.com/condac/Ingnomia/tree/soundtest https://github.com/condac/Ingnomia/releases/tag/audio1 I am a total noob when it comes to signals and a few things in this code so I have probably done a few things that are not \"right way\". But it works... at least for me, someone will probably have to try and compile in windows and see if it works there also. `EventConnector::onViewLevel` That's not how to connect to the event connector, use signal-slot by a `connect` call. For a quick proof of concept, QSoundEffect is good. Not so much for full audio support though. We should aim for OpenAL there. Sound falloff is slightly off, ignores that you need full viewport. And the not-so-obvious detail that invisible sound sources also need falloff, or it turns very odd. Audio playback should be in main t"
+  },
+  {
+    "date": "2021-01-30",
+    "categories": [
+      "Database / Data Model",
+      "UI / GUI Framework",
+      "Modding / Data Files",
+      "Game Mechanics",
+      "Performance / Optimization",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring"
+    ],
+    "authors": [
+      "condac",
+      "ext3h",
+      ".roest"
+    ],
+    "msg_count": 27,
+    "representative": "As my simple approach is now when a gnome starts a task it triggers the sound to be played. And then itt calls my playEffect function that checks if the sound should be played based on range to the object compared to the view Z",
+    "all_content": "<@!406873466537508864> If i want to try and move my audio stuff to the gui thread where is a good place to put the .tick() call? You don't even need one in the first place. You start playing the sound when you get the signal. Not even a queue required. You do need to remember sounds currently supposed to be playing though. Details about \"sounds being able to be emitted from more than one source\". Will get to that at a later point. I do however want to keep some kind of que or list so i can limit 100 sounds from playing at once. But i think i will add up a list from all the places that want to play sound and in my.tick() in game loop send signals to gui thread what should be played. Nope, keep that out of the game loop please. As I said, there is also UI sounds. And the sim thread is likely to be blocked for long times, and unable to process any events. Even the time correlation between rendererd state and audio cues is only given in the UI thread Where is a good place to init all the s"
+  },
+  {
+    "date": "2021-02-04",
+    "categories": [
+      "Database / Data Model",
+      "Modding / Data Files",
+      "Game Mechanics",
+      "World Generation"
+    ],
+    "authors": [
+      "condac",
+      "ext3h"
+    ],
+    "msg_count": 2,
+    "representative": "It would be nice if there was a custom farming zone so things like beehives and custom mods can use and create things that do not require dirt soil. As it is now the bees are custom code but it can just as well piggyback on the farming code and have the beehive act as seed and when it is done it jus",
+    "all_content": "It would be nice if there was a custom farming zone so things like beehives and custom mods can use and create things that do not require dirt soil. As it is now the bees are custom code but it can just as well piggyback on the farming code and have the beehive act as seed and when it is done it just farm it as usual. This way it is very easy to mod in things like wine cellar and things like that you can just add in thing in the DB and set grow time and create recipies for new stuff. Treating them like a plantable rather than a constructible item actually isn't such a bad idea... Just need the \"refund on remove\" logic for plants then though"
+  },
+  {
+    "date": "2021-05-26",
+    "categories": [
+      "Build System / Compilation",
+      "Game Mechanics"
+    ],
+    "authors": [
+      ".roest",
+      "keyarae99"
+    ],
+    "msg_count": 2,
+    "representative": "Sorry I dont want to be that person but where is jinja2 located because I am trying to build the docs and its been a no go?",
+    "all_content": "Sorry I dont want to be that person but where is jinja2 located because I am trying to build the docs and its been a no go? doc was done by <@!520653029955862528>  he may be able to answer that"
+  },
+  {
+    "date": "2021-05-27",
+    "categories": [
+      "Bug Fixes / Debugging"
+    ],
+    "authors": [
+      "njoyard"
+    ],
+    "msg_count": 1,
+    "representative": "What's the issue you're getting? Did you follow the instructions in the README?",
+    "all_content": "What's the issue you're getting? Did you follow the instructions in the README?"
+  },
+  {
+    "date": "2021-05-28",
+    "categories": [
+      "Build System / Compilation",
+      "UI / GUI Framework",
+      "Game Mechanics",
+      "Bug Fixes / Debugging",
+      "Platform / Portability"
+    ],
+    "authors": [
+      "cptvolkow",
+      ".roest",
+      "nardian13"
+    ],
+    "msg_count": 14,
+    "representative": "Hello, I am trying to build this game on Manjaro (Arch-based), but I am running into this issue:\n```\nConsolidate compiler generated dependencies of target NoesisApp\n[  0%] Building CXX object 3rdparty/NoesisApp/CMakeFiles/NoesisApp.dir/home/baku/games/Ingnomia_libs/noesis/Src/Packages/App/Interactiv",
+    "all_content": "Hello, I am trying to build this game on Manjaro (Arch-based), but I am running into this issue:\n```\nConsolidate compiler generated dependencies of target NoesisApp\n[  0%] Building CXX object 3rdparty/NoesisApp/CMakeFiles/NoesisApp.dir/home/baku/games/Ingnomia_libs/noesis/Src/Packages/App/Interactivity/Src/App.Interactivity.cpp.o\nIn file included from /home/baku/games/Ingnomia_libs/noesis/Src/Packages/App/Interactivity/Src/App.Interactivity.cpp:22:\n/home/baku/games/Ingnomia_libs/noesis/Src/Packages/App/Interactivity/Include/NsApp/MediaActions.h:14:10: fatal error: NsApp/MediaElement.h: No such file or directory\n   14 | #include <NsApp/MediaElement.h>\n      |          ^~~~~~~~~~~~~~~~~~~~~~\ncompilation terminated.\n```\nNot sure what I am doing wrong? :/ have you build the noesis app? uh.. no, I thought that is done automagically 🙂 or do I explicitly need noesis 3.0.7 or is the most current version 3.0.12 also fine? should be fine at this point, not sure if they changed something around a"
+  },
+  {
+    "date": "2021-05-29",
+    "categories": [
+      "Git / Version Control"
+    ],
+    "authors": [
+      "njoyard",
+      "nardian13"
+    ],
+    "msg_count": 2,
+    "representative": "I don't know which download you used but it really looks like it's too old. In particular the grass tilesheet was changed (to a 32x36px grid) after the last download available from github. You may want to use those from a steam version (or from the IngnomiaGfx repo).",
+    "all_content": "I don't know which download you used but it really looks like it's too old. In particular the grass tilesheet was changed (to a 32x36px grid) after the last download available from github. You may want to use those from a steam version (or from the IngnomiaGfx repo). yes, that was it! thanks a lot 🙂"
+  },
+  {
+    "date": "2022-03-08",
+    "categories": [
+      "Modding / Data Files",
+      "Game Mechanics"
+    ],
+    "authors": [
+      ".roest",
+      "cptvolkow",
+      "phoenixfice"
+    ],
+    "msg_count": 10,
+    "representative": "And otherwise, a tip for the steam page, for the description of the game, this one doesn't give any info on the game except \"it's the sequel to Gnomoria\", not everyone knows Gnomoria so it would be nice to explain , and all the more the differences with other games in the genre (example : rimworld),",
+    "all_content": "Hello, I would like to know where we can find mods for the game On steam it is said that he has a workshop but impossible to access it there is no mod support right now as the internal data structures changed since then, however it is open source so if you have programming knowledge you can modify the game yourself Yeah, I think Gnomoria has workshop Not Ignomia ok, I advise you to modify the info of the game then ^^ And otherwise, a tip for the steam page, for the description of the game, this one doesn't give any info on the game except \"it's the sequel to Gnomoria\", not everyone knows Gnomoria so it would be nice to explain , and all the more the differences with other games in the genre (example : rimworld), even if it means copying the description of Gnomoria at worst for a free game the description doesn't need to be that descriptive ¯\\_(ツ)_/¯ Baaaaah.... it's not because a game doesn't try to be profitable that we don't try to make it popular I don't think it's ready for a push"
+  },
+  {
+    "date": "2022-03-16",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "desolator_x"
+    ],
+    "msg_count": 2,
+    "representative": "this is the kind of stuff you do a few weeks before \"release\"",
+    "all_content": "this is the kind of stuff you do a few weeks before \"release\" not now when half the stuff isn't fleshed out"
+  },
+  {
+    "date": "2022-05-18",
+    "categories": [
+      "Rendering / Graphics",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "cptvolkow",
+      "montanoc70"
+    ],
+    "msg_count": 3,
+    "representative": "how do i donwload the openGL as it says in the github?",
+    "all_content": "Hello, how may I start? is there any guide? Link in pins how do i donwload the openGL as it says in the github?"
+  },
+  {
+    "date": "2022-06-28",
+    "categories": [
+      "Build System / Compilation",
+      "Rendering / Graphics",
+      "UI / GUI Framework",
+      "Game Mechanics",
+      "Performance / Optimization",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring",
+      "Platform / Portability",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      ".roest",
+      "arcnor"
+    ],
+    "msg_count": 38,
+    "representative": "few things that you might or might not like:\n1. This first set of changes just removes `QSet` completely, because it was the easiest\n2. I've changed the C++ version to C++20, because the STL has improved a lot on that version, it makes things easier without extra libs. This can be reverted to 17, bu",
+    "all_content": "<@280266293490221056> will you accept any PR that replaces QT with STL C++? my thought is that it will open development a bit more to people that doesn't use QT, but that might not be a goal of yours anyway... we discussed this already, some things are pretty easy to replace, the main hurdle would be replacing signals and slots I already took a look at one library that is probably suitable I've also replaced a good chunk of QT already (a small chunk, but a good one 😛 ) my end goal was actually to change the renderer as well, so the game could be run on Mac and any other system, but that's a separate thing there is a really extensive (and slightly outdated) list of signal-slot libraries here https://julienjorge.medium.com/testing-c-signal-slot-libraries-1994eb120826 but for my projects I settled on https://github.com/palacaze/sigslot which I think might work fine for this project as well it's probably still a pretty big task to replace qt everywhere but if you do it i'll most likely mer"
+  },
+  {
+    "date": "2022-06-29",
+    "categories": [
+      "UI / GUI Framework",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "loyalviggo"
+    ],
+    "msg_count": 1,
+    "representative": "Hello all. I'm a Junior Software Developer, but unfortunately not in C++ or XAML (yet). I'd be interested in helping other areas so if anyone can point me to a resource (outside of the repo perhaps) where I can see what else there is, and how I can contribute, that would be great. Thanks.",
+    "all_content": "Hello all. I'm a Junior Software Developer, but unfortunately not in C++ or XAML (yet). I'd be interested in helping other areas so if anyone can point me to a resource (outside of the repo perhaps) where I can see what else there is, and how I can contribute, that would be great. Thanks."
+  },
+  {
+    "date": "2022-06-30",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "UI / GUI Framework",
+      "Game Mechanics",
+      "Performance / Optimization",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring"
+    ],
+    "authors": [
+      "ext3h",
+      ".roest",
+      "arcnor"
+    ],
+    "msg_count": 36,
+    "representative": "biggest issue with replacing the sigslot stuff is that thread safety is not guaranteed, because the library obviously doesn't know anything about Qt threads, so things like `QueuedConnection` cannot be done automatically. I'm going to replace things, then worry about these issues later, getting ever",
+    "all_content": "hey <@280266293490221056> , I've continued replacing containers and stuff and I broke a few things, so hopefully you can give me a few tips 🙂 first thing is that I broke hovering (i.e. you select a tool, and when hovering on the map nothing shows), but when you finish creating whatever you're creating it shows correctly any tips to where I should look for that? uff hard to say do you know where that rendering happens? or where the current \"action\" (or whatever the name for that is) is set? well I can't look at the code right now but it's something cursor, renderCursor the likes no worries, thanks, I'll do a search for that I was looking for `mouse`, but `cursor` also makes sense 😄 hmm, so the issue is that I changed the type of a signal that used to get a `QMap` for some reason, the signal is not been emitted correctly after that I vaguely remember something about having to register Qt types in the past, to add metadata or something like that? could that be the case here? well, I can't"
+  },
+  {
+    "date": "2022-07-03",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "Rendering / Graphics",
+      "UI / GUI Framework",
+      "Modding / Data Files",
+      "Performance / Optimization",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring",
+      "Save / Load",
+      "Git / Version Control"
+    ],
+    "authors": [
+      ".roest",
+      "arcnor"
+    ],
+    "msg_count": 53,
+    "representative": "after loading everything related to the construction of sprites from the DB (I've converted the DB calls to return classes from `dbstructs.h` that already existed, but were not used, sort of like a fake ORM) the final step is creating some objects called `DefNode`, which are (from what I see) a step",
+    "all_content": "so I moved to start replacing QVariant code, and as expected is a big amount I started with the Config which was easy enough, then moved to QDB and converted that to raw SQlite the issue I have now is inside the `SpriteFactory` code after loading everything related to the construction of sprites from the DB (I've converted the DB calls to return classes from `dbstructs.h` that already existed, but were not used, sort of like a fake ORM) the final step is creating some objects called `DefNode`, which are (from what I see) a step above a variant, but not much else. They contain all the possible fields from all the `Sprites_*` tables and they are used by differentiating using the `Type` field question is, in my mind it makes sense to continue using the \"static\" objects from the `dbstructs` instead of this `DefNode`, but maybe there is a reason for its existence, so I'd appreciate some guidance if possible before I start removing and find some showstopper down the line... no there is no re"
+  },
+  {
+    "date": "2022-07-04",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "Rendering / Graphics",
+      "Pathfinding / AI",
+      "UI / GUI Framework",
+      "Performance / Optimization",
+      "Platform / Portability"
+    ],
+    "authors": [
+      "ext3h",
+      "arcnor"
+    ],
+    "msg_count": 18,
+    "representative": "Hrm, even though I'm somewhat wary of the ranges library for different reasons. We had a chance to get proper autoparallelization into pretty much all STL containers and on most algorithms based on probabilistic, chunk forming iterators - except that clashes completely with the ranges library. Which",
+    "all_content": "No objections regarding the choice of libraries here. I've just got no experience with `bgfx` yet, respectively its shader language. Oh, and sqlite3 is probably supposed to go away soon, too. At this point, it's actually just a single dump-to-json away from being done with. I ream, it's effectively just a read-only asset, it's not actively being queried against at runtime or anything. Good to know that Sigslot actually interfaces nicely with Qt during a transition phase... BGFX is not perfect, but it's the best supported one of the alternatives. The documentation is bad, but the shader language is GLSL, just with a few caveats So you're sure no runtime access is done at all? I thought some queries are done when creating things like plants and stuff, but yeah, my impression was also that this should be a \"db\" in memory, the whole variant stuff is really annoying to deal with and probably unnecessary, although for now I've replaced everything with the similar `std::variant` There are som"
+  },
+  {
+    "date": "2022-07-15",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "arcnor"
+    ],
+    "msg_count": 2,
+    "representative": "Been replacing more code, have added a few more libs in the end 😁",
+    "all_content": "Been replacing more code, have added a few more libs in the end 😁 QXml is gone now, as well as part of QJson*"
+  },
+  {
+    "date": "2022-07-17",
+    "categories": [
+      "Database / Data Model",
+      "UI / GUI Framework",
+      "Modding / Data Files",
+      "Platform / Portability"
+    ],
+    "authors": [
+      ".roest",
+      "arcnor"
+    ],
+    "msg_count": 7,
+    "representative": "some things like those \"New Preset\" and similar buttons are cutoff, although I can't remember if it was like that on Windows as well, plus there is a strange blue \"flash\" when scrollbars are rendered (which I think I saw on the Noesis forum mentioned as well, so I'll check at some point)",
+    "all_content": "nice, does it still run? Yeah, although I'm Mac only for 2 more weeks, so I can't get to the menu or the game 😁 But everything that happens before that runs, including Xml reading (for the BT library, which I've split into an actual library for easier testing) as well as Json parsing, etc I'm doing semi random changes now to try and get to the menu on Mac I got to the menu! it's been a very long journey to get here 😄 this is using SDL2 + BGFX with a custom Noesis connector that I got off the internet and adapted, that saved me a good chunk of time some things like those \"New Preset\" and similar buttons are cutoff, although I can't remember if it was like that on Windows as well, plus there is a strange blue \"flash\" when scrollbars are rendered (which I think I saw on the Noesis forum mentioned as well, so I'll check at some point)"
+  },
+  {
+    "date": "2022-07-18",
+    "categories": [
+      "UI / GUI Framework"
+    ],
+    "authors": [
+      "ext3h",
+      "arcnor"
+    ],
+    "msg_count": 3,
+    "representative": "Hmm, I downloaded whatever was on their website",
+    "all_content": "Which Noesis version is this now based on? Hmm, I downloaded whatever was on their website 3.1.2 r something like that IIRC"
+  },
+  {
+    "date": "2022-07-19",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "Rendering / Graphics",
+      "UI / GUI Framework",
+      "Game Mechanics",
+      "Performance / Optimization",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring",
+      "Save / Load",
+      "World Generation",
+      "Networking / Multiplayer",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      ".roest",
+      "arcnor"
+    ],
+    "msg_count": 122,
+    "representative": "Hrm, need to store a list of textures and offsets for each unique sprite id currently in the active set. As well as masks for all the source sprites, as we don't want to burn excessive bandwith on transparency when we are in the tiles border regions which (almost) never render anything. Need to acco",
+    "all_content": "I'm now dealing with trying to get sprites created, but because the code is much more strict now, things are exploding in a few places, and some I don't understand Case in point right now is a gnome's Facial part According to the DB, the BaseSprite is `FacialHair`, but that gets overriden later in the code and it ends up being an empty BaseSprite nah that sounds wrong Ok, let me go deeper and gnome sprites have a lot of random stuff Some of those parts have empty BaseSprites for sure, though But I'm tightening up the code to try and find the issue, I'm currently assume that if a sprite has a Tint it needs a BaseSprite too (a Tint that is not `Material`) not sure what's the question or if there even is a question You said that something sounds wrong, and I'm just saying at least some parts end up with empty BaseSprites Then I'm saying I'm tightening up by expecting every part to have a BaseSprite if they have a Tint that is a number, so if you think that's incorrect it will help me too "
+  },
+  {
+    "date": "2022-07-21",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "arcnor"
+    ],
+    "msg_count": 1,
+    "representative": "I've messed up the channels somehow but now images are finally showing 🙂",
+    "all_content": "I've messed up the channels somehow but now images are finally showing 🙂"
+  },
+  {
+    "date": "2022-07-22",
+    "categories": [
+      "Bug Fixes / Debugging"
+    ],
+    "authors": [
+      "arcnor"
+    ],
+    "msg_count": 1,
+    "representative": "is the sole purpose of `SpriteFactory::getBaseSpriteDryRun()` to fill the `m_randomNumbers` hashmap and then use that to create a unique key of some sort? because it takes a big amount of time when run in debug mode, and I'm looking for ways to speed it up...",
+    "all_content": "is the sole purpose of `SpriteFactory::getBaseSpriteDryRun()` to fill the `m_randomNumbers` hashmap and then use that to create a unique key of some sort? because it takes a big amount of time when run in debug mode, and I'm looking for ways to speed it up..."
+  },
+  {
+    "date": "2022-07-23",
+    "categories": [
+      "Rendering / Graphics",
+      "Save / Load"
+    ],
+    "authors": [
+      ".roest",
+      "arcnor"
+    ],
+    "msg_count": 6,
+    "representative": "the dry run creates the hash key to avoid baking a random sprite again, also to be able to reproduce the same random sprites after load",
+    "all_content": "the dry run creates the hash key to avoid baking a random sprite again, also to be able to reproduce the same random sprites after load Ok, I'll try to find some way of speeding it up I guess this will be obsolete if you really manage to get sprite combinations in the shader but I don't really see that Well, let's try to get it working as it is first 🙂 I did some changes and got it down to 10 seconds, which is much better than before, but I think release was 1s"
+  },
+  {
+    "date": "2022-07-24",
+    "categories": [
+      "Rendering / Graphics",
+      "Game Mechanics",
+      "Bug Fixes / Debugging",
+      "World Generation"
+    ],
+    "authors": [
+      ".roest",
+      "arcnor"
+    ],
+    "msg_count": 10,
+    "representative": "1 sheet of packed atlas texture, using 2048x2048 for easier/faster debugging, but as mentioned, I think it should be 4kx4k as a minimum, but I've changed all sprite calculation to be dynamic depending on configuration and/or GPU capabilities. This is copied in the SpriteFactory from RAM to a GPU tex",
+    "all_content": "1 sheet of packed atlas texture, using 2048x2048 for easier/faster debugging, but as mentioned, I think it should be 4kx4k as a minimum, but I've changed all sprite calculation to be dynamic depending on configuration and/or GPU capabilities. This is copied in the SpriteFactory from RAM to a GPU texture, so not a lot has changed yet... it's missing the terrain tiles (I assume) mostly because I don't support tinted/rotated/flipped sprites yet, was wondering if I can just do it on the GPU or I should keep it in mem... ok, was an actual bug, but yeah, tinting is actually supported, but not rotation in all cases, and no flipping either, so I'll add that now, on the cPU for now I also think some of them are broken, the 5th row is supposed to contain floor for the mushroom part, but that looks like water and something else, not sure if it's supposed to look like that or not... it's blueish yeah, but what are those white things on top? mushrooms maybe, some offsets seem to be off by a pixel o"
+  },
+  {
+    "date": "2022-07-25",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "Rendering / Graphics",
+      "UI / GUI Framework",
+      "Modding / Data Files",
+      "Game Mechanics",
+      "Performance / Optimization",
+      "Bug Fixes / Debugging",
+      "Architecture / Refactoring",
+      "Platform / Portability",
+      "Save / Load",
+      "Networking / Multiplayer",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      ".roest",
+      "arcnor"
+    ],
+    "msg_count": 269,
+    "representative": "```cmake\nif(UNIX AND NOT (DEFINED ENV{CXXFLAGS} OR CMAKE_CXX_FLAGS))\n    set(CMAKE_CXX_FLAGS \"-Wall -Wextra -fpermissive  -g3 -ggdb\")\n    # Kill some overly verbose warnings\n    set(CMAKE_CXX_FLAGS \"${CMAKE_CXX_FLAGS} -Wno-unknown-pragmas -Wno-unused-parameter\")\n    # But treat likely errors as actu",
+    "all_content": "I've re-enabled the main game loop, but now Noesis is not happy at all because of threading issues I'm using SDL timers, which run on a separate thread, but before this was using a QTimer, and my assumption is that Qt timer  used the event loop on the current thread to run the callback, so it avoided the issue, but I can't remember enough about Qt to know if I'm right although it doesn't matter much, I just need to find a good solution for the current problem now 😛 guess the problem is not so much the timer but the connection between game thread and ui thread well, the timer was running on the main thread before, and now it's not, but yeah, the issue is that the game thread and the UI thread are the same, given how the game is structured right now I have a quick solution that will probably work, but we might need something more elegant later (just firing an SDL User event that will be captured on the main game loop, then I can run the game loop from there) The game thread used to be a "
+  },
+  {
+    "date": "2022-07-26",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "Pathfinding / AI",
+      "UI / GUI Framework",
+      "Modding / Data Files",
+      "Game Mechanics",
+      "Performance / Optimization",
+      "Architecture / Refactoring",
+      "Platform / Portability",
+      "Save / Load",
+      "World Generation",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      "arcnor"
+    ],
+    "msg_count": 58,
+    "representative": "Pondering what to use for the message queue...\nLeaning towards  `std::unique_ptr<std::function<void(void)>>` as the base container template, but still pondering how much flexibility I should account for with regard to coupling specific sender/receiver pairs.\n\nAs long as they are pairwise, I believe ",
+    "all_content": "I've used `Ninja` for non Windows builds (Windows seems to be surprisingly complex to setup with Ninja on GH, it picks up GCC instead of MSVC) and build is faster, not green yet because of random reasons, but getting there. Windows compiles but doesn't install because of some OpenAL stuff but anyway, getting there macOs is green ✅ and Windows too ✅ Should be as simple as telling CMake which compiler to look for by `-DCMAKE_C_COMPILER=\"cl.exe\" -DCMAKE_CXX_COMPILER=\"cl.exe\"`. It's on the path, CMake just doesn't know which one you wanted to use Oh wait, the `Find msbuild` step is too far down in the pipeline. It's the one which makes cl.exe available in the `PATH` in the first place. Yeah, I read a few issues about that, and it didn't seem to be simple, so I didn't pursue further They used msnuild and something else, so not sure Vcpkg is the only extra part they've been using, but we are not using that at all. https://github.com/vgc/vgc/pull/651 Seems they used the msbuild stuff and some"
+  },
+  {
+    "date": "2022-07-27",
+    "categories": [
+      "Database / Data Model",
+      "Performance / Optimization",
+      "Bug Fixes / Debugging",
+      "Platform / Portability",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      "arcnor"
+    ],
+    "msg_count": 11,
+    "representative": "also, for the whole 3rd party library issue, I've found we can probably use `vcpkg`, all libs I've added to the project are available on their public repo, and there is a \"native\" way to cache them in GH Actions using GH Packages + their NuGet repository",
+    "all_content": "ok, you got deep into thinking there 🙂 I think most of that will be tested when we implement, not a lot to comment for now in the meantime, this is how the new DB looks like in textual protobuf format, lots of tables still missing though, but you get the idea also, for the whole 3rd party library issue, I've found we can probably use `vcpkg`, all libs I've added to the project are available on their public repo, and there is a \"native\" way to cache them in GH Actions using GH Packages + their NuGet repository I never knew vcpkg was suitable for Mac and Linux too, but appears like the obvious choice now .. Yeah, I don't really like it for reasons I can't even remember now, but it looks like the perfect fit for this situation 11 tables done, 42 to go 🤣 Not counting inner ones Nice, it actually turns out a lot more readable 👍 Yeah, I think so too I'm being a bit relaxed with comma placement, because it makes it easier, but we can make it a bit better when I finish 😁"
+  },
+  {
+    "date": "2022-07-28",
+    "categories": [
+      "Database / Data Model"
+    ],
+    "authors": [
+      "arcnor"
+    ],
+    "msg_count": 5,
+    "representative": "I've converted almost every \"table\" to a map, although I've had to remove a few duplicates in some cases, and some other places where I think it should be a map but duplicates were not clear I just left as an array",
+    "all_content": "I'm almost done with this, changed the representation a little (still need to replace the ones that I made yesterday), only a handful missing I've converted almost every \"table\" to a map, although I've had to remove a few duplicates in some cases, and some other places where I think it should be a map but duplicates were not clear I just left as an array if I18N is in the cards, the \"Word_*\" and \"Translation\" tables will need to be replaced with something more robust later... and stuff like plurals/singulars, number to words, etc can be handled by something like ICU (or actually, only by ICU, not sure anybody has created any other library like that :P) this is the mostly final proto file, and the DB (still need to recreate some of the stuff I did yesterday, but all data should be inside now)"
+  },
+  {
+    "date": "2022-07-29",
+    "categories": [
+      "Database / Data Model",
+      "UI / GUI Framework",
+      "Architecture / Refactoring",
+      "Platform / Portability"
+    ],
+    "authors": [
+      "hughheggen",
+      "arcnor"
+    ],
+    "msg_count": 9,
+    "representative": "Well, unfortunately it means nothing will change for players much (except that one of my changes made the game work on Mac, and potentially other platforms like consoles, although I'm not sure if that was ever a goal)",
+    "all_content": "So what are you doing <@223207842260189184> <@386915067477753858> I'm doing a big refactor to remove Qt, but right now I'm also replacing the Sqlite DB that was used before with something more robust And all that means? Sorry <@223207842260189184> I'm not a coder Well, unfortunately it means nothing will change for players much (except that one of my changes made the game work on Mac, and potentially other platforms like consoles, although I'm not sure if that was ever a goal) But hopefully it will mean that other people not familiar with Qt will want to contribute So you've made the system easier to work with? And run on mac Well, that's actually subjective, Qt is actually easy to use, is just not standard and not really focused on games"
+  },
+  {
+    "date": "2022-08-04",
+    "categories": [
+      "Game Mechanics"
+    ],
+    "authors": [
+      "ext3h",
+      "arcnor"
+    ],
+    "msg_count": 2,
+    "representative": "I'm still waiting for mine to begin...",
+    "all_content": "Hey, I'm still working on this, but my vacation ended, so it's going much slower than before 🙂 I'm still waiting for mine to begin..."
+  },
+  {
+    "date": "2022-08-05",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "xeridanus",
+      "arcnor"
+    ],
+    "msg_count": 3,
+    "representative": "I'm also a freelancer, so I can decide to slack off without repercussions! (Except a worrying lack of income, of course 😛)",
+    "all_content": "I figured you were either unemployed or slacking off at work given how much activity you were putting in. Didn't consider vacation. Hmm, thank you? 🤣 I'm also a freelancer, so I can decide to slack off without repercussions! (Except a worrying lack of income, of course 😛)"
+  },
+  {
+    "date": "2022-08-16",
+    "categories": [
+      "Build System / Compilation",
+      "Rendering / Graphics",
+      "UI / GUI Framework",
+      "Modding / Data Files",
+      "Game Mechanics",
+      "Bug Fixes / Debugging",
+      "Platform / Portability",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      "arcnor"
+    ],
+    "msg_count": 76,
+    "representative": "```\n# For a list of common variables see https://github.com/microsoft/vcpkg/blob/master/docs/maintainers/vcpkg_common_definitions.md\n\n# Download source packages\n# (bgfx requires bx and bimg source for building)\n\nvcpkg_from_github(OUT_SOURCE_PATH BX_SOURCE_PATH\n    REPO \"bkaradzic/bx\"\n    HEAD_REF ma",
+    "all_content": "Moving from `FetchContent` to `vcpkg`. Working with `FetchContent` is just painful on Windows, with the ridiculous configure times. And luckily https://github.com/julianxhokaxhiu/FFNx even provides a template for the majority of relevant libraries not officially ported yet 🙂 oh, I did that already 😄 (moving to vcpkg) but if you also have it ready I'll pull whatever you have and yeah, we can use Julian's templates for BGFX, I actually know him and he helped me with BGFX stuff in the past as well 😄 His template for soloud doesn't appear to be fully functional yet we can easily create one, soloud compiles cleanly without too much hassle Bgfx template works awesome, that's the main one we need including tools? Looks like they are all there, yes awesome, we just need `shaderc` Only Noesis can't be put in a port, officially we can keep it as it is in the meantime but it will be awesome if they managed to keep up with the trend of having libraries easily accessible having to login and downloa"
+  },
+  {
+    "date": "2022-08-18",
+    "categories": [
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      "arcnor"
+    ],
+    "msg_count": 9,
+    "representative": "Cool, do you have a branch with all the vcpkg stuff? Otherwise I can open one on top of what I've done",
+    "all_content": "Clean bgfx portfile, at last. Awesome! Any gotchas? Or does it work cleanly? Everything where it should be, by the looks of it. Cool, do you have a branch with all the vcpkg stuff? Otherwise I can open one on top of what I've done No branch yet, except for that file just all fumbled together. Ok, will add this to my current branch, plus the vcpkg github actions stuff There is an action that caches everything, so it's not downloaded/compiled again Ah yeah, I've used static only, can't remember if that was necessary or not .... forget about it. bgfx was not prepared to export any symbols by the looks of it."
+  },
+  {
+    "date": "2022-08-19",
+    "categories": [
+      "Build System / Compilation",
+      "UI / GUI Framework",
+      "Modding / Data Files",
+      "Platform / Portability"
+    ],
+    "authors": [
+      "ext3h",
+      "arcnor"
+    ],
+    "msg_count": 11,
+    "representative": "hmm, nope, but I can probably push it in a bit, although it's only replacing a few of the libs, not touching BGFX like you did",
+    "all_content": "<@223207842260189184> You got the vcpkg integration in a state for pulling anywhere? hmm, nope, but I can probably push it in a bit, although it's only replacing a few of the libs, not touching BGFX like you did Checking if qt5-base port is sufficient Not all too enthusiastic about building full Qt it might be after my changes, I think I've removed anything not in core (as long as core includes the gui stuff...) base does include gui `qt5-base` contains everything required. Just `windeployqt` tool isn't included. You picked the `-static`-triplet for the packages, right? Again, not sure if it was required or just because I wanted to Not required, but at least we don't need to write a complex install script then. (Forget what I just said - vcpkg can of course do all the installing for your)"
+  },
+  {
+    "date": "2022-08-20",
+    "categories": [
+      "Build System / Compilation",
+      "Game Mechanics",
+      "Bug Fixes / Debugging",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      "gsihaj5"
+    ],
+    "msg_count": 2,
+    "representative": "For the most part by forking https://github.com/rschurade/Ingnomia on Github, and the opening a pull request for your contributions. As for what you can do? Partially depends on what skills you already have, but also what's needed. Tickets with the \"help wanted\" label in the bug tracker are essentia",
+    "all_content": "Hi, i would like to contribute to this open source game, but i don't know much how to contribute to an open source project For the most part by forking https://github.com/rschurade/Ingnomia on Github, and the opening a pull request for your contributions. As for what you can do? Partially depends on what skills you already have, but also what's needed. Tickets with the \"help wanted\" label in the bug tracker are essentially \"free for all\". Usually it would be a good idea though to ask in this channel to make sure the feature isn't already being worked on by someone else.\n\nThe build instructions listed in the repositories readme are still valid for now, even though we are currently swapping out the dependency management."
+  },
+  {
+    "date": "2022-08-21",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "gsihaj5"
+    ],
+    "msg_count": 1,
+    "representative": "i'm a programmer, but never touch this kind of large open source project. thanks for the information, i'll read more about the instruction and try to experiment on my own.",
+    "all_content": "i'm a programmer, but never touch this kind of large open source project. thanks for the information, i'll read more about the instruction and try to experiment on my own."
+  },
+  {
+    "date": "2022-08-22",
+    "categories": [
+      "Build System / Compilation",
+      "Game Mechanics",
+      "World Generation",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      "gsihaj5"
+    ],
+    "msg_count": 2,
+    "representative": "The generated solution references all the sources from the git managed directory, there is no \"second version\". You can't change the solution or project files themselves though, that has to be done via CMake as CMake will just re-generate the project files in various situations.",
+    "all_content": "Hey, i already follow the build guide on the git, and when i build with cmake i got new build dir with vs sln inside it. i have no idea which file should i change? the build one or the one with git The generated solution references all the sources from the git managed directory, there is no \"second version\". You can't change the solution or project files themselves though, that has to be done via CMake as CMake will just re-generate the project files in various situations."
+  },
+  {
+    "date": "2022-08-23",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "gsihaj5"
+    ],
+    "msg_count": 1,
+    "representative": "i see, thankyou",
+    "all_content": "i see, thankyou"
+  },
+  {
+    "date": "2022-09-01",
+    "categories": [
+      "Build System / Compilation",
+      "Database / Data Model",
+      "Rendering / Graphics",
+      "UI / GUI Framework",
+      "Bug Fixes / Debugging",
+      "Save / Load",
+      "Git / Version Control"
+    ],
+    "authors": [
+      "ext3h",
+      "arcnor"
+    ],
+    "msg_count": 35,
+    "representative": "I'm puzzled regarding whatever the shader compiler did for wold_FS with the number of samplers.\n\n> renderer_vk.cpp (4917): BGFX     sampler: uUndiscoveredTex (sampler1), r.index   4, r.count  1, r.texComponent 0, r.texDimension 0\n> renderer_vk.cpp (4917): BGFX     sampler: uWorldRotation (sampler1),",
+    "all_content": "I think we should use the chance to clean up the sprite definition a little bit. There is some really weird details I don't like, such as `SpriteSeason` having a nested `SpriteSeasonRotation`, but that missing a `Sprite` key e.g. Or `BaseSprite` / `Sprite` not being strictly `oneof` within the different compositions. Some dead flags, such as `Sprite::Rot90`, `Sprite::Anim`, `Sprite::HasRandom` or `Sprite::HasTransp` which should had been derived from the actual content / sprite hierarchy. `Effect: \"none\"` in `SpriteByMaterials::Effect` indicates a missing optional Valid effects should be an enum, `Rot90, FlipHorizontal`. The implicit convention that a sprite can *not* have a `BaseSprite` defined on the composition options (in which case it implicitly inherits the `Sprite::BaseSprite` respectively if that is also missing then `Sprite::key`) is something we should not allow, I believe? that can all be done of course, can't remember if I shared the final version of the proto file I think "
+  },
+  {
+    "date": "2022-09-02",
+    "categories": [
+      "Database / Data Model",
+      "Rendering / Graphics",
+      "UI / GUI Framework",
+      "Performance / Optimization",
+      "Architecture / Refactoring",
+      "World Generation"
+    ],
+    "authors": [
+      "ext3h",
+      "arcnor"
+    ],
+    "msg_count": 11,
+    "representative": "Consider the following in the shared interface between the front- and backend.\n```c++\nstruct GuiPastureFoodItem\n{\n    QString itemSID;\n    QString materialSID;\n    QString name;\n    bool checked = false;\n    PixmapPtr sprite { nullptr, SDL_FreeSurface };\n};\n```\nWe do not want the simulation thread h",
+    "all_content": "Consider the following in the shared interface between the front- and backend.\n```c++\nstruct GuiPastureFoodItem\n{\n    QString itemSID;\n    QString materialSID;\n    QString name;\n    bool checked = false;\n    PixmapPtr sprite { nullptr, SDL_FreeSurface };\n};\n```\nWe do not want the simulation thread having to deal with sprites ever, right?\n\nEven though the simulation has to *define* how to compose a sprite, the baked sprite has to reside on the UI side.\n\nMeans we have to split the sprite-factory, as the simulation ends up dynamically defining sprites, but the frontend needs to be able to bake the sprite for any given sprite ID? sorry, didn't see your messages yesterday and yeah, *ideally* we would want the simulation to be agnostic in practice though, not sure how far can we go with that, given that sprite dimensions and other characteristics might be used by the simulation we can always add another layer of abstraction, of course, but not sure how much work will that be Hrm... we do hav"
+  },
+  {
+    "date": "2023-11-15",
+    "categories": [
+      "Bug Fixes / Debugging"
+    ],
+    "authors": [
+      "aidandavis99",
+      "itsadraelbaby"
+    ],
+    "msg_count": 2,
+    "representative": "The game is open-source, which means it will never truly be abandoned; that said, I have stopped my own contributions for some time, now, as I simply do not have room on my plate for it, any longer; I was doing QA/bug reporting for a bit, but my life has gotten very, very busy, in the past two years",
+    "all_content": "Any progress on an update or is the game abandoned? The game is open-source, which means it will never truly be abandoned; that said, I have stopped my own contributions for some time, now, as I simply do not have room on my plate for it, any longer; I was doing QA/bug reporting for a bit, but my life has gotten very, very busy, in the past two years, and I haven't so done in about that amount of time"
+  },
+  {
+    "date": "2024-12-21",
+    "categories": [
+      "Game Mechanics"
+    ],
+    "authors": [
+      "sewwes"
+    ],
+    "msg_count": 1,
+    "representative": "\\o I'm working on a similar style game that I'm making for N64 hardware, quick question to see if I understand the GNU license.\nMostly looking at the code base to help me structure mine in a similar manner, haven't taken any code. Would this mean i need to add the same license if/when i publish my w",
+    "all_content": "\\o I'm working on a similar style game that I'm making for N64 hardware, quick question to see if I understand the GNU license.\nMostly looking at the code base to help me structure mine in a similar manner, haven't taken any code. Would this mean i need to add the same license if/when i publish my work? Thanks!"
+  },
+  {
+    "date": "2024-12-23",
+    "categories": [
+      "General Discussion"
+    ],
+    "authors": [
+      "Deleted User"
+    ],
+    "msg_count": 2,
+    "representative": "Also, this sort of game requires a lot of processing power and RAM for older hardware. There is a lot of pathfinding running constantly and a lot of items to keep track of.",
+    "all_content": "I would say probably. Are you trying to close source your project? Also, this sort of game requires a lot of processing power and RAM for older hardware. There is a lot of pathfinding running constantly and a lot of items to keep track of."
+  },
+  {
+    "date": "2026-02-24",
+    "categories": [
+      "Build System / Compilation",
+      "Pathfinding / AI",
+      "Modding / Data Files",
+      "Game Mechanics",
+      "Bug Fixes / Debugging"
+    ],
+    "authors": [
+      "clawthorn",
+      "mugofjoe",
+      "ald_productions"
+    ],
+    "msg_count": 5,
+    "representative": "Has anyone been looking into implementing Claude code or alt. AI for the sake of modding? Currently I’m putting together a piecemeal build of gnomoria with the aims of making a 2.0. With the help of Claude it will be much easier as a side project versus having to do full implementations after work.\n",
+    "all_content": "Has anyone been looking into implementing Claude code or alt. AI for the sake of modding? Currently I’m putting together a piecemeal build of gnomoria with the aims of making a 2.0. With the help of Claude it will be much easier as a side project versus having to do full implementations after work.\n\nI love this game and there is so much it could have been but I really just want a non-broken vanilla that is able to be played end game I’d love to work together on something, especially if you have some experience as I have only ever coded college-level practice projects Remember that if you choose to go the vibe coding route instead of actually learning and understanding, you will end up in situations where you have a problem that needs to be solved, but you cannot solve it because the AI keeps going around in circles not doing what you tell it to do. It's happened a thousand times before to people who built entire SaaS'es around vibe coding, and it will happen to you. I will also caution"
+  },
+  {
+    "date": "2026-02-25",
+    "categories": [
+      "Pathfinding / AI",
+      "World Generation",
+      "Networking / Multiplayer"
+    ],
+    "authors": [
+      "clawthorn"
+    ],
+    "msg_count": 1,
+    "representative": "I don't think you'll find anyone in here. The server is pretty inactive, and from what I've seen the gamedev (and gamer) community as a whole leans heavily against AI. As does pretty much every creative community. So you'd have much more luck trying some reddit or discord community dedicated specifi",
+    "all_content": "I don't think you'll find anyone in here. The server is pretty inactive, and from what I've seen the gamedev (and gamer) community as a whole leans heavily against AI. As does pretty much every creative community. So you'd have much more luck trying some reddit or discord community dedicated specifically for AI. Like ones for OpenClaw or Google Genie or r/vibecoding.\nAs for the art assets, there are plenty of tutorials on local GenAI in the Stable Diffusion discord (and the Furry Diffusion one especially). And Aseprite also have several local AI plugins to let you generate and work with sprites (like [PixelAI](https://red335.itch.io/pixelai-local-ai-directly-in-aseprite) or [Retro Diffusion](https://astropulse.itch.io/retrodiffusion))."
+  }
+]

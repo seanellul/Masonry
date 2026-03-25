@@ -20,8 +20,6 @@
 #include "../base/enums.h"
 #include "../base/logger.h"
 
-#include <NsGui/InputEnums.h>
-
 #include <QDomElement>
 #include <QMap>
 #include <QSet>
@@ -69,6 +67,7 @@ public:
 	static bool debugMode;
 	static bool debugOpenGL;
 	static bool debugSound;
+	static bool testMode;
 
 	static QMap<QString, QSet<QString>> allowedInContainer;
 
@@ -79,12 +78,8 @@ public:
 
 	static bool addBehaviorTree( QString id, QString path );
 
-	static QHash<Qt::Key, Noesis::Key> keyConvertMap;
-
 	static QMap<QString, CreaturePart> creaturePartLookUp;
 	static QMap<CreaturePart, QString> creaturePartToString;
-
-	static Noesis::Key keyConvert( Qt::Key key );
 
 	static QSet<QString> craftable;
 
@@ -101,5 +96,4 @@ private:
 
 	static QMap<QString, QDomElement> m_behaviorTrees;
 	static bool loadBehaviorTrees();
-	static void initKeyConvert();
 };

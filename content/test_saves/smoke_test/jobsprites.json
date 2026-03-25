@@ -1,0 +1,569 @@
+[
+    {
+        "PosID": 994342,
+        "Wall": {
+            "JobID": 1001269,
+            "Pos": "42 43 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994343,
+        "Wall": {
+            "JobID": 1001270,
+            "Pos": "43 43 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994344,
+        "Wall": {
+            "JobID": 1001271,
+            "Pos": "44 43 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994345,
+        "Wall": {
+            "JobID": 1001272,
+            "Pos": "45 43 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994346,
+        "Wall": {
+            "JobID": 1001273,
+            "Pos": "46 43 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994347,
+        "Wall": {
+            "JobID": 1001274,
+            "Pos": "47 43 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994348,
+        "Wall": {
+            "JobID": 1001275,
+            "Pos": "48 43 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994349,
+        "Wall": {
+            "JobID": 1001276,
+            "Pos": "49 43 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994442,
+        "Wall": {
+            "JobID": 1001277,
+            "Pos": "42 44 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994443,
+        "Wall": {
+            "JobID": 1001278,
+            "Pos": "43 44 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994444,
+        "Wall": {
+            "JobID": 1001279,
+            "Pos": "44 44 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994445,
+        "Wall": {
+            "JobID": 1001280,
+            "Pos": "45 44 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994446,
+        "Wall": {
+            "JobID": 1001281,
+            "Pos": "46 44 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994447,
+        "Wall": {
+            "JobID": 1001282,
+            "Pos": "47 44 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994448,
+        "Wall": {
+            "JobID": 1001283,
+            "Pos": "48 44 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994449,
+        "Wall": {
+            "JobID": 1001284,
+            "Pos": "49 44 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994542,
+        "Wall": {
+            "JobID": 1001285,
+            "Pos": "42 45 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994543,
+        "Wall": {
+            "JobID": 1001286,
+            "Pos": "43 45 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994544,
+        "Wall": {
+            "JobID": 1001287,
+            "Pos": "44 45 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994545,
+        "Wall": {
+            "JobID": 1001261,
+            "Pos": "45 45 99",
+            "Rot": 0,
+            "SpriteUID": 529
+        }
+    },
+    {
+        "PosID": 994546,
+        "Wall": {
+            "JobID": 1001263,
+            "Pos": "46 45 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994547,
+        "Wall": {
+            "JobID": 1001266,
+            "Pos": "47 45 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994548,
+        "Wall": {
+            "JobID": 1001288,
+            "Pos": "48 45 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994549,
+        "Wall": {
+            "JobID": 1001289,
+            "Pos": "49 45 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994642,
+        "Wall": {
+            "JobID": 1001290,
+            "Pos": "42 46 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994643,
+        "Wall": {
+            "JobID": 1001291,
+            "Pos": "43 46 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994644,
+        "Wall": {
+            "JobID": 1001292,
+            "Pos": "44 46 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994645,
+        "Wall": {
+            "JobID": 1001262,
+            "Pos": "45 46 99",
+            "Rot": 0,
+            "SpriteUID": 529
+        }
+    },
+    {
+        "PosID": 994646,
+        "Wall": {
+            "JobID": 1001264,
+            "Pos": "46 46 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994647,
+        "Wall": {
+            "JobID": 1001267,
+            "Pos": "47 46 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994648,
+        "Wall": {
+            "JobID": 1001293,
+            "Pos": "48 46 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994649,
+        "Wall": {
+            "JobID": 1001294,
+            "Pos": "49 46 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994742,
+        "Wall": {
+            "JobID": 1001295,
+            "Pos": "42 47 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994743,
+        "Wall": {
+            "JobID": 1001296,
+            "Pos": "43 47 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994744,
+        "Wall": {
+            "JobID": 1001297,
+            "Pos": "44 47 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994745,
+        "Wall": {
+            "JobID": 1001260,
+            "Pos": "45 47 99",
+            "Rot": 0,
+            "SpriteUID": 529
+        }
+    },
+    {
+        "PosID": 994746,
+        "Wall": {
+            "JobID": 1001265,
+            "Pos": "46 47 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994747,
+        "Wall": {
+            "JobID": 1001268,
+            "Pos": "47 47 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994748,
+        "Wall": {
+            "JobID": 1001298,
+            "Pos": "48 47 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994749,
+        "Wall": {
+            "JobID": 1001299,
+            "Pos": "49 47 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994842,
+        "Wall": {
+            "JobID": 1001300,
+            "Pos": "42 48 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994843,
+        "Wall": {
+            "JobID": 1001301,
+            "Pos": "43 48 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994844,
+        "Wall": {
+            "JobID": 1001302,
+            "Pos": "44 48 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994845,
+        "Wall": {
+            "JobID": 1001303,
+            "Pos": "45 48 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994846,
+        "Wall": {
+            "JobID": 1001304,
+            "Pos": "46 48 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994847,
+        "Wall": {
+            "JobID": 1001305,
+            "Pos": "47 48 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994848,
+        "Wall": {
+            "JobID": 1001306,
+            "Pos": "48 48 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994849,
+        "Wall": {
+            "JobID": 1001307,
+            "Pos": "49 48 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994942,
+        "Wall": {
+            "JobID": 1001308,
+            "Pos": "42 49 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994943,
+        "Wall": {
+            "JobID": 1001309,
+            "Pos": "43 49 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994944,
+        "Wall": {
+            "JobID": 1001310,
+            "Pos": "44 49 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994945,
+        "Wall": {
+            "JobID": 1001311,
+            "Pos": "45 49 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994946,
+        "Wall": {
+            "JobID": 1001312,
+            "Pos": "46 49 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994947,
+        "Wall": {
+            "JobID": 1001313,
+            "Pos": "47 49 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994948,
+        "Wall": {
+            "JobID": 1001314,
+            "Pos": "48 49 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "PosID": 994949,
+        "Wall": {
+            "JobID": 1001315,
+            "Pos": "49 49 99",
+            "Rot": 0,
+            "SpriteUID": 531
+        }
+    },
+    {
+        "Floor": {
+            "JobID": 1001261,
+            "Pos": "45 45 100",
+            "Rot": 0,
+            "SpriteUID": 530
+        },
+        "PosID": 1004545,
+        "Wall": {
+            "JobID": 1001261,
+            "Pos": "45 45 100",
+            "Rot": 0,
+            "SpriteUID": 524
+        }
+    },
+    {
+        "Floor": {
+            "JobID": 1001262,
+            "Pos": "45 46 100",
+            "Rot": 0,
+            "SpriteUID": 530
+        },
+        "PosID": 1004645,
+        "Wall": {
+            "JobID": 1001262,
+            "Pos": "45 46 100",
+            "Rot": 0,
+            "SpriteUID": 524
+        }
+    },
+    {
+        "Floor": {
+            "JobID": 1001260,
+            "Pos": "45 47 100",
+            "Rot": 0,
+            "SpriteUID": 530
+        },
+        "PosID": 1004745,
+        "Wall": {
+            "JobID": 1001260,
+            "Pos": "45 47 100",
+            "Rot": 0,
+            "SpriteUID": 524
+        }
+    },
+    {
+        "PosID": 1006054,
+        "Wall": {
+            "JobID": 1001259,
+            "Pos": "54 60 100",
+            "Rot": 0,
+            "SpriteUID": 526
+        }
+    },
+    {
+        "PosID": 1006147,
+        "Wall": {
+            "JobID": 1001258,
+            "Pos": "47 61 100",
+            "Rot": 0,
+            "SpriteUID": 526
+        }
+    }
+]

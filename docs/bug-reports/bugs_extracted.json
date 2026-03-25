@@ -1,0 +1,5159 @@
+[
+  {
+    "date": "2018-05-31",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 8,
+    "bug_description": "similar errors also happen for Dresser,Cabinet,TrainingDummy,Wheelbarrow,WoodenShield,CrossbowStock,BlunderbussStock and PistolStock",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "foobar9827"
+  },
+  {
+    "date": "2018-06-10",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 8,
+    "bug_description": "Olive colored stone is not dropping raw stone.  I cant see what kind of stone it is to be more specific.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".lld"
+  },
+  {
+    "date": "2018-06-19",
+    "categories": [
+      "Crafting / Workshop",
+      "Building / Construction"
+    ],
+    "msg_count": 9,
+    "bug_description": "can never have too many sticks ^^ (couldn't figure out how to craft them the first few times and was too lazy to remove them from the embark list)",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "foobar9827"
+  },
+  {
+    "date": "2018-06-20",
+    "categories": [
+      "Jobs / Tasks",
+      "UI / Display"
+    ],
+    "msg_count": 4,
+    "bug_description": "Question when starting a new game show it not hover over your gnomes?  I only got to play a few minutes (probably 45) before going to bed but over 10 saves it never started over my gnomes and I always had to find them.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "grimslys"
+  },
+  {
+    "date": "2018-06-22",
+    "categories": [
+      "Combat / Military",
+      "UI / Display"
+    ],
+    "msg_count": 7,
+    "bug_description": "New professions that you make in the \"gnome screen\" under skills doesn't get saved in the drop down list. You *can* however recover it by typing in the name of one you made earlier",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "desolator_x"
+  },
+  {
+    "date": "2018-06-22",
+    "categories": [
+      "Jobs / Tasks"
+    ],
+    "msg_count": 7,
+    "bug_description": "hmm i see some strange behavior with mining right now",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2018-06-23",
+    "categories": [
+      "Crash / Freeze",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction"
+    ],
+    "msg_count": 30,
+    "bug_description": "another graphical thing. building stairs is pretty frustrating if you have to scroll up, move the mouse to a different tile and then scroll down again to see the orientation of the staircase",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "foobar9827"
+  },
+  {
+    "date": "2018-06-23",
+    "categories": [
+      "Performance"
+    ],
+    "msg_count": 15,
+    "bug_description": "The random name generator, the capitalization of the middle word is inconsistent. \nThe profane Kingdom\n The armored Kingdom\nThe Poison Kingdom\nLand of Menaces\nThe Sweat Land\n\nThe middle word is sometimes caps sometimes not.  Is there a static list these values are being drawn from, where you can cap",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".lld"
+  },
+  {
+    "date": "2018-06-23",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 3,
+    "bug_description": "would attaching a debugger to ingnomia, and sending you the dump help?",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": ".lld"
+  },
+  {
+    "date": "2018-06-23",
+    "categories": [
+      "Crash / Freeze",
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 19,
+    "bug_description": "and your error handling is eating all the errors (as it should).  Thoughts on logging the eaten errors to a file, or make a special super, fill up the disk debug mode?",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".lld"
+  },
+  {
+    "date": "2018-06-24",
+    "categories": [
+      "Jobs / Tasks"
+    ],
+    "msg_count": 2,
+    "bug_description": "I'm on my six attempt to playtest.  The first five, I've had a CTD straight to desktop with no error message.  No saves were generated, so the sixth try I'm saving obsessively.  Windows Event Viewer is little help, I can provide details if necessary though.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "not__"
+  },
+  {
+    "date": "2018-06-24",
+    "categories": [
+      "Jobs / Tasks",
+      "UI / Display"
+    ],
+    "msg_count": 8,
+    "bug_description": "If you click settings in the main menu and then click \"back\" button, you return to the main menu. But if you press escape, instead of clicking back button, you return to different menu...",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "xecutor2907"
+  },
+  {
+    "date": "2018-06-24",
+    "categories": [
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 7,
+    "bug_description": "I get the same thing now. 17ms render time unless I press pause then it's back down to the usual 2ms",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "foobar9827"
+  },
+  {
+    "date": "2018-06-24",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Save / Load"
+    ],
+    "msg_count": 35,
+    "bug_description": "<@119686204537962497> repeating texts is quite easy to compress. you should check an info vid of how they do it, very neat.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "prassel"
+  },
+  {
+    "date": "2018-06-27",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 4,
+    "bug_description": "hmm ich frag mich echt warum bei dir immer ore und so an der oberfläche ist, passiert bei mir nie",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2018-06-28",
+    "categories": [
+      "Building / Construction"
+    ],
+    "msg_count": 4,
+    "bug_description": "Gravity does not apply to objects left where the floor used to be when digging a hole.  I am losing many pickaxes.  Also, gnomes are dumb, and will dig holes around themselves, marooning themselves on artificial islands until they starve.  While I enjoy this as a parable that explains natural select",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "not__"
+  },
+  {
+    "date": "2018-06-28",
+    "categories": [
+      "Jobs / Tasks"
+    ],
+    "msg_count": 5,
+    "bug_description": "the thing with gnomes trapping themselves when removing floors or building walls is a problem with job selection",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2018-06-28",
+    "categories": [
+      "UI / Display",
+      "Building / Construction"
+    ],
+    "msg_count": 1,
+    "bug_description": "esc-menu, resume sets clock to 00:00 until unpaused again.  And binding [Esc] to resume would be nice.  .... is it okay to collect the small stuff here or is there some better place? I didn't want to fill the issue tracker with unimportant stuff yet",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": ".namigator"
+  },
+  {
+    "date": "2018-06-28",
+    "categories": [
+      "Jobs / Tasks",
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 8,
+    "bug_description": "The specific issue of hole digging could be fixed by allowing \"Dig Ramp Down\" instead of bulk hole digging, but that it disabled right now?  Job selection is irritating, but Gnomoria shipped with crappy selection algorithms, and so long as it's a documented feature, can be worked around.",
+    "dev_responded": false,
+    "likely_fixed": true,
+    "author": "not__"
+  },
+  {
+    "date": "2018-06-29",
+    "categories": [
+      "Stockpile / Storage"
+    ],
+    "msg_count": 5,
+    "bug_description": "Removing Designation on an active stockpile causes CTD.  Repro steps:\n1. create stockpile under a bunch of mined dirt\n2. wait for gnomes to start to consolidate the dirt\n3. remove designation of entire stockpile.\n4. CTD",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": ".lld"
+  },
+  {
+    "date": "2018-06-29",
+    "categories": [
+      "Crash / Freeze",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 12,
+    "bug_description": "99 little bugs in the code ,99 little bugs in the code ,Take one down, patch it around, 117 little bugs in the code",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "not__"
+  },
+  {
+    "date": "2018-06-29",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 5,
+    "bug_description": "ahhhh, okay. So I didn't randomize the name for the kingdom again, the new map got the same name and therefore the save seems to be broken now.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".namigator"
+  },
+  {
+    "date": "2018-06-29",
+    "categories": [
+      "Crash / Freeze",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction",
+      "Performance",
+      "World / Terrain"
+    ],
+    "msg_count": 38,
+    "bug_description": "will have to look into that, the normal debugging is quit useless, that crash is usually defered and callstack doesn't tell you anything",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2018-06-30",
+    "categories": [
+      "Jobs / Tasks"
+    ],
+    "msg_count": 4,
+    "bug_description": "when building a staircase going down over multiple layers you sometimes get a double-up:",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "optimus.0001"
+  },
+  {
+    "date": "2018-06-30",
+    "categories": [
+      "UI / Display",
+      "World / Terrain"
+    ],
+    "msg_count": 2,
+    "bug_description": "Can confirm earlier report of deconstructing stairs adds the material to the terrain square, but leaves the staircase intact, ready to be deconstructed for more materials once again.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "not__"
+  },
+  {
+    "date": "2018-07-01",
+    "categories": [
+      "Jobs / Tasks",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "Building / Construction"
+    ],
+    "msg_count": 4,
+    "bug_description": "Sausages also have the error postfix and the sprite is in the wrong place",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "foobar9827"
+  },
+  {
+    "date": "2018-07-02",
+    "categories": [
+      "Stockpile / Storage"
+    ],
+    "msg_count": 2,
+    "bug_description": "for everyone - please try to use the issue tracker  https://bitbucket.org/schurade/gnomes/issues?status=new&status=open",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2018-07-04",
+    "categories": [
+      "Performance"
+    ],
+    "msg_count": 4,
+    "bug_description": "as long as the joke has been properly allocated, it should be ok",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "yes072083"
+  },
+  {
+    "date": "2018-07-04",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 19,
+    "bug_description": "and not surprised about the compression rate btw",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2018-07-09",
+    "categories": [
+      "Crash / Freeze",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "Performance"
+    ],
+    "msg_count": 73,
+    "bug_description": "laptops are even worse, with dual graphics cards people will say it doesn't run or runs slow when they need to activate their nvidia card over the intel integrated",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2018-07-09",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 3,
+    "bug_description": "\"Roest - Today at 1:54 PM\nwell it's a personal thing, I had a very unstable AMD system in the past and never had these kinds of problems since i switched to intel/nvidia\nnot going back\"",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "ctherain"
+  },
+  {
+    "date": "2018-07-09",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 4,
+    "bug_description": "Helped run an isp on a single server with a k6/2 550 back in the day.... so so many years ago",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": ".lld"
+  },
+  {
+    "date": "2018-07-10",
+    "categories": [
+      "UI / Display",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 12,
+    "bug_description": "there is no ui as you can see on my first screenshot",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "goldenhelm"
+  },
+  {
+    "date": "2018-07-10",
+    "categories": [
+      "Crash / Freeze",
+      "UI / Display"
+    ],
+    "msg_count": 36,
+    "bug_description": "\"initialize GL ...\n2018.07.09 23:38:04:412 NVIDIA Corporation\n2018.07.09 23:38:04:413 GeForce GTX 1060 6GB/PCIe/SSE2\n2018.07.09 23:38:04:413 4.6.0 NVIDIA 390.65\n2018.07.09 23:38:04:518 initialize GL - done\n\"",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "goldenhelm"
+  },
+  {
+    "date": "2018-07-10",
+    "categories": [
+      "Pathfinding",
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 3,
+    "bug_description": "I wonder if <@181142533169086464> 's issue is having a custom file path for My Documents/My Games or something similar.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "not__"
+  },
+  {
+    "date": "2018-07-11",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 3,
+    "bug_description": "game folder was standard steam folder on D:",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "goldenhelm"
+  },
+  {
+    "date": "2018-07-13",
+    "categories": [
+      "Farming / Animals"
+    ],
+    "msg_count": 4,
+    "bug_description": "It looks like Qt5Widgets.dll is throwing the error.  Does 'Qt5Widgets.dll!QWidget::update(const QRect & rect={...}) Line 11036' mean anything?",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": ".lld"
+  },
+  {
+    "date": "2018-07-13",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 1,
+    "bug_description": "sprite factory returns the pink box when there is no sprite definition for a requested sprite, so that's simple something missing in the config file",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2018-07-28",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 3,
+    "bug_description": "probably something on steam's end but i am unable to launch game, local files only showing 55mb on disk. Have tried reinstalling game / verifying cache / restarting steam / restarting computer /  running gnomes.exe in admin. anything else i can check?",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "kaj9787"
+  },
+  {
+    "date": "2018-07-28",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "looking at the log it seems to be an openGL issue - probably on my end. sorry for the false alarm.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "kaj9787"
+  },
+  {
+    "date": "2018-07-29",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "yea next update there will be a big popup for that issue",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2018-08-01",
+    "categories": [
+      "UI / Display",
+      "World / Terrain"
+    ],
+    "msg_count": 22,
+    "bug_description": "1366x768, but running in a window allows me to resize it to have other apps still visible around... That particular screenshot was made from a 957 x 546 window (i usually go for 1200 x 690 windows, but this time i wanted to test how small it can get).",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "noob_lurker.5764"
+  },
+  {
+    "date": "2018-08-02",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 3,
+    "bug_description": "Keep going until you hit quantum pixels.  After that, it's avocados all the way down.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "not__"
+  },
+  {
+    "date": "2018-08-04",
+    "categories": [
+      "Performance"
+    ],
+    "msg_count": 6,
+    "bug_description": "still doesn't get rid of the heap corruption",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2018-08-20",
+    "categories": [
+      "Crash / Freeze",
+      "Jobs / Tasks"
+    ],
+    "msg_count": 30,
+    "bug_description": "Just tried to generate a bigger Map (Somwhere around 70) with all other settings on default.  Game froze while \"Placing Gnomes.....\" and i had to hard-restart the computer.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "naraco."
+  },
+  {
+    "date": "2018-08-24",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 3,
+    "bug_description": "<@280266293490221056>, the game crashed now the fourth time.  is there any log for support ?",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2018-08-24",
+    "categories": [
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 5,
+    "bug_description": "will have to wait other reports on that matter or get a save game that makes it reproducable for me, it's not crashing for me",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2018-08-24",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 1,
+    "bug_description": "<@280266293490221056>  hey sorry to bug you but i just downloaded the game and when i launch it im met with a white screen that wont do anything any idea how to fix it",
+    "dev_responded": false,
+    "likely_fixed": true,
+    "author": "fireantz"
+  },
+  {
+    "date": "2018-08-25",
+    "categories": [
+      "Crafting / Workshop",
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 2,
+    "bug_description": "Oh yeah I just got the CTD when I clicked on a crude workshop twice.  And the second time I set up a save just before i clicked on it.  https://zeropoke.net/misc/TheHarvestedLand.7z",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "zeropoke"
+  },
+  {
+    "date": "2018-08-25",
+    "categories": [
+      "Crash / Freeze",
+      "Jobs / Tasks",
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 10,
+    "bug_description": "so what exactly are you doing? just load that click on the workbench and does it crash there already or if you click the workbench button in the tileinfo window",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2018-08-25",
+    "categories": [
+      "Jobs / Tasks",
+      "Save / Load",
+      "Performance"
+    ],
+    "msg_count": 3,
+    "bug_description": "I believe filling up this area with soil ( didnt test other objects ) causes the game to drop to less than 1 fps and even lock up",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "isnotbrainded"
+  },
+  {
+    "date": "2018-08-25",
+    "categories": [
+      "Crash / Freeze",
+      "Farming / Animals",
+      "UI / Display"
+    ],
+    "msg_count": 6,
+    "bug_description": "i wish you wouldn't click on butchered chickens",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2018-08-25",
+    "categories": [
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 32,
+    "bug_description": "On the topic of config files...  <@280266293490221056> I noticed you really like to troll with them.  I saw the config.cfg changed something but it didnt take.  So I tried in the UI and it generated a config.json file in the game root.  So I changed that one and it didnt have an affect.  I did final",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "zeropoke"
+  },
+  {
+    "date": "2018-08-25",
+    "categories": [
+      "Jobs / Tasks",
+      "Crafting / Workshop",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 11,
+    "bug_description": "if you cancel a build-workshop by using the cancel job tool,  there stays a yellow job on the ground that can't be canceld?",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-08-25",
+    "categories": [
+      "Crash / Freeze",
+      "Stockpile / Storage",
+      "Crafting / Workshop"
+    ],
+    "msg_count": 2,
+    "bug_description": "So there appears to still be an issue with rotated crude workshops.  My rotated one wouldnt craft anything.  So i put down a new one and thhat wasnt rotated and it started crafting right away.  Went back to the rotated one and Clicked on followed by crash.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "zeropoke"
+  },
+  {
+    "date": "2018-08-27",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 39,
+    "bug_description": "cause you guys just mentioned it in <#327688730980909056>, while playing around i ran obviously too into the 100limit or better *why the f do they stop picking up dirt if there is still space and stuff laying around* question, but figured it out eventually and played around a bit with the stockpile ",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-08-27",
+    "categories": [
+      "UI / Display",
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 45,
+    "bug_description": "I didn't make myself clear. The way you create the ladder upwards is different from the way you create it downwards. I can understand that. But creating it down doesn't do it well. I don't know how to explain it. I'm sorry. See if anyone makes that mistake.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "socramazibi"
+  },
+  {
+    "date": "2018-08-27",
+    "categories": [
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 8,
+    "bug_description": "selecting tiles on other side of hill is super wonky (trying to mine the two ramp tiles). seems it doesnt use the cursor's ground level position when selecting for some reason.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "prassel"
+  },
+  {
+    "date": "2018-08-28",
+    "categories": [
+      "Crash / Freeze",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 44,
+    "bug_description": "its not just missing sprites for me I tihnk.  The items seemed broken I couldnt move them adn error item info when i clicked on them",
+    "dev_responded": false,
+    "likely_fixed": true,
+    "author": "zeropoke"
+  },
+  {
+    "date": "2018-08-28",
+    "categories": [
+      "Crash / Freeze",
+      "Jobs / Tasks",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 39,
+    "bug_description": "I'm noticing some other strange stuff too now.  Like doors doubling up.  There's a door where I put it, and now a door in the next square as well.  And the beds in the barracks have two beds on top of one another, rotated at 90 degrees.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "mindwarpaus"
+  },
+  {
+    "date": "2018-08-28",
+    "categories": [
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "Building / Construction",
+      "Save / Load",
+      "Performance",
+      "World / Terrain"
+    ],
+    "msg_count": 71,
+    "bug_description": "if im digging out an area in dirt with a hallway and rooms on the sides it makes sense to make ONE stockpile for that in the center instead of multiple stockpiles for each room and have them plop down the dirt in the nearest tile instead of running an extra 5-10 tiles just to be orderly",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "prassel"
+  },
+  {
+    "date": "2018-08-28",
+    "categories": [
+      "Crash / Freeze",
+      "Stockpile / Storage",
+      "UI / Display"
+    ],
+    "msg_count": 9,
+    "bug_description": "Very minor issue: Embark page item selection list shows two different \"bed\" objects.  I'm guessing one of them is the \"mattress\" item?  Could use a relabel or something.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "drucifer8036"
+  },
+  {
+    "date": "2018-08-29",
+    "categories": [
+      "Stockpile / Storage",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 23,
+    "bug_description": "if you change and personalize presets instead of making new ones , like changing the items /settings for \"easy\" , those get saved, but if you switch to medium, hard , and back to easy , it pulls the games original \"easy\" preset, if you close game and restart, it pulls the personalized settings you d",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-08-30",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 73,
+    "bug_description": "mainscreen and at least keybinbdingsmenu bugs out if you go into keybindings, back to main, back into keybindings , it adds black space on top of the window looks like this, the menupoints vanish into the bottom of the screen",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-08-30",
+    "categories": [
+      "Farming / Animals"
+    ],
+    "msg_count": 4,
+    "bug_description": "I was going to say try artificial insemination . You know when the farmer does it to the cow instead of the bull...",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": ".lld"
+  },
+  {
+    "date": "2018-08-31",
+    "categories": [
+      "Stockpile / Storage",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 51,
+    "bug_description": "replace you exe in the steam folder, will fix you containers, though some creates will still have the grape sprite, because that's in the world file now",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2018-09-01",
+    "categories": [
+      "Jobs / Tasks",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction"
+    ],
+    "msg_count": 4,
+    "bug_description": "2/3 when having set up a bronze bar in repeat and with \"move back when done \" activated, it doesn't memorize the second rawmetal after it gets moved back ; same for closing reopening the workshop window",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-09-01",
+    "categories": [
+      "Stockpile / Storage"
+    ],
+    "msg_count": 3,
+    "bug_description": "constructing a crate over an already stocked 'nonstacking' item on the first tile of a stockpile , allows stacking of that item on the crates tile , even allows more than one item on that tile , this does not occure if the crate is built before starting the stockingprocess.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-09-01",
+    "categories": [
+      "Jobs / Tasks",
+      "UI / Display"
+    ],
+    "msg_count": 4,
+    "bug_description": "i unselected all skills, in the sheet, saved, closed, loaded up the game and you have to switch around jobs , woodcuter, back to miner , now it shows up",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-09-01",
+    "categories": [
+      "Crash / Freeze",
+      "Jobs / Tasks",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Performance"
+    ],
+    "msg_count": 16,
+    "bug_description": "just crashed the game , by scrolling down on a workshopwindow that was crafting 200 planks, clicked on chairs to setup what to craft next, wanted to scroll down to the chair  to setup the process and i think i hit the ressources from the planks \"any\" and changed them accidently by scrolling down, ->",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-09-02",
+    "categories": [
+      "Crash / Freeze",
+      "Farming / Animals",
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 21,
+    "bug_description": "but ya it was driving me nutz till i isolated what was rashign it for me cause i wasn't saving all to often, and kept having to redo a bunch of things,  so isolated step by step by saves till i could crash on demand",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "theloiteringkid"
+  },
+  {
+    "date": "2018-09-02",
+    "categories": [
+      "Crash / Freeze",
+      "Jobs / Tasks",
+      "Stockpile / Storage"
+    ],
+    "msg_count": 10,
+    "bug_description": "removing a stockpile while gnomes are hauling to it, keeps it showing in the stocks list and gnomes wont stop hauling in the middle of the job and dump the item at the last location of the non-existing stockpile, when all hauling jobs are done it gets removed from the stocks list.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "prassel"
+  },
+  {
+    "date": "2018-09-02",
+    "categories": [
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 22,
+    "bug_description": "bronze crafting, please have a look at it , if you set it up(copper/tin), close and reopen the workshop, it falls back to copper or any bar that is availaible (had even bronzebar in there before) for first ressource and \"any\" for the second",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-09-02",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 18,
+    "bug_description": "i have investigated a bit more and this rabbithole is even deeper than previously thought",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-09-03",
+    "categories": [
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "Save / Load"
+    ],
+    "msg_count": 3,
+    "bug_description": "help me out, am i missing something? why are my cows not being utilized?",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-09-03",
+    "categories": [
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "UI / Display"
+    ],
+    "msg_count": 9,
+    "bug_description": "moving windows for the first time after loading the game does this weird thing",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "prassel"
+  },
+  {
+    "date": "2018-09-03",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Save / Load"
+    ],
+    "msg_count": 21,
+    "bug_description": "just crashed the game by , changing a crude workbench job from crafting 100 applewood planks (was down to 38) i suspended the job and switched to craft to, while clicking on the number and typing 25  game crashed  game was still running on >>  and not paused",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-09-03",
+    "categories": [
+      "Crash / Freeze",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 2,
+    "bug_description": "another crash , plan was to craft 200 planks of each material, sawmill was crafting 200 applewood already, clicked planks wanted to setup orangewood , clicked material , i guess due to counter counting down, the menu snapped back, clicked again on material: crash , while playing on >> , sawmill link",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-09-04",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Crafting / Workshop",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 27,
+    "bug_description": "Yeah, I'd like to try and continue.  Now that you told be what was wrong, I can see it.  A lot of floor seems to have vanished.  I've had a few squares vanish before, but I assumed I'd made a mistake.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "mindwarpaus"
+  },
+  {
+    "date": "2018-09-04",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 25,
+    "bug_description": "The sort of tower thing I'm building to the left of the entrance down on the bottom 2 or 3 floors.  Those floors were complete, and then they suddenly had holes.  If you keep it running, you should see them appearing.  As the gnomes remove the block underneath, the floor above sometimes disappears.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "mindwarpaus"
+  },
+  {
+    "date": "2018-09-05",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "i could be wrong but i think my blinking gnomes try to reach things that can't be reached",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-09-05",
+    "categories": [
+      "Jobs / Tasks",
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 7,
+    "bug_description": "ok I took two actions to prevent this in the future, first trees will not spawn on map borders, second if some reckless individual plants a tree there, felling it will cause the logs fall to the trunk tile",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2018-09-06",
+    "categories": [
+      "Crafting / Workshop",
+      "UI / Display"
+    ],
+    "msg_count": 3,
+    "bug_description": "When you change the material used for a \"craft to\" you have to close the workshop window and open it again to make the [Craft] button to appear and make the change take effect.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "prassel"
+  },
+  {
+    "date": "2018-09-07",
+    "categories": [
+      "Building / Construction"
+    ],
+    "msg_count": 1,
+    "bug_description": "some kind of preview error, in the first and second pic it behaves correct, in the third one it pulls up the buildjob from the z-plane below. and similarly in the fourth one if you hover over the border of the tile (pink) it pulls up, what looks like,  the wall of the z-plane below",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-09-09",
+    "categories": [
+      "Performance"
+    ],
+    "msg_count": 13,
+    "bug_description": "6th gen i7 with 4 core 8 thread and boost to 3.4GHz should be fine. not sure how GPU demanding the game is but should not be very. are you using integrated graphics or discrete card? performance mode/power saving turned on? <@456226577798135808>",
+    "dev_responded": false,
+    "likely_fixed": true,
+    "author": "prassel"
+  },
+  {
+    "date": "2018-09-09",
+    "categories": [
+      "UI / Display",
+      "Performance"
+    ],
+    "msg_count": 10,
+    "bug_description": "you need to check your OS settings not the gpu individually for power management. right click the battery icon in the tray.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "prassel"
+  },
+  {
+    "date": "2018-09-10",
+    "categories": [
+      "Stockpile / Storage",
+      "Crafting / Workshop"
+    ],
+    "msg_count": 5,
+    "bug_description": "For some reason grain isn't displayed as available resource in the kitchen, but if bread crafting order is issued, it is crafted...",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "xecutor2907"
+  },
+  {
+    "date": "2018-09-11",
+    "categories": [
+      "Stockpile / Storage"
+    ],
+    "msg_count": 18,
+    "bug_description": "even tho you are resetting it to default which normally means they haul as much to that pile as possible, you have to manually activate it again.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "prassel"
+  },
+  {
+    "date": "2018-09-11",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "Performance"
+    ],
+    "msg_count": 63,
+    "bug_description": "can't say much, that might just run poorly on your hardware, in your documents/my games/ingnomia/settings folder is a config.json, in that you can lower the render depth",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2018-09-11",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Farming / Animals"
+    ],
+    "msg_count": 2,
+    "bug_description": "also had a stuck gnome who was standing with his face in a corner for two days. He had a husbandry job issued two days ago and had yet to move. Exiting and restarting the game got him out of his time out. I'd post a screenie but this laptop has no numlock key",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "katryn"
+  },
+  {
+    "date": "2018-09-12",
+    "categories": [
+      "Jobs / Tasks",
+      "Farming / Animals"
+    ],
+    "msg_count": 6,
+    "bug_description": "Hmm... mine didn't. Ok, I'll try that again. Also noticed, it's been a season and chickens aren't pregnant. (Though that sounds a bit of an oxymoron itself, so not sure how they are planned to work.)",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "katryn"
+  },
+  {
+    "date": "2018-09-12",
+    "categories": [
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 27,
+    "bug_description": "If you change the Craft To number on an item already in the que, It pops it out of the que, which is fine, however it doesn't show that it's unqued till you close and reopen the workshop window, at which point you can click Craft again. Can that be changed so you can click the Craft button without c",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "katryn"
+  },
+  {
+    "date": "2018-09-12",
+    "categories": [
+      "Crash / Freeze",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 20,
+    "bug_description": "when loaded set it to >>,  open Kitch 1 stockpile, change one of the meats to 75 (only one is 0), open kitchen click bread, sausage , sandwich, cheese really fast, (crashed 2 times just by doing that),  set jobs to 75 move back check, craft,  did nothing else",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-09-13",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "Hey, is it normal i can't open any of the setting exept the keybinding ?",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "clementb015"
+  },
+  {
+    "date": "2018-09-14",
+    "categories": [
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction"
+    ],
+    "msg_count": 3,
+    "bug_description": "dresser item, can be crafted, doesn't show up in stockpiles, can't be constructed via \"build furniture\", DOES NOT have correct inworld sprite representation (workshop output tile)",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-09-17",
+    "categories": [
+      "Stockpile / Storage",
+      "Save / Load"
+    ],
+    "msg_count": 4,
+    "bug_description": "and after a reload  of the savegame, the construction orientation of some of the furniture is lost and/or an additonal sprite appears",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "sorsaj"
+  },
+  {
+    "date": "2018-09-21",
+    "categories": [
+      "Farming / Animals",
+      "UI / Display",
+      "World / Terrain"
+    ],
+    "msg_count": 5,
+    "bug_description": "lots of work since I've last checked, gg Roest <:roest:452562992022945803>\r\n\r\nfound this draw issue... designated farm at a lower z level. the region appeared like this.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "optimus.0001"
+  },
+  {
+    "date": "2018-09-23",
+    "categories": [
+      "Building / Construction"
+    ],
+    "msg_count": 15,
+    "bug_description": "in Gnomoria (I hate to said it, made me feel like my mother saying \"your brother was better in class\") first wall was always discover",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "styfrit"
+  },
+  {
+    "date": "2018-09-29",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "Another bug, not sure how you're gonna fix the matrix though",
+    "dev_responded": false,
+    "likely_fixed": true,
+    "author": "optimus.0001"
+  },
+  {
+    "date": "2018-10-14",
+    "categories": [
+      "Pathfinding",
+      "World / Terrain"
+    ],
+    "msg_count": 7,
+    "bug_description": "what if a gnome is trapped by suddenly erecting trees from a densely planted forest? and what happens if a tree matures/erects in the exact same moment a gnome walks over the same tile? who's gonna die, tree or gnome? 😉 or is that prevented somehow?",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "sknortsch4137"
+  },
+  {
+    "date": "2018-12-19",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 9,
+    "bug_description": "yes, I have the problem only when I start a new game, don't unpauze, and zoom so far in that your screen starts to fill with the edge of the map. Zooming out from there doesn't seem to do anything",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "desolator_x"
+  },
+  {
+    "date": "2019-01-03",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "i know, it doesn't like the styling",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-01-03",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 3,
+    "bug_description": "also checkboxes dont get a checkmark when clicked in the \"show only available\" for pastures. also the embark settings for animals and plants dont get checkmarks either.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "prassel"
+  },
+  {
+    "date": "2019-01-06",
+    "categories": [
+      "Jobs / Tasks",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 9,
+    "bug_description": "qt.qpa.plugin: Could not find the Qt platform plugin \"windows\" in \"\"\nThis application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "tacyn."
+  },
+  {
+    "date": "2019-01-10",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 1,
+    "bug_description": "I'm not sure how minor of things we should report... but when you are toggling jobs on/off on the population screen toggling all the jobs in a category on or off manually doesn't update the \"all\" button",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "xotai"
+  },
+  {
+    "date": "2019-01-12",
+    "categories": [
+      "Pathfinding"
+    ],
+    "msg_count": 4,
+    "bug_description": "Not sure if it's something from my side, but after two of my gnomes got trapped and I ran out of food, all gnomes stopped working (which i'm guessing is intentional) but the game usage suddenly jumped up to about 90% of my cpu and gpu",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-01-13",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 7,
+    "bug_description": "I just changed such a large part, that I just ignore bug reports for now, when this is done, I'll update the main branch and then we can test and debug that",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-01-14",
+    "categories": [
+      "Jobs / Tasks"
+    ],
+    "msg_count": 6,
+    "bug_description": "Cause ran into a weird one with gnomes not mining a block, and i can't cancel the mine job either",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-01-14",
+    "categories": [
+      "Crash / Freeze",
+      "Jobs / Tasks",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 27,
+    "bug_description": "In the same save, Gnomes don't seem to be building the starting workbench, they move the wood there, but won't go for stone, build job seems to just flicker between green and inactive every few seconds\n\nI feel like i'm just unlucky, going to try a new world",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-01-14",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 6,
+    "bug_description": "I'll try deleting the folder and see what it does. Also, a youtube vid from just a few days ago, showed all those little checkboxes as nice little 3d effect boxes. but mine all look flat like in wizzards pic above about renderdepth.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "vorg9431"
+  },
+  {
+    "date": "2019-01-15",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "Performance"
+    ],
+    "msg_count": 76,
+    "bug_description": "It doesn't seem to happen to all of the jobs, for example I told my gnomes to mine a 2 wide tunnel, then changed jobs. The new miners mined the first two block entrance of the tunnel, but wouldn't continue",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-01-15",
+    "categories": [
+      "Jobs / Tasks",
+      "Save / Load"
+    ],
+    "msg_count": 16,
+    "bug_description": "I opened my save and see this https://www.dropbox.com/s/6xq0fp4t8056nyo/green%20tasks.PNG?dl=0\nThat is lot more green jobs that I have gnomes.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "kondain"
+  },
+  {
+    "date": "2019-01-15",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 14,
+    "bug_description": "Seem to be seeing a problem with canceling some jobs. set some crates to be built in stockpiles and realized I set wood type instead of any and cancel job seems to have no effect.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "vorg9431"
+  },
+  {
+    "date": "2019-01-16",
+    "categories": [
+      "Farming / Animals"
+    ],
+    "msg_count": 1,
+    "bug_description": "In Inventory overview tab: under Drinks\\Alcoholics there is an entry for Milk Yak. group says \"Error: $GroupName_NonAlcoholic\"",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "vorg9431"
+  },
+  {
+    "date": "2019-01-16",
+    "categories": [
+      "Crash / Freeze",
+      "UI / Display"
+    ],
+    "msg_count": 3,
+    "bug_description": "Gnomes thirst can go to negative values, If they do and you open the window for that individual, it shows thirst 0/100 and game crashes.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "kondain"
+  },
+  {
+    "date": "2019-01-17",
+    "categories": [
+      "Farming / Animals",
+      "Building / Construction"
+    ],
+    "msg_count": 11,
+    "bug_description": "They like dumping logs in the stock pile. So the first main pile gets loaded with logs, though there is ampty spaces which may just be vissual. So I set limits for logs and to stop collecting at a certain point and made a second pile just for logs. They moved some of the logs from the starting to th",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "vorg9431"
+  },
+  {
+    "date": "2019-01-18",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Stockpile / Storage",
+      "Farming / Animals",
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 23,
+    "bug_description": "Gnomes seem to be going much further than needed to get food, they're walking past a bunch of carrots, walking about double the distance to get an orange",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-01-18",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 82,
+    "bug_description": "avctually i haven't planned for that, as i don't really see a need to prioritize jobs, imho if you set your gnome skills and priorities right it works best, gnomoria didn't have it and i never missed it really",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-01-18",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 33,
+    "bug_description": "looks like the floor has been removed, and this time I did as you said and deconstructed the fishery with a single spot in the middle",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "sibaz_"
+  },
+  {
+    "date": "2019-01-18",
+    "categories": [
+      "Jobs / Tasks",
+      "World / Terrain"
+    ],
+    "msg_count": 9,
+    "bug_description": "well after checking the code i conclude it's indeed working as intended but it needs to expel gnomes and animals on the tile when growing up",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-01-18",
+    "categories": [
+      "Crash / Freeze",
+      "Stockpile / Storage"
+    ],
+    "msg_count": 7,
+    "bug_description": "I  managed to crash it again. i linked a woodworker to a storagem then deleted the storage",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "sibaz_"
+  },
+  {
+    "date": "2019-01-19",
+    "categories": [
+      "Stockpile / Storage"
+    ],
+    "msg_count": 4,
+    "bug_description": "For workshops, when selecting to use \"any\" for the resource type, gnomes seem to pick the closest of whatever is at the top of the list, rather than the closest out of all resources",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-01-19",
+    "categories": [
+      "Jobs / Tasks",
+      "Building / Construction"
+    ],
+    "msg_count": 6,
+    "bug_description": "Seems to be working for wall mining, but seems to be ignoring priority for mine stairs down. Miner mined area next to stairs, but instead of removing floor and going down, he went off to mine priority 0 blocks",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "vorg9431"
+  },
+  {
+    "date": "2019-01-19",
+    "categories": [
+      "Jobs / Tasks",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 30,
+    "bug_description": "Just qued up a workbench on a crude workbench with craft ingredients checked. I have no planks in stock, and it didn't que up any ether. Does it now check at build time to see if something is needed? Before it was queing ingredients when you qued an item.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "vorg9431"
+  },
+  {
+    "date": "2019-01-19",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "UI / Display",
+      "Performance",
+      "World / Terrain"
+    ],
+    "msg_count": 3,
+    "bug_description": "Game seems to freeze up when switching from the skills to overview tab under the gnome window when thirst is 0.\n\nOnly seems to happen when playing in double speed, but freezes up everything for a few seconds",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-01-20",
+    "categories": [
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Crafting / Workshop",
+      "Building / Construction"
+    ],
+    "msg_count": 4,
+    "bug_description": "1) When I build a new workshop and I don't have all the components, I'm expecting my workshops to kick in and make chairs, workbench, table, chisel, knife, sawblade etc. (they are all set to accept generated jobs). However, I have to manually queue up the components, and the jobs cascade out to the ",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "obsequiousm"
+  },
+  {
+    "date": "2019-01-20",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Crafting / Workshop",
+      "Building / Construction"
+    ],
+    "msg_count": 3,
+    "bug_description": "well workshops not autocrafting components when you try to build a workshop is not a bug, autocrafting is simply not implemented yet for build jobs",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-01-20",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 8,
+    "bug_description": "yea enjoy while you can, that's gonna be fixed in 10 minutes",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-01-20",
+    "categories": [
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 19,
+    "bug_description": "I just put a second basic work bench down with orders to build 2 workbenches. A guy goes over and stands there for a bit and the Gnome list says he's doing Carpentry. After awhile he leaves and nothing was built, then another goes over and same thing. Meanwhile , at the first bench, the top of the q",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "vorg9431"
+  },
+  {
+    "date": "2019-01-20",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 4,
+    "bug_description": "Started a new game using same map. Same thing. Built a basic work bench and made some planks. But they won't make workbenches or chisels. tried changing order, removing and readding. Didn't try to make any more planks or sticks. But I need work benches and chisels to make other workshops. It worked ",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "vorg9431"
+  },
+  {
+    "date": "2019-01-21",
+    "categories": [
+      "Performance"
+    ],
+    "msg_count": 1,
+    "bug_description": "Started a new game and ran into the same problem. I even let it run for a hour RL at full speed with 2 basic benches and the most they made was 8 of 10 planks.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "vorg9431"
+  },
+  {
+    "date": "2019-01-21",
+    "categories": [
+      "World / Terrain"
+    ],
+    "msg_count": 9,
+    "bug_description": "Each level taking off 1/20th of the time, probably not noticeable when the level difference is small, but when you're comparing a skill level 1 gnome to a 5, might be what you're experiencing",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-01-21",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Combat / Military",
+      "Farming / Animals",
+      "UI / Display",
+      "World / Terrain"
+    ],
+    "msg_count": 38,
+    "bug_description": "Isn't the skill sort order for each Gnome suposed to act like a work priority system? Starting a new game, I order all their skils highest at the top. Yet I have 2 gnomes with skill 6 woodcutting (top of their list) and farming is was down at 4. But they are farming instead of chopping. One is minin",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "vorg9431"
+  },
+  {
+    "date": "2019-01-22",
+    "categories": [
+      "Jobs / Tasks",
+      "Crafting / Workshop"
+    ],
+    "msg_count": 1,
+    "bug_description": "In Carp workshop, the job for fishing rod, says something like \"Error:  $CraftName_FishingRod\"",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "vorg9431"
+  },
+  {
+    "date": "2019-01-22",
+    "categories": [
+      "UI / Display",
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 3,
+    "bug_description": "Weeell, 😃 I'm finding placing floors where there isn't any a bit of a pain. Example, extending some ground out, you have to start where there is already floor or it won't place on the right level. Even when a wall has been built. And finding just the right spot on to click to start the floor/ground ",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "vorg9431"
+  },
+  {
+    "date": "2019-01-22",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 35,
+    "bug_description": "Not really a bug, but something that should be changed, when deconstructing a workshop, if more than one block is highlighted for deconstruction, you're left with ghost deconstruction jobs which need to be completed",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-01-22",
+    "categories": [
+      "Stockpile / Storage",
+      "Farming / Animals",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 12,
+    "bug_description": "I've been noticing the problem with pine trees also. Cut down quite a few each game, but not seen any pine cones yet, and they don't plant and pine trees. at the current drop rate, you can't maintain a pine forestry.  Have to cut down too many to get any cones.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "vorg9431"
+  },
+  {
+    "date": "2019-01-22",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Stockpile / Storage",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 32,
+    "bug_description": "Was using onedrive, but the file was not fully uploaded it seems, so whilst all the numbered save folders were there, they were empty except the first one -_-",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-01-23",
+    "categories": [
+      "Stockpile / Storage",
+      "Building / Construction",
+      "Performance",
+      "World / Terrain"
+    ],
+    "msg_count": 13,
+    "bug_description": "One that pops to mind would be checking the blocks around it if they have a sunlight flag. Then that setting a some kind of \"nearby\" flag. Though would probably be slow",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-01-23",
+    "categories": [
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 22,
+    "bug_description": "if you clear a space, then select the now empty space, and dig a downward staircase, you get what you'd expect.  You can then repeat the plan on the level below, in a different alignment and so on to get stairs, with space above them",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "sibaz_"
+  },
+  {
+    "date": "2019-01-23",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 7,
+    "bug_description": "Trader bug still happening 😦\nChecked game.json for the exact time I was supposed to get one, still nothing",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-01-23",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 4,
+    "bug_description": "nothing you need to screenshot just means the translation string for the item is missing",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-01-23",
+    "categories": [
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "Performance"
+    ],
+    "msg_count": 63,
+    "bug_description": "Run the game at the uncapped speed option or whatever it is, then you can notice it running quite quickly, like a dozen minutes a second. \n\nBut every few seconds that rate slows down to base, 1-2 minutes a second",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-01-24",
+    "categories": [
+      "Stockpile / Storage"
+    ],
+    "msg_count": 1,
+    "bug_description": "Not really a bug, but pinecones aren't in any stockpile category, so can't haul them anywhere",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-01-25",
+    "categories": [
+      "Pathfinding",
+      "Jobs / Tasks",
+      "UI / Display",
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 41,
+    "bug_description": "not sure if bug, but quite annoying: if you have your population window open over a gnome overview screen clicking on the gnomes name in the population menu does not bring it to the front again",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "desolator_x"
+  },
+  {
+    "date": "2019-01-25",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 3,
+    "bug_description": "what, colouring the block above it yellow as well?",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "desolator_x"
+  },
+  {
+    "date": "2019-01-25",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 4,
+    "bug_description": "That error is for quite a few items, probably just get a list together and get them all fixed at once",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-01-27",
+    "categories": [
+      "Jobs / Tasks",
+      "UI / Display"
+    ],
+    "msg_count": 3,
+    "bug_description": "Made some puzzle boxes, but they don't show in the to sell list.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "vorg9431"
+  },
+  {
+    "date": "2019-01-27",
+    "categories": [
+      "Stockpile / Storage",
+      "UI / Display"
+    ],
+    "msg_count": 4,
+    "bug_description": "I'll have to check when i get the game back up. Shows in the general stockpile window you get from the botton at the top",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "vorg9431"
+  },
+  {
+    "date": "2019-01-30",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 93,
+    "bug_description": "ok, so assuming farms are the intended behaviour.  I start by drawing out a square farm.  Then I select to create a new farm, starting in the middle of the existing square, draw out another square.  Do the same again, and you have a single farm in the shape of 3 overlapping squares",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "sibaz_"
+  },
+  {
+    "date": "2019-02-01",
+    "categories": [
+      "Jobs / Tasks",
+      "Combat / Military",
+      "Crafting / Workshop",
+      "UI / Display",
+      "World / Terrain"
+    ],
+    "msg_count": 35,
+    "bug_description": "I'm finding that I have to slightly resize my popup windows to be able to read the text. Gnome list, and workshop list being the main two.  Is this a known issue? I'm running my windows at 125% scaling, which has caused me issues in the past.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "obsequiousm"
+  },
+  {
+    "date": "2019-03-05",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 3,
+    "bug_description": "I changed the stock filter (for no sticks) as they had sticks in it. For some reason the gnomes can not use these sticks to make the chair.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "chacina7810"
+  },
+  {
+    "date": "2019-03-10",
+    "categories": [
+      "Combat / Military"
+    ],
+    "msg_count": 3,
+    "bug_description": "Use their souls for necromancy!",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-03-12",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage"
+    ],
+    "msg_count": 2,
+    "bug_description": "I think the gnomes are not using tools like wheelbarrow and bucket, am I doing something wrong?  They could not use whellbarrow to pick up fruits, for example?",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "chacina7810"
+  },
+  {
+    "date": "2019-05-10",
+    "categories": [
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 1,
+    "bug_description": "there is a bug  that sometimes  save games don't show up at first, but they are there, you can check C:\\Users\\<user>\\Documents\\My Games\\Ingnomia\\save",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-05-12",
+    "categories": [
+      "Jobs / Tasks",
+      "UI / Display",
+      "Building / Construction",
+      "Performance",
+      "World / Terrain"
+    ],
+    "msg_count": 33,
+    "bug_description": "<@280266293490221056>  is used the bug funktion the first time ingame (F11)  i write down my discord name and explained the problem.......... the progression bar is 100% after 10 sec but nothing happens......... musst i shut down the window myself after 100% ?",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "vrus0188"
+  },
+  {
+    "date": "2019-05-18",
+    "categories": [
+      "Stockpile / Storage",
+      "Save / Load",
+      "Performance"
+    ],
+    "msg_count": 1,
+    "bug_description": "@derPaddy#0188  I had this issue in the beginning as well. It also works to dig into a mountain from the side. If the tile you dig towards is more than 10 tiles away from the surface in **every** direction (so upwards as well), you will find stone as well. The new movement speed update should also h",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-05-22",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Farming / Animals",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 24,
+    "bug_description": "Another issue: I have a bunch of pickaxes and assigned miners. However no mining jobs get done. So I removed all of them but still the pickaxes are supposedly reserved for some job. Can I look up the job IDs somewhere to find out what they are reserved for?",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-05-23",
+    "categories": [
+      "Farming / Animals"
+    ],
+    "msg_count": 1,
+    "bug_description": "<@456226577798135808> well the grove thing was indeed a bug and is fixed, the other two I cannot reproduce",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-05-23",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 25,
+    "bug_description": "Hmm. I found the JSON for the stuck pickaxes. They really think they are reserved for a job that doesn't exist, but I have no idea when exactly it ended up like this",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-05-27",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 3,
+    "bug_description": "Starting a new world, going onto population tab and pressing the \"A\" button for a row crashes the game",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-05-27",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Jobs / Tasks",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 31,
+    "bug_description": "So with the stairs, I initially thought it was my mistake. So I deconstructed the bottom level, builders were then in the sandstone layer.\n \nThey had a job to deconstruct the stairs above their layer but obviously couldn't reach it, so I gave a build job to create stairs on the layer they were at, s",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-06-04",
+    "categories": [
+      "UI / Display",
+      "Building / Construction"
+    ],
+    "msg_count": 3,
+    "bug_description": "Just started up the game again. selected continue to see what would happen.  It picked up before I used the asign jobs window, so went through that again and when I selected the schedule tab, it stopped responding again.\n\nAlso, I noticed last time and this time, when selecting any of the buttons at ",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "vorg9431"
+  },
+  {
+    "date": "2019-06-20",
+    "categories": [
+      "Crash / Freeze",
+      "Crafting / Workshop",
+      "UI / Display"
+    ],
+    "msg_count": 20,
+    "bug_description": "within my first 30 seconds of launching the game for the first time I went to settings and pressed esc to go back and it doesn't take you back to the main-menu but the pause menu you'd see when you are in-game and if you pressed resume you'd see the entire in-game UI",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "dillpickle02"
+  },
+  {
+    "date": "2019-06-23",
+    "categories": [
+      "Crash / Freeze",
+      "Building / Construction"
+    ],
+    "msg_count": 4,
+    "bug_description": "I thing I have the same problem with the table thing. If I want to make a Woodcutter and my Crude Workbench is build, the game crash every time. Probably because of the table.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "lorrdy"
+  },
+  {
+    "date": "2019-06-23",
+    "categories": [
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Crafting / Workshop",
+      "UI / Display"
+    ],
+    "msg_count": 8,
+    "bug_description": "Managed to get a craft chair job ignored somehow. No gnomes are working on the job and instead just acting as if it doesn't exist",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-06-24",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 10,
+    "bug_description": "<@279100184804327424> the last patch on steam is supposed to fix that",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-06-29",
+    "categories": [
+      "Jobs / Tasks",
+      "Building / Construction"
+    ],
+    "msg_count": 30,
+    "bug_description": "I've only recently decided to play this again, been following updates on reddit for ages though. Don't know how new this issue is but I can't deconstruct workshops, of any kind, even after complete reinstall of the game and new game. It creates a 1 tile sized deconstruct job, a gnome trys to deconst",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "vanda1475"
+  },
+  {
+    "date": "2019-06-30",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "Bug has been squashed",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "vanda1475"
+  },
+  {
+    "date": "2019-07-24",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 3,
+    "bug_description": "I've got a strange behavior on embark screen! Somehow, when I try a new game on easy and on medium, I was supposed to have wheat seeds, but they show as carrot seeds.\nMy embarkpresets.jason shows:\n\n\"Amount\": 20,\n\"ItemID\": \"Seed\",\n\"MaterialID\": \"Wheat\",\n\"Type\": \"Item\"\n\nBut on my embark screen they ap",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-07-24",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 3,
+    "bug_description": "- Can't remove keybindings using in-game menu. If i press del, backspace or esc. those keys get registered as the keybind.\n\nI can only remove them by editing json.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-07-24",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Combat / Military",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "Performance",
+      "World / Terrain"
+    ],
+    "msg_count": 94,
+    "bug_description": "the problem with that is, it's easy to have one gnome not getting stuck, as soon there is more than one doing these jobs it gets really complex, stuff that is walkable, might not the next tick, they have different work speeds, it's really difficult",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-07-25",
+    "categories": [
+      "Building / Construction"
+    ],
+    "msg_count": 5,
+    "bug_description": "Not sure if a bug or just not implemented, but replace floor doesn't give the material for the old floor. So if I replace a dirt floor with stone, I don't get any dirt back",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-07-25",
+    "categories": [
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 35,
+    "bug_description": "Is it possible to exclude the build floor order from tiles that are of the same type as the build order? I.e., I'm trying to fill holes in my excavation on dirt, and I have to order a big area and then cancel the job on the tiles that are of the same type, to avoid unnecessary work. Also, because of",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-07-27",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 1,
+    "bug_description": "- I'm having a bug with item price at market stall again. Happens with items with multiple qualities, if I click one item to go to the offer screen, and then click it to go back, the items of lower tier are all shown with the price of the higher tier. If I try to sell those items of lower tier, the ",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-07-29",
+    "categories": [
+      "Crafting / Workshop",
+      "Save / Load"
+    ],
+    "msg_count": 6,
+    "bug_description": "INDEV: If you replace walls with veins in them the veins are left behind so I have block walls with tin veins in them.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "yksleets"
+  },
+  {
+    "date": "2019-07-30",
+    "categories": [
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "UI / Display",
+      "Building / Construction"
+    ],
+    "msg_count": 12,
+    "bug_description": "those are the barrels used for the workshop construction, usually items get a \"constructed\" flag so they don't appear in the tile info anymore, but since containers can be constructed on stockpiles and should appear in the tile info you can see them there",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-07-30",
+    "categories": [
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Combat / Military",
+      "Building / Construction"
+    ],
+    "msg_count": 13,
+    "bug_description": "right now they spawn, assign a random threat value to each gnome and chase after the highest on the list, if they can't reach that one, he goes to the bottom of the list and they turn to the next target",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-07-30",
+    "categories": [
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 20,
+    "bug_description": "BUG: If you build a fishery workshop and after it is ready you order to mine the ramps in the water under the workshop, the ramps get bugged. The reappear after you deconstruct the workshop, but you cant dig them after or do anything with them (they still work as ramps for gnomes).",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-07-30",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "Performance",
+      "World / Terrain"
+    ],
+    "msg_count": 66,
+    "bug_description": "His job log:\nDay  9, 17:03: Got  a new Fishing job\nDay  9, 17:03: JobType ButcherFish\nDay  9, 17:03: Got  a new Fishing job\nDay  9, 17:03: JobType ButcherFish\nDay  9, 17:03: Got  a new Fishing job\nDay  9, 17:04: JobType ButcherFish\nDay  9, 17:04: Got  a new Fishing job\nDay  9, 17:04: JobType Butcher",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-07-30",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Building / Construction",
+      "Performance",
+      "World / Terrain"
+    ],
+    "msg_count": 23,
+    "bug_description": "I still can't make fishing and prepping work properly 😕 \n\nIf I use more than one gnome with fishing enabled and only one workshop, it works fine. But if I leave only one gnome with this job enabled and clear all other jobs for such gnome, he fishes for a while, preps the fishes and then just stands ",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-08-01",
+    "categories": [
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 1,
+    "bug_description": "-BUG: Gnomes can climb up from water to shore tile even if ramps are removed. Climbing down is not possible, though.\nI removed all ramps leading to my base, but gnomes climb to the shore as if there was a ramp there. To go down, they are pathing correctly, going around my main entrance and climbing ",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-08-01",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 3,
+    "bug_description": "More detail on that, when loading the 6.8.8 version at first all my gnomes are invisible, then they start appearing when they move, leaving a clone where the stood originally",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-08-01",
+    "categories": [
+      "Crafting / Workshop"
+    ],
+    "msg_count": 10,
+    "bug_description": "-BUG: Bonecarver and Butcher have double entry on tiles, leaving a spot behind after deconstructed (same bug that happened with Carpenter shop in github).",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-08-03",
+    "categories": [
+      "UI / Display",
+      "Performance"
+    ],
+    "msg_count": 3,
+    "bug_description": "Woops forgot to update, don't think it's the pickaxe anymore. For some reason my games fast speed button didn't speed up properly, as in it would only go a few in game seconds faster than normal speed instead of whatever it's meant to be. Started a new game and now my fast speed works fine. Although",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "vanda1475"
+  },
+  {
+    "date": "2019-08-03",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Jobs / Tasks",
+      "UI / Display",
+      "Performance"
+    ],
+    "msg_count": 1,
+    "bug_description": "That fast speed issue could be the game lagging up with gnomes being stuck on tasks, check if any of your gnomes were just standing acting idle but their logs show they're constantly finding a job, but failing to do it",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-08-03",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Save / Load",
+      "Performance",
+      "World / Terrain"
+    ],
+    "msg_count": 12,
+    "bug_description": "If the speedup function starts being unstable, for me at least it would speedup then have random slowdowns every second or so, very noticeable if looking at the change in time. It was because I had gnomes stuck trying to get something that was out of reach, fell underground or so from another bug",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-08-05",
+    "categories": [
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction"
+    ],
+    "msg_count": 15,
+    "bug_description": "Just tested both bugs in a new game, and they are reproducible.\n\n-When trying to craft pickaxes on Carpenter, the ingredients from the pickaxes that are already crafted in the world show as available in the ingredient list and in the Kingdom Stockpile tab.\n-Pine Fruit shows as ingredient to be used ",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-08-05",
+    "categories": [
+      "Stockpile / Storage",
+      "Crafting / Workshop"
+    ],
+    "msg_count": 2,
+    "bug_description": "BUG: related to \"stranger materials\" series. \n\nI'm getting, on a new game, \"orange\" as a type of wood to store in my stockpiles, with a generic color, together with \"orange wood\" and \"pine wood\", the correct ones.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-08-06",
+    "categories": [
+      "Crash / Freeze",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "Performance"
+    ],
+    "msg_count": 69,
+    "bug_description": "That reminds me. Can generated jobs go to the bottom of the craft list? Just because sometimes I have things crafting already, and then I generate a job and the workshop decides its priority. NO, you wait your turn chairs, if I wanted you first I would have ordered you first.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "vanda1475"
+  },
+  {
+    "date": "2019-08-06",
+    "categories": [
+      "Crash / Freeze",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "UI / Display"
+    ],
+    "msg_count": 26,
+    "bug_description": "CRASH: My game crashes whenever a trader arrives. Just tested on a new game, created a market stall and spawned a trader, game crashes instantly.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-08-11",
+    "categories": [
+      "Crafting / Workshop",
+      "Save / Load"
+    ],
+    "msg_count": 8,
+    "bug_description": "I wasn't complaining was just making sure mine wasn't glitching. You fix an issue with autocrafting I hope then. I only noticed it 10min ago on 0.6.8.8. I tend to play with steam in offline mode and occasionally reconnect to check for an update.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "vanda1475"
+  },
+  {
+    "date": "2019-08-12",
+    "categories": [
+      "Performance"
+    ],
+    "msg_count": 3,
+    "bug_description": "nah nothing wrong here, those are just some really fast cows",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-08-12",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 12,
+    "bug_description": "Every time I start Ingnomia after a patch, I get this error. Anyone else having this? Any idea what this could be?",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-08-12",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "UI / Display"
+    ],
+    "msg_count": 3,
+    "bug_description": "On loading they get removed and debug screen is corrected. Before saving and loading, stockpile was not working.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-08-14",
+    "categories": [
+      "Farming / Animals"
+    ],
+    "msg_count": 1,
+    "bug_description": "Pasture is broken. Crashes as soon as you choose an animal in a new pasture",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "vanda1475"
+  },
+  {
+    "date": "2019-08-14",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "Bug: why the game at the run crashes and starts again?",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "boris8681"
+  },
+  {
+    "date": "2019-08-14",
+    "categories": [
+      "Jobs / Tasks",
+      "Farming / Animals"
+    ],
+    "msg_count": 15,
+    "bug_description": "<@594512565825044510> Can confirm bug with pastures. Here it is not crashing, but pastures are not working. Gnomes do not move animals to pasture even after selected. Tried with rabbits and yaks.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-08-14",
+    "categories": [
+      "Performance"
+    ],
+    "msg_count": 4,
+    "bug_description": "I have a boom in beetle population. Is this intended? All female beetles in my map are pregnant.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-08-14",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Farming / Animals",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 19,
+    "bug_description": "I'm getting some strange behavior with stockpiles and storage containers. Sometimes, all items from containers \"drop\" on the tiles, and are shown on tile info tab. They are also shown on stockpile tab and also inside crates. However, numbers do not add up. Each info shows a different number.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-08-14",
+    "categories": [
+      "Farming / Animals",
+      "Save / Load"
+    ],
+    "msg_count": 2,
+    "bug_description": "-Hammer, Hammer Head, Battle Axe Head, Claymore, Claymore Blade, Hand Axe Head, Warhammer, Warhammer Head.\n\nAll these items have missing sprites and Error Item Name",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-08-15",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 3,
+    "bug_description": "Who's to say that the sprites are missing and not that they're supposed to be purple cubes",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-08-15",
+    "categories": [
+      "Combat / Military",
+      "UI / Display"
+    ],
+    "msg_count": 3,
+    "bug_description": "Squad names don't seem to change on the threats menu until I close the military tab and re-open it",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-08-24",
+    "categories": [
+      "UI / Display",
+      "Building / Construction"
+    ],
+    "msg_count": 1,
+    "bug_description": "The bug about deconstructing doors is back! After deconstructing a door, the door menu remains on the tile.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2019-09-04",
+    "categories": [
+      "Crash / Freeze",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 51,
+    "bug_description": "Also unhelpful bug report, but I had 4 sticks and umpteen (say 17) planks according to the woodworking workshop, but my carpentry gnome just refused to work on the table/chairs I'd requests until I requested he build more sticks",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "sibaz_"
+  },
+  {
+    "date": "2019-09-06",
+    "categories": [
+      "Crash / Freeze",
+      "Stockpile / Storage",
+      "Combat / Military",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 52,
+    "bug_description": "Well I think I heard there is a low pressure thingy coming up to the UK from the SW, this weekend, which will push the cold air north.  Hopefully it'll make it over as far as denmark, so you might get some warmth that far east.  Fingers crossed",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "sibaz_"
+  },
+  {
+    "date": "2019-09-09",
+    "categories": [
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 27,
+    "bug_description": "My first order of the new game, was to level some ground, and square off some edges (and fill some holes).   Now having done all that, everywhere that there was originally a ramp, is showing as mud, but the areas either side of that, that were either covered by a wall, or not covered at all, are gra",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "sibaz_"
+  },
+  {
+    "date": "2019-09-11",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 1,
+    "bug_description": "Rendering of troughs seems to be wrong.  I have 2 pastures with troughs at right angles to each other.  As I rotate the screen, they line up, then misalign, then line up again",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "sibaz_"
+  },
+  {
+    "date": "2019-09-12",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Combat / Military",
+      "Farming / Animals",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 53,
+    "bug_description": "I have a very wierd potential bug for you. I set a tunnel to be mined, and it looks like 2 gnomes took on the task and started mining the tunnel from both ends.  They've now passed in the middle, and are both walking in a tunnel, but I think both, think they're still tunneling to the original length",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "sibaz_"
+  },
+  {
+    "date": "2019-10-05",
+    "categories": [
+      "Jobs / Tasks",
+      "Building / Construction"
+    ],
+    "msg_count": 2,
+    "bug_description": "Not sure if this is as it should be, but when I want to build a metal pickaxe head, I can't choose a material. The job gets queued, but the gnomes can't build it. Seems like the recipe is buggy.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "matrixq"
+  },
+  {
+    "date": "2019-10-06",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 6,
+    "bug_description": "I can't seem to start up Ingnomia. After the world setup menu it loads things like layers but stops when at \"Ramps\"",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "rotjeknor4143"
+  },
+  {
+    "date": "2019-10-07",
+    "categories": [
+      "Crash / Freeze",
+      "Save / Load",
+      "Performance",
+      "World / Terrain"
+    ],
+    "msg_count": 22,
+    "bug_description": "The game won't start after yesterdays update. I can load a previous game, but it won't start when I press play. A new game crashes in the \"creating world\" phase.\nI did see the corrected pickaxe recipe in the loaded game though, so yay.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "matrixq"
+  },
+  {
+    "date": "2019-11-05",
+    "categories": [
+      "Crafting / Workshop"
+    ],
+    "msg_count": 1,
+    "bug_description": "Maybe a bug, did my mod and all files seem to be applying correctly except those from the items table,also looks like workshop json is not being added too",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "reaperofbunnies"
+  },
+  {
+    "date": "2019-11-05",
+    "categories": [
+      "Farming / Animals"
+    ],
+    "msg_count": 12,
+    "bug_description": "starting a new game: I can't get the item and animal dropdown lists to work. clicking on them doesn't seem to do anything",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "desolator_x"
+  },
+  {
+    "date": "2019-11-06",
+    "categories": [
+      "Farming / Animals"
+    ],
+    "msg_count": 4,
+    "bug_description": "I've noticed that if I send my troops after something, like a fox, and the animal falls asleep the troops all just stand there doing nothing until the animal wakes up.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "strangershame"
+  },
+  {
+    "date": "2019-11-08",
+    "categories": [
+      "Crash / Freeze",
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 43,
+    "bug_description": "2019.11.08 19:07:45:831 Desktop resolution:  3840 x 1086\n2019.11.08 19:07:45:905 Couldn't open json file.  \"C:/Users/DomDom/Documents/My Games/Ingnomia/mods/activemods.json\"\n2019.11.08 19:07:45:905 Version:  \"0.7.0.9\"  Last run version was  \"0.7.0.9\"\n2019.11.08 19:07:45:905 *** Global reset\n2019.11.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "dom7768"
+  },
+  {
+    "date": "2019-11-10",
+    "categories": [
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 11,
+    "bug_description": "2019.11.10 11:34:46:297 Desktop resolution:  3840 x 1080\n2019.11.10 11:34:46:349 Couldn't open json file.  \"C:/Users/Madagaia/Documents/My Games/Ingnomia/mods/activemods.json\"\n2019.11.10 11:34:46:353 Version:  \"0.7.1.5\"  Last run version was  \"0.7.1.5\"\n2019.11.10 11:34:46:355 *** Global reset\n2019.1",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "madagaia"
+  },
+  {
+    "date": "2019-11-12",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 8,
+    "bug_description": "curious why start profession name with \"my\" are there some that are not yours",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-11-14",
+    "categories": [
+      "Combat / Military",
+      "Crafting / Workshop"
+    ],
+    "msg_count": 3,
+    "bug_description": "This is a bug right?: Bone table requires 8 armor plates to craft",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "dom7768"
+  },
+  {
+    "date": "2019-11-19",
+    "categories": [
+      "Jobs / Tasks",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "Performance"
+    ],
+    "msg_count": 43,
+    "bug_description": "you create a crafting job, then you have the opportunity to adjust parameters, like materials and number of items you want to craft, then you press the big craft button for that job",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-11-20",
+    "categories": [
+      "Building / Construction"
+    ],
+    "msg_count": 4,
+    "bug_description": "Well it's a lot easier to drop down than climb back up",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-11-20",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "Save / Load"
+    ],
+    "msg_count": 14,
+    "bug_description": "i have weird bug",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "sachadef"
+  },
+  {
+    "date": "2019-11-20",
+    "categories": [
+      "Jobs / Tasks",
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 22,
+    "bug_description": "roest what about u make a little channel where basic stuff that are not told in the game can be spread to new players",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "sachadef"
+  },
+  {
+    "date": "2019-11-20",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 3,
+    "bug_description": "that has been corrected hours ago 😛",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-11-21",
+    "categories": [
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 2,
+    "bug_description": "is there a bug not being able to build walls underground? i tried \"Replace wall\" and digging up the wall up first and putting a wall down myself and can't do it.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "manywilds"
+  },
+  {
+    "date": "2019-11-21",
+    "categories": [
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 3,
+    "bug_description": "replace wall works underground and you can build wood walls underground so something else is going on",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-11-24",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "Whatever it was, this update fixed the ASUS ROG Phoebus bug 😛",
+    "dev_responded": false,
+    "likely_fixed": true,
+    "author": "dom7768"
+  },
+  {
+    "date": "2019-11-24",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 3,
+    "bug_description": "it did start earlier with phoebus on, but now when I tried, back to white screen. oh well 🙂",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "dom7768"
+  },
+  {
+    "date": "2019-11-24",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Save / Load",
+      "Performance"
+    ],
+    "msg_count": 27,
+    "bug_description": "this wastes much time compared to the case where one gnome keeps mining the next block as it is exposed in the same area instead of pathing to the next already exposed (green) block at the other mining area.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "fourofire"
+  },
+  {
+    "date": "2019-11-25",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "I don't have a bug but that code alchemicalwizard posted is styled incorrectly, classes and class members should have their first letter uppercase.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "saint_of_grey"
+  },
+  {
+    "date": "2019-11-25",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 2,
+    "bug_description": "you are both wrong, but that was established long ago",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-11-25",
+    "categories": [
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 21,
+    "bug_description": "well i just checked , it works, so send a save, can't tell what's wrong there from looking at a small pic",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2019-11-27",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 12,
+    "bug_description": "if you have multiple then there is some serious problem with your steam installation, or you're doing something unusual with that particular folder like syncing between multiple computers",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "fourofire"
+  },
+  {
+    "date": "2019-11-30",
+    "categories": [
+      "Farming / Animals",
+      "Save / Load"
+    ],
+    "msg_count": 7,
+    "bug_description": "It's a great size for posting memes",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".alch"
+  },
+  {
+    "date": "2019-11-30",
+    "categories": [
+      "Farming / Animals"
+    ],
+    "msg_count": 3,
+    "bug_description": "I see an egg move in the group of eggs over near the river bend, unless someone has drugged me too",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "vanda1475"
+  },
+  {
+    "date": "2019-12-01",
+    "categories": [
+      "Jobs / Tasks",
+      "Building / Construction"
+    ],
+    "msg_count": 5,
+    "bug_description": "So... interesting bug. When you have gnomes \"replace floor\", it exposes the info of the tiles below it. Even more interesting, you can designate a swath of  grey tiles for floor change and as long as at least one of the tiles is next to an open tile.. the gnomes will wade into the darkness to change",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "katryn"
+  },
+  {
+    "date": "2019-12-10",
+    "categories": [
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "UI / Display"
+    ],
+    "msg_count": 9,
+    "bug_description": "The pasture window won't tell you the true total either",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "hughheggen"
+  },
+  {
+    "date": "2019-12-10",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 3,
+    "bug_description": "Gemmed rings seem to not take the metal material into account when determining value",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "hughheggen"
+  },
+  {
+    "date": "2019-12-10",
+    "categories": [
+      "Farming / Animals"
+    ],
+    "msg_count": 5,
+    "bug_description": "I'm having problems with cows and chickens as well. they will have one batch of offspring from start but then don't seem to reproduce any more",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "dom7768"
+  },
+  {
+    "date": "2019-12-13",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 1,
+    "bug_description": "Hello. Tried to play the game on my computer (which isn't technichally a supported operating system, but nevermind that for now) and the executable was never installed. I keep doing digging and apparently that is a problem caused by a missing configuration?",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "ald_productions"
+  },
+  {
+    "date": "2019-12-13",
+    "categories": [
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 19,
+    "bug_description": "The linux client shows all the games till you filter it, and I wouldn't bother anyone with an issue regarding running it on linux. (That's where shenanigans begins). And alright, I'll seek elsewhere. If I get it resolved through steam and it works really well just running on Proton, would you like m",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "ald_productions"
+  },
+  {
+    "date": "2019-12-18",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 3,
+    "bug_description": "are you sure they're not just working on something else?",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "spookghetti."
+  },
+  {
+    "date": "2019-12-23",
+    "categories": [
+      "Combat / Military",
+      "UI / Display"
+    ],
+    "msg_count": 3,
+    "bug_description": "don't know if it's known but when making more than one squad for military you are not able to have separate formations between squads, all squads change to one formation instead of being able to select separate ones for each. it all overwrites all squads to one formation when selecting the next squa",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "_dreddos"
+  },
+  {
+    "date": "2019-12-24",
+    "categories": [
+      "Combat / Military",
+      "UI / Display"
+    ],
+    "msg_count": 4,
+    "bug_description": "is it possible to add the other weapons crafted to be wielded in the uniform menu, atm only pick axe felling axe and sword can be selected which leaves my hammers, warhammers and other weapons useless and you are unable to dual wield which im sure will be added later but wanted to report whatever i ",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "_dreddos"
+  },
+  {
+    "date": "2020-01-03",
+    "categories": [
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 17,
+    "bug_description": "This one looks like it could have some vague millitary possibility.\nhttps://en.m.wikipedia.org/wiki/Max_Planck_Institute_for_Biological_Cybernetics",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "yksleets"
+  },
+  {
+    "date": "2020-01-07",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 3,
+    "bug_description": "He's right, I full screen on my Ultrawide 3440x1440 and right click doesn't work. Don't know if it's an Ultrawide specific problem though. But that is with the frame less window option checked. If you uncheck it and full screen, right click works fine.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "vanda1475"
+  },
+  {
+    "date": "2020-01-19",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 1,
+    "bug_description": "Hey, I just made a bug report about some issues with stockpiles, but my game will not load up anymore. I sent you the file using F11 before I tried restarting so you should have it. If you need any other info please let me know.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "tek1510"
+  },
+  {
+    "date": "2020-01-20",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 1,
+    "bug_description": "you need to load a save before that bug report save, that one is broken, for some reason some files in it are empty, I can't load it either",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-01-20",
+    "categories": [
+      "Crash / Freeze",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 55,
+    "bug_description": "in the save basically stockpiles just stopped opening up info panels. So I would click on them and nothing happens. Not all of them, but like a lot of them. Then when I tried RRing the game it never loaded again and I couldnt access any earlier saves.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "tek1510"
+  },
+  {
+    "date": "2020-01-22",
+    "categories": [
+      "Crash / Freeze",
+      "Combat / Military",
+      "UI / Display",
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 13,
+    "bug_description": "before I submit a report just wante dto ask is there a reason my military squad would just freeze when I click on a threat",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "tek1510"
+  },
+  {
+    "date": "2020-02-02",
+    "categories": [
+      "Farming / Animals"
+    ],
+    "msg_count": 1,
+    "bug_description": "BUG: If gnomes move duck eggs from one pasture to another will make eggs walk around as ducks after the next sunrise.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2020-02-05",
+    "categories": [
+      "Crash / Freeze",
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 1,
+    "bug_description": "BUG: Gnomes dead bodies are  showing on a previous on load, if you load before exiting the game. If you save a game, then one gnome dies, and you load a previous save of the same world (before exiting the game), the loaded  game will show de body of the gnome killed before the load, on the same spot",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2020-02-05",
+    "categories": [
+      "Stockpile / Storage",
+      "Farming / Animals",
+      "World / Terrain"
+    ],
+    "msg_count": 12,
+    "bug_description": "Also a bug I think, the tiles where hay have been harvested are not regenerating and recovering to regular grass ever again, even with season changing (at least visually). \nOr do they take a long time to grow again?",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2020-02-05",
+    "categories": [
+      "Combat / Military",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "World / Terrain"
+    ],
+    "msg_count": 2,
+    "bug_description": "BUG: Don't know if you tried to address this issue already, but Autocraft (craft ingredients) is still multiplying items on the workshop that received the order, for the components that require more than on of the same: For instance: while crafting a heavy plate armor with the option to craft ingred",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2020-02-07",
+    "categories": [
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Building / Construction"
+    ],
+    "msg_count": 13,
+    "bug_description": "BUG: Replacing floor under a workshop shows the correct sprite and tile type on debug info after it is done, but if you deconstruct the workshop, the tiles revert back to the original tile that was there when the workshop was built. (I think this was reported before by someone else, listing it here ",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2020-02-16",
+    "categories": [
+      "UI / Display",
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 7,
+    "bug_description": "been a long time since i added that but the functionality shouldn't be the same, dig hole digs a hole and then creates a ramp from the surrounding topology, same way as ramps are created on world generation, dig ramp lets you select the orientation",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-02-28",
+    "categories": [
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 25,
+    "bug_description": "For some reason my miners started acting weird. I used explorative mine wall and hit a vein. NOw a miner mines just one block and drops the pick. Another gnome has to pisk it up to continue, and so on and on.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".elfu"
+  },
+  {
+    "date": "2020-02-28",
+    "categories": [
+      "Pathfinding",
+      "Farming / Animals",
+      "UI / Display"
+    ],
+    "msg_count": 22,
+    "bug_description": "Interesting things happening. Steam overlay doesn't like the UI. When I resize a window, the notifications (friends playing a game, etc) like to wander around the screen",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".elfu"
+  },
+  {
+    "date": "2020-02-29",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Building / Construction"
+    ],
+    "msg_count": 4,
+    "bug_description": "I recreated the bug:\n1. Use _replace floor_ on a 3x3 spot\n2. Build a workshop over it\n3. _Deconstruct_ a workshop\n4. You cannot build anything over that 3x3 spot now.\n5. _Deconstruct_ the floor\n6. You now have a floorless spot which you cannot fill up by floor or wall anymore",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": ".elfu"
+  },
+  {
+    "date": "2020-03-01",
+    "categories": [
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Building / Construction"
+    ],
+    "msg_count": 63,
+    "bug_description": "the current behavior is how it is wanted to be, 1.) if you create a room and your starting tile is inside an existing room it will extend the room 2) if you start outside and overlap it will create a new room on the tiles that is not the overlapping 3) if you don't overlap rooms will not join becaus",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-03-02",
+    "categories": [
+      "Crash / Freeze",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 92,
+    "bug_description": "And the other, somewhat related issue, that you can currently never choose an item of a specific material, unless you have already crafted at least one of it.\nExpectation would had been that you unlocked e.g. *all* of \"Orange Wood\" recipes after obtaining your first \"Orange wood log\". Likewise for \"",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "ext3h"
+  },
+  {
+    "date": "2020-03-02",
+    "categories": [
+      "Jobs / Tasks",
+      "Farming / Animals",
+      "UI / Display",
+      "Building / Construction"
+    ],
+    "msg_count": 7,
+    "bug_description": "Rendering bug. There is actually *both* a slope and plant on that tile. You can see it bugging when the plant starts growing, it replaces the slope (in rendering, and in that UI), and toggles back when harvested. Not for all tiles though, some just remain \"empty\" by chance.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "ext3h"
+  },
+  {
+    "date": "2020-03-09",
+    "categories": [
+      "World / Terrain"
+    ],
+    "msg_count": 7,
+    "bug_description": "So I think the water flowing strangely upon world creation, is a semi-bug. Not a full-fledged bug, but something that should/could be tweaked and repaired.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".elfu"
+  },
+  {
+    "date": "2020-03-09",
+    "categories": [
+      "World / Terrain"
+    ],
+    "msg_count": 3,
+    "bug_description": "More to it, in my first, bit advanced world, after about a year, the water actually started to disappear. My river went dry and the ocean level went down considerably.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".elfu"
+  },
+  {
+    "date": "2020-03-17",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 8,
+    "bug_description": "I must have gotten super unlucky then since all of my trading civs in the game specialize in forestry like the logging civs.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "profitx10"
+  },
+  {
+    "date": "2020-04-13",
+    "categories": [
+      "Building / Construction"
+    ],
+    "msg_count": 1,
+    "bug_description": "Room designation bug:\n- If I designate a room and place a door, it will be enclosed\n- If I mine a portion of wall, it reverts back to being non-enclosed\n- If I then _expand_ that room to include mined out area, it will remain non-enclosed\n- If I have furniture/utils installed in a tile and then desi",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": ".elfu"
+  },
+  {
+    "date": "2020-05-30",
+    "categories": [
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 1,
+    "bug_description": "> Room designation bug:\n> - If I designate a room and place a door, it will be enclosed\n> - If I mine a portion of wall, it reverts back to being non-enclosed\n> - If I then _expand_ that room to include mined out area, it will remain non-enclosed\n> - If I have furniture/utils installed in a tile and",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2020-07-01",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 5,
+    "bug_description": "<@280266293490221056> when I steam stream ingomia from PC to shitty laptop it seems to miss some mouse clicks, or maybe double register some clicks.  Both RMB as and LMB.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "thepak."
+  },
+  {
+    "date": "2020-07-01",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 5,
+    "bug_description": "Im guessing all of those are irrelevant with the new UI coming out?",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "thepak."
+  },
+  {
+    "date": "2020-07-02",
+    "categories": [
+      "UI / Display",
+      "Performance",
+      "World / Terrain"
+    ],
+    "msg_count": 12,
+    "bug_description": "I keep forgetting to ask, which version is the most helpful to provide bug reports to you for when you eventually get past the functionality of the UI stuff? I've play the ui branch, 7.5 public branch and the 7.5 indev, stayed on the indev because it seems the most bug free and still be fun to play",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "vanda1475"
+  },
+  {
+    "date": "2020-07-02",
+    "categories": [
+      "Crash / Freeze",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Save / Load",
+      "Performance"
+    ],
+    "msg_count": 10,
+    "bug_description": "Definitely better performance so far, but also a handful of bugs, nothing game breaking yet, just annoyances and inconveniences, haven't got very far yet due to multitasking watching star trek from the very beginning. So I'll see what other bugs I find before reporting them. F11 bug report not funct",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "vanda1475"
+  },
+  {
+    "date": "2020-07-02",
+    "categories": [
+      "Crafting / Workshop",
+      "UI / Display"
+    ],
+    "msg_count": 8,
+    "bug_description": "Good morning, I've found another ui related issue unsure if it would be considered a bug or not but when rotating the map the view refocusses and you have to go hunting for your gnomes. It would be nice if the screen stayed focussed on the same point with the rotation as it use to.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "retrybute"
+  },
+  {
+    "date": "2020-07-04",
+    "categories": [
+      "Crash / Freeze",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 52,
+    "bug_description": "8. Harvest Hay not working, I wasn't sure if the feature was just not enabled yet but didn’t see a reason for it to not work with the current UI interface for pastures, just figured it would harvest as many tiles worth that was designated.\n9. Auto-craft seems to be on but so far only for workshop bu",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "vanda1475"
+  },
+  {
+    "date": "2020-07-05",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "UI / Display",
+      "Building / Construction"
+    ],
+    "msg_count": 2,
+    "bug_description": "Wanted to check what bug annoyed me in the normal branch and found it. For lack of a better word, the ghost sprite of the wall you want too build doesn't show once you've created that build job. There are 3 wood walls placed between the stockpiles, the third one being invisible within my cancel job ",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "vanda1475"
+  },
+  {
+    "date": "2020-07-05",
+    "categories": [
+      "Stockpile / Storage",
+      "UI / Display"
+    ],
+    "msg_count": 3,
+    "bug_description": "<@!594512565825044510> if you click the stockpile button on top of the screen you get a list of all stockpiles, there you can reoorder them",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-07-09",
+    "categories": [
+      "Jobs / Tasks",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 36,
+    "bug_description": "I found an interesting thing with traders, it looks like the inventory they are pulling for the player inventory is sometimes adding more than what I have in my stockpiles. For example it shows 3 stacks of 50 sandstone blocks however I have only 50. In addition 2 of the stacks are worth (1) and the ",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "retrybute"
+  },
+  {
+    "date": "2020-07-26",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 5,
+    "bug_description": "Hey <@!280266293490221056> on the UI_Rewrite branch, have settings been implemented yet? Just asking because they are WAY too big for the screen. I'm not even sure I have all the buttons showing.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "thepak."
+  },
+  {
+    "date": "2020-08-09",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "Hello gnomes and humans. \r\nI have just found this game and installed it. Unfortunately though it doesn't start at all. Does anyone know how to fix this issue?\r\nI have added the log.txt",
+    "dev_responded": false,
+    "likely_fixed": true,
+    "author": "_modsognir"
+  },
+  {
+    "date": "2020-08-10",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "try reverifying the game cache using steam. Seems the \"C:\\Users\\Modsognir\\Documents\\My Games\\Ingnomia\\settings\\newgame.json\" got an error in it....?",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "dommain."
+  },
+  {
+    "date": "2020-08-10",
+    "categories": [
+      "Building / Construction"
+    ],
+    "msg_count": 7,
+    "bug_description": "I've had a bit of a problem with Avast trying to block the creation of the log.txt, but even after adding exceptions and even turning the thing off completely the game didn't want to start. The game does create some files in the folder though, like keybindings.json and config.json",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "_modsognir"
+  },
+  {
+    "date": "2020-08-10",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 6,
+    "bug_description": "I'm trying to make a linux port. But there is a missing header.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "otreblan"
+  },
+  {
+    "date": "2020-08-11",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 26,
+    "bug_description": "<@!402954289166942209> We might be one step further with the black screen. I have instructed Noesis to resolve its resources by absolute path instead. Can you check if that was already sufficient?",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "ext3h"
+  },
+  {
+    "date": "2020-08-13",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 3,
+    "bug_description": "I see no grassdetails in the mushroom layer. Anyone else seeing this?",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "tacyn."
+  },
+  {
+    "date": "2020-08-14",
+    "categories": [
+      "UI / Display",
+      "World / Terrain"
+    ],
+    "msg_count": 3,
+    "bug_description": "OH the terrain was the same shape as surface part so I thought it was the same point and \"0\" was ground level or something 😆",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "lemmily"
+  },
+  {
+    "date": "2020-08-15",
+    "categories": [
+      "UI / Display",
+      "World / Terrain"
+    ],
+    "msg_count": 1,
+    "bug_description": "Yup that's the same error I was having too. For some reason the game is sometimes showing the ground level and allowing you interact with it, while the variable (I guess) is actually at Level 1 or 0. So the moment you change Z-Levels, it thinks you're at 0 or 1 and not 100 which it was previously sh",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "kinvadren"
+  },
+  {
+    "date": "2020-08-15",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 5,
+    "bug_description": "on my system, after just updating in steam, i can no longer see anything in the settings panels - they're just black, and the \"video\" and \"audio\" settings panels have their title in the upper part of the panel, but that' s it.  is this a known issue?",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "foxprimegames"
+  },
+  {
+    "date": "2020-08-17",
+    "categories": [
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 1,
+    "bug_description": "minor bug report:  in the load game screen, the scrollbar for the version of the saved game overlaps the rightmost digit in the date stamp.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "foxprimegames"
+  },
+  {
+    "date": "2020-08-28",
+    "categories": [
+      "Combat / Military",
+      "UI / Display",
+      "Save / Load",
+      "Performance"
+    ],
+    "msg_count": 19,
+    "bug_description": "I didn't see this in the subreddit or on Steam, but:\n\nIt seems the year is not being reset if I make a embark on a new journey (new seed and everything). I started a new game and a new seed and started on year 9, so when Autumn rolled around, 10 goblins came to attack the \"first\" year.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "djudgya"
+  },
+  {
+    "date": "2020-08-29",
+    "categories": [
+      "Farming / Animals",
+      "UI / Display"
+    ],
+    "msg_count": 1,
+    "bug_description": "Here is another bug: When an animal breeder trader arrives, you can't trade for any of their livestock. Clicking on the arrow to move the livestock to the right window does not do anything",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "djudgya"
+  },
+  {
+    "date": "2020-08-29",
+    "categories": [
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 5,
+    "bug_description": "Not sure if intended, but it seems if there is a mined out level beneath a level of trees, the light seeps through under the trees. I think this also affects having personal/dormitory rooms a level underneath the \"ground\" level where they do not end up enclosed even if the room is enclosed and has a",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "djudgya"
+  },
+  {
+    "date": "2020-08-29",
+    "categories": [
+      "UI / Display",
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 14,
+    "bug_description": "Also noticed something else tiny... When typing letters in a text box, if the key is a command key (connected to an event), it still triggers. ie. Typing \"zloaf\" or \"bully\" in a text box for naming something, triggers the UI zoom in and zoom out events. The letter still registers in the text box as ",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "kinvadren"
+  },
+  {
+    "date": "2020-08-30",
+    "categories": [
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 9,
+    "bug_description": "gotta investigate, that's something the framework is doing, i think when you mouse over scrollbars, not sure if it's an error on my side or theirs",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-08-30",
+    "categories": [
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 7,
+    "bug_description": "Loving the work you've done on the UI! I'm missing a few hints that I used to figure out what things go in which containers. Where can I find that? \nAlso bug:",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "k7sw"
+  },
+  {
+    "date": "2020-08-30",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "Dyer can't figure out why he can't make dyes. Gives up and converts shop and dye vat into hot tub. All gnomes rejoice.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "kinvadren"
+  },
+  {
+    "date": "2020-09-12",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 1,
+    "bug_description": "CuttingWheel is missing a BaseSprite entry in the SQL",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "tacyn."
+  },
+  {
+    "date": "2020-10-07",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 6,
+    "bug_description": "we decided against re-implementing the right click menu because we felt it was simply there because people had problems with the old UI, with clearly labeled buttons that say what they do this shouldn't be needed, will monitor demand but it's probably not comming back",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-10-07",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 3,
+    "bug_description": "The reason I liked right-click was that it meant I didn't have to go down to the menu, everything was right where I was going to click next...",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "korvar"
+  },
+  {
+    "date": "2020-10-07",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 1,
+    "bug_description": "I used both but I think I used right click more. Can't remember.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "xeridanus"
+  },
+  {
+    "date": "2020-10-12",
+    "categories": [
+      "Crash / Freeze",
+      "UI / Display"
+    ],
+    "msg_count": 6,
+    "bug_description": "Not sure if I'm doing something wrong, but can't move map with WASD.  Can left-click and move, but that gets annoying fast.  Already deleted the .../MyGames/Ingnormia folder",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "znd1320"
+  },
+  {
+    "date": "2020-10-20",
+    "categories": [
+      "Stockpile / Storage",
+      "UI / Display"
+    ],
+    "msg_count": 1,
+    "bug_description": "I second Dinosaure's issue. Can't set up a stockpile if I can't get to other filters. If I select a filter, it will add a small scroll bar but not enough and may even cut off items in the filter's list.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "anhelia."
+  },
+  {
+    "date": "2020-10-20",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 1,
+    "bug_description": "yes it seems the ScrollView goes beyond what is shown that's why it doesn't show the scroll bar first and clips",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-11-11",
+    "categories": [
+      "Performance"
+    ],
+    "msg_count": 3,
+    "bug_description": "well it's fixed next update",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-11-12",
+    "categories": [
+      "Jobs / Tasks",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 18,
+    "bug_description": "I think this savefile should correctly show the mining without a pick bug. At least I consistently get the behavior from loading the save. Still unsure how to reproduce 100% of the time.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "ash2ruin"
+  },
+  {
+    "date": "2020-11-13",
+    "categories": [
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 31,
+    "bug_description": "Appears to be gone. Not entirely sure if that was user error or an actual bug. Might just have been a lack of coffee.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "ash2ruin"
+  },
+  {
+    "date": "2020-11-13",
+    "categories": [
+      "Farming / Animals",
+      "Save / Load"
+    ],
+    "msg_count": 4,
+    "bug_description": "you had to try the one animal type that had missing definitions",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-11-13",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Combat / Military",
+      "Crafting / Workshop",
+      "UI / Display",
+      "Building / Construction"
+    ],
+    "msg_count": 14,
+    "bug_description": "Also I've noticed they don't seem to want to move items from a stockpile to another stockpile even if it has higher priority and take/pull from stockpiles are set right",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "ash2ruin"
+  },
+  {
+    "date": "2020-11-15",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "Hello! downloaded today since Nook is streaming it tn and I use to be a hardcore Gnomoria fan so I was excited to play! however I cannot launch the game! I followed the suggested fix that was posted on the steam troubleshooting page but it didnt seem to fix the problem. Is this a problem on my end? ",
+    "dev_responded": false,
+    "likely_fixed": true,
+    "author": "gabethebabe212"
+  },
+  {
+    "date": "2020-11-15",
+    "categories": [
+      "Pathfinding",
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 44,
+    "bug_description": "Hi! Same for me, just downloaded it, (because of Nook) I get the white screen and not much else :-S\nWent through the different suggestions on the Steam-page but nothing seems to work.\n\nThe end of my log.txt looks like this:\n2020.11.15 10:52:31:481 [NOESIS] I 'TileInfo.xaml' loaded\n2020.11.15 10:52:3",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "dreamingjohnny"
+  },
+  {
+    "date": "2020-11-16",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 2,
+    "bug_description": "The error is quite clear: there's a problem with OpenGL.\n> 2020.11.15 02:38:07:054 [OpenGL] Error   high : glLinkProgram failed to link a GLSL program with the following program info log: 'Fragment shader(s) failed to link.\n> Fragment link error: HW_UNSUPPORTED.\n> ERROR: Internal compile error, erro",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "dinosaure.plz_nofriendrequests"
+  },
+  {
+    "date": "2020-11-16",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "Right, there is an driver internal corruption in the compiled shader cache. Real driver bug, these are rare. Driver reinstall is the only option there.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "ext3h"
+  },
+  {
+    "date": "2020-11-16",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "And even if I can't figure it out, it's at least something I can forward to an developer on AMDs end.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "ext3h"
+  },
+  {
+    "date": "2020-11-16",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 4,
+    "bug_description": "Just had this come up.  Steam version, recently updated, after playing for a few minutes:",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "korvar"
+  },
+  {
+    "date": "2020-11-21",
+    "categories": [
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 14,
+    "bug_description": "Hi, I tried to launch Ingnomia and all that happens is that Steam says its playing and then it stops after a second or two. Tried to remove the Ingomia-folder i my games, the folder is recreated but no log.txt only three settings-files in settings-folder. Tried to reinstall latest graphics driver, V",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "mohogoram"
+  },
+  {
+    "date": "2020-11-22",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 2,
+    "bug_description": "I'm having issues building the 0.8.0 release on Debian 10 with NoesisGUI 3.0.7 for Linux.\n```\nNoesisGUI/Include/NsCore/TypePropertyUtil.h: In function ‘Noesis::Ptr<Noesis::BaseComponent> Noesis::GetComponent(const Noesis::TypeProperty*, const void*, Noesis::NonRefCountedType)’:\nNoesisGUI/Include/NsC",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "mason1920"
+  },
+  {
+    "date": "2020-11-22",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 4,
+    "bug_description": "<@!245332901623889920> i had a similar issue, had to manually add template everywhere it threw an error\ngoing with my inexperience, there may be a setting somewhere to bypass that",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "cravenwarrior"
+  },
+  {
+    "date": "2020-11-22",
+    "categories": [
+      "Combat / Military"
+    ],
+    "msg_count": 6,
+    "bug_description": "But I am having another error now. This time, with the actual game files.\n```\nIngnomia-0.8.0/src/game/militarymanager.cpp: In member function ‘void MilitaryManager::moveSquadUp(unsigned int)’:\nIngnomia-0.8.0/src/game/militarymanager.cpp:413:13: error: ‘class QList<Squad>’ has no member named ‘swapIt",
+    "dev_responded": false,
+    "likely_fixed": true,
+    "author": "mason1920"
+  },
+  {
+    "date": "2020-11-23",
+    "categories": [
+      "Pathfinding",
+      "UI / Display"
+    ],
+    "msg_count": 5,
+    "bug_description": "```\n/usr/bin/ld: /tmp/ccYv7LGf.ltrans0.ltrans.o: in function `MainWindow::registerComponents()':\n/tmp/tmp.7wQZNwHSL0/Ingnomia-0.8.0/src/gui/mainwindow.cpp:642: undefined reference to `NoesisApp::Launcher::RegisterAppComponents()'\n```",
+    "dev_responded": false,
+    "likely_fixed": true,
+    "author": "mason1920"
+  },
+  {
+    "date": "2020-11-24",
+    "categories": [
+      "World / Terrain"
+    ],
+    "msg_count": 1,
+    "bug_description": "Ha! I finally got time to see the game and help. I found a overfloving bug. it seems that the game generated one side of the bank higher plus some extra water from the side of the map.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2020-11-25",
+    "categories": [
+      "Crash / Freeze",
+      "UI / Display",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 12,
+    "bug_description": "The game has stopped working. For the third time in a row. Time stops. Nothing moves, only the interface and menu works. Then Windows says that the program is not responding.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "xytorinsky"
+  },
+  {
+    "date": "2020-11-25",
+    "categories": [
+      "UI / Display",
+      "Performance"
+    ],
+    "msg_count": 7,
+    "bug_description": "ok i see what's going on, i made it so that the game is paused when that dialog pops up and you can't click the speed buttons, but you continued with space",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-11-26",
+    "categories": [
+      "Crash / Freeze",
+      "Crafting / Workshop",
+      "Save / Load",
+      "Performance"
+    ],
+    "msg_count": 5,
+    "bug_description": "I'm getting a segfault from my workshops. Built 241c83. Have partial stack trace:\n\n#0 workshop.cpp:1326\n#1 workshopmanager.cpp:223\n#2 jobmanager.cpp:197\n#3 jobmanager.cpp:144\n\n(gdb) print this.m_properties\nCannot access memory at 0x2e00...",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "fred042909"
+  },
+  {
+    "date": "2020-11-26",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 1,
+    "bug_description": "I don't know if this is a bug, but at the top of my game screen there is always the word \"Ingnomia\", is that the intended behavior?",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "carlosgrr"
+  },
+  {
+    "date": "2020-11-27",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 2,
+    "bug_description": "Hi, this is not a bug. But I second that's annoying.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "dinosaure.plz_nofriendrequests"
+  },
+  {
+    "date": "2020-11-28",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 2,
+    "bug_description": "Yup. :p First translation I've PRed was with a blank in French. But that was not \"fair\", thus I've sent it with the text, and only my locale doesn't features this text.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "dinosaure.plz_nofriendrequests"
+  },
+  {
+    "date": "2020-12-01",
+    "categories": [
+      "Stockpile / Storage",
+      "Farming / Animals"
+    ],
+    "msg_count": 2,
+    "bug_description": "Hey there!\nThis game looks really promising, but sadly it crashes rather frequently (steam version). The logfile doesn't seem to contain any real hint (but I can of course post it if you want), so I tried running the game with an attached debugger -- best I could get is this, maybe it helps. 🙂 The s",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "limette_"
+  },
+  {
+    "date": "2020-12-02",
+    "categories": [
+      "Crash / Freeze",
+      "Save / Load"
+    ],
+    "msg_count": 13,
+    "bug_description": "always? because i'm trying it with the steam version right now and it doesn't",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-12-02",
+    "categories": [
+      "Performance"
+    ],
+    "msg_count": 4,
+    "bug_description": "I don't know if this is a bug or intended but it would be nice when doing exploration mining (straight line across map) if it also checked the adjacent tiles as sometimes I'll just graze the edge of a vein and it won't get mined automatically.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "ash2ruin"
+  },
+  {
+    "date": "2020-12-02",
+    "categories": [
+      "Crafting / Workshop",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 3,
+    "bug_description": "Dont know if is a bug or not, was trying to replace a wood furnace by a sawmill, deconstructed normally but it was not letting me put the new workshop, tought that might be the flooring, so i removed it, now i cant build ou replace the floor. It has a second floor above it.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "vidkin"
+  },
+  {
+    "date": "2020-12-02",
+    "categories": [
+      "Crafting / Workshop",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 15,
+    "bug_description": "no the error is that the tiles still have the constructed flag, so it wasn't removed for some reason when you deconstructed that workshop",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-12-03",
+    "categories": [
+      "World / Terrain"
+    ],
+    "msg_count": 1,
+    "bug_description": "I tried taking a peek of the side of the level 20 (scrolling-down), but the game closes, is that a known problem?",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "carlosgrr"
+  },
+  {
+    "date": "2020-12-04",
+    "categories": [
+      "Building / Construction"
+    ],
+    "msg_count": 7,
+    "bug_description": "wasnt possible when I tried it, but will do it again and confirm or not",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "mcphisto2051"
+  },
+  {
+    "date": "2020-12-05",
+    "categories": [
+      "Crash / Freeze",
+      "Farming / Animals",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 3,
+    "bug_description": "2020.12.05 17:01:28:976 failed to create root node for behavior tree  \"MainTree\"\n2020.12.05 17:01:28:976 Fatal error. Failed to load behavior tree\n2020.12.05 17:01:28:976 failed to load behavior tree! \"Egg\"\nCould this be the reason, i get crash without error or something like that every now and then",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "lokkiser"
+  },
+  {
+    "date": "2020-12-05",
+    "categories": [
+      "Stockpile / Storage",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 2,
+    "bug_description": "So, i saw some dead animals on the ocean shore, decided do gather them, gnomes died the same way the animals, reloaded the save, gnomes still alive but their corpses still floating on the water, reload another 3 times, corpses still there, closed and opened the game again, bloated corpses vanished, ",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "vidkin"
+  },
+  {
+    "date": "2020-12-06",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 3,
+    "bug_description": "Totally happy, gathering flowers and fruits, then they all jumped to their deaths on a blink of a eye",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "vidkin"
+  },
+  {
+    "date": "2020-12-07",
+    "categories": [
+      "Crash / Freeze"
+    ],
+    "msg_count": 1,
+    "bug_description": "Can confirm. There is stuff happening in the wrong thread, and on to of that we managed to freeze up the graphic card driver somehow.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "ext3h"
+  },
+  {
+    "date": "2020-12-07",
+    "categories": [
+      "Crash / Freeze",
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 8,
+    "bug_description": "please check if it's still red after saving and loading and if yes it would be cool if you open an issue on github and attach the save",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-12-08",
+    "categories": [
+      "UI / Display",
+      "Building / Construction"
+    ],
+    "msg_count": 20,
+    "bug_description": "What GPU are you using? Can't reproduce this defect, screenshots via steam work just fine for me in full-screen and windowed mode.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "ext3h"
+  },
+  {
+    "date": "2020-12-08",
+    "categories": [
+      "Crash / Freeze"
+    ],
+    "msg_count": 5,
+    "bug_description": "no, it's helpful if you did something you think that caused it that you write it in the comment field but other than that it just sends everything we need",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-12-08",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 2,
+    "bug_description": "<@!396000465843781643> Todays update may have solved that issue for you.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "ext3h"
+  },
+  {
+    "date": "2020-12-09",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "Interesting graphic bug i think...",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "vidkin"
+  },
+  {
+    "date": "2020-12-09",
+    "categories": [
+      "Combat / Military"
+    ],
+    "msg_count": 4,
+    "bug_description": "It's the Palisade visual glitch",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "cptvolkow"
+  },
+  {
+    "date": "2020-12-13",
+    "categories": [
+      "Combat / Military",
+      "Save / Load"
+    ],
+    "msg_count": 8,
+    "bug_description": "Old stockpiles broken, want the save?",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "cptvolkow"
+  },
+  {
+    "date": "2020-12-14",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 1,
+    "bug_description": "Getting random clutter of copper chainmail, on load you can't detect them in inventory, but you can see, when new clutter is generated you can see those in above inventory view",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "cptvolkow"
+  },
+  {
+    "date": "2020-12-14",
+    "categories": [
+      "Stockpile / Storage",
+      "UI / Display"
+    ],
+    "msg_count": 2,
+    "bug_description": "<@156919954720030723> did Gnomes die at the spots? If the items don't show up in inventory view, then it means they still count as equipped/constructed. Which of course doesn't make sense for copper mail.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "ext3h"
+  },
+  {
+    "date": "2020-12-15",
+    "categories": [
+      "Crash / Freeze",
+      "Jobs / Tasks",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 14,
+    "bug_description": "- Can't cancel a fill hole job (cursor point wall to fill and not floor above)\n- Mining cursor don't follow when turning the map",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "styfrit"
+  },
+  {
+    "date": "2020-12-16",
+    "categories": [
+      "Stockpile / Storage"
+    ],
+    "msg_count": 2,
+    "bug_description": "Bug, making a new stockpile makes that stockpile priority 1, editing a stockpile makes it a priority 1",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "cptvolkow"
+  },
+  {
+    "date": "2020-12-20",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 4,
+    "bug_description": "https://www.youtube.com/watch?v=72Nx107SGeQ&ab_channel=RalphSchurade",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-12-20",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 11,
+    "bug_description": "After today's new update and suggestion of a new game, I'm looking for seeds for wheat on the \"setup screen\" and don't see them in the seed menu. I made sure to update the client.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "valzaria"
+  },
+  {
+    "date": "2020-12-21",
+    "categories": [
+      "Farming / Animals",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 8,
+    "bug_description": "it mentions that old save games got messed up with an earlier patch which i couldn't repair, probably a mistake not to disable old saves entirely",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-12-21",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 2,
+    "bug_description": "I can't accept merchant trades.\nClicking on the \"max\" button does wrong half of the time (negating values !).",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "dinosaure.plz_nofriendrequests"
+  },
+  {
+    "date": "2020-12-23",
+    "categories": [
+      "Farming / Animals",
+      "Building / Construction"
+    ],
+    "msg_count": 8,
+    "bug_description": "I saw mouse positionning erros, likely unable to target left- top+bottom borders, and out-of-bound right cells, that led to all-layers selection.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "dinosaure.plz_nofriendrequests"
+  },
+  {
+    "date": "2020-12-23",
+    "categories": [
+      "Building / Construction"
+    ],
+    "msg_count": 4,
+    "bug_description": "honeycomb by honeycomb deconstruction? gnomes are really carfeul 😄",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "mcphisto2051"
+  },
+  {
+    "date": "2020-12-24",
+    "categories": [
+      "Pathfinding",
+      "Farming / Animals"
+    ],
+    "msg_count": 7,
+    "bug_description": "Dunno if it's a bug as such, but the default setup seems to come with only one Gnome 🙂",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "korvar"
+  },
+  {
+    "date": "2020-12-25",
+    "categories": [
+      "Jobs / Tasks",
+      "Farming / Animals"
+    ],
+    "msg_count": 7,
+    "bug_description": "Having a wood cutting grove without felling axes paralyses the whole woodworking job line",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "cptvolkow"
+  },
+  {
+    "date": "2020-12-25",
+    "categories": [
+      "Combat / Military",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 10,
+    "bug_description": "Hm having an idea, since the enemies are spawning on the first tile and it's the back of my fortress where I don't like to have a spawn, could i prevent it by building a wall without floor tiles on top to eliminate the spawn zone? 🤔",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "der_kobold"
+  },
+  {
+    "date": "2020-12-26",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Combat / Military",
+      "Building / Construction",
+      "Save / Load",
+      "Performance"
+    ],
+    "msg_count": 17,
+    "bug_description": "ok deleted the squad, guys are free, but still a slowdown. \nna nothing, just wanted to check if there is a known reason, like a stuck gnome without a path or some kind of weird bug",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "der_kobold"
+  },
+  {
+    "date": "2020-12-26",
+    "categories": [
+      "Jobs / Tasks",
+      "Crafting / Workshop"
+    ],
+    "msg_count": 2,
+    "bug_description": "can't assign a forge priority 1",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "mcphisto2051"
+  },
+  {
+    "date": "2020-12-28",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Combat / Military",
+      "Farming / Animals",
+      "Save / Load"
+    ],
+    "msg_count": 6,
+    "bug_description": "currently, more issues piling up \n\nSoldiers not picking up armor from stockpiles (though it is their uniform) \nGame telling me, that no armor is in stockpile (global) but local stockpile list armor \nThen in general armor and weapon seem to disappear? Like I have 10 full sets of armor(according to gl",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "der_kobold"
+  },
+  {
+    "date": "2020-12-28",
+    "categories": [
+      "Jobs / Tasks",
+      "Combat / Military",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 31,
+    "bug_description": "Still i would label them as low level bugs, nothing that breaks the game or causes crashes \nJust irritating and slightly annoying over longer times  :) \n\nBut I was thinking if it wouldn't be very comfortable for the future to look at the furnace and item stockpiles from the perspective to not give o",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "der_kobold"
+  },
+  {
+    "date": "2020-12-28",
+    "categories": [
+      "Jobs / Tasks",
+      "Farming / Animals",
+      "UI / Display",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 11,
+    "bug_description": "Yellow blocks are here forever, and some floors are gone. Edit: Yellow blocks and missing floors are back at normal when reloading the game, that's why <@!280266293490221056>  didn't saw that happen.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "dinosaure.plz_nofriendrequests"
+  },
+  {
+    "date": "2020-12-29",
+    "categories": [
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "UI / Display",
+      "Building / Construction"
+    ],
+    "msg_count": 8,
+    "bug_description": "I'm currently having some issues with workshops. I start with the crude workshop, that gets build, and when i next put down the carpenter workshop to get build, the only thing that happens next are just a loop of planks > sticks at the crude workshop, until it's full of sticks, and everything just c",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "lekkimsm2500"
+  },
+  {
+    "date": "2020-12-30",
+    "categories": [
+      "Farming / Animals",
+      "World / Terrain"
+    ],
+    "msg_count": 1,
+    "bug_description": "Bug question: Are you sure birchwood tree have 3x3 encumbrance? Can't have them grow nearby orange tree.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "dinosaure.plz_nofriendrequests"
+  },
+  {
+    "date": "2020-12-30",
+    "categories": [
+      "Crafting / Workshop"
+    ],
+    "msg_count": 4,
+    "bug_description": "known and fixed already, not on steam yet",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2020-12-30",
+    "categories": [
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 16,
+    "bug_description": "no the thing is that if you check harvest hay all fields of that pasture will create a harvest hay job, they just finish these jobs but when you uncheck it again it wont create new jobs",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": ".roest"
+  },
+  {
+    "date": "2021-01-01",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 2,
+    "bug_description": "getting assertion failures on startup on 0.8.6 to master, the Position ctor asserts fail on DB::initStructs when building workshops input/output tiles",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "njoyard"
+  },
+  {
+    "date": "2021-01-01",
+    "categories": [
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 4,
+    "bug_description": "cannot build stairs, nor scaffolding underneath a floor. Becomes an issue if building a multifloored structure above ground level and removed previous set of stairs. Unsure if intended",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "maveross"
+  },
+  {
+    "date": "2021-01-01",
+    "categories": [
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Farming / Animals"
+    ],
+    "msg_count": 3,
+    "bug_description": "Has \"tame wild animals\" for pastures been implemented yet? If so, I have idle gnomads and none are bringing them to the pasture.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "maveross"
+  },
+  {
+    "date": "2021-01-01",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Jobs / Tasks",
+      "Stockpile / Storage",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 90,
+    "bug_description": "There is a nasty edge case in the acceleration structure used to find good candidates for construction. It's slicing the world into an Octtree structure, and explores by traversing that tree until first hit. Which produces entirely different results from querying in a spherical pattern.",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "ext3h"
+  },
+  {
+    "date": "2021-01-02",
+    "categories": [
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 5,
+    "bug_description": "Recreated in new save multiple times. \n1. build single block width wall of soil. \n2. build ramps along the wall. \n3. Set miners to mine ramps away. \n4. Let game time go for a few ticks, such that the miners have almost finished mining the ramp.\n5. Set build floor order along top of wall. \nGnomes wil",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "maveross"
+  },
+  {
+    "date": "2021-01-02",
+    "categories": [
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 17,
+    "bug_description": "I'm having this weird issue when running the game on my discrete gpu (an amd vega m) sometimes partially fails to load some layers when loading a game (here there should be fences)",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "njoyard"
+  },
+  {
+    "date": "2021-01-03",
+    "categories": [
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "Performance"
+    ],
+    "msg_count": 10,
+    "bug_description": "I happened to screenshot fast enough.\n```\n;~ ImprScr\nHotKeySet(\"<\", \"prtscr\")\n\nGlobal $m, $c, $p=0\nDo\nUntil $p And PixelGetColor($m[0], $m[1]) <> $c ;While the \"loading\" splash screen, pixels stays same as $c\nSend(\"{PrintScreen}\")\n\nFunc prtscr()\n    $m = MouseGetPos()\n    $c = PixelGetColor($m[0], $",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "dinosaure.plz_nofriendrequests"
+  },
+  {
+    "date": "2021-01-05",
+    "categories": [
+      "Jobs / Tasks",
+      "Crafting / Workshop"
+    ],
+    "msg_count": 3,
+    "bug_description": "Job is setup, gnomes have pine pickaxes available and 2 sandstone pickaxes in carpenter ready to use",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "maveross"
+  },
+  {
+    "date": "2021-01-05",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 7,
+    "bug_description": "For some reason I expected a sandstone pickaxe to be able to mine marble haha",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "maveross"
+  },
+  {
+    "date": "2021-01-05",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 7,
+    "bug_description": "need to recheck this, the intention is that you find flintstone in the loose soil, dirt, sand, and and clay mined with wooden tools  to make a pickaxe that carries you into stone",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2021-01-05",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 4,
+    "bug_description": "Ran in to an issue where yaks would not reproduce. Reloading the game fixed. Will test more after work",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "maveross"
+  },
+  {
+    "date": "2021-01-05",
+    "categories": [
+      "UI / Display",
+      "Save / Load"
+    ],
+    "msg_count": 1,
+    "bug_description": "simply something missing in the db somewhere if they dont show up",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2021-01-09",
+    "categories": [
+      "Farming / Animals"
+    ],
+    "msg_count": 13,
+    "bug_description": "They will \"flash\" around even at night, pausing the game will cause them to fully appear in a new position. behavior is they will often move between 2 apparent positions.",
+    "dev_responded": false,
+    "likely_fixed": true,
+    "author": "maveross"
+  },
+  {
+    "date": "2021-01-09",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "ok I found the issue and it's rather perplexing that it didn't cause more trouble",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2021-01-10",
+    "categories": [
+      "Jobs / Tasks",
+      "Farming / Animals",
+      "Building / Construction"
+    ],
+    "msg_count": 5,
+    "bug_description": "Depends if the calfs have a job order to place in to pasture when born, I've had times where they'd be butchered like you mention, but also times where they'd be placed in to the pasture as intended",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "maveross"
+  },
+  {
+    "date": "2021-01-13",
+    "categories": [
+      "Stockpile / Storage",
+      "Combat / Military",
+      "Farming / Animals"
+    ],
+    "msg_count": 10,
+    "bug_description": "\"defend\" is probably not well implemented yet. Right now, it's a plain \"don't bother moving towards targets\", but it doesn't yet actually filter to include aggressive targets only.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "ext3h"
+  },
+  {
+    "date": "2021-01-13",
+    "categories": [
+      "Stockpile / Storage"
+    ],
+    "msg_count": 2,
+    "bug_description": "Nor grape wine actually. I think the ordinary non-fruit wine simply might just not have been included in the filters?",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "lekkimsm2500"
+  },
+  {
+    "date": "2021-01-14",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 6,
+    "bug_description": "Not sure if this is a bug or intentional:\n\nWhilst making a new preset for a new game, i noticed that when picking a specific seed, they seem to be grouped in their respective category, rather than alphabetical. It seems just a bit counter-intuitive that you've just browsed an alphabetical list to fi",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "lekkimsm2500"
+  },
+  {
+    "date": "2021-01-15",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 3,
+    "bug_description": "The \"mine order\" block directly in front of the stairs",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "maveross"
+  },
+  {
+    "date": "2021-01-17",
+    "categories": [
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 7,
+    "bug_description": "Had some stairs be mined out somehow. Replaced them, but still had the issue after recreating mine order. Built stairs down 1 block in from world edge and that worked. Might be something with stairs at the edge of the world?",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "maveross"
+  },
+  {
+    "date": "2021-01-17",
+    "categories": [
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 8,
+    "bug_description": "new bug reported on github for gnomes overfilling troughs with hay upon animal/food storage type changes.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "maveross"
+  },
+  {
+    "date": "2021-01-19",
+    "categories": [
+      "Farming / Animals",
+      "World / Terrain"
+    ],
+    "msg_count": 3,
+    "bug_description": "Apple seed and orange seed are not planted. (1 seed of each were embarked)\nBirch trees don't always grow full tree (issue sometimes seen on other trees)",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "dinosaure.plz_nofriendrequests"
+  },
+  {
+    "date": "2021-01-25",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 2,
+    "bug_description": "When trading the game do not show how many of each \"quality\" items you have, instead it shows that I have the total amount of that type of item for each \"quality\" As seen in picture I have a total of 102 drinks seen in upper left but in trading it thinks i have 100 of each quality: bad, acceptabble,",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "condac"
+  },
+  {
+    "date": "2021-01-29",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "UI / Display",
+      "Performance"
+    ],
+    "msg_count": 7,
+    "bug_description": "If i change the fast game speed from 5ms to 0.1ms the game always get stuck when in fast mode and the dialog that ask to accept new gnomes pops up. Looking at taskmanager it looks like both threads are stuck at 100% cpu. Might be interesting to know...",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "condac"
+  },
+  {
+    "date": "2021-01-30",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Jobs / Tasks",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load",
+      "Performance",
+      "World / Terrain"
+    ],
+    "msg_count": 46,
+    "bug_description": "There is probably a better fix to this but the problem is that when the game is paused while at fast speed the game loop still emit lots of events and the signalKingdomInfo is the one I have looked at as one of the problems. I do not know if events are forced to handle every event or if the que of e",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "condac"
+  },
+  {
+    "date": "2021-01-31",
+    "categories": [
+      "Stockpile / Storage",
+      "Combat / Military",
+      "UI / Display",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 8,
+    "bug_description": "This orange that is outside the stockpile have been there for 5 computer restarts and 5 days, and it is not interactable also. But now during the last minutes the armor item have been spawning like crazy, i recently said all gnomes should have armor.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "condac"
+  },
+  {
+    "date": "2021-02-01",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Farming / Animals",
+      "Save / Load",
+      "Performance",
+      "World / Terrain"
+    ],
+    "msg_count": 5,
+    "bug_description": "- Cut the tree at cell 143 120 100\n- Cut the tree at cell 158 121 100\n- Removed the grove on line 158 . 100\n- Placed a grove back on line 158 . 100, set back at Birch\n- Suspended the Turnip farm, and removed farm plants\nGame became laggy as hell. After a few ingame days (likely 10 real-life minutes)",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "dinosaure.plz_nofriendrequests"
+  },
+  {
+    "date": "2021-02-02",
+    "categories": [
+      "Combat / Military",
+      "Building / Construction",
+      "World / Terrain"
+    ],
+    "msg_count": 3,
+    "bug_description": "well the most of the terrain i removed with remove floor first then mine the wall. But later i discovered that dig hole was better as it did both in one action. I think both actions made this error. Animals sleeping at the moment might also be a factor.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "condac"
+  },
+  {
+    "date": "2021-02-07",
+    "categories": [
+      "Combat / Military"
+    ],
+    "msg_count": 5,
+    "bug_description": "I think this happens when i set the uniform to something then change it and they are not able to take off what they have on and just spawn fake items isntead of taking of the real one.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "condac"
+  },
+  {
+    "date": "2021-02-07",
+    "categories": [
+      "Stockpile / Storage",
+      "Combat / Military",
+      "Save / Load"
+    ],
+    "msg_count": 4,
+    "bug_description": "<@&379516092055420932> Is it possible that these armor items is store in world.dat? I can find a few items in itemhistory.json but deleting that file still spawn all these items when loading the game.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "condac"
+  },
+  {
+    "date": "2021-02-10",
+    "categories": [
+      "Crash / Freeze",
+      "Pathfinding",
+      "Building / Construction",
+      "Save / Load",
+      "World / Terrain"
+    ],
+    "msg_count": 4,
+    "bug_description": "Also, to save the gnome, did you mine a path through the soil with another gnome? Those look like completed walls and the gnome is unable to build a wall because there are no available adjacent tiles to stand in",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "maveross"
+  },
+  {
+    "date": "2021-02-10",
+    "categories": [
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 8,
+    "bug_description": "btw there are also two ramps on the low right side which have the same problematic. \nI can't do anything with the tiles after deconstruction.",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "reeez_ng"
+  },
+  {
+    "date": "2021-03-08",
+    "categories": [
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 1,
+    "bug_description": "probably missing the removal of wall torches, can't really remember doing that, as it has to check all 4 surrounding tiles and then if the walltorch is rotated so it touches the removed wall",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": ".roest"
+  },
+  {
+    "date": "2021-03-24",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 1,
+    "bug_description": "Im experiencing some issues with 4k monitor. It locks to my other, smaller monitor that i do not use for gaming, and for the 4k monitor the scaling is off, not covering the entire window. Is this a known issue?",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "mumkgnu"
+  },
+  {
+    "date": "2021-03-25",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 8,
+    "bug_description": "This is what it looks like, and the scaling is really strange, cause i cant mouse over the buttons by actually mousing over them, but if i mouse over some of the blackness it shows as if im moving over the buttons. Possibly a scaling issue with 4k. Im on a 4k monitor with windows scaling 175% (cause",
+    "dev_responded": true,
+    "likely_fixed": true,
+    "author": "mumkgnu"
+  },
+  {
+    "date": "2021-03-28",
+    "categories": [
+      "Stockpile / Storage",
+      "Crafting / Workshop",
+      "Farming / Animals",
+      "UI / Display"
+    ],
+    "msg_count": 1,
+    "bug_description": "I didn't see it reported anywhere else - on latest Steam version (0.8.7). Started a new game and it seems when you open the manage frame for a pasture or farm and you close it, clicking any other thing that opens the frame (such as a stockpile or workshop like object) just opens the last frame that ",
+    "dev_responded": false,
+    "likely_fixed": true,
+    "author": "djudgya"
+  },
+  {
+    "date": "2021-05-08",
+    "categories": [
+      "Farming / Animals",
+      "Building / Construction",
+      "Save / Load"
+    ],
+    "msg_count": 2,
+    "bug_description": "On every map that I have started, I get into a situation in which several blocks are \"bricked\".\nThis seems to happen in connection with the removal of a farm designation.\nI can't build anything new on these spots, change the soil, plant anything, etc.\nThe bug keeps spoiling the game for me over and ",
+    "dev_responded": true,
+    "likely_fixed": false,
+    "author": "Deleted User"
+  },
+  {
+    "date": "2021-06-15",
+    "categories": [
+      "UI / Display"
+    ],
+    "msg_count": 1,
+    "bug_description": "is trading broken in 0.8.8? I got the goods to trade for both parties and click trade but nothing happens",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "torresfj"
+  },
+  {
+    "date": "2021-08-18",
+    "categories": [
+      "Stockpile / Storage",
+      "UI / Display"
+    ],
+    "msg_count": 3,
+    "bug_description": "Items in stockpiles visually glitch and still show up even once the item is consumed or no longer in the stockpile. Once the stockpile fills up the old graphic is replaced with the graphic of the new item",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": ".jesuscon"
+  },
+  {
+    "date": "2022-01-01",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "I had the same problem in 0.8.10. But I found that if I traded jewelry / statuettes it worked fine. Seems like the issue is that the trader doesn't like certain items in return (rocks, dirt etc.).",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "obsequiousm"
+  },
+  {
+    "date": "2022-09-06",
+    "categories": [
+      "Stockpile / Storage",
+      "Farming / Animals",
+      "UI / Display"
+    ],
+    "msg_count": 1,
+    "bug_description": "The game seems to have an issue \"letting go\" of a previously selected farm when changing to a stockpile.\n\nSteps to reproduce:\n> Create a farm, grove, or pasture) and a stockpile.\n> \"Manage\" the farm, grove, or pasture.\n> WITHOUT clicking on an empty patch, select the stock pile.\nWhat is expected:\n> ",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "ald_productions"
+  },
+  {
+    "date": "2022-09-07",
+    "categories": [
+      "Save / Load"
+    ],
+    "msg_count": 1,
+    "bug_description": "**potential** bug:\n\nApple trees were felled and replanted during winter. They did not appear to progress pass sapling for 10 days into spring. (I abandoned the save)",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "ald_productions"
+  },
+  {
+    "date": "2022-09-09",
+    "categories": [
+      "Other"
+    ],
+    "msg_count": 1,
+    "bug_description": "Not a bug exactly, but probably not an intended outcome.\nProviding some sort of outline around the words could prevent this.",
+    "dev_responded": false,
+    "likely_fixed": false,
+    "author": "ald_productions"
+  }
+]
