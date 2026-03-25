@@ -6,6 +6,68 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-25] Redesign Social System — Realistic Pacing & Personality-Driven Outcomes
+
+**Milestone**: 2.0b (iteration 3) — Gnome Depth
+**Files changed**: `src/game/gnomemanager.h`, `src/game/gnomemanager.cpp`, `src/gui/aggregatorcreatureinfo.h`, `src/gui/aggregatorcreatureinfo.cpp`, `src/gui/ui/ui_sidepanels.cpp`
+
+### Changes
+- **Realistic pacing** — ~1.2 interactions/pair/day (was ~23). Checks once per in-game hour at 5% chance.
+- **Neutral = zero change** — only personality-driven mismatches/affinities move opinions.
+- **Weighted trait compatibility** — specific trait interactions: pessimist+optimist = friction (-8), both empathetic = affinity (+5), two hot-heads = volatile (-4), mismatched work ethic = resentment (-3).
+- **Backstory compatibility** — shared skill groups from backstories add +4 affinity per group.
+- **Mood affects agreeableness** — happy gnomes +5 tone bonus, miserable gnomes -5 penalty.
+- **Social memory system** — gnomes remember last 10 events (fade after 3 days). High Empathy gnomes apologize (20% chance), high Temper gnomes escalate (15% chance).
+- **Opinion decay** — 1 point toward 0 per in-game day. Relationships need proximity to maintain.
+
+---
+
+## [2026-03-25] Enhanced Creature Info — Social, Thought Tooltips, Mood Breakdown
+
+**Milestone**: 2.0b/2.1 UI polish
+**Files changed**: `src/game/gnome.h`, `src/game/gnome.cpp`, `src/gui/aggregatorcreatureinfo.h`, `src/gui/aggregatorcreatureinfo.cpp`, `src/gui/ui/ui_sidepanels.cpp`
+
+### Changes
+- **Thought tooltips** — hover shows cause/explainer, trait modulation, and time remaining (% + minutes/seconds).
+- **Thoughts sorted** — highest absolute mood impact first.
+- **Thoughts fade visually** — alpha reduces from 1.0 to 0.5 as they expire.
+- **Mood breakdown tooltip** — hover mood bar shows: Base (Optimism) + Thought sum + Needs penalty = Total.
+- **Social in Creature Info** — relationships section with color-coded labels + recent social memories ("Had a good chat with X", "Argued with Y") with hover showing days ago and opinion change.
+- **Thought cause field** — Thought struct extended with `cause` and `initialDuration` for detailed tooltips.
+
+---
+
+## [2026-03-25] 120+ Thought Types Across 7 Categories
+
+**Milestone**: 2.1 content expansion
+**Files changed**: `src/game/gnome.cpp`
+
+### Changes
+Expanded from ~25 to 120+ distinct thought types so gnomes always have visible reasons for their mood:
+1. **Needs** (15): Starving/Parched/Exhausted at extremes, Well Fed/Refreshed/Well Rested when satisfied
+2. **Activity** (30): Skill-specific work satisfaction — creative gnomes love craft, brave enjoy combat training, empathetic feel good healing, lazy gnomes enjoy idle time
+3. **Environment** (25): Sunshine, underground depth, near water, in workshops/rooms/farms/groves, deep underground fear for nervous gnomes
+4. **Social** (20): Best friend/rival proximity, crowds for social vs loner, loneliness/solitude
+5. **Personality ambient** (25): Permanent mood tinting from extreme traits — naturally happy optimists, simmering anger for volatile gnomes
+6. **Kingdom/situation** (10): Colony size, season, time of day
+7. **Status** (5): Trapped, lockdown reactions based on Bravery/Nerve
+
+---
+
+## [2026-03-25] Creature Info Panel — Full Personality Display
+
+**Milestone**: 2.0/2.1 UI
+**Files changed**: `src/gui/aggregatorcreatureinfo.h`, `src/gui/aggregatorcreatureinfo.cpp`, `src/gui/ui/ui_sidepanels.cpp`
+
+### Changes
+- Clicking a gnome now shows full personality in the tile info panel: mood bar (color-coded), backstory, personality traits, active thoughts, relationships, and stats
+- Mood bar with mental break warning, needs bars with color thresholds, activity text
+- Backstory (Youth + Before titles, hover for full flavor text)
+- Notable traits as colored progress bars with tooltips
+- Thoughts section always visible (shows "No strong feelings right now" when empty)
+
+---
+
 ## [2026-03-25] UI Bug Fixes
 
 **Files changed**: `src/gui/mainwindow.cpp`, `src/gui/ui/ui_tileinfo.cpp`, `src/gui/ui/ui_sidepanels.cpp`, `src/gui/ui/ui_mainmenu.cpp`, `src/game/gamemanager.cpp`
