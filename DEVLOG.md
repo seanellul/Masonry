@@ -6,6 +6,25 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-25] Rebrand: Ingnomia → Masonry
+
+**Milestone**: 1.0 — Independent Release
+**Files changed**: `CMakeLists.txt`, `src/version.h`, `src/gui/ui/ui_mainmenu.cpp`, `README.md`, `CREDITS.md`, `CLAUDE.md`
+
+### Changes
+- **Renamed project to Masonry** — CMake project name, executable, main menu title, version bumped to 1.0.0.0
+- **New README** — Written from scratch for Masonry with current build instructions and feature list
+- **Added CREDITS.md** — Attributes original Ingnomia project (Ralph Schurade, 2017-2020), lists third-party libraries and fonts
+- **Removed upstream remote** — No longer tracking rschurade/Ingnomia
+- **Updated CLAUDE.md** — References Masonry as the current project name
+
+### Technical Details
+- Data folder paths (`~/Library/Application Support/.../Ingnomia`) intentionally kept as-is to preserve existing save game compatibility
+- File-level copyright headers in original source files preserved (AGPL requires retaining them)
+- Executable is now `build/Masonry`
+
+---
+
 ## [2026-03-26] World Size Performance Benchmarking & Larger Maps
 
 **Milestone**: 0.0 — Foundations & Performance

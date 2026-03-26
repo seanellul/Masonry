@@ -3,17 +3,17 @@ cmake_minimum_required(VERSION 3.16.0)
 set(CMAKE_CONFIGURATION_TYPES Debug RelWithDebInfo CACHE STRING INTERNAL FORCE)
 
 # Project version, 4 numbers representation
-set(DEFAULT_VERSION "0.8.11.0" CACHE STRING "Version" FORCE)
+set(DEFAULT_VERSION "1.0.0.0" CACHE STRING "Version" FORCE)
 # Set from CI only
 set(BUILD_ID "0" CACHE INTERNAL "")
 set(GIT_REPO "" CACHE INTERNAL "")
 set(GIT_REF "" CACHE INTERNAL "")
 set(GIT_SHA "" CACHE INTERNAL "")
 
-project(Ingnomia
+project(Masonry
 	VERSION ${DEFAULT_VERSION}
-	DESCRIPTION "Gnome city builder"
-	HOMEPAGE_URL "https://github.com/rschurade/Ingnomia"
+	DESCRIPTION "Colony simulator"
+	HOMEPAGE_URL "https://github.com/seanellul/Ingnomia"
 	LANGUAGES "CXX"
 )
 

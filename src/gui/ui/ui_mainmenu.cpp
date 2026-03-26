@@ -56,16 +56,16 @@ void drawMainMenu( ImGuiBridge& bridge )
 	ImGui::PushStyleVar( ImGuiStyleVar_WindowPadding, ImVec2( 20, 20 ) );
 	ImGui::PushStyleVar( ImGuiStyleVar_WindowBorderSize, 1.0f );
 
-	ImGui::Begin( "Ingnomia", nullptr,
+	ImGui::Begin( "Masonry", nullptr,
 		ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse |
 		ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar );
 
 	// Title
 	if ( fonts.title )
 		ImGui::PushFont( fonts.title );
-	ImVec2 titleSize = ImGui::CalcTextSize( "INGNOMIA" );
+	ImVec2 titleSize = ImGui::CalcTextSize( "MASONRY" );
 	ImGui::SetCursorPosX( ( menuW - titleSize.x ) * 0.5f );
-	ImGui::TextUnformatted( "INGNOMIA" );
+	ImGui::TextUnformatted( "MASONRY" );
 	if ( fonts.title )
 		ImGui::PopFont();
 

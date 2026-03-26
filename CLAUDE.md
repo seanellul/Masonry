@@ -2,9 +2,9 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## What is Ingnomia
+## What is Masonry
 
-Ingnomia is a Gnomoria-inspired colony simulator written in C++17. It uses Qt5 for windowing/app framework, OpenGL for rendering, and Dear ImGui for the in-game UI (replacing the legacy Noesis/XAML GUI which has been removed).
+Masonry (formerly Ingnomia) is a Gnomoria-inspired colony simulator written in C++17. It uses Qt5 for windowing/app framework, OpenGL for rendering, and Dear ImGui for the in-game UI (replacing the legacy Noesis/XAML GUI which has been removed). Originally forked from [rschurade/Ingnomia](https://github.com/rschurade/Ingnomia), it has been substantially rewritten.
 
 ## Build Commands (macOS)
 
