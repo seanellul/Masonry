@@ -275,9 +275,13 @@ void MainWindowRenderer::resizePostProcess( int w, int h )
 	if ( !m_sceneFbo )
 		return;
 
+	// Use physical pixel dimensions for Retina displays
+	int pw = w * m_dpr;
+	int ph = h * m_dpr;
+
 	// Scene color (full res, RGBA16F for HDR headroom)
 	glBindTexture( GL_TEXTURE_2D, m_sceneColorTex );
-	glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA16F, w, h, 0, GL_RGBA, GL_FLOAT, nullptr );
+	glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA16F, pw, ph, 0, GL_RGBA, GL_FLOAT, nullptr );
 	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
 	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
 	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE );
@@ -285,7 +289,7 @@ void MainWindowRenderer::resizePostProcess( int w, int h )
 
 	// Scene depth (full res)
 	glBindTexture( GL_TEXTURE_2D, m_sceneDepthTex );
-	glTexImage2D( GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT24, w, h, 0, GL_DEPTH_COMPONENT, GL_FLOAT, nullptr );
+	glTexImage2D( GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT24, pw, ph, 0, GL_DEPTH_COMPONENT, GL_FLOAT, nullptr );
 	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST );
 	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST );
 
@@ -300,9 +304,9 @@ void MainWindowRenderer::resizePostProcess( int w, int h )
 		qWarning() << "Scene FBO incomplete:" << status;
 	}
 
-	// Half-res for bloom
-	int hw = w / 2;
-	int hh = h / 2;
+	// Half-res for bloom (based on physical pixels)
+	int hw = pw / 2;
+	int hh = ph / 2;
 	if ( hw < 1 ) hw = 1;
 	if ( hh < 1 ) hh = 1;
 
@@ -383,12 +387,15 @@ void MainWindowRenderer::renderPostProcess()
 	const int PP_UNIT0 = 17;
 	const int PP_UNIT1 = 18;
 
+	int pw = m_width * m_dpr;
+	int ph = m_height * m_dpr;
+
 	glBindVertexArray( m_fullscreenVao );
 
 	// Step 1: Bright extraction — extract bright pixels at half resolution
 	{
 		glBindFramebuffer( GL_FRAMEBUFFER, m_brightFbo );
-		glViewport( 0, 0, m_width / 2, m_height / 2 );
+		glViewport( 0, 0, pw / 2, ph / 2 );
 		glClear( GL_COLOR_BUFFER_BIT );
 
 		m_brightExtractShader->bind();
@@ -429,7 +436,7 @@ void MainWindowRenderer::renderPostProcess()
 	// Step 3: Composite — combine scene + bloom, add vignette + grain
 	{
 		glBindFramebuffer( GL_FRAMEBUFFER, 0 );
-		glViewport( 0, 0, m_width, m_height );
+		glViewport( 0, 0, pw, ph );
 		glClear( GL_COLOR_BUFFER_BIT );
 		glDisable( GL_DEPTH_TEST );
 
@@ -444,7 +451,9 @@ void MainWindowRenderer::renderPostProcess()
 		m_postProcessShader->setUniformValue( "uBloomBlur", PP_UNIT1 );
 
 		m_postProcessShader->setUniformValue( "uBloomStrength", m_bloomStrength );
-		m_postProcessShader->setUniformValue( "uVignetteStrength", m_vignetteStrength );
+		// Dynamic vignette: stronger edge darkening at night
+		float vignetteNight = m_vignetteStrength + ( 1.0f - m_daylight ) * 0.3f;
+		m_postProcessShader->setUniformValue( "uVignetteStrength", vignetteNight );
 		m_postProcessShader->setUniformValue( "uGrainStrength", m_grainStrength );
 		m_postProcessShader->setUniformValue( "uTime", (float)GameState::tick );
 
@@ -658,7 +667,7 @@ void MainWindowRenderer::updateRenderParams()
 
 	m_lightMin = Global::cfg->get( "lightMin" ).toFloat();
 	if ( m_lightMin < 0.01 )
-		m_lightMin = 0.3f;
+		m_lightMin = 0.03f;
 
 	m_debug   = Global::debugMode;
 
@@ -726,6 +735,13 @@ void MainWindowRenderer::paintWorld()
 		updateRenderParams();
 	}
 
+	// Initialize post-process FBOs on first real render
+	if ( !m_postProcessReady && m_width > 0 && m_height > 0 )
+	{
+		m_dpr = m_parent->devicePixelRatioF();
+		initPostProcess();
+	}
+
 	updateWorld();
 
 	// Rebind correct textures to texture units
@@ -772,9 +788,21 @@ void MainWindowRenderer::paintWorld()
 		}
 	}
 
-	// Post-processing disabled — suspected macOS Retina viewport mismatch
-	// TODO: fix FBO dimensions to use devicePixelRatio for Retina displays
-	// In-shader effects (AO, seasons, depth fog, weather, caustics) still active
+	// Post-processing: copy rendered scene to FBO, apply bloom + vignette + grain
+	if ( m_postProcessReady )
+	{
+		int pw = m_width * m_dpr;
+		int ph = m_height * m_dpr;
+
+		// Copy rendered scene from default FB to our scene color texture
+		glBindFramebuffer( GL_READ_FRAMEBUFFER, 0 );
+		glBindFramebuffer( GL_DRAW_FRAMEBUFFER, m_sceneFbo );
+		glBlitFramebuffer( 0, 0, pw, ph, 0, 0, pw, ph,
+			GL_COLOR_BUFFER_BIT, GL_NEAREST );
+		glBindFramebuffer( GL_FRAMEBUFFER, 0 );
+
+		renderPostProcess();
+	}
 
 	//glFinish();
 
@@ -1016,6 +1044,7 @@ void MainWindowRenderer::resize( int w, int h )
 {
 	m_width  = w;
 	m_height = h;
+	m_dpr    = m_parent->devicePixelRatioF();
 	if ( m_postProcessReady )
 	{
 		resizePostProcess( w, h );

@@ -43,6 +43,7 @@ layout(location = 1) flat in uvec4  block1;
 layout(location = 2) flat in uvec4  block2;
 layout(location = 3) flat in uvec4  block3;
 layout(location = 4) flat in uvec2  vTileExtra; // x=tileZ, y=aoFlags
+layout(location = 5) flat in uvec4  block4;     // x=lightGradient, y=lightColorHint, z=shadowFlags, w=reserved
 
 layout(location = 0) out vec4 fColor;
 
@@ -122,6 +123,9 @@ void main()
 
 	uint vLightLevel = block3.z;
 	uint vVegetationLevel = block3.w;
+
+	uint vLightGradient = block4.x;
+	uint vShadowFlags = block4.z;
 
 	uint vFluidLevel = (vFluidLevelPacked1 >> 0) & 0xffu;
 	uint vFluidLevelLeft = (vFluidLevelPacked1 >> 8) & 0xffu;
@@ -458,7 +462,8 @@ void main()
 	
 	if( !uDebug )
 	{
-		float torchLight = float( vLightLevel ) / 20.;
+		// === LIGHTING MODEL: Light vs Darkness ===
+		float torchLight = float( vLightLevel ) / 20.0;
 		float light = torchLight;
 		bool hasSunlight = ( vFlags & ( TF_SUNLIGHT | TF_INDIRECT_SUNLIGHT ) ) != 0;
 
@@ -467,33 +472,58 @@ void main()
 			light = max( light, uDaylight );
 		}
 
-		float brightness = dot(texel.rgb, perceivedBrightness.xyz);
-		float lightMult = ( 1 - uLightMin ) * light + uLightMin;
-		float minSaturation = 0.1;
-		float saturation = ( 1 - minSaturation ) * light + minSaturation;
-		// Desaturate, then darken
-		texel.rgb = mix(brightness * vec3(1,1,1), texel.rgb, saturation) * lightMult;
+		// Cubic falloff — sharp boundary between lit and dark, darkness absorbs aggressively
+		float lightCurved = light * light * light;
 
-		// Underground cave color — subtle purple tint in dark underground areas
-		if( !hasSunlight && light < 0.2 )
+		// True darkness: near-black in unlit areas
+		float lightMult = mix( uLightMin, 1.0, lightCurved );
+
+		// Desaturation in darkness: color drains away as light fades
+		float saturation = mix( 0.0, 1.0, sqrt( lightCurved ) );
+		float brightness = dot( texel.rgb, perceivedBrightness.xyz );
+		texel.rgb = mix( brightness * vec3( 1.0 ), texel.rgb, saturation ) * lightMult;
+
+		// Underground cave color — darkness has a deep, oppressive quality
+		if( !hasSunlight && light < 0.3 )
 		{
-			vec3 caveColor = vec3( 0.12, 0.08, 0.15 );
-			float caveBlend = ( 0.2 - light ) / 0.2 * 0.15;
+			vec3 caveColor = vec3( 0.04, 0.02, 0.06 ); // near-black with hint of deep purple
+			float caveBlend = ( 0.3 - light ) / 0.3;
+			caveBlend = caveBlend * caveBlend * 0.7; // quadratic ramp, strong at zero light
 			texel.rgb = mix( texel.rgb, caveColor, caveBlend );
 		}
 
-		// Night blue tint — shift outdoor areas toward cool blue at night
+		// Night atmosphere — oppressive cold blue outdoors
 		float nightAmount = clamp( 1.0 - uDaylight, 0.0, 1.0 );
-		vec3 nightTint = vec3( 0.65, 0.72, 1.0 ); // cool blue moonlight
-		texel.rgb = mix( texel.rgb, texel.rgb * nightTint, nightAmount * 0.45 );
-
-		// Torch warmth — artificial light gives warm orange tint
-		if( torchLight > 0.01 && !hasSunlight )
+		if( nightAmount > 0.0 )
 		{
-			vec3 torchTint = vec3( 1.0, 0.88, 0.65 ); // warm orange
-			float warmth = min( torchLight, 1.0 ) * 0.35;
-			texel.rgb = mix( texel.rgb, texel.rgb * torchTint, warmth );
+			vec3 nightTint = vec3( 0.55, 0.62, 1.0 ); // cold blue moonlight
+			float nightStrength = nightAmount * nightAmount; // quadratic curve
+			// Outdoor tiles get strong blue shift; indoor torch-lit tiles stay warm
+			if( hasSunlight )
+			{
+				texel.rgb = mix( texel.rgb, texel.rgb * nightTint * 0.6, nightStrength * 0.7 );
+			}
+			else if( torchLight < 0.1 )
+			{
+				// Unlit indoor areas still get some cold shift
+				texel.rgb = mix( texel.rgb, texel.rgb * nightTint * 0.7, nightStrength * 0.4 );
+			}
 		}
+
+		// Torch warmth — warm amber glow with HDR boost for bloom
+		if( torchLight > 0.01 )
+		{
+			vec3 torchColor = vec3( 1.0, 0.85, 0.55 ); // warm amber-orange
+			float warmth = torchLight * torchLight; // quadratic — emphasizes close-to-source
+			// Multiplicative tint for color
+			texel.rgb = mix( texel.rgb, texel.rgb * torchColor, min( warmth * 0.6, 1.0 ) );
+			// Additive HDR boost — pushes bright torch-lit pixels above 1.0 for bloom extraction
+			texel.rgb += torchColor * warmth * 0.15;
+		}
+
+		// Light boundary glow — warm halo at the edge of light radius
+		float boundaryGlow = smoothstep( 0.05, 0.3, light ) * smoothstep( 0.6, 0.3, light );
+		texel.rgb += vec3( 0.6, 0.35, 0.1 ) * boundaryGlow * 0.08;
 
 		// Seasonal color grading
 		vec3 seasonGrade;
@@ -512,7 +542,7 @@ void main()
 			{
 				texel.rgb *= mix( 1.0, 0.7, wi );
 				float grey = dot( texel.rgb, perceivedBrightness );
-				texel.rgb = mix( vec3(grey), texel.rgb, 1.0 + wi * 0.3 ); // boost saturation
+				texel.rgb = mix( vec3(grey), texel.rgb, 1.0 + wi * 0.3 );
 				texel.rgb = mix( texel.rgb, texel.rgb * vec3( 0.8, 0.85, 1.0 ), wi * 0.3 );
 			}
 			else if( uWeather == 2 ) // HeatWave — warm, slight haze
@@ -522,9 +552,9 @@ void main()
 			else if( uWeather == 3 ) // ColdSnap — brighten, desaturate, blue shift
 			{
 				float grey = dot( texel.rgb, perceivedBrightness );
-				texel.rgb = mix( texel.rgb, vec3(grey), wi * 0.3 ); // desaturate
+				texel.rgb = mix( texel.rgb, vec3(grey), wi * 0.3 );
 				texel.rgb = mix( texel.rgb, texel.rgb * vec3( 0.9, 0.95, 1.15 ), wi * 0.4 );
-				texel.rgb *= mix( 1.0, 1.1, wi ); // brighten slightly
+				texel.rgb *= mix( 1.0, 1.1, wi );
 			}
 		}
 
@@ -533,13 +563,13 @@ void main()
 		{
 			float zBelow = uViewLevel - float(vTileExtra.x);
 			float depthFade = clamp( ( zBelow - 1.0 ) / ( uRenderDepth - 1.0 ), 0.0, 1.0 );
-			depthFade *= depthFade; // quadratic — gentle near camera, strong far away
+			depthFade *= depthFade;
 			float fogStrength = 0.6;
 			if( uWeather == 1 || uWeather == 3 )
 				fogStrength += uWeatherIntensity * 0.2;
-			// Fog color is always brighter than the darkest tiles so it reads as haze
-			vec3 nightFog = vec3( 0.10, 0.10, 0.18 ); // visible blue-grey even at night
-			vec3 dayFog   = vec3( 0.45, 0.50, 0.60 );  // hazy blue during day
+			// Fog color adapts to darkness — darker fog at night
+			vec3 nightFog = vec3( 0.05, 0.05, 0.08 );
+			vec3 dayFog   = vec3( 0.45, 0.50, 0.60 );
 			vec3 fogColor = mix( nightFog, dayFog, uDaylight );
 			texel.rgb = mix( texel.rgb, fogColor, depthFade * fogStrength );
 		}
@@ -548,37 +578,25 @@ void main()
 		uint aoFlags = vTileExtra.y;
 		if( aoFlags != 0u )
 		{
-			// AO bits: 0=above, 1=north(y-), 2=east(x+), 3=south(y+), 4=west(x-)
-			// In isometric view, texcoords map: x=0 is left edge, x=1 is right edge
-			// y=0 is top, y=1 is bottom
 			float aoStrength = 0.25;
 			float ao = 0.0;
 
-			// Above — darken entire tile slightly
 			if( ( aoFlags & 0x01u ) != 0u )
 				ao += 0.15;
 
-			// Directional edge darkening — apply based on which direction has a wall
-			// Use world rotation to rotate the AO directions
-			uint rotatedAO = aoFlags >> 1; // bits 0-3 = N/E/S/W
-			// Rotate N/E/S/W by world rotation
+			uint rotatedAO = aoFlags >> 1;
 			rotatedAO = ( ( rotatedAO >> uint(uWorldRotation) ) | ( rotatedAO << ( 4u - uint(uWorldRotation) ) ) ) & 0x0fu;
 
-			// After rotation: bit0=screen-north, bit1=screen-east, bit2=screen-south, bit3=screen-west
-			// In isometric: screen-north = top-right, screen-east = bottom-right
-			// screen-south = bottom-left, screen-west = top-left
 			float northAO = float( ( rotatedAO & 0x01u ) != 0u );
 			float eastAO  = float( ( rotatedAO & 0x02u ) != 0u );
 			float southAO = float( ( rotatedAO & 0x04u ) != 0u );
 			float westAO  = float( ( rotatedAO & 0x08u ) != 0u );
 
-			// Edge proximity: how close to each edge (0 = at edge, 1 = far away)
-			float topDist    = vTexCoords.y;         // 0 at top edge
-			float bottomDist = 1.0 - vTexCoords.y;   // 0 at bottom edge
-			float leftDist   = vTexCoords.x;          // 0 at left edge
-			float rightDist  = 1.0 - vTexCoords.x;    // 0 at right edge
+			float topDist    = vTexCoords.y;
+			float bottomDist = 1.0 - vTexCoords.y;
+			float leftDist   = vTexCoords.x;
+			float rightDist  = 1.0 - vTexCoords.x;
 
-			// Isometric mapping: top-right = north, bottom-right = east, etc.
 			float edgeFalloff = 0.25;
 			ao += northAO * smoothstep( edgeFalloff, 0.0, rightDist ) * smoothstep( edgeFalloff, 0.0, topDist ) * aoStrength;
 			ao += eastAO  * smoothstep( edgeFalloff, 0.0, rightDist ) * smoothstep( edgeFalloff, 0.0, bottomDist ) * aoStrength;
@@ -586,6 +604,35 @@ void main()
 			ao += westAO  * smoothstep( edgeFalloff, 0.0, leftDist )  * smoothstep( edgeFalloff, 0.0, topDist ) * aoStrength;
 
 			texel.rgb *= ( 1.0 - min( ao, 0.5 ) );
+		}
+
+		// Wall shadow casting — directional shadows from light-blocking walls
+		if( vShadowFlags != 0u && light > 0.05 && light < 0.8 )
+		{
+			// Rotate shadow directions by world rotation (same pattern as AO)
+			uint rotShadow = ( ( vShadowFlags >> uint(uWorldRotation) ) | ( vShadowFlags << ( 4u - uint(uWorldRotation) ) ) ) & 0x0fu;
+
+			float shadowDarken = 0.0;
+			float shadowFalloff = 0.35;
+
+			float topDist    = vTexCoords.y;
+			float bottomDist = 1.0 - vTexCoords.y;
+			float leftDist   = vTexCoords.x;
+			float rightDist  = 1.0 - vTexCoords.x;
+
+			// Directional shadow darkening from each wall direction
+			if( ( rotShadow & 0x01u ) != 0u ) // shadow from screen-north (top-right)
+				shadowDarken += smoothstep( shadowFalloff, 0.0, rightDist ) * smoothstep( shadowFalloff, 0.0, topDist ) * 0.18;
+			if( ( rotShadow & 0x02u ) != 0u ) // shadow from screen-east (bottom-right)
+				shadowDarken += smoothstep( shadowFalloff, 0.0, rightDist ) * smoothstep( shadowFalloff, 0.0, bottomDist ) * 0.18;
+			if( ( rotShadow & 0x04u ) != 0u ) // shadow from screen-south (bottom-left)
+				shadowDarken += smoothstep( shadowFalloff, 0.0, leftDist ) * smoothstep( shadowFalloff, 0.0, bottomDist ) * 0.18;
+			if( ( rotShadow & 0x08u ) != 0u ) // shadow from screen-west (top-left)
+				shadowDarken += smoothstep( shadowFalloff, 0.0, leftDist ) * smoothstep( shadowFalloff, 0.0, topDist ) * 0.18;
+
+			// Shadows are most visible in partially lit areas (not full bright, not full dark)
+			float shadowVisibility = smoothstep( 0.05, 0.2, light ) * smoothstep( 0.8, 0.4, light );
+			texel.rgb *= ( 1.0 - min( shadowDarken * shadowVisibility, 0.4 ) );
 		}
 	}
 
