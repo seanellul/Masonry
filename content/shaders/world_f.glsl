@@ -466,11 +466,20 @@ void main()
 		float torchLight = float( vLightLevel ) / 20.0;
 		float light = torchLight;
 		bool hasSunlight = ( vFlags & ( TF_SUNLIGHT | TF_INDIRECT_SUNLIGHT ) ) != 0;
+		bool isWallTile = uIsWall;
 
 		if( hasSunlight )
 		{
 			light = max( light, uDaylight );
 		}
+
+		// Discovered walls get a base ambient visibility — you remember what you've mined
+		float ambientWall = 0.0;
+		if( isWallTile && ( vFlags & TF_UNDISCOVERED ) == 0 )
+		{
+			ambientWall = 0.12; // subtle wall visibility even in darkness
+		}
+		light = max( light, ambientWall );
 
 		// Smooth S-curve falloff — gradual transition from lit to dark with grey boundary zone
 		float lightCurved = smoothstep( 0.0, 1.0, light );
@@ -479,14 +488,19 @@ void main()
 		float lightMult = mix( uLightMin, 1.0, lightCurved );
 
 		// Desaturation in darkness: color drains smoothly, grey zone before full darkness
-		float saturation = smoothstep( 0.0, 0.5, light ); // desaturate below 50% light
+		float saturation = smoothstep( 0.0, 0.5, light );
 		float brightness = dot( texel.rgb, perceivedBrightness.xyz );
+		// In ambient-only areas (walls in darkness), desaturate more strongly
+		if( light <= ambientWall + 0.01 && ambientWall > 0.0 )
+		{
+			saturation *= 0.3; // heavily desaturated — grey stone memory
+		}
 		texel.rgb = mix( brightness * vec3( 1.0 ), texel.rgb, saturation ) * lightMult;
 
 		// Underground cave atmosphere — gradual shift to deep darkness
 		if( !hasSunlight && light < 0.4 )
 		{
-			vec3 caveColor = vec3( 0.05, 0.04, 0.07 ); // deep dark with subtle purple
+			vec3 caveColor = vec3( 0.05, 0.04, 0.07 );
 			float caveBlend = smoothstep( 0.4, 0.0, light ) * 0.6;
 			texel.rgb = mix( texel.rgb, caveColor, caveBlend );
 		}
@@ -495,25 +509,23 @@ void main()
 		float nightAmount = clamp( 1.0 - uDaylight, 0.0, 1.0 );
 		if( nightAmount > 0.0 )
 		{
-			vec3 nightTint = vec3( 0.55, 0.62, 1.0 ); // cold blue moonlight
-			float nightStrength = nightAmount * nightAmount; // quadratic curve
-			// Outdoor tiles get strong blue shift; indoor torch-lit tiles stay warm
+			vec3 nightTint = vec3( 0.55, 0.62, 1.0 );
+			float nightStrength = nightAmount * nightAmount;
 			if( hasSunlight )
 			{
 				texel.rgb = mix( texel.rgb, texel.rgb * nightTint * 0.6, nightStrength * 0.7 );
 			}
 			else if( torchLight < 0.1 )
 			{
-				// Unlit indoor areas still get some cold shift
 				texel.rgb = mix( texel.rgb, texel.rgb * nightTint * 0.7, nightStrength * 0.4 );
 			}
 		}
 
-		// Torch warmth — warm amber glow with HDR boost for bloom
-		if( torchLight > 0.01 )
+		// Torch warmth — only in non-sunlit areas (sunlight dominates)
+		if( torchLight > 0.01 && !hasSunlight )
 		{
-			vec3 torchColor = vec3( 1.0, 0.85, 0.55 ); // warm amber-orange
-			float warmth = torchLight * torchLight; // quadratic — emphasizes close-to-source
+			vec3 torchColor = vec3( 1.0, 0.85, 0.55 );
+			float warmth = torchLight * torchLight;
 			// Multiplicative tint for color
 			texel.rgb = mix( texel.rgb, texel.rgb * torchColor, min( warmth * 0.6, 1.0 ) );
 			// Additive HDR boost — pushes bright torch-lit pixels above 1.0 for bloom extraction

@@ -68,78 +68,59 @@ void LightMap::addLight( QSet<unsigned int>& updateList, std::vector<Tile>& worl
 		if ( !visited.contains( curPosID ) )
 		{
 			visited.insert( curPosID );
-			// check line of sight to source
-			QVector3D dir( curPos.x - pos.x, curPos.y - pos.y, curPos.z - pos.z );
+
 			int curRadius = current.second;
-			bool los      = true;
-			for ( int i = 1; i <= curRadius - 1; ++i )
+
+			// Simple distance-based intensity — no LOS raycast (BFS already respects walls)
+			int curIntensity = qMax( 0, intensity - decay * curRadius );
+
+			if ( curIntensity > 0 )
 			{
-				QVector3D offset = dir * ( (float)i / (float)curRadius );
+				m_lightMap[curPosID].insert( id, curIntensity );
 
-				Tile& tile = getTile( world, pos.x + (int)( offset.x() ), pos.y + (int)( offset.y() ), pos.z + (int)( offset.z() ) );
-				if ( tile.wallType & WallType::WT_VIEWBLOCKING )
+				Tile& tile      = getTile( world, curPos );
+				tile.lightLevel = calcIntensity( curPosID );
+
+				light.effectTiles.append( curPosID );
+				updateList.insert( curPosID );
+
+				if ( !( tile.wallType & WallType::WT_VIEWBLOCKING ) )
 				{
-					los = false;
-					break;
-				}
-			}
-			if ( los )
-			{
-				int dist         = sqrt( pos.distSquare( curPos ) );
-				int curIntensity = 0;
-				if ( curPos.z == pos.z )
-				{
-					curIntensity = qMax( 0, ( intensity - decay * dist ) );
-				}
-				else
-				{
-					curIntensity = qMax( 0, ( intensity - decay * curRadius ) );
-				}
+					// Cardinal directions
+					if ( curPos.y > 0 )
+						wq.enqueue( QPair<Position, int>( Position( curPos.x, curPos.y - 1, curPos.z ), curRadius + 1 ) );
+					if ( curPos.y < m_dimY - 1 )
+						wq.enqueue( QPair<Position, int>( Position( curPos.x, curPos.y + 1, curPos.z ), curRadius + 1 ) );
+					if ( curPos.x < m_dimX - 1 )
+						wq.enqueue( QPair<Position, int>( Position( curPos.x + 1, curPos.y, curPos.z ), curRadius + 1 ) );
+					if ( curPos.x > 0 )
+						wq.enqueue( QPair<Position, int>( Position( curPos.x - 1, curPos.y, curPos.z ), curRadius + 1 ) );
 
-				if ( curIntensity > 0 )
-				{
-					m_lightMap[curPosID].insert( id, curIntensity );
+					// Diagonal directions — light wraps around corners
+					if ( curPos.x > 0 && curPos.y > 0 )
+						wq.enqueue( QPair<Position, int>( Position( curPos.x - 1, curPos.y - 1, curPos.z ), curRadius + 1 ) );
+					if ( curPos.x < m_dimX - 1 && curPos.y > 0 )
+						wq.enqueue( QPair<Position, int>( Position( curPos.x + 1, curPos.y - 1, curPos.z ), curRadius + 1 ) );
+					if ( curPos.x > 0 && curPos.y < m_dimY - 1 )
+						wq.enqueue( QPair<Position, int>( Position( curPos.x - 1, curPos.y + 1, curPos.z ), curRadius + 1 ) );
+					if ( curPos.x < m_dimX - 1 && curPos.y < m_dimY - 1 )
+						wq.enqueue( QPair<Position, int>( Position( curPos.x + 1, curPos.y + 1, curPos.z ), curRadius + 1 ) );
 
-					Tile& tile      = getTile( world, curPos );
-					tile.lightLevel = calcIntensity( curPosID );
-
-					light.effectTiles.append( curPosID );
-					updateList.insert( curPosID );
-
-					if ( !( tile.wallType & WallType::WT_VIEWBLOCKING ) )
-					{
-						Position north( curPos.x, ( curPos.y == 0 ) ? 0 : curPos.y - 1, curPos.z );
-						wq.enqueue( QPair<Position, int>( north, current.second + 1 ) );
-						Position south( curPos.x, ( curPos.y == m_dimY - 1 ) ? m_dimY - 1 : curPos.y + 1, curPos.z );
-						wq.enqueue( QPair<Position, int>( south, current.second + 1 ) );
-						Position east( ( curPos.x == m_dimX - 1 ) ? m_dimX - 1 : curPos.x + 1, curPos.y, curPos.z );
-						wq.enqueue( QPair<Position, int>( east, current.second + 1 ) );
-						Position west( ( curPos.x == 0 ) ? 0 : curPos.x - 1, curPos.y, curPos.z );
-						wq.enqueue( QPair<Position, int>( west, current.second + 1 ) );
-						// Propagate light downward — through open floors, stairs, and ramps
+					// Vertical — through stairs, ramps, and open floors
 					bool canGoDown = !( tile.floorType & FloorType::FT_SOLIDFLOOR )
 						|| ( tile.wallType & ( WallType::WT_STAIR | WallType::WT_RAMP ) )
-						|| ( tile.floorType & FloorType::FT_STAIRTOP )
-						|| ( tile.floorType & FloorType::FT_RAMPTOP );
+						|| ( tile.floorType & ( FloorType::FT_STAIRTOP | FloorType::FT_RAMPTOP ) );
 					if ( canGoDown && curPos.z > 0 )
-					{
-						Position down( curPos.x, curPos.y, curPos.z - 1 );
-						wq.enqueue( QPair<Position, int>( down, current.second + 1 ) );
-					}
-					// Propagate light upward — same logic, check the tile above
+						wq.enqueue( QPair<Position, int>( Position( curPos.x, curPos.y, curPos.z - 1 ), curRadius + 1 ) );
+
 					if ( curPos.z < m_dimZ - 1 )
 					{
 						Tile& aboveTile = getTile( world, curPos.x, curPos.y, curPos.z + 1 );
 						bool canGoUp = !( aboveTile.floorType & FloorType::FT_SOLIDFLOOR )
 							|| ( tile.wallType & ( WallType::WT_STAIR | WallType::WT_RAMP ) )
-							|| ( aboveTile.floorType & FloorType::FT_STAIRTOP )
-							|| ( aboveTile.floorType & FloorType::FT_RAMPTOP );
+							|| ( aboveTile.floorType & ( FloorType::FT_STAIRTOP | FloorType::FT_RAMPTOP ) );
 						if ( canGoUp )
-						{
-							Position up( curPos.x, curPos.y, curPos.z + 1 );
-							wq.enqueue( QPair<Position, int>( up, current.second + 1 ) );
-						}
-					}
+							wq.enqueue( QPair<Position, int>( Position( curPos.x, curPos.y, curPos.z + 1 ), curRadius + 1 ) );
 					}
 				}
 			}
