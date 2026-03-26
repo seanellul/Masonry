@@ -6,6 +6,32 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-26] RFC v2: Gnome AI & Job System Redesign
+
+**Milestone**: 0.0 — Foundations & Performance
+**Files changed**: `docs/design/gnome_ai_redesign.md`
+
+### Changes
+- **Revised gnome AI redesign RFC to v2** — incorporated cross-game analysis (Songs of Syx, Factorio, RimWorld, Dwarf Fortress) and deep codebase architecture review
+- **Added bucket-staggered ticks** (new Phase A) — the single highest-impact optimization, splitting gnomes into N=10 groups with full vs cheap ticks. Estimated 4-10x throughput improvement alone.
+- **Added sleep/wake system** (new Phase D) — Factorio-inspired removal of stable-state gnomes from tick list entirely (sleeping, eating, idle-no-jobs)
+- **Added rail movement** — gnomes walking known paths skip BT evaluation, advance position only (~1-2us vs ~15-30us)
+- **Improved push model with spatial filtering** — push jobs to K=5 nearest eligible gnomes instead of ALL eligible gnomes. Converts O(eligible_gnomes) to O(K) per job creation.
+- **Changed skill cap from soft to hard** — 4 active + 1 Flex slot. Guarantees performance bound on registry size and fallback search.
+- **Added two-tier social model** — ambient room-based morale (O(n), no tracking) + bounded personal relationships (max R=15 per gnome, evict weakest)
+- **Added shared spatial grid** — single 16x16 cell hash used by social, job push, and fallback search
+- **Resolved all 7 open questions** from v1 with concrete answers
+- **Revised targets** — 1000 gnomes at <5ms (up from 500 at <15ms)
+- **Reordered implementation phases** by impact-to-effort ratio with parallel development plan
+
+### Technical Details
+- Bucket staggering: 500 gnomes = 50 full ticks (15us) + 450 cheap ticks (2us) = 1.65ms per game tick
+- Sleep/wake removes 30-50% of gnomes from tick list, woken by events (job push, path result, need threshold, alarm)
+- Spatial push: jobs pushed to 5 nearest eligible gnomes via shared spatial grid, not broadcast to all
+- 8-phase implementation plan with 4 parallelizable pairs, ~8 week timeline
+
+---
+
 ## [2026-03-26] Cap Mushroom Creatures & Adaptive Creature Time Budget
 
 **Milestone**: 0.0 — Foundations & Performance
