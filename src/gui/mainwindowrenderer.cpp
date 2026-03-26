@@ -608,17 +608,37 @@ void MainWindowRenderer::paintTiles()
 	m_worldShader->setUniformValue( "uUndiscoveredTex", Global::undiscoveredUID * 4 );
 	m_worldShader->setUniformValue( "uWaterTex", Global::waterSpriteUID * 4 );
 
-	if ( GameState::daylight )
+	// Smooth daylight curve based on time of day
 	{
-		m_daylight = qMin( 1.0, m_daylight + 0.025 );
+		float timeNorm = ( GameState::hour * 60.0f + GameState::minute ) / 1440.0f; // 0-1 over 24h
+		float sunriseNorm = GameState::sunrise / 1440.0f;
+		float sunsetNorm  = GameState::sunset / 1440.0f;
+		float moonlight = 0.15f; // ambient moonlight at night
+
+		float target;
+		float dawnWidth = 0.04f; // ~1 hour transition
+
+		if ( timeNorm < sunriseNorm - dawnWidth )
+			target = moonlight;
+		else if ( timeNorm < sunriseNorm + dawnWidth )
+		{
+			float t = ( timeNorm - sunriseNorm + dawnWidth ) / ( dawnWidth * 2 );
+			target = moonlight + ( 1.0f - moonlight ) * t;
+		}
+		else if ( timeNorm < sunsetNorm - dawnWidth )
+			target = 1.0f;
+		else if ( timeNorm < sunsetNorm + dawnWidth )
+		{
+			float t = ( timeNorm - sunsetNorm + dawnWidth ) / ( dawnWidth * 2 );
+			target = 1.0f - ( 1.0f - moonlight ) * t;
+		}
+		else
+			target = moonlight;
+
+		m_daylight = m_daylight + ( target - m_daylight ) * 0.05; // smooth lerp
 	}
-	else
-	{
-		m_daylight = qMax( 0.0, m_daylight - 0.025 );
-	}
-	m_worldShader->setUniformValue( "uDaylight", m_daylight );
+	m_worldShader->setUniformValue( "uDaylight", (float)m_daylight );
 	m_worldShader->setUniformValue( "uLightMin", m_lightMin );
-	//m_worldShader->setUniformValue( "uDaylight", 1.0f );
 
 	auto volume   = m_volume.size();
 	GLsizei tiles = volume.x * volume.y * volume.z;

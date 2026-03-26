@@ -126,7 +126,7 @@ private:
 	int m_countRenders = 0;
 
 	bool m_pause     = false;
-	float m_lightMin = 0.3f;
+	float m_lightMin = 0.35f;
 
 	bool m_reloadShaders = false;
 

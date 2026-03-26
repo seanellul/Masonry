@@ -430,17 +430,34 @@ void main()
 	
 	if( !uDebug )
 	{
-		float light = float( vLightLevel ) / 20.;
-		if( ( vFlags & ( TF_SUNLIGHT | TF_INDIRECT_SUNLIGHT ) ) != 0 )
+		float torchLight = float( vLightLevel ) / 20.;
+		float light = torchLight;
+		bool hasSunlight = ( vFlags & ( TF_SUNLIGHT | TF_INDIRECT_SUNLIGHT ) ) != 0;
+
+		if( hasSunlight )
 		{
-			light = max( light , uDaylight );
+			light = max( light, uDaylight );
 		}
+
 		float brightness = dot(texel.rgb, perceivedBrightness.xyz);
 		float lightMult = ( 1 - uLightMin ) * light + uLightMin;
 		float minSaturation = 0.1;
 		float saturation = ( 1 - minSaturation ) * light + minSaturation;
 		// Desaturate, then darken
 		texel.rgb = mix(brightness * vec3(1,1,1), texel.rgb, saturation) * lightMult;
+
+		// Night blue tint — shift outdoor areas toward cool blue at night
+		float nightAmount = clamp( 1.0 - uDaylight, 0.0, 1.0 );
+		vec3 nightTint = vec3( 0.65, 0.72, 1.0 ); // cool blue moonlight
+		texel.rgb = mix( texel.rgb, texel.rgb * nightTint, nightAmount * 0.45 );
+
+		// Torch warmth — artificial light gives warm orange tint
+		if( torchLight > 0.01 && !hasSunlight )
+		{
+			vec3 torchTint = vec3( 1.0, 0.88, 0.65 ); // warm orange
+			float warmth = min( torchLight, 1.0 ) * 0.35;
+			texel.rgb = mix( texel.rgb, texel.rgb * torchTint, warmth );
+		}
 	}
 	fColor = texel;
 }
