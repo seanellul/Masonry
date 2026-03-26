@@ -87,18 +87,18 @@ jobs:
         if: matrix.platform == 'windows'
         run: |
           curl -L -o openal.zip "https://github.com/rschurade/IngnomiaBuildDeps/raw/master/openal.zip"
-          7z x openal.zip -oopenal_sdk
+          7z x openal.zip -oopenal_sdk -aoa
 
       # ── Download content assets (tilesheets + audio) ────────────────
       - name: Download tilesheets
         run: |
           curl -L -o tilesheet.zip "https://github.com/rschurade/IngnomiaBuildDeps/raw/master/tilesheet.zip"
-          7z x tilesheet.zip -ocontent
+          7z x tilesheet.zip -ocontent -aoa
 
       - name: Download audio
         run: |
           curl -L -o audio.zip "https://github.com/rschurade/IngnomiaBuildDeps/raw/master/audio.zip"
-          7z x audio.zip -ocontent
+          7z x audio.zip -ocontent -aoa
 
       # ── Configure ──────────────────────────────────────────────────
       - name: Configure (Windows)
