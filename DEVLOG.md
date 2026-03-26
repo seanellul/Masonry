@@ -31,6 +31,37 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-26] Gnome Scaling Analysis — Bottleneck Identification
+
+**Milestone**: 0.0 — Foundations & Performance
+**Files changed**: Analysis only — no code changes
+
+### Bottlenecks Identified (in priority order)
+
+1. **JobManager::getJob() — O(gnomes × skills × jobs)** (`jobmanager.cpp:499-637`)
+   Each idle gnome iterates all skills → all job types → all jobs per type, calling `requiredItemsAvail`, `requiredToolExists`, `isReachable` for each. With 100 idle gnomes × 10 skills × N jobs = massive scan.
+
+2. **processSocialInteractions() — O(n²)** (`gnomemanager.cpp:853-858`)
+   Nested gnome-pair loop every 600 ticks. 200 gnomes = 19,900 pair checks. Needs spatial partitioning.
+
+3. **Behavior tree tick has no per-gnome budget** (`gnome.cpp:974`)
+   `m_behaviorTree->tick()` runs to completion — pathfinding, inventory queries, no μs cap.
+
+4. **All gnomes tick sequentially** (`game.cpp:235`)
+   GnomeManager::onTick processes gnomes one-by-one on the game thread. Only natural world is parallelized.
+
+5. **GnomeManager 5ms budget** (`gnomemanager.cpp:203`)
+   At 200 gnomes × 30μs = 6ms, the budget is exceeded — not all gnomes tick every frame.
+
+### Optimization Roadmap
+- **Job search**: Spatial index for jobs (grid cells), cache recent failed lookups, skip non-reachable regions
+- **Social**: Only check gnome pairs within 10 tiles (spatial hash), not all n² pairs
+- **BT budget**: Per-gnome μs limit with continuation — "thinking time" vs "action time" distinction
+- **Parallelization**: Split gnome BT ticks across threads (need thread-safe inventory/job queries)
+- **Gnome spawn cap**: World generator limited to ~256 starting positions — needs expansion for large colony starts
+
+---
+
 ## [2026-03-26] Gnome Count Scaling Benchmark & Analysis
 
 **Milestone**: 0.0 — Foundations & Performance
