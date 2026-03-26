@@ -22,7 +22,7 @@
     "gfxPath": "content/tilesheet",
     "keyboardMoveSpeed": "100",
     "language": "english",
-    "lightDecay": "1",
+    "lightDecay": "1.5",
     "maxThreads": "20",
     "modDev": "true",
     "moveX": 0,

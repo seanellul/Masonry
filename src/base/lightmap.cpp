@@ -54,9 +54,10 @@ void LightMap::addLight( QSet<unsigned int>& updateList, std::vector<Tile>& worl
 	QQueue<QPair<Position, int>> wq;
 	QSet<unsigned int> visited;
 	wq.enqueue( QPair<Position, int>( pos, 0 ) );
-	int decay = Global::cfg->get( "lightDecay" ).toInt();
+	float decay = Global::cfg->get( "lightDecay" ).toFloat();
+	if ( decay < 0.1f ) decay = 1.5f;
 
-	int range = intensity / decay;
+	int range = (int)( intensity / decay );
 
 	visited.reserve( range * range * range );
 
@@ -72,7 +73,7 @@ void LightMap::addLight( QSet<unsigned int>& updateList, std::vector<Tile>& worl
 			int curRadius = current.second;
 
 			// Simple distance-based intensity — no LOS raycast (BFS already respects walls)
-			int curIntensity = qMax( 0, intensity - decay * curRadius );
+			int curIntensity = qMax( 0, (int)( intensity - decay * curRadius ) );
 
 			if ( curIntensity > 0 )
 			{
