@@ -1,5 +1,6 @@
 #include "ui_sidepanels.h"
 #include "../imguibridge.h"
+#include "../strings.h"
 #include "../../base/global.h"
 #include "../../base/gamestate.h"
 #include "../../base/logger.h"
@@ -1191,7 +1192,7 @@ void drawWorkshopPanel( ImGuiBridge& bridge )
 			}
 			else
 			{
-				// Craft mode + amount selector
+				// Craft mode selector
 				ImGui::Text( "Mode:" );
 				ImGui::SameLine();
 				ImGui::RadioButton( "Craft N", &s_craftMode, 0 );
@@ -1200,21 +1201,40 @@ void drawWorkshopPanel( ImGuiBridge& bridge )
 				ImGui::SameLine();
 				ImGui::RadioButton( "Repeat", &s_craftMode, 2 );
 
+				// Amount selector with proper width for double digits
 				if ( s_craftMode != 2 )
 				{
-					ImGui::SameLine();
-					ImGui::SetNextItemWidth( 80 );
-					ImGui::InputInt( "##amount", &s_craftAmount );
+					ImGui::SameLine( 0, 15 );
+					ImGui::SetNextItemWidth( 100 );
+					ImGui::InputInt( "##amount", &s_craftAmount, 1, 5 );
 					if ( s_craftAmount < 1 ) s_craftAmount = 1;
+					if ( s_craftAmount > 999 ) s_craftAmount = 999;
 				}
+
+				// Search field
+				static char recipeSearch[64] = "";
+				ImGui::SetNextItemWidth( -1 );
+				ImGui::InputTextWithHint( "##recipesearch", "Search recipes...", recipeSearch, sizeof( recipeSearch ) );
 
 				ImGui::Separator();
 
+				QString searchFilter = QString( recipeSearch ).toLower();
+
+				ImGui::BeginChild( "##recipelist", ImVec2( 0, 0 ), false );
+
 				for ( const auto& product : ws.products )
 				{
+					// Filter by search
+					QString productName = S::s( "$ItemName_" + product.sid );
+					if ( productName.isEmpty() || productName.startsWith( "$" ) )
+						productName = product.sid;
+					if ( !searchFilter.isEmpty() && !productName.toLower().contains( searchFilter ) )
+						continue;
+
 					ImGui::PushID( product.sid.toStdString().c_str() );
 
-					ImGui::Text( "%s", product.sid.toStdString().c_str() );
+					// Product name (translated)
+					ImGui::TextColored( ImVec4( 0.9f, 0.85f, 0.6f, 1.0f ), "%s", productName.toStdString().c_str() );
 
 					// Material dropdowns per component
 					QStringList mats;
@@ -1223,10 +1243,15 @@ void drawWorkshopPanel( ImGuiBridge& bridge )
 					for ( int c = 0; c < product.components.size(); ++c )
 					{
 						const auto& comp = product.components[c];
+						// Translate component name
+						QString compName = S::s( "$ItemName_" + comp.sid );
+						if ( compName.isEmpty() || compName.startsWith( "$" ) )
+							compName = comp.sid;
+
 						if ( comp.materials.isEmpty() )
 						{
 							canCraft = false;
-							ImGui::TextDisabled( "  %d x %s (unavailable)", comp.amount, comp.sid.toStdString().c_str() );
+							ImGui::TextDisabled( "    %d x %s (unavailable)", comp.amount, compName.toStdString().c_str() );
 							mats.append( "any" );
 							continue;
 						}
@@ -1234,18 +1259,29 @@ void drawWorkshopPanel( ImGuiBridge& bridge )
 						int& selIdx = s_craftSelectedMats[product.sid][c];
 						if ( selIdx >= comp.materials.size() ) selIdx = 0;
 
-						ImGui::Text( "  %d", comp.amount );
-						ImGui::SameLine();
+						// Amount with fixed-width alignment
+						ImGui::Text( "    %d x", comp.amount );
+						ImGui::SameLine( 0, 5 );
 
 						QString comboLabel = "##comp" + QString::number( c );
-						QString preview = comp.materials[selIdx].sid + " (" + QString::number( comp.materials[selIdx].amount ) + ")";
 
-						ImGui::SetNextItemWidth( 180 );
+						// Build preview string: "any <itemname> (count)" or "<material> <itemname> (count)"
+						QString matSid = comp.materials[selIdx].sid;
+						QString matName = S::s( "$MaterialName_" + matSid );
+						if ( matName.isEmpty() || matName.startsWith( "$" ) )
+							matName = matSid;
+						QString preview = matName + " " + compName + " (" + QString::number( comp.materials[selIdx].amount ) + ")";
+
+						ImGui::SetNextItemWidth( 200 );
 						if ( ImGui::BeginCombo( comboLabel.toStdString().c_str(), preview.toStdString().c_str() ) )
 						{
 							for ( int m = 0; m < comp.materials.size(); ++m )
 							{
-								QString label = comp.materials[m].sid + " (" + QString::number( comp.materials[m].amount ) + ")";
+								QString mSid = comp.materials[m].sid;
+								QString mName = S::s( "$MaterialName_" + mSid );
+								if ( mName.isEmpty() || mName.startsWith( "$" ) )
+									mName = mSid;
+								QString label = mName + " " + compName + " (" + QString::number( comp.materials[m].amount ) + ")";
 								if ( ImGui::Selectable( label.toStdString().c_str(), m == selIdx ) )
 								{
 									selIdx = m;
@@ -1257,7 +1293,7 @@ void drawWorkshopPanel( ImGuiBridge& bridge )
 						mats.append( comp.materials[selIdx].sid );
 					}
 
-					// Craft button
+					// Craft button on the last row
 					ImGui::SameLine();
 					if ( !canCraft ) ImGui::BeginDisabled();
 					if ( ImGui::Button( "Craft" ) )
@@ -1266,9 +1302,13 @@ void drawWorkshopPanel( ImGuiBridge& bridge )
 					}
 					if ( !canCraft ) ImGui::EndDisabled();
 
+					ImGui::Spacing();
 					ImGui::Separator();
+					ImGui::Spacing();
 					ImGui::PopID();
 				}
+
+				ImGui::EndChild();
 			}
 
 			ImGui::EndTabItem();
