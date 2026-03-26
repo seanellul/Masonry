@@ -147,6 +147,14 @@ private:
 	QString m_diet;              // "Meat", "Vegetable", "Fruit", etc. from DB
 	bool m_starvingAggro = false; // becomes aggro when starving + can eat meat
 
+	// Desperation food-seeking state
+	enum class DesperateAction { None, SeekingFood, SeekingCorpse, HuntingPrey, HuntingGnome, Eating };
+	DesperateAction m_desperateAction = DesperateAction::None;
+	unsigned int m_foodTarget = 0;       // item ID of food/corpse being sought
+	unsigned int m_preyTarget = 0;       // creature ID being hunted
+	int m_eatingTicks = 0;               // ticks spent eating current corpse
+	QList<int> m_corpsePartsNutrition;   // nutrition per body part of current corpse
+
 	QVariantMap m_stateMap;
 
 	bool m_isProducer = false;

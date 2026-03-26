@@ -6,6 +6,29 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-25] Animal Hunger Priority System — Food Before Killing
+
+**Files changed**: `src/game/animal.h`, `src/game/animal.cpp`
+
+### Changes
+Complete rewrite of the desperation system with a priority-based food-seeking chain:
+
+**Priority 1 — Eat existing corpse**: if already has a corpse to eat, consume body-part by body-part. Each external body part provides nutrition = HP/2. When all parts consumed, corpse becomes Bone item.
+
+**Priority 2 — Find corpse nearby**: search for AnimalCorpse or GnomeCorpse items within range, pathfind to them.
+
+**Priority 3 — Find food items**: search for loose food items on ground matching the animal's diet (Meat, Fruit, etc.).
+
+**Priority 4 — Hunt weaker animals**: carnivores seek prey animals that are weaker (lower Attack stat). Prefers species from prey list (wolf→rabbit). Won't hunt same species (no cannibalism). Won't hunt stronger animals (wolf won't attack bear).
+
+**Priority 5 — LAST RESORT — Attack gnome**: only if no other food source found. After killing a gnome, creates GnomeCorpse item and begins eating it instead of continuing to hunt.
+
+**Body-part eating**: when eating a corpse, each tick consumes one external body part. Nutrition per part = HP/2 (Torso: 25, Leg: 15, Arm: 15, Head: 10). A gnome with amputated limbs provides less total nutrition. When all external parts eaten, corpse destroyed and Bone item left behind.
+
+**State machine**: `DesperateAction` enum tracks current desperation state (None, SeekingFood, SeekingCorpse, HuntingPrey, HuntingGnome, Eating). Resets each time the animal needs to find new food.
+
+---
+
 ## [2026-03-25] Animal Desperation System — Staged Starvation Behavior
 
 **Files changed**: `src/game/animal.cpp`

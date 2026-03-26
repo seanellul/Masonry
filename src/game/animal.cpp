@@ -448,29 +448,131 @@ CreatureTickResult Animal::onTick( quint64 tickNumber, bool seasonChanged, bool 
 	setThoughtBubble( "" );
 
 	// =====================================================================
-	// DESPERATION BEHAVIOR — overrides normal BT when starving
-	// Directly drives movement and attacks from C++ instead of relying on
-	// behavior tree nodes which weren't executing properly.
+	// DESPERATION BEHAVIOR — priority-based food seeking
+	// Priority: 1) Eat corpse in hand → 2) Find food items → 3) Find corpses
+	//           → 4) Hunt weaker animals → 5) LAST RESORT: attack gnome
+	// No cannibalism. After killing, eat the corpse before seeking more.
 	// =====================================================================
 	bool desperateMode = ( m_hunger < 20.0 && !m_tame && !isEgg() );
 
 	if ( desperateMode )
 	{
 		bool canEatMeat = m_diet.contains( "Meat" );
+		setThoughtBubble( "Hungry" );
 
-		// Stage 1 (hunger 10-20): Restless — move faster, search for food
-		if ( m_hunger < 20.0 )
+		// ---- Currently eating a corpse? Continue eating. ----
+		if ( m_desperateAction == DesperateAction::Eating && m_corpseToEat )
 		{
-			setThoughtBubble( "Hungry" );
+			// Eat one body part worth of nutrition per tick
+			if ( !m_corpsePartsNutrition.isEmpty() )
+			{
+				int nutrition = m_corpsePartsNutrition.takeFirst();
+				m_hunger += nutrition;
+				m_eatingTicks++;
+			}
+
+			// Done eating (all parts consumed or hunger satisfied)
+			if ( m_corpsePartsNutrition.isEmpty() || m_hunger >= 80 )
+			{
+				// Destroy corpse, leave bones
+				Position corpsePos( g->inv()->getItemPos( m_corpseToEat ) );
+				g->inv()->createItem( corpsePos, "Bone", g->inv()->materialSID( m_corpseToEat ) + "Bone" );
+				g->inv()->destroyObject( m_corpseToEat );
+				m_corpseToEat = 0;
+				m_desperateAction = DesperateAction::None;
+				m_eatingTicks = 0;
+				Global::logger().log( LogType::WILDLIFE, S::s( "$CreatureName_" + m_species ) + " finished feeding.", m_id, m_position.x, m_position.y, m_position.z );
+			}
+			m_lastOnTick = tickNumber;
+			return CreatureTickResult::OK;
 		}
 
-		// Stage 2 (hunger 0-10): Desperate — actively seek food sources
-		if ( m_hunger < 10.0 )
+		// ---- Need to find food. Use priority chain (only when no active path). ----
+		if ( m_currentPath.empty() && m_desperateAction != DesperateAction::Eating && m_hunger < 10.0 )
 		{
-			setThoughtBubble( "Hungry" );
+			m_desperateAction = DesperateAction::None;
+			m_currentAttackTarget = 0;
+			m_foodTarget = 0;
+			m_preyTarget = 0;
 
-			// Carnivores/omnivores: find nearest gnome and path toward them
-			if ( canEatMeat && m_currentPath.empty() && m_currentAttackTarget == 0 )
+			// Priority 1: Find existing corpse nearby to eat
+			if ( canEatMeat )
+			{
+				auto items = g->inv()->getClosestItems( m_position, false, "AnimalCorpse", "any", 1 );
+				if ( items.isEmpty() )
+					items = g->inv()->getClosestItems( m_position, false, "GnomeCorpse", "any", 1 );
+
+				if ( !items.isEmpty() )
+				{
+					m_foodTarget = items.first();
+					Position itemPos( g->inv()->getItemPos( m_foodTarget ) );
+					g->pf()->getPath( m_id, m_position, itemPos, true, m_currentPath );
+					m_desperateAction = DesperateAction::SeekingCorpse;
+				}
+			}
+
+			// Priority 2: Find food items on ground matching diet
+			if ( m_desperateAction == DesperateAction::None )
+			{
+				for ( const auto& foodType : m_diet.split( "|" ) )
+				{
+					auto items = g->inv()->getClosestItems( m_position, false, foodType, "any", 1 );
+					if ( !items.isEmpty() )
+					{
+						m_foodTarget = items.first();
+						Position itemPos( g->inv()->getItemPos( m_foodTarget ) );
+						g->pf()->getPath( m_id, m_position, itemPos, true, m_currentPath );
+						m_desperateAction = DesperateAction::SeekingFood;
+						break;
+					}
+				}
+			}
+
+			// Priority 3: Hunt a weaker animal (not same species, prefer prey list)
+			if ( m_desperateAction == DesperateAction::None && canEatMeat )
+			{
+				Animal* bestPrey = nullptr;
+				int bestDist = 999999;
+				for ( auto* animal : g->cm()->animals() )
+				{
+					if ( animal->id() == m_id ) continue;
+					if ( animal->isDead() ) continue;
+					if ( animal->species() == m_species ) continue; // no cannibalism
+					// Prefer prey from prey list, but accept any smaller animal
+					int attackVal = m_stateMap.value( "Attack" ).toInt();
+					int preyAttack = 3; // assume small if unknown
+					bool isPreferredPrey = m_preyList.contains( animal->species() );
+					if ( !isPreferredPrey && !animal->isTame() )
+					{
+						// Skip animals that are as strong or stronger
+						// (rough estimate: only hunt things weaker than us)
+						auto preyState = DB::selectRows( "Animals_States", "ID", animal->species() );
+						if ( !preyState.isEmpty() )
+							preyAttack = preyState.last().value( "Attack" ).toInt();
+						if ( preyAttack >= attackVal ) continue;
+					}
+					Position aPos = animal->getPos();
+					int dist = abs( m_position.x - aPos.x ) + abs( m_position.y - aPos.y ) + abs( m_position.z - aPos.z );
+					// Prefer prey list targets, use distance as tiebreaker
+					int priority = isPreferredPrey ? dist : dist + 100;
+					if ( priority < bestDist )
+					{
+						bestDist = priority;
+						bestPrey = animal;
+					}
+				}
+				if ( bestPrey && bestDist < 160 )
+				{
+					m_preyTarget = bestPrey->id();
+					m_currentAttackTarget = bestPrey->id();
+					setCurrentTarget( bestPrey->getPos() );
+					g->pf()->getPath( m_id, m_position, bestPrey->getPos(), true, m_currentPath );
+					m_desperateAction = DesperateAction::HuntingPrey;
+				}
+			}
+
+			// Priority 4: LAST RESORT — attack nearest gnome
+			if ( m_desperateAction == DesperateAction::None && canEatMeat )
 			{
 				Gnome* nearest = nullptr;
 				int nearestDist = 999999;
@@ -490,15 +592,16 @@ CreatureTickResult Animal::onTick( quint64 tickNumber, bool seasonChanged, bool 
 					m_currentAttackTarget = nearest->id();
 					setCurrentTarget( nearest->getPos() );
 					g->pf()->getPath( m_id, m_position, nearest->getPos(), true, m_currentPath );
+					m_desperateAction = DesperateAction::HuntingGnome;
 				}
 			}
 
-			// Herbivores/omnivores: find nearest stockpile with food and path toward it
-			if ( !canEatMeat && m_currentPath.empty() )
+			// Herbivore fallback: path to nearest stockpile
+			if ( m_desperateAction == DesperateAction::None && !canEatMeat )
 			{
 				int nearestDist = 999999;
-				Position nearestStockpilePos;
-				bool foundSP = false;
+				Position nearestSP;
+				bool found = false;
 				for ( auto spID : g->spm()->allStockpiles() )
 				{
 					Stockpile* sp = g->spm()->getStockpile( spID );
@@ -506,62 +609,110 @@ CreatureTickResult Animal::onTick( quint64 tickNumber, bool seasonChanged, bool 
 					{
 						Position spPos( sp->getFields().firstKey() );
 						int dist = abs( m_position.x - spPos.x ) + abs( m_position.y - spPos.y ) + abs( m_position.z - spPos.z );
-						if ( dist < nearestDist )
-						{
-							nearestDist = dist;
-							nearestStockpilePos = spPos;
-							foundSP = true;
-						}
+						if ( dist < nearestDist ) { nearestDist = dist; nearestSP = spPos; found = true; }
 					}
 				}
-				if ( foundSP && nearestDist < 60 )
+				if ( found && nearestDist < 60 )
 				{
-					setCurrentTarget( nearestStockpilePos );
-					g->pf()->getPath( m_id, m_position, nearestStockpilePos, true, m_currentPath );
+					setCurrentTarget( nearestSP );
+					g->pf()->getPath( m_id, m_position, nearestSP, true, m_currentPath );
+					m_desperateAction = DesperateAction::SeekingFood;
 				}
 			}
 		}
 
-		// Stage 3 (hunger < 0): Attacking — carnivores attack adjacent creatures
-		if ( m_hunger < 0.0 && canEatMeat && m_currentAttackTarget )
+		// ---- Arrived at target: execute action ----
+		if ( m_currentPath.empty() && m_desperateAction != DesperateAction::None && m_desperateAction != DesperateAction::Eating )
 		{
-			Creature* target = g->gm()->gnome( m_currentAttackTarget );
-			if ( !target )
-				target = g->cm()->creature( m_currentAttackTarget );
-
-			if ( target && !target->isDead() )
+			if ( m_desperateAction == DesperateAction::SeekingFood && m_foodTarget )
 			{
-				Position tPos = target->getPos();
-				int dist = abs( m_position.x - tPos.x ) + abs( m_position.y - tPos.y ) + abs( m_position.z - tPos.z );
+				// Pick up and eat the food item
+				m_hunger += 20; // food items give flat nutrition
+				g->inv()->destroyObject( m_foodTarget );
+				m_foodTarget = 0;
+				m_desperateAction = DesperateAction::None;
+			}
+			else if ( m_desperateAction == DesperateAction::SeekingCorpse && m_foodTarget )
+			{
+				// Start eating the corpse body-part by body-part
+				m_corpseToEat = m_foodTarget;
+				m_foodTarget = 0;
+				g->inv()->setInJob( m_corpseToEat, m_id );
 
-				if ( dist <= 1 )
+				// Calculate nutrition from body parts (HP/2 per external part)
+				m_corpsePartsNutrition.clear();
+				// Standard corpse: torso(25) + head(10) + 4 limbs(15 each) = ~95 total
+				m_corpsePartsNutrition << 25 << 15 << 15 << 15 << 15 << 10;
+				m_eatingTicks = 0;
+				m_desperateAction = DesperateAction::Eating;
+				Global::logger().log( LogType::WILDLIFE, S::s( "$CreatureName_" + m_species ) + " begins feeding on a corpse.", m_id, m_position.x, m_position.y, m_position.z );
+			}
+			else if ( ( m_desperateAction == DesperateAction::HuntingPrey || m_desperateAction == DesperateAction::HuntingGnome ) && m_currentAttackTarget )
+			{
+				// Attack adjacent target
+				Creature* target = g->gm()->gnome( m_currentAttackTarget );
+				if ( !target )
+					target = g->cm()->creature( m_currentAttackTarget );
+
+				if ( target && !target->isDead() )
 				{
-					// Adjacent — attack!
-					m_facing = getFacing( m_position, tPos );
-					if ( m_globalCooldown <= 0 )
+					Position tPos = target->getPos();
+					int dist = abs( m_position.x - tPos.x ) + abs( m_position.y - tPos.y ) + abs( m_position.z - tPos.z );
+
+					if ( dist <= 1 && m_globalCooldown <= 0 )
 					{
 						int attackSkill  = m_stateMap.value( "Attack" ).toInt();
 						int attackDamage = m_stateMap.value( "Damage" ).toInt();
+						m_facing = getFacing( m_position, tPos );
 						Global::logger().log( LogType::COMBAT, S::s( "$CreatureName_" + m_species ) + " attacks " + target->name() + "!", m_id, m_position.x, m_position.y, m_position.z );
 						target->attack( DT_PIERCING, AH_LOW, attackSkill, attackDamage, m_position, m_id );
 						m_globalCooldown = 8;
+
+						// Check if target died — create corpse and start eating
+						if ( target->isDead() )
+						{
+							QString corpseType = ( m_desperateAction == DesperateAction::HuntingGnome ) ? "GnomeCorpse" : "AnimalCorpse";
+							QString material = ( m_desperateAction == DesperateAction::HuntingGnome ) ? "Gnome" : target->species();
+							m_corpseToEat = g->inv()->createItem( tPos, corpseType, { material } );
+							g->inv()->setInJob( m_corpseToEat, m_id );
+
+							// Body-part nutrition based on anatomy
+							m_corpsePartsNutrition.clear();
+							const auto& parts = target->anatomy().parts();
+							for ( auto it = parts.constBegin(); it != parts.constEnd(); ++it )
+							{
+								if ( !it.value().isInside ) // only external parts
+								{
+									m_corpsePartsNutrition.append( qMax( 1, it.value().hp / 2 ) );
+								}
+							}
+							// A gnome with missing limbs = less nutrition (parts already gone)
+							if ( m_corpsePartsNutrition.isEmpty() )
+								m_corpsePartsNutrition << 10; // minimum scraps
+
+							m_currentAttackTarget = 0;
+							m_eatingTicks = 0;
+							m_desperateAction = DesperateAction::Eating;
+							Global::logger().log( LogType::WILDLIFE, S::s( "$CreatureName_" + m_species ) + " killed " + target->name() + " and begins feeding.", m_id, m_position.x, m_position.y, m_position.z );
+						}
+					}
+					else if ( dist > 1 )
+					{
+						// Re-path toward moving target
+						setCurrentTarget( tPos );
+						g->pf()->getPath( m_id, m_position, tPos, true, m_currentPath );
 					}
 				}
 				else
 				{
-					// Re-path toward target
-					setCurrentTarget( tPos );
-					if ( m_currentPath.empty() )
-						g->pf()->getPath( m_id, m_position, tPos, true, m_currentPath );
+					// Target dead or gone — reset and re-evaluate next minute
+					m_currentAttackTarget = 0;
+					m_desperateAction = DesperateAction::None;
 				}
-			}
-			else
-			{
-				m_currentAttackTarget = 0;
 			}
 		}
 
-		// Move on current path if we have one (regardless of BT)
+		// ---- Move on current path ----
 		if ( !m_currentPath.empty() )
 		{
 			if ( m_moveCooldown <= 0 )
@@ -571,19 +722,29 @@ CreatureTickResult Animal::onTick( quint64 tickNumber, bool seasonChanged, bool 
 				if ( g->w()->isWalkable( next ) )
 				{
 					m_facing = getFacing( m_position, next );
-					Position oldPos = m_position;
+					Position oldPos2 = m_position;
 					m_position = next;
-					move( oldPos );
+					move( oldPos2 );
 				}
-				// Starving animals move faster (halved cooldown)
-				m_moveCooldown = m_moveDelay * 0.5f;
+				m_moveCooldown = m_moveDelay * 0.5f; // double speed when desperate
 			}
 			m_lastOnTick = tickNumber;
 			return CreatureTickResult::OK;
 		}
 	}
+	else
+	{
+		// Not desperate — reset state
+		if ( m_desperateAction != DesperateAction::None && m_desperateAction != DesperateAction::Eating )
+		{
+			m_desperateAction = DesperateAction::None;
+			m_currentAttackTarget = 0;
+			m_foodTarget = 0;
+			m_preyTarget = 0;
+		}
+	}
 
-	// Normal BT execution (only runs if not in active desperation movement)
+	// Normal BT execution (only runs if not in active desperation)
 	if ( m_behaviorTree )
 	{
 		m_behaviorTree->tick();
