@@ -33,6 +33,9 @@ cmake_policy(SET CMP0076 NEW)
 include(GNUInstallDirs)
 
 # The program itself
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 add_executable(${PROJECT_NAME})
 
 # C++ version
