@@ -8,7 +8,9 @@
 #include "../../base/global.h"
 #include "../../base/db.h"
 #include "../../base/io.h"
+#include "../../game/newgamesettings.h"
 #include "../../version.h"
+#include "../strings.h"
 
 #include <imgui.h>
 #include <QRandomGenerator>
@@ -142,6 +144,7 @@ void drawMainMenu( ImGuiBridge& bridge )
 	ImGui::SetCursorPosX( pad );
 	if ( ImGui::Button( "Settings", ImVec2( buttonWidth, buttonHeight ) ) )
 	{
+		bridge.previousAppState = bridge.appState;
 		bridge.appState = ImGuiBridge::AppState::Settings;
 		Global::eventConnector->aggregatorSettings()->onRequestSettings();
 	}
@@ -270,7 +273,195 @@ void drawNewGame( ImGuiBridge& bridge )
 
 		if ( ImGui::BeginTabItem( "Starting items" ) )
 		{
-			ImGui::TextWrapped( "Starting item configuration coming soon. Using defaults." );
+			auto* ngs = Global::newGameSettings;
+
+			// Cache item data from DB (once)
+			struct ItemEntry
+			{
+				QString id;
+				std::string name;
+				QString category;
+			};
+			static QMap<QString, QList<ItemEntry>> itemsByCategory;
+			static bool itemsCached = false;
+			if ( !itemsCached )
+			{
+				auto rows = DB::selectRows( "Items" );
+				for ( const auto& row : rows )
+				{
+					QString id = row.value( "ID" ).toString();
+					QString cat = row.value( "Category" ).toString();
+					QString translated = S::s( "$ItemName_" + id );
+					if ( translated.startsWith( "$" ) )
+						translated = id; // fallback if no translation
+					itemsByCategory[cat].append( { id, translated.toStdString(), cat } );
+				}
+				// Sort items within each category
+				for ( auto& list : itemsByCategory )
+				{
+					std::sort( list.begin(), list.end(), []( const ItemEntry& a, const ItemEntry& b )
+					{
+						return a.name < b.name;
+					} );
+				}
+				itemsCached = true;
+			}
+
+			static char searchBuf[128] = "";
+			static QString selectedItem;
+			static int selectedMat1 = 0;
+			static int selectedMat2 = 0;
+			static int addAmount = 1;
+
+			ImGui::InputTextWithHint( "##search", "Search items...", searchBuf, sizeof( searchBuf ) );
+			ImGui::Separator();
+
+			ImGui::Columns( 2, "startItemCols" );
+
+			// ===== LEFT: Item picker =====
+			ImGui::BeginChild( "ItemPicker", ImVec2( 0, 280 ), true );
+
+			QString searchStr = QString( searchBuf ).toLower();
+
+			for ( auto it = itemsByCategory.constBegin(); it != itemsByCategory.constEnd(); ++it )
+			{
+				// Filter: skip categories with no matching items
+				bool hasMatch = false;
+				if ( !searchStr.isEmpty() )
+				{
+					for ( const auto& item : it.value() )
+					{
+						if ( QString::fromStdString( item.name ).toLower().contains( searchStr ) )
+						{
+							hasMatch = true;
+							break;
+						}
+					}
+					if ( !hasMatch ) continue;
+				}
+
+				bool open = ImGui::TreeNode( it.key().toStdString().c_str() );
+				if ( open )
+				{
+					for ( const auto& item : it.value() )
+					{
+						if ( !searchStr.isEmpty() &&
+							 !QString::fromStdString( item.name ).toLower().contains( searchStr ) )
+							continue;
+
+						bool isSel = ( selectedItem == item.id );
+						if ( ImGui::Selectable( item.name.c_str(), isSel ) )
+						{
+							selectedItem = item.id;
+							selectedMat1 = 0;
+							selectedMat2 = 0;
+							addAmount = 1;
+						}
+					}
+					ImGui::TreePop();
+				}
+			}
+			ImGui::EndChild();
+
+			// Selected item details
+			if ( !selectedItem.isEmpty() )
+			{
+				ImGui::Separator();
+				QString itemName = S::s( "$ItemName_" + selectedItem );
+				if ( itemName.startsWith( "$" ) ) itemName = selectedItem;
+				ImGui::Text( "Selected: %s", itemName.toStdString().c_str() );
+
+				QStringList mats1, mats2;
+				ngs->materialsForItem( selectedItem, mats1, mats2 );
+
+				if ( !mats1.isEmpty() )
+				{
+					if ( selectedMat1 >= mats1.size() ) selectedMat1 = 0;
+					QString mat1Label = S::s( "$MaterialName_" + mats1[selectedMat1] );
+					if ( mat1Label.startsWith( "$" ) ) mat1Label = mats1[selectedMat1];
+
+					if ( ImGui::BeginCombo( mats2.isEmpty() ? "Material" : "Material 1", mat1Label.toStdString().c_str() ) )
+					{
+						for ( int i = 0; i < mats1.size(); ++i )
+						{
+							QString label = S::s( "$MaterialName_" + mats1[i] );
+							if ( label.startsWith( "$" ) ) label = mats1[i];
+							if ( ImGui::Selectable( label.toStdString().c_str(), selectedMat1 == i ) )
+								selectedMat1 = i;
+						}
+						ImGui::EndCombo();
+					}
+				}
+
+				if ( !mats2.isEmpty() )
+				{
+					if ( selectedMat2 >= mats2.size() ) selectedMat2 = 0;
+					QString mat2Label = S::s( "$MaterialName_" + mats2[selectedMat2] );
+					if ( mat2Label.startsWith( "$" ) ) mat2Label = mats2[selectedMat2];
+
+					if ( ImGui::BeginCombo( "Material 2", mat2Label.toStdString().c_str() ) )
+					{
+						for ( int i = 0; i < mats2.size(); ++i )
+						{
+							QString label = S::s( "$MaterialName_" + mats2[i] );
+							if ( label.startsWith( "$" ) ) label = mats2[i];
+							if ( ImGui::Selectable( label.toStdString().c_str(), selectedMat2 == i ) )
+								selectedMat2 = i;
+						}
+						ImGui::EndCombo();
+					}
+				}
+
+				ImGui::InputInt( "Amount", &addAmount );
+				if ( addAmount < 1 ) addAmount = 1;
+
+				ImGui::SameLine();
+				if ( ImGui::Button( "Add" ) && !mats1.isEmpty() )
+				{
+					QString mat1 = mats1[selectedMat1];
+					QString mat2 = mats2.isEmpty() ? "" : mats2[selectedMat2];
+					ngs->addStartingItem( selectedItem, mat1, mat2, addAmount );
+				}
+			}
+
+			// ===== RIGHT: Current starting items =====
+			ImGui::NextColumn();
+
+			auto items = ngs->startingItems();
+			ImGui::Text( "Starting Items (%d)", items.size() );
+			ImGui::Separator();
+
+			ImGui::BeginChild( "CurrentItems", ImVec2( 0, 0 ), true );
+
+			for ( int i = 0; i < items.size(); ++i )
+			{
+				const auto& si = items[i];
+				QString itemName = S::s( "$ItemName_" + si.itemSID );
+				if ( itemName.startsWith( "$" ) ) itemName = si.itemSID;
+				QString matName = S::s( "$MaterialName_" + si.mat1 );
+				if ( matName.startsWith( "$" ) ) matName = si.mat1;
+				if ( !si.mat2.isEmpty() )
+				{
+					QString mat2Name = S::s( "$MaterialName_" + si.mat2 );
+					if ( mat2Name.startsWith( "$" ) ) mat2Name = si.mat2;
+					matName += " / " + mat2Name;
+				}
+
+				ImGui::PushID( i );
+				ImGui::Text( "%s (%s) x%d", itemName.toStdString().c_str(),
+					matName.toStdString().c_str(), si.amount );
+				ImGui::SameLine();
+				if ( ImGui::SmallButton( "X" ) )
+				{
+					QString tag = si.itemSID + "_" + si.mat1;
+					if ( !si.mat2.isEmpty() ) tag += "_" + si.mat2;
+					ngs->removeStartingItem( tag );
+				}
+				ImGui::PopID();
+			}
+			ImGui::EndChild();
+
+			ImGui::Columns( 1 );
 			ImGui::EndTabItem();
 		}
 
@@ -523,6 +714,7 @@ void drawInGameMenu( ImGuiBridge& bridge )
 	ImGui::SetCursorPosX( ( 300 - buttonWidth ) * 0.5f );
 	if ( ImGui::Button( "Settings", ImVec2( buttonWidth, 35 ) ) )
 	{
+		bridge.previousAppState = bridge.appState; // remember we came from InGameMenu
 		bridge.appState = ImGuiBridge::AppState::Settings;
 		Global::eventConnector->aggregatorSettings()->onRequestSettings();
 	}

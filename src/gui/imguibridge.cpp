@@ -221,7 +221,14 @@ void ImGuiBridge::onKeyEsc()
 		appState = AppState::GameRunning;
 		cmdSetShowMainMenu( false );
 	}
-	else if ( appState == AppState::NewGame || appState == AppState::LoadGame || appState == AppState::Settings )
+	else if ( appState == AppState::Settings )
+	{
+		// Return to wherever we came from (MainMenu or InGameMenu)
+		appState = previousAppState;
+		if ( appState == AppState::InGameMenu )
+			cmdSetShowMainMenu( true );
+	}
+	else if ( appState == AppState::NewGame || appState == AppState::LoadGame )
 	{
 		appState = AppState::MainMenu;
 	}

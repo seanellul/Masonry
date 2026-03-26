@@ -42,6 +42,7 @@ public:
 		InGameMenu
 	};
 	AppState appState = AppState::MainMenu;
+	AppState previousAppState = AppState::MainMenu; // for returning from Settings
 
 	// Loading screen status
 	QString loadingStatus;
