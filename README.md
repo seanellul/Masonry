@@ -2,6 +2,8 @@
 
 A colony simulator where you guide a group of gnomes to build, mine, craft, and survive. Inspired by [Gnomoria](https://store.steampowered.com/app/224500/Gnomoria/) and originally forked from [Ingnomia](https://github.com/rschurade/Ingnomia), Masonry has since been substantially rewritten with a new UI framework, macOS support, modern rendering pipeline, and many new gameplay features.
 
+**[Download latest release](https://github.com/seanellul/Masonry/releases/latest)** (Windows, macOS, Linux)
+
 ## Features
 
 - **Colony management** — Direct gnomes to mine, farm, craft, build, and defend
