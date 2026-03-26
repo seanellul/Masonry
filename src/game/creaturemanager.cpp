@@ -64,6 +64,14 @@ void CreatureManager::onTick( quint64 tickNumber, bool seasonChanged, bool dayCh
 	{
 		Creature* creature = m_creatures[i];
 
+		// Skip creatures on undiscovered tiles — dormant until player digs to them
+		Tile& tile = g->w()->getTile( creature->getPos() );
+		if ( tile.flags & TileFlag::TF_UNDISCOVERED )
+		{
+			m_startIndex = i + 1;
+			continue;
+		}
+
 		CreatureTickResult ctr = creature->onTick( tickNumber, seasonChanged, dayChanged, hourChanged, minuteChanged );
 
 		switch ( ctr )
