@@ -1215,7 +1215,7 @@ INSERT INTO "Workshops" ("ID","Crafts","GUI","InputTile","OutputTile","Size","No
 INSERT INTO "Workshops" ("ID","Crafts","GUI","InputTile","OutputTile","Size","NoAutoGenerate","Icon","Tab") VALUES ('Dyer','RedDye|GreenDye|BlueDye|PurpleDye|YellowDye|CyanDye|DyedTable|DyedPlank|DyedBolt',NULL,'0 1 0','0 -1 0','3 3','true',NULL,'Craft');
 INSERT INTO "Workshops" ("ID","Crafts","GUI","InputTile","OutputTile","Size","NoAutoGenerate","Icon","Tab") VALUES ('Forge','Bar|BronzeBar|SteelBar|RoseGoldBar|Anvil|SliverBar',NULL,'0 1 0','0 -1 0','3 3',NULL,NULL,'Metal');
 INSERT INTO "Workshops" ("ID","Crafts","GUI","InputTile","OutputTile","Size","NoAutoGenerate","Icon","Tab") VALUES ('Furnace','RawCoal',NULL,'0 1 0','0 -1 0','3 3',NULL,NULL,'Wood');
-INSERT INTO "Workshops" ("ID","Crafts","GUI","InputTile","OutputTile","Size","NoAutoGenerate","Icon","Tab") VALUES ('CharcoalKiln','RawCoal',NULL,'0 1 0','0 -1 0','3 3',NULL,NULL,'Wood');
+INSERT INTO "Workshops" ("ID","Crafts","GUI","InputTile","OutputTile","Size","NoAutoGenerate","Icon","Tab") VALUES ('CharcoalKiln','RawCoalSlow',NULL,'0 1 0','0 -1 0','3 3',NULL,NULL,'Wood');
 INSERT INTO "Workshops" ("ID","Crafts","GUI","InputTile","OutputTile","Size","NoAutoGenerate","Icon","Tab") VALUES ('Kiln','Brick|ClayStatuette',NULL,'0 1 0','0 -1 0','3 3',NULL,NULL,'Stone');
 INSERT INTO "Workshops" ("ID","Crafts","GUI","InputTile","OutputTile","Size","NoAutoGenerate","Icon","Tab") VALUES ('Blacksmith','PickaxeHeadMetal|FellingAxeHead|FellingAxe|CuttingWheel|File|BallPeenHammer|MetalNeedle|AlarmBell|AlarmBellBell|BigTorch|Brazier',NULL,'0 1 0','0 -1 0','3 3',NULL,NULL,'Metal');
 INSERT INTO "Workshops" ("ID","Crafts","GUI","InputTile","OutputTile","Size","NoAutoGenerate","Icon","Tab") VALUES ('Metalworker','MetalStatue|MetalStatuette|Coin',NULL,'0 1 0','0 -1 0','3 3',NULL,NULL,'Metal');
@@ -4810,6 +4810,7 @@ INSERT INTO "Translation" ("ID","Text") VALUES ('$CraftName_PressurePlate','pres
 INSERT INTO "Translation" ("ID","Text") VALUES ('$CraftName_PuzzleBox','puzzle box');
 INSERT INTO "Translation" ("ID","Text") VALUES ('$CraftName_Quiver','quiver');
 INSERT INTO "Translation" ("ID","Text") VALUES ('$CraftName_RawCoal','coal');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$CraftName_RawCoalSlow','charcoal');
 INSERT INTO "Translation" ("ID","Text") VALUES ('$CraftName_Ring','ring');
 INSERT INTO "Translation" ("ID","Text") VALUES ('$CraftName_Rod','rod');
 INSERT INTO "Translation" ("ID","Text") VALUES ('$CraftName_RoseGoldBar','rosegold bar');
@@ -12191,6 +12192,7 @@ INSERT INTO "Crafts_SkillGain" ("ID","Value") VALUES ('SliverBar',1.0);
 INSERT INTO "Crafts_SkillGain" ("ID","Value") VALUES ('Gem',1.0);
 INSERT INTO "Crafts_SkillGain" ("ID","Value") VALUES ('Bolt',1.0);
 INSERT INTO "Crafts_SkillGain" ("ID","Value") VALUES ('RawCoal',1.0);
+INSERT INTO "Crafts_SkillGain" ("ID","Value") VALUES ('RawCoalSlow',1.0);
 INSERT INTO "Crafts_SkillGain" ("ID","Value") VALUES ('Brick',1.0);
 INSERT INTO "Crafts_SkillGain" ("ID","Value") VALUES ('Tile',1.0);
 INSERT INTO "Crafts_SkillGain" ("ID","Value") VALUES ('ClayStatuette',1.0);
@@ -12616,6 +12618,7 @@ INSERT INTO "Crafts_Components" ("ID","AllowedMaterial","AllowedMaterialType","A
 INSERT INTO "Crafts_Components" ("ID","AllowedMaterial","AllowedMaterialType","Amount","ItemID","RequireSame") VALUES ('Gem',NULL,NULL,1,'RawGem',NULL);
 INSERT INTO "Crafts_Components" ("ID","AllowedMaterial","AllowedMaterialType","Amount","ItemID","RequireSame") VALUES ('Bolt',NULL,NULL,1,'RawCloth',NULL);
 INSERT INTO "Crafts_Components" ("ID","AllowedMaterial","AllowedMaterialType","Amount","ItemID","RequireSame") VALUES ('RawCoal',NULL,NULL,1,'RawWood',NULL);
+INSERT INTO "Crafts_Components" ("ID","AllowedMaterial","AllowedMaterialType","Amount","ItemID","RequireSame") VALUES ('RawCoalSlow',NULL,NULL,2,'RawWood',NULL);
 INSERT INTO "Crafts_Components" ("ID","AllowedMaterial","AllowedMaterialType","Amount","ItemID","RequireSame") VALUES ('Brick','Clay|Sand',NULL,1,'RawSoil',NULL);
 INSERT INTO "Crafts_Components" ("ID","AllowedMaterial","AllowedMaterialType","Amount","ItemID","RequireSame") VALUES ('Brick',NULL,NULL,1,'RawCoal',NULL);
 INSERT INTO "Crafts_Components" ("ID","AllowedMaterial","AllowedMaterialType","Amount","ItemID","RequireSame") VALUES ('ClayStatuette','Clay',NULL,1,'RawSoil',NULL);
@@ -12981,6 +12984,7 @@ INSERT INTO "Crafts" ("ID","Amount","ConversionMaterial","ItemID","ProductionTim
 INSERT INTO "Crafts" ("ID","Amount","ConversionMaterial","ItemID","ProductionTime","ResultMaterial","ResultMaterialTypes","SkillID") VALUES ('Gem',1,NULL,'Gem',30.0,NULL,'Gem','Gemcutting');
 INSERT INTO "Crafts" ("ID","Amount","ConversionMaterial","ItemID","ProductionTime","ResultMaterial","ResultMaterialTypes","SkillID") VALUES ('Bolt',1,NULL,'Bolt',30.0,NULL,'Cloth','Weaving');
 INSERT INTO "Crafts" ("ID","Amount","ConversionMaterial","ItemID","ProductionTime","ResultMaterial","ResultMaterialTypes","SkillID") VALUES ('RawCoal',1,'Coal','RawCoal',30.0,NULL,'Coal','Smelting');
+INSERT INTO "Crafts" ("ID","Amount","ConversionMaterial","ItemID","ProductionTime","ResultMaterial","ResultMaterialTypes","SkillID") VALUES ('RawCoalSlow',1,'Coal','RawCoal',50.0,NULL,'Coal','Smelting');
 INSERT INTO "Crafts" ("ID","Amount","ConversionMaterial","ItemID","ProductionTime","ResultMaterial","ResultMaterialTypes","SkillID") VALUES ('Brick',1,NULL,'Brick',30.0,NULL,NULL,'Pottery');
 INSERT INTO "Crafts" ("ID","Amount","ConversionMaterial","ItemID","ProductionTime","ResultMaterial","ResultMaterialTypes","SkillID") VALUES ('ClayStatuette',1,'Clay','Statuette',30.0,NULL,'Clay','Pottery');
 INSERT INTO "Crafts" ("ID","Amount","ConversionMaterial","ItemID","ProductionTime","ResultMaterial","ResultMaterialTypes","SkillID") VALUES ('Tea',1,NULL,'Tea',30.0,NULL,'Plant','Brewing');
