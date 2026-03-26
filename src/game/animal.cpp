@@ -568,6 +568,7 @@ CreatureTickResult Animal::onTick( quint64 tickNumber, bool seasonChanged, bool 
 					setCurrentTarget( bestPrey->getPos() );
 					g->pf()->getPath( m_id, m_position, bestPrey->getPos(), true, m_currentPath );
 					m_desperateAction = DesperateAction::HuntingPrey;
+					Global::logger().log( LogType::WILDLIFE, S::s( "$CreatureName_" + m_species ) + " is hunting a " + S::s( "$CreatureName_" + bestPrey->species() ) + ".", m_id, m_position.x, m_position.y, m_position.z );
 				}
 			}
 
@@ -671,8 +672,9 @@ CreatureTickResult Animal::onTick( quint64 tickNumber, bool seasonChanged, bool 
 						// Check if target died — create corpse and start eating
 						if ( target->isDead() )
 						{
-							QString corpseType = ( m_desperateAction == DesperateAction::HuntingGnome ) ? "GnomeCorpse" : "AnimalCorpse";
-							QString material = ( m_desperateAction == DesperateAction::HuntingGnome ) ? "Gnome" : target->species();
+							bool killedGnome = ( m_desperateAction == DesperateAction::HuntingGnome );
+							QString corpseType = killedGnome ? "GnomeCorpse" : "AnimalCorpse";
+							QString material = killedGnome ? "Gnome" : target->species();
 							m_corpseToEat = g->inv()->createItem( tPos, corpseType, { material } );
 							g->inv()->setInJob( m_corpseToEat, m_id );
 
@@ -686,14 +688,24 @@ CreatureTickResult Animal::onTick( quint64 tickNumber, bool seasonChanged, bool 
 									m_corpsePartsNutrition.append( qMax( 1, it.value().hp / 2 ) );
 								}
 							}
-							// A gnome with missing limbs = less nutrition (parts already gone)
 							if ( m_corpsePartsNutrition.isEmpty() )
-								m_corpsePartsNutrition << 10; // minimum scraps
+								m_corpsePartsNutrition << 10;
+
+							// Log the kill — different messages for gnome vs animal
+							if ( killedGnome )
+							{
+								Global::logger().log( LogType::DEATH, target->name() + " was killed by a " + S::s( "$CreatureName_" + m_species ) + "!", target->id(), tPos.x, tPos.y, tPos.z );
+								Global::logger().log( LogType::WILDLIFE, S::s( "$CreatureName_" + m_species ) + " killed " + target->name() + " and begins feeding.", m_id, tPos.x, tPos.y, tPos.z );
+							}
+							else
+							{
+								QString preyName = S::s( "$CreatureName_" + target->species() );
+								Global::logger().log( LogType::WILDLIFE, S::s( "$CreatureName_" + m_species ) + " killed a " + preyName + ".", m_id, tPos.x, tPos.y, tPos.z );
+							}
 
 							m_currentAttackTarget = 0;
 							m_eatingTicks = 0;
 							m_desperateAction = DesperateAction::Eating;
-							Global::logger().log( LogType::WILDLIFE, S::s( "$CreatureName_" + m_species ) + " killed " + target->name() + " and begins feeding.", m_id, m_position.x, m_position.y, m_position.z );
 						}
 					}
 					else if ( dist > 1 )
@@ -1208,6 +1220,9 @@ BT_RESULT Animal::actionKillPrey( bool halt )
 	{
 		if ( prey->kill( true ) )
 		{
+			QString preyName = S::s( "$CreatureName_" + prey->species() );
+			Global::logger().log( LogType::WILDLIFE, S::s( "$CreatureName_" + m_species ) + " killed a " + preyName + ".", m_id, prey->getPos().x, prey->getPos().y, prey->getPos().z );
+
 			m_corpseToEat = g->inv()->createItem( prey->getPos(), "AnimalCorpse", { prey->species() } );
 			m_currentPrey = 0;
 			g->inv()->setInJob( m_corpseToEat, m_id );
