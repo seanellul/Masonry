@@ -80,6 +80,9 @@ private:
 	QHash<unsigned int, Creature*> m_creaturesByID;
 
 	// Dead creatures kept for corpse inspection + rot
+public:
+	const QList<Creature*>& deadCreatures() const { return m_deadCreatures; }
+private:
 	QList<Creature*> m_deadCreatures;
 
 	QMap<QString, unsigned int> m_countPerType;

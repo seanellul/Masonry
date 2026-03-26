@@ -235,6 +235,15 @@ public:
 	const Anatomy& anatomy() const { return m_anatomy; }
 	void setExpires( quint64 tick ) { m_expires = tick; }
 
+	// Rot system
+	enum class RotStage : int { Fresh = 0, Decaying = 1, Rotting = 2, Skeleton = 3, Bones = 4 };
+	RotStage rotStage() const { return m_rotStage; }
+	quint64 deathTick() const { return m_deathTick; }
+	bool isBuried() const { return m_isBuried; }
+	void setBuried( bool v ) { m_isBuried = v; }
+	void setDeathTick( quint64 tick ) { m_deathTick = tick; }
+	void advanceRot( quint64 currentTick );
+
 	QString thoughtBubble() const;
 	void setThoughtBubble( QString thought );
 
@@ -335,6 +344,11 @@ protected:
 	bool m_isDead     = false;
 	bool m_toDestroy  = false;
 	quint64 m_expires = 0;
+
+	// Rot system
+	RotStage m_rotStage = RotStage::Fresh;
+	quint64 m_deathTick = 0;
+	bool m_isBuried     = false;
 
 	//variables formerlin in QVariantMap Creature::m_variables
 	QVariantList m_spriteDef;

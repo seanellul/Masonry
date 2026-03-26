@@ -915,6 +915,25 @@ quint64 Creature::expires() const
 	return m_expires;
 }
 
+void Creature::advanceRot( quint64 currentTick )
+{
+	if ( !m_isDead || m_deathTick == 0 ) return;
+
+	quint64 elapsed = currentTick - m_deathTick;
+	quint64 ticksPerDay = Global::util->ticksPerDay;
+
+	if ( elapsed < ticksPerDay * 1 )
+		m_rotStage = RotStage::Fresh;
+	else if ( elapsed < ticksPerDay * 2 )
+		m_rotStage = RotStage::Decaying;
+	else if ( elapsed < ticksPerDay * 4 )
+		m_rotStage = RotStage::Rotting;
+	else if ( elapsed < ticksPerDay * 7 )
+		m_rotStage = RotStage::Skeleton;
+	else
+		m_rotStage = RotStage::Bones;
+}
+
 BT_RESULT Creature::conditionTargetAdjacent( bool halt )
 {
 	Creature* creature = nullptr;

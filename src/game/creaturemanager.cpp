@@ -98,6 +98,7 @@ void CreatureManager::onTick( quint64 tickNumber, bool seasonChanged, bool dayCh
 		{
 			if ( did == m_creatures[i]->id() )
 			{
+				m_creatures[i]->setDeathTick( GameState::tick );
 				m_deadCreatures.append( m_creatures[i] );
 				m_creatures.removeAt( i );
 				m_dirty = true;
@@ -106,14 +107,19 @@ void CreatureManager::onTick( quint64 tickNumber, bool seasonChanged, bool dayCh
 		}
 	}
 
-	// Process corpse rot — remove expired corpses
+	// Process corpse rot — advance stages, create bones at final stage
 	for ( int i = m_deadCreatures.size() - 1; i >= 0; --i )
 	{
-		if ( m_deadCreatures[i]->expires() > 0 && m_deadCreatures[i]->expires() < GameState::tick )
+		auto corpse = m_deadCreatures[i];
+		corpse->advanceRot( GameState::tick );
+
+		if ( corpse->rotStage() == Creature::RotStage::Bones )
 		{
-			g->m_world->addToUpdateList( m_deadCreatures[i]->getPos() );
-			m_creaturesByID.remove( m_deadCreatures[i]->id() );
-			delete m_deadCreatures[i];
+			// Create bone item at corpse position
+			g->inv()->createItem( corpse->getPos(), "Bone", { corpse->species() } );
+			g->m_world->addToUpdateList( corpse->getPos() );
+			m_creaturesByID.remove( corpse->id() );
+			delete corpse;
 			m_deadCreatures.removeAt( i );
 		}
 	}

@@ -1705,6 +1705,20 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 		ImGui::Separator();
 		if ( ImGui::CollapsingHeader( "Anatomy" ) )
 		{
+			// Rot stage
+			if ( ci.anatomyStatus & AS_DEAD )
+			{
+				const char* rotNames[] = { "Fresh", "Decaying", "Rotting", "Skeleton", "Bones" };
+				ImVec4 rotColors[] = {
+					ImVec4( 0.7f, 0.7f, 0.7f, 1.0f ), ImVec4( 0.7f, 0.6f, 0.3f, 1.0f ),
+					ImVec4( 0.6f, 0.3f, 0.1f, 1.0f ), ImVec4( 0.5f, 0.5f, 0.5f, 1.0f ),
+					ImVec4( 0.4f, 0.4f, 0.4f, 1.0f )
+				};
+				int rs = qBound( 0, ci.rotStage, 4 );
+				ImGui::TextColored( rotColors[rs], "Corpse: %s", rotNames[rs] );
+				if ( ci.isBuried ) ImGui::SameLine(); ImGui::TextColored( ImVec4( 0.4f, 0.7f, 0.4f, 1.0f ), ci.isBuried ? "(Buried)" : "" );
+			}
+
 			// Blood bar
 			float bloodRatio = ci.maxBlood > 0 ? ci.bloodLevel / ci.maxBlood : 0;
 			ImVec4 bloodColor = bloodRatio > 0.8f ? ImVec4( 0.7f, 0.1f, 0.1f, 1.0f ) :
@@ -2009,6 +2023,20 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 	ImGui::Separator();
 	if ( ImGui::CollapsingHeader( "Anatomy" ) )
 	{
+		// Rot stage (only for dead gnomes)
+		if ( ci.anatomyStatus & AS_DEAD )
+		{
+			const char* rotNames[] = { "Fresh", "Decaying", "Rotting", "Skeleton", "Bones" };
+			ImVec4 rotColors[] = {
+				ImVec4( 0.7f, 0.7f, 0.7f, 1.0f ), ImVec4( 0.7f, 0.6f, 0.3f, 1.0f ),
+				ImVec4( 0.6f, 0.3f, 0.1f, 1.0f ), ImVec4( 0.5f, 0.5f, 0.5f, 1.0f ),
+				ImVec4( 0.4f, 0.4f, 0.4f, 1.0f )
+			};
+			int rs = qBound( 0, ci.rotStage, 4 );
+			ImGui::TextColored( rotColors[rs], "Corpse: %s", rotNames[rs] );
+			if ( ci.isBuried ) { ImGui::SameLine(); ImGui::TextColored( ImVec4( 0.4f, 0.7f, 0.4f, 1.0f ), "(Buried)" ); }
+		}
+
 		float bloodRatio = ci.maxBlood > 0 ? ci.bloodLevel / ci.maxBlood : 0;
 		ImVec4 bloodColor = bloodRatio > 0.8f ? ImVec4( 0.7f, 0.1f, 0.1f, 1.0f ) :
 		                    bloodRatio > 0.4f ? ImVec4( 0.7f, 0.4f, 0.1f, 1.0f ) :

@@ -113,7 +113,9 @@ struct GuiCreatureInfo
 	float bloodLevel = 5000;
 	float maxBlood = 5000;
 	float bleedingRate = 0;
-	unsigned int anatomyStatus = 0; // AS_HEALTHY etc.
+	unsigned int anatomyStatus = 0;
+	int rotStage = 0;     // 0=Fresh, 1=Decaying, 2=Rotting, 3=Skeleton, 4=Bones
+	bool isBuried = false;
 	QList<BodyPartInfo> bodyParts;
 };
 Q_DECLARE_METATYPE( GuiCreatureInfo )

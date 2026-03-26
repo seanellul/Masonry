@@ -68,6 +68,8 @@ void populateAnatomy( GuiCreatureInfo& info, const Creature* creature )
 	info.maxBlood = anat.maxBlood();
 	info.bleedingRate = anat.bleeding();
 	info.anatomyStatus = (unsigned int)anat.status();
+	info.rotStage = (int)creature->rotStage();
+	info.isBuried = creature->isBuried();
 
 	info.bodyParts.clear();
 	// Skip cosmetic/placeholder parts

@@ -25,6 +25,7 @@
 #include "../base/gamestate.h"
 #include "../base/global.h"
 #include "../base/util.h"
+#include "../game/creaturemanager.h"
 #include "../game/eventmanager.h"
 #include "../game/inventory.h"
 #include "../game/militarymanager.h"
@@ -1520,6 +1521,51 @@ bool Gnome::evalNeeds( bool seasonChanged, bool dayChanged, bool hourChanged, bo
 				addThought( "LockdownScared", "Thank goodness for the lockdown", 2, 200, 1 );
 			else
 				addThought( "LockdownNeutral", "Confined during lockdown", -1, 200, 1 );
+		}
+	}
+
+	// Corpse mood penalty — check for nearby unburied corpses (hourly)
+	if ( hourChanged )
+	{
+		// Check dead gnomes nearby
+		for ( auto dg : g->gm()->deadGnomes() )
+		{
+			if ( dg->isBuried() ) continue;
+			int dist = m_position.distSquare( dg->getPos() );
+			if ( dist <= 64 ) // within ~8 tiles
+			{
+				switch ( dg->rotStage() )
+				{
+					case RotStage::Decaying:
+						addThought( "CorpseDecay", "Saw a decaying corpse", -3, Global::util->ticksPerDay, 2 );
+						break;
+					case RotStage::Rotting:
+						addThought( "CorpseRot", "Horrible rotting corpse nearby", -6, Global::util->ticksPerDay * 2, 2 );
+						// Disease risk: 5% chance per day
+						if ( rand() % 20 == 0 )
+						{
+							addThought( "CorpseSick", "Feeling sick from the rot", -10, Global::util->ticksPerDay * 3, 1 );
+						}
+						break;
+					case RotStage::Skeleton:
+						addThought( "CorpseSkeleton", "Unburied remains", -2, Global::util->ticksPerDay, 2 );
+						break;
+					default:
+						break;
+				}
+				break; // one corpse penalty at a time
+			}
+		}
+		// Check dead creatures nearby
+		for ( auto dc : g->cm()->deadCreatures() )
+		{
+			if ( dc->isBuried() ) continue;
+			int dist = m_position.distSquare( dc->getPos() );
+			if ( dist <= 64 && dc->rotStage() == RotStage::Rotting )
+			{
+				addThought( "AnimalCorpseRot", "Rotting animal corpse nearby", -4, Global::util->ticksPerDay, 2 );
+				break;
+			}
 		}
 	}
 
