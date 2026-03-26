@@ -115,8 +115,29 @@ void CreatureManager::onTick( quint64 tickNumber, bool seasonChanged, bool dayCh
 
 		if ( corpse->rotStage() == Creature::RotStage::Bones )
 		{
-			// Create bone item at corpse position
-			g->inv()->createItem( corpse->getPos(), "Bone", { corpse->species() } );
+			// Create bones — count based on creature's body part count (size proxy)
+			int externalParts = 0;
+			for ( const auto& part : corpse->anatomy().parts() )
+			{
+				if ( !part.isInside && part.id != KCP_NONE &&
+					 part.id != CP_HAIR && part.id != CP_FACIAL_HAIR &&
+					 part.id != CP_CLOTHING && part.id != CP_BOOTS &&
+					 part.id != CP_HAT && part.id != CP_BACK )
+				{
+					++externalParts;
+				}
+			}
+			// Small creature (chicken): ~4 parts → 1 bone
+			// Medium creature (gnome): ~10 parts → 3 bones
+			// Large creature (yak): ~12+ parts → 4 bones
+			int boneCount = ( externalParts / 3 );
+			if ( boneCount < 1 ) boneCount = 1;
+
+			for ( int b = 0; b < boneCount; ++b )
+			{
+				g->inv()->createItem( corpse->getPos(), "Bone", { corpse->species() } );
+			}
+
 			g->m_world->addToUpdateList( corpse->getPos() );
 			m_creaturesByID.remove( corpse->id() );
 			delete corpse;
