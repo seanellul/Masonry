@@ -31,6 +31,41 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-26] Gnome Count Scaling Benchmark & Analysis
+
+**Milestone**: 0.0 — Foundations & Performance
+**Files changed**: `src/test/testcommandserver.cpp`
+
+### Changes
+- **`num_gnomes` parameter for `new_game` command**: Sets both `NewGameSettings` and `Global::cfg` to ensure gnome count survives the `startNewGame()` config sync
+- **Fix gnome config clobber**: `startNewGame()` was overwriting `ngs->setNumGnomes()` with stale `cfg->get("numGnomes")` — now both are set in the test command
+
+### Gnome Scaling Benchmark (size 200 map, 100 ticks)
+
+| Gnomes | Gnome μs | Creature μs | Total μs | μs/gnome |
+|--------|----------|-------------|----------|----------|
+| 7 | 178 | 505 | 1,058 | 25 |
+| 25 | 409 | 484 | 1,233 | 16 |
+| 50 | 1,313 | 615 | 2,319 | 26 |
+| 100 | 4,298 | 2,254 | 7,966 | **43** |
+| 150 | 3,971 | 540 | 4,883 | 26 |
+| 200 | 6,009 | 910 | 7,328 | **30** |
+
+### Key Findings
+- **Non-linear scaling at 100+ gnomes**: Cost per gnome jumps from 25μs to 43μs — likely pathfinding contention as multiple gnomes compete for A* queries
+- **100 gnomes causes cascade**: Creatures and NaturalWorld both spike, suggesting shared resource contention (inventory lookups, job queries)
+- **Gnome spawn cap at ~256**: World generator placement loop runs out of valid starting positions
+- **Variability is high**: 150 gnomes cheaper than 100 in one sample — behavior tree decisions (idle vs path) dominate
+- **Target for optimization**: GnomeManager::onTick → behavior tree → pathfinding pipeline is the scaling bottleneck
+
+### Next Steps
+- Profile gnome behavior tree to find superlinear operations
+- Investigate pathfinding dispatch/collect — may need per-gnome budgeting
+- Consider spatial partitioning for job assignment (O(n²) gnome×job matching?)
+- Test with established colonies (more jobs, stockpiles, workshops active)
+
+---
+
 ## [2026-03-25] Rebrand: Ingnomia → Masonry
 
 **Milestone**: 1.0 — Independent Release
