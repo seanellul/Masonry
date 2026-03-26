@@ -23,7 +23,7 @@ void UpdateChecker::checkForUpdates()
 	return;
 #else
 	QString url = QString( "https://api.github.com/repos/%1/releases/latest" ).arg( GIT_REPO );
-	QNetworkRequest req( QUrl( url ) );
+	QNetworkRequest req{ QUrl( url ) };
 	req.setHeader( QNetworkRequest::UserAgentHeader, "Ingnomia/" PROJECT_VERSION );
 	req.setRawHeader( "Accept", "application/vnd.github+json" );
 	m_network->get( req );
