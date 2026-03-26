@@ -1,9 +1,19 @@
 <root main_tree_to_execute="MainTree">
     <!--  ===================================  -->
     <BehaviorTree ID="MainTree">
-        <FallbackStar name="AnimalStandard">
-            <Action ID="RandomMoveBig"/>
-        </FallbackStar>
+        <Fallback>
+            <SequenceStar name="CombatResponse">
+                <Action ID="GetTarget"/>
+                <Action ID="Move"/>
+                <Sequence>
+                    <Condition ID="TargetAdjacent"/>
+                    <Action ID="AttackTarget"/>
+                </Sequence>
+            </SequenceStar>
+            <FallbackStar name="AnimalBig">
+                <Action ID="RandomMoveBig"/>
+            </FallbackStar>
+        </Fallback>
     </BehaviorTree>
     <!--  ===================================  -->
     <BehaviorTree ID="ShedTree">
@@ -37,6 +47,7 @@
     </BehaviorTree>
     <!--  ===================================  -->
     <TreeNodesModel>
+        <Action ID="AttackTarget"/>
         <Condition ID="CanHaveSex"/>
         <Action ID="EatPrey"/>
         <Action ID="EnterShed"/>
@@ -44,6 +55,7 @@
         <Action ID="FindRandomPastureField"/>
         <Action ID="FindRetreat"/>
         <Action ID="FindShed"/>
+        <Action ID="GetTarget"/>
         <Action ID="GiveBirth"/>
         <Condition ID="IsAdult"/>
         <Condition ID="IsCarnivore"/>
@@ -71,8 +83,8 @@
         <Action ID="RandomMoveBig"/>
         <SubTree ID="ShedTree"/>
         <Action ID="Sleep"/>
+        <Condition ID="TargetAdjacent"/>
         <Action ID="TryHaveSex"/>
     </TreeNodesModel>
     <!--  ===================================  -->
 </root>
-

@@ -2100,8 +2100,8 @@ BT_RESULT Gnome::actionAttackTarget( bool halt )
 					Global::logger().log( LogType::COMBAT, m_name + " attacks " + creature->name(), m_id );
 					// attack with main hand
 					creature->attack( DT_SLASH, m_anatomy.randomAttackHeight(), m_rightHandAttackSkill, m_rightHandAttackValue, m_position, m_id );
-					m_rightHandCooldown = qMax( 5, 20 - m_rightHandAttackSkill );
-					m_globalCooldown    = 5;
+					m_rightHandCooldown = qMax( 20, 60 - m_rightHandAttackSkill * 2 );
+					m_globalCooldown    = 15;
 				}
 				else if ( m_leftHandCooldown <= 0 )
 				{
@@ -2110,8 +2110,8 @@ BT_RESULT Gnome::actionAttackTarget( bool halt )
 					{
 						Global::logger().log( LogType::COMBAT, m_name + " attacks " + creature->name(), m_id );
 						creature->attack( DT_SLASH, m_anatomy.randomAttackHeight(), m_leftHandAttackSkill, m_leftHandAttackValue, m_position, m_id );
-						m_leftHandCooldown = qMax( 5, 20 - m_leftHandAttackSkill );
-						m_globalCooldown   = 5;
+						m_leftHandCooldown = qMax( 20, 60 - m_leftHandAttackSkill * 2 );
+						m_globalCooldown   = 15;
 					}
 				}
 			}
@@ -2122,16 +2122,16 @@ BT_RESULT Gnome::actionAttackTarget( bool halt )
 					Global::logger().log( LogType::COMBAT, m_name + " punches " + creature->name(), m_id );
 					// attack with main hand
 					creature->attack( DT_BLUNT, m_anatomy.randomAttackHeight(), m_rightHandAttackSkill, m_rightHandAttackValue, m_position, m_id );
-					m_rightHandCooldown = qMax( 5, 20 - m_rightHandAttackSkill );
-					m_globalCooldown    = 5;
+					m_rightHandCooldown = qMax( 20, 60 - m_rightHandAttackSkill * 2 );
+					m_globalCooldown    = 15;
 				}
 				else if ( m_leftHandCooldown <= 0 )
 				{
 					// wielding an offhand weapon?
 					Global::logger().log( LogType::COMBAT, m_name + " punches " + creature->name(), m_id );
 					creature->attack( DT_BLUNT, m_anatomy.randomAttackHeight(), m_leftHandAttackSkill, m_leftHandAttackValue, m_position, m_id );
-					m_leftHandCooldown = qMax( 5, 20 - m_leftHandAttackSkill );
-					m_globalCooldown   = 5;
+					m_leftHandCooldown = qMax( 20, 60 - m_leftHandAttackSkill * 2 );
+					m_globalCooldown   = 15;
 				}
 			}
 		}
