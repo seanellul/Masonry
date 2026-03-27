@@ -116,6 +116,10 @@ Gnome::Gnome( QVariantMap& in, Game* game ) :
 	{
 		m_foodExclusions = in.value( "FoodExclusions" ).toStringList();
 	}
+	if ( in.contains( "RecentMeals" ) )
+	{
+		m_recentMeals = in.value( "RecentMeals" ).toStringList();
+	}
 
 	if ( in.contains( "Profession" ) )
 	{
@@ -218,6 +222,10 @@ void Gnome::serialize( QVariantMap& out )
 	if ( !m_foodExclusions.isEmpty() )
 	{
 		out.insert( "FoodExclusions", QVariant( m_foodExclusions ) );
+	}
+	if ( !m_recentMeals.isEmpty() )
+	{
+		out.insert( "RecentMeals", QVariant( m_recentMeals ) );
 	}
 
 	

@@ -56,6 +56,9 @@ public:
 
 	virtual CreatureTickResult onTick( quint64 tickNumber, bool seasonChanged, bool dayChanged, bool hourChanged, bool minuteChanged );
 
+	CreatureTickResult fullTick( quint64 tickNumber, bool seasonChanged, bool dayChanged, bool hourChanged, bool minuteChanged );
+	CreatureTickResult cheapTick( quint64 tickNumber );
+
 	void die() override;
 
 	// return true if no floor present
@@ -152,6 +155,7 @@ protected:
 
 	// Food policy (Milestone 2.4)
 	QStringList m_foodExclusions;  // item SIDs this gnome won't eat
+	QStringList m_recentMeals;    // last 9 food SIDs eaten (rolling ~3 days)
 	unsigned char m_carriedBandages = 0;
 	unsigned char m_carriedFood     = 0;
 	unsigned char m_carriedDrinks   = 0;

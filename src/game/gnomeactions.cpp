@@ -414,6 +414,28 @@ BT_RESULT Gnome::actionEat( bool halt )
 	QString logText( "I just ate a " + S::s( "$ItemName_" + g->inv()->itemSID( carriedItem ) ) + "." );
 	//m_log.append( logText );
 
+	// Track recent meals for food variety (Milestone 2.4)
+	QString foodSID = g->inv()->itemSID( carriedItem );
+	m_recentMeals.append( foodSID );
+	while ( m_recentMeals.size() > 9 )
+	{
+		m_recentMeals.removeFirst();
+	}
+
+	// Food variety mood thoughts
+	if ( m_recentMeals.size() >= 3 )
+	{
+		QSet<QString> uniqueFoods( m_recentMeals.begin(), m_recentMeals.end() );
+		if ( uniqueFoods.size() >= 3 )
+		{
+			addThought( "VariedDiet", "Enjoying a varied diet", 3, Global::util->ticksPerDay, 1 );
+		}
+		else if ( uniqueFoods.size() == 1 )
+		{
+			addThought( "BlandDiet", "Same food again...", -2, Global::util->ticksPerDay, 1 );
+		}
+	}
+
 	g->inv()->destroyObject( carriedItem );
 	m_carriedItems.clear();
 
@@ -473,6 +495,22 @@ BT_RESULT Gnome::actionDrink( bool halt )
 
 	QString logText( "I just drank a " + S::s( "$ItemName_" + g->inv()->itemSID( carriedItem ) ) + "." );
 	//m_log.append( logText );
+
+	// Drink quality mood thoughts (Milestone 2.4)
+	// Higher drinkValue = better drink. Thresholds: <=20 water (neutral), 21-40 decent, 41-60 good, 60+ excellent
+	if ( drinkValue >= 60 )
+	{
+		addThought( "FineDrink", "Had an excellent drink!", 3, Global::util->ticksPerDay, 1 );
+	}
+	else if ( drinkValue >= 40 )
+	{
+		addThought( "GoodDrink", "Had a nice drink", 2, Global::util->ticksPerDay, 1 );
+	}
+	else if ( drinkValue >= 21 )
+	{
+		addThought( "DecentDrink", "Had a decent drink", 1, Global::util->ticksPerDay, 1 );
+	}
+	// drinkValue <= 20 is water-level — no mood thought (neutral baseline)
 
 	g->inv()->destroyObject( carriedItem );
 	m_carriedItems.clear();
