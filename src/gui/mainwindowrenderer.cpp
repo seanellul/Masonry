@@ -876,7 +876,7 @@ void MainWindowRenderer::paintTiles()
 		float timeNorm = ( GameState::hour * 60.0f + GameState::minute ) / 1440.0f; // 0-1 over 24h
 		float sunriseNorm = GameState::sunrise / 1440.0f;
 		float sunsetNorm  = GameState::sunset / 1440.0f;
-		float moonlight = 0.15f; // ambient moonlight at night — darkness should feel threatening
+		float moonlight = 0.08f; // ambient moonlight at night — darkness should feel threatening
 
 		float target;
 		float dawnWidth = 0.04f; // ~1 hour transition

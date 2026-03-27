@@ -6,6 +6,34 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-25] Fix wildlife log spam and categorization
+
+**Milestone**: 2.0 — UI/UX
+**Files changed**: `animal.cpp`, `creaturemanager.cpp`, `ui_gamehud.cpp`
+
+### Changes
+- **Wildlife combat uses LogType::WILDLIFE instead of COMBAT** — animal-vs-animal attacks, damage, dodges now categorized as wildlife events, not combat. Combat is reserved for gnome/colonist fights.
+- **Wildlife deaths use LogType::WILDLIFE instead of DEATH** — animal deaths no longer show as red DEATH events. DEATH is reserved for colonist deaths only.
+- **Wildlife events no longer trigger toast notifications** — removed WILDLIFE from the toast filter. No more screen spam from "Fox attacks Rabbit" every few seconds. Events still appear in the Event Log panel under the Wildlife filter.
+- **Combat history stored on creature** — all wildlife combat events (attacks, damage, dodges, kills) now also call `creature.log()` to store on the animal's personal log, so you can inspect why a creature died by checking its data.
+
+### Technical Details
+- `creaturemanager.cpp`: Generic death log now checks `creature->type() == CreatureType::ANIMAL` to select `LogType::WILDLIFE` vs `LogType::DEATH`
+- `animal.cpp`: All `LogType::COMBAT` calls changed to `LogType::WILDLIFE`, each paired with a `log()` call for creature-local history
+- `ui_gamehud.cpp`: Removed `LogType::WILDLIFE` from toast trigger condition
+
+---
+
+## [2026-03-25] Fix moonlight brightness — restore darkness at night
+
+**Milestone**: 2.0 — Visual Identity
+**Files changed**: `mainwindowrenderer.cpp`
+
+### Changes
+- **Moonlight reduced from 0.35 to 0.08** — night was far too bright after the value was changed from the original 0.15. At 0.08, nighttime is properly dark and oppressive, matching the "light vs darkness" theme.
+
+---
+
 ## [2026-03-26] RFC v2: Gnome AI & Job System Redesign
 
 **Milestone**: 0.0 — Foundations & Performance

@@ -695,7 +695,7 @@ void drawGameHUD( ImGuiBridge& bridge )
 				auto& lm = logMessages[i];
 				if ( lm.type == LogType::WARNING || lm.type == LogType::DANGER ||
 					 lm.type == LogType::COMBAT || lm.type == LogType::DEATH ||
-					 lm.type == LogType::MIGRATION || lm.type == LogType::WILDLIFE )
+					 lm.type == LogType::MIGRATION )
 				{
 					ImGuiBridge::ToastNotification toast;
 					toast.text = lm.message;

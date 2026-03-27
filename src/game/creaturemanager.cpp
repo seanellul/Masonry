@@ -95,7 +95,9 @@ void CreatureManager::onTick( quint64 tickNumber, bool seasonChanged, bool dayCh
 					g->inv()->createItem( a->getPos(), "AnimalCorpse", { a->species() } );
 				}
 				toDead.append( creature->id() );
-				Global::logger().log( LogType::DEATH, creature->name() + " (" + creature->species() + ") has died.", creature->id() );
+				// Wildlife deaths go under Wildlife, not Death (Death = gnome/colonist deaths only)
+				LogType deathLogType = ( creature->type() == CreatureType::ANIMAL ) ? LogType::WILDLIFE : LogType::DEATH;
+				Global::logger().log( deathLogType, creature->name() + " (" + creature->species() + ") has died.", creature->id() );
 				break;
 			}
 		}
