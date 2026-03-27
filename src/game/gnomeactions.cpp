@@ -238,6 +238,7 @@ BT_RESULT Gnome::actionMove( bool halt )
 			g->w()->moveLight( m_id, m_position, m_lightIntensity );
 		}
 
+		m_gnomeState = GnomeState::MOVING;
 		return BT_RESULT::RUNNING;
 	}
 
@@ -257,9 +258,11 @@ BT_RESULT Gnome::actionMove( bool halt )
 			return BT_RESULT::FAILURE;
 		case PathFinderResult::Running:
 		case PathFinderResult::FoundPath:
+			m_gnomeState = GnomeState::MOVING;
 			return BT_RESULT::RUNNING;
 	}
 
+	m_gnomeState = GnomeState::MOVING;
 	return BT_RESULT::RUNNING;
 }
 
@@ -595,27 +598,64 @@ BT_RESULT Gnome::actionGetJob( bool halt )
 		return BT_RESULT::FAILURE;
 	}
 
-#ifdef CHECKTIME
-	QElapsedTimer timer;
-	timer.start();
-	m_jobID      = g->jm()->getJob( m_skillPriorities, m_id, m_position );
-	auto elapsed = timer.elapsed();
-	if ( elapsed > 100 )
+	// Phase B: Try pending queue first (pushed jobs, O(1) pop)
 	{
-		qDebug() << m_name << "JobManager just needed" << elapsed << "ms for getJob";
-		Global::cfg->set( "Pause", true );
+		int attempts = 0;
+		while ( !m_pendingJobs.isEmpty() && attempts < 3 )
+		{
+			unsigned int pendingID = m_pendingJobs.takeFirst();
+			auto pendingJob = g->jm()->getJob( pendingID );
+			if ( !pendingJob || pendingJob->isWorked() || pendingJob->isCanceled() )
+			{
+				++attempts;
+				continue;
+			}
+			// Quick reachability check
+			unsigned int regionID = g->w()->regionMap().regionID( m_position );
+			if ( pendingJob->possibleWorkPositions().isEmpty() )
+			{
+				++attempts;
+				continue;
+			}
+			bool reachable = false;
+			for ( const auto& wp : pendingJob->possibleWorkPositions() )
+			{
+				if ( g->w()->regionMap().checkConnectedRegions( regionID, g->w()->regionMap().regionID( wp ) ) )
+				{
+					reachable = true;
+					break;
+				}
+			}
+			if ( !reachable )
+			{
+				++attempts;
+				continue;
+			}
+
+			// Claim it
+			m_jobID = pendingID;
+			m_job = pendingJob;
+			goto jobClaimed;
+		}
 	}
-#else
-	QElapsedTimer et;
-	et.start();
 
-	m_jobID = g->jm()->getJob( m_skillPriorities, m_id, m_position );
-#endif
+	// Phase H: Spatial fallback search (nearby jobs matching skills)
+	m_jobID = g->jm()->spatialFallbackSearch( m_skillPriorities, m_position, m_id );
 
+	// If spatial search didn't find anything, try hauling via StockpileManager (pull)
+	if ( m_jobID == 0 )
+	{
+		m_jobID = g->jm()->getJob( m_skillPriorities, m_id, m_position );
+	}
+
+jobClaimed:
 	if ( m_jobID != 0 )
 	{
 		m_jobChanged = true;
-		m_job        = g->jm()->getJob( m_jobID );
+		if ( !m_job )
+		{
+			m_job = g->jm()->getJob( m_jobID );
+		}
 		if ( !m_job )
 		{
 			qDebug() << "jm returned null ptr for jobid " << m_jobID;
@@ -658,25 +698,12 @@ BT_RESULT Gnome::actionGetJob( bool halt )
 		QString logText( "Got a new " + S::s( "$SkillName_" + m_job->requiredSkill() ) + " job" );
 		log( logText );
 
-		if ( Global::debugMode )
-		{
-			auto ela = et.elapsed();
-			if ( ela > 20 )
-			{
-				if ( m_job )
-				{
-					qDebug() << "GETJOB" << m_name << ela << "ms"
-							 << "job:" << m_job->type() << m_job->pos().toString();
-				}
-			}
-		}
-
 		return BT_RESULT::SUCCESS;
 	}
 	else
 	{
-		// didn't get a suitable job, so wait some ticks before asking again
-		m_jobCooldown = 100;
+		// didn't get a suitable job — with push model, shorter cooldown is fine
+		m_jobCooldown = 20;
 		return BT_RESULT::FAILURE;
 	}
 
@@ -1734,6 +1761,7 @@ BT_RESULT Gnome::actionWork( bool halt )
 			// Play sound again
 			g->sm()->playEffect( m_job->type(), m_position, m_job->item() );
 		}
+		m_gnomeState = GnomeState::WORKING;
 		return BT_RESULT::RUNNING;
 	}
 
@@ -1746,6 +1774,7 @@ BT_RESULT Gnome::actionWork( bool halt )
 
 		if ( m_repeatJob )
 		{
+			m_gnomeState = GnomeState::WORKING;
 			return BT_RESULT::RUNNING;
 		}
 
@@ -1763,6 +1792,7 @@ BT_RESULT Gnome::actionWork( bool halt )
 			m_taskFinishTick     = GameState::tick + ticks;
 			m_totalDurationTicks = ticks;
 
+			m_gnomeState = GnomeState::WORKING;
 			return BT_RESULT::RUNNING;
 		}
 		else

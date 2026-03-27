@@ -377,6 +377,9 @@ bool IO::load( QString folder )
 	loadFile( folder + "config.json", jd );
 	IO::loadConfig( jd );
 
+	// Rebuild push model state (Phase B) — register all gnome skills and distribute jobs
+	g->jm()->rebuildPushState();
+
 	sanitize();
 
 	qDebug() << "loading game took: " + QString::number( timer.elapsed() ) + " ms";

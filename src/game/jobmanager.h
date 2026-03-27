@@ -52,6 +52,10 @@ private:
 
 	int m_startIndex;
 
+	// Push model (Phase B): skill→gnome registry and overflow pool
+	QMultiHash<QString, unsigned int> m_gnomesBySkill;
+	QList<unsigned int> m_overflowPool;
+
 	bool workPositionWalkable( unsigned int jobID );
 	bool isReachable( unsigned int jobID, unsigned int regionID );
 
@@ -102,4 +106,14 @@ public:
 	void deleteJobAt( const Position& pos );
 	void raisePrio( Position& pos );
 	void lowerPrio( Position& pos );
+
+	// Push model (Phase B)
+	void registerGnomeSkill( unsigned int gnomeID, const QString& skill );
+	void unregisterGnomeSkill( unsigned int gnomeID, const QString& skill );
+	void pushJobToGnomes( unsigned int jobID );
+	void processOverflowPool();
+	void rebuildPushState();
+
+	// Spatial fallback search (Phase H)
+	unsigned int spatialFallbackSearch( const QStringList& skills, const Position& pos, unsigned int gnomeID );
 };

@@ -60,6 +60,7 @@ class MilitaryManager;
 class SoundManager;
 
 class PathFinder;
+class SpatialGrid;
 class SpriteFactory;
 class World;
 
@@ -125,6 +126,7 @@ public:
 	MilitaryManager* mil();
 	PathFinder* pf();
 	SoundManager* sm();
+	SpatialGrid* sg();
 
 	const TickTimingInfo& lastTickTiming() const { return m_lastTickTiming; }
 
@@ -176,6 +178,8 @@ private:
 	QPointer<NeighborManager> m_neighborManager;
 	QPointer<MilitaryManager> m_militaryManager;
 	QPointer<SoundManager> m_soundManager;
+
+	SpatialGrid* m_spatialGrid = nullptr;
 
 public slots:
 	void loop();

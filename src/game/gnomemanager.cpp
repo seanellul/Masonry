@@ -17,6 +17,7 @@
 */
 #include "gnomemanager.h"
 #include "game.h"
+#include "spatialgrid.h"
 
 #include "../base/config.h"
 #include "../base/db.h"
@@ -80,7 +81,14 @@ void GnomeManager::addGnome( Position pos )
 {
 	GnomeFactory gf( g );
 	m_gnomes.push_back( gf.createGnome( pos ) );
-	m_gnomesByID.insert( m_gnomes.last()->id(), m_gnomes.last() );
+	Gnome* gn = m_gnomes.last();
+	m_gnomesByID.insert( gn->id(), gn );
+
+	// Register skills in push model registry
+	for ( const auto& skill : gn->skillPrios() )
+	{
+		g->jm()->registerGnomeSkill( gn->id(), skill );
+	}
 }
 
 unsigned int GnomeManager::addTrader( Position pos, unsigned int workshopID, QString type )
@@ -135,6 +143,12 @@ void GnomeManager::addGnome( QVariantMap values )
 	Gnome* gn( gf.createGnome( values ) );
 	m_gnomes.push_back( gn );
 	m_gnomesByID.insert( gn->id(), m_gnomes.last() );
+
+	// Register skills in push model registry
+	for ( const auto& skill : gn->skillPrios() )
+	{
+		g->jm()->registerGnomeSkill( gn->id(), skill );
+	}
 }
 
 void GnomeManager::addTrader( QVariantMap values )
@@ -156,32 +170,29 @@ void GnomeManager::onTick( quint64 tickNumber, bool seasonChanged, bool dayChang
 	// Process social interactions between nearby gnomes
 	processSocialInteractions( tickNumber );
 
-	if ( m_startIndex >= m_gnomes.size() )
+	// Safety net: check sleeping gnomes' critical needs every 100 ticks
+	if ( tickNumber % 100 == 0 )
 	{
-		m_startIndex = 0;
+		safetyNetScan( tickNumber );
 	}
+
 	QList<unsigned int> deadGnomes;
 	QList<unsigned int> deadOrGoneSpecial;
-	for ( int i = m_startIndex; i < m_gnomes.size(); ++i )
+
+	// Bucket-staggered ticks: all gnomes are iterated every tick.
+	// Gnomes in the active bucket get a full BT tick; others get a cheap tick.
+	// The onTick dispatcher handles routing based on bucket + forceFullTick.
+	for ( int i = 0; i < m_gnomes.size(); ++i )
 	{
 		Gnome* gn = m_gnomes[i];
-#ifdef CHECKTIME
-		QElapsedTimer timer2;
-		timer2.start();
 
-		CreatureTickResult tr = g->onTick( tickNumber, seasonChanged, dayChanged, hourChanged, minuteChanged );
-
-		auto elapsed = timer2.elapsed();
-		if ( elapsed > 100 )
+		if ( gn->isSleeping() )
 		{
-			qDebug() << g->name() << "just needed" << elapsed << "ms for tick";
-			Global::cfg->set( "Pause", true );
-			return;
+			continue;
 		}
-#else
+
 		CreatureTickResult tr = gn->onTick( tickNumber, seasonChanged, dayChanged, hourChanged, minuteChanged );
-#endif
-		m_startIndex = i + 1;
+
 		switch ( tr )
 		{
 			case CreatureTickResult::DEAD:
@@ -198,11 +209,6 @@ void GnomeManager::onTick( quint64 tickNumber, bool seasonChanged, bool dayChang
 				break;
 			case CreatureTickResult::LEFTMAP:
 				break;
-		}
-
-		if ( timer.elapsed() > 5 )
-		{
-			break;
 		}
 	}
 
@@ -652,6 +658,29 @@ void GnomeManager::modifyOpinion( unsigned int gnomeA, unsigned int gnomeB, int 
 	int newVal = qBound( -100, current + delta, 100 );
 	m_opinions[gnomeA][gnomeB] = newVal;
 
+	// Relationship cap: max R=15 stored relationships per gnome.
+	// If over cap, evict the relationship closest to neutral (0).
+	auto& rels = m_opinions[gnomeA];
+	if ( rels.size() > 15 )
+	{
+		unsigned int weakestID = 0;
+		int weakestAbs = 101;
+		for ( auto it = rels.constBegin(); it != rels.constEnd(); ++it )
+		{
+			if ( it.key() == gnomeB ) continue; // don't evict the one we just set
+			int absVal = abs( it.value() );
+			if ( absVal < weakestAbs )
+			{
+				weakestAbs = absVal;
+				weakestID = it.key();
+			}
+		}
+		if ( weakestID != 0 )
+		{
+			rels.remove( weakestID );
+		}
+	}
+
 	// Log friendship/rivalry milestones when crossing thresholds
 	if ( current < 30 && newVal >= 30 )
 	{
@@ -704,8 +733,8 @@ void GnomeManager::addSocialMemory( unsigned int gnomeID, unsigned int otherID, 
 	auto& list = m_socialMemories[gnomeID];
 	list.prepend( mem );
 
-	// Keep only last 10 memories per gnome
-	while ( list.size() > 10 )
+	// Keep only last 5 memories per gnome (bounded for scaling)
+	while ( list.size() > 5 )
 		list.removeLast();
 }
 
@@ -817,6 +846,38 @@ int GnomeManager::backstoryCompatibility( Gnome* a, Gnome* b ) const
 	return qBound( -10, score, 15 );
 }
 
+// --- Sleep/Wake System (Phase D) ---
+
+void GnomeManager::sleepGnome( Gnome* gnome )
+{
+	if ( !gnome || gnome->isSleeping() ) return;
+	gnome->setIsSleeping( true );
+}
+
+void GnomeManager::wakeGnome( Gnome* gnome )
+{
+	if ( !gnome || !gnome->isSleeping() ) return;
+	gnome->setIsSleeping( false );
+	gnome->setForceFullTick( true );
+}
+
+void GnomeManager::safetyNetScan( quint64 tickNumber )
+{
+	Q_UNUSED( tickNumber );
+	for ( auto* gn : m_gnomes )
+	{
+		if ( !gn->isSleeping() ) continue;
+
+		// Check critical needs — wake if hunger or thirst is dangerously low
+		float hunger = gn->need( "Hunger" );
+		float thirst = gn->need( "Thirst" );
+		if ( hunger < 20 || thirst < 20 )
+		{
+			wakeGnome( gn );
+		}
+	}
+}
+
 void GnomeManager::processSocialInteractions( quint64 tickNumber )
 {
 	// Process once per in-game hour (600 ticks) — gives ~1-2 interactions/pair/day
@@ -849,16 +910,33 @@ void GnomeManager::processSocialInteractions( quint64 tickNumber )
 		}
 	}
 
-	// Step 2: Process interactions between nearby gnomes
+	// Step 2: Spatial social — only check gnomes in same/adjacent cells
+	QSet<quint64> processedPairs;
+
 	for ( int i = 0; i < m_gnomes.size(); ++i )
 	{
 		Gnome* a = m_gnomes[i];
 		if ( a->isDead() ) continue;
 
-		for ( int j = i + 1; j < m_gnomes.size(); ++j )
+		QVector<unsigned int> nearby;
+		if ( g->sg() )
 		{
-			Gnome* b = m_gnomes[j];
-			if ( b->isDead() ) continue;
+			g->sg()->entitiesInRadius( a->getPos(), 1, nearby );
+		}
+
+		for ( auto otherID : nearby )
+		{
+			if ( otherID == a->id() ) continue;
+
+			Gnome* b = gnome( otherID );
+			if ( !b || b->isDead() ) continue;
+
+			// Deduplicate: use ordered pair key
+			unsigned int lo = qMin( a->id(), otherID );
+			unsigned int hi = qMax( a->id(), otherID );
+			quint64 pairKey = static_cast<quint64>( lo ) * 100000ULL + hi;
+			if ( processedPairs.contains( pairKey ) ) continue;
+			processedPairs.insert( pairKey );
 
 			Position posA = a->getPos();
 			Position posB = b->getPos();

@@ -18,6 +18,7 @@
 #include "gnome.h"
 #include "../game/gnomemanager.h"
 #include "../game/game.h"
+#include "../game/spatialgrid.h"
 
 #include "../base/behaviortree/bt_tree.h"
 #include "../base/config.h"
@@ -261,7 +262,13 @@ Gnome::~Gnome()
 
 void Gnome::init()
 {
+	m_bucket = static_cast<int>( m_id % GnomeManager::N_BUCKETS );
+
 	g->w()->insertCreatureAtPosition( m_position, m_id );
+	if ( g->sg() )
+	{
+		g->sg()->insertEntity( m_id, m_position );
+	}
 
 	updateSprite();
 	initTaskMap();
@@ -820,9 +827,104 @@ void Gnome::selectProfession( QString profession )
 	}
 }
 
-// returns job changed, used to signal for activiti indicator
+// Dispatcher: routes to fullTick or cheapTick based on bucket assignment
 CreatureTickResult Gnome::onTick( quint64 tickNumber, bool seasonChanged, bool dayChanged, bool hourChanged, bool minuteChanged )
 {
+	if ( m_forceFullTick || ( m_bucket == static_cast<int>( tickNumber % GnomeManager::N_BUCKETS ) ) )
+	{
+		return fullTick( tickNumber, seasonChanged, dayChanged, hourChanged, minuteChanged );
+	}
+	return cheapTick( tickNumber );
+}
+
+// Cheap tick: survival checks, movement along cached path, work timer check
+// No BT evaluation, no need evaluation, no job search
+CreatureTickResult Gnome::cheapTick( quint64 tickNumber )
+{
+	processCooldowns( tickNumber );
+
+	// Survival-critical checks
+	if ( checkFloor() )
+	{
+		m_lastOnTick = tickNumber;
+		return CreatureTickResult::NOFLOOR;
+	}
+	m_anatomy.setFluidLevelonTile( g->w()->fluidLevel( m_position ) );
+	if ( m_anatomy.statusChanged() )
+	{
+		auto status = m_anatomy.status();
+		if ( status & AS_DEAD )
+		{
+			die();
+		}
+	}
+	if ( isDead() )
+	{
+		m_expires    = GameState::tick + Global::util->ticksPerDay * 2;
+		m_lastOnTick = tickNumber;
+		return CreatureTickResult::DEAD;
+	}
+
+	Position oldPos = m_position;
+
+	// State-aware cheap tick (Phase F)
+	switch ( m_gnomeState )
+	{
+		case GnomeState::MOVING:
+			if ( !m_currentPath.empty() && m_moveCooldown <= 0 )
+			{
+				if ( !moveOnPath() )
+				{
+					m_gnomeState = GnomeState::IDLE;
+					m_forceFullTick = true;
+				}
+				if ( m_currentPath.empty() )
+				{
+					m_forceFullTick = true;
+				}
+			}
+			break;
+
+		case GnomeState::WORKING:
+			if ( m_taskFinishTick > 0 && GameState::tick >= m_taskFinishTick )
+			{
+				m_forceFullTick = true;
+			}
+			break;
+
+		default:
+			// IDLE, THINKING, NEEDS, COMBAT — should only happen on full tick
+			m_forceFullTick = true;
+			break;
+	}
+
+	// Job canceled/aborted while in cheap tick
+	if ( m_job && ( m_job->isAborted() || m_job->isCanceled() ) )
+	{
+		m_forceFullTick = true;
+	}
+
+	// Interrupt and combat flags
+	if ( m_combatAlert || m_interruptFlag )
+	{
+		m_gnomeState = GnomeState::IDLE;
+		m_forceFullTick = true;
+	}
+
+	move( oldPos );
+	updateLight( oldPos, m_position );
+
+	m_lastOnTick = tickNumber;
+	return CreatureTickResult::OK;
+}
+
+// Full tick: complete BT evaluation, needs, job decisions
+CreatureTickResult Gnome::fullTick( quint64 tickNumber, bool seasonChanged, bool dayChanged, bool hourChanged, bool minuteChanged )
+{
+	m_forceFullTick = false;
+	m_interruptFlag = false;
+	m_combatAlert   = false;
+
 	processCooldowns( tickNumber );
 
 	if ( !m_isOnMission )
@@ -991,8 +1093,25 @@ CreatureTickResult Gnome::onTick( quint64 tickNumber, bool seasonChanged, bool d
 
 	if ( m_jobChanged )
 	{
+		m_idleTickCount = 0;
 		return CreatureTickResult::JOBCHANGED;
 	}
+
+	// Phase D: sleep trigger — if idle with no job and no pending jobs for 30+ ticks
+	if ( !m_job && m_pendingJobs.isEmpty() )
+	{
+		m_idleTickCount++;
+		if ( m_idleTickCount >= 30 )
+		{
+			m_idleTickCount = 0;
+			g->gm()->sleepGnome( this );
+		}
+	}
+	else
+	{
+		m_idleTickCount = 0;
+	}
+
 	return CreatureTickResult::OK;
 }
 

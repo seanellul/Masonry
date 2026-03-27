@@ -45,7 +45,9 @@ private:
 	QList<Gnome*> m_specialGnomes;
 	QList<Automaton*> m_automatons;
 
-	int m_startIndex = 0;
+public:
+	static constexpr int N_BUCKETS = 10;
+private:
 
 	// Social system (Milestone 2.0b, redesigned)
 	QHash<unsigned int, QHash<unsigned int, int>> m_opinions;
@@ -123,6 +125,11 @@ public:
 	void createJobs();
 
 	void setInMission( unsigned int gnomeID, unsigned int missionID );
+
+	// Sleep/Wake system (Phase D)
+	void sleepGnome( Gnome* gnome );
+	void wakeGnome( Gnome* gnome );
+	void safetyNetScan( quint64 tickNumber );
 
 	QString name( unsigned int gnomeID );
 	

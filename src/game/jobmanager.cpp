@@ -25,6 +25,7 @@
 #include "../game/farmingmanager.h"
 #include "../game/game.h"
 #include "../game/gnomemanager.h"
+#include "../game/spatialgrid.h"
 #include "../game/inventory.h"
 #include "../game/mechanismmanager.h"
 #include "../game/stockpilemanager.h"
@@ -144,6 +145,7 @@ void JobManager::onTick()
 				if ( requiredItemsAvail( jobID ) )
 				{
 					m_jobsPerType[job->type()].insert( job->priority(), job->id() );
+					pushJobToGnomes( jobID );
 				}
 				else
 				{
@@ -162,6 +164,12 @@ void JobManager::onTick()
 		}
 	}
 	m_returnedJobQueue += skippedJobs;
+
+	// Process overflow pool periodically (jobs with no nearby eligible gnomes)
+	if ( GameState::tick % 120 == 0 )
+	{
+		processOverflowPool();
+	}
 }
 
 bool JobManager::requiredItemsAvail( unsigned int jobID )
@@ -333,6 +341,11 @@ void JobManager::addLoadedJob( QVariant vals )
 		m_returnedJobQueue.enqueue( job->id() );
 	}
 
+	if ( g->sg() )
+	{
+		g->sg()->insertJob( job->id(), job->pos() );
+	}
+
 	setJobSprites( job->id(), job->isWorked(), false );
 }
 
@@ -363,6 +376,11 @@ unsigned int JobManager::addJob( QString type, Position pos, int rotation, bool 
 	insertIntoPositionHash( job->id() );
 
 	m_returnedJobQueue.enqueue( job->id() );
+
+	if ( g->sg() )
+	{
+		g->sg()->insertJob( job->id(), pos );
+	}
 
 	setJobSprites( job->id(), false, false );
 
@@ -464,6 +482,11 @@ unsigned int JobManager::addJob( QString type, Position pos, QString item, QList
 	insertIntoPositionHash( job->id() );
 
 	m_returnedJobQueue.enqueue( job->id() );
+
+	if ( g->sg() )
+	{
+		g->sg()->insertJob( job->id(), pos );
+	}
 
 	setJobSprites( job->id(), false, false );
 	return job->id();
@@ -767,6 +790,11 @@ void JobManager::finishJob( unsigned int jobID )
 
 		removeFromPositionHash( jobID );
 
+		if ( g->sg() )
+		{
+			g->sg()->removeJob( jobID, job->pos() );
+		}
+
 		for ( auto& mtype : m_jobsPerType )
 		{
 			mtype.remove( job->priority(), jobID );
@@ -1038,6 +1066,10 @@ void JobManager::cancelJob( const Position& pos )
 			setJobSprites( jobID, false, true );
 
 			removeFromPositionHash( jobID );
+			if ( g->sg() )
+			{
+				g->sg()->removeJob( jobID, job->pos() );
+			}
 			for ( auto& type : m_jobsPerType )
 			{
 				type.remove( job->priority(), jobID );
@@ -1073,6 +1105,10 @@ void JobManager::deleteJob( unsigned int jobID )
 			setJobSprites( jobID, false, true );
 
 			removeFromPositionHash( jobID );
+			if ( g->sg() )
+			{
+				g->sg()->removeJob( jobID, job->pos() );
+			}
 			for ( auto& type : m_jobsPerType )
 			{
 				type.remove( job->priority(), jobID );
@@ -1162,4 +1198,191 @@ void JobManager::lowerPrio( Position& pos )
 			job->lowerPrio();
 		}
 	}
+}
+
+// --- Push Model (Phase B) ---
+
+void JobManager::registerGnomeSkill( unsigned int gnomeID, const QString& skill )
+{
+	if ( !m_gnomesBySkill.contains( skill, gnomeID ) )
+	{
+		m_gnomesBySkill.insert( skill, gnomeID );
+	}
+}
+
+void JobManager::unregisterGnomeSkill( unsigned int gnomeID, const QString& skill )
+{
+	m_gnomesBySkill.remove( skill, gnomeID );
+}
+
+void JobManager::pushJobToGnomes( unsigned int jobID )
+{
+	auto job = m_jobList.value( jobID );
+	if ( !job || job->isWorked() || job->isCanceled() )
+		return;
+
+	QString skill = job->requiredSkill();
+	auto eligibleGnomes = m_gnomesBySkill.values( skill );
+	if ( eligibleGnomes.isEmpty() )
+	{
+		m_overflowPool.append( jobID );
+		return;
+	}
+
+	Position jobPos = job->pos();
+
+	// Spatial filter: find K=5 nearest eligible gnomes using expanding rings
+	QSet<unsigned int> eligibleSet( eligibleGnomes.begin(), eligibleGnomes.end() );
+	QVector<QPair<int, unsigned int>> candidates; // <distSq, gnomeID>
+
+	for ( int ring = 0; ring <= 3 && candidates.size() < 5; ++ring )
+	{
+		QVector<unsigned int> nearby;
+		if ( g->sg() )
+		{
+			g->sg()->entitiesInRadius( jobPos, ring, nearby );
+		}
+
+		for ( auto entityID : nearby )
+		{
+			if ( !eligibleSet.contains( entityID ) ) continue;
+
+			Gnome* gn = g->gm()->gnome( entityID );
+			if ( !gn || gn->isDead() ) continue;
+
+			Position gnPos = gn->getPos();
+			int dx = gnPos.x - jobPos.x;
+			int dy = gnPos.y - jobPos.y;
+			int dz = gnPos.z - jobPos.z;
+			int distSq = dx * dx + dy * dy + dz * dz;
+
+			candidates.append( qMakePair( distSq, entityID ) );
+		}
+	}
+
+	if ( candidates.isEmpty() )
+	{
+		m_overflowPool.append( jobID );
+		return;
+	}
+
+	// Sort by distance and take top 5
+	std::sort( candidates.begin(), candidates.end() );
+	int pushCount = qMin( 5, candidates.size() );
+
+	for ( int i = 0; i < pushCount; ++i )
+	{
+		unsigned int gnomeID = candidates[i].second;
+		Gnome* gn = g->gm()->gnome( gnomeID );
+		if ( !gn ) continue;
+
+		// Insert into pending queue sorted by job priority (highest first)
+		int prio = job->priority();
+		int insertIdx = 0;
+		for ( ; insertIdx < gn->pendingJobs().size(); ++insertIdx )
+		{
+			auto pendJob = m_jobList.value( gn->pendingJobs()[insertIdx] );
+			if ( !pendJob || pendJob->priority() < prio )
+				break;
+		}
+		gn->pendingJobs().insert( insertIdx, jobID );
+
+		// Cap pending queue at 10
+		while ( gn->pendingJobs().size() > 10 )
+		{
+			gn->pendingJobs().removeLast();
+		}
+
+		// Wake sleeping gnomes when a job is pushed to them
+		if ( gn->isSleeping() )
+		{
+			g->gm()->wakeGnome( gn );
+		}
+	}
+}
+
+void JobManager::processOverflowPool()
+{
+	if ( m_overflowPool.isEmpty() ) return;
+
+	QList<unsigned int> remaining;
+	for ( auto jobID : m_overflowPool )
+	{
+		auto job = m_jobList.value( jobID );
+		if ( !job || job->isWorked() || job->isCanceled() )
+			continue;
+
+		QString skill = job->requiredSkill();
+		if ( m_gnomesBySkill.contains( skill ) )
+		{
+			// Re-attempt push now that gnomes may have moved
+			pushJobToGnomes( jobID );
+		}
+		else
+		{
+			remaining.append( jobID );
+		}
+	}
+	m_overflowPool = remaining;
+}
+
+void JobManager::rebuildPushState()
+{
+	m_gnomesBySkill.clear();
+	m_overflowPool.clear();
+
+	// Register all gnome skills
+	for ( auto* gn : g->gm()->gnomes() )
+	{
+		for ( const auto& skill : gn->skillPrios() )
+		{
+			registerGnomeSkill( gn->id(), skill );
+		}
+	}
+
+	// Push all unclaimed jobs
+	for ( auto it = m_jobList.constBegin(); it != m_jobList.constEnd(); ++it )
+	{
+		auto job = it.value();
+		if ( !job->isWorked() && !job->isCanceled() )
+		{
+			pushJobToGnomes( it.key() );
+		}
+	}
+}
+
+// --- Spatial Fallback Search (Phase H) ---
+
+unsigned int JobManager::spatialFallbackSearch( const QStringList& skills, const Position& pos, unsigned int gnomeID )
+{
+	Q_UNUSED( gnomeID );
+	unsigned int regionID = g->w()->regionMap().regionID( pos );
+	QSet<QString> skillSet( skills.begin(), skills.end() );
+
+	// Expanding ring search: own cell, then adjacent, then 2-ring, up to 5 rings
+	for ( int ring = 0; ring <= 5; ++ring )
+	{
+		QVector<unsigned int> nearbyJobs;
+		if ( g->sg() )
+		{
+			g->sg()->jobsInRadius( pos, ring, nearbyJobs );
+		}
+
+		for ( auto jobID : nearbyJobs )
+		{
+			auto job = m_jobList.value( jobID );
+			if ( !job || job->isWorked() || job->isCanceled() )
+				continue;
+			if ( !skillSet.contains( job->requiredSkill() ) )
+				continue;
+			if ( !isReachable( jobID, regionID ) )
+				continue;
+			if ( !requiredItemsAvail( jobID ) )
+				continue;
+
+			return jobID;
+		}
+	}
+
+	return 0;
 }

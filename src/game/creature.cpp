@@ -17,6 +17,7 @@
 */
 #include "creature.h"
 #include "../game/game.h"
+#include "../game/spatialgrid.h"
 
 #include "../base/behaviortree/bt_factory.h"
 #include "../base/gamestate.h"
@@ -764,6 +765,11 @@ void Creature::move( Position oldPos )
 	{
 		g->w()->removeCreatureFromPosition( oldPos, m_id );
 		g->w()->insertCreatureAtPosition( m_position, m_id );
+
+		if ( g->sg() )
+		{
+			g->sg()->moveEntity( m_id, oldPos, m_position );
+		}
 
 		if( m_hasTransparency )
 		{

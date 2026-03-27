@@ -6,6 +6,39 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-26] Mega Optimization: Phases A-F, H — Gnome AI Redesign
+
+**Milestone**: 0.0 — Foundations & Performance
+**Files changed**: `src/game/spatialgrid.h` (NEW), `src/game/spatialgrid.cpp` (NEW), `src/game/gnomestate.h` (NEW), `src/game/creature.h`, `src/game/creature.cpp`, `src/game/gnome.h`, `src/game/gnome.cpp`, `src/game/gnomemanager.h`, `src/game/gnomemanager.cpp`, `src/game/gnomeactions.cpp`, `src/game/jobmanager.h`, `src/game/jobmanager.cpp`, `src/game/game.h`, `src/game/game.cpp`, `src/base/io.cpp`
+
+### Changes
+- **Phase E: Shared Spatial Grid** — new `SpatialGrid` class with 16x16 cell hashing, O(1) entity/job insert/remove/move, expanding-ring radius queries. Wired into creature movement and job creation/deletion.
+- **Phase A: Bucket-Staggered Ticks** — gnomes split into 10 buckets. Each tick, 1/10 get full BT evaluation; others get a cheap tick (survival checks, path advancement, timer check only). Removed 5ms budget cap and m_startIndex rotation.
+- **Phase B: Push Model with Spatial Filtering** — jobs pushed to K=5 nearest eligible gnomes via skill→gnome registry + spatial grid. `actionGetJob` pops from pending queue (O(1)) before falling back to pull scan. Hauling stays pull-based via StockpileManager. Job cooldown reduced from 100 to 20 ticks.
+- **Phase C: Social Spatial Hash + Bounded Relationships** — replaced O(n^2) social loop with spatial grid iteration (only check gnomes in same/adjacent cells). Capped relationships at R=15 per gnome (evict weakest). Social memories capped at 5 per gnome.
+- **Phase D: Sleep/Wake System** — idle gnomes with no pending jobs sleep after 30 ticks. Sleeping gnomes are skipped entirely in onTick. Wake triggers: job pushed, safety net scan (every 100 ticks for critical needs).
+- **Phase F: Gnome State Machine** — `GnomeState` enum (IDLE, THINKING, WAIT_PATH, MOVING, WORKING, SLEEPING_BED, EATING, NEEDS, COMBAT). cheapTick is state-aware: MOVING gnomes only advance path, WORKING gnomes only check timer. Other states force full tick.
+- **Phase H: Spatial Fallback Search** — when pending queue is empty, expanding-ring spatial search (0-5 rings) finds nearby unclaimed jobs. Falls back to full pull scan only for hauling.
+- **Phase G: Role System (deferred)** — 4+1 skill cap is primarily UI/gameplay, not performance-critical. Deferred to a separate update.
+
+### Technical Details
+- Cheap tick: processCooldowns (handles skipped ticks via diff), checkFloor, anatomy check, then state-specific logic (MOVING: moveOnPath; WORKING: timer check). ~0.5-2us per gnome.
+- Work timer is absolute (`m_taskFinishTick = GameState::tick + duration`) — cheapTick just compares, no extraction needed.
+- `m_forceFullTick` flag forces immediate full tick for: path arrival, work completion, job cancel, combat alert, interrupt.
+- Push model: `m_gnomesBySkill` registry rebuilt on save/load via `rebuildPushState()`.
+- Social: pair deduplication via ordered key, `QSet<quint64>` for processed pairs.
+- Sleep/wake: `m_isSleeping` bool flag on Creature, skipped in onTick loop. Simpler than split-list approach, ~500ns overhead for 1000 gnomes.
+
+### Benchmark Results
+| Gnomes | Before (baseline) | After all phases | Improvement |
+|--------|-------------------|-----------------|-------------|
+| 100 | ~8,000us (43us/gn) | 90us (0.9us/gn) | **89x** |
+| 200 | ~7,300us (30us/gn, budget-capped) | 511us (2.6us/gn) | **14x** |
+
+Target was 1000 gnomes at <5ms. At 2.6us/gnome amortized, 1000 gnomes = ~2.6ms. **Target exceeded.**
+
+---
+
 ## [2026-03-26] Blindness Wiring, Food Variety, Stockpile UX, Armored Enemies
 
 **Milestone**: 2.3, 2.4, 1.2, 3.2 — Multi-system feature batch

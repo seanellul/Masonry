@@ -21,6 +21,7 @@
 #include "../base/pathfinder.h"
 #include "../base/priorityqueue.h"
 #include "../game/anatomy.h"
+#include "../game/gnomestate.h"
 #include "object.h"
 
 #include <QPixmap>
@@ -173,6 +174,12 @@ public:
 	{
 		return m_isDead;
 	};
+
+	bool isSleeping() const { return m_isSleeping; }
+	void setIsSleeping( bool sleeping ) { m_isSleeping = sleeping; }
+
+	QList<unsigned int>& pendingJobs() { return m_pendingJobs; }
+	void setForceFullTick( bool force ) { m_forceFullTick = force; }
 	bool toDestroy() const
 	{
 		return m_toDestroy;
@@ -411,6 +418,13 @@ protected:
 	bool m_interruptFlag     = false; // high-priority job interrupt
 	bool m_combatAlert       = false; // immediate combat response
 	bool m_isSleeping        = false; // Phase D: removed from tick entirely
+	GnomeState m_gnomeState  = GnomeState::IDLE;  // Phase F: state machine
+
+	// Push model (Phase B): jobs pushed to this gnome's queue
+	QList<unsigned int> m_pendingJobs;
+
+	// Sleep/Wake (Phase D)
+	int m_idleTickCount = 0;  // ticks spent idle with no job
 
 	int m_globalCooldown        = 0;
 	int m_kickCooldown          = 0;

@@ -43,6 +43,7 @@
 
 #include "../game/gamemanager.h"
 #include "../game/gnome.h"
+#include "../game/spatialgrid.h"
 
 #include "../game/itemhistory.h"
 #include "../game/object.h"
@@ -125,6 +126,7 @@ Game::Game( QObject* parent ) :
 
 Game::~Game()
 {
+	delete m_spatialGrid;
 }
 
 void Game::generateWorld( NewGameSettings* ngs )
@@ -137,12 +139,18 @@ void Game::generateWorld( NewGameSettings* ngs )
 	wg.addLife();
 
 	m_pf.reset( new PathFinder( m_world.get(), this ) );
+
+	delete m_spatialGrid;
+	m_spatialGrid = new SpatialGrid( Global::dimX, Global::dimY, Global::dimZ );
 }
 
 void Game::setWorld( int dimX, int dimY, int dimZ )
 {
 	m_world.reset( new World( dimX, dimY, dimZ, this ) );
 	m_pf.reset( new PathFinder( m_world.get(), this ) );
+
+	delete m_spatialGrid;
+	m_spatialGrid = new SpatialGrid( dimX, dimY, dimZ );
 }
 
 void Game::start()
@@ -687,4 +695,5 @@ NeighborManager*	Game::nm(){ return m_neighborManager; }
 MilitaryManager*	Game::mil(){ return m_militaryManager; }
 SoundManager*		Game::sm(){ return m_soundManager; }
 PathFinder*			Game::pf(){ return m_pf.get(); }
+SpatialGrid*		Game::sg(){ return m_spatialGrid; }
 World*				Game::world() { return m_world.get(); }
