@@ -237,8 +237,20 @@ void Anatomy::damage( Equipment* eq, DamageType dt, AnatomyHeight da, AnatomySid
 		break;
 		case AH_HIGH:
 		{
-			// hit head
-			hitPart = CP_HEAD;
+			// hit head, with small chance to hit an eye
+			ra = rand() % 100;
+			if ( ra < 8 && m_parts.contains( CP_LEFT_EYE ) && m_parts[CP_LEFT_EYE].hp > 0 )
+			{
+				hitPart = CP_LEFT_EYE;
+			}
+			else if ( ra < 15 && m_parts.contains( CP_RIGHT_EYE ) && m_parts[CP_RIGHT_EYE].hp > 0 )
+			{
+				hitPart = CP_RIGHT_EYE;
+			}
+			else
+			{
+				hitPart = CP_HEAD;
+			}
 		}
 		break;
 	}
@@ -313,6 +325,27 @@ void Anatomy::damage( Equipment* eq, DamageType dt, AnatomyHeight da, AnatomySid
 				m_statusChanged = true;
 			}
 		}
+
+		// Update blindness status based on eye damage
+		if ( hitPart == CP_LEFT_EYE || hitPart == CP_RIGHT_EYE )
+		{
+			bool leftEyeOut  = m_parts.contains( CP_LEFT_EYE ) && m_parts[CP_LEFT_EYE].hp <= 0;
+			bool rightEyeOut = m_parts.contains( CP_RIGHT_EYE ) && m_parts[CP_RIGHT_EYE].hp <= 0;
+
+			if ( leftEyeOut && rightEyeOut )
+			{
+				m_status        = AnatomyStatus( ( m_status & ~AS_HALFBLIND ) | AS_BLIND );
+				m_statusChanged = true;
+			}
+			else if ( leftEyeOut || rightEyeOut )
+			{
+				if ( !( m_status & AS_BLIND ) )
+				{
+					m_status        = AnatomyStatus( m_status | AS_HALFBLIND );
+					m_statusChanged = true;
+				}
+			}
+		}
 	}
 }
 
@@ -342,9 +375,8 @@ bool Anatomy::statusChanged()
 			m_blood += 0.25;
 			if ( m_blood > 4000 && (bool)( m_status & AS_UNCONSCIOUS ) )
 			{
-				unsigned char mask = 0xFF ^ AS_UNCONSCIOUS;
-				m_status           = ( AnatomyStatus )( m_status & mask );
-				m_statusChanged    = true;
+				m_status        = ( AnatomyStatus )( m_status & ~(unsigned int)AS_UNCONSCIOUS );
+				m_statusChanged = true;
 			}
 		}
 	}
@@ -383,7 +415,7 @@ AnatomyHeight Anatomy::randomAttackHeight() const
 
 void Anatomy::heal()
 {
-	if ( m_status | AS_WOUNDED )
+	if ( m_status & AS_WOUNDED )
 	{
 		bool stillWounded = false;
 
@@ -400,9 +432,28 @@ void Anatomy::heal()
 		}
 		if ( !stillWounded )
 		{
-			unsigned char mask = 0xFF ^ AS_WOUNDED;
-			m_status           = ( AnatomyStatus )( m_status & mask );
-			m_statusChanged    = true;
+			unsigned int mask = ~(unsigned int)AS_WOUNDED;
+			m_status          = ( AnatomyStatus )( m_status & mask );
+			m_statusChanged   = true;
+		}
+
+		// Update blindness status as eyes heal
+		if ( m_status & ( AS_HALFBLIND | AS_BLIND ) )
+		{
+			bool leftEyeOut  = m_parts.contains( CP_LEFT_EYE ) && m_parts[CP_LEFT_EYE].hp <= 0;
+			bool rightEyeOut = m_parts.contains( CP_RIGHT_EYE ) && m_parts[CP_RIGHT_EYE].hp <= 0;
+
+			if ( !leftEyeOut && !rightEyeOut )
+			{
+				m_status        = ( AnatomyStatus )( m_status & ~(unsigned int)( AS_HALFBLIND | AS_BLIND ) );
+				m_statusChanged = true;
+			}
+			else if ( leftEyeOut != rightEyeOut && ( m_status & AS_BLIND ) )
+			{
+				// Was blind, one eye healed — downgrade to half-blind
+				m_status        = ( AnatomyStatus )( ( m_status & ~(unsigned int)AS_BLIND ) | AS_HALFBLIND );
+				m_statusChanged = true;
+			}
 		}
 	}
 }
