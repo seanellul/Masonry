@@ -303,6 +303,8 @@ public:
 
 	bool hasTransparency() { return m_hasTransparency; }
 
+	int armorValue() const { return m_armorValue; }
+
 	bool equipmentChanged();
 
 protected:
@@ -402,6 +404,14 @@ protected:
 	unsigned char m_lightIntensity = 0;
 
 	quint64 m_lastOnTick        = 0;
+
+	// Bucket-staggered tick system (Phase A optimization)
+	int m_bucket             = 0;     // assigned gnome.id % N_BUCKETS
+	bool m_forceFullTick     = false; // bypass bucket check — event-driven wake
+	bool m_interruptFlag     = false; // high-priority job interrupt
+	bool m_combatAlert       = false; // immediate combat response
+	bool m_isSleeping        = false; // Phase D: removed from tick entirely
+
 	int m_globalCooldown        = 0;
 	int m_kickCooldown          = 0;
 	int m_biteCooldown          = 0;
@@ -424,6 +434,8 @@ protected:
 	quint64 m_nextCheckTick = 0;
 
 	bool m_hasTransparency = false;
+
+	int m_armorValue = 0;  // Flat damage reduction from natural armor (Milestone 3.2)
 
 	QHash<QString, std::function<BT_RESULT( bool )>> m_behaviors;
 	QHash<QString, std::function<bool( void )>> m_taskFunctions;

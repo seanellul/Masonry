@@ -40,7 +40,8 @@ Monster::Monster( QString species, int level, Position& pos, Gender gender, Game
 
 	QVariantMap mvm = DB::selectRow( "Monsters", species );
 
-	m_btName = mvm.value( "BehaviorTree" ).toString();
+	m_btName     = mvm.value( "BehaviorTree" ).toString();
+	m_armorValue = mvm.value( "Armor" ).toInt();
 
 	updateSprite();
 
@@ -51,15 +52,19 @@ Monster::Monster( QVariantMap in, Game* game ) :
 	Creature( in, game ),
 	m_level( in.value( "Level" ).toInt() )
 {
-	m_type = CreatureType::MONSTER;
+	m_type       = CreatureType::MONSTER;
+	m_armorValue = in.value( "Armor" ).toInt();
 
 	updateSprite();
 }
 
 void Monster::serialize( QVariantMap& out )
 {
-	// animal
 	out.insert( "Level", m_level );
+	if ( m_armorValue > 0 )
+	{
+		out.insert( "Armor", m_armorValue );
+	}
 	Creature::serialize( out );
 }
 
@@ -434,12 +439,21 @@ bool Monster::attack( DamageType dt, AnatomyHeight da, int skill, int strength, 
 
 	if ( hit )
 	{
-		Global::logger().log( LogType::COMBAT, m_name + " took " + QString::number( strength ) + " damage.", m_id );
-		m_anatomy.damage( &m_equipment, dt, da, ds, strength );
+		int effectiveStrength = strength;
+		if ( m_armorValue > 0 )
+		{
+			effectiveStrength = qMax( 1, strength - m_armorValue );
+			if ( effectiveStrength < strength )
+			{
+				Global::logger().log( LogType::COMBAT, m_name + "'s armor absorbs " + QString::number( strength - effectiveStrength ) + " damage", m_id );
+			}
+		}
+		Global::logger().log( LogType::COMBAT, m_name + " took " + QString::number( effectiveStrength ) + " damage.", m_id );
+		m_anatomy.damage( &m_equipment, dt, da, ds, effectiveStrength );
 	}
 	else
 	{
-		Global::logger().log( LogType::COMBAT, m_name + " dogded the attack. Skill:" + QString::number( skill ) + " Dodge: " + QString::number( dodge ), m_id );
+		Global::logger().log( LogType::COMBAT, m_name + " dodged the attack. Skill:" + QString::number( skill ) + " Dodge: " + QString::number( dodge ), m_id );
 	}
 
 	bool aeExists = false;

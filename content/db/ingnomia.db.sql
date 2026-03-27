@@ -380,7 +380,8 @@ DROP TABLE IF EXISTS "Monsters";
 CREATE TABLE IF NOT EXISTS "Monsters" (
 	"ID"	VARCHAR(30),
 	"BehaviorTree"	VARCHAR(30),
-	"Food"	VARCHAR(50)
+	"Food"	VARCHAR(50),
+	"Armor"	INTEGER DEFAULT 0
 );
 DROP TABLE IF EXISTS "Missions";
 CREATE TABLE IF NOT EXISTS "Missions" (
@@ -5625,6 +5626,7 @@ INSERT INTO "Translation" ("ID","Text") VALUES ('$GroupName_Sand','soil');
 INSERT INTO "Translation" ("ID","Text") VALUES ('$GroupName_Clay','soil');
 INSERT INTO "Translation" ("ID","Text") VALUES ('$MaterialName_any (same)','any (same)');
 INSERT INTO "Translation" ("ID","Text") VALUES ('$CreatureName_Goblin','Goblin');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$CreatureName_GoblinArmored','Armored Goblin');
 INSERT INTO "Translation" ("ID","Text") VALUES ('$CreatureName_MantSoldier','Mant soldier');
 INSERT INTO "Translation" ("ID","Text") VALUES ('$CreatureName_MantWorker','Mant worker');
 INSERT INTO "Translation" ("ID","Text") VALUES ('$CreatureName_MantQueen','Mant queen');
@@ -11044,10 +11046,12 @@ INSERT INTO "MoveSpeed" ("Creature","Skill","Speed") VALUES ('Gnome',18,115);
 INSERT INTO "MoveSpeed" ("Creature","Skill","Speed") VALUES ('Gnome',19,120);
 INSERT INTO "MoveSpeed" ("Creature","Skill","Speed") VALUES ('Gnome',20,125);
 INSERT INTO "Monsters_Levels" ("ID","Level","Sprite") VALUES ('Goblin',0.0,'Goblin');
-INSERT INTO "Monsters" ("ID","BehaviorTree","Food") VALUES ('Goblin','Monster','Vegetable');
-INSERT INTO "Monsters" ("ID","BehaviorTree","Food") VALUES ('MantWorker','MantWorker',NULL);
-INSERT INTO "Monsters" ("ID","BehaviorTree","Food") VALUES ('MantSoldier','MantSoldier',NULL);
-INSERT INTO "Monsters" ("ID","BehaviorTree","Food") VALUES ('MantQueen','MantQueen',NULL);
+INSERT INTO "Monsters_Levels" ("ID","Level","Sprite") VALUES ('GoblinArmored',0.0,'Goblin');
+INSERT INTO "Monsters" ("ID","BehaviorTree","Food","Armor") VALUES ('Goblin','Monster','Vegetable',0);
+INSERT INTO "Monsters" ("ID","BehaviorTree","Food","Armor") VALUES ('GoblinArmored','Monster','Vegetable',2);
+INSERT INTO "Monsters" ("ID","BehaviorTree","Food","Armor") VALUES ('MantWorker','MantWorker',NULL,0);
+INSERT INTO "Monsters" ("ID","BehaviorTree","Food","Armor") VALUES ('MantSoldier','MantSoldier',NULL,1);
+INSERT INTO "Monsters" ("ID","BehaviorTree","Food","Armor") VALUES ('MantQueen','MantQueen',NULL,0);
 INSERT INTO "Missions" ("ID","TypeInt","MinGnomes","MaxGnomes","Target","Actions") VALUES ('Explore',1,1,1,NULL,NULL);
 INSERT INTO "Missions" ("ID","TypeInt","MinGnomes","MaxGnomes","Target","Actions") VALUES ('Spy',2,1,1,'Kingdom',NULL);
 INSERT INTO "Missions" ("ID","TypeInt","MinGnomes","MaxGnomes","Target","Actions") VALUES ('Emissary',3,1,1,'Kingdom','Improve|Insult|InviteTrader|InviteAmbassador');
@@ -11814,6 +11818,21 @@ INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales
 INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinBack','Feet','GoblinFootLeft',6,NULL,NULL);
 INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinBack','Hair','#GoblinHair1|GoblinHair2|GoblinHair3|GoblinHair4|GoblinHair5',7,NULL,NULL);
 INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinBack','Clothing','#GoblinClothing1|GoblinClothing2|GoblinClothing3|GoblinClothing4|GoblinClothing5',3,NULL,NULL);
+INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinArmored','LeftArm','GoblinArmLeft',1,NULL,NULL);
+INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinArmored','Torso','GoblinTorso',2,NULL,NULL);
+INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinArmored','RightArm','GoblinArmRight',4,NULL,NULL);
+INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinArmored','Head','GoblinHead',5,NULL,NULL);
+INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinArmored','Feet','GoblinFootLeft',6,NULL,NULL);
+INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinArmored','Hair','#GoblinHair1|GoblinHair2|GoblinHair3|GoblinHair4',7,NULL,NULL);
+INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinArmored','Facial','#GoblinBeard1|GoblinBeard2|GoblinBeard3|GoblinBeard4|GoblinBeard5',8,NULL,NULL);
+INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinArmored','Clothing','#GoblinClothing1|GoblinClothing2|GoblinClothing3|GoblinClothing4|GoblinClothing5',3,NULL,NULL);
+INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinArmoredBack','Head','GoblinHead',1,NULL,NULL);
+INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinArmoredBack','Torso','GoblinTorso',2,NULL,NULL);
+INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinArmoredBack','LeftArm','GoblinArmLeft',4,NULL,NULL);
+INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinArmoredBack','RightArm','GoblinArmRight',5,NULL,NULL);
+INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinArmoredBack','Feet','GoblinFootLeft',6,NULL,NULL);
+INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinArmoredBack','Hair','#GoblinHair1|GoblinHair2|GoblinHair3|GoblinHair4|GoblinHair5',7,NULL,NULL);
+INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('GoblinArmoredBack','Clothing','#GoblinClothing1|GoblinClothing2|GoblinClothing3|GoblinClothing4|GoblinClothing5',3,NULL,NULL);
 INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('Gnome','RightArm','GnomeArmRight',6,NULL,NULL);
 INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('Gnome','RightArmArmor',NULL,7,'Material',NULL);
 INSERT INTO "Creature_Parts" ("ID","Part","BaseSprite","Order","Tint","Conceales") VALUES ('Gnome','RightHandArmor',NULL,8,'Material',NULL);

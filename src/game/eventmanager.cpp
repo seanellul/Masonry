@@ -397,9 +397,22 @@ void EventManager::spawnGnome( Position location, int amount )
 void EventManager::spawnInvasion( Position location, int amount, QVariantMap data )
 {
 	QString type = data.value( "Species" ).toString();
+
+	// Determine armored goblin ratio based on difficulty and year
+	int armoredPercent = 0;
+	if ( type == "Goblin" && GameState::difficulty >= 2 ) // Normal or higher
+	{
+		armoredPercent = qMin( 50, GameState::year * 10 + ( GameState::difficulty - 2 ) * 10 );
+	}
+
 	for ( int i = 0; i < amount; ++i )
 	{
-		g->m_creatureManager->addCreature( CreatureType::MONSTER, type, location, Gender::MALE, true, false, 1 );
+		QString spawnType = type;
+		if ( armoredPercent > 0 && ( rand() % 100 ) < armoredPercent )
+		{
+			spawnType = "GoblinArmored";
+		}
+		g->m_creatureManager->addCreature( CreatureType::MONSTER, spawnType, location, Gender::MALE, true, false, 1 );
 	}
 }
 
@@ -656,8 +669,12 @@ void EventManager::addRaidEvent( NeighborKingdom kingdom )
 
 	m_eventList.append( e );
 
-	Global::logger().log( LogType::DANGER,
-		"A goblin raid is approaching! " + QString::number( scaledAmount ) + " enemies detected.", 0 );
+	QString raidMsg = "A goblin raid is approaching! " + QString::number( scaledAmount ) + " enemies detected.";
+	if ( GameState::difficulty >= 2 && GameState::year >= 1 )
+	{
+		raidMsg += " Some appear to be armored!";
+	}
+	Global::logger().log( LogType::DANGER, raidMsg, 0 );
 }
 
 void EventManager::startMission( MissionType type, MissionAction action, unsigned int targetKingdom, unsigned int gnomeID )
