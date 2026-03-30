@@ -4,6 +4,13 @@
       "command": "python3",
       "args": ["tools/mcp_server.py"],
       "cwd": "/Users/seanellul/Code/games/Ingnomia"
+    },
+    "nano-banana": {
+      "command": "npx",
+      "args": ["nano-banana-mcp"],
+      "env": {
+        "GEMINI_API_KEY": "AIzaSyCySCsW4FgYp9IqnqvygFp2m0hWXyi4uzo"
+      }
     }
   }
 }

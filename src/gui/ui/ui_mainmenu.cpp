@@ -1,4 +1,5 @@
 #include "ui_mainmenu.h"
+#include "ui_theme.h"
 #include "../imguibridge.h"
 #include "../imgui_impl_qt5.h"
 #include "../updatechecker.h"
@@ -23,10 +24,11 @@ void drawMainMenu( ImGuiBridge& bridge )
 	ImVec2 center( io.DisplaySize.x * 0.5f, io.DisplaySize.y * 0.5f );
 	auto& fonts = GetImGuiFonts();
 
-	// Dark gradient background
+	// Dark gradient background — derived from theme's window color
 	ImDrawList* bg = ImGui::GetBackgroundDrawList();
-	ImU32 topColor = IM_COL32( 8, 12, 18, 255 );
-	ImU32 botColor = IM_COL32( 14, 18, 28, 255 );
+	ImVec4 winBg = ImGui::GetStyle().Colors[ImGuiCol_WindowBg];
+	ImU32 topColor = IM_COL32( (int)(winBg.x * 180), (int)(winBg.y * 180), (int)(winBg.z * 180), 255 );
+	ImU32 botColor = IM_COL32( (int)(winBg.x * 255), (int)(winBg.y * 255), (int)(winBg.z * 255), 255 );
 	bg->AddRectFilledMultiColor( ImVec2( 0, 0 ), io.DisplaySize, topColor, topColor, botColor, botColor );
 
 	// Subtle vignette overlay
@@ -51,8 +53,6 @@ void drawMainMenu( ImGuiBridge& bridge )
 
 	ImGui::SetNextWindowPos( center, ImGuiCond_Always, ImVec2( 0.5f, 0.5f ) );
 	ImGui::SetNextWindowSize( ImVec2( menuW, menuH ) );
-	ImGui::PushStyleColor( ImGuiCol_WindowBg, ImVec4( 0.06f, 0.08f, 0.10f, 0.88f ) );
-	ImGui::PushStyleColor( ImGuiCol_Border, ImVec4( 0.20f, 0.25f, 0.32f, 0.40f ) );
 	ImGui::PushStyleVar( ImGuiStyleVar_WindowPadding, ImVec2( 20, 20 ) );
 	ImGui::PushStyleVar( ImGuiStyleVar_WindowBorderSize, 1.0f );
 
@@ -79,9 +79,7 @@ void drawMainMenu( ImGuiBridge& bridge )
 		ImGui::PopFont();
 
 	ImGui::Spacing();
-	ImGui::PushStyleColor( ImGuiCol_Separator, ImVec4( 0.25f, 0.30f, 0.38f, 0.30f ) );
 	ImGui::Separator();
-	ImGui::PopStyleColor();
 	ImGui::Spacing();
 
 	// Push UI font for buttons and body text
@@ -177,7 +175,6 @@ void drawMainMenu( ImGuiBridge& bridge )
 	ImGui::End();
 
 	ImGui::PopStyleVar( 2 );  // WindowPadding, WindowBorderSize
-	ImGui::PopStyleColor( 2 ); // WindowBg, Border
 }
 
 void drawNewGame( ImGuiBridge& bridge )
@@ -612,6 +609,20 @@ void drawSettings( ImGuiBridge& bridge )
 			if ( ImGui::SliderFloat( "Minimum light", &lightMin, 0.0f, 1.0f ) )
 			{
 				bridge.cmdSetLightMin( lightMin );
+			}
+
+			ImGui::Spacing();
+			ImGui::Separator();
+			ImGui::Spacing();
+
+			// UI Theme selector
+			int currentTheme = (int)GetActiveUITheme();
+			ImGui::Text( "UI Theme" );
+			ImGui::SameLine( 120 );
+			ImGui::SetNextItemWidth( 200 );
+			if ( ImGui::Combo( "##uitheme", &currentTheme, UIThemeNames, (int)UITheme::COUNT ) )
+			{
+				SetActiveUITheme( (UITheme)currentTheme );
 			}
 
 			ImGui::EndTabItem();

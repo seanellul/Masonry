@@ -535,17 +535,19 @@ void drawGameHUD( ImGuiBridge& bridge )
 		ImGui::End();
 
 		// Subcategory buttons (materials, workshop tabs, furniture groups, etc.)
-		float subcatPanelRight = 160; // default if no subcats
+		float catPanelRight = 160; // build cat panel is 150px at x=5
+		float subcatPanelRight = catPanelRight; // default if no subcats
 		const BuildCategorySubcats* sc = getSubcatsFor( bridge.currentBuildCategory );
 		if ( sc && sc->count > 0 )
 		{
 			// Lazy-init sprite cache
 			if ( !bridge.spriteTexCache ) bridge.spriteTexCache = new SpriteTextureCache();
 
+			float subcatW = 115.0f;
 			float subcatBtnH = 70.0f;
 			float subcatH = sc->count * ( subcatBtnH + 5 ) + 10.0f;
-			ImGui::SetNextWindowPos( ImVec2( 160, io.DisplaySize.y - toolbarHeight - subcatH - 10 ) );
-			ImGui::SetNextWindowSize( ImVec2( 110, subcatH ) );
+			ImGui::SetNextWindowPos( ImVec2( catPanelRight + 5, io.DisplaySize.y - toolbarHeight - subcatH - 10 ) );
+			ImGui::SetNextWindowSize( ImVec2( subcatW, subcatH ) );
 			ImGui::Begin( "##buildsubcats", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar );
 
 			// Map subcategory labels to representative sprites for icons
@@ -611,7 +613,7 @@ void drawGameHUD( ImGuiBridge& bridge )
 			}
 
 			ImGui::End();
-			subcatPanelRight = 235;
+			subcatPanelRight = catPanelRight + 5 + subcatW + 5;
 		}
 
 		// Build items list
@@ -619,13 +621,17 @@ void drawGameHUD( ImGuiBridge& bridge )
 	}
 	else if ( bridge.currentToolbar == ButtonSelection::Mine )
 	{
-		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - 200 ) );
-		ImGui::SetNextWindowSize( ImVec2( 160, 190 ) );
-		ImGui::Begin( "##mineactions", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove );
+		float panelW = 170.0f;
+		float btnH = 30.0f;
+		float panelH = 7 * ( btnH + ImGui::GetStyle().ItemSpacing.y ) + ImGui::GetStyle().WindowPadding.y * 2;
+		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - panelH - 5 ) );
+		ImGui::SetNextWindowSize( ImVec2( panelW, panelH ) );
+		ImGui::Begin( "##mineactions", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar );
 
+		float btnW = ImGui::GetContentRegionAvail().x;
 		for ( int i = 0; i < 7; ++i )
 		{
-			if ( ImGui::Button( mineLabels[i], ImVec2( 140, 22 ) ) )
+			if ( ImGui::Button( mineLabels[i], ImVec2( btnW, btnH ) ) )
 			{
 				bridge.cmdSetSelectionAction( mineActions[i] );
 			}
@@ -635,15 +641,19 @@ void drawGameHUD( ImGuiBridge& bridge )
 	}
 	else if ( bridge.currentToolbar == ButtonSelection::Agriculture )
 	{
-		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - 140 ) );
-		ImGui::SetNextWindowSize( ImVec2( 140, 130 ) );
-		ImGui::Begin( "##agriactions", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove );
+		float panelW = 170.0f;
+		float btnH = 30.0f;
+		float panelH = 5 * ( btnH + ImGui::GetStyle().ItemSpacing.y ) + ImGui::GetStyle().WindowPadding.y * 2;
+		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - panelH - 5 ) );
+		ImGui::SetNextWindowSize( ImVec2( panelW, panelH ) );
+		ImGui::Begin( "##agriactions", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar );
 
+		float btnW = ImGui::GetContentRegionAvail().x;
 		for ( int i = 0; i < 5; ++i )
 		{
 			bool hasAction = strlen( agriActions[i] ) > 0;
 			if ( !hasAction ) ImGui::BeginDisabled();
-			if ( ImGui::Button( agriLabels[i], ImVec2( 120, 22 ) ) )
+			if ( ImGui::Button( agriLabels[i], ImVec2( btnW, btnH ) ) )
 			{
 				if ( hasAction )
 					bridge.cmdSetSelectionAction( agriActions[i] );
@@ -655,13 +665,17 @@ void drawGameHUD( ImGuiBridge& bridge )
 	}
 	else if ( bridge.currentToolbar == ButtonSelection::Designation )
 	{
-		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - 290 ) );
-		ImGui::SetNextWindowSize( ImVec2( 140, 280 ) );
-		ImGui::Begin( "##designactions", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove );
+		float panelW = 180.0f;
+		float btnH = 30.0f;
+		float panelH = 11 * ( btnH + ImGui::GetStyle().ItemSpacing.y ) + ImGui::GetStyle().WindowPadding.y * 2;
+		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - panelH - 5 ) );
+		ImGui::SetNextWindowSize( ImVec2( panelW, panelH ) );
+		ImGui::Begin( "##designactions", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar );
 
+		float btnW = ImGui::GetContentRegionAvail().x;
 		for ( int i = 0; i < 11; ++i )
 		{
-			if ( ImGui::Button( designLabels[i], ImVec2( 120, 22 ) ) )
+			if ( ImGui::Button( designLabels[i], ImVec2( btnW, btnH ) ) )
 			{
 				bridge.cmdSetSelectionAction( designActions[i] );
 			}
@@ -671,13 +685,17 @@ void drawGameHUD( ImGuiBridge& bridge )
 	}
 	else if ( bridge.currentToolbar == ButtonSelection::Job )
 	{
-		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - 140 ) );
-		ImGui::SetNextWindowSize( ImVec2( 140, 130 ) );
-		ImGui::Begin( "##jobactions", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove );
+		float panelW = 180.0f;
+		float btnH = 30.0f;
+		float panelH = 5 * ( btnH + ImGui::GetStyle().ItemSpacing.y ) + ImGui::GetStyle().WindowPadding.y * 2;
+		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - panelH - 5 ) );
+		ImGui::SetNextWindowSize( ImVec2( panelW, panelH ) );
+		ImGui::Begin( "##jobactions", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar );
 
+		float btnW = ImGui::GetContentRegionAvail().x;
 		for ( int i = 0; i < 5; ++i )
 		{
-			if ( ImGui::Button( jobLabels[i], ImVec2( 120, 22 ) ) )
+			if ( ImGui::Button( jobLabels[i], ImVec2( btnW, btnH ) ) )
 			{
 				bridge.cmdSetSelectionAction( jobActions[i] );
 			}
