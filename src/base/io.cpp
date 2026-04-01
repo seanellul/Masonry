@@ -72,12 +72,17 @@ IO::~IO()
 
 bool IO::saveCompatible( QString folder )
 {
+	// Version check: our saves use 0.0.x.y format (versionInt < 100).
+	// Legacy Ingnomia saves used 0.7.x.y format (versionInt >= 700).
+	// Accept both our saves and any legacy saves >= 0.7.4.1.
 	int vi = versionInt( folder );
-	if ( vi < 741 )
-	{
-		return false;
-	}
-	return true;
+	if ( vi == 0 )
+		return false; // no version found at all
+	if ( vi < 100 )
+		return true;  // our versioning scheme (0.0.x.y)
+	if ( vi >= 741 )
+		return true;  // legacy compatible
+	return false;
 }
 
 bool IO::saveGameExists()
