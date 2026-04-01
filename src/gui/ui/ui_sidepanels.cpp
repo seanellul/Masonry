@@ -2718,6 +2718,85 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 		ImGui::Text( "INT: %d  WIS: %d  CHA: %d", ci.intel, ci.wis, ci.cha );
 	}
 
+	// Equipment & Combat
+	if ( ImGui::CollapsingHeader( "Equipment & Combat", ImGuiTreeNodeFlags_DefaultOpen ) )
+	{
+		ImGui::Indent( 8.0f );
+
+		// Equipment slots with names
+		auto showSlot = []( const char* label, const EquipmentItem& slot ) {
+			ImGui::Text( "  %s:", label );
+			ImGui::SameLine( 110 );
+			if ( slot.itemID != 0 )
+			{
+				QString itemName = S::s( "$ItemName_" + slot.item );
+				QString matName  = S::s( "$MaterialName_" + slot.material );
+				ImGui::TextColored( ImVec4( 0.6f, 0.9f, 0.6f, 1.0f ), "%s %s",
+					matName.toStdString().c_str(), itemName.toStdString().c_str() );
+			}
+			else
+			{
+				ImGui::TextDisabled( "none" );
+			}
+		};
+
+		showSlot( "Head",       ci.equipment.head );
+		showSlot( "Chest",      ci.equipment.chest );
+		showSlot( "Arms",       ci.equipment.arm );
+		showSlot( "Hands",      ci.equipment.hand );
+		showSlot( "Legs",       ci.equipment.leg );
+		showSlot( "Feet",       ci.equipment.foot );
+		showSlot( "Left Hand",  ci.equipment.leftHandHeld );
+		showSlot( "Right Hand", ci.equipment.rightHandHeld );
+		showSlot( "Back",       ci.equipment.back );
+
+		ImGui::Spacing();
+
+		// Combat stats
+		ImGui::TextColored( ImVec4( 0.9f, 0.7f, 0.4f, 1.0f ), "Combat Stats:" );
+
+		// Find combat skill levels from ci.skills
+		int meleeSkill = 0, dodgeSkill = 0, rangedSkill = 0;
+		for ( const auto& skill : ci.skills )
+		{
+			if ( skill.name == "Melee" ) meleeSkill = skill.level;
+			else if ( skill.name == "Dodge" ) dodgeSkill = skill.level;
+			else if ( skill.name == "Ranged" ) rangedSkill = skill.level;
+		}
+
+		// Attack: weapon damage or unarmed (Str)
+		QString weaponName = "Fists";
+		int attackDmg = ci.str; // unarmed = Str
+		if ( ci.equipment.rightHandHeld.itemID != 0 )
+		{
+			weaponName = S::s( "$ItemName_" + ci.equipment.rightHandHeld.item );
+			// AttackValue from DB for the weapon item type
+			int weaponAV = DB::select( "AttackValue", "Items", ci.equipment.rightHandHeld.item ).toInt();
+			if ( weaponAV > 0 ) attackDmg = weaponAV;
+		}
+
+		ImGui::Text( "  Attack:" );
+		ImGui::SameLine( 110 );
+		ImGui::Text( "%d (%s)", attackDmg, weaponName.toStdString().c_str() );
+
+		ImGui::Text( "  Melee:" );
+		ImGui::SameLine( 110 );
+		ImGui::Text( "%d", meleeSkill );
+
+		ImGui::Text( "  Dodge:" );
+		ImGui::SameLine( 110 );
+		ImGui::Text( "%d", dodgeSkill );
+
+		if ( rangedSkill > 0 )
+		{
+			ImGui::Text( "  Ranged:" );
+			ImGui::SameLine( 110 );
+			ImGui::Text( "%d", rangedSkill );
+		}
+
+		ImGui::Unindent( 8.0f );
+	}
+
 	// Anatomy section (for gnomes)
 	ImGui::Separator();
 	if ( ImGui::CollapsingHeader( "Anatomy" ) )
