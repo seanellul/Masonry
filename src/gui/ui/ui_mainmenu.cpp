@@ -625,6 +625,23 @@ void drawSettings( ImGuiBridge& bridge )
 				SetActiveUITheme( (UITheme)currentTheme );
 			}
 
+			ImGui::Spacing();
+			ImGui::Separator();
+			ImGui::Spacing();
+
+			// Debug / Dev tools
+			bool debugMode = Global::debugMode;
+			if ( ImGui::Checkbox( "Debug Mode (Dev Tools)", &debugMode ) )
+			{
+				Global::debugMode = debugMode;
+				bridge.showDebugPanel = debugMode;
+			}
+			if ( Global::debugMode )
+			{
+				ImGui::SameLine();
+				ImGui::TextColored( ImVec4( 1.0f, 0.8f, 0.2f, 1.0f ), "Active" );
+			}
+
 			ImGui::EndTabItem();
 		}
 
@@ -659,7 +676,7 @@ void drawSettings( ImGuiBridge& bridge )
 
 	if ( ImGui::Button( "Back", ImVec2( 120, 35 ) ) )
 	{
-		bridge.appState = ImGuiBridge::AppState::MainMenu;
+		bridge.appState = bridge.previousAppState;
 	}
 
 	ImGui::End();
