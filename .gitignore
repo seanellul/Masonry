@@ -390,3 +390,6 @@ build/
 
 # Noesis SDK (proprietary, not redistributable)
 /noesis_sdk
+
+# Generated images
+generated_imgs/

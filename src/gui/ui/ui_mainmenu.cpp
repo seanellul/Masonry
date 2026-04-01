@@ -702,37 +702,52 @@ void drawWaitScreen( ImGuiBridge& bridge )
 void drawInGameMenu( ImGuiBridge& bridge )
 {
 	ImGuiIO& io = ImGui::GetIO();
+	float menuW = 320;
+	float menuH = 340;
 	ImGui::SetNextWindowPos( ImVec2( io.DisplaySize.x * 0.5f, io.DisplaySize.y * 0.5f ), ImGuiCond_Always, ImVec2( 0.5f, 0.5f ) );
-	ImGui::SetNextWindowSize( ImVec2( 300, 250 ) );
+	ImGui::SetNextWindowSize( ImVec2( menuW, menuH ) );
 
-	ImGui::Begin( "Paused", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse );
+	ImGui::Begin( "Paused", nullptr,
+		ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse |
+		ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse );
 
-	float buttonWidth = 260;
+	float buttonWidth = menuW - 40;
+	float pad = ( menuW - buttonWidth ) * 0.5f;
 
-	ImGui::SetCursorPosX( ( 300 - buttonWidth ) * 0.5f );
-	if ( ImGui::Button( "Resume", ImVec2( buttonWidth, 35 ) ) )
+	ImGui::SetCursorPosX( pad );
+	if ( ImGui::Button( "Resume", ImVec2( buttonWidth, 38 ) ) )
 	{
 		bridge.appState = ImGuiBridge::AppState::GameRunning;
 		bridge.cmdSetShowMainMenu( false );
 	}
 
-	ImGui::SetCursorPosX( ( 300 - buttonWidth ) * 0.5f );
-	if ( ImGui::Button( "Save Game", ImVec2( buttonWidth, 35 ) ) )
+	ImGui::SetCursorPosX( pad );
+	if ( ImGui::Button( "Save Game", ImVec2( buttonWidth, 38 ) ) )
 	{
 		bridge.cmdSaveGame();
 	}
 
-	ImGui::SetCursorPosX( ( 300 - buttonWidth ) * 0.5f );
-	if ( ImGui::Button( "Settings", ImVec2( buttonWidth, 35 ) ) )
+	ImGui::SetCursorPosX( pad );
+	if ( ImGui::Button( "Settings", ImVec2( buttonWidth, 38 ) ) )
 	{
-		bridge.previousAppState = bridge.appState; // remember we came from InGameMenu
+		bridge.previousAppState = bridge.appState;
 		bridge.appState = ImGuiBridge::AppState::Settings;
 		Global::eventConnector->aggregatorSettings()->onRequestSettings();
 	}
 
 	ImGui::Spacing();
-	ImGui::SetCursorPosX( ( 300 - buttonWidth ) * 0.5f );
-	if ( ImGui::Button( "Exit to Menu", ImVec2( buttonWidth, 35 ) ) )
+	ImGui::Separator();
+	ImGui::Spacing();
+
+	ImGui::SetCursorPosX( pad );
+	if ( ImGui::Button( "Save & Exit", ImVec2( buttonWidth, 38 ) ) )
+	{
+		bridge.cmdSaveGame();
+		bridge.cmdEndGame();
+	}
+
+	ImGui::SetCursorPosX( pad );
+	if ( ImGui::Button( "Exit to Menu", ImVec2( buttonWidth, 38 ) ) )
 	{
 		bridge.cmdEndGame();
 	}

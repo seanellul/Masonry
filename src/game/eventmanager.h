@@ -196,4 +196,7 @@ public slots:
 	void onAnswer( unsigned int id, bool answer );
 
 	void onDebugEvent( EventType type, QVariantMap args );
+	void onDebugSpawnMonster( QString species, int amount );
+	void onDebugSpawnAnimal( QString species, int amount );
+	void onDebugSpawnItem( QString itemSID, QString material, int amount );
 };

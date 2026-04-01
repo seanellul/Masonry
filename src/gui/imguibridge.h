@@ -360,6 +360,9 @@ public:
 
 	// Debug
 	void cmdSpawnCreature( const QString& type );
+	void cmdSpawnMonster( const QString& species, int amount );
+	void cmdSpawnAnimal( const QString& species, int amount );
+	void cmdSpawnItem( const QString& itemSID, const QString& material, int amount );
 	void cmdSetWindowSize( int w, int h );
 
 	// Settings

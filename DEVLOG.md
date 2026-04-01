@@ -6,6 +6,26 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-03-31] Generative Dev Tool Panel
+
+**Milestone**: 0.0 — Developer Tools
+**Files changed**: `src/gui/ui/ui_sidepanels.cpp`, `src/gui/imguibridge.h`, `src/gui/imguibridge.cpp`, `src/gui/aggregatordebug.h`, `src/gui/aggregatordebug.cpp`, `src/game/eventmanager.h`, `src/game/eventmanager.cpp`, `src/game/gamemanager.cpp`
+
+### Changes
+- **RimWorld-style dev tools panel** — replaced 6-line debug stub with full tabbed ImGui dev tool. All content auto-discovered from DB (never goes stale).
+- **Creatures tab** — Spawn Gnome button, Monster combo (from `DB::ids("Monsters")`), Animal combo (from `DB::ids("Animals")`), amount sliders. Monsters spawn at map edge, animals at map center.
+- **Items tab** — Category filter → Item filter → Material filter, all from DB queries. Materials filtered by item's `AllowedMaterialTypes`/`AllowedMaterials`. Items spawn at map center on current view level.
+- **Events tab** — Migration, Trader, Invasion triggers. Invasion has species/amount controls.
+- **Game tab** — Pause toggle, game speed slider, current time/season/tick display.
+- **New bridge commands** — `cmdSpawnMonster`, `cmdSpawnAnimal`, `cmdSpawnItem` wired through AggregatorDebug → EventManager game-thread handlers.
+
+### Technical Details
+- `DevToolCache` struct lazily populates DB lists on first panel open (one-time cost). Cached in static for session lifetime.
+- Spawn position: monsters use `Global::util->borderPos()` (map edge), items/animals use map center with walkable tile search.
+- All signals cross thread boundary via Qt::QueuedConnection (GUI → game thread).
+
+---
+
 ## [2026-03-31] UI Design System — Typography, Style, Visual Hierarchy
 
 **Milestone**: 0.0 — UI/UX

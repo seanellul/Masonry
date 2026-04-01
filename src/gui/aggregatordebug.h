@@ -35,9 +35,15 @@ private:
 	
 public slots:
 	void onSpawnCreature( QString type );
-    void onSetWindowSize( int width, int height );
+	void onSpawnMonster( QString species, int amount );
+	void onSpawnAnimal( QString species, int amount );
+	void onSpawnItem( QString itemSID, QString material, int amount );
+	void onSetWindowSize( int width, int height );
 
 signals:
 	void signalTriggerEvent( EventType type, QVariantMap args );
-    void signalSetWindowSize( int width, int height );
+	void signalSpawnMonster( QString species, int amount );
+	void signalSpawnAnimal( QString species, int amount );
+	void signalSpawnItem( QString itemSID, QString material, int amount );
+	void signalSetWindowSize( int width, int height );
 };

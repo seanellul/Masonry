@@ -50,6 +50,21 @@ void AggregatorDebug::onSpawnCreature( QString type )
 }
 
 
+void AggregatorDebug::onSpawnMonster( QString species, int amount )
+{
+	emit signalSpawnMonster( species, amount );
+}
+
+void AggregatorDebug::onSpawnAnimal( QString species, int amount )
+{
+	emit signalSpawnAnimal( species, amount );
+}
+
+void AggregatorDebug::onSpawnItem( QString itemSID, QString material, int amount )
+{
+	emit signalSpawnItem( itemSID, material, amount );
+}
+
 void AggregatorDebug::onSetWindowSize( int width, int height )
 {
 	emit signalSetWindowSize( width, height );

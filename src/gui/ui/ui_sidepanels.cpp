@@ -7,6 +7,8 @@
 #include "../../base/global.h"
 #include "../../base/gamestate.h"
 #include "../../base/logger.h"
+#include "../../base/db.h"
+#include "../../base/config.h"
 #include <imgui.h>
 
 // =============================================================================
@@ -2751,20 +2753,247 @@ void drawInventoryPanel( ImGuiBridge& bridge )
 // =============================================================================
 // Debug panel
 // =============================================================================
+// Dev tool DB list cache — populated once on first open
+struct DevToolCache
+{
+	bool initialized = false;
+	QStringList monsterIDs;
+	QStringList animalIDs;
+	QStringList itemCategories;
+	QHash<QString, QStringList> itemsByCategory;  // category -> item IDs
+	QHash<QString, QStringList> materialsByType;  // material type -> material IDs
+
+	void init()
+	{
+		if ( initialized ) return;
+		monsterIDs = DB::ids( "Monsters" );
+		animalIDs  = DB::ids( "Animals" );
+
+		// Build item categories and items per category
+		auto itemRows = DB::selectRows( "Items" );
+		QSet<QString> catSet;
+		for ( const auto& row : itemRows )
+		{
+			QString cat = row.value( "Category" ).toString();
+			QString id  = row.value( "ID" ).toString();
+			if ( cat.isEmpty() || id.isEmpty() ) continue;
+			catSet.insert( cat );
+			itemsByCategory[cat].append( id );
+		}
+		itemCategories = catSet.values();
+		itemCategories.sort();
+
+		// Build materials by type
+		auto matRows = DB::selectRows( "Materials" );
+		for ( const auto& row : matRows )
+		{
+			QString type = row.value( "Type" ).toString();
+			QString id   = row.value( "ID" ).toString();
+			if ( type.isEmpty() || id.isEmpty() ) continue;
+			materialsByType[type].append( id );
+		}
+
+		initialized = true;
+	}
+};
+
+static DevToolCache s_devCache;
+
+// Helper: draw a combo from QStringList, returns selected index
+static bool drawCombo( const char* label, int& selected, const QStringList& items )
+{
+	if ( items.isEmpty() ) return false;
+	selected = qBound( 0, selected, items.size() - 1 );
+	const char* preview = items[selected].toUtf8().constData();
+
+	// Need stable storage for combo items
+	static QByteArray previewBuf;
+	previewBuf = items[selected].toUtf8();
+
+	bool changed = false;
+	if ( ImGui::BeginCombo( label, previewBuf.constData() ) )
+	{
+		for ( int i = 0; i < items.size(); ++i )
+		{
+			QByteArray itemBuf = items[i].toUtf8();
+			bool isSelected = ( i == selected );
+			if ( ImGui::Selectable( itemBuf.constData(), isSelected ) )
+			{
+				selected = i;
+				changed = true;
+			}
+			if ( isSelected )
+				ImGui::SetItemDefaultFocus();
+		}
+		ImGui::EndCombo();
+	}
+	return changed;
+}
+
 void drawDebugPanel( ImGuiBridge& bridge )
 {
 	if ( !bridge.showDebugPanel )
 		return;
 
-	ImGui::SetNextWindowSize( ImVec2( 300, 200 ), ImGuiCond_FirstUseEver );
+	s_devCache.init();
 
-	ImGui::Begin( "Debug", &bridge.showDebugPanel );
+	ImGui::SetNextWindowSize( ImVec2( 420, 400 ), ImGuiCond_FirstUseEver );
+	ImGui::Begin( "Dev Tools", &bridge.showDebugPanel );
 
-	static char creatureType[64] = "Gnome";
-	ImGui::InputText( "Creature type", creatureType, sizeof( creatureType ) );
-	if ( ImGui::Button( "Spawn" ) )
+	if ( ImGui::BeginTabBar( "DevToolTabs" ) )
 	{
-		bridge.cmdSpawnCreature( creatureType );
+		// ===================== SPAWN CREATURES =====================
+		if ( ImGui::BeginTabItem( "Creatures" ) )
+		{
+			// Gnome spawn
+			if ( ImGui::Button( "Spawn Gnome" ) )
+			{
+				bridge.cmdSpawnCreature( "Gnome" );
+			}
+
+			ImGui::Separator();
+			ImGui::Text( "Monsters" );
+
+			static int monsterIdx = 0;
+			drawCombo( "Species##monster", monsterIdx, s_devCache.monsterIDs );
+
+			static int monsterAmt = 1;
+			ImGui::SliderInt( "Amount##monster", &monsterAmt, 1, 20 );
+
+			if ( ImGui::Button( "Spawn Monsters" ) )
+			{
+				bridge.cmdSpawnMonster( s_devCache.monsterIDs[monsterIdx], monsterAmt );
+			}
+
+			ImGui::Separator();
+			ImGui::Text( "Animals" );
+
+			static int animalIdx = 0;
+			drawCombo( "Species##animal", animalIdx, s_devCache.animalIDs );
+
+			static int animalAmt = 1;
+			ImGui::SliderInt( "Amount##animal", &animalAmt, 1, 20 );
+
+			if ( ImGui::Button( "Spawn Animals" ) )
+			{
+				bridge.cmdSpawnAnimal( s_devCache.animalIDs[animalIdx], animalAmt );
+			}
+
+			ImGui::EndTabItem();
+		}
+
+		// ===================== SPAWN ITEMS =====================
+		if ( ImGui::BeginTabItem( "Items" ) )
+		{
+			static int catIdx = 0;
+			if ( drawCombo( "Category", catIdx, s_devCache.itemCategories ) )
+			{
+				// Reset item selection when category changes
+			}
+
+			QString selectedCat = s_devCache.itemCategories.isEmpty() ? "" : s_devCache.itemCategories[catIdx];
+			const QStringList& itemsInCat = s_devCache.itemsByCategory[selectedCat];
+
+			static int itemIdx = 0;
+			if ( drawCombo( "Item", itemIdx, itemsInCat ) )
+			{
+				// Reset material when item changes
+			}
+
+			// Get allowed material types for selected item
+			QString selectedItem = itemsInCat.isEmpty() ? "" : itemsInCat[qBound( 0, itemIdx, itemsInCat.size() - 1 )];
+			QStringList availMaterials;
+			if ( !selectedItem.isEmpty() )
+			{
+				QString allowedTypes = DB::select( "AllowedMaterialTypes", "Items", selectedItem ).toString();
+				QString allowedMats  = DB::select( "AllowedMaterials", "Items", selectedItem ).toString();
+				if ( !allowedMats.isEmpty() )
+				{
+					availMaterials = allowedMats.split( "|" );
+				}
+				else if ( !allowedTypes.isEmpty() )
+				{
+					for ( const auto& type : allowedTypes.split( "|" ) )
+					{
+						availMaterials.append( s_devCache.materialsByType.value( type ) );
+					}
+				}
+				if ( availMaterials.isEmpty() )
+				{
+					availMaterials.append( "any" );
+				}
+			}
+
+			static int matIdx = 0;
+			drawCombo( "Material", matIdx, availMaterials );
+
+			static int itemAmt = 1;
+			ImGui::SliderInt( "Amount##item", &itemAmt, 1, 50 );
+
+			QString selectedMat = availMaterials.isEmpty() ? "any" : availMaterials[qBound( 0, matIdx, availMaterials.size() - 1 )];
+
+			if ( ImGui::Button( "Spawn Items" ) && !selectedItem.isEmpty() )
+			{
+				bridge.cmdSpawnItem( selectedItem, selectedMat, itemAmt );
+			}
+
+			ImGui::EndTabItem();
+		}
+
+		// ===================== TRIGGER EVENTS =====================
+		if ( ImGui::BeginTabItem( "Events" ) )
+		{
+			if ( ImGui::Button( "Trigger Migration (new gnome)" ) )
+			{
+				bridge.cmdSpawnCreature( "Gnome" );
+			}
+
+			if ( ImGui::Button( "Trigger Trader" ) )
+			{
+				bridge.cmdSpawnCreature( "Trader" );
+			}
+
+			ImGui::Separator();
+			ImGui::Text( "Invasion" );
+
+			static int invasionMonsterIdx = 0;
+			drawCombo( "Species##invasion", invasionMonsterIdx, s_devCache.monsterIDs );
+
+			static int invasionAmt = 5;
+			ImGui::SliderInt( "Amount##invasion", &invasionAmt, 1, 50 );
+
+			if ( ImGui::Button( "Trigger Invasion" ) )
+			{
+				bridge.cmdSpawnMonster( s_devCache.monsterIDs[invasionMonsterIdx], invasionAmt );
+			}
+
+			ImGui::EndTabItem();
+		}
+
+		// ===================== GAME STATE =====================
+		if ( ImGui::BeginTabItem( "Game" ) )
+		{
+			bool paused = Global::cfg->get( "Pause" ).toBool();
+			if ( ImGui::Checkbox( "Paused", &paused ) )
+			{
+				Global::cfg->set( "Pause", paused );
+			}
+
+			int speed = Global::cfg->get( "GameSpeed" ).toInt();
+			if ( ImGui::SliderInt( "Game Speed", &speed, 1, 50 ) )
+			{
+				Global::cfg->set( "GameSpeed", speed );
+			}
+
+			ImGui::Separator();
+			ImGui::Text( "Time: Day %d, %02d:%02d", GameState::day, GameState::hour, GameState::minute );
+			ImGui::Text( "Season: %s, Year %d", GameState::seasonString.toUtf8().constData(), GameState::year );
+			ImGui::Text( "Tick: %llu", GameState::tick );
+
+			ImGui::EndTabItem();
+		}
+
+		ImGui::EndTabBar();
 	}
 
 	ImGui::End();

@@ -257,6 +257,9 @@ void GameManager::postCreationInit()
 	connect( m_game->fm(), &FarmingManager::signalFarmChanged, m_eventConnector->aggregatorAgri(), &AggregatorAgri::onUpdateFarm, Qt::QueuedConnection );
 	connect( m_game->fm(), &FarmingManager::signalPastureChanged, m_eventConnector->aggregatorAgri(), &AggregatorAgri::onUpdatePasture, Qt::QueuedConnection );
 	connect( m_eventConnector->aggregatorDebug(), &AggregatorDebug::signalTriggerEvent, m_game->em(), &EventManager::onDebugEvent );
+	connect( m_eventConnector->aggregatorDebug(), &AggregatorDebug::signalSpawnMonster, m_game->em(), &EventManager::onDebugSpawnMonster );
+	connect( m_eventConnector->aggregatorDebug(), &AggregatorDebug::signalSpawnAnimal, m_game->em(), &EventManager::onDebugSpawnAnimal );
+	connect( m_eventConnector->aggregatorDebug(), &AggregatorDebug::signalSpawnItem, m_game->em(), &EventManager::onDebugSpawnItem );
 	connect( m_game->spm(), &StockpileManager::signalStockpileAdded, m_eventConnector->aggregatorStockpile(), &AggregatorStockpile::onOpenStockpileInfo, Qt::QueuedConnection );
 	connect( m_game->spm(), &StockpileManager::signalStockpileContentChanged, m_eventConnector->aggregatorStockpile(), &AggregatorStockpile::onUpdateStockpileContent, Qt::QueuedConnection );
 	connect( m_game->wsm(), &WorkshopManager::signalJobListChanged, m_eventConnector->aggregatorWorkshop(), &AggregatorWorkshop::onCraftListChanged, Qt::QueuedConnection );

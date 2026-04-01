@@ -17,6 +17,7 @@
 */
 #include "eventmanager.h"
 #include "game.h"
+#include "inventory.h"
 
 #include "../base/config.h"
 #include "../base/db.h"
@@ -575,6 +576,74 @@ void EventManager::onDebugEvent( EventType type, QVariantMap args )
 	em.insert( "Species", args.value( "Type" ).toString() );
 	e.data        = em;
 	m_eventList.append( e );
+}
+
+void EventManager::onDebugSpawnMonster( QString species, int amount )
+{
+	bool found = false;
+	Position pos = Global::util->borderPos( found );
+	if ( !found ) return;
+
+	for ( int i = 0; i < amount; ++i )
+	{
+		g->m_creatureManager->addCreature( CreatureType::MONSTER, species, pos, Gender::MALE, true, false, 1 );
+	}
+	Global::logger().log( LogType::DEBUG, "Debug: spawned " + QString::number( amount ) + " " + species, 0 );
+}
+
+void EventManager::onDebugSpawnAnimal( QString species, int amount )
+{
+	Position pos( Global::dimX / 2, Global::dimY / 2, GameState::viewLevel );
+	// Find a walkable tile near center
+	for ( int r = 0; r < 10; ++r )
+	{
+		for ( int dx = -r; dx <= r; ++dx )
+		{
+			for ( int dy = -r; dy <= r; ++dy )
+			{
+				Position test( pos.x + dx, pos.y + dy, pos.z );
+				if ( g->w()->isWalkable( test ) )
+				{
+					pos = test;
+					goto foundPos;
+				}
+			}
+		}
+	}
+foundPos:
+	for ( int i = 0; i < amount; ++i )
+	{
+		Gender gender = ( rand() % 2 == 0 ) ? Gender::MALE : Gender::FEMALE;
+		g->m_creatureManager->addCreature( CreatureType::ANIMAL, species, pos, gender, true, false, 1 );
+	}
+	Global::logger().log( LogType::DEBUG, "Debug: spawned " + QString::number( amount ) + " " + species, 0 );
+}
+
+void EventManager::onDebugSpawnItem( QString itemSID, QString material, int amount )
+{
+	Position pos( Global::dimX / 2, Global::dimY / 2, GameState::viewLevel );
+	// Find a walkable tile near center
+	for ( int r = 0; r < 10; ++r )
+	{
+		for ( int dx = -r; dx <= r; ++dx )
+		{
+			for ( int dy = -r; dy <= r; ++dy )
+			{
+				Position test( pos.x + dx, pos.y + dy, pos.z );
+				if ( g->w()->isWalkable( test ) )
+				{
+					pos = test;
+					goto foundItemPos;
+				}
+			}
+		}
+	}
+foundItemPos:
+	for ( int i = 0; i < amount; ++i )
+	{
+		g->inv()->createItem( pos, itemSID, material );
+	}
+	Global::logger().log( LogType::DEBUG, "Debug: spawned " + QString::number( amount ) + " " + itemSID + " (" + material + ")", 0 );
 }
 
 QList<Mission>& EventManager::missions()
