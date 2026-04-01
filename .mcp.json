@@ -11,6 +11,13 @@
       "env": {
         "GEMINI_API_KEY": "AIzaSyCySCsW4FgYp9IqnqvygFp2m0hWXyi4uzo"
       }
+    },
+    "spritecook": {
+      "type": "http",
+      "url": "https://api.spritecook.ai/mcp/",
+      "headers": {
+        "Authorization": "Bearer sc_live_210a73a519b7821fa8b66ca1050bdfd69a289eafdc56075e"
+      }
     }
   }
 }

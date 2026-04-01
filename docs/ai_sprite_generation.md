@@ -337,6 +337,98 @@ Prioritized for Masonry's needs, from lowest-friction to highest-potential:
 
 ---
 
+---
+
+## 7. Experiment Results (2026-04-01)
+
+First round of hands-on testing across two platforms.
+
+### Setup
+- **ComfyUI** on Mac Mini M4 (16GB, MPS): SDXL base + Pixel Art XL LoRA v1.1
+- **Gemini** via Nano Banana MCP (gemini-2.5-flash-image): prompt-only generation
+
+### Results Summary
+
+| Experiment | Approach | Quality | Style Match | Isometric? | Verdict |
+|---|---|---|---|---|---|
+| ComfyUI txt2img | SDXL + PixelArt LoRA | Good pixel art | Weak | No — front-facing | LoRA doesn't understand isometric |
+| ComfyUI img2img (0.45 denoise) | Our tiles as structural ref | Layout preserved | Too conservative | Inherited from input | Needs higher denoise (~0.6-0.7) |
+| Gemini: 4x4 cubes | "Isometric stone cubes" | Excellent | Minecraft-like, too 3D | Yes | Good variety, wrong scale |
+| Gemini: flat diamond tiles | "Gnomoria style" | Very good | Close to our terrain.png | Yes | **Best terrain match** |
+| Gemini: furniture | "Medieval furniture sprites" | Excellent | Great grey+brown palette | Yes | **Best object match** |
+
+### Key Findings
+
+1. **Gemini >> SDXL for isometric**: Gemini natively understands isometric perspective. SDXL + Pixel Art XL LoRA produces excellent pixel art but defaults to front-facing/side-view regardless of prompting.
+
+2. **"Gnomoria" as style anchor**: Including "Gnomoria" or "colony sim" in Gemini prompts produces results much closer to our actual tile style than generic "isometric pixel art."
+
+3. **Scale matters**: Asking for "small 32x32 sprites" and "flat isometric diamonds" produces tiles closer to our style than "isometric cubes" (which Gemini interprets as tall Minecraft-like blocks).
+
+4. **ComfyUI img2img needs tuning**: At 0.45 denoise, it barely changes our input tiles. Would need 0.6+ denoise to generate meaningful variations while still preserving the isometric structure.
+
+5. **Furniture generation is strong**: Both Gemini and ComfyUI produced recognizable medieval furniture sprites with the right grey stone + brown wood palette.
+
+### Recommended Prompt Templates (Gemini)
+
+**Terrain tiles:**
+```
+Pixel art game sprite tilesheet. Pure black background. Isometric diamond-shaped
+terrain tiles arranged in a grid, exactly matching the style of Gnomoria or colony
+sims. Each tile is a small isometric diamond (not tall cubes). Grey stone, very
+limited grey palette (5-6 shades only), hard pixel edges, NO anti-aliasing, NO
+smooth gradients, NO text labels. 16-bit retro game aesthetic.
+```
+
+**Furniture/objects:**
+```
+Pixel art game sprite tilesheet. Pure black background. Isometric medieval
+[objects] arranged in rows. Style exactly matching Gnomoria colony sim: small
+isometric sprites, grey stone and brown wood materials, 16-bit retro aesthetic,
+visible pixels, NO anti-aliasing, NO text. Very limited muted palette: grey
+stones, brown woods, occasional warm accent.
+```
+
+### Generated Assets
+- `generated_imgs/comfyui_experiment/` — ComfyUI outputs (txt2img + img2img)
+- `generated_imgs/generated-2026-04-01T06-43-29-387Z-9adlax.png` — Gemini 4x4 mineral cubes (Minecraft-like)
+- `generated_imgs/generated-2026-04-01T06-44-27-359Z-htsdy0.png` — Gemini flat terrain tiles (**best terrain match**)
+- `generated_imgs/generated-2026-04-01T06-44-50-130Z-6wcsih.png` — Gemini furniture sprites (**best object match**)
+
+### SpriteCook Experiment (Same Day)
+
+After the ComfyUI/Gemini results showed blurriness issues, tested SpriteCook MCP — a dedicated game asset generator with true pixel art post-processing.
+
+| Asset | Prompt | Result |
+|---|---|---|
+| Stone cube (2 variations) | "Isometric stone cube terrain tile, grey stone brick with dark mortar" | **Crisp true pixel art**, hard edges, correct isometric, grey palette locked via hex colors |
+| Anvil (style-referenced) | "Isometric blacksmith anvil on stone base" + stone cube as reference | **Consistent style**, both sprites look like they belong in same game |
+
+**Key parameters that worked:**
+- `pixel: true` — enables grid-aligned post-processing (the key differentiator)
+- `colors: ["#6B6B6B", "#8C8C8C", "#A5A5A5", "#4A4A4A", "#333333"]` — palette lock to our grey stone tones
+- `reference_asset_id` — chains style from one asset to the next
+- `style: "16-bit retro pixel art, Gnomoria style"` — anchors the aesthetic
+- `bg_mode: "transparent"` — game-ready output
+
+**Cost**: 12 credits per single variation, 24 per 2-variation job. Free tier = 40 credits/month.
+
+### Final Tool Comparison
+
+| Tool | Crispness | Isometric | Style Match | Cost | Verdict |
+|---|---|---|---|---|---|
+| ComfyUI + SDXL + LoRA | Blurry | No | Weak | Free (local GPU) | Good for future LoRA training, bad for prompt-only |
+| Gemini / Nano Banana | Soft edges | Yes | Good | Free (API) | Best free option, good for concepts |
+| **SpriteCook** | **True pixel art** | **Yes** | **Excellent** | 12 credits/sprite | **Production winner** |
+
+### Infrastructure
+- ComfyUI running on Mac Mini (openclaw@192.168.1.34), port 8188
+- SDXL base model + Pixel Art XL LoRA v1.1 installed at `~/ComfyUI/models/`
+- Generation scripts: `~/ComfyUI/run_masonry_gen.py` (txt2img), `~/ComfyUI/run_masonry_img2img.py` (img2img)
+- SpriteCook MCP connected in `.mcp.json` — generates via `generate_game_art` tool
+
+---
+
 ## References
 
 ### Articles & Threads (User-Collected)

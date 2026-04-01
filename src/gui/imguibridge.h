@@ -140,8 +140,10 @@ public:
 	// Build items
 	QList<GuiBuildItem> buildItems;
 	ButtonSelection currentToolbar = ButtonSelection::None;
+	ShapeTab currentShapeTab = ShapeTab::Build;
+	ZoneCategory currentZoneCategory = ZoneCategory::Rooms;
 	BuildSelection currentBuildCategory = BuildSelection::None;
-	QString currentBuildMaterial; // Subcategory key: material for Wall/Floor, tab for Workshop, group for Furniture, etc.
+	QString currentBuildMaterial;
 
 	// Watch list
 	QList<GuiWatchedItem> watchList;

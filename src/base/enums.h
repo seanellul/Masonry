@@ -200,12 +200,24 @@ Q_DECLARE_METATYPE( GameSpeed )
 enum class ButtonSelection
 {
 	None,
+	Shape,
+	Zone,
+	Manage
+};
+
+enum class ShapeTab
+{
 	Build,
-	Mine,
-	Agriculture,
-	Designation,
-	Job,
-	Magic
+	Dig,
+	Nature
+};
+
+enum class ZoneCategory
+{
+	Storage,
+	Production,
+	Rooms,
+	Control
 };
 
 enum class BuildSelection

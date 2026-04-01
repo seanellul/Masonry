@@ -1,5 +1,7 @@
 #include "ui_gamehud.h"
 #include "../imguibridge.h"
+#include "../IconsFontAwesome6.h"
+#include "../IconsRpgAwesome.h"
 #include "../../base/global.h"
 #include "../../base/gamestate.h"
 #include "../../base/logger.h"
@@ -11,38 +13,33 @@
 namespace
 {
 
-struct ToolbarButton
-{
-	const char* label;
-	ButtonSelection selection;
-};
-
-const ToolbarButton toolbarButtons[] = {
-	{ "Build", ButtonSelection::Build },
-	{ "Mine", ButtonSelection::Mine },
-	{ "Agriculture", ButtonSelection::Agriculture },
-	{ "Designations", ButtonSelection::Designation },
-	{ "Job", ButtonSelection::Job },
-};
-const int toolbarButtonCount = 5;
+// Dig actions (was "Mine")
+struct ActionDef { const char* icon; const char* label; const char* action; };
 
 // Build subcategories
 struct BuildCategoryButton
 {
+	const char* icon;
 	const char* label;
 	BuildSelection selection;
 };
 
 const BuildCategoryButton buildCategories[] = {
-	{ "Workshop", BuildSelection::Workshop },
-	{ "Wall", BuildSelection::Wall },
-	{ "Floor", BuildSelection::Floor },
-	{ "Stairs", BuildSelection::Stairs },
-	{ "Ramp", BuildSelection::Ramps },
-	{ "Fence", BuildSelection::Fence },
-	{ "Containers", BuildSelection::Containers },
-	{ "Furniture", BuildSelection::Furniture },
-	{ "Utility", BuildSelection::Utility },
+	{ ICON_FA_GEAR, "Workshops", BuildSelection::Workshop },
+	{ ICON_RA_CASTLE_EMBLEM, "Structures", BuildSelection::Wall },
+	{ ICON_FA_COUCH, "Furniture", BuildSelection::Furniture },
+	{ ICON_FA_WRENCH, "Utility", BuildSelection::Utility },
+	{ ICON_FA_BOX, "Containers", BuildSelection::Containers },
+};
+
+// Structure sub-items (wall, floor, stairs, ramp, fence) — displayed as a grid within Structures
+struct StructureType { const char* icon; const char* label; BuildSelection selection; };
+const StructureType structureTypes[] = {
+	{ ICON_FA_BORDER_ALL, "Wall", BuildSelection::Wall },
+	{ ICON_FA_SQUARE, "Floor", BuildSelection::Floor },
+	{ ICON_FA_STAIRS, "Stairs", BuildSelection::Stairs },
+	{ ICON_RA_TRAIL, "Ramp", BuildSelection::Ramps },
+	{ ICON_RA_WOODEN_SIGN, "Fence", BuildSelection::Fence },
 };
 
 // Subcategory definitions for build categories
@@ -97,21 +94,50 @@ const BuildCategorySubcats* getSubcatsFor( BuildSelection sel )
 	return nullptr;
 }
 
-// Mine actions
-const char* mineActions[] = { "Mine", "ExplorativeMine", "RemoveFloor", "DigStairsDown", "MineStairsUp", "DigRampDown", "DigHole" };
-const char* mineLabels[] = { "Mine", "Mine Vein", "Remove floor", "Stairs down", "Stairs up", "Ramp", "Hole" };
+// Dig actions (Shape → Dig)
+const ActionDef digActions[] = {
+	{ ICON_FA_HAMMER, "Mine", "Mine" },
+	{ ICON_FA_GEM, "Mine Vein", "ExplorativeMine" },
+	{ ICON_FA_TRASH, "Remove Floor", "RemoveFloor" },
+	{ ICON_FA_ARROW_DOWN, "Stairs Down", "DigStairsDown" },
+	{ ICON_FA_ARROW_UP, "Stairs Up", "MineStairsUp" },
+	{ ICON_FA_ANGLE_DOWN, "Ramp", "DigRampDown" },
+	{ ICON_FA_CIRCLE, "Hole", "DigHole" },
+};
 
-// Agriculture actions
-const char* agriActions[] = { "FellTree", "", "HarvestTree", "Forage", "RemovePlant" };
-const char* agriLabels[] = { "Cut tree", "Plant tree", "Harvest tree", "Forage", "Remove plant" };
+// Nature actions (Shape → Nature)
+const ActionDef natureActions[] = {
+	{ ICON_RA_AXE, "Cut Tree", "FellTree" },
+	{ ICON_FA_SEEDLING, "Plant Tree", "" },
+	{ ICON_FA_LEAF, "Harvest", "HarvestTree" },
+	{ ICON_FA_HAND, "Forage", "Forage" },
+	{ ICON_FA_XMARK, "Remove Plant", "RemovePlant" },
+};
 
-// Designation zones
-const char* designActions[] = { "CreateStockpile", "CreateFarm", "CreateGrove", "CreatePasture", "CreateRoom", "CreateDorm", "CreateDining", "CreateHospital", "CreateNoPass", "CreateGuardArea", "RemoveDesignation" };
-const char* designLabels[] = { "Stockpile", "Farm", "Grove", "Pasture", "Personal Room", "Dormitory", "Dining Hall", "Hospital", "Forbidden", "Guard", "Remove" };
+// Zone actions — organized by category
+struct ZoneDef { const char* icon; const char* label; const char* action; ZoneCategory category; };
+const ZoneDef zoneActions[] = {
+	{ ICON_FA_BOX_ARCHIVE, "Stockpile", "CreateStockpile", ZoneCategory::Storage },
+	{ ICON_FA_SEEDLING, "Farm", "CreateFarm", ZoneCategory::Production },
+	{ ICON_FA_TREE, "Grove", "CreateGrove", ZoneCategory::Production },
+	{ ICON_RA_SHEEP, "Pasture", "CreatePasture", ZoneCategory::Production },
+	{ ICON_FA_HOUSE, "Personal Room", "CreateRoom", ZoneCategory::Rooms },
+	{ ICON_FA_BED, "Dormitory", "CreateDorm", ZoneCategory::Rooms },
+	{ ICON_FA_UTENSILS, "Dining Hall", "CreateDining", ZoneCategory::Rooms },
+	{ ICON_RA_HEALTH, "Hospital", "CreateHospital", ZoneCategory::Rooms },
+	{ ICON_FA_BAN, "Forbidden", "CreateNoPass", ZoneCategory::Control },
+	{ ICON_FA_SHIELD, "Guard", "CreateGuardArea", ZoneCategory::Control },
+	{ ICON_FA_XMARK, "Remove Zone", "RemoveDesignation", ZoneCategory::Control },
+};
 
-// Job actions
-const char* jobActions[] = { "SuspendJob", "ResumeJob", "CancelJob", "LowerPrio", "RaisePrio" };
-const char* jobLabels[] = { "Suspend", "Resume", "Cancel", "Lower priority", "Raise priority" };
+// Manage → Job actions
+const ActionDef jobActions[] = {
+	{ ICON_FA_PAUSE, "Suspend", "SuspendJob" },
+	{ ICON_FA_PLAY, "Resume", "ResumeJob" },
+	{ ICON_FA_XMARK, "Cancel", "CancelJob" },
+	{ ICON_FA_ARROW_DOWN, "Lower Priority", "LowerPrio" },
+	{ ICON_FA_ARROW_UP, "Raise Priority", "RaisePrio" },
+};
 
 // Track selected material index per build item (keyed by item ID)
 static QMap<QString, QMap<int, int>> s_selectedMats;
@@ -407,42 +433,52 @@ void drawGameHUD( ImGuiBridge& bridge )
 	ImGui::PushStyleVar( ImGuiStyleVar_WindowPadding, ImVec2( 10, 9 ) );
 	ImGui::Begin( "##toolbar", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse );
 
-	float gap = 40.0f; // gap between left and right button groups
+	// Helper to draw a toolbar button with icon
+	auto toolbarBtn = [&]( const char* icon, const char* label, ButtonSelection sel ) -> bool {
+		bool active = ( bridge.currentToolbar == sel );
+		if ( active ) ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0.3f, 0.5f, 0.7f, 1.0f ) );
+		char fullLabel[128];
+		snprintf( fullLabel, sizeof(fullLabel), "%s %s", icon, label );
+		bool clicked = ImGui::Button( fullLabel, ImVec2( 0, 36 ) );
+		if ( active ) ImGui::PopStyleColor();
+		return clicked;
+	};
+
 	float padding = 10.0f;
 	float spacing = ImGui::GetStyle().ItemSpacing.x;
-	float availableW = io.DisplaySize.x - padding * 2 - gap;
-	float leftWidth = availableW * 0.5f;
-	float rightWidth = availableW * 0.5f;
-	// Account for (N-1) spacings between N buttons
-	float buttonW = ( leftWidth - spacing * ( toolbarButtonCount - 1 ) ) / toolbarButtonCount;
 
-	// Left side: action buttons
+	// Left side: 3 primary action buttons
 	ImGui::SetCursorPosX( padding );
-	for ( int i = 0; i < toolbarButtonCount; ++i )
-	{
-		if ( i > 0 ) ImGui::SameLine();
-		bool active = ( bridge.currentToolbar == toolbarButtons[i].selection );
-		if ( active ) ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0.3f, 0.5f, 0.7f, 1.0f ) );
-		if ( ImGui::Button( toolbarButtons[i].label, ImVec2( buttonW, 36 ) ) )
+
+	auto toggleToolbar = [&]( ButtonSelection sel ) {
+		if ( bridge.currentToolbar == sel )
 		{
-			if ( active )
-			{
-				bridge.currentToolbar = ButtonSelection::None;
-				bridge.currentBuildCategory = BuildSelection::None;
-				bridge.buildItems.clear();
-			}
-			else
-			{
-				bridge.currentToolbar = toolbarButtons[i].selection;
-				bridge.currentBuildCategory = BuildSelection::None;
-				bridge.buildItems.clear();
-			}
+			bridge.currentToolbar = ButtonSelection::None;
+			bridge.currentBuildCategory = BuildSelection::None;
+			bridge.buildItems.clear();
 		}
-		if ( active ) ImGui::PopStyleColor();
-	}
+		else
+		{
+			bridge.currentToolbar = sel;
+			bridge.currentBuildCategory = BuildSelection::None;
+			bridge.buildItems.clear();
+		}
+	};
+
+	if ( toolbarBtn( ICON_FA_HAMMER, "Shape", ButtonSelection::Shape ) )
+		toggleToolbar( ButtonSelection::Shape );
+
+	ImGui::SameLine();
+	if ( toolbarBtn( ICON_FA_VECTOR_SQUARE, "Zone", ButtonSelection::Zone ) )
+		toggleToolbar( ButtonSelection::Zone );
+
+	ImGui::SameLine();
+	if ( toolbarBtn( ICON_FA_LIST_CHECK, "Manage", ButtonSelection::Manage ) )
+		toggleToolbar( ButtonSelection::Manage );
 
 	// Right side: management panels
-	float rightStart = padding + leftWidth + gap;
+	float rightWidth = io.DisplaySize.x * 0.5f;
+	float rightStart = io.DisplaySize.x - rightWidth - padding;
 	float rightButtonW = ( rightWidth - spacing * 5 ) / 6.0f;
 	ImGui::SameLine( rightStart );
 	if ( ImGui::Button( "Kingdom", ImVec2( rightButtonW, 36 ) ) )
@@ -487,222 +523,386 @@ void drawGameHUD( ImGuiBridge& bridge )
 	ImGui::PopStyleVar(); // WindowPadding
 
 	// =========================================================================
-	// Toolbar expansion panels (above the bottom toolbar)
+	// Unified action panel (above toolbar)
 	// =========================================================================
-	if ( bridge.currentToolbar == ButtonSelection::Build )
+	if ( bridge.currentToolbar == ButtonSelection::Shape )
 	{
-		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - 400 ) );
-		ImGui::SetNextWindowSize( ImVec2( 150, 390 ) );
-		ImGui::Begin( "##buildcats", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar );
+		float panelW = io.DisplaySize.x * 0.45f;
+		if ( panelW < 500 ) panelW = 500;
+		float panelH = 350;
+		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - panelH - 5 ) );
+		ImGui::SetNextWindowSize( ImVec2( panelW, panelH ) );
+		ImGui::Begin( "##shapepanel", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove );
 
-		float catBtnW = ImGui::GetContentRegionAvail().x;
-
-		for ( int i = 0; i < 9; ++i )
+		// Sub-tabs: Build | Dig | Nature
+		if ( ImGui::BeginTabBar( "ShapeTabs" ) )
 		{
-			bool active = ( bridge.currentBuildCategory == buildCategories[i].selection );
-			if ( active ) ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0.3f, 0.5f, 0.7f, 1.0f ) );
-			if ( ImGui::Button( buildCategories[i].label, ImVec2( catBtnW, 30 ) ) )
+			// ---- BUILD TAB ----
+			if ( ImGui::BeginTabItem( ICON_FA_HAMMER " Build" ) )
 			{
-				bridge.currentBuildCategory = buildCategories[i].selection;
-				bridge.currentBuildMaterial.clear();
-				bridge.buildItems.clear();
-				s_selectedMats.clear();
+				bridge.currentShapeTab = ShapeTab::Build;
 
-				// Check if this category has subcategories
-				const BuildCategorySubcats* sc = getSubcatsFor( buildCategories[i].selection );
-				if ( sc && sc->count > 0 )
+				// Category row (horizontal icon buttons)
+				for ( int i = 0; i < 5; ++i )
 				{
-					// Auto-select first subcategory and request items
-					bridge.currentBuildMaterial = sc->subcats[0].dbKey;
-					bridge.cmdRequestBuildItems( buildCategories[i].selection, bridge.currentBuildMaterial );
+					if ( i > 0 ) ImGui::SameLine();
+					bool active = ( bridge.currentBuildCategory == buildCategories[i].selection );
+					if ( active ) ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0.3f, 0.5f, 0.7f, 1.0f ) );
+
+					char catLabel[128];
+					snprintf( catLabel, sizeof(catLabel), "%s %s", buildCategories[i].icon, buildCategories[i].label );
+					if ( ImGui::Button( catLabel, ImVec2( 0, 30 ) ) )
+					{
+						bridge.currentBuildCategory = buildCategories[i].selection;
+						bridge.currentBuildMaterial.clear();
+						bridge.buildItems.clear();
+						s_selectedMats.clear();
+
+						// If Structures, don't auto-request yet (user picks wall/floor/stairs)
+						if ( buildCategories[i].selection != BuildSelection::Wall )
+						{
+							const BuildCategorySubcats* sc = getSubcatsFor( buildCategories[i].selection );
+							if ( sc && sc->count > 0 )
+							{
+								bridge.currentBuildMaterial = sc->subcats[0].dbKey;
+								bridge.cmdRequestBuildItems( buildCategories[i].selection, bridge.currentBuildMaterial );
+							}
+							else
+							{
+								bridge.cmdRequestBuildItems( buildCategories[i].selection, "" );
+							}
+						}
+					}
+					if ( active ) ImGui::PopStyleColor();
 				}
-				else
+
+				// If Structures selected, show structure type buttons
+				if ( bridge.currentBuildCategory == BuildSelection::Wall ||
+					 bridge.currentBuildCategory == BuildSelection::Floor ||
+					 bridge.currentBuildCategory == BuildSelection::Stairs ||
+					 bridge.currentBuildCategory == BuildSelection::Ramps ||
+					 bridge.currentBuildCategory == BuildSelection::Fence )
 				{
-					// No subcategories (e.g. Containers) — request items directly
-					bridge.cmdRequestBuildItems( buildCategories[i].selection, "" );
+					ImGui::Spacing();
+					for ( int i = 0; i < 5; ++i )
+					{
+						if ( i > 0 ) ImGui::SameLine();
+						bool active = ( bridge.currentBuildCategory == structureTypes[i].selection );
+						if ( active ) ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0.25f, 0.45f, 0.65f, 1.0f ) );
+						char stLabel[64];
+						snprintf( stLabel, sizeof(stLabel), "%s %s", structureTypes[i].icon, structureTypes[i].label );
+						if ( ImGui::Button( stLabel ) )
+						{
+							bridge.currentBuildCategory = structureTypes[i].selection;
+							bridge.currentBuildMaterial.clear();
+							bridge.buildItems.clear();
+							s_selectedMats.clear();
+							const BuildCategorySubcats* sc = getSubcatsFor( structureTypes[i].selection );
+							if ( sc && sc->count > 0 )
+							{
+								bridge.currentBuildMaterial = sc->subcats[0].dbKey;
+								bridge.cmdRequestBuildItems( structureTypes[i].selection, bridge.currentBuildMaterial );
+							}
+						}
+						if ( active ) ImGui::PopStyleColor();
+					}
 				}
+
+				// Material tabs (if current category has subcategories)
+				if ( bridge.currentBuildCategory != BuildSelection::None )
+				{
+					const BuildCategorySubcats* sc = getSubcatsFor( bridge.currentBuildCategory );
+					if ( sc && sc->count > 0 )
+					{
+						ImGui::Spacing();
+						if ( ImGui::BeginTabBar( "MatTabs" ) )
+						{
+							for ( int m = 0; m < sc->count; ++m )
+							{
+								if ( ImGui::BeginTabItem( sc->subcats[m].label ) )
+								{
+									if ( bridge.currentBuildMaterial != sc->subcats[m].dbKey )
+									{
+										bridge.currentBuildMaterial = sc->subcats[m].dbKey;
+										bridge.buildItems.clear();
+										s_selectedMats.clear();
+										bridge.cmdRequestBuildItems( bridge.currentBuildCategory, bridge.currentBuildMaterial );
+									}
+									ImGui::EndTabItem();
+								}
+							}
+							ImGui::EndTabBar();
+						}
+					}
+
+					// Build items list (scrollable)
+					ImGui::BeginChild( "BuildItems", ImVec2( 0, 0 ), false );
+					if ( !bridge.spriteTexCache )
+						bridge.spriteTexCache = new SpriteTextureCache();
+
+					float iconSize = 48.0f;
+					for ( const auto& item : bridge.buildItems )
+					{
+						ImGui::PushID( item.id.toStdString().c_str() );
+						ImGui::Separator();
+
+						ImVec2 startPos = ImGui::GetCursorPos();
+
+						// Icon
+						ImTextureID texID = (ImTextureID)0;
+						if ( !item.buffer.empty() && item.iconWidth > 0 && item.iconHeight > 0 )
+						{
+							unsigned int cacheKey = qHash( item.id ) + 100000;
+							texID = bridge.spriteTexCache->getTextureFromBuffer( cacheKey, item.buffer.data(), item.iconWidth, item.iconHeight );
+						}
+						if ( texID )
+							ImGui::Image( texID, ImVec2( iconSize, iconSize ) );
+						else
+							ImGui::Dummy( ImVec2( iconSize, iconSize ) );
+
+						// Right of icon: name + material dropdowns + build button
+						float rightX = startPos.x + iconSize + 8;
+						ImGui::SetCursorPos( ImVec2( rightX, startPos.y ) );
+						ImGui::Text( "%s", item.name.toStdString().c_str() );
+
+						QStringList mats;
+						bool canBuild = true;
+						float dropdownW = qMax( 120.0f, ImGui::GetContentRegionAvail().x - iconSize - 80 );
+
+						for ( int r = 0; r < item.requiredItems.size(); ++r )
+						{
+							const auto& req = item.requiredItems[r];
+							ImGui::SetCursorPosX( rightX );
+
+							if ( req.availableMats.isEmpty() )
+							{
+								canBuild = false;
+								QString unavailName = S::s( "$ItemName_" + req.itemID );
+								ImGui::TextDisabled( "%d x %s (unavailable)", req.amount, unavailName.toStdString().c_str() );
+								mats.append( "" );
+								continue;
+							}
+
+							int& selIdx = s_selectedMats[item.id][r];
+							if ( selIdx >= req.availableMats.size() ) selIdx = 0;
+
+							QString itemName = S::s( "$ItemName_" + req.itemID );
+							ImGui::Text( "%d", req.amount );
+							ImGui::SameLine();
+							ImGui::SetNextItemWidth( dropdownW );
+							QString comboLabel = "##mat" + QString::number( r );
+							QString matName = S::s( "$MaterialName_" + req.availableMats[selIdx].first );
+							QString preview = matName + " " + itemName + " (" + QString::number( req.availableMats[selIdx].second ) + ")";
+
+							if ( ImGui::BeginCombo( comboLabel.toStdString().c_str(), preview.toStdString().c_str() ) )
+							{
+								for ( int mi = 0; mi < req.availableMats.size(); ++mi )
+								{
+									QString mLabel = S::s( "$MaterialName_" + req.availableMats[mi].first );
+									QString label = mLabel + " " + itemName + " (" + QString::number( req.availableMats[mi].second ) + ")";
+									if ( ImGui::Selectable( label.toStdString().c_str(), mi == selIdx ) )
+										selIdx = mi;
+								}
+								ImGui::EndCombo();
+							}
+							mats.append( req.availableMats[selIdx].first );
+						}
+
+						ImGui::SetCursorPosX( rightX );
+						if ( !canBuild ) ImGui::BeginDisabled();
+						if ( ImGui::SmallButton( ICON_FA_HAMMER " Build" ) )
+						{
+							bridge.cmdBuild( item.biType, "", item.id, mats );
+						}
+						if ( !canBuild ) ImGui::EndDisabled();
+
+						if ( item.biType == BuildItemType::Terrain )
+						{
+							bool isWall = item.id.endsWith( "Wall" ) || item.id.startsWith( "FancyWall" );
+							bool isFloor = item.id.endsWith( "Floor" ) || item.id.startsWith( "FancyFloor" );
+							if ( isWall )
+							{
+								ImGui::SameLine();
+								if ( !canBuild ) ImGui::BeginDisabled();
+								if ( ImGui::SmallButton( "Fill Hole" ) ) bridge.cmdBuild( item.biType, "FillHole", item.id, mats );
+								if ( !canBuild ) ImGui::EndDisabled();
+							}
+							if ( isWall || isFloor )
+							{
+								ImGui::SameLine();
+								if ( !canBuild ) ImGui::BeginDisabled();
+								if ( ImGui::SmallButton( ICON_FA_RIGHT_LEFT " Replace" ) ) bridge.cmdBuild( item.biType, "Replace", item.id, mats );
+								if ( !canBuild ) ImGui::EndDisabled();
+							}
+						}
+
+						float endY = startPos.y + iconSize + ImGui::GetStyle().ItemSpacing.y;
+						if ( ImGui::GetCursorPosY() < endY )
+							ImGui::SetCursorPosY( endY );
+
+						ImGui::PopID();
+					}
+					ImGui::EndChild();
+				}
+
+				// Deconstruct button at bottom
+				ImGui::Separator();
+				if ( ImGui::Button( ICON_FA_TRASH " Deconstruct" ) )
+				{
+					bridge.currentBuildCategory = BuildSelection::None;
+					bridge.buildItems.clear();
+					bridge.cmdSetSelectionAction( "Deconstruct" );
+				}
+
+				ImGui::EndTabItem();
 			}
-			if ( active ) ImGui::PopStyleColor();
-		}
 
-		if ( ImGui::Button( "Deconstruct", ImVec2( catBtnW, 30 ) ) )
-		{
-			bridge.currentBuildCategory = BuildSelection::None;
-			bridge.buildItems.clear();
-			bridge.cmdSetSelectionAction( "Deconstruct" );
+			// ---- DIG TAB ----
+			if ( ImGui::BeginTabItem( ICON_FA_MOUNTAIN " Dig" ) )
+			{
+				bridge.currentShapeTab = ShapeTab::Dig;
+				ImGui::Spacing();
+
+				// Grid of dig action buttons
+				float btnW = 150.0f;
+				for ( int i = 0; i < 7; ++i )
+				{
+					if ( i % 3 != 0 ) ImGui::SameLine();
+					char label[128];
+					snprintf( label, sizeof(label), "%s %s", digActions[i].icon, digActions[i].label );
+					if ( ImGui::Button( label, ImVec2( btnW, 36 ) ) )
+					{
+						bridge.cmdSetSelectionAction( digActions[i].action );
+					}
+				}
+
+				ImGui::EndTabItem();
+			}
+
+			// ---- NATURE TAB ----
+			if ( ImGui::BeginTabItem( ICON_FA_TREE " Nature" ) )
+			{
+				bridge.currentShapeTab = ShapeTab::Nature;
+				ImGui::Spacing();
+
+				float btnW = 150.0f;
+				for ( int i = 0; i < 5; ++i )
+				{
+					if ( i % 3 != 0 ) ImGui::SameLine();
+					bool hasAction = strlen( natureActions[i].action ) > 0;
+					if ( !hasAction ) ImGui::BeginDisabled();
+					char label[128];
+					snprintf( label, sizeof(label), "%s %s", natureActions[i].icon, natureActions[i].label );
+					if ( ImGui::Button( label, ImVec2( btnW, 36 ) ) )
+					{
+						if ( hasAction )
+							bridge.cmdSetSelectionAction( natureActions[i].action );
+					}
+					if ( !hasAction ) ImGui::EndDisabled();
+				}
+
+				ImGui::EndTabItem();
+			}
+
+			ImGui::EndTabBar();
 		}
 
 		ImGui::End();
+	}
+	else if ( bridge.currentToolbar == ButtonSelection::Zone )
+	{
+		float panelW = 450;
+		float panelH = 250;
+		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - panelH - 5 ) );
+		ImGui::SetNextWindowSize( ImVec2( panelW, panelH ) );
+		ImGui::Begin( "##zonepanel", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove );
 
-		// Subcategory buttons (materials, workshop tabs, furniture groups, etc.)
-		float catPanelRight = 160; // build cat panel is 150px at x=5
-		float subcatPanelRight = catPanelRight; // default if no subcats
-		const BuildCategorySubcats* sc = getSubcatsFor( bridge.currentBuildCategory );
-		if ( sc && sc->count > 0 )
+		// Category tabs
+		if ( ImGui::BeginTabBar( "ZoneTabs" ) )
 		{
-			// Lazy-init sprite cache
-			if ( !bridge.spriteTexCache ) bridge.spriteTexCache = new SpriteTextureCache();
-
-			float subcatW = 115.0f;
-			float subcatBtnH = 70.0f;
-			float subcatH = sc->count * ( subcatBtnH + 5 ) + 10.0f;
-			ImGui::SetNextWindowPos( ImVec2( catPanelRight + 5, io.DisplaySize.y - toolbarHeight - subcatH - 10 ) );
-			ImGui::SetNextWindowSize( ImVec2( subcatW, subcatH ) );
-			ImGui::Begin( "##buildsubcats", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar );
-
-			// Map subcategory labels to representative sprites for icons
-			struct SubcatSpriteInfo { QString itemSID; QString material; };
-			static QMap<QString, SubcatSpriteInfo> subcatSprites = {
-				{ "Wood",       { "Log", "Oak" } },
-				{ "Soil",       { "RawSoil", "Dirt" } },
-				{ "Stone",      { "RawStone", "Granite" } },
-				{ "Metal",      { "Bar", "Iron" } },
-				{ "Other",      { "RawStone", "Ite" } },
-				{ "Food",       { "Grain", "Wheat" } },
-				{ "Crafts",     { "Plank", "Oak" } },
-				{ "Mechanics",  { "Axle", "Oak" } },
-				{ "Misc",       { "Torch", "Oak" } },
-				{ "Chairs",     { "Chair", "Oak" } },
-				{ "Tables",     { "Table", "Oak" } },
-				{ "Beds",       { "Bed", "Oak" } },
-				{ "Cabinets",   { "Cabinet", "Oak" } },
-				{ "Doors",      { "Door", "Oak" } },
-				{ "Lights",     { "Torch", "Oak" } },
-				{ "Farm",       { "Trough", "Oak" } },
-				{ "Mechanism",  { "Lever", "Oak" } },
-				{ "Hydraulics", { "Pump", "Oak" } }
+			struct ZoneCatTab { const char* label; ZoneCategory cat; };
+			ZoneCatTab zoneTabs[] = {
+				{ ICON_FA_BOX " Storage", ZoneCategory::Storage },
+				{ ICON_FA_SEEDLING " Production", ZoneCategory::Production },
+				{ ICON_FA_HOUSE " Rooms", ZoneCategory::Rooms },
+				{ ICON_FA_SHIELD " Control", ZoneCategory::Control },
 			};
 
-			for ( int m = 0; m < sc->count; ++m )
+			for ( auto& zt : zoneTabs )
 			{
-				bool matActive = ( bridge.currentBuildMaterial == sc->subcats[m].dbKey );
-				if ( matActive ) ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0.3f, 0.5f, 0.7f, 1.0f ) );
-
-				ImGui::PushID( m );
-
-				// Show sprite icon + text label as a styled ImageButton or fallback to text button
-				auto spriteInfo = subcatSprites.value( sc->subcats[m].label );
-				ImTextureID icon = spriteInfo.itemSID.isEmpty() ? (ImTextureID)0 : bridge.spriteTexCache->getTextureForItem( spriteInfo.itemSID, { spriteInfo.material } );
-
-				if ( icon )
+				if ( ImGui::BeginTabItem( zt.label ) )
 				{
-					// Icon button with label below
-					if ( ImGui::ImageButton( sc->subcats[m].label, icon, ImVec2( 32, 40 ) ) )
+					bridge.currentZoneCategory = zt.cat;
+					ImGui::Spacing();
+
+					// Show zone buttons for this category
+					float btnW = 180.0f;
+					int col = 0;
+					for ( int i = 0; i < 11; ++i )
 					{
-						bridge.currentBuildMaterial = sc->subcats[m].dbKey;
-						bridge.buildItems.clear();
-						s_selectedMats.clear();
-						bridge.cmdRequestBuildItems( bridge.currentBuildCategory, bridge.currentBuildMaterial );
+						if ( zoneActions[i].category != zt.cat ) continue;
+						if ( col > 0 ) ImGui::SameLine();
+						char label[128];
+						snprintf( label, sizeof(label), "%s %s", zoneActions[i].icon, zoneActions[i].label );
+						if ( ImGui::Button( label, ImVec2( btnW, 36 ) ) )
+						{
+							bridge.cmdSetSelectionAction( zoneActions[i].action );
+						}
+						col++;
+						if ( col >= 2 ) col = 0;
 					}
-					ImGui::TextUnformatted( sc->subcats[m].label );
+
+					ImGui::EndTabItem();
 				}
-				else
-				{
-					// Fallback: text button
-					if ( ImGui::Button( sc->subcats[m].label, ImVec2( 85, subcatBtnH ) ) )
-					{
-						bridge.currentBuildMaterial = sc->subcats[m].dbKey;
-						bridge.buildItems.clear();
-						s_selectedMats.clear();
-						bridge.cmdRequestBuildItems( bridge.currentBuildCategory, bridge.currentBuildMaterial );
-					}
-				}
-
-				ImGui::PopID();
-				if ( matActive ) ImGui::PopStyleColor();
 			}
-
-			ImGui::End();
-			subcatPanelRight = catPanelRight + 5 + subcatW + 5;
-		}
-
-		// Build items list
-		drawBuildItemList( bridge, subcatPanelRight );
-	}
-	else if ( bridge.currentToolbar == ButtonSelection::Mine )
-	{
-		float panelW = 170.0f;
-		float btnH = 30.0f;
-		float panelH = 7 * ( btnH + ImGui::GetStyle().ItemSpacing.y ) + ImGui::GetStyle().WindowPadding.y * 2;
-		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - panelH - 5 ) );
-		ImGui::SetNextWindowSize( ImVec2( panelW, panelH ) );
-		ImGui::Begin( "##mineactions", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar );
-
-		float btnW = ImGui::GetContentRegionAvail().x;
-		for ( int i = 0; i < 7; ++i )
-		{
-			if ( ImGui::Button( mineLabels[i], ImVec2( btnW, btnH ) ) )
-			{
-				bridge.cmdSetSelectionAction( mineActions[i] );
-			}
+			ImGui::EndTabBar();
 		}
 
 		ImGui::End();
 	}
-	else if ( bridge.currentToolbar == ButtonSelection::Agriculture )
+	else if ( bridge.currentToolbar == ButtonSelection::Manage )
 	{
-		float panelW = 170.0f;
-		float btnH = 30.0f;
-		float panelH = 5 * ( btnH + ImGui::GetStyle().ItemSpacing.y ) + ImGui::GetStyle().WindowPadding.y * 2;
+		float panelW = 400;
+		float panelH = 220;
 		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - panelH - 5 ) );
 		ImGui::SetNextWindowSize( ImVec2( panelW, panelH ) );
-		ImGui::Begin( "##agriactions", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar );
+		ImGui::Begin( "##managepanel", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove );
+
+		// Two columns: Jobs and Demolition
+		ImGui::BeginChild( "JobCol", ImVec2( ImGui::GetContentRegionAvail().x * 0.6f, 0 ), true );
+		ImGui::Text( ICON_FA_LIST_CHECK " Job Control" );
+		ImGui::Separator();
+		ImGui::Spacing();
 
 		float btnW = ImGui::GetContentRegionAvail().x;
 		for ( int i = 0; i < 5; ++i )
 		{
-			bool hasAction = strlen( agriActions[i] ) > 0;
-			if ( !hasAction ) ImGui::BeginDisabled();
-			if ( ImGui::Button( agriLabels[i], ImVec2( btnW, btnH ) ) )
+			char label[128];
+			snprintf( label, sizeof(label), "%s %s", jobActions[i].icon, jobActions[i].label );
+			if ( ImGui::Button( label, ImVec2( btnW, 32 ) ) )
 			{
-				if ( hasAction )
-					bridge.cmdSetSelectionAction( agriActions[i] );
+				bridge.cmdSetSelectionAction( jobActions[i].action );
 			}
-			if ( !hasAction ) ImGui::EndDisabled();
 		}
+		ImGui::EndChild();
 
-		ImGui::End();
-	}
-	else if ( bridge.currentToolbar == ButtonSelection::Designation )
-	{
-		float panelW = 180.0f;
-		float btnH = 30.0f;
-		float panelH = 11 * ( btnH + ImGui::GetStyle().ItemSpacing.y ) + ImGui::GetStyle().WindowPadding.y * 2;
-		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - panelH - 5 ) );
-		ImGui::SetNextWindowSize( ImVec2( panelW, panelH ) );
-		ImGui::Begin( "##designactions", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar );
+		ImGui::SameLine();
 
-		float btnW = ImGui::GetContentRegionAvail().x;
-		for ( int i = 0; i < 11; ++i )
+		ImGui::BeginChild( "DemoCol", ImVec2( 0, 0 ), true );
+		ImGui::Text( ICON_FA_HAMMER " Demolition" );
+		ImGui::Separator();
+		ImGui::Spacing();
+
+		btnW = ImGui::GetContentRegionAvail().x;
+		if ( ImGui::Button( ICON_FA_TRASH " Deconstruct", ImVec2( btnW, 32 ) ) )
 		{
-			if ( ImGui::Button( designLabels[i], ImVec2( btnW, btnH ) ) )
-			{
-				bridge.cmdSetSelectionAction( designActions[i] );
-			}
+			bridge.cmdSetSelectionAction( "Deconstruct" );
 		}
+		ImGui::EndChild();
 
 		ImGui::End();
 	}
-	else if ( bridge.currentToolbar == ButtonSelection::Job )
-	{
-		float panelW = 180.0f;
-		float btnH = 30.0f;
-		float panelH = 5 * ( btnH + ImGui::GetStyle().ItemSpacing.y ) + ImGui::GetStyle().WindowPadding.y * 2;
-		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - panelH - 5 ) );
-		ImGui::SetNextWindowSize( ImVec2( panelW, panelH ) );
-		ImGui::Begin( "##jobactions", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar );
 
-		float btnW = ImGui::GetContentRegionAvail().x;
-		for ( int i = 0; i < 5; ++i )
-		{
-			if ( ImGui::Button( jobLabels[i], ImVec2( btnW, btnH ) ) )
-			{
-				bridge.cmdSetSelectionAction( jobActions[i] );
-			}
-		}
-
-		ImGui::End();
-	}
 
 	// =========================================================================
 	// Toast notifications (single stacked panel, interactive)

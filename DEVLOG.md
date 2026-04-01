@@ -6,6 +6,30 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-01] Bottom Toolbar Redesign — Shape / Zone / Manage
+
+**Milestone**: 0.0 — UI/UX
+**Files changed**: `src/base/enums.h`, `src/gui/imguibridge.h`, `src/gui/ui/ui_gamehud.cpp`
+
+### Changes
+- **3 primary actions replace 5** — Build/Mine/Agriculture/Designations/Job collapsed into Shape/Zone/Manage, grouped by *what you're doing to the world*
+- **Shape** tab has 3 sub-tabs: Build (workshops, structures, furniture, utility, containers), Dig (mine, stairs, ramp, hole), Nature (cut tree, plant, harvest, forage)
+- **Zone** tab has 4 category tabs: Storage (stockpile), Production (farm, grove, pasture), Rooms (personal, dorm, dining, hospital), Control (forbidden, guard, remove)
+- **Manage** tab has 2 columns: Job Control (suspend, resume, cancel, priority) and Demolition (deconstruct)
+- **Unified panel** — instead of 3 separate flyout windows, everything opens in one coherent tabbed panel above the toolbar
+- **Icon integration** — Font Awesome 6 + RPG Awesome icons on all buttons (hammer, axe, shield, seedling, etc.)
+- **Material selection via tabs** — material subcategories shown as ImGui tabs instead of a separate floating panel
+- **Build items inline** — workshop/furniture item list with sprite icons, material dropdowns, and build buttons all within the tabbed panel
+
+### Technical Details
+- `ButtonSelection` enum: `None`, `Shape`, `Zone`, `Manage` (replaces Build/Mine/Agriculture/Designation/Job)
+- New `ShapeTab` enum: `Build`, `Dig`, `Nature`
+- New `ZoneCategory` enum: `Storage`, `Production`, `Rooms`, `Control`
+- All backend commands unchanged — same `cmdSetSelectionAction`, `cmdRequestBuildItems`, `cmdBuild` calls
+- Old action data arrays replaced with `ActionDef` structs carrying icon + label + action string
+
+---
+
 ## [2026-03-31] Generative Dev Tool Panel
 
 **Milestone**: 0.0 — Developer Tools
