@@ -1,4 +1,6 @@
 #include "imgui_impl_qt5.h"
+#include "IconsFontAwesome6.h"
+#include "IconsRpgAwesome.h"
 #include "ui/ui_theme.h"
 #include "../base/global.h"
 #include "../base/config.h"
@@ -109,12 +111,44 @@ void ImGuiQt5::Init( QOpenGLWindow* window )
 	if ( QFileInfo::exists( QString::fromStdString( titlePath ) ) )
 		s_fonts.title = io.Fonts->AddFontFromFileTTF( titlePath.c_str(), 48.0f );
 
+	// Icon font paths
+	std::string faPath = ( exePath + "/content/fonts/fa-solid-900.ttf" ).toStdString();
+	std::string raPath = ( exePath + "/content/fonts/rpgawesome-webfont.ttf" ).toStdString();
+	bool hasFa = QFileInfo::exists( QString::fromStdString( faPath ) );
+	bool hasRa = QFileInfo::exists( QString::fromStdString( raPath ) );
+
+	// Helper: merge icon fonts into the last-added text font
+	auto mergeIconFonts = [&]( float size ) {
+		ImFontConfig iconCfg;
+		iconCfg.MergeMode = true;
+		iconCfg.PixelSnapH = true;
+		iconCfg.GlyphMinAdvanceX = size; // monospace-ish icons
+
+		if ( hasFa )
+		{
+			static const ImWchar faRange[] = { ICON_MIN_FA, ICON_MAX_16_FA, 0 };
+			io.Fonts->AddFontFromFileTTF( faPath.c_str(), size, &iconCfg, faRange );
+		}
+		if ( hasRa )
+		{
+			static const ImWchar raRange[] = { ICON_MIN_RA, ICON_MAX_RA, 0 };
+			io.Fonts->AddFontFromFileTTF( raPath.c_str(), size, &iconCfg, raRange );
+		}
+	};
+
 	if ( QFileInfo::exists( QString::fromStdString( uiPath ) ) )
 	{
 		s_fonts.uiMedium  = io.Fonts->AddFontFromFileTTF( uiPath.c_str(), 20.0f );
+		mergeIconFonts( 20.0f );
+
 		s_fonts.ui        = io.Fonts->AddFontFromFileTTF( uiPath.c_str(), 18.0f );
+		mergeIconFonts( 18.0f );
+
 		s_fonts.uiDefault = io.Fonts->AddFontFromFileTTF( uiPath.c_str(), 16.0f );
+		mergeIconFonts( 16.0f );
+
 		s_fonts.uiSmall   = io.Fonts->AddFontFromFileTTF( uiPath.c_str(), 14.0f );
+		mergeIconFonts( 14.0f );
 
 		// Set 16px as the default for all in-game rendering
 		io.FontDefault = s_fonts.uiDefault;
