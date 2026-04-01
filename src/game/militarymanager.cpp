@@ -24,6 +24,7 @@
 #include "../base/io.h"
 #include "../base/util.h"
 #include "../game/gnome.h"
+#include "../game/gnomemanager.h"
 #include "../game/creaturemanager.h"
 #include "../game/inventory.h"
 
@@ -138,6 +139,7 @@ QVariantMap Squad::serialize()
 		vl.append( vm );
 	}
 	out.insert( "Priorities", vl );
+	out.insert( "Uniform", uniform.serialize() );
 
 	return out;
 }
@@ -177,6 +179,12 @@ Squad::Squad( QList<QString> tps, const QVariantMap& in ) :
 			TargetPriority tp { type, MilAttitude::FLEE };
 			priorities.append( tp );
 		}
+	}
+
+	// Load squad uniform (backward-compatible — defaults to empty if missing)
+	if ( in.contains( "Uniform" ) )
+	{
+		uniform = Uniform( in.value( "Uniform" ).toMap() );
 	}
 }
 
@@ -230,6 +238,8 @@ void MilitaryManager::init()
 			for( auto gnome : squad.gnomes )
 			{
 				m_gnome2Squad.insert( gnome, squad.id );
+				// Set roleID so CheckUniform finds the squad's uniform
+				g->gm()->setRoleID( gnome, squad.id );
 			}
 		}
 	}
@@ -324,6 +334,19 @@ QString MilitaryManager::roleName( unsigned int id )
 
 void MilitaryManager::setArmorType( unsigned int roleID, QString slot, QString type, QString material )
 {
+	// Try squads first (roleID may be a squad ID)
+	for ( auto& squad : m_squads )
+	{
+		if ( squad.id == roleID )
+		{
+			auto& item = squad.uniform.parts[slot];
+			item.type = type;
+			item.item = DB::select3( "ItemID", "Uniform_Slots", "ID", slot, "Type", type ).toString();
+			item.material = material;
+			return;
+		}
+	}
+	// Fallback to legacy roles
 	if ( m_roles.contains( roleID ) )
 	{
 		auto& item = m_roles[roleID].uniform.parts[slot];
@@ -335,6 +358,15 @@ void MilitaryManager::setArmorType( unsigned int roleID, QString slot, QString t
 
 Uniform* MilitaryManager::uniform( unsigned int roleID )
 {
+	// Check squads first (gnome roleID is set to squad ID when joining)
+	for ( auto& squad : m_squads )
+	{
+		if ( squad.id == roleID )
+		{
+			return &squad.uniform;
+		}
+	}
+	// Fallback to legacy roles
 	if ( m_roles.contains( roleID ) )
 	{
 		return &m_roles[roleID].uniform;
@@ -561,6 +593,8 @@ bool MilitaryManager::removeGnome( unsigned int gnomeID )
 	{
 		squad->gnomes.removeAll( gnomeID );
 		m_gnome2Squad.remove( gnomeID );
+		// Clear roleID so gnome reverts to civilian (strips equipment)
+		g->gm()->setRoleID( gnomeID, 0 );
 		return true;
 	}
 	return false;

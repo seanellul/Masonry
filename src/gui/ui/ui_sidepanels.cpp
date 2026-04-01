@@ -1419,6 +1419,41 @@ void drawMilitaryPanel( ImGuiBridge& bridge )
 
 					ImGui::Separator();
 
+					// --- Uniform Configuration ---
+					if ( !squad.uniform.isEmpty() )
+					{
+						ImGui::TextColored( ImVec4( 0.7f, 0.9f, 0.5f, 1.0f ), "Uniform:" );
+						for ( const auto& slot : squad.uniform )
+						{
+							ImGui::PushID( slot.slotName.toStdString().c_str() );
+							ImGui::Text( "  %s:", slot.slotName.toStdString().c_str() );
+							ImGui::SameLine( 130 );
+
+							int typeIdx = slot.possibleTypesForSlot.indexOf( slot.armorType );
+							if ( typeIdx < 0 ) typeIdx = 0;
+
+							ImGui::PushItemWidth( 150 );
+							if ( ImGui::BeginCombo( "##type", slot.armorType.toStdString().c_str() ) )
+							{
+								for ( int t = 0; t < slot.possibleTypesForSlot.size(); ++t )
+								{
+									bool sel = ( t == typeIdx );
+									if ( ImGui::Selectable( slot.possibleTypesForSlot[t].toStdString().c_str(), sel ) )
+									{
+										bridge.cmdSetArmorType( squad.id, slot.slotName, slot.possibleTypesForSlot[t], "any" );
+										bridge.cmdRequestMilitaryUpdate();
+									}
+								}
+								ImGui::EndCombo();
+							}
+							ImGui::PopItemWidth();
+
+							ImGui::PopID();
+						}
+					}
+
+					ImGui::Separator();
+
 					// --- Target Priorities ---
 					if ( !squad.priorities.isEmpty() )
 					{
@@ -1497,7 +1532,7 @@ void drawMilitaryPanel( ImGuiBridge& bridge )
 		// =================================================================
 		// ROLES TAB
 		// =================================================================
-		if ( ImGui::BeginTabItem( "Roles" ) )
+		if ( ImGui::BeginTabItem( "Uniforms" ) )
 		{
 			if ( bridge.roles.isEmpty() )
 			{

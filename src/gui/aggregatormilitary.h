@@ -48,6 +48,16 @@ Q_DECLARE_METATYPE( GuiTargetPriority )
 
 
 
+struct GuiUniformItem
+{
+	QString slotName;
+	QString armorType = "none"; // plate, heavy plate, chain and so on
+	QString material = "any";
+
+	QStringList possibleTypesForSlot; // some slots have no bone armor item, held slots or rings are completely different
+};
+Q_DECLARE_METATYPE( GuiUniformItem )
+
 struct GuiSquad
 {
 	unsigned int id = 0;
@@ -58,18 +68,10 @@ struct GuiSquad
 	QList<GuiTargetPriority> priorities;
 
 	QList<GuiSquadGnome> gnomes;
+
+	QList<GuiUniformItem> uniform; // squad's uniform configuration
 };
 Q_DECLARE_METATYPE( GuiSquad )
-
-struct GuiUniformItem
-{
-	QString slotName;
-	QString armorType = "none"; // plate, heavy plate, chain and so on
-	QString material = "any";
-
-	QStringList possibleTypesForSlot; // some slots have no bone armor item, held slots or rings are completely different
-};
-Q_DECLARE_METATYPE( GuiUniformItem )
 
 struct GuiMilRole
 {

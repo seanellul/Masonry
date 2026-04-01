@@ -97,6 +97,7 @@ struct Squad
 	QList<QString> types;
 
 	QList<unsigned int> gnomes;
+	Uniform uniform; // each squad has its own uniform configuration
 
 	QVariantMap serialize();
 	Squad( QList<QString> tps, const QVariantMap& in );

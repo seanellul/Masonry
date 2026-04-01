@@ -106,6 +106,16 @@ void AggregatorMilitary::sendSquadUpdate()
 
 			gs.gnomes.append( gsg );
 		}
+
+		// Populate squad uniform data for UI (read directly from parts map)
+		for ( auto it = squad.uniform.parts.constBegin(); it != squad.uniform.parts.constEnd(); ++it )
+		{
+			QVariantMap partVM;
+			partVM.insert( "Type", it.value().type );
+			partVM.insert( "Material", it.value().material );
+			gs.uniform.append( createUniformItem( it.key(), partVM ) );
+		}
+
 		m_squads.append( gs );
 	}
 
@@ -251,6 +261,8 @@ void AggregatorMilitary::onAddGnomeToSquad( unsigned int gnomeID, unsigned int s
 	{
 		squad->gnomes.append( gnomeID );
 		g->mil()->updateGnome( gnomeID );
+		// Set gnome's roleID to squad ID so CheckUniform finds the squad's uniform
+		g->gm()->setRoleID( gnomeID, squadID );
 	}
 	sendSquadUpdate();
 }
