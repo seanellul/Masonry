@@ -9,7 +9,7 @@
       "command": "npx",
       "args": ["nano-banana-mcp"],
       "env": {
-        "GEMINI_API_KEY": "AIzaSyCySCsW4FgYp9IqnqvygFp2m0hWXyi4uzo"
+        "GEMINI_API_KEY": "AIzaSyCy2mBtSDofzUV5Ee5TQ9OXQrqCLlUe53s"
       }
     },
     "spritecook": {

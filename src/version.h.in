@@ -13,5 +13,11 @@
 #cmakedefine GIT_REPO "@GIT_REPO@"
 #cmakedefine GIT_REF "@GIT_REF@"
 #cmakedefine GIT_SHA "@GIT_SHA@"
+
+#ifdef GIT_SHA
+#define PROJECT_VERSION_FULL "@PROJECT_VERSION@-" GIT_SHA
+#else
+#define PROJECT_VERSION_FULL "@PROJECT_VERSION@"
+#endif
 #cmakedefine BUILD_ID "@BUILD_ID@"
 #cmakedefine BUGSPLAT_DB "@BUGSPLAT_DB@"

@@ -546,6 +546,8 @@ void Gnome::initTaskMap()
 	m_behaviors.insert( "IsTrainer", std::bind( &Gnome::conditionIsTrainer, this, _1 ) );
 
 	m_behaviors.insert( "HasHuntTarget", std::bind( &Gnome::conditionHasHuntTarget, this, _1 ) );
+	m_behaviors.insert( "ShouldFlee", std::bind( &Gnome::conditionShouldFlee, this, _1 ) );
+	m_behaviors.insert( "FleeMove", std::bind( &Gnome::actionFleeMove, this, _1 ) );
 
 	m_behaviors.insert( "IsOnMission", std::bind( &Gnome::conditionIsOnMission, this, _1 ) );
 
@@ -1998,6 +2000,9 @@ bool Gnome::attack( DamageType dt, AnatomyHeight da, int skill, int strength, Po
 		AggroEntry newAE { strength, attackerID };
 		m_aggroList.append( newAE );
 	}
+
+	// Wake up immediately — don't wait for bucket tick
+	m_combatAlert = true;
 
 	return true;
 }

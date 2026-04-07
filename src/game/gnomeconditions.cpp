@@ -293,6 +293,16 @@ BT_RESULT Gnome::conditionIsCivilian( bool halt )
 	return BT_RESULT::FAILURE;
 }
 
+BT_RESULT Gnome::conditionShouldFlee( bool halt )
+{
+	// Civilians with no weapon should flee rather than fight
+	if ( conditionIsCivilian() == BT_RESULT::SUCCESS && !m_leftHandHasWeapon && !m_rightHandArmed )
+	{
+		return BT_RESULT::SUCCESS;
+	}
+	return BT_RESULT::FAILURE;
+}
+
 BT_RESULT Gnome::conditionHasHuntTarget( bool halt )
 {
 	auto squad = g->mil()->getSquadForGnome( m_id );

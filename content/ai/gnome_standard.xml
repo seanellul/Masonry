@@ -25,16 +25,24 @@
                 <Condition ID="HasHuntTarget"/>
             </Fallback>
             <Action ID="AbortJob"/>
-            <ForceSuccess>
+            <Fallback>
+                <!-- Unarmed civilians try to flee first -->
                 <SequenceStar>
-                    <Action ID="GetTarget"/>
-                    <Action ID="Move"/>
-                    <Sequence>
-                        <Condition ID="TargetAdjacent"/>
-                        <Action ID="AttackTarget"/>
-                    </Sequence>
+                    <Condition ID="ShouldFlee"/>
+                    <Action ID="FleeMove"/>
                 </SequenceStar>
-            </ForceSuccess>
+                <!-- Fight: armed civilians and military gnomes, or cornered unarmed -->
+                <ForceSuccess>
+                    <SequenceStar>
+                        <Action ID="GetTarget"/>
+                        <Action ID="Move"/>
+                        <Sequence>
+                            <Condition ID="TargetAdjacent"/>
+                            <Action ID="AttackTarget"/>
+                        </Sequence>
+                    </SequenceStar>
+                </ForceSuccess>
+            </Fallback>
             <Condition ID="IsInCombat"/>
         </SequenceStar>
     </BehaviorTree>
@@ -394,6 +402,7 @@
         <Action ID="FindDrink"/>
         <Action ID="FindFood"/>
         <Action ID="FindTool"/>
+        <Action ID="FleeMove"/>
         <Action ID="FindTrainerPosition"/>
         <Action ID="FindTrainingGround"/>
         <Action ID="FinishJob"/>
@@ -423,6 +432,7 @@
         <Condition ID="IsThirsty"/>
         <Condition ID="IsTrainer"/>
         <Condition ID="IsTrainingTime"/>
+        <Condition ID="ShouldFlee"/>
         <Condition ID="IsVeryHungry"/>
         <Condition ID="IsVeryThirsty"/>
         <SubTree ID="JobButcherAnimal"/>

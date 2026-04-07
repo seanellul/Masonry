@@ -3109,6 +3109,24 @@ void drawDebugPanel( ImGuiBridge& bridge )
 			ImGui::EndTabItem();
 		}
 
+		// ===================== TEXTURE PACKS =====================
+		if ( ImGui::BeginTabItem( "Textures" ) )
+		{
+			bool useAlt = bridge.useAltTextures;
+			if ( ImGui::Checkbox( "Use AI Texture Pack", &useAlt ) )
+			{
+				bridge.cmdToggleTexturePack();
+			}
+
+			ImGui::TextWrapped( "Swap between original and AI-generated tilesheets. "
+				"Place alternate PNGs in content/tilesheet_ai/." );
+
+			ImGui::Spacing();
+			ImGui::Text( "Active: %s", bridge.useAltTextures ? "AI Pack" : "Original" );
+
+			ImGui::EndTabItem();
+		}
+
 		// ===================== GAME STATE =====================
 		if ( ImGui::BeginTabItem( "Game" ) )
 		{

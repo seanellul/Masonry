@@ -147,10 +147,12 @@ int main( int argc, char* argv[] )
 	clearLog();
 	qInstallMessageHandler( &logOutput );
 	qInfo() << PROJECT_NAME << "version" << PROJECT_VERSION;
-#ifdef GIT_REPO
-	qInfo() << "Built from" << GIT_REPO << GIT_REF << "(" << GIT_SHA << ")"
-			<< "build" << BUILD_ID;
-#endif // GIT_REPO
+#ifdef GIT_SHA
+	qInfo() << "Built from" << GIT_SHA << "on" << GIT_REF;
+#endif
+#ifdef BUILD_ID
+	qInfo() << "Build" << BUILD_ID;
+#endif
 
 	// Disable use of ANGLE, as it supports OpenGL 3.x at most
 	QCoreApplication::setAttribute( Qt::AA_UseDesktopOpenGL );

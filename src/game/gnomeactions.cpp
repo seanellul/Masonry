@@ -2476,6 +2476,98 @@ BT_RESULT Gnome::actionGetTarget( bool halt )
 	return m_currentAttackTarget ? BT_RESULT::SUCCESS : BT_RESULT::FAILURE;
 }
 
+BT_RESULT Gnome::actionFleeMove( bool halt )
+{
+	if ( Global::debugMode )
+		log( "actionFleeMove" );
+
+	if ( halt )
+	{
+		m_currentPath.clear();
+		return BT_RESULT::IDLE;
+	}
+
+	// If we have a path, keep following it
+	if ( !m_currentPath.empty() )
+	{
+		m_gnomeState = GnomeState::MOVING;
+		return BT_RESULT::RUNNING;
+	}
+
+	// Find the nearest threat to flee from
+	Position threatPos = m_position;
+	bool hasThreat = false;
+
+	if ( m_currentAttackTarget )
+	{
+		const Creature* creature = g->cm()->creature( m_currentAttackTarget );
+		if ( creature && !creature->isDead() )
+		{
+			threatPos = creature->getPos();
+			hasThreat = true;
+		}
+	}
+
+	if ( !hasThreat )
+	{
+		for ( const auto& ae : m_aggroList )
+		{
+			const Creature* creature = g->cm()->creature( ae.id );
+			if ( creature && !creature->isDead() )
+			{
+				threatPos = creature->getPos();
+				hasThreat = true;
+				break;
+			}
+		}
+	}
+
+	if ( !hasThreat )
+	{
+		return BT_RESULT::FAILURE;
+	}
+
+	// Pick the walkable neighbor tile that maximizes distance from threat
+	Position bestPos;
+	unsigned int bestDist = 0;
+
+	Position candidates[4] = {
+		m_position.northOf(),
+		m_position.eastOf(),
+		m_position.southOf(),
+		m_position.westOf()
+	};
+
+	for ( const auto& candidate : candidates )
+	{
+		if ( g->w()->isWalkableGnome( candidate ) )
+		{
+			unsigned int dist = candidate.distSquare( threatPos );
+			if ( dist > bestDist )
+			{
+				bestDist = dist;
+				bestPos  = candidate;
+			}
+		}
+	}
+
+	if ( bestDist > 0 )
+	{
+		setCurrentTarget( bestPos );
+		PathFinderResult pfr = g->pf()->getPath( m_id, m_position, bestPos, m_ignoreNoPass, m_currentPath );
+		if ( pfr != PathFinderResult::NoConnection )
+		{
+			m_thoughtBubble = "Fleeing!";
+			m_gnomeState = GnomeState::MOVING;
+			Global::logger().log( LogType::COMBAT, m_name + " is fleeing!", m_id );
+			return BT_RESULT::RUNNING;
+		}
+	}
+
+	// Cornered — can't flee
+	return BT_RESULT::FAILURE;
+}
+
 BT_RESULT Gnome::actionDoMission( bool halt )
 {
 	if ( m_mission )

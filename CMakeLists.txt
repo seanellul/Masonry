@@ -11,6 +11,7 @@ set(GIT_REPO "" CACHE INTERNAL "")
 set(GIT_REF "" CACHE INTERNAL "")
 set(GIT_SHA "" CACHE INTERNAL "")
 
+
 project(Masonry
 	VERSION ${DEFAULT_VERSION}
 	DESCRIPTION "Colony simulator"
@@ -98,11 +99,24 @@ target_link_libraries(${PROJECT_NAME}
 		OpenAL
 )
 
-configure_file(
-	${CMAKE_SOURCE_DIR}/src/version.h.in
-	${CMAKE_SOURCE_DIR}/src/version.h
-	@ONLY
+# Generate version.h at build time so git SHA stays current
+add_custom_target(generate_version ALL
+	COMMAND ${CMAKE_COMMAND}
+		-DSOURCE_DIR=${CMAKE_SOURCE_DIR}
+		-DPROJECT_NAME=${PROJECT_NAME}
+		-DPROJECT_VERSION=${PROJECT_VERSION}
+		-DPROJECT_VERSION_MAJOR=${PROJECT_VERSION_MAJOR}
+		-DPROJECT_VERSION_MINOR=${PROJECT_VERSION_MINOR}
+		-DPROJECT_VERSION_PATCH=${PROJECT_VERSION_PATCH}
+		-DPROJECT_VERSION_TWEAK=${PROJECT_VERSION_TWEAK}
+		-DPROJECT_DESCRIPTION=${PROJECT_DESCRIPTION}
+		-DPROJECT_HOMEPAGE_URL=${PROJECT_HOMEPAGE_URL}
+		-DBUILD_ID=${BUILD_ID}
+		-DBUGSPLAT_DB=${BUGSPLAT_DB}
+		-P ${CMAKE_SOURCE_DIR}/cmake/GenerateVersion.cmake
+	COMMENT "Updating version.h with latest git info"
 )
+add_dependencies(${PROJECT_NAME} generate_version)
 
 target_sources(${PROJECT_NAME}
 	PRIVATE

@@ -6,6 +6,42 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-07] Resizable + persistent Shape/Zone/Manage panels
+
+**Milestone**: UI/UX Overhaul — Toolbar polish
+**Files changed**: `src/gui/ui/ui_gamehud.cpp`
+
+### Changes
+- **Shape, Zone, and Manage toolbar panels are now resizable** — removed `ImGuiWindowFlags_NoResize`, added size constraints (min ~320x160, max bounded by display minus toolbar).
+- **Panel sizes persist via Config** — each panel reads/writes `toolbar_{shape,zone,manage}_{w,h}` through `Global::cfg`. Whatever size the user drags becomes the new default on next launch (and across all sessions).
+- **Bottom-left anchored via pivot** — panels now use `SetNextWindowPos` with pivot `(0,1)` so the bottom edge stays glued to just above the toolbar regardless of size.
+- **Bumped first-run defaults** — Shape 700x420, Zone 520x300, Manage 460x260 (up from cramped 500x350 / 450x250 / 400x220).
+
+### Technical Details
+- Implemented via a small `PanelSize` helper struct in the anonymous namespace that lazy-loads from `Global::cfg` on first use and writes back when `ImGui::GetWindowSize()` differs from the cached value. `Config::set` is a no-op when unchanged and autosaves on change, so per-frame `persistIfChanged` calls are safe.
+- Window size is applied with `ImGuiCond_FirstUseEver` so ImGui's internal state owns the live size while the user drags; we just read it back each frame to mirror into config.
+
+---
+
+## [2026-04-01] Fix civilian combat response + flee behavior
+
+**Milestone**: 0.0 — Combat
+**Files changed**: `src/game/gnome.cpp`, `src/game/gnome.h`, `src/game/gnomeconditions.cpp`, `src/game/gnomeactions.cpp`, `content/ai/gnome_standard.xml`, `CMakeLists.txt`, `cmake/GenerateVersion.cmake`, `src/version.h.in`, `src/gui/ui/ui_mainmenu.cpp`, `src/main.cpp`
+
+### Changes
+- **Fixed gnomes not fighting back when attacked** — `Gnome::attack()` now sets `m_combatAlert = true`, which immediately wakes the gnome from its cheap-tick cycle for a full BT evaluation. Previously, gnomes would continue working while being beaten to death.
+- **Added flee behavior for unarmed civilians** — New `ShouldFlee` condition checks if a civilian has no weapon. New `FleeMove` action picks the walkable neighbor tile furthest from the nearest threat. If cornered (no walkable escape), they fall through to fight back with fists.
+- **Updated Combat BT** — Unarmed civilians attempt `FleeMove` first; if that fails (cornered), they fall through to the existing fight logic. Armed civilians and military gnomes fight normally.
+- **Fixed pre-existing BUILD_ID compile error** — `BUILD_ID` was used inside `#ifdef GIT_REPO` without its own guard in `main.cpp`.
+- **Added build-time git version detection** — Version string now shows `0.0.1.0-<git-sha>` in the main menu, updated on every build via `cmake/GenerateVersion.cmake`.
+
+### Technical Details
+- `m_combatAlert` was declared in `creature.h` but never set to `true` anywhere — it was designed for exactly this purpose
+- The flee behavior is simple (single-tile greedy move away from threat) rather than pathfinding to a distant safe room. This keeps it fast and ensures gnomes react within one tick.
+- `FleeMove` returns FAILURE when cornered, causing the `Fallback` node in the Combat BT to try the fight path instead — gnomes always fight for their lives as a last resort.
+
+---
+
 ## [2026-04-01] Bottom Toolbar Redesign — Shape / Zone / Manage
 
 **Milestone**: 0.0 — UI/UX

@@ -96,6 +96,12 @@ private:
 
 	// base sprites and sources for creation
 	QHash<QString, QPixmap> m_pixmapSources;
+	QHash<QString, QPixmap> m_origPixmapSources; // backup of original tilesheets
+	QHash<QString, QPixmap> m_altPixmapSources;   // alternate texture pack
+	bool m_useAltTextures = false;
+	bool m_altTexturesLoaded = false;
+	void rebuildBaseSprites();
+
 	QMap<QString, QPixmap> m_baseSprites;
 	QMap<QString, DefNode*> m_spriteDefinitions;
 	QMap<QString, QVariantMap> m_spriteDefVMs;
@@ -181,6 +187,10 @@ public:
 	bool creatureTextureAdded();
 
 	void forceUpdate();
+
+	void loadAlternateTextures( const QString& packPath );
+	void toggleTexturePack();
+	bool usingAltTextures() const { return m_useAltTextures; }
 
 	void addPixmapSource( QString name, QString path );
 

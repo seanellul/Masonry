@@ -3,6 +3,7 @@
 #include "../IconsFontAwesome6.h"
 #include "../IconsRpgAwesome.h"
 #include "../../base/global.h"
+#include "../../base/config.h"
 #include "../../base/gamestate.h"
 #include "../../base/logger.h"
 #include "../strings.h"
@@ -12,6 +13,39 @@
 
 namespace
 {
+
+// Resizable + persistent toolbar panel sizes
+struct PanelSize
+{
+	const char* widthKey;
+	const char* heightKey;
+	float defaultW;
+	float defaultH;
+	ImVec2 size{ 0, 0 };
+	bool loaded = false;
+	void ensureLoaded()
+	{
+		if ( loaded ) return;
+		loaded = true;
+		QVariant w = Global::cfg->get( widthKey );
+		QVariant h = Global::cfg->get( heightKey );
+		size.x = ( w.isValid() && w.toFloat() > 100 ) ? w.toFloat() : defaultW;
+		size.y = ( h.isValid() && h.toFloat() > 80 )  ? h.toFloat() : defaultH;
+	}
+	void persistIfChanged( const ImVec2& cur )
+	{
+		if ( fabsf( cur.x - size.x ) > 0.5f || fabsf( cur.y - size.y ) > 0.5f )
+		{
+			size = cur;
+			Global::cfg->set( widthKey, size.x );
+			Global::cfg->set( heightKey, size.y );
+		}
+	}
+};
+
+static PanelSize g_shapePanel{ "toolbar_shape_w", "toolbar_shape_h", 864.0f, 706.0f };
+static PanelSize g_zonePanel{ "toolbar_zone_w", "toolbar_zone_h", 627.0f, 575.0f };
+static PanelSize g_managePanel{ "toolbar_manage_w", "toolbar_manage_h", 715.0f, 470.0f };
 
 // Dig actions (was "Mine")
 struct ActionDef { const char* icon; const char* label; const char* action; };
@@ -527,12 +561,12 @@ void drawGameHUD( ImGuiBridge& bridge )
 	// =========================================================================
 	if ( bridge.currentToolbar == ButtonSelection::Shape )
 	{
-		float panelW = io.DisplaySize.x * 0.45f;
-		if ( panelW < 500 ) panelW = 500;
-		float panelH = 350;
-		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - panelH - 5 ) );
-		ImGui::SetNextWindowSize( ImVec2( panelW, panelH ) );
-		ImGui::Begin( "##shapepanel", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove );
+		g_shapePanel.ensureLoaded();
+		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - 5 ), ImGuiCond_Always, ImVec2( 0, 1 ) );
+		ImGui::SetNextWindowSize( g_shapePanel.size, ImGuiCond_FirstUseEver );
+		ImGui::SetNextWindowSizeConstraints( ImVec2( 400, 200 ), ImVec2( io.DisplaySize.x - 10, io.DisplaySize.y - toolbarHeight - 10 ) );
+		ImGui::Begin( "##shapepanel", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoMove );
+		g_shapePanel.persistIfChanged( ImGui::GetWindowSize() );
 
 		// Sub-tabs: Build | Dig | Nature
 		if ( ImGui::BeginTabBar( "ShapeTabs" ) )
@@ -811,11 +845,12 @@ void drawGameHUD( ImGuiBridge& bridge )
 	}
 	else if ( bridge.currentToolbar == ButtonSelection::Zone )
 	{
-		float panelW = 450;
-		float panelH = 250;
-		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - panelH - 5 ) );
-		ImGui::SetNextWindowSize( ImVec2( panelW, panelH ) );
-		ImGui::Begin( "##zonepanel", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove );
+		g_zonePanel.ensureLoaded();
+		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - 5 ), ImGuiCond_Always, ImVec2( 0, 1 ) );
+		ImGui::SetNextWindowSize( g_zonePanel.size, ImGuiCond_FirstUseEver );
+		ImGui::SetNextWindowSizeConstraints( ImVec2( 350, 180 ), ImVec2( io.DisplaySize.x - 10, io.DisplaySize.y - toolbarHeight - 10 ) );
+		ImGui::Begin( "##zonepanel", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoMove );
+		g_zonePanel.persistIfChanged( ImGui::GetWindowSize() );
 
 		// Category tabs
 		if ( ImGui::BeginTabBar( "ZoneTabs" ) )
@@ -862,11 +897,12 @@ void drawGameHUD( ImGuiBridge& bridge )
 	}
 	else if ( bridge.currentToolbar == ButtonSelection::Manage )
 	{
-		float panelW = 400;
-		float panelH = 220;
-		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - panelH - 5 ) );
-		ImGui::SetNextWindowSize( ImVec2( panelW, panelH ) );
-		ImGui::Begin( "##managepanel", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove );
+		g_managePanel.ensureLoaded();
+		ImGui::SetNextWindowPos( ImVec2( 5, io.DisplaySize.y - toolbarHeight - 5 ), ImGuiCond_Always, ImVec2( 0, 1 ) );
+		ImGui::SetNextWindowSize( g_managePanel.size, ImGuiCond_FirstUseEver );
+		ImGui::SetNextWindowSizeConstraints( ImVec2( 320, 160 ), ImVec2( io.DisplaySize.x - 10, io.DisplaySize.y - toolbarHeight - 10 ) );
+		ImGui::Begin( "##managepanel", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoMove );
+		g_managePanel.persistIfChanged( ImGui::GetWindowSize() );
 
 		// Two columns: Jobs and Demolition
 		ImGui::BeginChild( "JobCol", ImVec2( ImGui::GetContentRegionAvail().x * 0.6f, 0 ), true );

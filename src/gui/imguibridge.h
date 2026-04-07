@@ -103,6 +103,8 @@ public:
 	UpdateChecker* updateChecker = nullptr;
 
 	bool showDebugPanel = false;
+	bool useAltTextures = false;
+	void cmdToggleTexturePack();
 
 	// Sprite texture cache for rendering game sprites in ImGui
 	class SpriteTextureCache* spriteTexCache = nullptr;

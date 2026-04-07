@@ -5,6 +5,7 @@
 #include "../game/game.h"
 #include "../game/gnomemanager.h"
 #include "../game/creaturemanager.h"
+#include "../gfx/spritefactory.h"
 
 ImGuiBridge::ImGuiBridge( QObject* parent )
 	: QObject( parent )
@@ -706,6 +707,15 @@ void ImGuiBridge::cmdSpawnMonster( const QString& species, int amount, unsigned 
 void ImGuiBridge::cmdSpawnAnimal( const QString& species, int amount, unsigned int tileID ) { Global::eventConnector->aggregatorDebug()->onSpawnAnimal( species, amount, tileID ); }
 void ImGuiBridge::cmdSpawnItem( const QString& itemSID, const QString& material, int amount, unsigned int tileID ) { Global::eventConnector->aggregatorDebug()->onSpawnItem( itemSID, material, amount, tileID ); }
 void ImGuiBridge::cmdSetWindowSize( int w, int h ) { Global::eventConnector->aggregatorDebug()->onSetWindowSize( w, h ); }
+
+// Texture pack
+void ImGuiBridge::cmdToggleTexturePack()
+{
+	auto* ec = Global::eventConnector;
+	if ( !ec || !ec->game() ) return;
+	ec->game()->sf()->toggleTexturePack();
+	useAltTextures = ec->game()->sf()->usingAltTextures();
+}
 
 // Settings commands
 void ImGuiBridge::cmdSetLanguage( const QString& lang ) { Global::eventConnector->aggregatorSettings()->onSetLanguage( lang ); }

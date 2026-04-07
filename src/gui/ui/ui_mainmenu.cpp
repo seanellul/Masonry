@@ -164,7 +164,7 @@ void drawMainMenu( ImGuiBridge& bridge )
 	// Version pinned to bottom
 	if ( fonts.uiSmall )
 		ImGui::PushFont( fonts.uiSmall );
-	const char* ver = PROJECT_VERSION;
+	const char* ver = PROJECT_VERSION_FULL;
 	float verHeight = ImGui::CalcTextSize( ver ).y;
 	ImGui::SetCursorPosY( menuH - verHeight - 12.0f );
 	ImGui::SetCursorPosX( ( menuW - ImGui::CalcTextSize( ver ).x ) * 0.5f );

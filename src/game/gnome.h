@@ -188,6 +188,7 @@ protected:
 	BT_RESULT conditionIsTrainingTime( bool halt = false );
 	BT_RESULT conditionIsTrainer( bool halt = false );
 	BT_RESULT conditionIsCivilian( bool halt = false );
+	BT_RESULT conditionShouldFlee( bool halt = false );
 	BT_RESULT conditionHasHuntTarget( bool halt = false );
 
 	BT_RESULT actionSleep( bool halt );
@@ -241,6 +242,7 @@ protected:
 	BT_RESULT actionSuperviseTraining( bool halt );
 
 	BT_RESULT actionGetTarget( bool halt );
+	BT_RESULT actionFleeMove( bool halt );
 
 	BT_RESULT actionDoMission( bool halt );
 	BT_RESULT actionLeaveForMission( bool halt );
