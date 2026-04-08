@@ -6,6 +6,42 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-07] Core colony skill wiring + audit correction (T-0016)
+
+**Milestone**: Skills redesign — phase 4 (final)
+**Files changed**: `src/game/canwork.cpp`, `content/db/ingnomia.db.sql`, `wiki/dev/subsystems/skills.md`
+
+### Changes
+
+- **T-0016 — Wire core colony skills (with major audit correction).** While tracing where to insert skill multipliers for Mining/Woodcutting/Farming/Construction/Medic, I discovered that **the original T-0008a audit was wrong about these skills being purely thought-only**. The audit grep'd for direct `getSkillLevel("Mining")`-style lookups and missed an indirect-but-critical code path at `gnomeactions.cpp:1758-1763`:
+
+  ```cpp
+  QString skillID = m_job->requiredSkill();
+  float current   = Global::util->reverseFib( m_skills.value( skillID ).toUInt() );
+  float ticks     = getDurationTicks( m_currentTask.value( "Duration" ), m_job );
+  ticks           = qMax( 10., qMin( 1000., ticks - ( ( ticks / 20. ) * current ) ) );
+  ```
+
+  This is a generic duration multiplier applied to *every* job whose `Jobs.SkillID` is set. Verified by grep that the `Jobs` DB table sets `SkillID` for Mining, Woodcutting, Farming, Construction, and Horticulture jobs. So **all four colony work skills already make their jobs faster** as the skill rises — at level 20 the duration is clamped to its 10-tick floor (~10× faster than level 0). **This has been live the entire time**; the audit just missed the indirect lookup.
+
+  What was missing was **yield scaling** — at high skill, the job finishes faster but still produces the same number of items. T-0016 fills part of that gap:
+
+  - **`CanWork::mineWall`** (~`canwork.cpp:690`): added a bonus-yield chance after the standard `createRawMaterialItem` calls. `rand() % 30 < skill` gives 0% chance at Mining 0 and ~67% chance at Mining 20. Mining is now both faster *and* more productive at higher levels.
+
+  Yield scaling for Woodcutting (logs per tree) and Farming (crops) is deferred — both require touching `Plant` class internals which is a separate code area.
+
+  Updated 5 `$SkillDesc_*` rows in `ingnomia.db.sql` to honestly describe the speed scaling that was always present, plus Mining's new yield bonus. Medic's tooltip stays "currently only affects mood" because the medical task handlers weren't traced and treatment is a separate code area.
+
+  Updated `wiki/dev/subsystems/skills.md` Tier 3 section with a "Correction (T-0016 finding)" subsection documenting the missed code path so future audits start from the right baseline.
+
+### Technical Details
+
+- Mining yield is the only new skill effect added in this task; all other "wiring" was already present and just needed correct documentation.
+- The audit's tier classification remains useful as a categorization, but Tier 3 ("thought-only") should now be read as "thought-only at the per-skill direct-lookup level — but speed-scaled by the generic job duration multiplier if the Jobs table has the SkillID set".
+- Build: green. References: `wiki/tasks/done/T-0016-*.md`.
+
+---
+
 ## [2026-04-07] Skill titles (T-0021)
 
 **Milestone**: Skills redesign — phase 3 (flair)

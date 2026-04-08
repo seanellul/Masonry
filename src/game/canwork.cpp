@@ -702,6 +702,21 @@ bool CanWork::mineWall()
 	Global::util->createRawMaterialItem( pos, mats.first );
 	Global::util->createRawMaterialItem( pos, mats.second );
 
+	// T-0016: Mining bonus yield. At skill 0: 0% chance for an extra
+	// stone/ore. At skill 20: ~67% chance. (Speed scaling already
+	// happens via gnomeactions.cpp:1761 for any job whose required
+	// skill is set, so Mining is now both faster and more productive
+	// at higher levels.)
+	int skill = getSkillLevel( "Mining" );
+	if ( skill > 0 && ( rand() % 30 ) < skill )
+	{
+		// Roll for an extra of whichever material was produced.
+		if ( mats.first )
+			Global::util->createRawMaterialItem( pos, mats.first );
+		else if ( mats.second )
+			Global::util->createRawMaterialItem( pos, mats.second );
+	}
+
 	return true;
 }
 

@@ -149,3 +149,7 @@ Dependencies: T-0019 → T-0020 → T-0021 (group structure is shared); T-0018 s
 ## [2026-04-07] task | done: T-0021 (skills phase 3 — titles)
 
 - **T-0021** — Derived skill titles. `Gnome::displayTitle()` returns "Master Blacksmith" / "Grandmaster of Nature" / etc. based on the highest sub-skill. Surfaced in the creature info panel header and the population view name column. The flair layer that makes specialization visible per gnome.
+
+## [2026-04-07] task | done: T-0016 (skills phase 4 — core colony wiring)
+
+- **T-0016** — Wire 5 core colony skills + audit correction. **Major finding**: the original T-0008a audit was wrong about Mining/Woodcutting/Farming/Construction being purely thought-only. The work loop at `gnomeactions.cpp:1758-1763` already reads `m_job->requiredSkill()` and applies a generic duration multiplier — these skills have been speed-scaled all along. Audit page corrected. Mining yield bonus added (`canwork.cpp:mineWall`). Tooltip rewrites for 5 skills to honestly describe what they do. Yield wiring for Woodcutting/Farming deferred (require touching Plant class internals); Medic deferred (separate code area).

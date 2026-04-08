@@ -16997,12 +16997,12 @@ INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Cooking','Scales the
 INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Brewing','Scales the quality tier of brewed drinks. Better brewing = better drinks and better mood.');
 INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_GlassMaking','Scales the quality tier of glass goods — windows, bottles, decorative items.');
 
--- Thought-only skills (no gameplay effect, only mood)
-INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Mining','Currently only affects mood (gnomes enjoy mining when curious). Does not yet affect mining speed or ore yield — see wiki known-issues.');
-INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Woodcutting','Currently only affects mood. Does not yet affect felling speed or log yield — see wiki known-issues.');
-INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Farming','Currently only affects mood. Does not yet affect crop yield, growth rate, or harvest success — see wiki known-issues.');
-INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Construction','Currently only affects mood. Does not yet affect build speed or quality — see wiki known-issues.');
-INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Medic','Currently only affects mood. Does not yet affect treatment success or heal rate — see wiki known-issues.');
+-- Core colony skills (T-0016 — wired through job duration scaling)
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Mining','Higher skill makes mining jobs faster and gives a chance for bonus stone/ore per swing (up to ~67% extra at master).');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Woodcutting','Higher skill makes felling trees faster.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Farming','Higher skill makes farming work (tilling, planting, harvesting) faster.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Construction','Higher skill makes building walls, floors, stairs, and other constructions faster.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Medic','Currently only affects mood. Treatment outcomes are not yet skill-scaled — pending a separate medical-system task.');
 
 -- Dead skills (tracked but never consulted)
 INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_AnimalHusbandry','Determines how quickly this gnome tames animals. A novice takes ~200 ticks per tame; a master takes ~20.');

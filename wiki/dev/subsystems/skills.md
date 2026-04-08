@@ -52,9 +52,19 @@ So higher skill = higher quality output on every item this skill crafts. The eff
 
 `ArmorCrafting`, `Blacksmithing`, `Bonecarving`, `Brewing`, `Carpentry`, `Cooking`, `Dyeing`, `Engineering`, `Gemcutting`, `GlassMaking`, `JewelryMaking`, `Leatherworking`, `Machining`, `Masonry`, `Metalworking`, `Pottery`, `Prospecting`, `Smelting`, `Stonecarving`, `Tailoring`, `WeaponCrafting`, `Weaving`, `Woodcarving`
 
-## Tier 3 — Thought-only
+## Tier 3 — Thought-only (note: this tier was partially wrong — see correction below)
 
-These skills are referenced **only** inside `Gnome::tickProduction()` / work-mood logic in `src/game/gnome.cpp` (~line 1285 onward). They check `m_job->requiredSkill()` against a hardcoded skill name and add a mood thought. They do **not** affect job speed, yield, accuracy, or any other observable outcome.
+These skills are referenced inside `Gnome::tickProduction()` / work-mood logic in `src/game/gnome.cpp` (~line 1285 onward). They check `m_job->requiredSkill()` against a hardcoded skill name and add a mood thought. They do not appear in any direct `getSkillLevel("Mining")`-style lookup.
+
+**Correction (T-0016 finding)**: the original audit missed an important code path. The work loop at `gnomeactions.cpp:1758-1763` reads `m_job->requiredSkill()` and applies a duration multiplier:
+
+```cpp
+ticks = qMax(10., qMin(1000., ticks - ((ticks / 20.) * current)));
+```
+
+So **any job whose `Jobs.SkillID` field is set automatically gets speed-scaling**. The `Jobs` table in `content/db/ingnomia.db.sql` has `SkillID` set on Mining, Woodcutting, Farming, Construction, Horticulture (and many others). That means **Mining, Woodcutting, Farming, and Construction were already speed-scaled all along** — they're not purely thought-only. They produce work faster as the skill goes up; what they were missing was *yield* / *quality* scaling on the produced items.
+
+T-0016 added bonus yield to `CanWork::mineWall` (chance for an extra stone/ore at high Mining). Yield wiring for Woodcutting (logs) and Farming (crops) is deferred — both touch the `Plant` class internals. Construction does not currently have a "yield" concept beyond build success.
 
 | Skill | Thought generated | Source |
 |---|---|---|
