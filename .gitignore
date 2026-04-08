@@ -396,3 +396,10 @@ build/
 
 # Generated images
 generated_imgs/
+
+# Local secrets / API tokens
+.nano-banana-config.json
+*.key
+*.pem
+.env
+.env.*
