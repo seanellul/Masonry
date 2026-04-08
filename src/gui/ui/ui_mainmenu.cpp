@@ -17,6 +17,10 @@
 #include <QRandomGenerator>
 #include <QDesktopServices>
 #include <QUrl>
+#include <QFile>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QJsonObject>
 
 void drawMainMenu( ImGuiBridge& bridge )
 {
@@ -587,11 +591,89 @@ void drawLoadGame( ImGuiBridge& bridge )
 	ImGui::End();
 }
 
+// T-0014: keybindings settings tab helpers.
+// Reads the user's settings/keybindings.json once and caches a grouped
+// view. File is loaded by KeyBindings::update() at startup; we re-read
+// here so the panel doesn't depend on the live binding map (which isn't
+// publicly exposed on KeyBindings).
+struct KbEntry
+{
+	QString command;
+	QString key1;
+	QString key2;
+};
+struct KbGroup
+{
+	QString name;
+	QList<KbEntry> entries;
+};
+static QList<KbGroup> s_kbGroups;
+static bool           s_kbLoaded = false;
+
+static QString formatKbKey( const QJsonObject& keyObj )
+{
+	QString key = keyObj.value( "Key" ).toString();
+	if ( key.isEmpty() )
+		return QString( "—" );
+	QStringList mods;
+	if ( keyObj.value( "Ctrl" ).toBool() )  mods << "Ctrl";
+	if ( keyObj.value( "Alt" ).toBool() )   mods << "Alt";
+	if ( keyObj.value( "Shift" ).toBool() ) mods << "Shift";
+	if ( mods.isEmpty() )
+		return key;
+	return mods.join( "+" ) + "+" + key;
+}
+
+static void ensureKeybindingsLoaded()
+{
+	if ( s_kbLoaded )
+		return;
+	s_kbLoaded = true;
+	// Try the user data folder first (the file KeyBindings::update() reads),
+	// then fall back to the shipped default at the project root.
+	QString path = IO::getDataFolder() + "/settings/keybindings.json";
+	if ( !QFile::exists( path ) )
+	{
+		path = QCoreApplication::applicationDirPath() + "/keybindings.json";
+	}
+	QFile file( path );
+	if ( !file.open( QIODevice::ReadOnly ) )
+		return;
+	QJsonDocument jd = QJsonDocument::fromJson( file.readAll() );
+	file.close();
+	if ( !jd.isArray() )
+		return;
+	for ( const auto& vGroup : jd.array() )
+	{
+		QJsonObject groupObj = vGroup.toObject();
+		KbGroup group;
+		// The shipped JSON uses "GroupName"; older snapshots may use "Name".
+		group.name = groupObj.value( "GroupName" ).toString();
+		if ( group.name.isEmpty() )
+			group.name = groupObj.value( "Name" ).toString();
+		if ( group.name.isEmpty() )
+			group.name = "Other";
+		for ( const auto& vKey : groupObj.value( "Keys" ).toArray() )
+		{
+			QJsonObject keyMap = vKey.toObject();
+			KbEntry entry;
+			entry.command = keyMap.value( "Command" ).toString();
+			entry.key1    = formatKbKey( keyMap.value( "Key1" ).toObject() );
+			entry.key2    = formatKbKey( keyMap.value( "Key2" ).toObject() );
+			group.entries.append( entry );
+		}
+		if ( !group.entries.isEmpty() )
+			s_kbGroups.append( group );
+	}
+}
+
 void drawSettings( ImGuiBridge& bridge )
 {
 	ImGuiIO& io = ImGui::GetIO();
 	ImGui::SetNextWindowPos( ImVec2( io.DisplaySize.x * 0.5f, io.DisplaySize.y * 0.5f ), ImGuiCond_Always, ImVec2( 0.5f, 0.5f ) );
-	ImGui::SetNextWindowSize( ImVec2( 500, 350 ) );
+	// T-0014: bumped from 500×350 to 600×500 so the Keybindings tab has
+	// room for a scrollable list.
+	ImGui::SetNextWindowSize( ImVec2( 600, 500 ) );
 
 	ImGui::Begin( "Settings", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse );
 
@@ -653,6 +735,59 @@ void drawSettings( ImGuiBridge& bridge )
 				bridge.cmdSetKeyboardSpeed( kbSpeed );
 			}
 
+			ImGui::EndTabItem();
+		}
+
+		// T-0014: keybindings browser — read-only listing of every bound
+		// key, grouped by category. Content comes from settings/keybindings.json
+		// (the same file KeyBindings::update() reads at startup). Rebinding
+		// is a future enhancement — for now the value is knowing what every
+		// shortcut is without having to edit JSON or read source.
+		if ( ImGui::BeginTabItem( "Keybindings" ) )
+		{
+			ensureKeybindingsLoaded();
+			if ( s_kbGroups.isEmpty() )
+			{
+				ImGui::TextDisabled( "No keybindings found. Expected file:" );
+				ImGui::TextWrapped( "%s/settings/keybindings.json",
+					IO::getDataFolder().toStdString().c_str() );
+			}
+			else
+			{
+				ImGui::TextWrapped( "Every currently-bound key, grouped by category. "
+					"Edit settings/keybindings.json to rebind (full in-game rebinding "
+					"is a future feature)." );
+				ImGui::Spacing();
+				ImGui::BeginChild( "##kblist", ImVec2( 0, 0 ), false );
+				for ( const auto& group : s_kbGroups )
+				{
+					if ( ImGui::CollapsingHeader( group.name.toStdString().c_str(),
+						ImGuiTreeNodeFlags_DefaultOpen ) )
+					{
+						if ( ImGui::BeginTable( "##kbtable", 3,
+							ImGuiTableFlags_RowBg | ImGuiTableFlags_BordersInnerH |
+							ImGuiTableFlags_SizingStretchProp ) )
+						{
+							ImGui::TableSetupColumn( "Action", 0, 2.0f );
+							ImGui::TableSetupColumn( "Key 1", 0, 1.0f );
+							ImGui::TableSetupColumn( "Key 2", 0, 1.0f );
+							ImGui::TableHeadersRow();
+							for ( const auto& entry : group.entries )
+							{
+								ImGui::TableNextRow();
+								ImGui::TableNextColumn();
+								ImGui::TextUnformatted( entry.command.toStdString().c_str() );
+								ImGui::TableNextColumn();
+								ImGui::TextUnformatted( entry.key1.toStdString().c_str() );
+								ImGui::TableNextColumn();
+								ImGui::TextUnformatted( entry.key2.toStdString().c_str() );
+							}
+							ImGui::EndTable();
+						}
+					}
+				}
+				ImGui::EndChild();
+			}
 			ImGui::EndTabItem();
 		}
 

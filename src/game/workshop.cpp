@@ -506,6 +506,36 @@ void Workshop::addJob( QString craftID, int mode, int number, QStringList mats )
 		ii.requireSame = compRow.value( "RequireSame" ).toBool();
 		cj.requiredItems.append( ii );
 	}
+
+	// T-0009: enqueue-time merging. If the last entry in the queue matches
+	// this new job on craftID + mode + same material filter for every
+	// component, increment its count instead of pushing a duplicate row.
+	// We only check the tail — a manually inserted job between batches
+	// breaks the streak on purpose.
+	if ( !m_jobList.isEmpty() )
+	{
+		CraftJob& last = m_jobList.last();
+		bool canMerge = last.craftID == cj.craftID
+		             && last.mode == cj.mode
+		             && last.requiredItems.size() == cj.requiredItems.size();
+		if ( canMerge )
+		{
+			for ( int i = 0; i < last.requiredItems.size(); ++i )
+			{
+				if ( last.requiredItems[i].materialSID != cj.requiredItems[i].materialSID )
+				{
+					canMerge = false;
+					break;
+				}
+			}
+		}
+		if ( canMerge )
+		{
+			last.numItemsToCraft += cj.numItemsToCraft;
+			return;
+		}
+	}
+
 	m_jobList.append( cj );
 }
 

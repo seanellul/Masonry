@@ -16,7 +16,8 @@
 *(stubs pending — gnomes, animals, monsters, automatons)*
 
 ### UI
-*(stubs pending — main HUD, side panels, tile info, main menu)*
+- [keybindings](./game/ui/keybindings.md) — All keyboard shortcuts, grouped. Reference for the in-game Settings → Keybindings tab.
+- *(pending: main HUD, side panels, tile info, main menu)*
 
 ## Dev Knowledge Base
 

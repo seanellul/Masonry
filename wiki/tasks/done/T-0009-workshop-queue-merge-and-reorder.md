@@ -56,8 +56,22 @@ The final row layout should be:
 
 ## Plan
 
-*(Scoping agent: (1) Find the workshop job/queue model — likely in `src/game/workshop.*` or similar. Identify where a new job is appended to the queue on a "Craft" click. (2) Add the merge check: compare the incoming job to `queue.back()` by recipe id + mode + material filter; if match, increment count; else push. (3) Find the queue rendering code in `src/gui/ui/` (likely the same file touched by T-0006) and add the two new buttons. (4) Add the reorder actions to the workshop model and wire the buttons. (5) Verify count decrement + row removal still work correctly when a merged row's last job finishes. (6) Think through save/load: confirm existing queue serialization handles a `count > 1` row identically to multiple rows — or, if the internal representation is still "N separate jobs", the merge is purely at the enqueue boundary and each merged row is really N jobs under the hood. Pick whichever is minimally invasive.)*
+**Convenient finding**: `Workshop::moveJob()` at `src/game/workshop.cpp:532` already implements all four move commands — `Up`, `Down`, `Top`, `Bottom`. The UI side was only wiring `Up` / `Down`. No game-thread changes needed for reorder — just new UI buttons that dispatch the already-supported command strings via `cmdWorkshopCraftJobCommand`.
+
+**Merge implementation** in `Workshop::addJob()` at `src/game/workshop.cpp:476`: before the final `m_jobList.append(cj)`, check whether `m_jobList.last()` matches the incoming `cj` on `craftID` + `mode` + same `materialSID` for every component slot. If so, increment the last entry's `numItemsToCraft` and return. Only the tail is checked — manually inserted jobs between batches break the streak on purpose (per task spec).
+
+**Internal representation stays the same**: merged rows are real `CraftJob` entries with `numItemsToCraft > 1`. The existing `(%d done)` renderer and save serialization already handle this — no data-model surgery, no save migration.
 
 ## Result
 
-*(Building agent fills in after implementation.)*
+Implemented in two files:
+
+1. **`src/game/workshop.cpp` `Workshop::addJob()`**: added the merge check just before `m_jobList.append(cj)`. Compares the last queue entry to the incoming job on craftID + mode + per-component materialSID equality. On match, the last entry's `numItemsToCraft` is incremented and the new `cj` is discarded. Only the tail is checked.
+
+2. **`src/gui/ui/ui_sidepanels.cpp` `drawWorkshopPanel()` queue row**: extended the `^` / `v` / `X` button row to `^^` / `^` / `v` / `vv` / `X` (send-to-top / up / down / send-to-bottom / cancel). The two new buttons dispatch the already-supported `"Top"` / `"Bottom"` command strings via `cmdWorkshopCraftJobCommand`. Every button now has a hover tooltip describing its action.
+
+**Save-load behavior**: existing queues on loaded saves are untouched (the merge only runs in `addJob`, which is called on new enqueues). A loaded save's queue keeps whatever structure it had. Per spec.
+
+**No data-model changes**, no new commands, no game-thread logic beyond the one tail-match check. Save format unchanged.
+
+Build: green (48 warnings, all pre-existing).

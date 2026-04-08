@@ -1884,13 +1884,30 @@ void drawWorkshopPanel( ImGuiBridge& bridge )
 					else
 						ImGui::Text( "%s %d x %s (%d done)", modeLabel, job.numItemsToCraft, job.itemSID.toStdString().c_str(), job.alreadyCrafted );
 
-					// Controls
+					// T-0009: queue row controls — send-to-top, up, down,
+					// send-to-bottom, cancel. Top/Bottom are already handled
+					// by Workshop::moveJob in the game thread.
 					ImGui::SameLine();
-					if ( ImGui::SmallButton( "^" ) ) bridge.cmdWorkshopCraftJobCommand( job.id, "Up" );
+					if ( ImGui::SmallButton( "^^##top" ) )
+					{
+						bridge.cmdWorkshopCraftJobCommand( job.id, "Top" );
+					}
+					if ( ImGui::IsItemHovered() ) ImGui::SetTooltip( "Send to top" );
 					ImGui::SameLine();
-					if ( ImGui::SmallButton( "v" ) ) bridge.cmdWorkshopCraftJobCommand( job.id, "Down" );
+					if ( ImGui::SmallButton( "^##up" ) ) bridge.cmdWorkshopCraftJobCommand( job.id, "Up" );
+					if ( ImGui::IsItemHovered() ) ImGui::SetTooltip( "Move up one" );
+					ImGui::SameLine();
+					if ( ImGui::SmallButton( "v##down" ) ) bridge.cmdWorkshopCraftJobCommand( job.id, "Down" );
+					if ( ImGui::IsItemHovered() ) ImGui::SetTooltip( "Move down one" );
+					ImGui::SameLine();
+					if ( ImGui::SmallButton( "vv##bot" ) )
+					{
+						bridge.cmdWorkshopCraftJobCommand( job.id, "Bottom" );
+					}
+					if ( ImGui::IsItemHovered() ) ImGui::SetTooltip( "Send to bottom" );
 					ImGui::SameLine();
 					if ( ImGui::SmallButton( "X" ) ) bridge.cmdWorkshopCraftJobCommand( job.id, "Cancel" );
+					if ( ImGui::IsItemHovered() ) ImGui::SetTooltip( "Cancel job" );
 
 					ImGui::PopID();
 				}

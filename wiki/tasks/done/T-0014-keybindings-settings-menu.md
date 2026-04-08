@@ -57,8 +57,45 @@ This matches the pattern from T-0004 (build menu tooltips) and T-0008a (skills a
 
 ## Plan
 
-*(Scoping agent: (1) Find the input handling code — likely `src/gui/MainWindow.cpp`'s `keyPressEvent` and any other `QKeyEvent` handlers. Grep for `Qt::Key_` to enumerate every bound key. (2) Check `src/base/config.cpp` and any config files (`settings.json` or similar) to see whether keybindings are already stored in a config or hardcoded. (3) Find the existing Settings menu in `src/gui/ui/` to see where the new section plugs in. (4) Decide MVP-only vs MVP+editable based on findings. (5) Write `wiki/game/ui/keybindings.md` as a parallel deliverable. (6) Propose implementation sequence.)*
+**Investigation result**: keybindings are **already config-driven**. They live in `keybindings.json` at the project root (shipped default) and are parsed at startup by `KeyBindings::update()` in `src/gui/keybindings.cpp`. The JSON structure is:
+
+```json
+[
+  {
+    "GroupName": "Navigation",
+    "Keys": [
+      { "Command": "WorldScrollLeft",
+        "Key1": { "Key": "A", "Ctrl": false, "Alt": false, "Shift": false },
+        "Key2": { ... } }
+    ]
+  }
+]
+```
+
+This means the MVP (read-only listing) is a straightforward JSON parse + table render. **The stretch (editable bindings) is also tractable** because the file is already the source of truth — a rebind just writes back to the same JSON — but the input-capture UX (modal "press a key" dialog, conflict detection, save-to-disk wiring) is real work and a separate follow-up.
+
+**UI placement**: `drawSettings()` in `src/gui/ui/ui_mainmenu.cpp` already has a tab bar with Game / Controls / Audio tabs. Add a new **Keybindings** tab alongside. Bump the settings window from 500×350 to 600×500 so the scrollable list has room.
+
+**Loader**: a file-scope `ensureKeybindingsLoaded()` reads the JSON once, caches a grouped view in static vectors. Tries `<dataFolder>/settings/keybindings.json` first (user override), falls back to `<appDir>/keybindings.json` (shipped default). Format is resilient to both `"GroupName"` and `"Name"` field naming.
 
 ## Result
 
-*(Building agent fills in after implementation.)*
+Implemented.
+
+1. **`src/gui/ui/ui_mainmenu.cpp`**:
+   - Added `QFile` / `QJsonDocument` / `QJsonArray` / `QJsonObject` includes.
+   - Added file-scope `KbEntry` / `KbGroup` types, static cache, `formatKbKey()` helper (builds `Ctrl+Shift+Key` strings, honestly shows `—` for empty slot), and `ensureKeybindingsLoaded()` which parses the JSON once per session with dataFolder → appDir fallback.
+   - Added a new `"Keybindings"` tab to `drawSettings()` after the Controls tab. Renders each group as a `CollapsingHeader` (default-open) containing a 3-column `Action | Key 1 | Key 2` table. Graceful empty-state when the file can't be found (shows the expected path).
+   - Bumped the settings window size from 500×350 to 600×500 to accommodate the new tab.
+
+2. **`wiki/game/ui/keybindings.md`** (new): canonical human-readable reference listing Navigation, Game, Debug/Dev, and Shape Action bindings with the shipped default keys. Notes the JSON as the runtime source of truth and flags the known-issue UI stubs (`Forage`, `Plant Tree`).
+
+3. **`wiki/INDEX.md`**: linked the new `keybindings.md` under Game Wiki → UI.
+
+**Two small loader bugs caught during testing**:
+- JSON field is `GroupName`, not `Name` — loader now tries both for compatibility.
+- `QJsonValue::toString()` returns empty for bool values in Qt5 — modifier detection now uses `.toBool()` instead of string comparison.
+
+**Stretch (editable bindings) deferred**: the infrastructure is ready (file-driven, standard JSON format) but the "click a row, press a key, write back to disk" UX is scope creep for this task. Recommend as a small follow-up when rebinding becomes a real need.
+
+Build: green (10 warnings, all pre-existing).

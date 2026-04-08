@@ -6,6 +6,25 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-07] Workshop queue polish + Keybindings settings (T-0009, T-0014)
+
+**Milestone**: UI/UX + Settings infrastructure
+**Files changed**: `src/game/workshop.cpp`, `src/gui/ui/ui_sidepanels.cpp`, `src/gui/ui/ui_mainmenu.cpp`, `wiki/game/ui/keybindings.md` (new), `wiki/INDEX.md`
+
+### Changes
+
+- **T-0009 — Workshop queue: enqueue-time merge + send-to-top/bottom.** Added a tail-match check in `Workshop::addJob()` that merges a new craft job into the last queue entry when `craftID`, `mode`, and per-component `materialSID`s all match — five clicks on `Craft Plank` now yield one `Craft 5 x Plank` row instead of five identical rows. Only the tail is checked, so a manually inserted job between batches breaks the streak. Existing queues on loaded saves are untouched. Discovered `Workshop::moveJob()` already supports `"Top"` and `"Bottom"` commands — the UI was only wiring `Up`/`Down`. Added two new row buttons (`^^`/`vv`) that dispatch `"Top"`/`"Bottom"`, plus tooltips on all queue row buttons.
+
+- **T-0014 — Keybindings settings tab.** New read-only Keybindings tab in the Settings panel. Parses `keybindings.json` (tries the user data folder first, falls back to the app dir), groups by `GroupName`, renders as a collapsible 3-column table (`Action | Key 1 | Key 2`) per group. Created `wiki/game/ui/keybindings.md` as the canonical human-readable reference. **Rebinding deferred**: the infrastructure is already config-driven so rebinding is tractable, but the "click a row, press a key, write back to disk" UX is scope creep for this task. Caught two loader bugs during implementation: JSON field is `GroupName` not `Name` (loader now tries both); `QJsonValue::toString()` returns empty for bool values, needed `.toBool()` for modifier detection.
+
+### Technical Details
+
+- T-0009 merge is purely in `Workshop::addJob` before the final `m_jobList.append(cj)` — save format unchanged, loaded queues ignored, no data-model surgery.
+- T-0014 bumps the Settings window from 500×350 to 600×500 to give the keybindings list room.
+- Build: green. References: `wiki/tasks/done/T-0009-*.md`, `wiki/tasks/done/T-0014-*.md`.
+
+---
+
 ## [2026-04-07] Skill audit + honest skill tooltips (T-0008a, T-0008b)
 
 **Milestone**: Knowledge infrastructure + UI/UX
