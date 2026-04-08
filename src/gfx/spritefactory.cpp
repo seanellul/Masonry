@@ -103,7 +103,21 @@ bool SpriteFactory::init()
 		if ( !m_pixmapSources.contains( tilesheet ) )
 		{
 			QPixmap pm;
-			loaded = pm.load( Global::cfg->get( "dataPath" ).toString() + "/tilesheet/" + tilesheet );
+			const QString dataPath = Global::cfg->get( "dataPath" ).toString();
+			const bool useAlt      = Global::cfg->get( "useAltTextures" ).toBool();
+			loaded = false;
+			if ( useAlt )
+			{
+				loaded = pm.load( dataPath + "/tilesheet_ai/" + tilesheet );
+				if ( !loaded )
+				{
+					qDebug() << "SpriteFactory: AI texture pack missing" << tilesheet << "— falling back to default";
+				}
+			}
+			if ( !loaded )
+			{
+				loaded = pm.load( dataPath + "/tilesheet/" + tilesheet );
+			}
 			if ( !loaded )
 			{
 				loaded = pm.load( tilesheet );
@@ -1466,76 +1480,6 @@ void SpriteFactory::rebuildBaseSprites()
 		QString tilesheet = row.value( "Tilesheet" ).toString();
 		m_baseSprites.insert( row.value( "ID" ).toString(), extractPixmap( tilesheet, row ) );
 	}
-}
-
-void SpriteFactory::loadAlternateTextures( const QString& packPath )
-{
-	QMutexLocker ml( &m_mutex );
-	m_altPixmapSources.clear();
-
-	// Back up originals on first call
-	if ( m_origPixmapSources.isEmpty() )
-	{
-		m_origPixmapSources = m_pixmapSources;
-	}
-
-	QDir dir( packPath );
-	if ( !dir.exists() )
-	{
-		qDebug() << "Texture pack path does not exist:" << packPath;
-		return;
-	}
-
-	// Load alternate PNGs, falling back to originals for missing sheets
-	for ( auto it = m_origPixmapSources.begin(); it != m_origPixmapSources.end(); ++it )
-	{
-		QString filename = it.key();
-		QString altPath = dir.filePath( filename );
-		QPixmap pm;
-		if ( pm.load( altPath ) )
-		{
-			m_altPixmapSources.insert( filename, pm );
-			qDebug() << "Texture pack: loaded" << filename;
-		}
-		else
-		{
-			m_altPixmapSources.insert( filename, it.value() );
-		}
-	}
-	m_altTexturesLoaded = true;
-	qDebug() << "Texture pack loaded from" << packPath;
-}
-
-void SpriteFactory::toggleTexturePack()
-{
-	QMutexLocker ml( &m_mutex );
-
-	if ( !m_altTexturesLoaded )
-	{
-		// Try default location
-		loadAlternateTextures( Global::cfg->get( "dataPath" ).toString() + "/tilesheet_ai" );
-		if ( !m_altTexturesLoaded )
-			return;
-	}
-
-	m_useAltTextures = !m_useAltTextures;
-
-	if ( m_useAltTextures )
-	{
-		m_pixmapSources = m_altPixmapSources;
-	}
-	else
-	{
-		m_pixmapSources = m_origPixmapSources;
-	}
-
-	// Rebuild all base sprites from the new tilesheet sources
-	rebuildBaseSprites();
-
-	// Recomposite all sprites and trigger GPU upload
-	forceUpdate();
-
-	qDebug() << "Texture pack:" << ( m_useAltTextures ? "AI" : "Original" );
 }
 
 QPixmap SpriteFactory::getTintedBaseSprite( QString baseSprite, QString material )

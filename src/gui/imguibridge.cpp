@@ -1,6 +1,7 @@
 #include "imguibridge.h"
 
 #include "../base/global.h"
+#include "../base/config.h"
 #include "eventconnector.h"
 #include "../game/game.h"
 #include "../game/gnomemanager.h"
@@ -10,6 +11,7 @@
 ImGuiBridge::ImGuiBridge( QObject* parent )
 	: QObject( parent )
 {
+	useAltTextures = Global::cfg->get( "useAltTextures" ).toBool();
 	auto* ec = Global::eventConnector;
 
 	// =========================================================================
@@ -747,10 +749,12 @@ void ImGuiBridge::cmdSetWindowSize( int w, int h ) { Global::eventConnector->agg
 // Texture pack
 void ImGuiBridge::cmdToggleTexturePack()
 {
-	auto* ec = Global::eventConnector;
-	if ( !ec || !ec->game() ) return;
-	ec->game()->sf()->toggleTexturePack();
-	useAltTextures = ec->game()->sf()->usingAltTextures();
+	// Texture pack swap is applied at SpriteFactory::init() time, so we just
+	// toggle the persisted preference here. A restart is required for the
+	// change to take effect — runtime swap is unsafe (sprite cache, GL upload,
+	// and SpriteFactory mutex are all owned by the game thread).
+	useAltTextures = !useAltTextures;
+	Global::cfg->set( "useAltTextures", useAltTextures );
 }
 
 // Settings commands

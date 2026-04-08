@@ -3309,7 +3309,9 @@ void drawDebugPanel( ImGuiBridge& bridge )
 				"Place alternate PNGs in content/tilesheet_ai/." );
 
 			ImGui::Spacing();
-			ImGui::Text( "Active: %s", bridge.useAltTextures ? "AI Pack" : "Original" );
+			ImGui::Text( "Preference: %s", bridge.useAltTextures ? "AI Pack" : "Original" );
+			ImGui::TextColored( ImVec4( 1.0f, 0.85f, 0.3f, 1.0f ),
+				ICON_FA_TRIANGLE_EXCLAMATION " Restart the game to apply." );
 
 			ImGui::EndTabItem();
 		}
