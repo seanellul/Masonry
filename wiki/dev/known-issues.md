@@ -23,6 +23,16 @@ Running list of known bugs, tech debt, incomplete systems, and scaling bottlenec
 
 ## Incomplete systems
 
+### Forage action is a UI stub
+- **Symptom**: The `Forage` button in the Shape → Nature menu enqueues jobs via `cmdSetSelectionAction("Forage")`, but no gnome task function handles them. Jobs sit in the queue forever.
+- **Evidence**: `Forage` appears in `src/gui/keybindings.h:85` as `ActionForage` and in `ui_gamehud.cpp:196` in `natureActions[]`, but **no corresponding entry** in `src/game/gnome.cpp`'s `m_taskFunctions` map (compare to `FellTree`, `RemovePlant`, `PlantTree` which are all wired).
+- **Discovered**: during T-0007 scoping (Apr 2026).
+- **Status**: unticketed. Either implement the task handler or remove the button. In-game tooltip now labels it honestly as "[Not yet implemented]".
+
+### Plant Tree button is a UI stub from the Nature menu
+- **Symptom**: The `Plant Tree` button in the Nature menu has an empty action string (`""` in `ui_gamehud.cpp:196` `natureActions[]`). The button is already disabled in code. Tree planting happens only through groves (which have their own issues — see T-0010).
+- **Status**: the button shows greyed out so it's not actively misleading, but it's dead weight until either groves are fixed (T-0010) or a direct Plant-Tree action is implemented.
+
 ### Military / uniform / squad wiring
 - **Symptom**: gnomes assigned to squads never equip their assigned gear.
 - **Scope**: the squad → uniform → inventory → equipment pipeline has gaps — uniforms are defined, squads are defined, but the actual equip step does not fire for squad members.

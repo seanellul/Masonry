@@ -9,7 +9,8 @@
 - [visual-identity](./game/lore/visual-identity.md) — Logo, sandstone palette, pixel-art style rules, image-gen learnings.
 
 ### Systems
-*(stubs pending — create on first ingest: farming, jobs, military, pathfinding, stockpiles, economy)*
+- [buildings](./game/systems/buildings.md) — Complete catalog of workshops, structures, furniture, utility, and containers with function descriptions (mirrors `$BuildingDesc_*` runtime tooltips).
+- *(pending: farming, jobs, military, pathfinding, stockpiles, economy)*
 
 ### Creatures
 *(stubs pending — gnomes, animals, monsters, automatons)*

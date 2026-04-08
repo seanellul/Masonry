@@ -62,8 +62,30 @@ This task delivers **the mechanism** plus initial one-line tooltips for **every 
 
 ## Plan
 
-*(Scoping agent: (1) Survey `content/db/` to find where buildings/workshops/furniture/utility/containers are defined and loaded — likely via `DB::init()` / `DB::initStructs()` in `src/base/db.*`. (2) Decide the source of truth (see "Source of truth" above) — recommend strongly for DB if there's already a description column or a natural place for one, otherwise propose the wiki-as-authoring-surface approach. (3) Find the build menu rendering code in `src/gui/ui/` — the file that draws each row is where `ImGui::IsItemHovered` + `BeginTooltip` will be wired. (4) Propose a plan that includes: the storage location, the loader changes (if any), the UI wiring, and the initial content pass covering every item in the five tabs. (5) If the wiki-as-source approach is chosen, design it so the tooltip text for a building lives on its `wiki/game/` page and is discoverable by a simple script or build step.)*
+**Architecture** (user-approved): reuse the existing `Translation` table in `content/db/ingnomia.db.sql` with a new key format `$BuildingDesc_<id>`. The runtime loader (`Strings::init()` in `src/gui/strings.cpp`) already ingests every row of this table at startup; `S::s()` is the standard lookup. Zero new infrastructure, translatable by default, consistent with how every other localized string in the game is stored.
+
+**Wiki relationship**: the SQL is the runtime source of truth *today*. A human-readable mirror lives at `wiki/game/systems/buildings.md`. A future task can build a wiki → SQL sync script making the wiki the authoring surface.
+
+**UI wiring**: in `src/gui/ui/ui_gamehud.cpp`, add a static helper `buildingTooltipDesc(itemId)` that tries `$BuildingDesc_<id>` first, falls back to generic structure keys (`$BuildingDesc_Wall` / `_Floor` / `_Stairs` / `_Ramp` / `_Fence`) when the id contains those substrings, and returns empty on miss. A `showBuildItemTooltip(name, id)` helper opens an ImGui tooltip with the bold name, optional separator, and wrapped description. Called after the icon `Image()` and name `Text()` so hovering either surface produces the same tooltip.
+
+**Content scope this pass**: 36 workshops + 7 containers + 6 utility + 5 structure categories = 54 descriptions. Furniture deferred (graceful name-only fallback in place).
 
 ## Result
 
-*(Building agent fills in after implementation.)*
+Implemented across four files:
+
+1. **`content/db/ingnomia.db.sql`**: 54 new `$BuildingDesc_*` rows appended in a commented block ("Build menu tooltips (T-0004)") before `COMMIT;`.
+
+2. **`src/gui/ui/ui_gamehud.cpp`**:
+   - Added static helpers `buildingTooltipDesc(itemId)` and `showBuildItemTooltip(name, id)` at file scope (after includes).
+   - Wired `IsItemHovered() → showBuildItemTooltip()` after both `ImGui::Image()` (icon) and `ImGui::Text()` (name) in the build menu item render loop.
+
+3. **`wiki/game/systems/buildings.md`** (new): human-readable mirror of every tooltip string, organized by workshop subcategory plus containers, utility, and structures sections.
+
+4. **`wiki/INDEX.md`**: linked the new `buildings.md` under Game Wiki → Systems.
+
+**Fallback behavior**: on missing description, `buildingTooltipDesc` returns empty and the tooltip renders just the bold name without the separator/description block. Error sentinel strings (`"Error: $BuildingDesc_..."`) never leak to the UI. Furniture items degrade gracefully to name-only tooltips.
+
+**What this unblocks**: T-0007 (Dig/Nature tooltips) and T-0008b (Skill tooltips) can now reuse the same `S::s("$FooDesc_<id>")` + `showFooTooltip` pattern. The pipeline is established.
+
+Build: green.

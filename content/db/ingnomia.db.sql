@@ -16867,5 +16867,101 @@ INSERT INTO "FoodPolicies" VALUES ('All','Eat Anything','Gnome will eat any avai
 INSERT INTO "FoodPolicies" VALUES ('CookedOnly','Cooked Only','Gnome will only eat cooked meals, not raw food.');
 INSERT INTO "FoodPolicies" VALUES ('NoSeeds','Preserve Seeds','Gnome avoids eating plantable seeds.');
 
+-- ============================================================================
+-- Build menu tooltips (T-0004)
+-- Keyed by $BuildingDesc_<DB ID>. Runtime uses Strings::s() to fetch;
+-- missing keys fall back gracefully to the item name only. Keep each
+-- description short and function-focused (what it does, not what it is).
+-- ============================================================================
+
+-- Workshops (Workshops.ID)
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Crude','Makeshift workshop for basic wooden items — planks, sticks, a simple chair, a workbench, and a chisel. Replace with dedicated workshops as soon as you can.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Carpenter','Crafts wooden furniture, doors, beds, barrels, crates, and other wood-based items from planks.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Sawmill','Cuts raw wood logs into planks. Feeds every other wood workshop.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Stonecutter','Cuts raw stone into blocks used for construction and stone crafts.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Stonemason','Crafts stone furniture, chisels, and pickaxe heads from stone blocks.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Kitchen','Prepares cooked meals, baked goods, and preserved food from raw ingredients.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Distillery','Brews beer, wine, and cider from grains, fruits, and honey.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Dyer','Produces dyes from plants and applies them to dye furniture and cloth.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Forge','Smelts ore into metal bars (iron, bronze, steel, rose gold, silver) and forges anvils.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Furnace','Refines raw coal. Basic heat source for metalworking.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_CharcoalKiln','Slowly converts wood into charcoal for use as fuel.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Kiln','Fires clay into bricks and ceramic statuettes.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Blacksmith','Forges iron and steel tools — pickaxe heads, felling-axe heads, hammers, files, and big torches.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Metalworker','Crafts decorative metalwork — statues, statuettes, coins.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Gemcutter','Cuts raw gems into finished gems and produces flint pickaxe heads.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Loom','Weaves cloth bolts from plant fibers and wool.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Stonecarver','Carves stone into doors, hearths, molds, furnaces, troughs, statues, and pillars.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Woodcarver','Carves wood into statues, statuettes, and puzzle boxes.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Jeweler','Crafts rings and necklaces, optionally set with gems.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Tailor','Sews bags, sacks, bandages, mattresses, and padding from cloth bolts.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Bonecarver','Carves bone into tools, ornaments, and small items.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Butcher','Processes animal carcasses into meat, leather, and bones.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_MarketStall','Sells surplus goods to visiting traders.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Prospector','Analyses ore samples and identifies mineral veins in the surrounding stone.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Fishery','Catches fish from adjacent water tiles and processes them into food.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Leatherworker','Tans hides and crafts leather armor, bags, and accessories.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Weaponsmith','Forges metal weapons — swords, axes, maces, spears, and more.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Armorer','Forges metal armor — helmets, breastplates, greaves, and shields.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_MeleeTraining','Training ground where gnomes practice melee combat on a training dummy.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Engineer','Designs and assembles mechanical components and devices.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_MachineShop','Assembles complex machinery from metal parts and mechanisms.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Automaton','Builds and repairs automaton workers.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Windmill','Grinds grain into flour using wind power.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_WasteDisposal','Safely destroys unwanted items and corpses.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_GlassFurnace','Melts sand into molten glass for the glass maker to shape.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_GlassMaker','Shapes molten glass into windows, bottles, and decorative items.');
+
+-- Containers (Containers.ID)
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Crate','General-purpose storage. Most versatile container for stockpiles.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Barrel','Stores liquids and brewed goods. Required by breweries.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Bucket','Small liquid carrier used by gnomes for fetching water.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Bag','Stores small items, plant matter, and seeds.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Sack','Stores grain, flour, and other bulk dry goods.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Wheelbarrow','Lets a gnome haul multiple items at once — speeds up transport jobs.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Chest','Secure storage for small, high-value items.');
+
+-- Utility (Utility.ID)
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Door','Opens and closes to control access. Blocks enemies but not allies.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Torch','Small light source. Illuminates a few surrounding tiles.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_WallTorch','Light source mounted on a wall. Does not occupy a floor tile.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_BigTorch','Large light source with a wider illumination radius than a regular torch.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Brazier','Permanent fire pit. Provides light and a bit of warmth.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_AlarmBell','Rung during emergencies to summon gnomes to a defensive position.');
+
+-- Generic structure category fallbacks (matched by substring in UI)
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Wall','Impassable wall. Blocks movement and line of sight. Supports floors and ceilings above.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Floor','Walkable floor surface. Required to finish enclosed rooms and to hold furniture above dug ground.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Stairs','Connects different Z-levels. Gnomes use them to move up and down.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Ramp','Gentle incline that lets gnomes (and carts) cross a one-level height difference.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Fence','Low barrier. Blocks animals and keeps pastures enclosed.');
+
+-- ============================================================================
+-- Shape → Dig / Nature action tooltips (T-0007)
+-- Keyed by $ActionDesc_<action string>. The action string is what the UI
+-- passes to cmdSetSelectionAction; see digActions[] and natureActions[] in
+-- src/gui/ui/ui_gamehud.cpp. Descriptions derived from reading the actual
+-- job/task handlers in src/game/ — discrepancies between UI labels and
+-- runtime behavior are documented honestly.
+-- ============================================================================
+
+-- Dig actions (all wired)
+INSERT INTO "Translation" ("ID","Text") VALUES ('$ActionDesc_Mine','Mines a wall tile. Produces stone blocks or ore based on the wall material.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$ActionDesc_ExplorativeMine','Mines ore veins exploratively — follows the vein through connected stone, revealing nearby tiles as it goes.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$ActionDesc_RemoveFloor','Removes a constructed floor tile, exposing whatever is beneath.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$ActionDesc_DigStairsDown','Digs a stair descending to the next Z-level below.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$ActionDesc_MineStairsUp','Mines a wall upward to create stairs rising to the next Z-level above.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$ActionDesc_DigRampDown','Digs a ramp descending to the next Z-level — lets gnomes walk down without stairs.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$ActionDesc_DigHole','Digs a hole through a floor to the Z-level directly below. Gnomes and items can fall through.');
+
+-- Nature actions (some are UI stubs — documented honestly)
+INSERT INTO "Translation" ("ID","Text") VALUES ('$ActionDesc_FellTree','Fells the selected tree and leaves logs at its base for hauling.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$ActionDesc_HarvestTree','Harvests ripe fruit or leaves from a plant. One-shot plants (vegetables, flowers) are removed after harvest; trees and perennials keep regrowing.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$ActionDesc_Forage','[Not yet implemented] The button enqueues a Forage job but no gnome task handles it — the job will sit in the queue indefinitely. Logged as a known issue.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$ActionDesc_RemovePlant','Uproots and destroys the selected plant without harvesting anything from it.');
+-- "Plant Tree" in the Nature menu has an empty action string in the UI
+-- (disabled button). Planting happens only through groves. No ActionDesc
+-- entry is needed because the button is greyed out.
+
 
 COMMIT;

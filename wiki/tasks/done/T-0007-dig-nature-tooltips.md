@@ -54,4 +54,29 @@ This task is blocked on T-0004 because T-0004 establishes the tooltip pipeline (
 
 ## Result
 
-*(Building agent fills in after implementation.)*
+Implemented using the T-0004 tooltip pipeline.
+
+**Code investigation findings** (the diagnostic side of this task):
+
+1. **`Forage` is a UI stub.** Appears in `src/gui/keybindings.h:85` as `ActionForage` and in `src/gui/ui/ui_gamehud.cpp:196` in `natureActions[]`, but there is **no** `m_taskFunctions.insert("Forage", …)` in `src/game/gnome.cpp`. Clicking Forage enqueues jobs that no gnome will ever pick up. Added to `wiki/dev/known-issues.md` and the in-game tooltip labels it honestly as "[Not yet implemented]".
+
+2. **`Plant Tree`** in the Nature menu has an empty action string (`""`). The existing code already disables the button when its action is empty, so it renders greyed out. Tree planting happens only through groves (T-0010). Added to known-issues for tracking.
+
+3. **`Harvest` vs Forage resolved.** Harvest is implemented in `CanWork::harvest()` at `src/game/canwork.cpp:1030`. It picks ripe fruit/leaves from a plant; for one-shot plants (vegetables, flowers) the plant is removed after harvest, for trees and perennials the plant remains. The "confusion" between the two actions is that Forage simply doesn't do anything — there is no overlap to resolve.
+
+4. **All dig actions are properly wired** — `Mine`, `ExplorativeMine`, `RemoveFloor`, `DigStairsDown`, `MineStairsUp`, `DigRampDown`, `DigHole` all flow through `Selection::setAction()` → `JobManager::addJob()` and have corresponding task handlers.
+
+**Implementation**:
+
+1. **`content/db/ingnomia.db.sql`**: added 11 new `$ActionDesc_*` Translation rows in a commented "Shape → Dig / Nature action tooltips (T-0007)" block — 7 dig actions + 4 nature actions. Plant Tree has no row because its button is disabled. Forage's entry openly states it's not implemented.
+
+2. **`src/gui/ui/ui_gamehud.cpp`**:
+   - Added static helpers `actionTooltipDesc(action)` and `showActionTooltip(label, action)` alongside the T-0004 helpers.
+   - Wired `IsItemHovered() → showActionTooltip(…)` into the dig action render loop (~line 885) and the nature action render loop (~line 908). The nature loop uses `ImGuiHoveredFlags_AllowWhenDisabled` so users can hover the greyed-out Plant Tree and Forage buttons to discover why they don't work.
+   - When `action` is empty, `showActionTooltip` appends a `(Not currently implemented.)` line in the tooltip body — a universal fallback beyond the specific Forage entry.
+
+3. **`wiki/dev/known-issues.md`**: added entries for Forage stub and Plant Tree stub under "Incomplete systems".
+
+**Pipeline reuse validated**: this task sits entirely on top of the T-0004 pattern (`Strings` key lookup + `Error:` sentinel check + `BeginTooltip`/`EndTooltip` block). No new infrastructure. T-0008b (skill tooltips) can follow the same pattern with a `$SkillDesc_<id>` key namespace.
+
+Build: green (11 warnings, all pre-existing).

@@ -11,6 +11,83 @@
 
 #include <imgui.h>
 
+// T-0004: build-menu tooltip lookup.
+// Tries $BuildingDesc_<id> first; falls back to generic structure
+// category keys ($BuildingDesc_Wall / _Floor / _Stairs / _Ramp / _Fence)
+// when the specific id contains those substrings. Returns an empty
+// string when no description is available — caller should render just
+// the name in that case.
+static QString buildingTooltipDesc( const QString& itemId )
+{
+	auto tryKey = []( const QString& key ) -> QString {
+		QString s = S::s( key );
+		return s.startsWith( "Error:" ) ? QString() : s;
+	};
+	QString desc = tryKey( "$BuildingDesc_" + itemId );
+	if ( desc.isEmpty() )
+	{
+		if ( itemId.contains( "Wall", Qt::CaseInsensitive ) )
+			desc = tryKey( "$BuildingDesc_Wall" );
+		else if ( itemId.contains( "Floor", Qt::CaseInsensitive ) )
+			desc = tryKey( "$BuildingDesc_Floor" );
+		else if ( itemId.contains( "Stairs", Qt::CaseInsensitive ) )
+			desc = tryKey( "$BuildingDesc_Stairs" );
+		else if ( itemId.contains( "Ramp", Qt::CaseInsensitive ) )
+			desc = tryKey( "$BuildingDesc_Ramp" );
+		else if ( itemId.contains( "Fence", Qt::CaseInsensitive ) )
+			desc = tryKey( "$BuildingDesc_Fence" );
+	}
+	return desc;
+}
+
+// Shared tooltip renderer: bold name on top, optional wrapped
+// description below a separator. Called from IsItemHovered() blocks.
+static void showBuildItemTooltip( const QString& name, const QString& itemId )
+{
+	ImGui::BeginTooltip();
+	ImGui::TextUnformatted( name.toStdString().c_str() );
+	QString desc = buildingTooltipDesc( itemId );
+	if ( !desc.isEmpty() )
+	{
+		ImGui::Separator();
+		ImGui::PushTextWrapPos( 360.0f );
+		ImGui::TextUnformatted( desc.toStdString().c_str() );
+		ImGui::PopTextWrapPos();
+	}
+	ImGui::EndTooltip();
+}
+
+// T-0007: shape action tooltip (Dig / Nature menus).
+// Keyed by the action string passed to cmdSetSelectionAction — see
+// $ActionDesc_<action> rows at the bottom of ingnomia.db.sql.
+static QString actionTooltipDesc( const char* action )
+{
+	if ( !action || !*action )
+		return QString();
+	QString s = S::s( QString( "$ActionDesc_" ) + action );
+	return s.startsWith( "Error:" ) ? QString() : s;
+}
+
+static void showActionTooltip( const char* label, const char* action )
+{
+	ImGui::BeginTooltip();
+	ImGui::TextUnformatted( label );
+	QString desc = actionTooltipDesc( action );
+	if ( !desc.isEmpty() )
+	{
+		ImGui::Separator();
+		ImGui::PushTextWrapPos( 360.0f );
+		ImGui::TextUnformatted( desc.toStdString().c_str() );
+		ImGui::PopTextWrapPos();
+	}
+	else if ( !action || !*action )
+	{
+		ImGui::Separator();
+		ImGui::TextDisabled( "(Not currently implemented.)" );
+	}
+	ImGui::EndTooltip();
+}
+
 namespace
 {
 
@@ -701,11 +778,17 @@ void drawGameHUD( ImGuiBridge& bridge )
 							ImGui::Image( texID, ImVec2( iconSize, iconSize ) );
 						else
 							ImGui::Dummy( ImVec2( iconSize, iconSize ) );
+						// T-0004: hover the icon to see name + description.
+						if ( ImGui::IsItemHovered() )
+							showBuildItemTooltip( item.name, item.id );
 
 						// Right of icon: name + material dropdowns + build button
 						float rightX = startPos.x + iconSize + 8;
 						ImGui::SetCursorPos( ImVec2( rightX, startPos.y ) );
 						ImGui::Text( "%s", item.name.toStdString().c_str() );
+						// T-0004: hover the name to see the same tooltip.
+						if ( ImGui::IsItemHovered() )
+							showBuildItemTooltip( item.name, item.id );
 
 						QStringList mats;
 						bool canBuild = true;
@@ -827,6 +910,9 @@ void drawGameHUD( ImGuiBridge& bridge )
 					{
 						bridge.cmdSetSelectionAction( digActions[i].action );
 					}
+					// T-0007: hover tooltip for each dig action.
+					if ( ImGui::IsItemHovered() )
+						showActionTooltip( digActions[i].label, digActions[i].action );
 				}
 
 				ImGui::EndTabItem();
@@ -852,6 +938,11 @@ void drawGameHUD( ImGuiBridge& bridge )
 							bridge.cmdSetSelectionAction( natureActions[i].action );
 					}
 					if ( !hasAction ) ImGui::EndDisabled();
+					// T-0007: hover tooltip for each nature action — works
+					// even while the button is disabled so users can discover
+					// why Plant Tree / Forage aren't wired.
+					if ( ImGui::IsItemHovered( ImGuiHoveredFlags_AllowWhenDisabled ) )
+						showActionTooltip( natureActions[i].label, natureActions[i].action );
 				}
 
 				ImGui::EndTabItem();

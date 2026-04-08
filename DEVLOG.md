@@ -6,6 +6,27 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-07] Tooltip pipeline + build menu + shape actions (T-0004, T-0007)
+
+**Milestone**: UI/UX + Knowledge infrastructure
+**Files changed**: `content/db/ingnomia.db.sql`, `src/gui/ui/ui_gamehud.cpp`, `wiki/game/systems/buildings.md` (new), `wiki/dev/known-issues.md`, `wiki/INDEX.md`
+
+### Changes
+
+- **T-0004 — Build menu tooltips + `$BuildingDesc_*` pipeline.** Added 54 new `$BuildingDesc_<id>` rows to `content/db/ingnomia.db.sql` (36 workshops + 7 containers + 6 utility + 5 generic structure categories). Runtime lookup via `Strings::s()` — same pipeline every other localized string already uses, zero new infrastructure. New `buildingTooltipDesc(id)` and `showBuildItemTooltip(name, id)` helpers in `ui_gamehud.cpp` wrap the lookup + tooltip render; wired into the build menu row on both icon hover and name hover. Missing descriptions fall back gracefully to name-only (no `Error:` leaks). Created `wiki/game/systems/buildings.md` as the human-readable mirror with workshops grouped by subcategory (Wood/Stone/Metal/Food/Crafts/Mechanics/Misc). Future work: a script to sync wiki → SQL so the wiki becomes the authoring surface; today the SQL is the runtime source of truth.
+
+- **T-0007 — Dig / Nature action tooltips (+ bug discoveries).** Built on the T-0004 pattern with a parallel `$ActionDesc_<action>` key namespace. 11 new Translation rows (7 dig actions fully wired in-game + 4 nature actions, of which `Forage` is documented as unimplemented). New `actionTooltipDesc(action)` / `showActionTooltip(label, action)` helpers in `ui_gamehud.cpp`, wired into both the dig and nature render loops. The nature loop uses `ImGuiHoveredFlags_AllowWhenDisabled` so greyed-out buttons still surface their tooltip. **Two bugs discovered during code inspection and logged to `wiki/dev/known-issues.md`**:
+  - `Forage` is a UI stub: appears in `keybindings.h`'s `ActionForage` + `natureActions[]`, but has **no task function** in `gnome.cpp::initTaskMap()`. Clicking Forage enqueues jobs no gnome will ever pick up. Tooltip now labels it `[Not yet implemented]`.
+  - `Plant Tree` in the Nature menu has an empty action string (`""`). Button is already disabled in code. Tree planting happens only through groves (T-0010).
+
+### Technical Details
+
+- The T-0004 DB-keyed + `Strings::s()` pipeline is now the **default pattern** for surfacing authoritative info in tooltips. T-0008b (skill tooltips) will reuse it with `$SkillDesc_<id>`.
+- `buildingTooltipDesc()` includes category-substring fallbacks so per-material structure variants (StoneBlockWall, WoodPlankFloor, etc.) all get the same category-level description without needing one row per variant.
+- Build: green. References: `wiki/tasks/done/T-0004-*.md`, `wiki/tasks/done/T-0007-*.md`.
+
+---
+
 ## [2026-04-07] UI polish batch 2 — schedule painter, tile info icons (T-0005, T-0013)
 
 **Milestone**: UI/UX polish

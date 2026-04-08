@@ -98,3 +98,10 @@ All built green. Smoke test runtime timed out at 120s on shutdown — treated as
 - **T-0005** — Tile Info icon buttons: made `actionButton()` frameless via transparent button colors, applied the same treatment to the creature-info `(i)` button. Identified the "mystery button" as `ICON_FA_RIGHT_LEFT` Replace-floor (already had a tooltip — the rectangular frame was just distracting).
 
 Both UI-render-only; build green.
+
+## [2026-04-07] task | done: T-0004, T-0007 (autonomous batch 3)
+
+- **T-0004** — Build menu tooltips. Established the `$BuildingDesc_<id>` Translation-key pattern using the existing localization pipeline (`Strings::s()`). 54 descriptions: 36 workshops + 7 containers + 6 utility + 5 structure categories. Furniture deferred with graceful name-only fallback. Created `wiki/game/systems/buildings.md` as the human-readable mirror.
+- **T-0007** — Dig/Nature tooltips. Built on T-0004 with parallel `$ActionDesc_<action>` keys. 11 descriptions covering all dig actions and 4 nature actions. **Discovered two bugs** during the code inspection (the diagnostic dividend of the pattern): `Forage` is a fully unimplemented UI stub; `Plant Tree` in the Nature menu has an empty action string. Both logged to `wiki/dev/known-issues.md`.
+
+The T-0004 pipeline is now the default pattern for all future tooltip tasks. T-0008b will piggyback on it with `$SkillDesc_<id>`.
