@@ -100,7 +100,7 @@ struct GuiCreatureInfo
 	int needsPenalty = 0;   // penalty from low needs
 
 	// Skills
-	struct SkillEntry { QString name; int level; int xp; bool active; };
+	struct SkillEntry { QString sid; QString name; int level; int xp; bool active; };
 	QList<SkillEntry> skills;
 
 	// Anatomy

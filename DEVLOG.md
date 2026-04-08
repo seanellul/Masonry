@@ -6,6 +6,29 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-07] Creature Info skills section restructured (skills redesign follow-up)
+
+**Milestone**: Skills redesign — polish
+**Files changed**: `src/gui/aggregatorcreatureinfo.h`, `src/gui/aggregatorcreatureinfo.cpp`, `src/gui/ui/ui_sidepanels.cpp`
+
+### Changes
+
+- **Creature Info → Skills section**: was a flat alphabetical list with a basic 4-line tooltip. Now matches the rest of the skills redesign:
+  - **Grouped by SkillGroups** with collapsible group headers (default open). Group header text shows the gnome's max sibling level in that group, e.g. *"Smithing (18)"*.
+  - **Skill rows still show level + name** with the same color scale, but now with an extra lavender tier at level 10–14 (Journeyman) and gold at 15+ (Master/Grandmaster).
+  - **Rich `$SkillDesc_<sid>` tooltip** pulled from the same Translation pipeline used by the build menu / shape actions / population view tooltips. Tooltip layout: name + level/XP, separator, wrapped description, separator, active/inactive status.
+  - Group structure cached lazily on first paint via two static maps (`s_ciSkillToGroup`, `s_ciGroupOrder`), populated from `DB::selectRows("SkillGroups")` — same data source as the population view.
+
+- **`GuiCreatureInfo::SkillEntry`** got a new `sid` field so the render can group + look up descriptions. Populated in `AggregatorCreatureInfo` alongside the existing `name` field.
+
+### Technical Details
+
+- The Creature Info skills view now visually matches the Population view's group view: same group order, same per-skill tooltip content, same color tiers.
+- Group header is `TreeNodeEx` (default open) so a player can collapse uninteresting groups while keeping the gnome's specialty visible at a glance.
+- Build: green. References: skills redesign chain.
+
+---
+
 ## [2026-04-07] Core colony skill wiring + audit correction (T-0016)
 
 **Milestone**: Skills redesign — phase 4 (final)

@@ -265,7 +265,7 @@ void AggregatorCreatureInfo::onRequestCreatureUpdate( unsigned int id )
 			bool active = gnome->getSkillActive( sid );
 			QString name = S::s( "$SkillName_" + sid );
 			if ( name.isEmpty() || name.startsWith( "$" ) ) name = sid;
-			m_info.skills.append( { name, level, xp, active } );
+			m_info.skills.append( { sid, name, level, xp, active } );
 		}
 
 		// Mood breakdown

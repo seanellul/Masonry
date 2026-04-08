@@ -2756,42 +2756,111 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 		}
 	}
 
-	// Skills
+	// Skills (T-0021 / post-redesign): grouped by SkillGroups, with rich
+	// $SkillDesc_<sid> tooltips. The group structure is loaded once from
+	// the SkillGroups DB table and cached in static maps.
 	if ( !ci.skills.isEmpty() )
 	{
-		if ( ImGui::CollapsingHeader( "Skills" ) )
+		// Lazy-load: skillID → groupID, plus the group display order.
+		static QMap<QString, QString> s_ciSkillToGroup;
+		static QList<QPair<QString, QString>> s_ciGroupOrder; // (groupID, displayName)
+		static bool s_ciGroupsLoaded = false;
+		if ( !s_ciGroupsLoaded )
 		{
-			ImGui::Indent( 8.0f );
-			for ( const auto& skill : ci.skills )
+			s_ciGroupsLoaded = true;
+			for ( const auto& gr : DB::selectRows( "SkillGroups" ) )
 			{
-				// Color by level
-				ImVec4 lvlColor;
-				if ( skill.level >= 10 )
-					lvlColor = ImVec4( 1.0f, 0.85f, 0.2f, 1.0f ); // gold - master
-				else if ( skill.level >= 5 )
-					lvlColor = ImVec4( 0.3f, 0.8f, 0.3f, 1.0f ); // green - skilled
-				else if ( skill.level >= 1 )
-					lvlColor = ImVec4( 0.7f, 0.7f, 0.7f, 1.0f ); // grey - basic
-				else
-					lvlColor = ImVec4( 0.4f, 0.4f, 0.4f, 1.0f ); // dim - untrained
-
-				// Dim inactive skills
-				if ( !skill.active )
-					lvlColor.w = 0.4f;
-
-				ImGui::TextColored( lvlColor, "%2d", skill.level );
-				ImGui::SameLine();
-				if ( skill.active )
-					ImGui::Text( "%s", skill.name.toStdString().c_str() );
-				else
-					ImGui::TextDisabled( "%s (off)", skill.name.toStdString().c_str() );
-
-				if ( ImGui::IsItemHovered() )
+				QString gid  = gr.value( "ID" ).toString();
+				QString text = gr.value( "Text" ).toString();
+				if ( text.isEmpty() ) text = gid;
+				s_ciGroupOrder.append( { gid, text } );
+				for ( const QString& sid : gr.value( "SkillID" ).toString().split( "|" ) )
 				{
-					ImGui::SetTooltip( "%s\nLevel: %d\nXP: %d\n%s",
-						skill.name.toStdString().c_str(),
-						skill.level, skill.xp,
-						skill.active ? "Active" : "Inactive — won't take these jobs" );
+					s_ciSkillToGroup.insert( sid, gid );
+				}
+			}
+		}
+
+		if ( ImGui::CollapsingHeader( "Skills", ImGuiTreeNodeFlags_DefaultOpen ) )
+		{
+			// Bucket the gnome's skills by group.
+			QMap<QString, QList<int>> bucketByGroup; // groupID → indices into ci.skills
+			for ( int i = 0; i < ci.skills.size(); ++i )
+			{
+				QString gid = s_ciSkillToGroup.value( ci.skills[i].sid, "Other" );
+				bucketByGroup[gid].append( i );
+			}
+
+			ImGui::Indent( 8.0f );
+			for ( const auto& gp : s_ciGroupOrder )
+			{
+				const QString& gid       = gp.first;
+				const QString& groupName = gp.second;
+				if ( !bucketByGroup.contains( gid ) )
+					continue;
+
+				// Group header (collapsing) with the gnome's max sibling level
+				// in this group as a quick summary.
+				int groupMax = 0;
+				for ( int idx : bucketByGroup[gid] )
+					if ( ci.skills[idx].level > groupMax )
+						groupMax = ci.skills[idx].level;
+
+				QString hdr = QString( "%1 (%2)###grp_%3" ).arg( groupName ).arg( groupMax ).arg( gid );
+				if ( ImGui::TreeNodeEx( hdr.toStdString().c_str(),
+					ImGuiTreeNodeFlags_DefaultOpen | ImGuiTreeNodeFlags_SpanAvailWidth ) )
+				{
+					ImGui::Indent( 8.0f );
+					for ( int idx : bucketByGroup[gid] )
+					{
+						const auto& skill = ci.skills[idx];
+
+						// Color by level
+						ImVec4 lvlColor;
+						if ( skill.level >= 15 )
+							lvlColor = ImVec4( 1.0f, 0.85f, 0.2f, 1.0f );  // gold — master+
+						else if ( skill.level >= 10 )
+							lvlColor = ImVec4( 0.85f, 0.7f, 0.95f, 1.0f ); // lavender — journeyman
+						else if ( skill.level >= 5 )
+							lvlColor = ImVec4( 0.3f, 0.8f, 0.3f, 1.0f );   // green — apprentice
+						else if ( skill.level >= 1 )
+							lvlColor = ImVec4( 0.7f, 0.7f, 0.7f, 1.0f );   // grey — novice
+						else
+							lvlColor = ImVec4( 0.4f, 0.4f, 0.4f, 1.0f );   // dim — untrained
+						if ( !skill.active )
+							lvlColor.w = 0.4f;
+
+						ImGui::TextColored( lvlColor, "%2d", skill.level );
+						ImGui::SameLine();
+						if ( skill.active )
+							ImGui::Text( "%s", skill.name.toStdString().c_str() );
+						else
+							ImGui::TextDisabled( "%s (off)", skill.name.toStdString().c_str() );
+
+						// Rich tooltip pulls $SkillDesc_<sid> from the same
+						// pipeline the build menu / shape actions / population
+						// view tooltips use.
+						if ( ImGui::IsItemHovered() )
+						{
+							ImGui::BeginTooltip();
+							ImGui::Text( "%s — Level %d (XP: %d)",
+								skill.name.toStdString().c_str(), skill.level, skill.xp );
+							QString desc = S::s( QString( "$SkillDesc_" ) + skill.sid );
+							if ( !desc.startsWith( "Error:" ) )
+							{
+								ImGui::Separator();
+								ImGui::PushTextWrapPos( 360.0f );
+								ImGui::TextUnformatted( desc.toStdString().c_str() );
+								ImGui::PopTextWrapPos();
+							}
+							ImGui::Separator();
+							ImGui::TextDisabled( "%s",
+								skill.active ? "Active" : "Inactive — won't take these jobs" );
+							ImGui::EndTooltip();
+						}
+					}
+					ImGui::Unindent( 8.0f );
+					ImGui::TreePop();
 				}
 			}
 			ImGui::Unindent( 8.0f );
