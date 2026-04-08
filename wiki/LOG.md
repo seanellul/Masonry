@@ -121,3 +121,17 @@ The T-0004 pattern has now been applied three times (builds, shape actions, skil
 ## [2026-04-07] task | done: T-0010 (autonomous batch 6)
 
 - **T-0010** — Groves investigation. Full end-to-end trace in `wiki/dev/subsystems/groves.md`. **Verdict**: groves are implemented correctly; the "broken" report was a UX discoverability issue (fresh groves default to doing nothing until configured; tree species names like "Apple" / "Orange" look like fruits). No runtime fix warranted. 5 UX follow-up seeds captured.
+
+## [2026-04-07] task | intake: T-0015 through T-0021 (skills redesign)
+
+Seven new tasks captured from the skills redesign discussion. These flow from the T-0008a audit findings into a coherent cleanup + grouping + cross-training + titles design. Audit page `wiki/dev/subsystems/skills.md` updated with the consolidated "Planned redesign" section.
+
+- **T-0015** — Combat → stats refactor (deferred until CON/STR/DEX brainstorm). Collapse Melee/Unarmed/Dodge into derived stats; delete 6 dead combat skills.
+- **T-0016** — Wire 5 core colony skills (Mining, Woodcutting, Farming, Construction, Medic) to actually affect job outcomes. The biggest gameplay improvement available.
+- **T-0017** — Easy wirings: AnimalHusbandry one-line fix at `gnomeactions.cpp:2143`, Fishing single read site, Butchery → yield % + quality of prepared meats. Butchery stays distinct (in the Hearth group with Cooking + Brewing).
+- **T-0018** — Cleanup: remove Horticulture, Tinkering, Mechanic; merge Caretaking into Medic.
+- **T-0019** — Skill grouping in Population view: 47 columns → 13 (10 groups + 3 standalones). Visual only; sub-skills stay independent.
+- **T-0020** — Cross-training XP bonus: max sibling level / 20 * 0.5 multiplier capped at +50%. Master Bonecarver picks up Pottery faster.
+- **T-0021** — Skill titles: "Master Smith", "Grandmaster of Magic", etc. Pure flair but sells the design.
+
+Dependencies: T-0019 → T-0020 → T-0021 (group structure is shared); T-0018 should land before T-0019 to avoid stale references. T-0015 is independent but waits on user's stat-system brainstorm.

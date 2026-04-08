@@ -105,9 +105,112 @@ These are the concrete bugs / gaps discovered during the audit. Each becomes a c
 6. **Wire up `Mining`, `Woodcutting`, `Farming`, `Horticulture`, `Construction`, `Medic`, `Caretaking`** to affect job outcomes (speed, yield, success rate) — these currently only change mood. This is the biggest gap: seven "core" colony skills have no effect on the work they're named for.
 7. **Check `setSkillLevel` vs `getSkillLevel` encoding consistency** — `getSkillLevel` applies `reverseFib`, `setSkillLevel` does not. If both paths are used on the same skill this will produce inconsistent values.
 
+## Planned redesign (Apr 2026 — supersedes much of the audit above)
+
+The audit's findings drove a follow-up design conversation that produced a concrete cleanup + grouping + cross-training spec. The list below is the **target state**. Tasks T-0015 through T-0021 implement it.
+
+### Removals (4)
+
+- **Horticulture** — duplicate of Farming. Remove.
+- **Tinkering** — no workshop, no system, only a mood trigger. Remove.
+- **Mechanic** — registered but no consumer. Remove.
+- **Caretaking** — functionally identical to Medic. Merge into Medic.
+
+### Skill grouping (10 groups + 3 standalones)
+
+Visual UI optimization in the Population view, no gameplay change at the per-skill level. Each sub-skill keeps its independent XP and level. The group view shows one column per group with a checkbox + the gnome's max sibling-skill level; hover expands to a per-skill breakdown.
+
+| Group | Sub-skills | Theme |
+|---|---|---|
+| **Earthworking** | Mining, Masonry, Stonecarving | Stone supply chain — gather, build, decorate |
+| **Forestry** | Woodcutting, Carpentry, Woodcarving | Wood supply chain |
+| **Smithing** | Smelting, Blacksmithing, Metalworking, WeaponCrafting, ArmorCrafting | Metal supply chain |
+| **Textiles** | Weaving, Tailoring, Dyeing | Cloth supply chain |
+| **Bone & Hide** | Leatherworking, Bonecarving | Animal byproducts |
+| **Fine Craft** | Gemcutting, JewelryMaking, GlassMaking, Pottery | Small precious work |
+| **Engineering** | Engineering, Machining | Mechanical |
+| **Hearth** | Cooking, Brewing, **Butchery** | Food prep — butchery stays distinct (yields meats), grouped here |
+| **Field** | Farming, AnimalHusbandry, Fishing | Food production |
+| **Magic** | MagicNature, MagicGeomancy | Spellcasting |
+
+Standalones (no group):
+- **Hauling** — affects every job (move speed)
+- **Construction** — meta build skill
+- **Medic** — sole healing skill (post-merge with Caretaking)
+
+Result: 47 skills → ~13 columns in the group view. Individual view (existing) still shows everything for surgical assignment.
+
+### Cross-training XP bonus
+
+When a gnome gains XP in a skill, the grant is multiplied by:
+
+```
+xp_gain = base_xp * (1 + (max sibling level / 20) * 0.5)
+```
+
+- Novice (no siblings) → multiplier 1.0 (normal)
+- One sibling at level 20 → multiplier 1.5 (max +50%)
+- Uses `max` not `sum` — depth in any one sibling rewards transfer, no min-max stacking
+- Cap at +50% — specialists still matter, generalists are noticeably faster
+
+A Master Bonecarver picking up Pottery learns it +50% faster than a complete novice. A Grandmaster Smith learning a new smithing branch ramps up quickly and meaningfully.
+
+### Skill titles
+
+Derived display label based on top sibling level in any group:
+
+| Top sibling level | Title |
+|---|---|
+| 0–4 | Novice [Group] |
+| 5–9 | Apprentice [Group] |
+| 10–14 | Journeyman [Group] |
+| 15–19 | Master [Group] |
+| 20 | Grandmaster [Group] |
+
+Examples: a gnome with Blacksmithing 18 displays as **Master Smith**. A gnome with Bonecarving 20 displays as **Grandmaster of Bone & Hide** (or sub-skill name — TBD in T-0021). A gnome with multiple level-15+ groups gets a polymath title.
+
+Shown in the gnome info panel header and in the population view name column.
+
+### Wirings (broken skills to actually consume their level)
+
+Tracked under T-0016 (core colony) and T-0017 (easy wirings + Butchery).
+
+| Skill | Should affect |
+|---|---|
+| Mining | Mining speed, ore yield, rare-ore chance |
+| Woodcutting | Felling speed, log count per tree |
+| Farming | Tilling/planting/harvest yield |
+| Construction | Build speed |
+| Medic | Heal rate, treatment outcome |
+| AnimalHusbandry | One-line fix at `gnomeactions.cpp:2143` (taming duration); broader: breeding, yield |
+| Fishing | Catch rate, fish quality |
+| **Butchery** | **Yield % and quality of prepared meats** |
+
+### Combat → stats refactor
+
+Tracked under T-0015 (deferred until you brainstorm the CON/STR/DEX schema).
+
+- **Keep as effect, recast as stat**: Melee → STR, Unarmed → STR, Dodge → DEX
+- **Delete**: Ranged, Crossbow, Thrown, Gun, Block, Armor (all dead today)
+- 9 skills → ~3 derived stats
+
+### Headcount summary
+
+| Bucket | Count |
+|---|---|
+| Crafting industries (working, keep) | 22 (Cooking + Butchery + the rest) |
+| Core colony skills (broken, fix in T-0016) | 5 (post-merge: Mining, Woodcutting, Farming, Construction, Medic) |
+| Easy wirings (T-0017) | 4 (Hauling done; AH + Fishing + Butchery pending) |
+| Magic | 2 |
+| Combat → stats (T-0015) | 9 → ~3 stats |
+| Removals (T-0018) | 4 (Horticulture, Tinkering, Mechanic, Caretaking) |
+| **Total today** | **47** |
+| **Total after cleanup** | **~36 skills + ~3 combat stats** |
+
 ## See also
 - [[known-issues]]
 - Combat system audit: *(not yet written)*
 - `canwork.cpp` — central work/crafting loop
 - `gnome.cpp` — thought generation, move speed, equipment
 - `src/base/db.cpp` — `Skills` and `Crafts` table loaders
+- Tasks: T-0015 (combat refactor), T-0016 (core colony wirings), T-0017 (easy wirings + Butchery), T-0018 (cleanup removals), T-0019 (skill grouping UI), T-0020 (cross-training XP bonus), T-0021 (skill titles)
