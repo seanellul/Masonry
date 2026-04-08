@@ -85,6 +85,8 @@ Creature::Creature( QVariantMap in, Game* game ) :
 	m_stateChangeTick( in.value( "sct" ).value<quint64>() ),
 	//bool m_isDead = false;
 	m_isDead( in.value( "IsDead" ).toBool() ),
+	//QString m_causeOfDeath; (T-0026)
+	m_causeOfDeath( in.value( "CauseOfDeath" ).toString() ),
 	//bool m_toDestroy = false;
 	m_toDestroy( in.value( "ToDestroy" ).toBool() ),
 	//unsigned char m_type = CreatureType::UNDEFINED
@@ -238,6 +240,8 @@ void Creature::serialize( QVariantMap& out ) const
 
 	//bool m_isDead = false;
 	out.insert( "IsDead", m_isDead );
+	//QString m_causeOfDeath; (T-0026)
+	out.insert( "CauseOfDeath", m_causeOfDeath );
 	//bool m_toDestroy = false;
 	out.insert( "ToDestroy", m_toDestroy );
 
@@ -1119,6 +1123,9 @@ void Creature::updateAttackValues()
 void Creature::die()
 {
 	m_isDead = true;
+	// T-0026: default death metadata if specific call sites haven't set them.
+	if ( m_deathTick == 0 ) m_deathTick = GameState::tick;
+	if ( m_causeOfDeath.isEmpty() ) m_causeOfDeath = "Killed";
 	dropInventory();
 	dropEquipment();
 	updateSprite();

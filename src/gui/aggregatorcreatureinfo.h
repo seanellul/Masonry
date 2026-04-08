@@ -54,6 +54,13 @@ struct GuiCreatureInfo
 	int healthPercent = 100; // blood / maxBlood as percentage
 	QString healthStatus;  // "Healthy", "Wounded", "Bleeding"
 
+	// T-0026: deceased state. When isDead is true, the panel hides
+	// live-only sections (mood, activity, schedule) and shows a
+	// Deceased status block instead.
+	bool isDead = false;
+	QString causeOfDeath;
+	quint64 deathTick = 0;
+
 	// Animal/Monster specific
 	QString diet;          // "Meat", "Vegetable", "Fruit", "Meat|Fruit"
 	bool isAggressive = false;

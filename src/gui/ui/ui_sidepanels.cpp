@@ -2386,7 +2386,18 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 	bool isGnome = ( ci.creatureType == "Gnome" );
 
 	// Name and type
-	ImGui::TextColored( ImVec4( 1.0f, 0.9f, 0.6f, 1.0f ), "%s", ci.name.toStdString().c_str() );
+	// T-0026: prefix dead creatures with "(Deceased)" in red so the
+	// header reads as "Brorvar — (Deceased)" before any other info.
+	if ( ci.isDead )
+	{
+		ImGui::TextColored( ImVec4( 0.7f, 0.7f, 0.7f, 1.0f ), "%s", ci.name.toStdString().c_str() );
+		ImGui::SameLine();
+		ImGui::TextColored( ImVec4( 0.85f, 0.35f, 0.35f, 1.0f ), "(Deceased)" );
+	}
+	else
+	{
+		ImGui::TextColored( ImVec4( 1.0f, 0.9f, 0.6f, 1.0f ), "%s", ci.name.toStdString().c_str() );
+	}
 
 	// GoTo / Follow buttons (work for any tracked creature, not just gnomes)
 	if ( ci.id != 0 )
@@ -2423,11 +2434,17 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 	if ( isGnome )
 	{
 		// T-0021: skill title under the name (e.g. "Master Blacksmith"),
-		// then profession on the next line.
+		// then profession on the next line. For dead gnomes, dim them.
 		if ( !ci.displayTitle.isEmpty() )
-			ImGui::TextColored( ImVec4( 0.85f, 0.75f, 0.95f, 1.0f ), "%s", ci.displayTitle.toStdString().c_str() );
+		{
+			ImVec4 col = ci.isDead
+				? ImVec4( 0.55f, 0.5f, 0.6f, 1.0f )
+				: ImVec4( 0.85f, 0.75f, 0.95f, 1.0f );
+			ImGui::TextColored( col, "%s", ci.displayTitle.toStdString().c_str() );
+		}
 		ImGui::Text( "%s", ci.profession.toStdString().c_str() );
-		if ( !ci.activity.isEmpty() )
+		// T-0026: hide live activity for dead gnomes; corpses don't act.
+		if ( !ci.isDead && !ci.activity.isEmpty() )
 			ImGui::TextColored( ImVec4( 0.6f, 0.8f, 0.6f, 1.0f ), "%s", ci.activity.toStdString().c_str() );
 	}
 	else
@@ -2456,6 +2473,45 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 
 		if ( ci.healthStatus != "Healthy" )
 			ImGui::TextColored( ImVec4( 0.8f, 0.3f, 0.3f, 1.0f ), "%s", ci.healthStatus.toStdString().c_str() );
+	}
+
+	// T-0026: deceased status block — replaces the live state info
+	// (mood, activity, schedule, etc.) for dead creatures with a small
+	// summary of how/when they died and their current decomposition.
+	if ( ci.isDead )
+	{
+		ImGui::Spacing();
+		ImGui::TextColored( ImVec4( 0.85f, 0.35f, 0.35f, 1.0f ), "Deceased" );
+		ImGui::Indent( 8.0f );
+		if ( !ci.causeOfDeath.isEmpty() )
+			ImGui::Text( "Cause: %s", ci.causeOfDeath.toStdString().c_str() );
+		if ( ci.deathTick > 0 )
+		{
+			// 14400 ticks per game day (60 ticks/minute × 60 min/hour × 4
+			// hours/day per Masonry's day length). Approximate; if the
+			// constant ever changes, this will need updating but the
+			// display tolerates being off-by-one.
+			quint64 elapsed = ( GameState::tick > ci.deathTick )
+				? ( GameState::tick - ci.deathTick ) : 0;
+			int days = (int)( elapsed / 14400ULL );
+			if ( days <= 0 )      ImGui::Text( "Time: today" );
+			else if ( days == 1 ) ImGui::Text( "Time: 1 day ago" );
+			else                  ImGui::Text( "Time: %d days ago", days );
+		}
+		const char* rotLabel = "";
+		switch ( ci.rotStage )
+		{
+			case 0: rotLabel = "Fresh";    break;
+			case 1: rotLabel = "Decaying"; break;
+			case 2: rotLabel = "Rotting";  break;
+			case 3: rotLabel = "Skeleton"; break;
+			case 4: rotLabel = "Bones";    break;
+			default: break;
+		}
+		if ( *rotLabel )
+			ImGui::Text( "State: %s", rotLabel );
+		ImGui::Text( "%s", ci.isBuried ? "Buried" : "Unburied" );
+		ImGui::Unindent( 8.0f );
 	}
 
 	ImGui::Separator();
@@ -2588,61 +2644,67 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 
 	// ===== Everything below is GNOME-ONLY =====
 
-	// Mood bar (prominent, at the top)
+	// T-0026: hide mood + needs bars for dead gnomes (corpses don't
+	// have moods or hunger). Backstory, skills, equipment, and anatomy
+	// remain visible below as historical / forensic information.
+	if ( !ci.isDead )
 	{
-		ImVec4 moodColor;
-		if ( ci.mood > 65 )
-			moodColor = ImVec4( 0.2f, 0.7f, 0.3f, 1.0f );
-		else if ( ci.mood > 35 )
-			moodColor = ImVec4( 0.7f, 0.7f, 0.2f, 1.0f );
-		else if ( ci.mood > 15 )
-			moodColor = ImVec4( 0.8f, 0.4f, 0.1f, 1.0f );
-		else
-			moodColor = ImVec4( 0.8f, 0.1f, 0.1f, 1.0f );
-
-		ImGui::Text( "Mood" );
-		ImGui::SameLine( 80 );
-		ImGui::PushStyleColor( ImGuiCol_PlotHistogram, moodColor );
-		ImGui::ProgressBar( ci.mood / 100.0f, ImVec2( -50, 0 ), "" );
-		ImGui::PopStyleColor();
-		ImGui::SameLine();
-		if ( ci.mentalBreak )
-			ImGui::TextColored( ImVec4( 1.0f, 0.2f, 0.2f, 1.0f ), "!!!" );
-		else
-			ImGui::Text( "%d%%", ci.mood );
-
-		// Mood breakdown tooltip on hover
-		if ( ImGui::IsItemHovered() )
+		// Mood bar (prominent, at the top)
 		{
-			ImGui::SetTooltip( "Mood breakdown:\n  Base (Optimism): %d\n  Thoughts: %+d\n  Needs penalty: %+d\n  ────────\n  Total: %d",
-				ci.baseMood, ci.thoughtSum, ci.needsPenalty, ci.mood );
+			ImVec4 moodColor;
+			if ( ci.mood > 65 )
+				moodColor = ImVec4( 0.2f, 0.7f, 0.3f, 1.0f );
+			else if ( ci.mood > 35 )
+				moodColor = ImVec4( 0.7f, 0.7f, 0.2f, 1.0f );
+			else if ( ci.mood > 15 )
+				moodColor = ImVec4( 0.8f, 0.4f, 0.1f, 1.0f );
+			else
+				moodColor = ImVec4( 0.8f, 0.1f, 0.1f, 1.0f );
+
+			ImGui::Text( "Mood" );
+			ImGui::SameLine( 80 );
+			ImGui::PushStyleColor( ImGuiCol_PlotHistogram, moodColor );
+			ImGui::ProgressBar( ci.mood / 100.0f, ImVec2( -50, 0 ), "" );
+			ImGui::PopStyleColor();
+			ImGui::SameLine();
+			if ( ci.mentalBreak )
+				ImGui::TextColored( ImVec4( 1.0f, 0.2f, 0.2f, 1.0f ), "!!!" );
+			else
+				ImGui::Text( "%d%%", ci.mood );
+
+			// Mood breakdown tooltip on hover
+			if ( ImGui::IsItemHovered() )
+			{
+				ImGui::SetTooltip( "Mood breakdown:\n  Base (Optimism): %d\n  Thoughts: %+d\n  Needs penalty: %+d\n  ────────\n  Total: %d",
+					ci.baseMood, ci.thoughtSum, ci.needsPenalty, ci.mood );
+			}
 		}
+
+		// Needs bars
+		auto needBar = []( const char* label, int value ) {
+			ImVec4 col;
+			float v = qBound( 0.0f, value / 100.0f, 1.0f );
+			if ( value > 60 )
+				col = ImVec4( 0.2f, 0.6f, 0.3f, 1.0f );
+			else if ( value > 30 )
+				col = ImVec4( 0.7f, 0.6f, 0.1f, 1.0f );
+			else
+				col = ImVec4( 0.8f, 0.2f, 0.2f, 1.0f );
+			ImGui::Text( "%s", label );
+			ImGui::SameLine( 80 );
+			ImGui::PushStyleColor( ImGuiCol_PlotHistogram, col );
+			ImGui::ProgressBar( v, ImVec2( -50, 0 ), "" );
+			ImGui::PopStyleColor();
+			ImGui::SameLine();
+			ImGui::Text( "%d%%", qBound( 0, value, 100 ) );
+		};
+
+		needBar( "Hunger", ci.hunger );
+		needBar( "Thirst", ci.thirst );
+		needBar( "Sleep", ci.sleep );
+
+		ImGui::Separator();
 	}
-
-	// Needs bars
-	auto needBar = []( const char* label, int value ) {
-		ImVec4 col;
-		float v = qBound( 0.0f, value / 100.0f, 1.0f );
-		if ( value > 60 )
-			col = ImVec4( 0.2f, 0.6f, 0.3f, 1.0f );
-		else if ( value > 30 )
-			col = ImVec4( 0.7f, 0.6f, 0.1f, 1.0f );
-		else
-			col = ImVec4( 0.8f, 0.2f, 0.2f, 1.0f );
-		ImGui::Text( "%s", label );
-		ImGui::SameLine( 80 );
-		ImGui::PushStyleColor( ImGuiCol_PlotHistogram, col );
-		ImGui::ProgressBar( v, ImVec2( -50, 0 ), "" );
-		ImGui::PopStyleColor();
-		ImGui::SameLine();
-		ImGui::Text( "%d%%", qBound( 0, value, 100 ) );
-	};
-
-	needBar( "Hunger", ci.hunger );
-	needBar( "Thirst", ci.thirst );
-	needBar( "Sleep", ci.sleep );
-
-	ImGui::Separator();
 
 	// Backstory
 	if ( !ci.childhoodTitle.isEmpty() || !ci.adulthoodTitle.isEmpty() )
@@ -2702,7 +2764,8 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 	}
 
 	// Active Thoughts (sorted by impact, highest first)
-	if ( ImGui::CollapsingHeader( "Thoughts", ImGuiTreeNodeFlags_DefaultOpen ) )
+	// T-0026: hide for dead gnomes — corpses don't have thoughts.
+	if ( !ci.isDead && ImGui::CollapsingHeader( "Thoughts", ImGuiTreeNodeFlags_DefaultOpen ) )
 	{
 		ImGui::Indent( 8.0f );
 		if ( ci.thoughts.isEmpty() )

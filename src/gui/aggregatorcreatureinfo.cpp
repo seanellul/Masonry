@@ -141,6 +141,10 @@ void AggregatorCreatureInfo::onRequestCreatureUpdate( unsigned int id )
 	{
 		m_info.name = gnome->name();
 		m_info.displayTitle = gnome->displayTitle();
+		// T-0026: deceased state
+		m_info.isDead       = gnome->isDead();
+		m_info.causeOfDeath = gnome->causeOfDeath();
+		m_info.deathTick    = gnome->deathTick();
 		m_info.id = id;
 		m_info.profession = gnome->profession();
 		m_info.creatureType = "Gnome";
@@ -359,6 +363,10 @@ void AggregatorCreatureInfo::onRequestCreatureUpdate( unsigned int id )
 			m_info.species = S::s( "$CreatureName_" + monster->species() );
 			m_info.profession = m_info.species;
 			m_info.activity = "";
+			// T-0026: deceased state
+			m_info.isDead       = monster->isDead();
+			m_info.causeOfDeath = monster->causeOfDeath();
+			m_info.deathTick    = monster->deathTick();
 			populateAnatomy( m_info, monster );
 
 			m_info.hunger = 100;
@@ -387,6 +395,10 @@ void AggregatorCreatureInfo::onRequestCreatureUpdate( unsigned int id )
 				m_info.species = S::s( "$CreatureName_" + animal->species() );
 				m_info.profession = animal->isTame() ? "Tame" : "Wild";
 				m_info.activity = "";
+				// T-0026: deceased state
+				m_info.isDead       = animal->isDead();
+				m_info.causeOfDeath = animal->causeOfDeath();
+				m_info.deathTick    = animal->deathTick();
 				populateAnatomy( m_info, animal );
 
 				m_info.hunger = (int)animal->hunger();

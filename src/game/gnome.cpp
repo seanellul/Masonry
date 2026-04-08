@@ -1171,6 +1171,13 @@ CreatureTickResult Gnome::fullTick( quint64 tickNumber, bool seasonChanged, bool
 
 void Gnome::die()
 {
+	// T-0026: capture death metadata for the dead creature info panel.
+	// Specific death sites (Gnome::tickProduction need-deaths, combat
+	// in Anatomy / Creature) can call setCauseOfDeath beforehand for a
+	// more specific reason; otherwise the gnome dies with "Unknown".
+	if ( deathTick() == 0 ) setDeathTick( GameState::tick );
+	if ( causeOfDeath().isEmpty() ) setCauseOfDeath( "Killed" );
+
 	Creature::die();
 	cleanUpJob( false );
 
@@ -1250,6 +1257,8 @@ bool Gnome::evalNeeds( bool seasonChanged, bool dayChanged, bool hourChanged, bo
 				if ( newVal <= -100.f )
 				{
 					m_thoughtBubble = "";
+					setCauseOfDeath( need == "Hunger" ? "Starved to death" : "Died of thirst" );
+					setDeathTick( GameState::tick );
 					die();
 					if ( need == "Hunger" )
 					{

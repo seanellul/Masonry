@@ -248,6 +248,10 @@ public:
 	void setDeathTick( quint64 tick ) { m_deathTick = tick; }
 	void advanceRot( quint64 currentTick );
 
+	// T-0026: cause of death for the dead creature info panel.
+	QString causeOfDeath() const { return m_causeOfDeath; }
+	void setCauseOfDeath( QString cause ) { m_causeOfDeath = cause; }
+
 	QString thoughtBubble() const;
 	void setThoughtBubble( QString thought );
 
@@ -355,6 +359,7 @@ protected:
 	RotStage m_rotStage = RotStage::Fresh;
 	quint64 m_deathTick = 0;
 	bool m_isBuried     = false;
+	QString m_causeOfDeath; // T-0026
 
 	//variables formerlin in QVariantMap Creature::m_variables
 	QVariantList m_spriteDef;
