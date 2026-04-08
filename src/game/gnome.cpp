@@ -686,7 +686,31 @@ void Gnome::addThought( QString id, QString text, int moodValue, int durationTic
 	{
 		if ( t.id == id ) stacks++;
 	}
-	if ( stacks >= maxStacks ) return;
+	if ( stacks >= maxStacks )
+	{
+		// T-0024: refresh the soonest-to-expire existing instance instead
+		// of refusing to add. Without this, capped warning thoughts like
+		// "Dying of thirst" would age out after their duration even
+		// though the gnome is still in the critical state — the visible
+		// warning would silently disappear while the gnome continued
+		// dying. Refreshing keeps long-running conditions visible without
+		// unboundedly stacking the thought count.
+		int minIdx = -1;
+		int minTicks = INT_MAX;
+		for ( int i = 0; i < m_thoughts.size(); ++i )
+		{
+			if ( m_thoughts[i].id == id && m_thoughts[i].ticksLeft < minTicks )
+			{
+				minTicks = m_thoughts[i].ticksLeft;
+				minIdx = i;
+			}
+		}
+		if ( minIdx >= 0 )
+		{
+			m_thoughts[minIdx].ticksLeft = durationTicks;
+		}
+		return;
+	}
 
 	// Apply trait modulation to mood value
 	int modulated = moodValue;

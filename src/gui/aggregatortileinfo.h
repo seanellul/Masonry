@@ -48,6 +48,9 @@ struct GuiItemInfo
 	int containerUsed = 0;
 	int containerCap  = 0;
 	QStringList containedItemNames;
+	// T-0023: per-required-item availability for queued construction
+	// jobs. Only meaningful inside GuiTileInfo::requiredItems.
+	bool available = false;
 };
 
 struct GuiTileInfo

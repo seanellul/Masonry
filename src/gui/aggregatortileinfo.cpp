@@ -279,12 +279,19 @@ void AggregatorTileInfo::onUpdateTileInfo( unsigned int tileID )
 			m_tileInfo.requiredSkill         = job->requiredSkill();
 			m_tileInfo.requiredToolAvailable = rt.available ? "Yes" : "No";
 
+			// T-0023: refresh availability flags before reading them. The
+			// gnome job-search loop will normally have called this
+			// already, but we trigger it explicitly so the Tile Info
+			// panel doesn't show stale data on a fresh selection.
+			g->jm()->requiredItemsAvail( job->id() );
+
 			for ( auto rim : job->requiredItems() )
 			{
 				GuiItemInfo git;
-				git.text     = rim.itemSID;
-				git.count    = rim.count;
-				git.material = rim.materialSID;
+				git.text      = rim.itemSID;
+				git.count     = rim.count;
+				git.material  = rim.materialSID;
+				git.available = rim.available;
 
 				m_tileInfo.requiredItems.append( git );
 			}

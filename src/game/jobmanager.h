@@ -62,7 +62,6 @@ private:
 	bool isEnclosedBySameType( unsigned int jobID );
 
 	bool requiredToolExists( unsigned int jobID );
-	bool requiredItemsAvail( unsigned int jobID );
 
 	bool insertIntoPositionHash( unsigned int jobID );
 	void removeFromPositionHash( unsigned int jobID );
@@ -71,6 +70,10 @@ public:
 	JobManager() = delete;
 	JobManager( Game* parent );
 	~JobManager();
+
+	// T-0023: public so the tile info aggregator can refresh per-item
+	// availability flags before reading them in a fresh selection.
+	bool requiredItemsAvail( unsigned int jobID );
 
 	void onTick();
 

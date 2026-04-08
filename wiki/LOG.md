@@ -165,3 +165,10 @@ Reproduced live: a Distillery placement sat for an hour with no progress because
 ## [2026-04-07] task | intake: T-0024 Thirst warning thought decays out, hides death progression
 
 Reproduced live: gnomes hit critical thirst, displayed "Dying of thirst" thought, thought disappeared after ~600 ticks, gnomes kept working. They were not safe — needs death threshold is `-100`, not `0`. The "0% thirst" the player sees is only halfway from neutral to dead. Plus the warning thought has a stale-cap bug: `addThought("DyingOfThirst", -10, 600, 1)` with `maxStacks=1` means once the thought ages out, it can't be re-added even though the gnome is still in critical state. Fix: make `addThought` refresh existing thought duration when the cap is hit (preferred), and/or fire a separate event/alert for critical-need states. Same pattern probably affects hunger and sleep — verify.
+
+## [2026-04-07] task | done: T-0023, T-0024 (bug fix batch + 2 new intakes)
+
+- **T-0024** — Fixed `Gnome::addThought` to refresh the soonest-to-expire matching thought when the cap is hit, instead of refusing. Long-running critical conditions (Dying of thirst, Starving, etc.) now stay visible indefinitely. Benefits every capped thought via the shared chokepoint.
+- **T-0023** — Construction visibility. While investigating, found the **underlying bug**: `JobManager::requiredItemsAvail` was iterating `requiredItems()` by value, so the per-item `available` flag was permanently `false` for every job in the game. Fixed via index-based access into `m_requiredItems`. Plumbed `available` through `GuiItemInfo` to the UI. Tile Info Active Job section now shows yellow "Waiting for materials" warning + per-item OK/missing rows + Cancel button. Distillery scenario reads cleanly: `[OK] 1 × Table` `[ -] 2 × Barrel`.
+- **T-0025** (intake) — Body part duplication on damage. Dead gnomes found with 4 torsos; damage application is appending instead of mutating in place.
+- **T-0026** (intake) — Dead creature info should display differently. Currently shows the same UI as live gnomes (moods, activity, schedule). Should hide live-only sections, add a "Deceased" status block.

@@ -183,6 +183,13 @@ void EventConnector::onTerrainCommand( unsigned int tileID, QString cmd )
 			}
 		}
 	}
+	else if ( cmd == "CancelJob" )
+	{
+		// T-0023: cancel the queued (not-yet-built) construction job at
+		// this tile. Triggered from the Tile Info "Cancel" button when
+		// a placement is sitting unbuilt.
+		g->jm()->cancelJob( Position( tileID ) );
+	}
 }
 
 void EventConnector::onManageCommand( unsigned int tileID )

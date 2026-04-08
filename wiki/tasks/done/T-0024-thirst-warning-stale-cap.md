@@ -78,4 +78,63 @@ Recommend Option A unless scoping finds a concrete reason it breaks transient th
 
 ## Result
 
-*(Building agent fills in.)*
+Implemented Option A — `addThought` now refreshes the soonest-to-expire existing instance instead of refusing to re-add when the cap is hit.
+
+### Code
+
+`src/game/gnome.cpp` `Gnome::addThought` (around line 689): the previous early-return on `stacks >= maxStacks` now scans the existing thoughts for matching instances, picks the one with the lowest `ticksLeft`, and resets its `ticksLeft` to the new `durationTicks`. This is a 15-line block change that benefits **every capped thought** in the game, not just thirst.
+
+```cpp
+if ( stacks >= maxStacks )
+{
+    int minIdx = -1;
+    int minTicks = INT_MAX;
+    for ( int i = 0; i < m_thoughts.size(); ++i )
+    {
+        if ( m_thoughts[i].id == id && m_thoughts[i].ticksLeft < minTicks )
+        {
+            minTicks = m_thoughts[i].ticksLeft;
+            minIdx = i;
+        }
+    }
+    if ( minIdx >= 0 )
+    {
+        m_thoughts[minIdx].ticksLeft = durationTicks;
+    }
+    return;
+}
+```
+
+### Behavior change
+
+Before:
+1. Gnome's thirst hits < 5 → "Dying of thirst" thought added with 600 ticks remaining
+2. After 600 ticks → thought naturally expires and is removed
+3. Gnome still at thirst < 5, addThought called again → returns early because the cap is 1
+4. **Visible warning permanently gone** even though gnome is still dying
+
+After:
+1. Gnome's thirst hits < 5 → "Dying of thirst" thought added with 600 ticks remaining
+2. addThought called again next frame → cap hit, refresh soonest-expiring instance to 600 ticks
+3. Thought stays visible indefinitely as long as the gnome is in the critical state
+4. As soon as thirst rises above the threshold, addThought stops being called, the existing thought naturally expires after its remaining duration, and the warning fades out — the desired UX
+
+### Why every capped thought benefits
+
+The fix is in the shared chokepoint. So:
+- "Starving" stays visible while hunger < threshold (whatever that threshold is)
+- "Exhausted" stays visible while sleep < threshold
+- "Mental break" warnings stay visible
+- Trait-driven thoughts that were previously aging out behind the cap now refresh
+
+Side effect to watch: thoughts that **should** age out (e.g. "Productive day" capped at 5 stacks, intended to fade after a long-enough productive session) will now have their soonest-expiring instance refreshed if `tickProduction` keeps adding it. Most "transient" thoughts use higher max stacks (3–5) and re-add infrequently, so the impact should be minimal — but worth a watch in playtest.
+
+### What this doesn't fix (deferred to a follow-up)
+
+- The **death threshold confusion**: "0% thirst" still doesn't read as "halfway to death" because the player has no visual indicator of the -100 → +150 range. A red zone on the thirst bar from 0% to 50% (mapping to -100 → 0) would communicate the actual danger zone. Filed as a UI improvement candidate, not part of this fix.
+- A separate **critical-need event/alert** (top-of-screen toast when a gnome enters a life-threatening state). Mood thoughts are still passive UI; an active alert is a stronger signal. Filed as a future enhancement.
+
+### Build
+
+Green. 45 warnings, all pre-existing.
+

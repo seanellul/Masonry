@@ -179,9 +179,17 @@ bool JobManager::requiredItemsAvail( unsigned int jobID )
 		return job->m_cachedAvailability;
 	}
 
+	// T-0023: iterate the underlying m_requiredItems member by reference
+	// so that `available = true/false` actually sticks. The previous code
+	// did `for ( auto rim : job->requiredItems() )` which copied by value
+	// (requiredItems() returns a list by value), so the flag was written
+	// to a discarded local copy and the per-item availability was never
+	// observable from outside. JobManager is `friend class Job` so direct
+	// access to m_requiredItems is allowed.
 	bool found_all = true;
-	for ( auto rim : job->requiredItems() )
+	for ( int i = 0; i < job->m_requiredItems.size(); ++i )
 	{
+		RequiredItem& rim = job->m_requiredItems[i];
 		bool found = false;
 		for ( auto pos : job->possibleWorkPositions() )
 		{

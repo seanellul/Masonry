@@ -174,6 +174,52 @@ void drawTileInfo( ImGuiBridge& bridge )
 				ImGui::SameLine( 0, 10 );
 				ImGui::TextDisabled( "(%s)", ti.jobWorker.toStdString().c_str() );
 			}
+
+			// T-0023: required materials + status. Surfaces *why* a
+			// queued construction is sitting unbuilt — the recurring
+			// "I built a Distillery and nothing happened" failure
+			// mode where the player has no idea barrels are missing.
+			if ( !ti.requiredItems.isEmpty() )
+			{
+				bool anyMissing = false;
+				for ( const auto& req : ti.requiredItems )
+				{
+					if ( !req.available ) { anyMissing = true; break; }
+				}
+
+				if ( anyMissing && ti.jobWorker.isEmpty() )
+				{
+					ImGui::TextColored( ImVec4( 1.0f, 0.85f, 0.3f, 1.0f ),
+						ICON_FA_TRIANGLE_EXCLAMATION " Waiting for materials" );
+				}
+
+				ImGui::Indent( 8.0f );
+				for ( const auto& req : ti.requiredItems )
+				{
+					ImVec4 col = req.available
+						? ImVec4( 0.5f, 0.85f, 0.5f, 1.0f )    // green check
+						: ImVec4( 1.0f, 0.55f, 0.45f, 1.0f );  // red warning
+					const char* glyph = req.available ? "[OK]" : "[ -]";
+					QString matLabel = ( req.material.isEmpty() || req.material == "any" )
+						? QString() : ( req.material + " " );
+					ImGui::TextColored( col, "%s %d x %s%s", glyph,
+						req.count, matLabel.toStdString().c_str(),
+						req.text.toStdString().c_str() );
+				}
+				ImGui::Unindent( 8.0f );
+			}
+
+			// Cancel button — works for any queued job, not just construction
+			if ( bridge.selectedTileID != 0 )
+			{
+				ImGui::Spacing();
+				if ( ImGui::SmallButton( ICON_FA_XMARK " Cancel job" ) )
+				{
+					bridge.cmdTerrainCommand( bridge.selectedTileID, "CancelJob" );
+				}
+				if ( ImGui::IsItemHovered() )
+					ImGui::SetTooltip( "Cancel this queued job and free the tile." );
+			}
 		}
 	}
 

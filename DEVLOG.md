@@ -6,6 +6,36 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-07] Construction visibility + thirst warning fix + bug intakes (T-0023, T-0024, intake T-0025/T-0026)
+
+**Milestone**: Bug fixes
+**Files changed**: `src/game/jobmanager.h/cpp`, `src/game/gnome.cpp`, `src/gui/aggregatortileinfo.h/cpp`, `src/gui/eventconnector.cpp`, `src/gui/ui/ui_tileinfo.cpp`, plus four task files in `wiki/tasks/`
+
+### Changes
+
+- **T-0024 — Thirst warning thought stale-cap fix.** `Gnome::addThought` previously refused to add when the cap was hit, so the "Dying of thirst" warning thought aged out after 600 ticks and never came back even though the gnome was still in the critical state. Replaced the early return with logic that finds the soonest-to-expire existing instance with the matching id and refreshes its `ticksLeft` to the new duration. Long-running critical conditions now stay visible indefinitely; the visible warning fades naturally as soon as the gnome leaves the critical state. **Benefits every capped thought in the game**, not just thirst — hunger "Starving", sleep "Exhausted", mental break warnings, etc. all get the same fix from the shared chokepoint.
+
+- **T-0023 — Construction visibility (and an underlying job bug).** While investigating "why doesn't my Distillery get built", discovered the underlying problem: **`JobManager::requiredItemsAvail` was iterating `requiredItems()` by value**, so the per-item `available` flag was being written to a discarded local copy and was permanently `false` for every job in the game. Fixed by switching to index-based access into `job->m_requiredItems` (the actual member field). `JobManager` is `friend class Job` so direct access is allowed.
+
+  With the underlying bug fixed, plumbed the data through to the UI: added `bool available` to `GuiItemInfo`, populated it in the tile info aggregator (which now also explicitly calls `requiredItemsAvail` on a fresh selection so the flags are current), and rendered in `drawTileInfo`'s Active Job section:
+  - Yellow `[!] Waiting for materials` warning when items are missing AND no worker is on the job.
+  - Per-required-item rows with colored `[OK]` (green) / `[ -]` (red) prefixes and `count × material name` text.
+  - `Cancel job` button that dispatches a new `"CancelJob"` terrain command, wired through `EventConnector::onTerrainCommand` → `JobManager::cancelJob(Position)`.
+
+  The Distillery scenario the player ran into now reads as `BuildWorkshop` → `[!] Waiting for materials` → `[OK] 1 x Table` `[ -] 2 x Barrel` → `Cancel job`. The hour-of-confusion failure mode is gone.
+
+- **T-0025 — Body part duplication on damage (intake)**. Bug report from playtest: gnomes attacked by animals were accumulating extra `torso` entries in their anatomy on each hit. Dead gnomes found with 4 torsos. The damage application code is appending instead of mutating in place. Filed for investigation.
+
+- **T-0026 — Dead creature info should display differently (intake)**. Bug report: a dead gnome's Creature Info panel still shows the same UI as a live one — moods, thoughts, current activity, schedule. Corpses shouldn't have moods. Filed with a design proposal: hide live-only sections when `isDead`, show a "Deceased" status block with cause of death + rot stage + burial status, keep historical sections (backstory, final skills/stats/equipment, anatomy) visible.
+
+### Technical Details
+
+- The `requiredItemsAvail` bug was the highest-leverage fix in this batch — affected every job in the game, not just construction. Future features (auto-fetch missing materials, item-flow visualization, smarter job-priority logic) can now query per-item availability accurately.
+- `addThought` fix is in the shared chokepoint, so it benefits any capped thought type. Side effect to watch in playtest: thoughts that should fade after extended exposure (e.g. "Productive day" capped at 5 stacks) will now refresh indefinitely if `tickProduction` keeps adding them. Most transient thoughts use higher caps (3–5) so the impact should be minimal.
+- Build: green. References: `wiki/tasks/done/T-0023-*.md`, `wiki/tasks/done/T-0024-*.md`, `wiki/tasks/inbox/T-0025-*.md`, `wiki/tasks/inbox/T-0026-*.md`.
+
+---
+
 ## [2026-04-07] Texture pack system v1 (T-0022)
 
 **Milestone**: Modding / community
