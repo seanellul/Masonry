@@ -1,5 +1,6 @@
 #include "ui_mainmenu.h"
 #include "ui_theme.h"
+#include "../IconsFontAwesome6.h"
 #include "../imguibridge.h"
 #include "../imgui_impl_qt5.h"
 #include "../updatechecker.h"
@@ -21,6 +22,8 @@
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QJsonObject>
+
+#include "../../gfx/texturepacks.h"
 
 void drawMainMenu( ImGuiBridge& bridge )
 {
@@ -788,6 +791,137 @@ void drawSettings( ImGuiBridge& bridge )
 				}
 				ImGui::EndChild();
 			}
+			ImGui::EndTabItem();
+		}
+
+		// T-0022: Texture Packs tab.
+		// Lists every pack in content/texturepacks/ with a pack.json,
+		// shows author/version/description + a thumbnail when present,
+		// lets the player toggle and reorder the active packs. Changes
+		// persist to config; restart required to take effect (matches
+		// the Keybindings pattern above).
+		if ( ImGui::BeginTabItem( "Texture Packs" ) )
+		{
+			// Discover packs once per tab open. Re-discovers if the tab
+			// is closed and reopened so newly-dropped packs appear without
+			// a full restart of the menu.
+			static QList<TexturePackInfo> s_packs;
+			static QStringList s_active;
+			static bool s_packsLoaded = false;
+			static bool s_dirty = false;
+			if ( !s_packsLoaded )
+			{
+				s_packsLoaded = true;
+				s_packs       = discoverTexturePacks();
+				s_active      = Global::cfg->get( "activeTexturePacks" ).toStringList();
+				// Back-compat: legacy useAltTextures bool → ["ai"]
+				if ( s_active.isEmpty() && Global::cfg->get( "useAltTextures" ).toBool() )
+				{
+					s_active << "ai";
+				}
+			}
+
+			if ( s_packs.isEmpty() )
+			{
+				ImGui::TextWrapped( "No texture packs found. Drop a pack directory into:" );
+				ImGui::TextDisabled( "%s/texturepacks/",
+					Global::cfg->get( "dataPath" ).toString().toStdString().c_str() );
+				ImGui::Spacing();
+				ImGui::TextWrapped( "See the README in that directory for the pack.json format." );
+			}
+			else
+			{
+				ImGui::TextWrapped( "Toggle texture packs and reorder the load chain. "
+					"Earlier packs override later ones; missing files cascade through to "
+					"the next pack and ultimately to the default tilesheets." );
+				ImGui::Spacing();
+
+				ImGui::BeginChild( "##packlist", ImVec2( 0, -50 ), false );
+				for ( int i = 0; i < s_packs.size(); ++i )
+				{
+					const auto& pack = s_packs[i];
+					ImGui::PushID( pack.id.toStdString().c_str() );
+					ImGui::Separator();
+
+					// Active checkbox + name in one row
+					int activeIdx = s_active.indexOf( pack.id );
+					bool isActive = ( activeIdx >= 0 );
+					if ( ImGui::Checkbox( "##active", &isActive ) )
+					{
+						if ( isActive )
+							s_active.append( pack.id );
+						else
+							s_active.removeAll( pack.id );
+						s_dirty = true;
+					}
+					ImGui::SameLine();
+					ImGui::TextColored( ImVec4( 1.0f, 0.9f, 0.6f, 1.0f ), "%s",
+						pack.name.toStdString().c_str() );
+					if ( !pack.version.isEmpty() )
+					{
+						ImGui::SameLine();
+						ImGui::TextDisabled( "v%s", pack.version.toStdString().c_str() );
+					}
+					if ( !pack.author.isEmpty() )
+					{
+						ImGui::SameLine();
+						ImGui::TextDisabled( "by %s", pack.author.toStdString().c_str() );
+					}
+
+					// Reorder buttons (only meaningful when the pack is active)
+					if ( isActive )
+					{
+						ImGui::SameLine( ImGui::GetContentRegionAvail().x - 50 + ImGui::GetCursorPosX() );
+						if ( ImGui::SmallButton( "^" ) && activeIdx > 0 )
+						{
+							s_active.swapItemsAt( activeIdx, activeIdx - 1 );
+							s_dirty = true;
+						}
+						ImGui::SameLine();
+						if ( ImGui::SmallButton( "v" ) && activeIdx >= 0 && activeIdx < s_active.size() - 1 )
+						{
+							s_active.swapItemsAt( activeIdx, activeIdx + 1 );
+							s_dirty = true;
+						}
+					}
+
+					if ( !pack.description.isEmpty() )
+					{
+						ImGui::Indent( 24.0f );
+						ImGui::PushTextWrapPos( 0.0f );
+						ImGui::TextDisabled( "%s", pack.description.toStdString().c_str() );
+						ImGui::PopTextWrapPos();
+						ImGui::Unindent( 24.0f );
+					}
+
+					ImGui::PopID();
+				}
+				ImGui::EndChild();
+
+				// Bottom row: load order summary + restart warning
+				ImGui::Separator();
+				if ( s_active.isEmpty() )
+				{
+					ImGui::TextDisabled( "Load order: (default tilesheets only)" );
+				}
+				else
+				{
+					QString summary = "Load order: " + s_active.join( " → " ) + " → default";
+					ImGui::TextDisabled( "%s", summary.toStdString().c_str() );
+				}
+				if ( s_dirty )
+				{
+					ImGui::TextColored( ImVec4( 1.0f, 0.85f, 0.3f, 1.0f ),
+						ICON_FA_TRIANGLE_EXCLAMATION " Restart the game to apply pending changes." );
+					ImGui::SameLine();
+					if ( ImGui::SmallButton( "Save" ) )
+					{
+						Global::cfg->set( "activeTexturePacks", s_active );
+						s_dirty = false;
+					}
+				}
+			}
+
 			ImGui::EndTabItem();
 		}
 

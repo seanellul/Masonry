@@ -16,6 +16,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 #include "spritefactory.h"
+#include "texturepacks.h"
 
 #include "../base/config.h"
 #include "../base/db.h"
@@ -103,20 +104,27 @@ bool SpriteFactory::init()
 		if ( !m_pixmapSources.contains( tilesheet ) )
 		{
 			QPixmap pm;
-			const QString dataPath = Global::cfg->get( "dataPath" ).toString();
-			const bool useAlt      = Global::cfg->get( "useAltTextures" ).toBool();
-			loaded = false;
-			if ( useAlt )
+
+			// T-0022: resolve through the active texture pack chain.
+			// Reads `activeTexturePacks` from config (an ordered list of
+			// pack ids). Each pack is checked in order; missing files
+			// cascade to the next pack and ultimately to the default
+			// content/tilesheet/. The legacy `useAltTextures` bool is
+			// honored as a back-compat shim for one release: when true and
+			// activeTexturePacks is unset, behave as if it were ["ai"].
+			QStringList activePacks = Global::cfg->get( "activeTexturePacks" ).toStringList();
+			if ( activePacks.isEmpty() && Global::cfg->get( "useAltTextures" ).toBool() )
 			{
-				loaded = pm.load( dataPath + "/tilesheet_ai/" + tilesheet );
-				if ( !loaded )
-				{
-					qDebug() << "SpriteFactory: AI texture pack missing" << tilesheet << "— falling back to default";
-				}
+				activePacks << "ai";
 			}
+
+			QString resolved = resolveTilesheetPath( activePacks, tilesheet );
+			loaded = pm.load( resolved );
 			if ( !loaded )
 			{
-				loaded = pm.load( dataPath + "/tilesheet/" + tilesheet );
+				qDebug() << "SpriteFactory: failed to load via pack chain" << tilesheet << "(tried" << resolved << ")";
+				// Final defensive fallback to the raw default path.
+				loaded = pm.load( Global::cfg->get( "dataPath" ).toString() + "/tilesheet/" + tilesheet );
 			}
 			if ( !loaded )
 			{

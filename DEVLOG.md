@@ -6,6 +6,45 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-07] Texture pack system v1 (T-0022)
+
+**Milestone**: Modding / community
+**Files changed**: `content/texturepacks/` (new), `src/gfx/texturepacks.h/cpp` (new), `src/gfx/spritefactory.cpp`, `src/gui/ui/ui_mainmenu.cpp`
+
+### Changes
+
+- **T-0022 — Texture pack system v1**, generalized from the v0 single-hardcoded-path baseline into a real Minecraft-style multi-pack feature.
+  - **Pack discovery**: scans `content/texturepacks/` for any subdirectory containing `pack.json`. Each becomes a `TexturePackInfo` (id, name, author, version, description, dirPath, previewPath).
+  - **Pack metadata**: every pack ships a `pack.json` with `id`, `name`, `author`, `version`, `description`, optional `preview`. Documented in the new `content/texturepacks/README.md`.
+  - **Multi-pack load order**: config holds an ordered `activeTexturePacks` string list. Earlier packs override later ones; missing files cascade to the next pack and ultimately to the default `content/tilesheet/`. The per-file inheritance from v0 generalizes naturally — a "fancy gnomes" pack can ship 1 file and inherit everything else.
+  - **Settings → Texture Packs tab**: new player-facing UI in `drawSettings()`. Each row shows checkbox + name (gold) + version + author + description, with ↑/↓ reorder buttons when active. Bottom row shows the resolved load order summary (`pack-a → pack-b → default`) and a yellow "Restart to apply" warning + Save button when there are pending changes.
+  - **v0 pack migrated**: `git mv content/tilesheet_ai → content/texturepacks/ai/tilesheet`, with a new `pack.json` describing it as "AI Generated v0.1 by seanellul".
+  - **Back-compat shim**: `useAltTextures: true` (legacy bool) is honored as if the new list were `["ai"]`. One-release transitional behavior.
+  - **`SpriteFactory::init()`** now calls `resolveTilesheetPath(activePacks, tilesheet)` from the new `texturepacks.h`, replacing the v0 hardcoded `tilesheet_ai/` branch.
+
+### Both pack styles work transparently
+
+Per the design conversation: pack authors choose between palette-friendly base atlases (small files, designed to tint via the existing `createSprite("Chair", { material })` material composition) and high-fidelity hand-painted atlases (larger files, look great without much tinting). The engine doesn't distinguish — it just loads the highest-priority `gnomes.png` from the active pack chain. Same code path, different art philosophy. The README explains both styles.
+
+### How a pack author ships a new pack
+
+1. `mkdir content/texturepacks/<id>/tilesheet`
+2. Drop atlas PNGs in `tilesheet/` (any subset; missing files cascade)
+3. Write a `pack.json` next to `tilesheet/`
+4. Restart the game → it shows up in Settings → Texture Packs
+5. Toggle on, restart, see it in-game
+
+No build step, no engine changes, no recompile.
+
+### Technical Details
+
+- New `src/gfx/texturepacks.h/cpp` exposes `discoverTexturePacks()` and `resolveTilesheetPath(activePackIDs, filename)`. Both are free functions used by SpriteFactory and the settings UI.
+- The settings UI lazy-loads the discovered pack list once per session (static cache). A "Refresh" button is a future ergonomic improvement.
+- Build: green. Required a CMake re-configure to pick up the new source files (the project uses `file(GLOB_RECURSE …)` without `CONFIGURE_DEPENDS`).
+- References: `wiki/tasks/done/T-0022-*.md`.
+
+---
+
 ## [2026-04-07] Creature Info: GoTo + Follow camera buttons
 
 **Milestone**: UI/UX

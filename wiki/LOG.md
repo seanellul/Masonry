@@ -153,3 +153,7 @@ Dependencies: T-0019 → T-0020 → T-0021 (group structure is shared); T-0018 s
 ## [2026-04-07] task | done: T-0016 (skills phase 4 — core colony wiring)
 
 - **T-0016** — Wire 5 core colony skills + audit correction. **Major finding**: the original T-0008a audit was wrong about Mining/Woodcutting/Farming/Construction being purely thought-only. The work loop at `gnomeactions.cpp:1758-1763` already reads `m_job->requiredSkill()` and applies a generic duration multiplier — these skills have been speed-scaled all along. Audit page corrected. Mining yield bonus added (`canwork.cpp:mineWall`). Tooltip rewrites for 5 skills to honestly describe what they do. Yield wiring for Woodcutting/Farming deferred (require touching Plant class internals); Medic deferred (separate code area).
+
+## [2026-04-07] task | done: T-0022 (texture pack system v1)
+
+- **T-0022** — Generalized v0's hardcoded `tilesheet_ai/` toggle into a real Minecraft-style pack system. Pack discovery scans `content/texturepacks/`, each pack ships a `pack.json` with id/name/author/version/description, multi-pack load order via `activeTexturePacks` config list, per-file fallback through the active chain to default `tilesheet/`. New Settings → Texture Packs tab. v0 AI pack migrated to `content/texturepacks/ai/`. Both palette-friendly and high-fidelity pack styles work transparently — the engine just loads files, art philosophy is the author's choice. Documented in `content/texturepacks/README.md`.
