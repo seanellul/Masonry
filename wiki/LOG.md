@@ -135,3 +135,8 @@ Seven new tasks captured from the skills redesign discussion. These flow from th
 - **T-0021** — Skill titles: "Master Smith", "Grandmaster of Magic", etc. Pure flair but sells the design.
 
 Dependencies: T-0019 → T-0020 → T-0021 (group structure is shared); T-0018 should land before T-0019 to avoid stale references. T-0015 is independent but waits on user's stat-system brainstorm.
+
+## [2026-04-07] task | done: T-0018, T-0019 (skills cleanup + grouping)
+
+- **T-0018** — Removed 4 skills (Horticulture, Tinkering, Mechanic, Caretaking → Medic). SQL + enum + jobmanager + gnome.cpp mood checks + 6 backstory rows redirected. Build green.
+- **T-0019** — Restructured `SkillGroups` from 14 → 15 rows (10 logical groups + 3 standalones + 2 preserved combat groups). All data — the aggregator and population view are already data-driven from the SkillGroups DB table, so zero C++ changes were needed. Butchery moved to Hearth (with Cooking + Brewing); Field group created (Farming + AnimalHusbandry + Fishing).

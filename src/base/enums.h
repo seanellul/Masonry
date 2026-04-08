@@ -74,14 +74,11 @@ enum DBSkillIds : int
 	SK_Leatherworking,
 	SK_Bonecarving,
 	SK_Prospecting,
-	SK_Tinkering,
 	SK_Machining,
 	SK_Engineering,
-	SK_Mechanic,
 	SK_AnimalHusbandry,
 	SK_Butchery,
 	SK_Fishing,
-	SK_Horticulture,
 	SK_Farming,
 	SK_Cooking,
 	SK_Brewing,
@@ -97,7 +94,6 @@ enum DBSkillIds : int
 	SK_Crossbow,
 	SK_Gun,
 	SK_Medic,
-	SK_Caretaking,
 	SK_MagicNature,
 	SK_MagicGeomancy
 };

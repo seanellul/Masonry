@@ -68,14 +68,11 @@ JobManager::JobManager( Game* parent ) :
 	m_skillToInt.insert( "Leatherworking", SK_Leatherworking );
 	m_skillToInt.insert( "Bonecarving", SK_Bonecarving );
 	m_skillToInt.insert( "Prospecting", SK_Prospecting );
-	m_skillToInt.insert( "Tinkering", SK_Tinkering );
 	m_skillToInt.insert( "Machining", SK_Machining );
 	m_skillToInt.insert( "Engineering", SK_Engineering );
-	m_skillToInt.insert( "Mechanic", SK_Mechanic );
 	m_skillToInt.insert( "AnimalHusbandry", SK_AnimalHusbandry );
 	m_skillToInt.insert( "Butchery", SK_Butchery );
 	m_skillToInt.insert( "Fishing", SK_Fishing );
-	m_skillToInt.insert( "Horticulture", SK_Horticulture );
 	m_skillToInt.insert( "Farming", SK_Farming );
 	m_skillToInt.insert( "Cooking", SK_Cooking );
 	m_skillToInt.insert( "Brewing", SK_Brewing );
@@ -91,7 +88,6 @@ JobManager::JobManager( Game* parent ) :
 	m_skillToInt.insert( "Crossbow", SK_Crossbow );
 	m_skillToInt.insert( "Gun", SK_Gun );
 	m_skillToInt.insert( "Medic", SK_Medic );
-	m_skillToInt.insert( "Caretaking", SK_Caretaking );
 	m_skillToInt.insert( "MagicNature", SK_MagicNature );
 	m_skillToInt.insert( "MagicGeomancy", SK_MagicGeomancy );
 

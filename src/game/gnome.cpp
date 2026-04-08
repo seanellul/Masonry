@@ -1323,7 +1323,7 @@ bool Gnome::evalNeeds( bool seasonChanged, bool dayChanged, bool hourChanged, bo
 			}
 
 			// Farming
-			if ( skill == "Farming" || skill == "Horticulture" )
+			if ( skill == "Farming" )
 			{
 				addThought( "FarmingWork", "Working the soil", 1, 200, 1 );
 				if ( appetite > 15 )
@@ -1340,8 +1340,8 @@ bool Gnome::evalNeeds( bool seasonChanged, bool dayChanged, bool hourChanged, bo
 			if ( skill == "Construction" || skill == "Masonry" )
 				addThought( "BuildingWork", "Building something lasting", 2, 300, 1 );
 
-			// Engineering / Tinkering
-			if ( skill == "Tinkering" || skill == "Engineering" || skill == "Machining" )
+			// Engineering
+			if ( skill == "Engineering" || skill == "Machining" )
 			{
 				if ( curiosity > 15 )
 					addThought( "TinkeringJoy", "Fascinated by the mechanism", 3, 400, 1 );
@@ -1357,7 +1357,7 @@ bool Gnome::evalNeeds( bool seasonChanged, bool dayChanged, bool hourChanged, bo
 				addThought( "WoodcuttingWork", "Felling timber", 1, 200, 1 );
 
 			// Medical
-			if ( skill == "Medic" || skill == "Caretaking" )
+			if ( skill == "Medic" )
 			{
 				if ( empathy > 15 )
 					addThought( "HealingOthers", "Helping someone in pain", 4, 400, 1 );

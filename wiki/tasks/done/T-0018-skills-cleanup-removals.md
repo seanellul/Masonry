@@ -78,4 +78,52 @@ If desired, add a save-load migration that strips removed skill keys from `m_ski
 
 ## Result
 
-*(Building agent fills in.)*
+Implemented across SQL, C++ enums, and C++ source.
+
+### `content/db/ingnomia.db.sql`
+
+- **Removed 4 `Skills` rows**: `Tinkering`, `Mechanic`, `Horticulture`, `Caretaking`.
+- **Removed 8 Translation rows** for `$SkillName_*` and `$SkillTitle_*` of the four removed skills.
+- **Removed 4 `$SkillDesc_*` rows** (the T-0008b tooltip rows).
+- **Updated 3 `SkillGroups` rows** to drop removed skills:
+  - `Engineer`: `Tinkering|Machining|Engineering|Mechanic` → `Machining|Engineering`
+  - `Agriculture`: `Horticulture|Farming|Cooking|Brewing` → `Farming|Cooking|Brewing`
+  - `Doctor`: `Medic|Caretaking` → `Medic`
+- **Updated 6 `Backstories` rows** that granted removed skills, redirecting grants to surviving alternatives:
+  - `ChildTinkersApprentice`: `Tinkering:2|Engineering:1` → `Engineering:2|Machining:1`
+  - `ChildHerbalGatherer`: `Horticulture:2|Medic:1` → `Farming:2|Medic:1`
+  - `AdultTravelingHealer`: `Medic:3|Caretaking:1` → `Medic:4`
+  - `AdultClockmaker`: `Tinkering:3|Engineering:1` → `Engineering:3|Machining:1`
+  - `AdultHerbalist`: `Horticulture:2|Medic:1` → `Farming:2|Medic:1`
+  - `AdultFarmer`: `Farming:3|Horticulture:1` → `Farming:4`
+
+### `src/base/enums.h`
+
+Removed `SK_Tinkering`, `SK_Mechanic`, `SK_Horticulture`, `SK_Caretaking` from the `Skill` enum. Verified via grep that no code outside `enums.h` and `jobmanager.cpp` references these enum values, so reordering is safe (the values are runtime-only, never serialized).
+
+### `src/game/jobmanager.cpp`
+
+Removed the four `m_skillToInt.insert(...)` calls for the dead skills.
+
+### `src/game/gnome.cpp` (mood checks at `tickProduction`)
+
+- Line ~1326 (Farming): `skill == "Farming" || skill == "Horticulture"` → `skill == "Farming"`.
+- Line ~1344 (Engineering): `skill == "Tinkering" || skill == "Engineering" || skill == "Machining"` → `skill == "Engineering" || skill == "Machining"`. Updated comment from "Engineering / Tinkering" to "Engineering".
+- Line ~1360 (Medical): `skill == "Medic" || skill == "Caretaking"` → `skill == "Medic"`.
+
+### Save migration
+
+**Not shipped**. Old saves with orphan skill keys (`m_skills["Horticulture"]` etc.) load fine because nothing reads those keys anymore — the orphan QVariants take a few bytes and are harmless. If a user notices and complains, a one-shot migration can strip removed keys on load. For now: ignore.
+
+### Build
+
+Green. **0 errors**, 804 warnings — all pre-existing `-Winconsistent-missing-override` warnings re-emitted across the wider rebuild triggered by editing `enums.h` (touching the enum forces every translation unit that includes it to rebuild). The actual count of *unique* warnings is unchanged from baseline.
+
+### Verification
+
+- Inbox no longer references the four skills.
+- The Population view will no longer show columns for the removed skills (the skills column iteration is data-driven from the `Skills` DB table).
+- Group view will show updated group rosters.
+- Loaded saves still work (orphan skill keys ignored).
+
+The way is now clear for **T-0019** (skill grouping in Population view) since the dead skills have been removed from `SkillGroups` and won't pollute the new structure.

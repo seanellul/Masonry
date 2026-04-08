@@ -6,6 +6,37 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-07] Skills cleanup + grouping restructure (T-0018, T-0019)
+
+**Milestone**: Skills redesign — phase 1
+**Files changed**: `content/db/ingnomia.db.sql`, `src/base/enums.h`, `src/game/jobmanager.cpp`, `src/game/gnome.cpp`
+
+### Changes
+
+- **T-0018 — Cleanup removals.** Removed 4 dead/redundant skills:
+  - **Horticulture** (duplicate of Farming)
+  - **Tinkering** (no workshop, no system)
+  - **Mechanic** (no consumer)
+  - **Caretaking** (functionally identical to Medic — merged)
+  
+  Removed from `Skills` table, `Translation` (`$SkillName_*`, `$SkillTitle_*`, `$SkillDesc_*`), `SkillGroups` rosters, the `Skill` enum in `enums.h`, the `m_skillToInt` registrations in `jobmanager.cpp`, and the mood-trigger checks in `gnome.cpp::tickProduction()`. Six `Backstories` rows that granted removed skills were redirected to surviving alternatives (e.g., `AdultFarmer`'s `Farming:3|Horticulture:1` → `Farming:4`). Old saves with orphan skill keys load fine — the orphans are harmless.
+
+- **T-0019 — Skill grouping restructure.** The Population view's group infrastructure is already data-driven from the `SkillGroups` DB table — so this is a pure data restructure, no C++ changes needed. Replaced the original 14 `SkillGroups` rows with the new 15-row structure:
+  - **10 logical groups**: Earthworking, Forestry, Smithing, Textiles, Bone & Hide, Fine Craft, Engineering, Hearth, Field, Magic
+  - **3 standalones** (single-skill groups so the existing renderer handles them): Construction, Hauling, Medic
+  - **2 preserved combat groups**: Combat, Defense (will be retired in T-0015 when combat skills become derived stats)
+  - Notable moves: **Butchery** went from Rancher → Hearth (per user's "keep Butchery distinct, group under Hearth" decision). **Prospecting** moved from MiscCraft → Earthworking (the Prospector workshop's purpose is identifying ore veins). **Crossbow** and **Gun** added to Combat (they were missing from the original definition).
+
+### Technical Details
+
+- All 43 surviving skills (47 minus 4 removed) are in exactly one group, verified by cross-check.
+- Save format unchanged. Save migration to strip orphan removed-skill keys is deferred — orphans are harmless.
+- The aggregator (`AggregatorPopulation::AggregatorPopulation` at `aggregatorpopulation.cpp:37`) already iterates `SkillGroups` from DB and builds `m_skillIds` with `gsi.group` set per row. The population view's `buildGroupIndex` (`ui_sidepanels.cpp:515`) reads `skill.group` to cluster columns. Both changes were data-only.
+- Build: green. The wider rebuild from touching `enums.h` re-emitted ~800 pre-existing `-Winconsistent-missing-override` warnings; the second incremental build (data-only T-0019 change) was clean.
+- References: `wiki/tasks/done/T-0018-*.md`, `wiki/tasks/done/T-0019-*.md`, `wiki/dev/subsystems/skills.md`.
+
+---
+
 ## [2026-04-07] Groves subsystem audit (T-0010)
 
 **Milestone**: Knowledge infrastructure
