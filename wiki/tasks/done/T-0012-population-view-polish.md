@@ -44,8 +44,27 @@ Both actions should happen on a single click on the name. This should work from 
 
 ## Plan
 
-*(Scoping agent: (1) Find the population view rendering code in `src/gui/ui/`. (2) Identify where the column headers are generated and where the 5-char truncation is happening. Check both the header string source (likely a skill enum or DB query) and the render path. The fix is almost certainly removing a `substr(0, 5)` or equivalent. (3) Locate the gnome-name cell render code. Wire an `ImGui::Selectable` or button + click handler that dispatches a "center camera on entity + open info panel" action. Check whether a "center on entity" helper already exists — the Tile Info panel's `(i)` button and the test controller probably both have something reusable. (4) Verify this works across all five population view tabs without duplicating the click handler in five places — lift it into the shared row renderer.)*
+Population view lives in `drawPopulationPanel` in `src/gui/ui/ui_sidepanels.cpp` (~line 540). Skills tab has two variants:
+
+- **Individual view** (~line 580): `ImGui::BeginTable("SkillsIndiv", ...)` + `TableSetupColumn(skill.name.left(5).toStdString().c_str(), 0, 50.0f)` — the `.left(5)` literally truncates every column header to 5 characters. That's the bug. Fix = drop `.left(5)`, widen the column from 50 to 100.
+- **Group view** (~line 660): `TableSetupColumn(grp.name.toStdString().c_str(), 0, 82.0f)` — no truncation, fine as-is.
+
+Gnome-name click handler lives in both views at ~line 608 (indiv) and ~line 727 (group). Both use `ImGui::Selectable(gnome.name, …)` and only set `bridge.selectedGnomeID`. The bridge already exposes:
+- `cmdNavigateToEntity(id)` (declared at `imguibridge.h:99`) — sets a pending camera-nav target consumed by MainWindow.
+- `onOpenCreatureInfo(creatureID)` (declared at `imguibridge.h:406`) — requests creature update + sets `activeSidePanel = SidePanel::CreatureInfo`.
+
+Fix: on name click, call both in addition to the existing `selectedGnomeID = …`.
+
+Schedule / Personality / Social / Professions tabs: out of scope for this autonomous pass — separate tab implementations, can be layered on later if the pattern above works.
 
 ## Result
 
-*(Building agent fills in after implementation.)*
+Implemented in `src/gui/ui/ui_sidepanels.cpp`:
+
+1. **Clipped headers** (~line 594–600): removed `.left(5)` from the individual-view skill column header and bumped the column width from `50.0f` to `100.0f` so full skill names like `Woodcutting` / `Woodcarving` render distinctly.
+2. **Gnome-name navigation — individual view** (~line 608–615): clicking the name `Selectable` now calls `bridge.cmdNavigateToEntity(gnome.id)` (camera jump) and `bridge.onOpenCreatureInfo(gnome.id)` (opens character info panel) in addition to setting `selectedGnomeID`.
+3. **Gnome-name navigation — group view** (~line 727–735): same three-line change as above.
+
+Build: green (11 warnings, all pre-existing).
+
+**Deferred** (out of this autonomous pass): extending the navigation behavior to the Schedule / Personality / Social / Professions tabs. Those tabs have separate rendering code paths and the task's scope of "works from any tab" can be closed later in a small follow-up now that the pattern is established in two sites.

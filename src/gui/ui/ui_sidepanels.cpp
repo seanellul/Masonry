@@ -593,7 +593,10 @@ void drawPopulationPanel( ImGuiBridge& bridge )
 
 						for ( const auto& skill : bridge.populationInfo.gnomes[0].skills )
 						{
-							ImGui::TableSetupColumn( skill.name.left( 5 ).toStdString().c_str(), 0, 50.0f );
+							// T-0012: was `skill.name.left(5)` which collapsed e.g.
+							// Woodcutting and Woodcarving both to "Woodc". Show the
+							// full name; widen the column so longer names fit.
+							ImGui::TableSetupColumn( skill.name.toStdString().c_str(), 0, 100.0f );
 						}
 						ImGui::TableHeadersRow();
 
@@ -607,7 +610,10 @@ void drawPopulationPanel( ImGuiBridge& bridge )
 							bool isSelected = ( bridge.selectedGnomeID == gnome.id );
 							if ( ImGui::Selectable( gnome.name.toStdString().c_str(), isSelected ) )
 							{
+								// T-0012: clicking a gnome name = GoTo + open info.
 								bridge.selectedGnomeID = gnome.id;
+								bridge.cmdNavigateToEntity( gnome.id );
+								bridge.onOpenCreatureInfo( gnome.id );
 							}
 
 							// Profession combo
@@ -726,7 +732,10 @@ void drawPopulationPanel( ImGuiBridge& bridge )
 							bool isSelected = ( bridge.selectedGnomeID == gnome.id );
 							if ( ImGui::Selectable( gnome.name.toStdString().c_str(), isSelected ) )
 							{
+								// T-0012: clicking a gnome name = GoTo + open info.
 								bridge.selectedGnomeID = gnome.id;
+								bridge.cmdNavigateToEntity( gnome.id );
+								bridge.onOpenCreatureInfo( gnome.id );
 							}
 
 							// Profession combo
@@ -1805,6 +1814,17 @@ void drawWorkshopPanel( ImGuiBridge& bridge )
 
 	ImGui::Separator();
 
+	// T-0006: when a workshop is first opened (or a different one takes
+	// focus) and the queue is empty, default the active tab to Recipes —
+	// otherwise the user lands on an empty Queue tab and has to click over.
+	static unsigned int s_lastWorkshopID = 0;
+	bool forceRecipesTab = false;
+	if ( bridge.activeWorkshopID != s_lastWorkshopID )
+	{
+		s_lastWorkshopID = bridge.activeWorkshopID;
+		forceRecipesTab = ws.jobList.isEmpty();
+	}
+
 	if ( ImGui::BeginTabBar( "WorkshopTabs" ) )
 	{
 		// =====================================================================
@@ -1855,7 +1875,8 @@ void drawWorkshopPanel( ImGuiBridge& bridge )
 		// =====================================================================
 		// Craft Recipes tab
 		// =====================================================================
-		if ( ImGui::BeginTabItem( "Recipes" ) )
+		ImGuiTabItemFlags recipesFlags = forceRecipesTab ? ImGuiTabItemFlags_SetSelected : 0;
+		if ( ImGui::BeginTabItem( "Recipes", nullptr, recipesFlags ) )
 		{
 			if ( ws.products.isEmpty() )
 			{
@@ -1872,14 +1893,24 @@ void drawWorkshopPanel( ImGuiBridge& bridge )
 				ImGui::SameLine();
 				ImGui::RadioButton( "Repeat", &s_craftMode, 2 );
 
-				// Amount selector with proper width for double digits
+				// T-0006: explicit amount display + -/+ buttons. The previous
+				// InputInt rendered the number invisibly under the current theme
+				// (and widening the field did not help). Rendering the value as
+				// Text with adjacent buttons is a guaranteed-visible equivalent.
 				if ( s_craftMode != 2 )
 				{
 					ImGui::SameLine( 0, 15 );
-					ImGui::SetNextItemWidth( 100 );
-					ImGui::InputInt( "##amount", &s_craftAmount, 1, 5 );
-					if ( s_craftAmount < 1 ) s_craftAmount = 1;
-					if ( s_craftAmount > 999 ) s_craftAmount = 999;
+					ImGui::Text( "%d", s_craftAmount );
+					ImGui::SameLine();
+					if ( ImGui::SmallButton( "-##amt" ) )
+					{
+						s_craftAmount = qMax( 1, s_craftAmount - 1 );
+					}
+					ImGui::SameLine();
+					if ( ImGui::SmallButton( "+##amt" ) )
+					{
+						s_craftAmount = qMin( 999, s_craftAmount + 1 );
+					}
 				}
 
 				// Search field

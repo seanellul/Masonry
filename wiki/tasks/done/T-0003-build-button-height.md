@@ -30,4 +30,6 @@ The "Build" action button that appears under each buildable item in the build me
 
 ## Result
 
-*(Building agent fills in after implementation.)*
+Implemented in `src/gui/ui/ui_gamehud.cpp` around the Build button at ~line 747. Replaced `ImGui::SmallButton` with `ImGui::Button` inside a scoped `PushStyleVar` block that bumps `FramePadding.y` by 2px (roughly +15% height with 16px text) and forces `ButtonTextAlign` to (0.5, 0.5). Both style vars are popped immediately after, so no neighbors are affected.
+
+Baseline build: green (24 warnings, pre-existing). Post-change build: green (11 warnings, all pre-existing; warning count dropped because cached objects weren't re-warned).

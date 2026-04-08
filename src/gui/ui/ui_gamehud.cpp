@@ -63,7 +63,10 @@ const BuildCategoryButton buildCategories[] = {
 	{ ICON_RA_CASTLE_EMBLEM, "Structures", BuildSelection::Wall },
 	{ ICON_FA_COUCH, "Furniture", BuildSelection::Furniture },
 	{ ICON_FA_WRENCH, "Utility", BuildSelection::Utility },
-	{ ICON_FA_BOX, "Containers", BuildSelection::Containers },
+	// T-0002: ICON_FA_BOX (U+f466) renders as `Ǝ` in the bundled FA font —
+	// the free-tier ttf we ship does not contain that newer codepoint.
+	// ICON_FA_CUBES (U+f1b3) is a classic FA codepoint and renders reliably.
+	{ ICON_FA_CUBES, "Containers", BuildSelection::Containers },
 };
 
 // Structure sub-items (wall, floor, stairs, ramp, fence) — displayed as a grid within Structures
@@ -577,6 +580,10 @@ void drawGameHUD( ImGuiBridge& bridge )
 				bridge.currentShapeTab = ShapeTab::Build;
 
 				// Category row (horizontal icon buttons)
+				// T-0002: center button contents and give every category a uniform
+				// minimum width so icon+label reads as centered on each tab.
+				ImGui::PushStyleVar( ImGuiStyleVar_ButtonTextAlign, ImVec2( 0.5f, 0.5f ) );
+				const float catBtnW = 130.0f;
 				for ( int i = 0; i < 5; ++i )
 				{
 					if ( i > 0 ) ImGui::SameLine();
@@ -585,7 +592,7 @@ void drawGameHUD( ImGuiBridge& bridge )
 
 					char catLabel[128];
 					snprintf( catLabel, sizeof(catLabel), "%s %s", buildCategories[i].icon, buildCategories[i].label );
-					if ( ImGui::Button( catLabel, ImVec2( 0, 30 ) ) )
+					if ( ImGui::Button( catLabel, ImVec2( catBtnW, 30 ) ) )
 					{
 						bridge.currentBuildCategory = buildCategories[i].selection;
 						bridge.currentBuildMaterial.clear();
@@ -609,6 +616,7 @@ void drawGameHUD( ImGuiBridge& bridge )
 					}
 					if ( active ) ImGui::PopStyleColor();
 				}
+				ImGui::PopStyleVar(); // T-0002: ButtonTextAlign for category row
 
 				// If Structures selected, show structure type buttons
 				if ( bridge.currentBuildCategory == BuildSelection::Wall ||
@@ -744,9 +752,20 @@ void drawGameHUD( ImGuiBridge& bridge )
 
 						ImGui::SetCursorPosX( rightX );
 						if ( !canBuild ) ImGui::BeginDisabled();
-						if ( ImGui::SmallButton( ICON_FA_HAMMER " Build" ) )
+						// T-0003: Build button ~15% taller with centered content.
+						// SmallButton ignores FramePadding.y, so switch to a regular Button
+						// and add ~2px of vertical padding on top of the base style (yields
+						// roughly +15% height with 16px text and default padding).
 						{
-							bridge.cmdBuild( item.biType, "", item.id, mats );
+							const ImVec2 basePad = ImGui::GetStyle().FramePadding;
+							ImGui::PushStyleVar( ImGuiStyleVar_FramePadding,
+								ImVec2( basePad.x, basePad.y + 2.0f ) );
+							ImGui::PushStyleVar( ImGuiStyleVar_ButtonTextAlign, ImVec2( 0.5f, 0.5f ) );
+							if ( ImGui::Button( ICON_FA_HAMMER " Build" ) )
+							{
+								bridge.cmdBuild( item.biType, "", item.id, mats );
+							}
+							ImGui::PopStyleVar( 2 );
 						}
 						if ( !canBuild ) ImGui::EndDisabled();
 

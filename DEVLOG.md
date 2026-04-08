@@ -6,6 +6,61 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-07] UI polish batch — build menu, workshop, population (T-0002, T-0003, T-0006, T-0012)
+
+**Milestone**: UI/UX polish
+**Files changed**: `src/gui/ui/ui_gamehud.cpp`, `src/gui/ui/ui_sidepanels.cpp`
+
+### Changes
+
+- **T-0002 — Build menu tab bar: Containers icon + centered labels.** The Containers tab was rendering `Ǝ` as a missing-glyph placeholder because `ICON_FA_BOX` (U+f466) is not present in the bundled `fa-solid-900.ttf`. Swapped to `ICON_FA_CUBES` (U+f1b3), a classic FA codepoint that renders reliably. Also wrapped the category row in `PushStyleVar(ButtonTextAlign, (0.5, 0.5))` and gave every button a uniform 130px width so the icon+label group reads as centered on every tab.
+- **T-0003 — Build button ~15% taller.** Per-item Build buttons in the build menu were using `ImGui::SmallButton`, which ignores `FramePadding.y`. Replaced with a regular `ImGui::Button` wrapped in a scoped `PushStyleVar(FramePadding, y+2)` + `PushStyleVar(ButtonTextAlign, (0.5, 0.5))` block, yielding ~15% more vertical padding with centered content and no style leakage to neighbors.
+- **T-0006 — Workshop view: default-to-Recipes + visible craft count.** Opening a workshop with an empty queue now lands on the Recipes tab instead of an empty Queue tab (tracked via `s_lastWorkshopID` + `ImGuiTabItemFlags_SetSelected` one-shot). Replaced the invisible `ImGui::InputInt` amount widget with an explicit `Text("%d") + SmallButton("-") + SmallButton("+")` trio — matches the layout the user expected and guarantees the value is visible regardless of theme.
+- **T-0012 — Population view: clipped headers + gnome-name navigation.** The individual Skills view was literally `.left(5)`-truncating every skill column header, collapsing both `Woodcutting` and `Woodcarving` to `Woodc`. Removed the truncation and widened the column from 50 to 100px. Clicking a gnome's name in either Skills view (individual or group) now calls `bridge.cmdNavigateToEntity(id)` (camera jump) and `bridge.onOpenCreatureInfo(id)` (opens creature info panel) in addition to the existing selection update. Extension to Schedule/Personality/Social/Professions tabs deferred as a small follow-up.
+
+### Technical Details
+
+- All edits are in ImGui render paths; no game-thread or data-model changes.
+- Build: green (11 warnings, all pre-existing `-Winconsistent-missing-override` and one unused-variable warning already in the file).
+- Smoke test: build succeeded, runtime shutdown flaked at the 120s harness timeout — a pre-existing quit-path issue unrelated to these UI-only changes (no new loops, no new state).
+- References: `wiki/tasks/done/T-0002-*.md`, `wiki/tasks/done/T-0003-*.md`, `wiki/tasks/done/T-0006-*.md`, `wiki/tasks/done/T-0012-*.md`.
+
+---
+
+## [2026-04-07] AI Texture Pack: apply at startup, not at runtime
+
+**Milestone**: Stability — Dev tools
+**Files changed**: `src/gfx/spritefactory.cpp`, `src/gui/imguibridge.cpp`, `src/gui/ui/ui_sidepanels.cpp`
+
+### Changes
+- **The "Use AI Texture Pack" toggle now sets a persistent preference (`useAltTextures` in config) instead of trying to hot-swap textures.** Restart the game to apply.
+- **`SpriteFactory::init()` reads the preference** and loads tilesheets from `content/tilesheet_ai/` (with per-file fallback to `content/tilesheet/` if a sheet is missing) when the flag is set.
+- **Dev panel now shows a "Restart the game to apply" notice** under the checkbox, and the bridge restores the saved preference on construction so the checkbox state survives restarts.
+
+### Technical Details
+- Even after moving the runtime swap to the game thread, the previous live-toggle path was broken in two ways:
+  1. **Textures didn't actually swap.** `forceUpdate()` re-uploads `m_sprites`' already-composited pixmaps; replacing `m_baseSprites` doesn't invalidate them. A real swap would need to clear and rebuild the entire sprite cache.
+  2. **Game thread became unresponsive.** `toggleTexturePack` holds `SpriteFactory::m_mutex` for the duration of PNG loads + extraction + per-sprite GPU re-upload. The render thread blocks on the same mutex via `getSprite()`, so input handling (ESC, pause, speed) freezes for the duration.
+- Applying at `init()` sidesteps both: there is no concurrent reader, the cache is built fresh from the alt sources, and there's no mid-frame mutex contention.
+- The earlier `AggregatorDebug::signalToggleTexturePack` → `Game::onToggleTexturePack` plumbing remains in the tree but is no longer wired from the UI; it's a no-op safety net.
+
+---
+
+## [2026-04-07] Fix crash on toggling AI Texture Pack from Dev Mode
+
+**Milestone**: Stability — Dev tools
+**Files changed**: `src/gui/imguibridge.cpp`, `src/gui/aggregatordebug.h`, `src/gui/aggregatordebug.cpp`, `src/game/game.h`, `src/game/game.cpp`, `src/game/gamemanager.cpp`
+
+### Changes
+- **Toggling the AI Texture Pack checkbox no longer crashes the game.** The toggle now dispatches to the game thread instead of running on the GUI thread.
+
+### Technical Details
+- Root cause: `ImGuiBridge::cmdToggleTexturePack` was calling `Game::sf()->toggleTexturePack()` directly from the GUI thread. That path runs `rebuildBaseSprites()` → `DB::selectRows()` (Qt SQL is per-thread, the connection is owned by the game thread) and `forceUpdate()` which iterates `m_sprites` concurrently with the game tick. Either is sufficient to crash.
+- Fix: added `AggregatorDebug::onToggleTexturePack` slot + `signalToggleTexturePack` signal, a matching `Game::onToggleTexturePack` slot that calls `m_sf->toggleTexturePack()`, and a `Qt::QueuedConnection` wire-up in `GameManager::createNewGame` so the swap happens on the game thread alongside the rest of the simulation.
+- The UI flag (`useAltTextures`) is flipped optimistically on click for immediate visual feedback in the checkbox; the heavy work (re-extract base sprites, recomposite, GPU upload flag) runs on the next game-thread loop iteration.
+
+---
+
 ## [2026-04-07] Resizable + persistent Shape/Zone/Manage panels
 
 **Milestone**: UI/UX Overhaul — Toolbar polish

@@ -48,8 +48,16 @@ The user has flagged the whole workshop info view as visually inconsistent and c
 
 ## Plan
 
-*(Scoping agent: (1) Find the workshop info view in `src/gui/ui/` — probably a `ui_workshop*.cpp` file or a section of `ui_sidepanels.cpp`. Identify where the tab state is initialized when the panel opens. Check whether tab state is persisted across opens or reset — the fix should be a conditional default, not a hard reset. (2) Find the Craft N input widget in the same file. Verify the int source, check whether `ImGui::InputInt` / `InputScalar` is being called correctly and whether a text color or bg color override is hiding the value. Run the game via `mcp__ingnomia-test__build_game` + `take_screenshot` to reproduce before proposing a fix. (3) While in the file, jot down any cheap polish candidates — don't fix them here.)*
+Workshop view lives in `drawWorkshopPanel` in `src/gui/ui/ui_sidepanels.cpp` (~line 1729):
+
+- **Tab bar** at ~line 1808 uses `ImGui::BeginTabBar("WorkshopTabs")` + `BeginTabItem("Queue" | "Recipes")`. ImGui remembers the last active tab globally, so opening a workshop with an empty queue lands on whatever tab was last clicked. Fix: track the active workshop ID in a static. When it changes *and* the queue is empty, set `ImGuiTabItemFlags_SetSelected` on the Recipes tab for that one frame.
+- **Craft amount widget** at ~line 1880 uses `InputInt("##amount", &s_craftAmount, 1, 5)`. Under the current theme the rendered number is invisible (the user confirmed "widening the field does not help"), and the user's screenshot shows `-` and `+` buttons sitting next to an empty-looking field. Replace the `InputInt` with an explicit `Text("%d") + SmallButton("-##amt") + SmallButton("+##amt")` pattern that matches the intended layout and guarantees the number is visible regardless of theme.
 
 ## Result
 
-*(Building agent fills in after implementation.)*
+Implemented in `src/gui/ui/ui_sidepanels.cpp`:
+
+1. **Empty-queue → Recipes default** (~line 1806–1820): introduced `static unsigned int s_lastWorkshopID = 0;` + a one-shot `forceRecipesTab = ws.jobList.isEmpty()` check when `bridge.activeWorkshopID != s_lastWorkshopID`. Passed `ImGuiTabItemFlags_SetSelected` to `BeginTabItem("Recipes", …)` when `forceRecipesTab` is true.
+2. **Craft amount visibility** (~line 1886–1900): replaced `ImGui::InputInt( "##amount", &s_craftAmount, 1, 5 )` with `ImGui::Text("%d", s_craftAmount) + SmallButton("-##amt") + SmallButton("+##amt")`, clamped to 1–999. This matches the layout the user expected to see in their screenshot.
+
+Build: green (11 warnings, all pre-existing). The third sub-goal (polish candidate notes) is out-of-scope for this autonomous pass and left for a future TLC sweep.

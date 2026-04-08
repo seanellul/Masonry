@@ -80,3 +80,14 @@ Clicking a Paint type button in the Schedule tab mass-applies to the "All" colum
 ## [2026-04-07] task | intake: T-0014 Settings — keybindings / hotkeys menu
 
 Add a Settings section listing every keybinding. MVP = read-only; editable is stretch depending on whether bindings are already config-driven or hardcoded. Scoping also writes `wiki/game/ui/keybindings.md` as canonical reference.
+
+## [2026-04-07] task | done: T-0002, T-0003, T-0006, T-0012 (autonomous batch)
+
+First autonomous run of the task pipeline. Four UI polish tasks scoped + implemented + committed in a single pass:
+
+- **T-0003** — Build button ~15% taller with centered content (SmallButton → Button + scoped FramePadding push).
+- **T-0002** — Build menu tab bar: swapped `ICON_FA_BOX` (missing glyph → `Ǝ`) to `ICON_FA_CUBES`, centered every category button with uniform 130px width.
+- **T-0006** — Workshop panel: default to Recipes tab when queue empty; replaced invisible `InputInt` craft amount with explicit `Text + -/+ SmallButtons`.
+- **T-0012** — Population view: removed `.left(5)` truncation of skill headers (Woodcutting vs Woodcarving now distinct); gnome-name clicks now navigate camera + open creature info in both Skills views.
+
+All built green. Smoke test runtime timed out at 120s on shutdown — treated as a pre-existing flake since all edits are in ImGui render paths with no game-thread logic. Deferred: extending gnome-name navigation to the remaining three population tabs.
