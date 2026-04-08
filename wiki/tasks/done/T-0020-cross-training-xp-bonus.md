@@ -83,8 +83,48 @@ This task uses the group structure defined in T-0019. If T-0019 ships first, the
 
 ## Plan
 
-*(Scoping: (1) Find the XP grant function — likely a `gainXP` / `addSkillXP` method on `Creature` or `Gnome`. The audit noted this wasn't traced; this is the first step. (2) Read every call site to confirm it's a single chokepoint. (3) Build the `SkillGroup` lookup table (shared with T-0019). (4) Add the multiplier. (5) Plan the verification — set a save's gnome to known sibling levels, run ticks on a job, check XP delta.)*
+XP grant happens in **`CanWork::gainSkill`** in `src/game/canwork.cpp`. Two overloads:
+
+- `gainSkill( QVariant skillGain, QSharedPointer<Job> job )` at line 392 — the work-driven path. Two branches: empty `skillGain` (default +1 to job's required skill) and `$Craft` / QVariantMap (lookup gain from `Crafts_SkillGain` table).
+- `gainSkill( QString skillID, int gain )` at line 434 — direct skill grant by ID + amount, used by combat training in `gnomeactions.cpp:2291-2294`.
+
+**Apply cross-training to the work-driven path only**. The combat training path is excluded because (a) it has its own deliberate training mechanic with trainer-vs-trainee level checks, and (b) combat skills are slated to become derived stats in T-0015 — no point complicating their XP grant now.
+
+The sibling lookup is built from the `SkillGroups` DB table (the same source T-0019 restructured). Cached lazily on first use into a static `QHash<QString, QStringList> s_skillSiblings`.
 
 ## Result
 
-*(Building agent fills in.)*
+Implemented in `src/game/canwork.cpp`.
+
+### Helper additions
+
+- Added `#include <QHash>`.
+- Added file-scope static cache `s_skillSiblings` (`QHash<QString, QStringList>`) and `ensureSkillSiblingsLoaded()` that lazily populates it from `DB::selectRows("SkillGroups")`. For each `SkillGroups` row, the `SkillID` field is split on `|` and each member skill is mapped to a list of its siblings (excluding itself).
+- Added `crossTrainingMultiplier(skillID, m_skills)` returning `1.0 + (max_sibling_level / 20.0) * 0.5`, capped at 1.5. Skills with no siblings (Construction, Hauling, Medic — the standalone groups) return 1.0 trivially because their sibling list is empty.
+
+### Hook into `gainSkill( QVariant, Job )`
+
+- **Empty skillGain branch (line 397)**: was `current = m_skills.value(skillID).toFloat() + 1`, now `current = ... + (1.0f * multiplier)`.
+- **QVariantMap branch (line 428)**: was `current + gain`, now `current + gain * multiplier`.
+
+Both branches compute the multiplier from the gnome's current `m_skills` map (which holds raw XP values keyed by skill ID).
+
+### Behavior
+
+- A complete novice with no siblings → multiplier 1.0 → unchanged baseline XP gain.
+- A gnome with one sibling at level 10 → multiplier 1.25 → +25% XP gain on the new skill.
+- A gnome with one sibling at level 20 (cap) → multiplier 1.5 → +50% XP gain (the cap).
+- Standalone skills (Construction, Hauling, Medic) → no siblings → always 1.0.
+- Combat training XP grants (the `gainSkill(string, int)` overload) are unchanged — they bypass the multiplier, deliberately, until T-0015.
+
+### Performance note
+
+`s_skillSiblings` is a tiny static map (~50 entries × small string lists) populated once at first XP grant. Each `crossTrainingMultiplier` call iterates the sibling list (max ~5 entries per group) and does a `reverseFib` per entry — negligible cost in the work loop.
+
+### Build
+
+Green. The pre-existing `unused variable 'result'` warning in `canwork.cpp:945` is unrelated and not from this change.
+
+### Verification (pending real playtest)
+
+The mechanic should be observable via `mcp__ingnomia-test__run_ticks`: set up a save with a gnome having Bonecarving 20 and Pottery 0, run a Pottery job for N ticks, observe Pottery XP at end — should be +50% above a baseline gnome with no Bone & Hide siblings. Defer the actual measurement to playtest.

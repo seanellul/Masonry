@@ -17005,9 +17005,9 @@ INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Construction','Curre
 INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Medic','Currently only affects mood. Does not yet affect treatment success or heal rate — see wiki known-issues.');
 
 -- Dead skills (tracked but never consulted)
-INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_AnimalHusbandry','Currently tracked but has no gameplay effect. Animal handling succeeds independent of this skill.');
-INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Butchery','Currently tracked but has no gameplay effect. Butchering yield is independent of this skill.');
-INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Fishing','Currently tracked but has no gameplay effect. Fishing outcomes are independent of this skill.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_AnimalHusbandry','Determines how quickly this gnome tames animals. A novice takes ~200 ticks per tame; a master takes ~20.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Butchery','Higher skill produces higher quality meat from carcasses, and gives a chance for a bonus meat per kill (up to ~67% at master).');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Fishing','Higher skill gives a chance for a bonus catch per fishing trip (up to ~67% at master).');
 INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Ranged','Currently tracked but has no gameplay effect — ranged combat does not consult this skill.');
 INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Crossbow','Currently tracked but has no gameplay effect — ranged combat does not consult this skill.');
 INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Thrown','Currently tracked but has no gameplay effect — thrown weapons are not implemented.');

@@ -140,3 +140,8 @@ Dependencies: T-0019 → T-0020 → T-0021 (group structure is shared); T-0018 s
 
 - **T-0018** — Removed 4 skills (Horticulture, Tinkering, Mechanic, Caretaking → Medic). SQL + enum + jobmanager + gnome.cpp mood checks + 6 backstory rows redirected. Build green.
 - **T-0019** — Restructured `SkillGroups` from 14 → 15 rows (10 logical groups + 3 standalones + 2 preserved combat groups). All data — the aggregator and population view are already data-driven from the SkillGroups DB table, so zero C++ changes were needed. Butchery moved to Hearth (with Cooking + Brewing); Field group created (Farming + AnimalHusbandry + Fishing).
+
+## [2026-04-07] task | done: T-0017, T-0020 (skills phase 2)
+
+- **T-0020** — Cross-training XP bonus. Master Bonecarver picks up Pottery 50% faster than a novice. Implemented as a multiplier in `CanWork::gainSkill`, sibling cache lazily populated from `SkillGroups`.
+- **T-0017** — Easy wirings. AnimalHusbandry one-line fix (taming duration scales with skill). Fishing bonus-catch chance. Butchery → meat yield + quality. Three previously-dead skills now have real effects.

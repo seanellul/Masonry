@@ -6,6 +6,30 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-07] Cross-training XP bonus + easy skill wirings (T-0020, T-0017)
+
+**Milestone**: Skills redesign — phase 2
+**Files changed**: `src/game/canwork.cpp`, `src/game/gnomeactions.cpp`, `content/db/ingnomia.db.sql`
+
+### Changes
+
+- **T-0020 — Cross-training XP bonus.** Skills sharing a `SkillGroup` now boost each other's XP gain. A gnome with a level-20 sibling skill gets +50% XP on a new skill in the same group; novices get baseline. Capped at +50%, uses `max` of siblings (not `sum`) so groups don't stack weirdly. Standalone skills (Construction, Hauling, Medic) have no siblings and stay at the 1.0 baseline. Implemented as a static cache `s_skillSiblings` in `canwork.cpp`, lazily populated from the `SkillGroups` DB table on first use, plus a `crossTrainingMultiplier(skillID, m_skills)` helper applied at both branches of `CanWork::gainSkill(QVariant, Job)`. The combat-training overload `gainSkill(QString, int)` is deliberately excluded — combat skills become derived stats in T-0015. A Master Bonecarver picking up Pottery now learns it 50% faster than a complete novice.
+
+- **T-0017 — Easy skill wirings.** Three small fixes that turn three "tracked but dead" skills into real gameplay levers:
+  - **AnimalHusbandry** at `gnomeactions.cpp:2138` (`Gnome::actionTameAnimal`): the function already extracted the gnome's skill level into a local `current` and then ignored it. Replaced the hardcoded `m_totalDurationTicks = 100` with `qMax(20, 200 - int(current * 9))`. Novice tames in ~200 ticks; master in ~20 ticks. Linear scale.
+  - **Fishing** at `canwork.cpp:1405` (`CanWork::fish`): added a bonus-catch chance after the baseline fish — `rand() % 30 < skill` gives 0% at skill 0 and ~67% at skill 20.
+  - **Butchery** at `canwork.cpp:1379-1402` (`butcherFish` + `butcherCorpse`): added a shared static `butcherProduceMeat` helper that scales **both yield and quality** of the produced meat per the user's spec. Quality uses the same `qIndex = skill / 20.0 * qSize` formula as `CanWork::craft()`, with ±1 die-roll variance. Bonus-meat chance is 0% at skill 0, ~67% at skill 20. Meat now has a quality tier; fish-bone / bone outputs unchanged.
+  - Tooltip rows for all three skills updated in `ingnomia.db.sql` to drop the "Currently tracked but has no gameplay effect" copy and describe the new behavior.
+
+### Technical Details
+
+- **No save format changes**: cross-training reads existing `m_skills` data, AnimalHusbandry/Fishing/Butchery wirings only modify the work-loop output, not the gnome state.
+- The cross-training cache (`s_skillSiblings`) is built once on first XP grant from the same `SkillGroups` table that powers the population view's group structure — single source of truth.
+- Build: green. Pre-existing warnings unchanged.
+- References: `wiki/tasks/done/T-0020-*.md`, `wiki/tasks/done/T-0017-*.md`.
+
+---
+
 ## [2026-04-07] Skills cleanup + grouping restructure (T-0018, T-0019)
 
 **Milestone**: Skills redesign — phase 1

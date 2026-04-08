@@ -48,6 +48,58 @@
 #include "../gfx/spritefactory.h"
 
 #include <QDebug>
+#include <QHash>
+
+// T-0020: Cross-training XP bonus.
+// Sibling skills (skills sharing a SkillGroup) boost each other's XP gain.
+// A gnome with a level-20 sibling gets +50% XP on a new skill in the same
+// group, novices get baseline. Cap at +50% via max(sibling) / 20 * 0.5.
+// Cache the skill→siblings map on first use; populated from the
+// SkillGroups DB table (same source the population view uses).
+static QHash<QString, QStringList> s_skillSiblings;
+static bool s_skillSiblingsLoaded = false;
+
+static void ensureSkillSiblingsLoaded()
+{
+	if ( s_skillSiblingsLoaded )
+		return;
+	s_skillSiblingsLoaded = true;
+	for ( const auto& group : DB::selectRows( "SkillGroups" ) )
+	{
+		QStringList members = group.value( "SkillID" ).toString().split( "|" );
+		for ( const QString& sid : members )
+		{
+			QStringList siblings;
+			for ( const QString& other : members )
+			{
+				if ( other != sid )
+					siblings.append( other );
+			}
+			s_skillSiblings.insert( sid, siblings );
+		}
+	}
+}
+
+// Returns 1.0 + (max sibling level / 20.0) * 0.5, capped between 1.0 and 1.5.
+// Skills with no siblings (standalone groups: Construction, Hauling, Medic)
+// always get the baseline 1.0.
+static float crossTrainingMultiplier( const QString& skillID, const QVariantMap& m_skills )
+{
+	ensureSkillSiblingsLoaded();
+	const QStringList& siblings = s_skillSiblings.value( skillID );
+	if ( siblings.isEmpty() )
+		return 1.0f;
+	int maxSibling = 0;
+	for ( const QString& sid : siblings )
+	{
+		int lvl = Global::util->reverseFib( m_skills.value( sid ).toUInt() );
+		if ( lvl > maxSibling )
+			maxSibling = lvl;
+	}
+	float mult = 1.0f + ( maxSibling / 20.0f ) * 0.5f;
+	if ( mult > 1.5f ) mult = 1.5f;
+	return mult;
+}
 
 typedef exprtk::symbol_table<double> symbol_table_t;
 typedef exprtk::expression<double> expression_t;
@@ -394,7 +446,9 @@ void CanWork::gainSkill( QVariant skillGain, QSharedPointer<Job> job )
 	if ( skillGain.toString().isEmpty() )
 	{
 		QString skillID = job->requiredSkill();
-		float current   = m_skills.value( skillID ).toFloat() + 1;
+		// T-0020: cross-training XP bonus from siblings.
+		float multiplier = crossTrainingMultiplier( skillID, m_skills );
+		float current    = m_skills.value( skillID ).toFloat() + ( 1.0f * multiplier );
 		m_skills.insert( skillID, current );
 
 		if ( skillID == "Hauling" )
@@ -425,9 +479,11 @@ void CanWork::gainSkill( QVariant skillGain, QSharedPointer<Job> job )
 
 	if ( gain > 0 )
 	{
-		float current = m_skills.value( skillID ).toFloat();
-		m_skills.insert( skillID, current + gain );
-		//if( Global::debugMode )	qDebug() << name() << " gain skill: " << skillID << gain;
+		// T-0020: cross-training XP bonus from siblings.
+		float multiplier = crossTrainingMultiplier( skillID, m_skills );
+		float current    = m_skills.value( skillID ).toFloat();
+		m_skills.insert( skillID, current + gain * multiplier );
+		//if( Global::debugMode )	qDebug() << name() << " gain skill: " << skillID << gain << "x" << multiplier;
 	}
 }
 
@@ -1320,13 +1376,39 @@ bool CanWork::deconstruct()
 	return true;
 }
 
+// T-0017: Butchery skill affects yield % (chance for an extra meat per
+// carcass) and the quality tier of the produced meat. Same formulas as
+// the generic crafting quality scaling so the player intuition transfers.
+static void butcherProduceMeat( CanWork* worker, Game* g, const Position& outPos,
+                                const QString& materialSID, int skill )
+{
+	int qSize  = DB::numRows( "Quality" );
+	int qIndex = skill / 20. * qSize;
+	int qRand  = rand() % 100;
+	if ( qRand < 20 )       qIndex = qMax( 0, qIndex - 1 );
+	else if ( qRand > 96 )  qIndex = qMin( qSize - 1, qIndex + 1 );
+
+	unsigned int meatID = g->inv()->createItem( outPos, "Meat", materialSID );
+	g->inv()->setMadeBy( meatID, worker->id() );
+	g->inv()->setQuality( meatID, qIndex );
+
+	// Bonus meat: 0% chance at skill 0, ~67% at skill 20.
+	if ( skill > 0 && ( rand() % 30 ) < skill )
+	{
+		unsigned int extraID = g->inv()->createItem( outPos, "Meat", materialSID );
+		g->inv()->setMadeBy( extraID, worker->id() );
+		g->inv()->setQuality( extraID, qIndex );
+	}
+}
+
 bool CanWork::butcherFish()
 {
+	int skill = getSkillLevel( "Butchery" );
 	for ( auto itemUID : claimedItems() )
 	{
 		QString materialSID = g->inv()->materialSID( itemUID );
 
-		g->inv()->createItem( m_job->posItemOutput(), "Meat", materialSID );
+		butcherProduceMeat( this, g, m_job->posItemOutput(), materialSID, skill );
 		g->inv()->createItem( m_job->posItemOutput(), "FishBone", materialSID );
 	}
 	destroyClaimedItems();
@@ -1335,11 +1417,12 @@ bool CanWork::butcherFish()
 
 bool CanWork::butcherCorpse()
 {
+	int skill = getSkillLevel( "Butchery" );
 	for ( auto itemUID : claimedItems() )
 	{
 		QString materialSID = g->inv()->materialSID( itemUID );
 
-		g->inv()->createItem( m_job->posItemOutput(), "Meat", materialSID );
+		butcherProduceMeat( this, g, m_job->posItemOutput(), materialSID, skill );
 		g->inv()->createItem( m_job->posItemOutput(), "Bone", materialSID );
 	}
 	destroyClaimedItems();
@@ -1350,6 +1433,21 @@ bool CanWork::fish()
 {
 	unsigned int itemID = g->inv()->createItem( m_job->posItemOutput(), "Fish", "GreenFish" );
 	g->inv()->setMadeBy( itemID, id() );
+
+	// T-0017: Fishing skill bonus catch.
+	// Higher skill = chance for an extra fish from the same job.
+	// At skill 0: 0% chance. At skill 20: ~67% chance for a bonus catch.
+	int skill = getSkillLevel( "Fishing" );
+	if ( skill > 0 )
+	{
+		int roll = rand() % 30;
+		if ( roll < skill )
+		{
+			unsigned int extraID = g->inv()->createItem( m_job->posItemOutput(), "Fish", "GreenFish" );
+			g->inv()->setMadeBy( extraID, id() );
+		}
+	}
+
 	return true;
 }
 

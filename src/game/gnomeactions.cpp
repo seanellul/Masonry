@@ -2139,10 +2139,13 @@ BT_RESULT Gnome::actionTameAnimal( bool halt )
 	{
 		m_currentAction = "tame animal";
 
+		// T-0017: AnimalHusbandry now affects taming duration. Novice (level
+		// 0) takes 200 ticks; master (level 20) takes 20 ticks. Linear scale.
 		QString skillID      = m_job->requiredSkill();
 		float current        = Global::util->reverseFib( m_skills.value( skillID ).toUInt() );
-		m_totalDurationTicks = 100;
-		m_taskFinishTick     = GameState::tick + 100;
+		int duration         = qMax( 20, 200 - int( current * 9 ) );
+		m_totalDurationTicks = duration;
+		m_taskFinishTick     = GameState::tick + duration;
 	}
 
 	if ( GameState::tick < m_taskFinishTick )
