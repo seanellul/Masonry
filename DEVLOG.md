@@ -6,6 +6,25 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-08] Build menu icon polish + tooltips (T-0001)
+
+**Milestone**: UI polish
+**Files changed**: `src/gui/ui/ui_gamehud.cpp`, `src/gui/aggregatorinventory.cpp`, `content/db/ingnomia.db.sql`
+
+### Changes
+- **Larger framed build icons** — bumped icon size from 48px → 64px and added a `FrameBg`-tinted, bordered backdrop drawn via `ImDrawList`. Reads cleanly against any panel background.
+- **Real material in baked previews** — `setBuildItemValues` now picks the first concrete available material per required component (falling back to `Pine`) instead of passing `"None"`, so workshop/item previews render in colour rather than as flat silhouettes.
+- **Auto-trim transparent / flat-bg margins** — at draw time the build menu computes a content bbox over the buffer (sampling the top-left corner as backdrop colour with a tolerance), caches uv0/uv1 per cache key, and feeds them into `ImageWithBg` so small sprites (chairs, cabinets, walls) fill the framed box.
+- **Background knock-out** — `stripBlackBackground` walks the freshly-baked RGBA buffer in the aggregator and zeros alpha on any pixel within tolerance of the top-left sample, removing the opaque black square the bake leaves behind.
+- **Furniture / mechanism / hydraulics tooltips** — added 29 `$BuildingDesc_*` Translation rows (Bed, Chair, Table, Cabinet, Painting, Statue, GearBox, SteamEngine, Axle, Lever, Pipe, Pump, Windmill, ...) and an `$ItemDesc_<id>` fallback in `buildingTooltipDesc` so any item with an existing item description surfaces it without an extra row.
+
+### Technical Details
+- ImGui ≥1.90 deprecated `Image(..., tint, border)`; switched to `ImageWithBg(tex, size, uv0, uv1, bg, tint)`. The tint is held at ~1.15× to lift the dim baked previews without blowing out colour.
+- The bbox cache lives as a function-local `static std::unordered_map<unsigned int, ImVec4>` keyed by the existing sprite cache key, so it inherits invalidation for free when the texture cache is cleared.
+- `stripBlackBackground` samples the corner pixel rather than hard-coding `(0,0,0)`, so it tolerates any flat backdrop the bake might use.
+
+---
+
 ## [2026-04-07] Construction visibility + thirst warning fix + bug intakes (T-0023, T-0024, intake T-0025/T-0026)
 
 **Milestone**: Bug fixes

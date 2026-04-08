@@ -16930,6 +16930,37 @@ INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Stairs','Connects
 INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Ramp','Gentle incline that lets gnomes (and carts) cross a one-level height difference.');
 INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Fence','Low barrier. Blocks animals and keeps pastures enclosed.');
 
+-- T-0001 follow-up: furniture, utility, mechanism, hydraulics descriptions.
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Bed','Sleeping spot for a gnome. Improves rest quality and mood.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_FancyBed','Higher-quality bed. Better rest and a small mood bonus.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Chair','A place to sit. Gnomes use chairs while eating at a table.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Table','Surface for meals and crafting. Pair with chairs in the dining room.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Cabinet','Personal storage. Assigned to a gnome''s bedroom for clothing.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Dresser','Personal storage for clothes. Improves bedroom value.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Bookshelf','Decorative storage. Adds value to studies and libraries.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Painting','Decorative artwork. Boosts the impressiveness of a room.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Statue','Large decorative monument. Significant room value bonus.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Statuette','Small decorative figurine. Modest room value bonus.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Pillar','Decorative stone column.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Trough','Holds food or water for pastured animals.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Shed','Small farm building used for storage.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_BeeHive','Houses bees. Produces honey and wax over time.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_GearBox','Mechanical power hub. Distributes rotational power between connected axles.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_SteamEngine','Generates rotational power from fuel and water. Drives connected machinery.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Axle','Horizontal shaft that transmits rotational power between machines.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_VerticalAxle','Vertical shaft that transmits rotational power between Z-levels.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Handcrank','Manual power source. A gnome cranks it to drive connected machinery.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Lever','Toggleable switch. Used to control mechanisms remotely.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_PressurePlate','Triggers connected mechanisms when stepped on.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_SpikeTrap','Mechanism trap. Impales whatever stands on it when triggered.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_BladeTrap','Mechanism trap with a swinging blade. Damages enemies in a line.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_MechanicalWall','Wall that can be raised and lowered via a connected trigger.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Hatch','Floor hatch. Blocks vertical movement when closed.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Pipe','Carries fluid between hydraulic components.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_PipeExit','Outlet fitting for a pipe network. Releases fluid into the world.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Pump','Moves water through a pipe network. Requires power.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$BuildingDesc_Windmill','Generates rotational power from wind. Build above ground in open air.');
+
 -- ============================================================================
 -- Shape → Dig / Nature action tooltips (T-0007)
 -- Keyed by $ActionDesc_<action string>. The action string is what the UI

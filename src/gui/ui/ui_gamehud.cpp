@@ -25,6 +25,8 @@ static QString buildingTooltipDesc( const QString& itemId )
 	};
 	QString desc = tryKey( "$BuildingDesc_" + itemId );
 	if ( desc.isEmpty() )
+		desc = tryKey( "$ItemDesc_" + itemId );
+	if ( desc.isEmpty() )
 	{
 		if ( itemId.contains( "Wall", Qt::CaseInsensitive ) )
 			desc = tryKey( "$BuildingDesc_Wall" );
@@ -759,7 +761,14 @@ void drawGameHUD( ImGuiBridge& bridge )
 					if ( !bridge.spriteTexCache )
 						bridge.spriteTexCache = new SpriteTextureCache();
 
-					float iconSize = 48.0f;
+					// T-0001: larger icons with framed background so the (often
+					// dark/silhouette-ish) preview sprites read clearly. The build
+					// preview pixmaps are baked with material="None" which produces
+					// flat, dim images — give them a panel-tinted backdrop and a
+					// border rather than touching the sprite pipeline.
+					float iconSize = 64.0f;
+					const float iconPad = 4.0f;
+					const float iconBoxSize = iconSize + iconPad * 2.0f;
 					for ( const auto& item : bridge.buildItems )
 					{
 						ImGui::PushID( item.id.toStdString().c_str() );
@@ -769,21 +778,88 @@ void drawGameHUD( ImGuiBridge& bridge )
 
 						// Icon
 						ImTextureID texID = (ImTextureID)0;
+						ImVec2 uv0( 0, 0 ), uv1( 1, 1 );
 						if ( !item.buffer.empty() && item.iconWidth > 0 && item.iconHeight > 0 )
 						{
 							unsigned int cacheKey = qHash( item.id ) + 100000;
 							texID = bridge.spriteTexCache->getTextureFromBuffer( cacheKey, item.buffer.data(), item.iconWidth, item.iconHeight );
+
+							// T-0001: trim transparent margins so small sprites
+							// (chair, cabinet, etc.) fill the icon box. Cache per id.
+							static std::unordered_map<unsigned int, ImVec4> s_uvCache;
+							auto it = s_uvCache.find( cacheKey );
+							if ( it == s_uvCache.end() )
+							{
+								int w = item.iconWidth, h = item.iconHeight;
+								const unsigned char* px = item.buffer.data();
+								int minX = w, minY = h, maxX = -1, maxY = -1;
+								for ( int y = 0; y < h; ++y )
+								{
+									for ( int x = 0; x < w; ++x )
+									{
+										int idx = ( y * w + x ) * 4;
+										unsigned char r = px[idx], gg = px[idx + 1], b = px[idx + 2], a = px[idx + 3];
+										if ( a > 8 && ( r > 12 || gg > 12 || b > 12 ) )
+										{
+											if ( x < minX ) minX = x;
+											if ( y < minY ) minY = y;
+											if ( x > maxX ) maxX = x;
+											if ( y > maxY ) maxY = y;
+										}
+									}
+								}
+								ImVec4 uv( 0, 0, 1, 1 );
+								if ( maxX >= minX && maxY >= minY )
+								{
+									// Make square + small padding to keep aspect.
+									int cx = ( minX + maxX ) / 2;
+									int cy = ( minY + maxY ) / 2;
+									int half = std::max( maxX - minX, maxY - minY ) / 2 + 2;
+									int x0 = std::max( 0, cx - half );
+									int y0 = std::max( 0, cy - half );
+									int x1 = std::min( w, cx + half + 1 );
+									int y1 = std::min( h, cy + half + 1 );
+									uv = ImVec4( (float)x0 / w, (float)y0 / h,
+												 (float)x1 / w, (float)y1 / h );
+								}
+								it = s_uvCache.emplace( cacheKey, uv ).first;
+							}
+							uv0 = ImVec2( it->second.x, it->second.y );
+							uv1 = ImVec2( it->second.z, it->second.w );
 						}
+
+						// Framed icon backdrop
+						ImVec2 boxScreenPos = ImGui::GetCursorScreenPos();
+						ImDrawList* dl = ImGui::GetWindowDrawList();
+						ImU32 bgCol = ImGui::GetColorU32( ImGuiCol_FrameBg );
+						ImU32 borderCol = ImGui::GetColorU32( ImGuiCol_Border );
+						dl->AddRectFilled( boxScreenPos,
+							ImVec2( boxScreenPos.x + iconBoxSize, boxScreenPos.y + iconBoxSize ),
+							bgCol, 4.0f );
+						dl->AddRect( boxScreenPos,
+							ImVec2( boxScreenPos.x + iconBoxSize, boxScreenPos.y + iconBoxSize ),
+							borderCol, 4.0f );
+
 						if ( texID )
-							ImGui::Image( texID, ImVec2( iconSize, iconSize ) );
+						{
+							ImGui::Dummy( ImVec2( iconPad, iconPad ) );
+							ImGui::SetCursorScreenPos( ImVec2( boxScreenPos.x + iconPad, boxScreenPos.y + iconPad ) );
+							ImGui::ImageWithBg( texID, ImVec2( iconSize, iconSize ),
+								uv0, uv1,
+								ImVec4( 0, 0, 0, 0 ),
+								ImVec4( 1.15f, 1.15f, 1.15f, 1.0f ) );
+							ImGui::SetCursorScreenPos( ImVec2( boxScreenPos.x, boxScreenPos.y + iconBoxSize ) );
+						}
 						else
-							ImGui::Dummy( ImVec2( iconSize, iconSize ) );
+						{
+							ImGui::Dummy( ImVec2( iconBoxSize, iconBoxSize ) );
+						}
 						// T-0004: hover the icon to see name + description.
 						if ( ImGui::IsItemHovered() )
 							showBuildItemTooltip( item.name, item.id );
 
 						// Right of icon: name + material dropdowns + build button
-						float rightX = startPos.x + iconSize + 8;
+						float rightX = startPos.x + iconBoxSize + 8;
 						ImGui::SetCursorPos( ImVec2( rightX, startPos.y ) );
 						ImGui::Text( "%s", item.name.toStdString().c_str() );
 						// T-0004: hover the name to see the same tooltip.

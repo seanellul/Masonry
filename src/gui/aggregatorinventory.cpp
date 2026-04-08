@@ -222,6 +222,25 @@ void AggregatorInventory::onRequestBuildItems( BuildSelection buildSelection, QS
 	emit signalBuildItems( m_buildItems );
 }
 
+static void stripBlackBackground( std::vector<unsigned char>& buf )
+{
+	// T-0001: createWorkshopImage/createItemImage bake on a flat backdrop
+	// (typically opaque black). Sample the top-left corner as the bg colour
+	// and knock any pixel within tolerance to alpha=0 so the framed icon
+	// shows the panel background instead of a square.
+	if ( buf.size() < 4 ) return;
+	const int br = buf[0], bg = buf[1], bb = buf[2];
+	const int tol = 24;
+	for ( size_t i = 0; i + 3 < buf.size(); i += 4 )
+	{
+		int dr = (int)buf[i] - br;
+		int dg = (int)buf[i + 1] - bg;
+		int db = (int)buf[i + 2] - bb;
+		if ( dr * dr + dg * dg + db * db <= tol * tol )
+			buf[i + 3] = 0;
+	}
+}
+
 void AggregatorInventory::setBuildItemValues( GuiBuildItem& gbi, BuildSelection selection )
 {
 	if( !g ) return;
@@ -242,12 +261,26 @@ void AggregatorInventory::setBuildItemValues( GuiBuildItem& gbi, BuildSelection 
 				}
 			}
 
+			// T-0001: pick a real material per required component so the
+			// preview pixmap renders in colour instead of as a black-bg
+			// silhouette. Falls back to "Pine" then "None".
 			QStringList mats;
-			for ( int i = 0; i < 25; ++i )
-				mats.push_back( "None" );
+			for ( int i = 0; i < gbi.requiredItems.size(); ++i )
+			{
+				const auto& rim = gbi.requiredItems[i];
+				QString pick;
+				for ( const auto& am : rim.availableMats )
+				{
+					if ( am.first != "any" && !am.first.isEmpty() ) { pick = am.first; break; }
+				}
+				if ( pick.isEmpty() ) pick = "Pine";
+				mats.push_back( pick );
+			}
+			while ( mats.size() < 25 ) mats.push_back( "None" );
 
 			QPixmap pm = Global::util->createWorkshopImage( gbi.id, mats );
 			Global::util->createBufferForNoesisImage( pm, gbi.buffer );
+			stripBlackBackground( gbi.buffer );
 			gbi.iconWidth = pm.width();
 			gbi.iconHeight = pm.height();
 		}
@@ -264,13 +297,27 @@ void AggregatorInventory::setBuildItemValues( GuiBuildItem& gbi, BuildSelection 
 
 			}
 
+			// T-0001: pick a real material per required component so the
+			// preview pixmap renders in colour instead of as a black-bg
+			// silhouette. Falls back to "Pine" then "None".
 			QStringList mats;
-			for ( int i = 0; i < 25; ++i )
-				mats.push_back( "None" );
+			for ( int i = 0; i < gbi.requiredItems.size(); ++i )
+			{
+				const auto& rim = gbi.requiredItems[i];
+				QString pick;
+				for ( const auto& am : rim.availableMats )
+				{
+					if ( am.first != "any" && !am.first.isEmpty() ) { pick = am.first; break; }
+				}
+				if ( pick.isEmpty() ) pick = "Pine";
+				mats.push_back( pick );
+			}
+			while ( mats.size() < 25 ) mats.push_back( "None" );
 
 			QPixmap pm = Global::util->createConstructionImage( gbi.id, mats );
 
 			Global::util->createBufferForNoesisImage( pm, gbi.buffer );
+			stripBlackBackground( gbi.buffer );
 			gbi.iconWidth = pm.width();
 			gbi.iconHeight = pm.height();
 		}
@@ -300,12 +347,26 @@ void AggregatorInventory::setBuildItemValues( GuiBuildItem& gbi, BuildSelection 
 			}
 
 
+			// T-0001: pick a real material per required component so the
+			// preview pixmap renders in colour instead of as a black-bg
+			// silhouette. Falls back to "Pine" then "None".
 			QStringList mats;
-			for ( int i = 0; i < 25; ++i )
-				mats.push_back( "None" );
+			for ( int i = 0; i < gbi.requiredItems.size(); ++i )
+			{
+				const auto& rim = gbi.requiredItems[i];
+				QString pick;
+				for ( const auto& am : rim.availableMats )
+				{
+					if ( am.first != "any" && !am.first.isEmpty() ) { pick = am.first; break; }
+				}
+				if ( pick.isEmpty() ) pick = "Pine";
+				mats.push_back( pick );
+			}
+			while ( mats.size() < 25 ) mats.push_back( "None" );
 
 			QPixmap pm = Global::util->createItemImage( gbi.id, mats );
 			Global::util->createBufferForNoesisImage( pm, gbi.buffer );
+			stripBlackBackground( gbi.buffer );
 			gbi.iconWidth = pm.width();
 			gbi.iconHeight = pm.height();
 		}
