@@ -253,6 +253,38 @@ void AggregatorTileInfo::onUpdateTileInfo( unsigned int tileID )
 		}
 		// wrap job into a sub-object?
 		auto job                         = g->jm()->getJobAtPos( pos );
+		// T-0023 follow-up: workshops register their build job at one
+		// anchor tile via m_jobPositions, but the workshop's visible
+		// footprint is multi-tile (3x3 or larger). For some workshops
+		// the anchor is rendered as empty (e.g. Distillery's (0,0,0)
+		// has no sprite component) so the player can never click the
+		// actual anchor — every click misses. If the clicked tile has
+		// no job, scan a 2-tile Manhattan radius for a BuildWorkshop
+		// or BuildItem job and use that. Closest match wins.
+		if ( !job )
+		{
+			int bestDist = 99;
+			QSharedPointer<Job> bestJob;
+			for ( int dx = -2; dx <= 2; ++dx )
+			{
+				for ( int dy = -2; dy <= 2; ++dy )
+				{
+					if ( dx == 0 && dy == 0 ) continue;
+					Position np( pos.x + dx, pos.y + dy, pos.z );
+					auto candidate = g->jm()->getJobAtPos( np );
+					if ( !candidate ) continue;
+					const QString t = candidate->type();
+					if ( t != "BuildWorkshop" && t != "BuildItem" ) continue;
+					int dist = qAbs( dx ) + qAbs( dy );
+					if ( dist < bestDist )
+					{
+						bestDist = dist;
+						bestJob  = candidate;
+					}
+				}
+			}
+			if ( bestJob ) job = bestJob;
+		}
 		m_tileInfo.jobName               = "";
 		m_tileInfo.jobWorker             = "";
 		m_tileInfo.jobPriority           = "";

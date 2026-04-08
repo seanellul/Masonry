@@ -257,42 +257,24 @@ void Anatomy::damage( Equipment* eq, DamageType dt, AnatomyHeight da, AnatomySid
 
 	if ( m_parts.contains( hitPart ) )
 	{
-		AnatomyPart& part = m_parts[hitPart];
+		// T-0025: cascade through parents using a pointer that can be
+		// properly reassigned. The previous code used a `AnatomyPart&`
+		// reference and then did `part = m_parts[hitPart];` to "rebind"
+		// — but reference reassignment in C++ is value-copy through the
+		// reference, which OVERWROTE the original child entry with its
+		// parent's data (including the parent's id). Subsequent reads of
+		// the hash saw the same id at multiple keys, and the Creature
+		// Info panel rendered duplicates ("4 torsos on a dead gnome").
+		// Using a pointer + while loop fixes the cascade and removes the
+		// hash corruption.
+		AnatomyPart* part = &m_parts[hitPart];
 
-		if ( part.hp <= 0 )
+		while ( part->hp <= 0 )
 		{
-			if ( m_parts.contains( part.parent ) )
+			if ( m_parts.contains( part->parent ) )
 			{
-				hitPart = part.parent;
-				part    = m_parts[hitPart];
-				if ( part.hp <= 0 )
-				{
-					if ( m_parts.contains( part.parent ) )
-					{
-						hitPart = part.parent;
-						part    = m_parts[hitPart];
-						if ( part.hp <= 0 )
-						{
-							if ( m_parts.contains( part.parent ) )
-							{
-								hitPart = part.parent;
-								part    = m_parts[hitPart];
-							}
-							else
-							{
-								m_status        = AnatomyStatus( m_status | AS_DEAD );
-								m_statusChanged = true;
-								return;
-							}
-						}
-					}
-					else
-					{
-						m_status        = AnatomyStatus( m_status | AS_DEAD );
-						m_statusChanged = true;
-						return;
-					}
-				}
+				hitPart = part->parent;
+				part    = &m_parts[hitPart];
 			}
 			else
 			{
@@ -302,24 +284,24 @@ void Anatomy::damage( Equipment* eq, DamageType dt, AnatomyHeight da, AnatomySid
 			}
 		}
 
-		float dr          = eq->getDamageReduction( part.id );
+		float dr          = eq->getDamageReduction( part->id );
 		float finalDamage = strength - dr;
-		part.hp           = part.hp - finalDamage;
+		part->hp          = part->hp - finalDamage;
 		if ( finalDamage > 0 )
 		{
 			m_status = AnatomyStatus( m_status | AS_WOUNDED );
 		}
 		if ( dt == DT_SLASH || dt == DT_PIERCING )
 		{
-			if ( finalDamage > ( ( part.maxHP / 100 ) * 10 ) )
+			if ( finalDamage > ( ( part->maxHP / 100 ) * 10 ) )
 			{
 				m_bleeding += 0.5;
 			}
 		}
 
-		if ( part.hp <= 0 )
+		if ( part->hp <= 0 )
 		{
-			if ( part.isVital )
+			if ( part->isVital )
 			{
 				m_status        = AnatomyStatus( m_status | AS_DEAD );
 				m_statusChanged = true;

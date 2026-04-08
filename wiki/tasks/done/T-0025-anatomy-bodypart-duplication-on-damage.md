@@ -38,4 +38,60 @@ Cross-reference: `GuiCreatureInfo` has a `BodyPartInfo` struct populated from th
 
 ## Result
 
-*(Building agent fills in.)*
+**Root cause was nastier than the hypothesis suggested.** It wasn't an `append` somewhere — it was a C++ reference reassignment that quietly corrupted the `m_parts` hash through aliasing.
+
+In `Anatomy::damage()` (`src/game/anatomy.cpp:258-302`), the cascade-to-parent logic looked like:
+
+```cpp
+AnatomyPart& part = m_parts[hitPart];
+if ( part.hp <= 0 )
+{
+    if ( m_parts.contains( part.parent ) )
+    {
+        hitPart = part.parent;
+        part    = m_parts[hitPart];   // <-- BUG
+        // ... three more nested levels of the same shape
+    }
+}
+```
+
+The line `part = m_parts[hitPart];` looks like "rebind the reference to the parent" but **C++ reference reassignment is a value copy through the existing reference, not a rebind**. So the original child entry (e.g. `m_parts[CP_LEFT_HAND]`) got *overwritten in-place* with the parent's data — including the parent's `id` field. After enough cascades, `m_parts[CP_LEFT_HAND].id == CP_TORSO`, `m_parts[CP_LEFT_ARM].id == CP_TORSO`, etc.
+
+When `populateAnatomy` then iterated the hash and called `bodyPartName(part.id)`, every corrupted entry rendered as "Torso". A gnome killed by an animal would end up with 4 torsos in the Creature Info panel — exactly the user's reproduction case.
+
+### Fix
+
+Replaced the reference + nested-if cascade with a pointer + while loop:
+
+```cpp
+AnatomyPart* part = &m_parts[hitPart];
+while ( part->hp <= 0 )
+{
+    if ( m_parts.contains( part->parent ) )
+    {
+        hitPart = part->parent;
+        part    = &m_parts[hitPart];   // pointer reassignment, no aliasing
+    }
+    else
+    {
+        m_status        = AnatomyStatus( m_status | AS_DEAD );
+        m_statusChanged = true;
+        return;
+    }
+}
+```
+
+Pointers can be properly reassigned in C++; references can't. The loop also handles arbitrary cascade depth, replacing the awkward 3-level nested-if structure that the previous code used to walk parent chains. All `part.foo` accesses in the rest of the function were updated to `part->foo`.
+
+### Side benefit — collateral fixes
+
+The pointer-loop refactor eliminates the 3-level depth limit on parent cascades. Previously a deep chain (e.g. finger → hand → forearm → arm → torso) would have stopped traversing after the third level. Now any cascade depth works.
+
+### What about existing corrupted saves?
+
+Old saves with already-duplicated body parts will still show the duplicates because they're persisted in the gnome's serialized `m_parts` data. **Save migration deferred** — most affected gnomes are dead anyway (the bug only fired during lethal damage cascades, which usually happen as a creature is dying), and corpses are being redesigned in T-0026. If a player has a wounded-but-alive gnome with duplicates, they'll just have to live with a slightly broken anatomy display until that gnome's data refreshes.
+
+### Build
+
+Green. 26 warnings, all pre-existing.
+
