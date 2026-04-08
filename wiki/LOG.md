@@ -157,3 +157,11 @@ Dependencies: T-0019 → T-0020 → T-0021 (group structure is shared); T-0018 s
 ## [2026-04-07] task | done: T-0022 (texture pack system v1)
 
 - **T-0022** — Generalized v0's hardcoded `tilesheet_ai/` toggle into a real Minecraft-style pack system. Pack discovery scans `content/texturepacks/`, each pack ships a `pack.json` with id/name/author/version/description, multi-pack load order via `activeTexturePacks` config list, per-file fallback through the active chain to default `tilesheet/`. New Settings → Texture Packs tab. v0 AI pack migrated to `content/texturepacks/ai/`. Both palette-friendly and high-fidelity pack styles work transparently — the engine just loads files, art philosophy is the author's choice. Documented in `content/texturepacks/README.md`.
+
+## [2026-04-07] task | intake: T-0023 Construction visibility — show why a build job is stuck
+
+Reproduced live: a Distillery placement sat for an hour with no progress because the colony lacked Barrels (Distillery requires `1 × Table + 2 × Barrel`). Player has no UI feedback explaining why. Tile Info should show the recipe + per-component progress + a "Waiting for materials" status string when applicable, plus a Cancel button.
+
+## [2026-04-07] task | intake: T-0024 Thirst warning thought decays out, hides death progression
+
+Reproduced live: gnomes hit critical thirst, displayed "Dying of thirst" thought, thought disappeared after ~600 ticks, gnomes kept working. They were not safe — needs death threshold is `-100`, not `0`. The "0% thirst" the player sees is only halfway from neutral to dead. Plus the warning thought has a stale-cap bug: `addThought("DyingOfThirst", -10, 600, 1)` with `maxStacks=1` means once the thought ages out, it can't be re-added even though the gnome is still in critical state. Fix: make `addThought` refresh existing thought duration when the cap is hit (preferred), and/or fire a separate event/alert for critical-need states. Same pattern probably affects hunger and sleep — verify.
