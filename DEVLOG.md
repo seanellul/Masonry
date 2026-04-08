@@ -6,6 +6,26 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-07] Creature Info: GoTo + Follow camera buttons
+
+**Milestone**: UI/UX
+**Files changed**: `src/gui/imguibridge.h`, `src/gui/imguibridge.cpp`, `src/gui/mainwindow.cpp`, `src/gui/ui/ui_sidepanels.cpp`
+
+### Changes
+
+- **Creature Info → GoTo button.** Centers the camera on the selected creature (gnome, animal, or monster) and snaps to its z-level. Reuses the existing `cmdNavigateToEntity` infrastructure that the population view's name-click already used.
+- **Creature Info → Follow button.** Locks the camera to the creature; the renderer re-centers every frame on the followed entity. Toggles between "Follow" (idle) and "Following" (active, blue-tinted). Auto-unlocks on the next WASD input or any drag-pan via `mouseMoveEvent` — the player gets out of follow mode by simply moving the camera the way they normally would. Tooltip on the active button reads *"Camera locked. Move (WASD or drag) to release."* If the followed entity dies or vanishes, follow auto-clears.
+- New `ImGuiBridge::cmdFollowEntity / cmdStopFollowing / followingEntityID / resolveFollowedEntityPos`. The resolver looks up the entity in the gnome / animal / monster managers and returns its current `Position` or false if gone. `MainWindow::paintGL` consumes this each frame after the existing one-shot `pendingCameraNav` handler.
+- The buttons appear inline with the gnome's name in the panel header, right-aligned within the available width. They work for non-gnome creatures too (an animal or monster's `id` is non-zero), so you can also follow a hostile mob across the map.
+
+### Technical Details
+
+- Follow lookup is per-frame but cheap (single-entity manager hashmap lookups).
+- z-level changes propagate through `signalViewLevel` so the rest of the UI stays in sync if the followed creature climbs stairs.
+- Build: green.
+
+---
+
 ## [2026-04-07] Creature Info skills section restructured (skills redesign follow-up)
 
 **Milestone**: Skills redesign — polish

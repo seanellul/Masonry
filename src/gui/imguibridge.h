@@ -99,6 +99,15 @@ public:
 	void cmdNavigateToEntity( unsigned int entityID );
 	void cmdNavigateToPosition( Position pos );
 
+	// Camera follow: when non-zero, MainWindow re-centers on this entity
+	// every frame. Cleared by any WASD or mouse-drag pan input.
+	unsigned int followingEntityID = 0;
+	void cmdFollowEntity( unsigned int entityID );
+	void cmdStopFollowing();
+	// Resolve the current world position of the followed entity (gnome /
+	// animal / monster). Returns false if the entity no longer exists.
+	bool resolveFollowedEntityPos( Position& outPos ) const;
+
 	// Update checker
 	UpdateChecker* updateChecker = nullptr;
 

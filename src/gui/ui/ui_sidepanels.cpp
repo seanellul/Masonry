@@ -2387,6 +2387,39 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 
 	// Name and type
 	ImGui::TextColored( ImVec4( 1.0f, 0.9f, 0.6f, 1.0f ), "%s", ci.name.toStdString().c_str() );
+
+	// GoTo / Follow buttons (work for any tracked creature, not just gnomes)
+	if ( ci.id != 0 )
+	{
+		ImGui::SameLine();
+		float availX = ImGui::GetContentRegionAvail().x;
+		ImGui::SameLine( ImGui::GetCursorPosX() + qMax( 0.0f, availX - 130.0f ) );
+		if ( ImGui::SmallButton( "GoTo" ) )
+		{
+			bridge.cmdNavigateToEntity( ci.id );
+		}
+		if ( ImGui::IsItemHovered() ) ImGui::SetTooltip( "Center camera on this creature" );
+		ImGui::SameLine();
+		const bool isFollowing = ( bridge.followingEntityID == ci.id );
+		if ( isFollowing )
+		{
+			ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0.2f, 0.5f, 0.8f, 1.0f ) );
+			ImGui::PushStyleColor( ImGuiCol_ButtonHovered, ImVec4( 0.3f, 0.6f, 0.9f, 1.0f ) );
+		}
+		if ( ImGui::SmallButton( isFollowing ? "Following" : "Follow" ) )
+		{
+			if ( isFollowing )
+				bridge.cmdStopFollowing();
+			else
+				bridge.cmdFollowEntity( ci.id );
+		}
+		if ( isFollowing ) ImGui::PopStyleColor( 2 );
+		if ( ImGui::IsItemHovered() )
+			ImGui::SetTooltip( isFollowing
+				? "Camera locked. Move (WASD or drag) to release."
+				: "Lock the camera to this creature." );
+	}
+
 	if ( isGnome )
 	{
 		// T-0021: skill title under the name (e.g. "Master Blacksmith"),

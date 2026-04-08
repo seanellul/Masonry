@@ -463,6 +463,42 @@ void ImGuiBridge::cmdNavigateToPosition( Position pos )
 	}
 }
 
+void ImGuiBridge::cmdFollowEntity( unsigned int entityID )
+{
+	followingEntityID = entityID;
+	// Snap immediately so the player doesn't have to wait a frame.
+	cmdNavigateToEntity( entityID );
+}
+
+void ImGuiBridge::cmdStopFollowing()
+{
+	followingEntityID = 0;
+}
+
+bool ImGuiBridge::resolveFollowedEntityPos( Position& outPos ) const
+{
+	if ( followingEntityID == 0 ) return false;
+	auto* ec = Global::eventConnector;
+	if ( !ec || !ec->game() ) return false;
+
+	if ( auto* gnome = ec->game()->gm()->gnome( followingEntityID ) )
+	{
+		outPos = gnome->getPos();
+		return true;
+	}
+	if ( auto* animal = ec->game()->cm()->animal( followingEntityID ) )
+	{
+		outPos = animal->getPos();
+		return true;
+	}
+	if ( auto* monster = ec->game()->cm()->monster( followingEntityID ) )
+	{
+		outPos = monster->getPos();
+		return true;
+	}
+	return false;
+}
+
 // Tile info commands
 void ImGuiBridge::cmdTerrainCommand( unsigned int tileID, const QString& cmd ) { emit signalTerrainCommand( tileID, cmd ); }
 void ImGuiBridge::cmdManageCommand( unsigned int tileID ) { emit signalManageCommand( tileID ); }

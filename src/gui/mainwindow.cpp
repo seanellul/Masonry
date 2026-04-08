@@ -314,6 +314,10 @@ void MainWindow::keyboardMove()
 
 	if( m_renderer && (x || y) )
 	{
+		// Camera follow auto-unlock: any WASD input drops the lock.
+		if ( m_bridge && m_bridge->followingEntityID != 0 )
+			m_bridge->followingEntityID = 0;
+
 		const float keyboardMoveSpeed = (Global::cfg->get( "keyboardMoveSpeed" ).toFloat() + 50.f) * 4.f;
 
 		float moveX = -x * keyboardMoveSpeed * elapsedTime;
@@ -349,6 +353,10 @@ void MainWindow::mouseMoveEvent( QMouseEvent* event )
 
 			if ( m_isMove )
 			{
+				// Camera follow auto-unlock: drag-pan drops the lock.
+				if ( m_bridge && m_bridge->followingEntityID != 0 )
+					m_bridge->followingEntityID = 0;
+
 				m_renderer->move( gp.x() - m_moveX, gp.y() - m_moveY );
 
 				m_moveX = gp.x();
@@ -664,6 +672,28 @@ void MainWindow::paintGL()
 		GameState::viewLevel = m_bridge->cameraNavTarget.z;
 		m_renderer->setViewLevel( GameState::viewLevel );
 		emit signalViewLevel( GameState::viewLevel );
+	}
+
+	// Camera follow: every frame, re-center on the followed entity if any.
+	// Cleared by WASD/drag input below in keyboardMove / mouseMoveEvent.
+	if ( m_bridge && m_bridge->followingEntityID != 0 )
+	{
+		Position followPos;
+		if ( m_bridge->resolveFollowedEntityPos( followPos ) )
+		{
+			m_renderer->onCenterCameraPosition( followPos );
+			if ( GameState::viewLevel != followPos.z )
+			{
+				GameState::viewLevel = followPos.z;
+				m_renderer->setViewLevel( GameState::viewLevel );
+				emit signalViewLevel( GameState::viewLevel );
+			}
+		}
+		else
+		{
+			// Entity gone (died, removed) — stop following.
+			m_bridge->followingEntityID = 0;
+		}
 	}
 
 	// Render the game world
