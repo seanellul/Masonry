@@ -947,18 +947,23 @@ void drawPopulationPanel( ImGuiBridge& bridge )
 							ImGui::PopID();
 						}
 
-						// "All" column: set all hours for this gnome to paint brush
+						// T-0013: "All" column = bulk-apply button, not a painted cell.
+						// Previously it used the brush's color + label which made the
+						// grid look like every hour had been painted to the current
+						// brush. Render as a neutral button with a distinctive arrow.
 						ImGui::TableNextColumn();
 						ImGui::PushID( gnome.id * 100 + 99 );
-						ImGui::PushStyleColor( ImGuiCol_Button, activityColor( bridge.schedulePaintBrush ) );
-						if ( ImGui::SmallButton( activityLabel( bridge.schedulePaintBrush ) ) )
+						ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0.25f, 0.25f, 0.28f, 1.0f ) );
+						ImGui::PushStyleColor( ImGuiCol_ButtonHovered, ImVec4( 0.40f, 0.40f, 0.45f, 1.0f ) );
+						if ( ImGui::SmallButton( "<<" ) )
 						{
 							bridge.cmdSetAllHours( gnome.id, bridge.schedulePaintBrush );
 						}
-						ImGui::PopStyleColor();
+						ImGui::PopStyleColor( 2 );
 						if ( ImGui::IsItemHovered() )
 						{
-							ImGui::SetTooltip( "Set all hours to selected activity" );
+							ImGui::SetTooltip( "Apply current brush (%s) to all 24 hours for this gnome",
+								activityLabel( bridge.schedulePaintBrush ) );
 						}
 						ImGui::PopID();
 					}
@@ -969,14 +974,22 @@ void drawPopulationPanel( ImGuiBridge& bridge )
 					ImGui::TextDisabled( "All" );
 					for ( int h = 0; h < 24; ++h )
 					{
+						// T-0013: per-hour bulk-apply button — neutral visual so it
+						// doesn't look like every gnome's schedule is already painted.
 						ImGui::TableNextColumn();
 						ImGui::PushID( 999900 + h );
-						ImGui::PushStyleColor( ImGuiCol_Button, activityColor( bridge.schedulePaintBrush ) );
-						if ( ImGui::SmallButton( activityLabel( bridge.schedulePaintBrush ) ) )
+						ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0.25f, 0.25f, 0.28f, 1.0f ) );
+						ImGui::PushStyleColor( ImGuiCol_ButtonHovered, ImVec4( 0.40f, 0.40f, 0.45f, 1.0f ) );
+						if ( ImGui::SmallButton( "^^" ) )
 						{
 							bridge.cmdSetHourForAll( h, bridge.schedulePaintBrush );
 						}
-						ImGui::PopStyleColor();
+						ImGui::PopStyleColor( 2 );
+						if ( ImGui::IsItemHovered() )
+						{
+							ImGui::SetTooltip( "Apply current brush (%s) to hour %02d for every gnome",
+								activityLabel( bridge.schedulePaintBrush ), h );
+						}
 						ImGui::PopID();
 					}
 					// "All" column in "All" row

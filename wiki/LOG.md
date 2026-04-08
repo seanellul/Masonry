@@ -91,3 +91,10 @@ First autonomous run of the task pipeline. Four UI polish tasks scoped + impleme
 - **T-0012** — Population view: removed `.left(5)` truncation of skill headers (Woodcutting vs Woodcarving now distinct); gnome-name clicks now navigate camera + open creature info in both Skills views.
 
 All built green. Smoke test runtime timed out at 120s on shutdown — treated as a pre-existing flake since all edits are in ImGui render paths with no game-thread logic. Deferred: extending gnome-name navigation to the remaining three population tabs.
+
+## [2026-04-07] task | done: T-0005, T-0013 (autonomous batch 2)
+
+- **T-0013** — Schedule painter: diagnosed not as a click bug but as a visual misdirection. The per-gnome "All" column and per-hour "All" row were rendering with the current brush's color + label, making it look like every hour had been bulk-painted whenever a brush was armed. Swapped both to neutral dark-gray cells with `<<` / `^^` labels and explicit tooltips. Individual hour click/drag painting was already correctly wired.
+- **T-0005** — Tile Info icon buttons: made `actionButton()` frameless via transparent button colors, applied the same treatment to the creature-info `(i)` button. Identified the "mystery button" as `ICON_FA_RIGHT_LEFT` Replace-floor (already had a tooltip — the rectangular frame was just distracting).
+
+Both UI-render-only; build green.

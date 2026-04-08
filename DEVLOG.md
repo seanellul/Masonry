@@ -6,6 +6,24 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-07] UI polish batch 2 — schedule painter, tile info icons (T-0005, T-0013)
+
+**Milestone**: UI/UX polish
+**Files changed**: `src/gui/ui/ui_sidepanels.cpp`, `src/gui/ui/ui_tileinfo.cpp`
+
+### Changes
+
+- **T-0005 — Tile Info: frameless action buttons + mystery button identified.** The `actionButton()` helper in `ui_tileinfo.cpp` now pushes transparent `ImGuiCol_Button` with a subtle white hover overlay, so every Terrain-row action (Remove floor, Replace floor, Fell tree, Harvest, Mine wall) renders icon-only. Applied the same transparent push/pop block to the creature-info `ICON_FA_CIRCLE_INFO` button so clicking the `(i)` next to a gnome in the Creatures section is consistent. The "mystery button" next to the trash turned out to be the existing `ICON_FA_RIGHT_LEFT` Replace-floor action — already had a hover tooltip; it just read as mysterious because the rectangular frame distracted from the icon.
+- **T-0013 — Schedule painter: fix the visual misdirection on bulk-apply cells.** The click pipeline was actually correct — paint brushes only arm state, individual hour cells dispatch `cmdSetSchedule()`, and drag-paint works. The bug was that the per-gnome "All" column and per-hour "All" row rendered their bulk-apply buttons with the current brush's color + label, making the schedule grid look like every hour had been painted to whatever brush was armed. Swapped both to a neutral dark-gray background with distinctive `<<` / `^^` labels and explicit tooltips. Click handlers unchanged; bulk-apply behavior still works, but the grid no longer lies to the user.
+
+### Technical Details
+
+- Both fixes are UI-render-path-only; no game-thread, data model, or save format changes.
+- Build: green. `ui_tileinfo.cpp` has pre-existing `btnSize` + `terrainRow` unused-variable warnings that are not from this change.
+- References: `wiki/tasks/done/T-0005-*.md`, `wiki/tasks/done/T-0013-*.md`.
+
+---
+
 ## [2026-04-07] UI polish batch — build menu, workshop, population (T-0002, T-0003, T-0006, T-0012)
 
 **Milestone**: UI/UX polish

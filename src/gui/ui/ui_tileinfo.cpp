@@ -5,11 +5,18 @@
 #include "../IconsRpgAwesome.h"
 #include <imgui.h>
 
-// Compact action button — small, square, with tooltip
+// Compact action button — icon-only (no rectangular frame) with tooltip.
+// T-0005: was rendering with SmallButton's default frame, which produced a
+// distracting pill behind every icon. The button is still clickable and
+// hovers; only the resting background is transparent.
 static bool actionButton( const char* icon, const char* tooltip, const char* idSuffix )
 {
 	ImGui::PushID( idSuffix );
+	ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0, 0, 0, 0 ) );
+	ImGui::PushStyleColor( ImGuiCol_ButtonHovered, ImVec4( 1, 1, 1, 0.12f ) );
+	ImGui::PushStyleColor( ImGuiCol_ButtonActive, ImVec4( 1, 1, 1, 0.20f ) );
 	bool clicked = ImGui::SmallButton( icon );
+	ImGui::PopStyleColor( 3 );
 	ImGui::PopID();
 	if ( ImGui::IsItemHovered() )
 		ImGui::SetTooltip( "%s", tooltip );
@@ -223,11 +230,16 @@ void drawTileInfo( ImGuiBridge& bridge )
 				ImGui::Text( "%s", creature.text.toStdString().c_str() );
 				ImGui::SameLine();
 				ImGui::PushID( creature.id );
+				// T-0005: icon-only info button (no button frame).
+				ImGui::PushStyleColor( ImGuiCol_Button, ImVec4( 0, 0, 0, 0 ) );
+				ImGui::PushStyleColor( ImGuiCol_ButtonHovered, ImVec4( 1, 1, 1, 0.12f ) );
+				ImGui::PushStyleColor( ImGuiCol_ButtonActive, ImVec4( 1, 1, 1, 0.20f ) );
 				if ( ImGui::SmallButton( ICON_FA_CIRCLE_INFO ) )
 				{
 					bridge.cmdRequestCreatureUpdate( creature.id );
 					bridge.activeSidePanel = ImGuiBridge::SidePanel::CreatureInfo;
 				}
+				ImGui::PopStyleColor( 3 );
 				if ( ImGui::IsItemHovered() )
 					ImGui::SetTooltip( "View creature details" );
 				ImGui::PopID();

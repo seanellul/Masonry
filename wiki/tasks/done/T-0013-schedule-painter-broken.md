@@ -46,8 +46,20 @@ See the screenshot attached in the intake conversation: every gnome's rightmost 
 
 ## Plan
 
-*(Scoping agent: (1) Find the Schedule tab rendering code in `src/gui/ui/` — likely in the same population view file touched by T-0012. Reproduce the bug via `mcp__ingnomia-test__build_game` + take_screenshot to confirm the described symptom. (2) Identify how the Paint buttons currently handle their click. The bug is almost certainly that each Paint button's click handler is directly calling a "set schedule type" function on some default target (the "All" cell?) instead of just setting a local brush-armed state. (3) Introduce a `currentPaintType` state on the schedule panel. Paint buttons set this state only. Hour cells check this state on click. (4) Wire click-and-drag — ImGui's `ImGui::IsMouseDragging` + tracking which cell the cursor is over during the drag. (5) Preserve the "All" column / row / corner bulk-apply semantics — those cells should still work, but only when clicked after a brush is armed, same as individual cells. (6) Add visual feedback for the armed brush on the Paint palette.)*
+**Diagnosis after reading the code** (`drawPopulationPanel` → Schedule tab at `src/gui/ui/ui_sidepanels.cpp` ~line 826): the click pipeline is actually **correct**. Paint buttons only set `bridge.schedulePaintBrush`; individual hour cells dispatch `cmdSetSchedule(gnome.id, h, brush)` on click; drag-paint works via `IsItemHovered() + IsMouseDown()`. The user's own screenshot shows Dimperdoodle's 00/01 cells painted and Azas's 01 cell painted, so individual painting *does* reach the simulation.
+
+The real bug is a **visual misdirection**. The per-gnome "All" column (~line 954) and the per-hour "All" row (~line 975) render their bulk-apply buttons using `activityColor(schedulePaintBrush)` + `activityLabel(schedulePaintBrush)`. That means the moment the user selects the Eat brush, *every* row's "All" cell and *every* column's bottom "All" cell paint themselves orange with `E` — which exactly matches the user's screenshot. It looks like the schedule has been bulk-applied, but nothing has actually been written. The user's complaint ("it just sets 'all' to that selection") is an artifact of this preview.
+
+Fix: render the two bulk-apply button columns with a neutral dark gray background and a distinct non-activity label (`<<` for the per-gnome row-end button, `^^` for the per-hour column-bottom button). Keep the click handlers (`cmdSetAllHours`, `cmdSetHourForAll`) unchanged so the bulk-apply behavior still works — it just doesn't visually pretend to be an already-painted cell. Tooltips spell out exactly what each button does with the current brush.
 
 ## Result
 
-*(Building agent fills in after implementation.)*
+Implemented in `src/gui/ui/ui_sidepanels.cpp`:
+
+- **Per-gnome "All" column** (~line 950): swapped the `PushStyleColor(Button, activityColor(brush)) + SmallButton(activityLabel(brush))` block for a neutral `(0.25, 0.25, 0.28)` background + `SmallButton("<<")` label. Added a tooltip `"Apply current brush (%s) to all 24 hours for this gnome"`.
+- **Per-hour "All" row** (~line 970): identical treatment — neutral background, `SmallButton("^^")` label, tooltip `"Apply current brush (%s) to hour %02d for every gnome"`.
+- Click handlers (`cmdSetAllHours`, `cmdSetHourForAll`) are unchanged; the bulk-apply semantics are preserved.
+
+Click/drag painting on individual hour cells was already correctly wired and did not need changes. This fix is purely visual but directly addresses the user's observation — with the preview-color gone, the grid will no longer look "pre-applied" when a brush is armed.
+
+Build: green (35 warnings, all pre-existing or harmless — includes a cached `unused function 'terrainRow'` and `unused variable 'preview'` in other files).
