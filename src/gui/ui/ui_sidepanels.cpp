@@ -649,9 +649,23 @@ void drawPopulationPanel( ImGuiBridge& bridge )
 									ImGui::SameLine();
 									ImGui::Text( "%d", skill.level );
 								}
+								// T-0008b: richer skill tooltip — name + level/XP +
+								// description sourced from $SkillDesc_<sid>.
 								if ( ImGui::IsItemHovered() )
 								{
-									ImGui::SetTooltip( "%s: Level %d (XP: %.0f)", skill.name.toStdString().c_str(), skill.level, skill.xpValue );
+									ImGui::BeginTooltip();
+									ImGui::Text( "%s: Level %d (XP: %.0f)",
+										skill.name.toStdString().c_str(), skill.level, skill.xpValue );
+									QString descKey = QString( "$SkillDesc_" ) + skill.sid;
+									QString desc = S::s( descKey );
+									if ( !desc.startsWith( "Error:" ) )
+									{
+										ImGui::Separator();
+										ImGui::PushTextWrapPos( 360.0f );
+										ImGui::TextUnformatted( desc.toStdString().c_str() );
+										ImGui::PopTextWrapPos();
+									}
+									ImGui::EndTooltip();
 								}
 								ImGui::PopID();
 							}

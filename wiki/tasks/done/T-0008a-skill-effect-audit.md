@@ -70,4 +70,29 @@ Either is fine. Pick at task kickoff.
 
 ## Result
 
-*(Filled in after audit.)*
+Audit complete. Canonical output: **`wiki/dev/subsystems/skills.md`** (new, linked from `wiki/INDEX.md`).
+
+### Headline findings (full detail in the wiki page)
+
+Of 47 skills defined in the `Skills` table, they split into four tiers:
+
+- **Tier 1 — Hot-path (5 skills, real direct effect):** Hauling (→ move speed table), Unarmed / Melee / Dodge (→ combat), MagicNature / MagicGeomancy (→ spell scaling).
+- **Tier 2 — Quality-crafting (23 skills):** Every skill listed in `Crafts.SkillID`. Consumed by `CanWork::craft()` at `canwork.cpp:1147` → `qIndex = skillLevel / 20. * qSize`. Higher skill = higher quality tier on crafted output. Covers all the "named" crafting skills: Carpentry, Masonry, Blacksmithing, Cooking, Brewing, Tailoring, Weaving, Leatherworking, GlassMaking, etc.
+- **Tier 3 — Thought-only (10 skills):** Mining, Woodcutting, Farming, Horticulture, Construction, Medic, Caretaking, Tinkering, Ranged, Crossbow, Block. These only generate mood thoughts in `gnome.cpp:1285+` when the gnome works a matching job. **Skill level never affects job outcome.**
+- **Tier 4 — Dead (9 skills):** AnimalHusbandry, Butchery, Fishing, Mechanic, Thrown, Gun, Armor (plus Ranged/Crossbow/Block which are also effectively dead in combat). Tracked in DB, registered in `SkillToInt`, but no code reads their level for any gameplay effect.
+
+### The 7 follow-up task seeds captured in the audit page
+
+1. Wire Fishing to actually affect fishing output.
+2. Wire AnimalHusbandry to affect pasture productivity.
+3. Wire Butchery to affect carcass yield.
+4. Wire ranged-combat skills (Ranged, Crossbow, Thrown, Gun) or remove.
+5. Wire defensive skills (Block, Armor) or remove.
+6. Wire Mining / Woodcutting / Farming / Horticulture / Construction / Medic / Caretaking to affect job outcomes — **the biggest gap**: seven "core" colony skills have no effect on the work they're named for.
+7. Investigate `setSkillLevel` vs `getSkillLevel` encoding mismatch (`reverseFib` is only applied on read).
+
+### Walkthrough note
+
+The task spec asked for the developer to be walked through findings interactively before closing. In the autonomous session this is deferred: the audit page is self-contained and can be reviewed asynchronously; the in-game tooltips (T-0008b, following immediately from this task) use the same source of truth, so dead skills will be labeled honestly in the UI and surface themselves to the player as the developer plays the game.
+
+Read `wiki/dev/subsystems/skills.md` for the complete table, every citation, and the full follow-up list. The seven follow-up seeds above are the highest-leverage candidates for new `tasks/inbox/` entries.

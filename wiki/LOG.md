@@ -105,3 +105,10 @@ Both UI-render-only; build green.
 - **T-0007** — Dig/Nature tooltips. Built on T-0004 with parallel `$ActionDesc_<action>` keys. 11 descriptions covering all dig actions and 4 nature actions. **Discovered two bugs** during the code inspection (the diagnostic dividend of the pattern): `Forage` is a fully unimplemented UI stub; `Plant Tree` in the Nature menu has an empty action string. Both logged to `wiki/dev/known-issues.md`.
 
 The T-0004 pipeline is now the default pattern for all future tooltip tasks. T-0008b will piggyback on it with `$SkillDesc_<id>`.
+
+## [2026-04-07] task | done: T-0008a, T-0008b (autonomous batch 4)
+
+- **T-0008a** — Skills effect audit. New wiki page `wiki/dev/subsystems/skills.md` covering every one of the 47 skills, sorted into 4 tiers (hot-path / quality-crafting / thought-only / dead) with file:line citations. Captured 7 follow-up task seeds — biggest finding: seven "core" colony skills (Mining, Woodcutting, Farming, Horticulture, Construction, Medic, Caretaking) have no effect on the work they're named for.
+- **T-0008b** — Honest skill tooltips. 46 new `$SkillDesc_*` Translation rows sourced from the audit. Dead and thought-only skills are labeled honestly ("Currently tracked but has no gameplay effect"). Individual Skills view in the Population panel gets a rich tooltip; group view left as-is.
+
+The T-0004 pattern has now been applied three times (builds, shape actions, skills) and is proven as the default for wiki → UI info flow.

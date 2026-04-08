@@ -16963,5 +16963,67 @@ INSERT INTO "Translation" ("ID","Text") VALUES ('$ActionDesc_RemovePlant','Uproo
 -- (disabled button). Planting happens only through groves. No ActionDesc
 -- entry is needed because the button is greyed out.
 
+-- ============================================================================
+-- Skill tooltips (T-0008b) — content sourced from T-0008a audit.
+-- wiki/dev/subsystems/skills.md is the authoritative narrative; this table
+-- is the runtime projection. Entries are honest: skills with no gameplay
+-- effect are labeled as such so the UI doesn't lie to the player.
+-- ============================================================================
+
+-- Hot-path skills (real effects)
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Hauling','Sets your gnome''s base move speed. Higher Hauling = faster movement on every job, not just hauling tasks.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Unarmed','Attack skill used for unarmed combat and as the base attack value when wielding a weapon.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Melee','Weapon attack skill. Affects hit rate and damage when fighting with a melee weapon in each hand.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Dodge','Defensive roll. Higher Dodge = higher chance to avoid incoming attacks in combat.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_MagicNature','Scales the radius and effect of nature spells (plant growth, reveal, and similar).');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_MagicGeomancy','Scales the radius and effect of earth spells (stone shaping, vein reveal, and similar).');
+
+-- Quality-crafting skills (scale item quality tier via CanWork::craft)
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Stonecarving','Scales the quality tier of stone carvings — statues, pillars, ornaments. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Masonry','Scales the quality tier of stone masonry — stone furniture, building blocks, tools. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Carpentry','Scales the quality tier of wooden goods — furniture, barrels, doors, wagons. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Woodcarving','Scales the quality tier of wood carvings — statues, statuettes, puzzle boxes. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Smelting','Scales the quality tier of smelted metal bars. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Blacksmithing','Scales the quality tier of forged metal tools — pickaxes, hammers, files, nails. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Metalworking','Scales the quality tier of decorative metalwork — statues, statuettes, coins. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_WeaponCrafting','Scales the quality tier of crafted weapons. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_ArmorCrafting','Scales the quality tier of crafted armor. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Gemcutting','Scales the quality tier of cut gems and flint pickaxe heads. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_JewelryMaking','Scales the quality tier of crafted jewelry — rings and necklaces. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Weaving','Scales the quality tier of woven cloth bolts. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Tailoring','Scales the quality tier of sewn goods — bags, bandages, mattresses, padding. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Dyeing','Scales the quality tier of dyed furniture and cloth. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Pottery','Scales the quality tier of fired clay goods — bricks, statuettes. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Leatherworking','Scales the quality tier of leather goods — armor, bags, accessories. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Bonecarving','Scales the quality tier of carved bone items. Higher skill = better quality output.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Prospecting','Scales the quality tier of prospecting samples and affects mineral vein identification.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Engineering','Scales the quality tier of engineered components — gears, mechanisms, axles.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Machining','Scales the quality tier of machined parts. Used by the machine shop for complex mechanical builds.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Cooking','Scales the quality tier of cooked meals. Better cooking = better food and better mood from eating.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Brewing','Scales the quality tier of brewed drinks. Better brewing = better drinks and better mood.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_GlassMaking','Scales the quality tier of glass goods — windows, bottles, decorative items.');
+
+-- Thought-only skills (no gameplay effect, only mood)
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Mining','Currently only affects mood (gnomes enjoy mining when curious). Does not yet affect mining speed or ore yield — see wiki known-issues.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Woodcutting','Currently only affects mood. Does not yet affect felling speed or log yield — see wiki known-issues.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Farming','Currently only affects mood. Does not yet affect crop yield, growth rate, or harvest success — see wiki known-issues.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Horticulture','Currently only affects mood. Does not yet affect plant growth or harvest — see wiki known-issues.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Construction','Currently only affects mood. Does not yet affect build speed or quality — see wiki known-issues.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Tinkering','Currently only affects mood. Does not yet affect engineering job outcomes — see wiki known-issues.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Medic','Currently only affects mood. Does not yet affect treatment success or heal rate — see wiki known-issues.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Caretaking','Currently only affects mood. Does not yet affect patient recovery rate — see wiki known-issues.');
+
+-- Dead skills (tracked but never consulted)
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_AnimalHusbandry','Currently tracked but has no gameplay effect. Animal handling succeeds independent of this skill.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Butchery','Currently tracked but has no gameplay effect. Butchering yield is independent of this skill.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Fishing','Currently tracked but has no gameplay effect. Fishing outcomes are independent of this skill.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Mechanic','Currently tracked but has no gameplay effect.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Ranged','Currently tracked but has no gameplay effect — ranged combat does not consult this skill.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Crossbow','Currently tracked but has no gameplay effect — ranged combat does not consult this skill.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Thrown','Currently tracked but has no gameplay effect — thrown weapons are not implemented.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Gun','Currently tracked but has no gameplay effect — firearms are not implemented.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Block','Currently tracked but has no gameplay effect in active combat — only affects mood during training.');
+INSERT INTO "Translation" ("ID","Text") VALUES ('$SkillDesc_Armor','Currently tracked but has no gameplay effect. Damage reduction comes from the armor item itself, not this skill.');
+
 
 COMMIT;

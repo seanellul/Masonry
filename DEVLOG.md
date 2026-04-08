@@ -6,6 +6,30 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-07] Skill audit + honest skill tooltips (T-0008a, T-0008b)
+
+**Milestone**: Knowledge infrastructure + UI/UX
+**Files changed**: `content/db/ingnomia.db.sql`, `src/gui/ui/ui_sidepanels.cpp`, `wiki/dev/subsystems/skills.md` (new), `wiki/INDEX.md`
+
+### Changes
+
+- **T-0008a — Full skills effect audit.** Produced the authoritative `wiki/dev/subsystems/skills.md` page documenting every one of the 47 skills in the game and what each actually does in gameplay. Findings sorted into four tiers:
+  - **Hot-path (5)**: Hauling → move speed table, Unarmed/Melee/Dodge → combat, MagicNature/MagicGeomancy → spell scaling. Each with specific file:line citations.
+  - **Quality-crafting (23)**: All skills in `Crafts.SkillID`, consumed by `CanWork::craft()` at `canwork.cpp:1147` — skill level scales the quality tier of produced items.
+  - **Thought-only (10)**: Mining, Woodcutting, Farming, Horticulture, Construction, Medic, Caretaking, Tinkering, Ranged, Crossbow, Block. Only generate mood thoughts in `gnome.cpp::tickProduction()`. Skill level never affects outcome.
+  - **Dead (9)**: AnimalHusbandry, Butchery, Fishing, Mechanic, Thrown, Gun, Armor, etc. Tracked in DB and registered in `SkillToInt` but no code reads them.
+  - **7 follow-up task seeds** captured for fixing broken/dead skills, including the biggest gap: seven "core" colony skills (Mining, Woodcutting, Farming, Horticulture, Construction, Medic, Caretaking) have no effect on the work they're named for.
+
+- **T-0008b — Honest skill tooltips in Population view.** Reuses the T-0004 `Strings` pipeline with a new `$SkillDesc_<sid>` key namespace. Added 46 new Translation rows sourced directly from the T-0008a audit — working skills get functional descriptions, thought-only and dead skills are **labeled honestly** (e.g. *"Currently tracked but has no gameplay effect"*) rather than hidden. Individual Skills view now shows `<name>: Level N (XP: X)` + separator + wrapped description on hover; group view left as-is (already compact). Group view tooltip extension to other population tabs / creature info panel deferred — content is in the DB, wiring is a cheap follow-up.
+
+### Technical Details
+
+- The audit is **diagnostic infrastructure** — future skill-related work starts with "read `wiki/dev/subsystems/skills.md`" instead of grepping source code.
+- Honest labeling is deliberate: the tooltip pipeline doesn't lie to the player about dead features. When broken skills are fixed (see audit follow-ups), update the relevant `$SkillDesc_*` row and the in-game truth changes with it.
+- Build: green. References: `wiki/tasks/done/T-0008a-*.md`, `wiki/tasks/done/T-0008b-*.md`.
+
+---
+
 ## [2026-04-07] Tooltip pipeline + build menu + shape actions (T-0004, T-0007)
 
 **Milestone**: UI/UX + Knowledge infrastructure
