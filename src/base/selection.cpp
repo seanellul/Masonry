@@ -157,6 +157,12 @@ bool Selection::leftClick( Position& pos, bool shift, bool ctrl )
 			m_firstClicked = false;
 			m_changed      = true;
 			updateSelection( pos, shift, ctrl );
+			// T-0023 follow-up: one-shot placements (workshops, items,
+			// single-tile constructions) clear the action so the next
+			// click opens Tile Info instead of trying to place another.
+			// Multi-tile actions (Mine, etc.) skip this branch entirely
+			// and stay armed for repeat use.
+			clear();
 			return true;
 		}
 		return false;
