@@ -6,6 +6,29 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-07] Skill titles (T-0021)
+
+**Milestone**: Skills redesign — phase 3 (flair)
+**Files changed**: `src/game/gnome.h`, `src/game/gnome.cpp`, `src/gui/aggregatorcreatureinfo.h`, `src/gui/aggregatorcreatureinfo.cpp`, `src/gui/aggregatorpopulation.h`, `src/gui/aggregatorpopulation.cpp`, `src/gui/ui/ui_sidepanels.cpp`
+
+### Changes
+
+- **T-0021 — Derived skill titles per gnome.** Every gnome now has a `displayTitle()` derived from their highest skill: `Novice` (0–4), `Apprentice` (5–9), `Journeyman` (10–14), `Master` (15–19), `Grandmaster` (20). Format follows **Option B** — uses the sub-skill name, not the group name. So a gnome with Blacksmithing 18 displays as "Master Blacksmith"; a gnome with MagicNature 20 as "Grandmaster of Nature". The function lives on `Gnome` directly (walks `m_skills` via `reverseFib`, looks up `$SkillTitle_<id>` via `S::s`). Plumbed through `GuiCreatureInfo` and `GuiGnomeInfo` (new `displayTitle` field on each), populated by both aggregators on every refresh. Surfaced in three places:
+  - **Creature info panel header** — lavender-colored line between the gnome's name and profession
+  - **Population view individual Skills tab** — two-line name cell (name + title)
+  - **Population view group Skills tab** — same two-line name cell
+  
+  Polymath titles ("Master of Many Crafts") and Tile Info integration deferred — the existing per-skill title is already meaningful and the tile-info click-through already opens the creature info panel where the title shows.
+
+### Technical Details
+
+- `Gnome::displayTitle()` does NOT consult `SkillGroups` — picking the highest sub-skill across the entire skill set produces a more flavorful per-gnome identity than going through the group abstraction.
+- The title updates live whenever the aggregator refreshes; no caching/staleness issues.
+- Build: green. The 656 warnings are pre-existing `-Winconsistent-missing-override` re-emitted across the wider rebuild from touching `gnome.h`.
+- References: `wiki/tasks/done/T-0021-*.md`.
+
+---
+
 ## [2026-04-07] Cross-training XP bonus + easy skill wirings (T-0020, T-0017)
 
 **Milestone**: Skills redesign — phase 2

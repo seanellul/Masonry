@@ -73,6 +73,7 @@ struct GuiGnomeInfo
 {
 	QString name;
 	unsigned int id;
+	QString displayTitle;  // T-0021: derived skill title (e.g. "Master Blacksmith")
 	QList<GuiSkillInfo> skills;
 	QString profession;
 	QList<GuiTraitInfo> traits;

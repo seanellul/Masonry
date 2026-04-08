@@ -605,10 +605,13 @@ void drawPopulationPanel( ImGuiBridge& bridge )
 							ImGui::TableNextRow();
 							ImGui::PushID( gnome.id );
 
-							// Name
+							// Name + skill title (T-0021)
 							ImGui::TableNextColumn();
 							bool isSelected = ( bridge.selectedGnomeID == gnome.id );
-							if ( ImGui::Selectable( gnome.name.toStdString().c_str(), isSelected ) )
+							QString nameLabel = gnome.name;
+							if ( !gnome.displayTitle.isEmpty() )
+								nameLabel = gnome.name + "\n" + gnome.displayTitle;
+							if ( ImGui::Selectable( nameLabel.toStdString().c_str(), isSelected, 0, ImVec2( 0, ImGui::GetTextLineHeight() * 2 + 4 ) ) )
 							{
 								// T-0012: clicking a gnome name = GoTo + open info.
 								bridge.selectedGnomeID = gnome.id;
@@ -741,10 +744,13 @@ void drawPopulationPanel( ImGuiBridge& bridge )
 							ImGui::TableNextRow();
 							ImGui::PushID( gnome.id );
 
-							// Name column
+							// Name column + skill title (T-0021)
 							ImGui::TableNextColumn();
 							bool isSelected = ( bridge.selectedGnomeID == gnome.id );
-							if ( ImGui::Selectable( gnome.name.toStdString().c_str(), isSelected ) )
+							QString nameLabel = gnome.name;
+							if ( !gnome.displayTitle.isEmpty() )
+								nameLabel = gnome.name + "\n" + gnome.displayTitle;
+							if ( ImGui::Selectable( nameLabel.toStdString().c_str(), isSelected, 0, ImVec2( 0, ImGui::GetTextLineHeight() * 2 + 4 ) ) )
 							{
 								// T-0012: clicking a gnome name = GoTo + open info.
 								bridge.selectedGnomeID = gnome.id;
@@ -2383,6 +2389,10 @@ void drawCreatureInfoPanel( ImGuiBridge& bridge )
 	ImGui::TextColored( ImVec4( 1.0f, 0.9f, 0.6f, 1.0f ), "%s", ci.name.toStdString().c_str() );
 	if ( isGnome )
 	{
+		// T-0021: skill title under the name (e.g. "Master Blacksmith"),
+		// then profession on the next line.
+		if ( !ci.displayTitle.isEmpty() )
+			ImGui::TextColored( ImVec4( 0.85f, 0.75f, 0.95f, 1.0f ), "%s", ci.displayTitle.toStdString().c_str() );
 		ImGui::Text( "%s", ci.profession.toStdString().c_str() );
 		if ( !ci.activity.isEmpty() )
 			ImGui::TextColored( ImVec4( 0.6f, 0.8f, 0.6f, 1.0f ), "%s", ci.activity.toStdString().c_str() );

@@ -1882,6 +1882,44 @@ Equipment Gnome::equipment()
 	return m_equipment;
 }
 
+// T-0021: derived skill title.
+// Walks the gnome's skills, picks the highest level, maps the level to a tier
+// (Novice / Apprentice / Journeyman / Master / Grandmaster), and returns
+// "<Tier> <SubSkillName>" using the canonical $SkillTitle_<id> translation.
+// Returns "Novice" alone if no skill is above 0.
+QString Gnome::displayTitle() const
+{
+	int topLevel = 0;
+	QString topSkillID;
+	for ( auto it = m_skills.constBegin(); it != m_skills.constEnd(); ++it )
+	{
+		int lvl = Global::util->reverseFib( it.value().toUInt() );
+		if ( lvl > topLevel )
+		{
+			topLevel  = lvl;
+			topSkillID = it.key();
+		}
+	}
+
+	auto tierFor = []( int lvl ) -> QString {
+		if ( lvl >= 20 ) return "Grandmaster";
+		if ( lvl >= 15 ) return "Master";
+		if ( lvl >= 10 ) return "Journeyman";
+		if ( lvl >= 5 )  return "Apprentice";
+		return "Novice";
+	};
+
+	if ( topLevel == 0 || topSkillID.isEmpty() )
+		return "Novice";
+
+	QString tier = tierFor( topLevel );
+	QString skillName = S::s( "$SkillTitle_" + topSkillID );
+	if ( skillName.startsWith( "Error:" ) || skillName.isEmpty() )
+		skillName = topSkillID;
+
+	return tier + " " + skillName;
+}
+
 QString Gnome::rightHandItem()
 {
 	return m_equipment.rightHandHeld.material + " " + m_equipment.rightHandHeld.item;

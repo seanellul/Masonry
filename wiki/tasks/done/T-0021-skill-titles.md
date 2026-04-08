@@ -92,4 +92,46 @@ Reuses the group structure. T-0019 must land first, or the title function inline
 
 ## Result
 
-*(Building agent fills in.)*
+Implemented as **Option B** (sub-skill name, not group name). Polymath titles deferred. Tile Info creatures section deferred (low value vs. complexity — the click-through to the gnome info panel from there is the existing T-0005 path).
+
+### Code
+
+1. **`src/game/gnome.h`**: declared `QString Gnome::displayTitle() const;`.
+
+2. **`src/game/gnome.cpp`** (after `Gnome::equipment()`): implementation walks `m_skills`, computes the highest level via `Global::util->reverseFib`, picks the matching skill ID, maps level → tier prefix:
+
+   ```
+   0–4   → Novice
+   5–9   → Apprentice
+   10–14 → Journeyman
+   15–19 → Master
+   20    → Grandmaster
+   ```
+
+   Returns `"<Tier> <SubSkillName>"` using `S::s("$SkillTitle_" + sid)`. If `topLevel == 0`, returns just `"Novice"`. If the translation lookup misses, falls back to the raw skill ID. **Notably, this does NOT consult SkillGroups** — picking the highest sub-skill across the gnome's entire skill set gives a more flavorful per-gnome title than going through the group layer. A gnome with Blacksmithing 18 displays as "Master Blacksmith", not "Master Smithing".
+
+3. **`src/gui/aggregatorcreatureinfo.h`**: added `QString displayTitle;` to `GuiCreatureInfo`. Populated in `aggregatorcreatureinfo.cpp` via `m_info.displayTitle = gnome->displayTitle();` right after the name assignment.
+
+4. **`src/gui/aggregatorpopulation.h`**: added `QString displayTitle;` to `GuiGnomeInfo`. Populated in `aggregatorpopulation.cpp` via `ggi.displayTitle = gnome->displayTitle();` in the per-gnome loop.
+
+5. **`src/gui/ui/ui_sidepanels.cpp`** — three render sites:
+   - **Creature info panel header** (`drawCreatureInfoPanel` ~line 2386): added `if ( !ci.displayTitle.isEmpty() ) TextColored(...)` between the gnome's name (line 1) and profession (line 2). Color: lavender (`0.85, 0.75, 0.95`) to distinguish from name (gold) and profession (default).
+   - **Population view individual Skills tab name cell** (~line 608): the existing `Selectable(gnome.name, ...)` becomes a two-line `Selectable(gnome.name + "\n" + displayTitle, ..., ImVec2(0, 2 lines))`. Click behavior unchanged — still calls `cmdNavigateToEntity` + `onOpenCreatureInfo`.
+   - **Population view group Skills tab name cell** (~line 727): same two-line treatment.
+
+### Behavior summary
+
+- A new gnome with all skills at 0 displays as **"Novice"**.
+- A gnome whose top skill is Blacksmithing 18 displays as **"Master Blacksmith"**.
+- A gnome whose top skill is MagicNature 20 displays as **"Grandmaster of Nature"** (via `$SkillTitle_MagicNature` if defined; otherwise falls back to "Grandmaster MagicNature").
+- A gnome's title updates the next time the population/creature aggregator runs (live, not cached).
+
+### Out of scope (deferred)
+
+- **Polymath titles** (e.g. "Master of Many Crafts" for two+ groups at level 15+) — the per-skill title is already meaningful enough on its own.
+- **Tile Info → Creatures section** — clicking the (i) button there already opens the creature info panel via T-0005's wiring, which now shows the title at the top. Adding the title to the small Tile Info row would be cosmetic and complicate the cramped layout.
+- **Localization of tier prefixes** — currently hardcoded English. If a translation pass happens, the tier strings should move to `$Title_Novice`, `$Title_Master`, etc.
+
+### Build
+
+Green. The 656 warnings on this build are pre-existing `-Winconsistent-missing-override` re-emitted across the wider rebuild from touching `gnome.h`. The actual diagnostic count is unchanged from baseline.

@@ -71,6 +71,7 @@ void AggregatorPopulation::onRequestPopulationUpdate()
 			ggi.name = gnome->name();
 			ggi.id = gnome->id();
 			ggi.profession = gnome->profession();
+			ggi.displayTitle = gnome->displayTitle();
 
 			for( auto skill : m_skillIds )
 			{

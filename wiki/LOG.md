@@ -145,3 +145,7 @@ Dependencies: T-0019 → T-0020 → T-0021 (group structure is shared); T-0018 s
 
 - **T-0020** — Cross-training XP bonus. Master Bonecarver picks up Pottery 50% faster than a novice. Implemented as a multiplier in `CanWork::gainSkill`, sibling cache lazily populated from `SkillGroups`.
 - **T-0017** — Easy wirings. AnimalHusbandry one-line fix (taming duration scales with skill). Fishing bonus-catch chance. Butchery → meat yield + quality. Three previously-dead skills now have real effects.
+
+## [2026-04-07] task | done: T-0021 (skills phase 3 — titles)
+
+- **T-0021** — Derived skill titles. `Gnome::displayTitle()` returns "Master Blacksmith" / "Grandmaster of Nature" / etc. based on the highest sub-skill. Surfaced in the creature info panel header and the population view name column. The flair layer that makes specialization visible per gnome.

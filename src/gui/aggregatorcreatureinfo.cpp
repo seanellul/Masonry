@@ -140,6 +140,7 @@ void AggregatorCreatureInfo::onRequestCreatureUpdate( unsigned int id )
 	if( gnome )
 	{
 		m_info.name = gnome->name();
+		m_info.displayTitle = gnome->displayTitle();
 		m_info.id = id;
 		m_info.profession = gnome->profession();
 		m_info.creatureType = "Gnome";

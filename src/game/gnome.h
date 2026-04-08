@@ -70,6 +70,12 @@ public:
 	void addNeed( QString id, int level );
 	int need( QString id );
 
+	// T-0021: derived display title from the gnome's highest sub-skill.
+	// Returns "<Tier> <SubSkillName>" e.g. "Master Blacksmith". Tiers:
+	// 0–4 Novice, 5–9 Apprentice, 10–14 Journeyman, 15–19 Master, 20 Grandmaster.
+	// Returns "Novice" alone if the gnome has no skill above 0.
+	QString displayTitle() const;
+
 	// Mood/Thought system (Milestone 2.1)
 	void addThought( QString id, QString text, int moodValue, int durationTicks, int maxStacks = 5, QString cause = "" );
 	void removeThought( QString id );

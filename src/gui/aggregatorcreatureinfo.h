@@ -48,6 +48,7 @@ struct GuiCreatureInfo
 	QString name;
 	unsigned int id = 0;
 	QString profession;
+	QString displayTitle;  // T-0021: derived from highest skill, e.g. "Master Blacksmith"
 	QString species;       // e.g. "Wolf", "Goblin"
 	QString creatureType;  // "Gnome", "Animal", "Monster"
 	int healthPercent = 100; // blood / maxBlood as percentage
