@@ -31,6 +31,7 @@
 ### Subsystems
 - [sprite-generation](./dev/subsystems/sprite-generation.md) — AI sprite generation tools, workflows, experiments (migrated from `docs/ai_sprite_generation.md`).
 - [skills](./dev/subsystems/skills.md) — **Audit**: what every skill actually does in gameplay. 5 hot-path, 23 quality-crafting, 10 thought-only, 9 dead. Authoritative source for skill tooltips.
+- [groves](./dev/subsystems/groves.md) — **Audit**: groves are implemented correctly end-to-end. User's "broken" report was a UX discoverability issue. 5 real follow-ups captured.
 
 ### Decisions (ADRs)
 - [gnome-ai-redesign](./dev/decisions/gnome-ai-redesign.md) — Gnome AI/behavior-tree redesign proposal.

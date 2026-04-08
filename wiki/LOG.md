@@ -117,3 +117,7 @@ The T-0004 pattern has now been applied three times (builds, shape actions, skil
 
 - **T-0009** — Workshop queue merge + send-to-top/bottom. Enqueue-time merge in `Workshop::addJob` (tail match on craftID + mode + material filter), two new reorder buttons dispatching the already-supported `"Top"`/`"Bottom"` commands. Saved queues untouched.
 - **T-0014** — Keybindings settings tab. Read-only listing parsed from `keybindings.json`, grouped collapsible tables. Created `wiki/game/ui/keybindings.md` as canonical reference. Editable rebinding deferred — infrastructure is ready.
+
+## [2026-04-07] task | done: T-0010 (autonomous batch 6)
+
+- **T-0010** — Groves investigation. Full end-to-end trace in `wiki/dev/subsystems/groves.md`. **Verdict**: groves are implemented correctly; the "broken" report was a UX discoverability issue (fresh groves default to doing nothing until configured; tree species names like "Apple" / "Orange" look like fruits). No runtime fix warranted. 5 UX follow-up seeds captured.

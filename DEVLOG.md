@@ -6,6 +6,30 @@ Every change to the codebase must be logged here. This is the master record of a
 
 ---
 
+## [2026-04-07] Groves subsystem audit (T-0010)
+
+**Milestone**: Knowledge infrastructure
+**Files changed**: `wiki/dev/subsystems/groves.md` (new), `wiki/INDEX.md`, task files
+
+### Changes
+
+- **T-0010 — Groves investigation.** Traced the Grove → FarmingManager → Grove::onTick → job dispatch chain end to end. **Verdict: groves are implemented correctly**; the user's bug report ("creates a farm that points to vegetable/fruit seeds") was a UX misunderstanding, not a runtime bug.
+  - `FarmingManager::addGrove` creates a distinct `Grove` class (not a `Farm`).
+  - `Grove::onTick` at `grove.cpp:149` enqueues `PlantTree` / `HarvestTree` / `FellTree` jobs when the corresponding flag is set.
+  - All three job types have runtime handlers in `Gnome::m_taskFunctions`.
+  - `AggregatorAgri::init` correctly filters the `Plants` DB table by `Type == "Tree"` — 6 real tree species.
+  - The "vegetable/fruit seeds" confusion is because tree names use their material (`AppleTree` → `Apple`, `OrangeTree` → `Orange`).
+  - A freshly-placed grove has `plant=false, pickFruit=false, fell=false, treeType=""` by default, so it does nothing until the player opens the info panel and configures it. Low discoverability = "feels broken".
+  - 5 follow-up task seeds captured in the audit page (default new groves to usable state, empty-grove UX hint, rename tree species to "Apple Tree" etc., player-facing wiki page, dead-code throttle cleanup).
+
+### Technical Details
+
+- No code changes — this task's deliverable is the investigation + verdict.
+- Output: `wiki/dev/subsystems/groves.md` (new, linked from `wiki/INDEX.md`).
+- References: `wiki/tasks/done/T-0010-*.md`.
+
+---
+
 ## [2026-04-07] Workshop queue polish + Keybindings settings (T-0009, T-0014)
 
 **Milestone**: UI/UX + Settings infrastructure
